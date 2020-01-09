@@ -1,0 +1,30 @@
+# All
+dist
+node_modules
+.DS_Store
+npm-debug.log*
+
+# Backend
+backend/.env.yml
+backend/.serverless
+
+# Frontend
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage
+frontend/build
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Mobile
+mobile/.expo/*
+mobile/npm-debug.*
+mobile/*.jks
+mobile/*.p12
+mobile/*.key
+mobile/*.mobileprovision
+
+# Shared
+shared/dump.rdb
