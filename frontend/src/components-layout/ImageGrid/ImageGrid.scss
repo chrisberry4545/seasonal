@@ -1,0 +1,14 @@
+.c-image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+  .c-image-grid__no-results {
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+  }

@@ -1,0 +1,42 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+$image-grid-item-margin: 0.9rem;
+
+.c-image-grid-item {
+  margin-bottom: $image-grid-item-margin;
+  width: 50%;
+  display: inline-block;
+  cursor: pointer;
+  border-top: 1px solid $grey-med;
+  &:nth-child(-n + 2) {
+    border-top: none;
+  }
+  @include mq($from: tablet) {
+    width: 33%;
+    &:nth-child(-n + 3) {
+      border-top: none;
+    }
+  }
+  @include mq($from: desktop) {
+    width: 20%;
+    &:nth-child(-n + 5) {
+      border-top: none;
+    }
+  }
+}
+
+  .c-image-grid-item__inner {
+    padding: $image-grid-item-margin 0.3rem;
+  }
+
+  .c-image-grid-item__image {
+    border-radius: $default-border-radius;
+    height: 120px;
+    overflow: hidden;
+  }
+
+  .c-image-grid-item__text {
+    margin-top: $image-grid-item-margin;
+    display: block;
+  }

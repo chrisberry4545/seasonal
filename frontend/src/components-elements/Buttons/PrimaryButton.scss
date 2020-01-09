@@ -1,0 +1,23 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+$c-primary-button-color: $primary-color !default;
+
+.c-primary-button {
+  cursor: pointer;
+  background-color: $c-primary-button-color;
+  border: none;
+  padding: 1rem;
+  color: $white-color;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  font-family: $primary-font;
+  transition: background-color $default-animation-time-exit;
+  font-size: 1.125rem;
+  min-width: 175px;
+
+  &:hover {
+    transition-duration: $default-animation-time-enter;
+    background-color: lighten($c-primary-button-color, 10%);
+  }
+}

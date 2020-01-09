@@ -1,0 +1,71 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+$season-unselected-color: $grey-med !default;
+$season-marker-size: 50px !default;
+
+@mixin create-season-marker() {
+  height: $season-marker-size;
+  width: $season-marker-size;
+  border: 1px solid $season-unselected-color;
+  border-radius: 5px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  .c-season-for-food__list-heading {
+    margin-top: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .c-season-for-food__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    flex-wrap: wrap;
+    max-width: 260px;
+    margin: 0 auto 2rem;
+    @include mq($from: desktop) {
+      max-width: 380px;
+    }
+    @include mq($from: desktop) {
+      max-width: 740px;
+    }
+  }
+
+  .c-season-for-food__season {
+    @include create-season-marker;
+    background-color: $season-unselected-color;
+  }
+
+    .c-season-for-food__season--selected {
+      background-color: transparent;
+    }
+
+  .c-season-food__in-season-key {
+    margin-bottom: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &::after {
+      content: '';
+      @include create-season-marker();
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-left: 0.5rem;
+      background-color: $season-unselected-color;
+    }
+  }
+
+    .c-season-food__in-season-key--in-season::after {
+      background-color: transparent;
+    }
+
+    .c-season-food__in-season-key__text {
+      opacity: 0.6;
+    }

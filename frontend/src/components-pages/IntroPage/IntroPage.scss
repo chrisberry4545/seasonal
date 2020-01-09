@@ -1,0 +1,25 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+.c-intro-page {
+  width: 100%;
+  text-align: center;
+  max-width: 1024px;
+  margin: auto;
+}
+
+  .c-intro-page__top-section {
+    border-bottom: 1px solid $grey-med;
+    padding-bottom: 2.5rem;
+  }
+
+  .c-intro-page__splash-image {
+    width: 100%;
+  }
+
+  .c-intro-page__mobile-extra-app-links {
+    margin-top: 3rem;
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
