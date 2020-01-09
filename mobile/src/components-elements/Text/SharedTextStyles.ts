@@ -1,6 +1,6 @@
 import {
   styles
-} from './../../styles';
+} from '../../styles';
 import { TextStyle } from 'react-native';
 
 export const textBase: TextStyle = {

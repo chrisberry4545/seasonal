@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import {
   SeasonDetailsContentWrapperConnector
-} from './../SeasonDetailsContentWrapper/SeasonDetailsContentWrapper.connector';
+} from '../SeasonDetailsContentWrapper/SeasonDetailsContentWrapper.connector';
 import { ISeasonFoodProps } from './SeasonFood.interface';
 
 import {

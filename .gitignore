@@ -5,26 +5,26 @@ node_modules
 npm-debug.log*
 
 # Backend
-backend/.env.yml
-backend/.serverless
+packages/backend/.env.yml
+packages/backend/.serverless
 
 # Frontend
-frontend/.pnp
-frontend/.pnp.js
-frontend/coverage
-frontend/build
-frontend/.env.local
-frontend/.env.development.local
-frontend/.env.test.local
-frontend/.env.production.local
+packages/frontend/.pnp
+packages/frontend/.pnp.js
+packages/frontend/coverage
+packages/frontend/build
+packages/frontend/.env.local
+packages/frontend/.env.development.local
+packages/frontend/.env.test.local
+packages/frontend/.env.production.local
 
 # Mobile
-mobile/.expo/*
-mobile/npm-debug.*
-mobile/*.jks
-mobile/*.p12
-mobile/*.key
-mobile/*.mobileprovision
+packages/mobile/.expo/*
+packages/mobile/npm-debug.*
+packages/mobile/*.jks
+packages/mobile/*.p12
+packages/mobile/*.key
+packages/mobile/*.mobileprovision
 
 # Shared
 shared/dump.rdb

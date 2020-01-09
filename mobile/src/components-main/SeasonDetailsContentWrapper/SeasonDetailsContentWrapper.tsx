@@ -2,7 +2,7 @@ import React, { FC, Fragment } from 'react';
 import { ScrollView, ViewStyle, TextStyle } from 'react-native';
 import {
   HeaderConnecter
-} from '../../components-main/Header/Header.connector';
+} from '../Header/Header.connector';
 
 import {
   ISeasonDetailsContentWrapperInputProps

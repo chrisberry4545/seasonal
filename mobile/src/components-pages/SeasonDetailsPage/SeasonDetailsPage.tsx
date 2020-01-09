@@ -9,7 +9,7 @@ import {
 
 import {
   styles
-} from './../../styles';
+} from '../../styles';
 
 import {
   styleTextLarge

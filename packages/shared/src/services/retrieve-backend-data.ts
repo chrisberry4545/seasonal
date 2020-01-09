@@ -4,7 +4,7 @@ import {
   SEASON_WITH_FOOD_URL,
   SEASON_WITH_RECIPES_URL,
   COUNTRY_URL
-} from '././../config';
+} from '../config';
 import { IBaseSeason, IHydratedSeason, IHydratedFood, ICountry } from '../interfaces';
 
 const getQueryString = (
