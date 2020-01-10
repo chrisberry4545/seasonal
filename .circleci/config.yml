@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  backend-tests:
 
     docker:
       - image: circleci/node:8.10
@@ -11,10 +11,14 @@ jobs:
       - setup_remote_docker
 
       - run:
-          name: Run tests
-          command: ./tests/run-functional-tests.sh
+          name: Go to directory
+          command: cd ./packages/backend
 
-  deploy:
+      - run:
+          name: Run backend tests
+          command: ./run-functional-tests.sh
+
+  backend-deploy:
     docker:
       - image: circleci/node:8.10
 
@@ -26,6 +30,10 @@ jobs:
           - v1-dependencies-
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
+
+      - run:
+          name: Go to directory
+          command: cd ./packages/backend
 
       - run:
           name: Copy env config
