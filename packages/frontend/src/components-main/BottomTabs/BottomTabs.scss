@@ -1,0 +1,20 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-bottom-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $background-color;
+  border-top: 1px solid $grey-med;
+}
+
+  .c-bottom-tabs__tab {
+    height: 4rem;
+    width: 50%;
+  }
+
+    .c-bottom-tabs__tab--selected {
+      background-color: $grey-light;
+    }

@@ -1,0 +1,15 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+.c-about-eat-seasonal {
+  padding: 3rem 2rem;
+  border-bottom: 1px solid $grey-med;
+  @include mq($until: tablet) {
+    padding: 3rem 2rem 2rem 2rem;
+  }
+}
+
+  .c-about-eat-seasonal__text {
+    margin: 1rem auto;
+    text-align: left;
+  }

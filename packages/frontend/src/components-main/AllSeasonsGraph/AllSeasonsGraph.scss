@@ -1,0 +1,22 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-all-seasons-graph {
+  margin-bottom: 3rem;
+  padding: 0 1.7rem;
+  @include mq($from: tablet) {
+    padding: 0 5rem 0 2rem;
+  }
+}
+
+  .c-all-seasons-graph__heading {
+    display: block;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .c-all-seasons-graph__text {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+  }

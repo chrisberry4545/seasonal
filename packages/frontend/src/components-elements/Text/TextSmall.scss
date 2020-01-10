@@ -1,0 +1,8 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+.c-text-small {
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: $primary-text-color;
+}

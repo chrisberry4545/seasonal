@@ -1,0 +1,41 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-search-bar {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+}
+
+  .c-search-bar--show-full {
+    @include mq($until: tablet) {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      background-color: $background-color;
+
+      .c-search-bar__input {
+        display: block;
+      }
+    }
+  }
+
+  .c-search-bar__search-button {
+    width: 28px;
+    opacity: 0.7;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .c-search-bar__input {
+    @include mq($until: tablet) {
+      display: none;
+      width: 100%;
+    }
+  }

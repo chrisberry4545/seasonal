@@ -1,0 +1,9 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-page-layout {
+  margin-top: $default-top-margin;
+  @include mq($from: tablet) {
+    display: flex;
+  }
+}

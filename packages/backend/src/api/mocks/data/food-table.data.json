@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Beetroot",
+    "id": "f1",
+    "seasons": [
+      "0",
+      "1"
+    ],
+    "primaryFoodInRecipe": [
+      "r1"
+    ],
+    "secondaryFoodInRecipe": [
+      "r2",
+      "r3"
+    ]
+  },
+  {
+    "name": "Apple",
+    "id": "f2"
+  }
+]

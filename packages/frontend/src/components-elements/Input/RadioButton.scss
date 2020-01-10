@@ -1,0 +1,25 @@
+@import '../../styles/settings';
+
+.c-radio-button {
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  min-height: 30px;
+  transition: background-color $default-animation-time-exit;
+
+  &:hover {
+    transition-duration: $default-animation-time-enter;
+    background-color: transparentize($grey-light, 0.5);
+  }
+}
+
+  .c-radio-button--selected {
+    background-color: $grey-light;
+  }
+
+  .c-radio-button__input {
+    display: none;
+  }

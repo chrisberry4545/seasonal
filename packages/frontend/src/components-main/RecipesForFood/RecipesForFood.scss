@@ -1,0 +1,12 @@
+@import './../../styles/settings';
+
+.c-recipes-for-food {
+  margin-top: 1.5rem;
+  border-bottom: 1px solid $grey-med;
+}
+
+  .c-recipes-for-food__heading {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }

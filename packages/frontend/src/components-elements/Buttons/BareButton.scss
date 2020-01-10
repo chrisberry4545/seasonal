@@ -1,0 +1,8 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+.c-bare-button {
+  border: none;
+  cursor: pointer;
+  font-family: $primary-font;
+}
