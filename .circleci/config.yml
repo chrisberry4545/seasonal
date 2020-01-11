@@ -1,7 +1,7 @@
 version: 2.1
 
 commands:
-  bootstrap-packages:
+  install-dependencies:
     steps:
       - restore_cache:
           name: Restore dependency cache
@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - bootstrap-packages
+      - install-dependencies
       - run:
           name: Run backend tests
           command: |
@@ -37,7 +37,7 @@ jobs:
       - image: circleci/node:8.10
     steps:
       - checkout
-      - bootstrap-packages
+      - install-dependencies
       - run:
           name: Copy env config
           command: |
@@ -63,10 +63,14 @@ workflows:
   backend:
     jobs:
       - backend_test
-      - backend_deploy:
-          requires:
-            - backend_test
+      - backend_approval:
+          type: approval
           filters:
             branches:
               only:
                 - master
+          requires:
+           - backend_test
+      - backend_deploy:
+          requires:
+            - backend_approval
