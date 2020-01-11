@@ -1,74 +1,71 @@
-version: 2
-jobs:
-  backend-tests:
+version: 2.1
 
+commands:
+  bootstrap-packages:
+    steps:
+      - restore_cache:
+          name: Restore dependency cache
+          keys:
+            - seasonal-deps-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: |
+            npm i
+            npm run bootstrap
+      - save_cache:
+          name: Save dependency cache
+          paths:
+            - node_modules
+          key: seasonal-deps-{{ checksum "package-lock.json" }}
+
+jobs:
+  backend_test:
     docker:
       - image: circleci/node:8.10
-
     steps:
       - checkout
-
       - setup_remote_docker
-
-      - run:
-          name: Go to directory
-          command: cd ./packages/backend
-
+      - bootstrap-packages
       - run:
           name: Run backend tests
-          command: ./run-functional-tests.sh
+          command: |
+            cd ./packages/backend
+            ./tests/run-functional-tests.sh
 
-  backend-deploy:
+  backend_deploy:
     docker:
       - image: circleci/node:8.10
-
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-          - v1-dependencies-
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run:
-          name: Go to directory
-          command: cd ./packages/backend
-
+      - bootstrap-packages
       - run:
           name: Copy env config
           command: |
+            cd ./packages/backend
             cp .env-ci.yml .env.yml
-
-      - run:
-          name: Install Serverless CLI and dependencies
-          command: |
-            sudo npm i -g serverless
-            npm install
-
       - run:
           name: Build dist version
           command: |
+            cd ./packages/backend
             npm run build
             npm run move-dist-to-top-level
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-
-
+      - run:
+          name: Install Serverless CLI
+          command: sudo npm i -g serverless
       - run:
           name: Deploy application
-          command: sls deploy --stage prod
+          command: |
+            cd ./packages/backend
+            sls deploy --stage prod
 
 workflows:
   version: 2
-  ci:
+  backend:
     jobs:
-      - test
-      - deploy:
+      - backend_test
+      - backend_deploy:
           requires:
-            - test
+            - backend_test
           filters:
             branches:
               only:

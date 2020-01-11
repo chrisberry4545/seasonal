@@ -14,5 +14,10 @@
   "homepage": "https://github.com/chrisberry4545/seasonal#readme",
   "dependencies": {
     "lerna": "^3.20.2"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "backend:dev": "cd ./packages/backend && npm run docker:dev",
+    "backend:dev:down": "cd ./packages/backend && npm run docker:dev"
   }
 }

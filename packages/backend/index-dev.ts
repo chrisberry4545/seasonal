@@ -12,12 +12,6 @@ app.listen(PORT, () => {
   console.log('Server listening on port', PORT);
 });
 
-import { IAirtableBaseRecord } from '@chrisb-dev/seasonal-shared';
-
-const a: IAirtableBaseRecord = {
-  id: '1'
-};
-
 process.on('SIGINT', () => {
   // This is to avoid EADDRINUSE issues with Nodemon
   // tslint:disable-next-line
