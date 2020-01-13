@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: docker-database.Dockerfile
-    container_name: postgres
     ports:
       - "35432:5432"
     environment:
