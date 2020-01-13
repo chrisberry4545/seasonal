@@ -21,20 +21,18 @@ commands:
 jobs:
   backend_test:
     docker:
-      - image: circleci/node:8.10
+      - image: circleci/node:10.15
     steps:
       - checkout
       - setup_remote_docker
       - install-dependencies
       - run:
           name: Run backend tests
-          command: |
-            cd ./packages/backend
-            ./tests/run-functional-tests.sh
+          command: ./tests/backend-run-functional-tests.sh
 
   backend_deploy:
     docker:
-      - image: circleci/node:8.10
+      - image: circleci/node:10.15
     steps:
       - checkout
       - install-dependencies
@@ -53,10 +51,22 @@ jobs:
           name: Install Serverless CLI
           command: sudo npm i -g serverless
       - run:
-          name: Deploy application
+          name: Deploy backend
           command: |
             cd ./packages/backend
             sls deploy --stage prod
+
+  frontend_deploy:
+    docker:
+      - image: circleci/node:10.15
+    steps:
+      - checkout
+      - install-dependencies
+      - run:
+          name: Deploy frontend
+          command: |
+            cd ./packages/frontend
+            npm run deploy
 
 workflows:
   version: 2
@@ -71,6 +81,8 @@ workflows:
                 - master
           requires:
            - backend_test
-      - backend_deploy:
+      - frontend_approval:
+          type: approval
+      - frontend_deploy:
           requires:
-            - backend_approval
+            - frontend_approval

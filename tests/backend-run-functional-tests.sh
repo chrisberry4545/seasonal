@@ -3,7 +3,7 @@
 docker-compose -f ./docker-compose.test.yml down
 echo "Starting tests..."
 
-docker-compose -f ./docker-compose.test.yml run --rm app-test
+docker-compose -f ./docker-compose.test.yml run --rm backend-test
 status=$?
 
 docker-compose -f ./docker-compose.test.yml down
