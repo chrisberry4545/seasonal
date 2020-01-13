@@ -1,7 +1,7 @@
 version: "3.3"
 services:
 
-  postgres:
+  postgres-test:
     build: ./packages/database
     container_name: postgres
     ports:
@@ -14,7 +14,7 @@ services:
   backend-test:
     build: .
     depends_on:
-      - postgres
+      - postgres-test
     environment:
       DB_CONNECTION_STRING: postgres://user:pass@postgres:5432/db
       DEFAULT_COUNTRY_ID: gbr
