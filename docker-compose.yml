@@ -2,7 +2,9 @@ version: "3.3"
 services:
 
   postgres:
-    build: ./packages/database
+    build:
+      context: .
+      dockerfile: docker-database.Dockerfile
     container_name: postgres
     ports:
       - "35432:5432"
@@ -12,7 +14,9 @@ services:
       POSTGRES_DB: db
 
   backend-dev:
-    build: .
+    build:
+      context: .
+      dockerfile: docker-backend.Dockerfile
     depends_on:
       - postgres
     environment:
@@ -28,7 +32,9 @@ services:
       - /usr/app/packages/backend/node_modules
 
   frontend-dev:
-    build: .
+    build:
+      context: .
+      dockerfile: docker-frontend.Dockerfile
     depends_on:
       - backend-dev
     environment:

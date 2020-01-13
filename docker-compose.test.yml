@@ -2,7 +2,9 @@ version: "3.3"
 services:
 
   postgres-test:
-    build: ./packages/database
+    build:
+      context: .
+      dockerfile: docker-database.Dockerfile
     container_name: postgres
     ports:
       - "35432:5432"
@@ -12,7 +14,9 @@ services:
       POSTGRES_DB: db
 
   backend-test:
-    build: .
+    build:
+      context: .
+      dockerfile: docker-backend.Dockerfile
     depends_on:
       - postgres-test
     environment:
