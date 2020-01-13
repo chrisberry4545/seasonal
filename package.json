@@ -21,6 +21,7 @@
     "backend:test": "cd ./packages/backend && npm run test",
     "backend:dev": "cd ./packages/backend && npm run dev",
     "frontend:dev": "cd ./packages/frontend && npm run dev",
+    "mobile:dev": "BACKEND_URL=http://localhost:5200/v2 cd ./packages/mobile && npm run dev",
     "docker:backend:dev": "docker-compose up -d backend-dev && docker-compose logs --follow",
     "docker:frontend:dev": "docker-compose up -d frontend-dev && docker-compose logs --follow"
   }

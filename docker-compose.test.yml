@@ -19,3 +19,6 @@ services:
       DB_CONNECTION_STRING: postgres://user:pass@postgres:5432/db
       DEFAULT_COUNTRY_ID: gbr
     command: npm run backend:test
+    volumes:
+      - ./packages/backend:/usr/app/packages/backend/
+      - /usr/app/packages/backend/node_modules

@@ -11,4 +11,3 @@ COPY packages/frontend/package*.json ./packages/frontend/
 RUN cd /usr/app/packages/frontend && npm i
 COPY lerna.json ./
 RUN npm run bootstrap
-COPY packages/backend ./packages/backend/
