@@ -4,7 +4,7 @@ WORKDIR /usr/app
 COPY package*.json ./
 RUN npm install
 COPY packages/shared ./packages/shared
-RUN cd /usr/app/packages/shared && npm i
+RUN cd /usr/app/packages/shared && npm i --unsafe-perm
 COPY packages/backend/package*.json ./packages/backend/
 RUN cd /usr/app/packages/backend && npm i
 COPY packages/frontend/package*.json ./packages/frontend/
