@@ -1,12 +1,12 @@
 version: "3.3"
 services:
 
-  postgres:
+  postgres-dev:
     build:
       context: .
       dockerfile: docker-database.Dockerfile
     ports:
-      - "35432:5432"
+      - "35432:5532"
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
@@ -17,9 +17,9 @@ services:
       context: .
       dockerfile: docker-backend.Dockerfile
     depends_on:
-      - postgres
+      - postgres-dev
     environment:
-      DB_CONNECTION_STRING: postgres://user:pass@postgres:5432/db
+      DB_CONNECTION_STRING: postgres://user:pass@postgres:5532/db
       NODE_ENV: development
       PORT: 3005
       DEFAULT_COUNTRY_ID: gbr
