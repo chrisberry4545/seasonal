@@ -57,7 +57,7 @@ jobs:
 
   frontend_deploy:
     docker:
-      - image: circleci/node:10.15
+      - image: circleci/node:latest-browsers
     steps:
       - checkout
       - install-dependencies
