@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: docker-database.Dockerfile
     ports:
-      - "35432:5432"
+      - "45432:5432"
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
@@ -19,6 +19,6 @@ services:
     depends_on:
       - postgres-test
     environment:
-      DB_CONNECTION_STRING: postgres://user:pass@postgres:5432/db
+      DB_CONNECTION_STRING: postgres://user:pass@postgres-test:5432/db
       DEFAULT_COUNTRY_ID: gbr
     command: npm run backend:test
