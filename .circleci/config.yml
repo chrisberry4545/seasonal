@@ -57,10 +57,15 @@ jobs:
 
   frontend_deploy:
     docker:
-      - image: circleci/node:10.15:latest-browsers
+      - image: circleci/node:10.15
     steps:
       - checkout
       - install-dependencies
+      - run:
+          type: shell
+          command: |
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
       - run:
           name: Deploy frontend
           command: |
