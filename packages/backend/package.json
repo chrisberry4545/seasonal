@@ -21,8 +21,7 @@
     "move-dist-to-top-level": "cp -r ./dist/* ./",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "docker:dev": "docker-compose up -d app-dev && docker-compose logs --follow"
+    "test:watch": "jest --watchAll"
   },
   "author": "Chris Berry <chrisberry4545@googlemail.com> (http://chrisbdev.com)",
   "license": "ISC",

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublish": "npm run lint && npm run build",
+    "prepare": "npm run lint && npm run build",
     "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "repository": {
