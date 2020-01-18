@@ -41,7 +41,7 @@
     "eject": "react-scripts eject",
     "gh-pages": "node ./release/gh-pages.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
-    "postbuild": "react-snap",
+    "postbuild": "node ./run-react-snap.js",
     "deploy": "npm run build && npm run gh-pages",
     "schematics": "schematics @chrisb-dev/react-schematics:react-components"
   },
