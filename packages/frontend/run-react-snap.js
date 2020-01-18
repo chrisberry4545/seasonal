@@ -4,5 +4,5 @@ const { run } = require('react-snap');
   await run({
     puppeteerArgs: ['--no-sandbox', '--disable-setuid-sandbox']
   });
-});
+})();
 
