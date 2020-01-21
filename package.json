@@ -19,10 +19,12 @@
     "@chrisb-dev/tslint": "^1.0.1",
     "concurrently": "^5.0.2",
     "lerna": "^3.20.2",
-    "tslint": "^5.17.0"
+    "pre-commit": "^1.2.2",
+    "tslint": "^5.17.0",
+    "typescript": "^3.7.2"
   },
   "scripts": {
-    "lint": "tslint -c tslint.json 'packages/**/*.ts{,x}'",
+    "lint": "tslint -c tslint.json 'packages/*/src/**/*.ts{,x}'",
     "bootstrap": "lerna bootstrap",
     "backend:test": "cd ./packages/backend && npm run test",
     "backend:dev": "cd ./packages/backend && npm run dev",

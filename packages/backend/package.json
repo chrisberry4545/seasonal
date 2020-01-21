@@ -46,7 +46,6 @@
     "concurrently": "^5.0.2",
     "env-yaml": "^0.1.2",
     "jest": "^24.8.0",
-    "pre-commit": "^1.2.2",
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.5.4",
