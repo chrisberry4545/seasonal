@@ -10,8 +10,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run lint && npm run build",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -30,16 +29,13 @@
     "redux": "^4.0.1",
     "redux-observable": "^1.1.0",
     "reselect": "^4.0.0",
-    "rxjs": "^6.4.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.7.2"
   },
   "devDependencies": {
-    "@chrisb-dev/tslint": "^1.0.1",
-    "@types/node": "^11.13.14",
-    "pre-commit": "^1.2.2",
-    "tslint": "^5.14.0"
+    "@types/node": "^11.11.3",
+    "pre-commit": "^1.2.2"
   },
-  "pre-commit": [
-    "lint"
-  ]
+  "peerDependencies": {
+    "rxjs": "6.4.0"
+  }
 }
