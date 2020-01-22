@@ -1,12 +1,9 @@
 FROM node:12.14.0-alpine
 
 WORKDIR /usr/app
-COPY package*.json ./
-RUN npm install
+COPY package*.json yarn.lock lerna.json ./
 COPY packages/shared ./packages/shared
-RUN cd /usr/app/packages/shared && npm i --unsafe-perm
+RUN yarn workspace @chrisb-dev/shared install --unsafe-perm
 COPY packages/frontend/package*.json ./packages/frontend/
-RUN cd /usr/app/packages/frontend && npm i
-COPY lerna.json ./
-RUN npm run bootstrap
+RUN yarn install
 COPY packages/frontend ./packages/frontend

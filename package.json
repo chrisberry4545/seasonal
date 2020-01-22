@@ -1,6 +1,7 @@
 {
   "name": "season",
   "version": "1.0.0",
+  "private": true,
   "description": "Eat Seasonal",
   "repository": {
     "type": "git",
@@ -24,18 +25,23 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
+    "postinstall": "yarn workspace @chrisb-dev/seasonal-shared build && yarn bootstrap",
     "lint": "tslint -c tslint.json 'packages/*/src/**/*.ts{,x}'",
     "bootstrap": "lerna bootstrap",
-    "backend:test": "cd ./packages/backend && npm run test",
-    "backend:dev": "cd ./packages/backend && npm run dev",
-    "frontend:dev": "cd ./packages/frontend && npm run dev",
-    "frontend:deploy": "cd ./packages/frontend && npm run deploy",
-    "mobile:dev": "BACKEND_URL=http://localhost:5200/v2 cd ./packages/mobile && npm run dev",
+    "backend:test": "yarn workspace @chrisb-dev/seasonal-backend test",
+    "backend:dev": "yarn workspace @chrisb-dev/seasonal-backend dev",
+    "frontend:dev": "yarn workspace @chrisb-dev/seasonal-frontend dev",
+    "frontend:deploy": "yarn workspace @chrisb-dev/seasonal-frontend deploy",
+    "mobile:dev": "BACKEND_URL=http://localhost:5200/v2 yarn workspace @chrisb-dev/seasonal-mobile start",
+    "mobile:prod": "yarn workspace @chrisb-dev/seasonal-mobile start",
     "docker:database:dev": "docker-compose up -d postgres-dev && docker-compose logs --follow",
     "docker:backend:dev": "docker-compose up -d backend-dev && docker-compose logs --follow",
     "docker:frontend:dev": "docker-compose up -d frontend-dev && docker-compose logs --follow"
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "workspaces": {
+    "packages": [ "packages/*"]
+  }
 }

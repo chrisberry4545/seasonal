@@ -1,6 +1,7 @@
 {
   "name": "@chrisb-dev/seasonal-backend",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index-dev.ts",
   "engines": {
@@ -11,11 +12,11 @@
     "app": "index-dev.ts"
   },
   "scripts": {
-    "start": "npm run dev",
-    "dev": "npm run copy-env && npm run copy-sql && concurrently \"npm run dev:watch\" \"npm run test:watch\"",
+    "start": "yarn dev",
+    "dev": "yarn copy-env && yarn copy-sql && concurrently \"yarn dev:watch\" \"yarn test:watch\"",
     "dev:watch": "tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
-    "ci": "npm run copy-sql && tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
-    "build": "tsc && npm run copy-env && npm run copy-sql",
+    "ci": "yarn copy-sql && tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
+    "build": "tsc && yarn copy-env && yarn copy-sql",
     "copy-env": "mkdir -p dist && cp .env.yml dist/.env.yml",
     "copy-sql": "mkdir -p dist/src && cp -r ./src/sql/ ./dist/src/sql/",
     "move-dist-to-top-level": "cp -r ./dist/* ./",
@@ -63,7 +64,7 @@
       "tsx"
     ],
     "transform": {
-      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "\\.ts$": "<rootDir>/../../node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": ".*spec.ts$"
   }

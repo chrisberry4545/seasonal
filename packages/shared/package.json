@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "yarn build"
   },
   "repository": {
     "type": "git",
