@@ -64,8 +64,11 @@
       "tsx"
     ],
     "transform": {
-      "\\.ts$": "<rootDir>/../../node_modules/ts-jest/preprocessor.js"
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": ".*spec.ts$"
+  },
+  "workspaces": {
+    "nohoist": ["**"]
   }
 }
