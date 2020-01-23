@@ -6,17 +6,15 @@ commands:
       - restore_cache:
           name: Restore dependency cache
           keys:
-            - seasonal-deps-{{ checksum "package-lock.json" }}
+            - seasonal-deps-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          command: |
-            npm i
-            npm run bootstrap
+          command: yarn install
       - save_cache:
           name: Save dependency cache
           paths:
             - node_modules
-          key: seasonal-deps-{{ checksum "package-lock.json" }}
+          key: seasonal-deps-{{ checksum "yarn.lock" }}
 
 jobs:
   backend_test:
@@ -37,18 +35,15 @@ jobs:
       - install-dependencies
       - run:
           name: Copy env config
-          command: |
-            cd ./packages/backend
-            cp .env-ci.yml .env.yml
+          command: cp packages/backend/.env-ci.yml packages/backend/.env.yml
       - run:
           name: Build dist version
           command: |
-            cd ./packages/backend
-            npm run build
-            npm run move-dist-to-top-level
+            yarn workspace @chrisb-dev/seasonal-backend build
+            yarn workspace @chrisb-dev/seasonal-backend move-dist-to-top-level
       - run:
           name: Install Serverless CLI
-          command: sudo npm i -g serverless
+          command: sudo yarn global add serverless
       - run:
           name: Deploy backend
           command: |
@@ -71,9 +66,7 @@ jobs:
             git config user.name "chrisbery4545"
       - run:
           name: Deploy frontend
-          command: |
-            cd ./packages/frontend
-            npm run deploy
+          command: yarn frontend:deploy
 
 workflows:
   version: 2

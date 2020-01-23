@@ -20,7 +20,7 @@ export const seasonWithFoodApi = (router = Router()) => {
     const { seasonIndex } = req.params;
     const countryCode = getCountryCodeFromQueryParams(req);
     try {
-      const result = await fetchSeasonWithFood(seasonIndex, countryCode);
+      const result = await fetchSeasonWithFood(parseInt(seasonIndex, 10), countryCode);
       return res.json(result);
     } catch (err) {
       return res.status(500).send(err.message);

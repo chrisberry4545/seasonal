@@ -1,23 +1,23 @@
 {
-  "name": "seasonal-web",
+  "name": "@chrisb-dev/seasonal-frontend",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://chrisberry4545.github.io/",
   "dependencies": {
     "@chrisb-dev/seasonal-shared": "2.7.10",
     "@types/google.analytics": "^0.0.39",
-    "@types/jest": "^24.0.11",
+    "@types/jest": "^24.0.13",
     "@types/node": "^11.11.3",
-    "@types/react": "^16.8.8",
+    "@types/react": "^16.9.0",
     "@types/react-dom": "^16.8.2",
     "@types/react-infinite-scroller": "^1.2.1",
-    "@types/react-redux": "^7.0.3",
+    "@types/react-redux": "^7.0.5",
     "@types/react-router": "^4.4.5",
     "@types/recharts": "^1.1.16",
     "connected-react-router": "^6.3.2",
     "inuitcss": "^6.0.0",
     "node-sass": "^4.11.0",
-    "react": "^16.8.2",
+    "react": "16.9.0",
     "react-dom": "^16.8.2",
     "react-infinite-scroller": "^1.2.4",
     "react-pose": "^4.0.7",
@@ -26,27 +26,23 @@
     "react-scripts": "2.1.5",
     "recharts": "^1.5.0",
     "redux": "^4.0.1",
-    "redux-observable": "^1.0.0",
+    "redux-observable": "^1.1.0",
     "reselect": "^4.0.0",
     "rxjs": "^6.4.0",
     "sass-mq": "^5.0.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.7.2"
   },
   "scripts": {
-    "start": "npm run dev",
+    "start": "yarn dev",
     "dev": "react-scripts start",
-    "build": "react-scripts build && npm run copy-cname && npm run run-react-snap",
+    "build": "react-scripts build && yarn copy-cname && yarn run-react-snap",
     "copy-cname": "cp CNAME ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "gh-pages": "node ./release/gh-pages.js",
-    "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
     "run-react-snap": "node ./run-react-snap.js",
-    "deploy": "npm run build && npm run gh-pages",
+    "deploy": "yarn build && yarn gh-pages",
     "schematics": "schematics @chrisb-dev/react-schematics:react-components"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
@@ -56,13 +52,11 @@
   ],
   "devDependencies": {
     "@chrisb-dev/react-schematics": "1.1.1",
-    "@chrisb-dev/tslint": "^1.0.1",
     "gh-pages": "^2.0.1",
-    "pre-commit": "^1.2.2",
-    "react-snap": "^1.23.0",
-    "tslint": "^5.14.0"
+    "jest": "23.6.0",
+    "react-snap": "^1.23.0"
   },
-  "pre-commit": [
-    "lint"
-  ]
+  "workspaces": {
+    "nohoist": ["inuitcss", "inuitcss/**", "sass-mq", "sass-mq/**"]
+  }
 }

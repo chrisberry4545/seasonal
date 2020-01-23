@@ -30,7 +30,7 @@ export const seasonWithRecipesApi = (router = Router()) => {
     const countryCode = getCountryCodeFromQueryParams(req);
     try {
       const result = await fetchFilteredSeasonsWithRecipes(
-        seasonIndex,
+        parseInt(seasonIndex, 10),
         isVegetarian,
         isVegan,
         countryCode

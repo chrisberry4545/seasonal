@@ -1,6 +1,7 @@
 {
-  "name": "seasonal-backend",
+  "name": "@chrisb-dev/seasonal-backend",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index-dev.ts",
   "engines": {
@@ -11,15 +12,14 @@
     "app": "index-dev.ts"
   },
   "scripts": {
-    "start": "npm run dev",
-    "dev": "npm run copy-env && npm run copy-sql && concurrently \"npm run dev:watch\" \"npm run test:watch\"",
+    "start": "yarn dev",
+    "dev": "yarn copy-env && yarn copy-sql && concurrently \"yarn dev:watch\" \"yarn test:watch\"",
     "dev:watch": "tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
-    "ci": "npm run copy-sql && tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
-    "build": "tsc && npm run copy-env && npm run copy-sql",
+    "ci": "yarn copy-sql && tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
+    "build": "tsc && yarn copy-env && yarn copy-sql",
     "copy-env": "mkdir -p dist && cp .env.yml dist/.env.yml",
     "copy-sql": "mkdir -p dist/src && cp -r ./src/sql/ ./dist/src/sql/",
     "move-dist-to-top-level": "cp -r ./dist/* ./",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
@@ -38,22 +38,19 @@
     "pg": "^7.12.1",
     "promise-fs": "^2.1.1",
     "serverless-http": "^2.0.2",
-    "typescript": "^3.5.1",
+    "typescript": "^3.7.2",
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@chrisb-dev/tslint": "^1.0.1",
     "@types/jest": "^24.0.13",
     "@types/supertest": "^2.0.7",
     "concurrently": "^5.0.2",
     "env-yaml": "^0.1.2",
     "jest": "^24.8.0",
-    "pre-commit": "^1.2.2",
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.5.4",
-    "tsc-watch": "^4.0.0",
-    "tslint": "^5.17.0"
+    "tsc-watch": "^4.0.0"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -71,7 +68,7 @@
     },
     "testRegex": ".*spec.ts$"
   },
-  "pre-commit": [
-    "lint"
-  ]
+  "workspaces": {
+    "nohoist": ["**"]
+  }
 }
