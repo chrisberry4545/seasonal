@@ -12,7 +12,8 @@ import {
   selectAllRegions,
   userRegionDetected,
   SET_USER_REGION_DETECTED,
-  selectSettingsRegionCode
+  selectSettingsRegionCode,
+  INIT_SETTINGS
 } from '@chrisb-dev/seasonal-shared';
 
 import { IState } from '../../interfaces';
@@ -41,7 +42,8 @@ export const storeSettings$: AppSeasonalEpic = (
     ofType(
       SET_DIET_TYPE,
       SET_REGION,
-      SET_USER_REGION_DETECTED
+      SET_USER_REGION_DETECTED,
+      INIT_SETTINGS
     ),
     withLatestFrom(state$),
     map(([, state]) => selectSettingsState(state)),
@@ -56,10 +58,19 @@ export const getStoredSettings$: AppSeasonalEpic = (
   actions$.pipe(
     ofType(INIT_APP),
     switchMap(() => getStoredData<ISettingsState>(settingsStorageKey)),
-    map((settings) => initSettings(settings || {
-      dietType: DIET_TYPE.ALL,
-      selectedRegionCode: undefined
-    }))
+    map((settings) => initSettings(
+      settings
+      ? {
+        ...settings,
+        timesAppStarted: (settings.timesAppStarted || 0) + 1
+      }
+      :
+      {
+        dietType: DIET_TYPE.ALL,
+        selectedRegionCode: undefined,
+        timesAppStarted: 1
+      })
+    )
   )
 );
 

@@ -10,10 +10,13 @@ import {
   SET_USER_REGION_DETECTED
 } from '../actions';
 import { DIET_TYPE } from '../../enums';
+import uuidv4 from 'uuid/v4';
 
 const getDefaultState = (): ISettingsState => ({
   dietType: DIET_TYPE.ALL,
-  selectedRegionCode: undefined
+  selectedRegionCode: undefined,
+  timesAppStarted: 0,
+  userId: undefined
 });
 
 export function settingsReducer(
@@ -22,9 +25,11 @@ export function settingsReducer(
 ) {
   switch (action.type) {
     case INIT_SETTINGS:
+      const initialSettings = (action as IInitSettings).settings;
       return {
         ...state,
-        ...(action as IInitSettings).settings
+        ...initialSettings,
+        userId: initialSettings.userId || uuidv4()
       };
     case SET_DIET_TYPE:
       return {
