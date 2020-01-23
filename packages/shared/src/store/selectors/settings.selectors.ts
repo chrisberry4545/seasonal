@@ -15,3 +15,8 @@ export const selectSettingsRegionCode = createSelector(
   selectSettingsState,
   (settings): string | undefined => settings.selectedRegionCode
 );
+
+export const selectSettingsUserId = createSelector(
+  selectSettingsState,
+  (settings): string | undefined => settings.userId
+);
