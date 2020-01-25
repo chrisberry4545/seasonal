@@ -20,3 +20,8 @@ export const selectSettingsUserId = createSelector(
   selectSettingsState,
   (settings): string | undefined => settings.userId
 );
+
+export const selectSettingsTimesAppStarted = createSelector(
+  selectSettingsState,
+  (settings): number | undefined => settings.timesAppStarted
+);

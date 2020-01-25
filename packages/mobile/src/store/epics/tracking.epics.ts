@@ -2,7 +2,14 @@ import { ActionsObservable, StateObservable, ofType } from 'redux-observable';
 
 import {
   GO_BACK_FROM_FOOD_DETAILS,
-  GO_TO_ABOUT_US_PAGE
+  GO_TO_ABOUT_US_PAGE,
+  SEND_FEEDBACK_DO_NOT_LIKE_APP,
+  SEND_FEEDBACK_LIKE_APP,
+  SEND_FEEDBACK_DO_NOT_WANT_TO_RATE,
+  SEND_FEEDBACK_IMPROVEMENTS,
+  SEND_FEEDBACK_WANT_TO_RATE,
+  CLOSE_FEEDBACK_POPUP,
+  SHOW_FEEDBACK_POPUP
 } from '../actions';
 
 import {
@@ -17,7 +24,6 @@ import {
   SET_DIET_TYPE,
   SHOW_LOCATION_SETTINGS_POPUP,
   SHOW_SEARCH_BAR,
-  IState,
   selectSettingsUserId,
   INIT_SETTINGS
 } from '@chrisb-dev/seasonal-shared';
@@ -32,6 +38,7 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { trackEvent, setTrackingUser } from '../../helpers';
+import { IState } from '../../interfaces';
 import { AppSeasonalEpic } from './seasonal-epic.type';
 
 const ACTIONS_TO_TRACK = [
@@ -47,7 +54,14 @@ const ACTIONS_TO_TRACK = [
   SET_CURRENT_FOOD_DETAILS_SUCCESS,
   SET_DIET_TYPE,
   SHOW_LOCATION_SETTINGS_POPUP,
-  SHOW_SEARCH_BAR
+  SHOW_SEARCH_BAR,
+  SEND_FEEDBACK_DO_NOT_LIKE_APP,
+  SEND_FEEDBACK_LIKE_APP,
+  SEND_FEEDBACK_DO_NOT_WANT_TO_RATE,
+  SEND_FEEDBACK_WANT_TO_RATE,
+  SEND_FEEDBACK_IMPROVEMENTS,
+  SHOW_FEEDBACK_POPUP,
+  CLOSE_FEEDBACK_POPUP
 ];
 
 export const initTrackingUser$: AppSeasonalEpic = (

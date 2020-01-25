@@ -5,6 +5,13 @@ import {
 } from '@chrisb-dev/seasonal-shared';
 
 import {
+  showFeedbackForm$,
+  showStoreListing$,
+  storeFeedbackSettings$,
+  getStoredFeedbackSettings$
+} from './feedback.epics';
+
+import {
   goToAboutUsPage$,
   goToRecipeLink$,
   goToFoodLink$,
@@ -33,5 +40,9 @@ export const rootEpic = combineEpics(
   trackActionEpic$,
   getStoredSettings$,
   storeSettings$,
-  detectCountry$
+  detectCountry$,
+  storeFeedbackSettings$,
+  getStoredFeedbackSettings$,
+  showFeedbackForm$,
+  showStoreListing$
 );
