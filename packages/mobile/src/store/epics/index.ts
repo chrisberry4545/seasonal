@@ -8,7 +8,8 @@ import {
   showFeedbackForm$,
   showStoreListing$,
   storeFeedbackSettings$,
-  getStoredFeedbackSettings$
+  getStoredFeedbackSettings$,
+  sendFeedbackImprovements$
 } from './feedback.epics';
 
 import {
@@ -44,5 +45,6 @@ export const rootEpic = combineEpics(
   storeFeedbackSettings$,
   getStoredFeedbackSettings$,
   showFeedbackForm$,
+  sendFeedbackImprovements$,
   showStoreListing$
 );

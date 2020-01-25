@@ -42,16 +42,36 @@ export function sendFeedbackDoNotLikeApp() {
   };
 }
 
-export interface ISendFeedbackImprovements extends Action {
+export interface IFeedbackImprovementsChanged extends Action {
   improvements: string;
 }
-export const SEND_FEEDBACK_IMPROVEMENTS = 'SEND_FEEDBACK_IMPROVEMENTS';
-export function sendFeedbackImprovements(
+export const FEEDBACK_IMPROVEMENTS_CHANGED = 'FEEDBACK_IMPROVEMENTS_CHANGED';
+export function feedbackImprovementsChanged(
   improvements: string
-): ISendFeedbackImprovements {
+): IFeedbackImprovementsChanged {
   return {
     improvements,
-    type: SEND_FEEDBACK_IMPROVEMENTS
+    type: FEEDBACK_IMPROVEMENTS_CHANGED
+  };
+}
+
+export const SEND_FEEDBACK_IMPROVEMENTS_START = 'SEND_FEEDBACK_IMPROVEMENTS_START';
+export function sendFeedbackImprovementsStart(): Action {
+  return {
+    type: SEND_FEEDBACK_IMPROVEMENTS_START
+  };
+}
+
+export interface ISendFeedbackImprovementsSuccess extends Action {
+  improvements: string;
+}
+export const SEND_FEEDBACK_IMPROVEMENTS_SUCCESS = 'SEND_FEEDBACK_IMPROVEMENTS_SUCCESS';
+export function sendFeedbackImprovementsSuccess(
+  improvements: string
+): ISendFeedbackImprovementsSuccess {
+  return {
+    improvements,
+    type: SEND_FEEDBACK_IMPROVEMENTS_SUCCESS
   };
 }
 

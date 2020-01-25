@@ -7,7 +7,7 @@ import {
   FeedbackRateOnStoreQuestion
 } from './FeedbackRateOnStoreQuestion';
 import {
-  sendFeedbackWantToRate
+  sendFeedbackWantToRate, sendFeedbackDoNotWantToRate
 } from '../../store';
 import { Dispatch } from 'redux';
 
@@ -17,7 +17,7 @@ const mapDispatchToProps = (
   dispatch: Dispatch
 ): IFeedbackRateOnStoreQuestionDispatchProps => {
   return {
-    sendFeedbackDoNotWantToRate: () => dispatch(sendFeedbackWantToRate()),
+    sendFeedbackDoNotWantToRate: () => dispatch(sendFeedbackDoNotWantToRate()),
     sendFeedbackWantToRate: () => dispatch(sendFeedbackWantToRate())
   };
 };

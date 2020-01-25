@@ -38,3 +38,8 @@ export const selectIsFeedbackRateOnStoreQuestionVisible =
     (feedbackState): boolean => feedbackState.currentFeedbackView ===
       FeedbackViewStates.RATE_ON_STORE
   );
+
+export const selectFeedbackImprovements = createSelector(
+  selectFeedbackState,
+  (feedbackState): string | undefined => feedbackState.improvements
+);

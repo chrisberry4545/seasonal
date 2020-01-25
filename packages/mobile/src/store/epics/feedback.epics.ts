@@ -9,7 +9,9 @@ import {
   SEND_FEEDBACK_DO_NOT_WANT_TO_RATE,
   initFeedbackState,
   INIT_FEEDBACK_STATE,
-  CLOSE_FEEDBACK_POPUP
+  CLOSE_FEEDBACK_POPUP,
+  SEND_FEEDBACK_IMPROVEMENTS_START,
+  sendFeedbackImprovementsSuccess
 } from '../actions';
 import {
   tap,
@@ -25,7 +27,12 @@ import {
 import { IState, IFeedbackState } from '../../interfaces';
 import { selectSettingsTimesAppStarted, INIT_APP } from '@chrisb-dev/seasonal-shared';
 import { goToLinkUrl, setStoredData, getStoredData } from '../../helpers';
-import { selectHasGivenFeedback, selectHasBeenShownFeedbackQuestions, selectFeedbackState } from '../selectors';
+import {
+  selectHasGivenFeedback,
+  selectHasBeenShownFeedbackQuestions,
+  selectFeedbackState,
+  selectFeedbackImprovements
+} from '../selectors';
 import { STORE_URL } from '../../config';
 
 const feedbackStorageKey = 'feedbackStorage';
@@ -84,6 +91,19 @@ export const showFeedbackForm$: AppSeasonalEpic = (
     delay(10000),
     first(),
     mapTo(showFeedbackPopup())
+  )
+);
+
+export const sendFeedbackImprovements$: AppSeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+  state$: StateObservable<IState>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(SEND_FEEDBACK_IMPROVEMENTS_START),
+    withLatestFrom(state$),
+    map(([, state]) => selectFeedbackImprovements(state)),
+    filter((improvements) => improvements !== undefined),
+    map((improvements) => sendFeedbackImprovementsSuccess(improvements!))
   )
 );
 

@@ -1,4 +1,5 @@
 export interface IFeedbackImprovementsQuestionDispatchProps {
   closeFeedbackModal: () => void;
-  sendFeedbackImprovements: (improvements: string) => void;
+  feedbackImprovementsChanged: (improvements: string) => void;
+  sendFeedbackImprovementsStart: () => void;
 }

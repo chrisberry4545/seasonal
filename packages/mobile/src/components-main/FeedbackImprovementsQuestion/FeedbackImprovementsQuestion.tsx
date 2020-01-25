@@ -7,14 +7,17 @@ export const FeedbackImprovementsQuestion: FC<
   IFeedbackImprovementsQuestionDispatchProps
 > = ({
   closeFeedbackModal,
-  sendFeedbackImprovements
+  feedbackImprovementsChanged,
+  sendFeedbackImprovementsStart
 }) => (
   <FeedbackQuestionsLayout
     questionTitle={'We\'d love to hear feedback on how we could improve'}
     rejectButtonText='Not now'
     onRejectButtonClicked={closeFeedbackModal}
     confirmButtonText='Send feedback'
-    onConfirmButtonClicked={() => sendFeedbackImprovements('test')}>
-    <MultilineInput placeholder='Your feedback'></MultilineInput>
+    onConfirmButtonClicked={() => sendFeedbackImprovementsStart()}>
+    <MultilineInput
+      onChangeText={(improvements) => feedbackImprovementsChanged(improvements) }
+      placeholder='Your feedback'></MultilineInput>
   </FeedbackQuestionsLayout>
 );

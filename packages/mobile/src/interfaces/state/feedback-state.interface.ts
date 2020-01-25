@@ -9,4 +9,5 @@ export interface IFeedbackState {
   hasGivenFeedback: boolean;
   isFeedbackPopupVisible: boolean;
   currentFeedbackView: FeedbackViewStates;
+  improvements: string | undefined;
 }
