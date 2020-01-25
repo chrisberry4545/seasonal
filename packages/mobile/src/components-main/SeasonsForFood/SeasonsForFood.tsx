@@ -89,14 +89,14 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
           seasonIndex
         ) => (
           <BareButton
-            style={ [
-              styleSeasonsForFoodSeason,
+            style={{
+              ...styleSeasonsForFoodSeason,
               ...(
                 isSelected ?
-                  [styleSeasonsForFoodSeasonSelected]
-                  : []
+                  styleSeasonsForFoodSeasonSelected
+                  : {}
               )
-            ] }
+            }}
             key={name}
             onClick={ () => onSeasonSelected(seasonIndex)}>
             <TextMedium>
