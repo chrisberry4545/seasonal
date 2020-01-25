@@ -31,7 +31,7 @@
       "permissions": [
         "ACCESS_COARSE_LOCATION"
       ],
-      "versionCode": 51
+      "versionCode": 53
     }
   }
 }
