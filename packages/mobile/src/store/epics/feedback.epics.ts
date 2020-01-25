@@ -26,6 +26,7 @@ import { IState, IFeedbackState } from '../../interfaces';
 import { selectSettingsTimesAppStarted, INIT_APP } from '@chrisb-dev/seasonal-shared';
 import { goToLinkUrl, setStoredData, getStoredData } from '../../helpers';
 import { selectHasGivenFeedback, selectHasBeenShownFeedbackQuestions, selectFeedbackState } from '../selectors';
+import { STORE_URL } from '../../config';
 
 const feedbackStorageKey = 'feedbackStorage';
 
@@ -91,7 +92,7 @@ export const showStoreListing$: AppSeasonalEpic = (
 ): Observable<Action> => (
   actions$.pipe(
     ofType(SEND_FEEDBACK_WANT_TO_RATE),
-    tap(() => goToLinkUrl('market://com.chrisbdev.seasonal')),
+    tap(() => goToLinkUrl(STORE_URL)),
     ignoreElements()
   )
 );
