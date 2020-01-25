@@ -1,6 +1,5 @@
 import {
-  IFeedbackQuestionsInputProps,
-  IFeedbackQuestionsDispatchProps
+  IFeedbackQuestionsInputProps
 } from './FeedbackQuestions.interface';
 
 import { connect } from 'react-redux';
@@ -10,14 +9,9 @@ import {
 import {
   selectIsFeedbackDoYouLikeTheAppQuestionVisible,
   selectIsFeedbackImprovementsQuestionVisible,
-  selectIsFeedbackRateOnStoreQuestionVisible,
-  sendFeedbackDoNotLikeApp,
-  sendFeedbackImprovements,
-  sendFeedbackLikeApp,
-  sendFeedbackWantToRate
+  selectIsFeedbackRateOnStoreQuestionVisible
 } from '../../store';
 import { IState } from '../../interfaces';
-import { Dispatch } from 'redux';
 
 const mapStateToProps = (
   state: IState
@@ -32,20 +26,6 @@ const mapStateToProps = (
   };
 };
 
-const mapDispatchToProps = (
-  dispatch: Dispatch
-): IFeedbackQuestionsDispatchProps => {
-  return {
-    sendFeedbackDoNotLikeApp: () => dispatch(sendFeedbackDoNotLikeApp()),
-    sendFeedbackDoNotWantToRate: () => dispatch(sendFeedbackWantToRate()),
-    sendFeedbackImprovements: (improvements: string) =>
-      dispatch(sendFeedbackImprovements(improvements)),
-    sendFeedbackLikeApp: () => dispatch(sendFeedbackLikeApp()),
-    sendFeedbackWantToRate: () => dispatch(sendFeedbackWantToRate())
-  };
-};
-
 export const FeedbackQuestionsConnector = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(FeedbackQuestions);

@@ -14,6 +14,13 @@ export function initFeedbackState(
   };
 }
 
+export const ON_MENU_FEEDBACK_SELECTED = 'ON_MENU_FEEDBACK_SELECTED';
+export function onMenuFeedbackSelected() {
+  return {
+    type: 'ON_MENU_FEEDBACK_SELECTED'
+  };
+}
+
 export const SHOW_FEEDBACK_POPUP = 'SHOW_FEEDBACK_POPUP';
 export function showFeedbackPopup() {
   return {

@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react';
-import { IFeedbackQuestionsProps } from './FeedbackQuestions.interface';
+import { IFeedbackQuestionsInputProps } from './FeedbackQuestions.interface';
 import {
   FeedbackDoYouLikeTheAppQuestionConnector
 } from '../FeedbackDoYouLikeTheAppQuestion/FeedbackDoYouLikeTheAppQuestion.connector';
@@ -10,7 +10,7 @@ import {
   FeedbackRateOnStoreQuestionConnector
 } from '../FeedbackRateOnStoreQuestion/FeedbackRateOnStoreQuestion.connector';
 
-export const FeedbackQuestions: FC<IFeedbackQuestionsProps> = ({
+export const FeedbackQuestions: FC<IFeedbackQuestionsInputProps> = ({
   isDoYouLikeTheAppQuestionVisible,
   isImprovementsQuestionVisible,
   isRateOnStoreQuestionVisible

@@ -7,7 +7,8 @@ import {
   SEND_FEEDBACK_DO_NOT_WANT_TO_RATE,
   SEND_FEEDBACK_WANT_TO_RATE,
   INIT_FEEDBACK_STATE,
-  IInitFeedbackState
+  IInitFeedbackState,
+  ON_MENU_FEEDBACK_SELECTED
 } from '../actions';
 import { IFeedbackState, FeedbackViewStates } from '../../interfaces';
 import { Action } from 'redux';
@@ -29,6 +30,7 @@ export function feedbackReducer(
         ...state,
         ...(action as IInitFeedbackState).feedbackState
       };
+    case ON_MENU_FEEDBACK_SELECTED:
     case SHOW_FEEDBACK_POPUP:
       return {
         ...state,

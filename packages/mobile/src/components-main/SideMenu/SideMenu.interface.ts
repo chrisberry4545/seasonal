@@ -15,6 +15,7 @@ export interface ISideMenuDispatchProps {
   onGoToAboutUsPage: () => void;
   onGoToSettingsPage: () => void;
   onAllSeasonsSelected: () => void;
+  onMenuFeedbackSelected: () => void;
 }
 
 export interface ISideMenuProps

@@ -25,10 +25,10 @@ export const RadioButton: FC<{
   onClick
 }) => (
   <BareButton
-    style={[
-      styleRadioButton,
-      ...(isSelected ? [styleRadioButtonSelected] : [])
-    ]}
+    style={{
+      ...styleRadioButton,
+      ...(isSelected ? styleRadioButtonSelected : {})
+    }}
     onClick={onClick}
     >
     <TextMedium>{label}</TextMedium>

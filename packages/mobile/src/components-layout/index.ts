@@ -1,3 +1,7 @@
+export * from './ConfirmButtonLayout/ConfirmButtonLayout';
+
+export * from './FeedbackQuestionsLayout/FeedbackQuestionsLayout';
+
 export * from './ImageGrid/ImageGrid';
 
 export * from './ImageGridItem/ImageGridItem';

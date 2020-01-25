@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
 import { IFeedbackRateOnStoreQuestionDispatchProps } from './FeedbackRateOnStoreQuestion.interface';
-import { View } from 'react-native';
-import { TextHeadingMedium, TextMedium, BareButton } from '../../components-elements';
+import { TextMedium } from '../../components-elements';
+import { FeedbackQuestionsLayout } from '../../components-layout';
+import { TextStyle } from 'react-native';
+
+const styleFeedbackRateOnStoreQuestionText: TextStyle = {
+  textAlign: 'center'
+};
 
 export const FeedbackRateOnStoreQuestion: FC<
   IFeedbackRateOnStoreQuestionDispatchProps
@@ -9,22 +14,15 @@ export const FeedbackRateOnStoreQuestion: FC<
   sendFeedbackDoNotWantToRate,
   sendFeedbackWantToRate
 }) => (
-  <View>
-    <TextHeadingMedium>
-      Would you mind giving us a rating on the app store?
-    </TextHeadingMedium>
-    <TextMedium>
-      Help others Eat Seasonal
+  <FeedbackQuestionsLayout
+    questionTitle='Help others Eat Seasonal'
+    rejectButtonText='Not now'
+    onRejectButtonClicked={sendFeedbackDoNotWantToRate}
+    confirmButtonText='Rate the app'
+    onConfirmButtonClicked={sendFeedbackWantToRate}>
+    <TextMedium style={styleFeedbackRateOnStoreQuestionText}>
+      Rating the app will help other people find the app and
+      start eating seasonally
     </TextMedium>
-    <BareButton onClick={sendFeedbackDoNotWantToRate}>
-      <TextMedium>
-        Not now
-      </TextMedium>
-    </BareButton>
-    <BareButton onClick={sendFeedbackWantToRate}>
-      <TextMedium>
-        Rate the app
-      </TextMedium>
-    </BareButton>
-  </View>
+  </FeedbackQuestionsLayout>
 );

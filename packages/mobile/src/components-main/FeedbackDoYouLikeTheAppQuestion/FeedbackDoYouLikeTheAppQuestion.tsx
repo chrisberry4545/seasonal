@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { IFeedbackDoYouLikeTheAppQuestionDispatchProps } from './FeedbackDoYouLikeTheAppQuestion.interface';
-import { View } from 'react-native';
-import { TextHeadingMedium, BareButton, TextMedium } from '../../components-elements';
+import { FeedbackQuestionsLayout } from '../../components-layout';
 
 export const FeedbackDoYouLikeTheAppQuestion: FC<
   IFeedbackDoYouLikeTheAppQuestionDispatchProps
@@ -9,19 +8,11 @@ export const FeedbackDoYouLikeTheAppQuestion: FC<
   sendFeedbackDoNotLikeApp,
   sendFeedbackLikeApp
 }) => (
-  <View>
-    <TextHeadingMedium>
-      Are you enjoying Eat Seasonal?
-    </TextHeadingMedium>
-    <BareButton onClick={sendFeedbackDoNotLikeApp}>
-      <TextMedium>
-        No
-      </TextMedium>
-    </BareButton>
-    <BareButton onClick={sendFeedbackLikeApp}>
-      <TextMedium>
-        Yes
-      </TextMedium>
-    </BareButton>
-  </View>
+  <FeedbackQuestionsLayout
+    questionTitle='Is Eat Seasonal useful?'
+    rejectButtonText='No'
+    onRejectButtonClicked={sendFeedbackDoNotLikeApp}
+    confirmButtonText='Yes'
+    onConfirmButtonClicked={sendFeedbackLikeApp}>
+  </FeedbackQuestionsLayout>
 );

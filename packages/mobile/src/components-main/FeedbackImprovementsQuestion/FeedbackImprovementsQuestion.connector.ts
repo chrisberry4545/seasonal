@@ -7,7 +7,7 @@ import {
   FeedbackImprovementsQuestion
 } from './FeedbackImprovementsQuestion';
 import {
-  sendFeedbackImprovements
+  sendFeedbackImprovements, closeFeedbackPopup
 } from '../../store';
 import { Dispatch } from 'redux';
 
@@ -17,6 +17,7 @@ const mapDispatchToProps = (
   dispatch: Dispatch
 ): IFeedbackImprovementsQuestionDispatchProps => {
   return {
+    closeFeedbackModal: () => dispatch(closeFeedbackPopup()),
     sendFeedbackImprovements: (improvements: string) =>
       dispatch(sendFeedbackImprovements(improvements))
   };

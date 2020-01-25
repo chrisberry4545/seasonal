@@ -18,9 +18,9 @@ import {
   map,
   filter,
   mapTo,
-  debounceTime,
   switchMap,
-  first
+  first,
+  delay
 } from 'rxjs/operators';
 import { IState, IFeedbackState } from '../../interfaces';
 import { selectSettingsTimesAppStarted, INIT_APP } from '@chrisb-dev/seasonal-shared';
@@ -63,7 +63,6 @@ export const showFeedbackForm$: AppSeasonalEpic = (
 ): Observable<Action> => (
   actions$.pipe(
     ofType(INIT_FEEDBACK_STATE),
-    first(),
     withLatestFrom(state$),
     map(([, state]) => ({
       hasBeenShownFeedbackQuestions:
@@ -81,7 +80,8 @@ export const showFeedbackForm$: AppSeasonalEpic = (
       && timesAppStarted
       && timesAppStarted > 3
     ))),
-    debounceTime(5000),
+    delay(10000),
+    first(),
     mapTo(showFeedbackPopup())
   )
 );

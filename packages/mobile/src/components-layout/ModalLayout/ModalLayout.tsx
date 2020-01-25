@@ -2,15 +2,32 @@ import React, { FC } from 'react';
 import { IModalLayout } from './ModalLayout.interface';
 import { View, Modal, ViewStyle } from 'react-native';
 import { BareButton, CrossIcon } from '../../components-elements';
+import { colors } from '../../styles/colors';
 
-const styleModalView: ViewStyle = {
-  padding: 20
+const styleModalWrapper: ViewStyle = {
+  alignItems: 'center',
+  backgroundColor: 'rgba(0,0,0,0.5)',
+  height: '100%',
+  justifyContent: 'center',
+  left: 0,
+  position: 'absolute',
+  top: 0,
+  width: '100%'
 };
 
-const styleModalLayoutCloseButtonView: ViewStyle = {
-  flexDirection: 'row',
-  justifyContent: 'flex-end',
-  marginTop: 20
+const styleModalView: ViewStyle = {
+  backgroundColor: colors.backgroundColor,
+  margin: 10,
+  maxWidth: 350,
+  paddingBottom: 20,
+  paddingHorizontal: 40,
+  paddingTop: 50
+};
+
+const styleModalLayoutCloseButton: ViewStyle = {
+  position: 'absolute',
+  right: 12,
+  top: 4
 };
 
 export const ModalLayout: FC<IModalLayout> = ({
@@ -19,20 +36,20 @@ export const ModalLayout: FC<IModalLayout> = ({
   onClose
 }) => (
   <Modal
-    presentationStyle='pageSheet'
+    presentationStyle='overFullScreen'
     animationType='fade'
-    transparent={false}
+    transparent={true}
     visible={isVisible}>
-    <View style={styleModalView}>
-      {
-        onClose &&
-        <View style={styleModalLayoutCloseButtonView}>
-          <BareButton onClick={onClose}>
+    <View style={styleModalWrapper}>
+      <View style={styleModalView}>
+        {
+          onClose &&
+          <BareButton style={styleModalLayoutCloseButton} onClick={onClose}>
             <CrossIcon size={32} />
           </BareButton>
-        </View>
-      }
-      { children }
+        }
+        { children }
+      </View>
     </View>
   </Modal>
 );

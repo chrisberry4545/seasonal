@@ -1,22 +1,20 @@
 import React, { FC } from 'react';
 import { IFeedbackImprovementsQuestionDispatchProps } from './FeedbackImprovementsQuestion.interface';
-import { View } from 'react-native';
-import { TextHeadingMedium, Input, BareButton, TextMedium } from '../../components-elements';
+import { MultilineInput } from '../../components-elements';
+import { FeedbackQuestionsLayout } from '../../components-layout';
 
 export const FeedbackImprovementsQuestion: FC<
   IFeedbackImprovementsQuestionDispatchProps
 > = ({
+  closeFeedbackModal,
   sendFeedbackImprovements
 }) => (
-  <View>
-    <TextHeadingMedium>
-      How would you improve Eat Seasonal if you could?
-    </TextHeadingMedium>
-    <Input></Input>
-    <BareButton onClick={() => sendFeedbackImprovements('test')}>
-      <TextMedium>
-        Send feedback
-      </TextMedium>
-    </BareButton>
-  </View>
+  <FeedbackQuestionsLayout
+    questionTitle={'We\'d love to hear feedback on how we could improve'}
+    rejectButtonText='Not now'
+    onRejectButtonClicked={closeFeedbackModal}
+    confirmButtonText='Send feedback'
+    onConfirmButtonClicked={() => sendFeedbackImprovements('test')}>
+    <MultilineInput placeholder='Your feedback'></MultilineInput>
+  </FeedbackQuestionsLayout>
 );

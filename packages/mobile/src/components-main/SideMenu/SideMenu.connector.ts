@@ -10,7 +10,8 @@ import {
   goToAllSeasonsView
 } from '@chrisb-dev/seasonal-shared';
 import {
-  goToAboutUsPage, goToSettingsPage
+  goToAboutUsPage, goToSettingsPage,
+  onMenuFeedbackSelected
 } from '../../store';
 
 import { IState } from '../../interfaces';
@@ -44,6 +45,7 @@ const mapDispatchToProps = (
   onAllSeasonsSelected: () => dispatch(goToAllSeasonsView()),
   onGoToAboutUsPage: () => dispatch(goToAboutUsPage()),
   onGoToSettingsPage: () => dispatch(goToSettingsPage()),
+  onMenuFeedbackSelected: () => dispatch(onMenuFeedbackSelected()),
   onSeasonSelected: (
     seasonIndex: number
   ) => dispatch(selectSeason(seasonIndex))
