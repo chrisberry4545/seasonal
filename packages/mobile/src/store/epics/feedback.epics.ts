@@ -86,7 +86,7 @@ export const showFeedbackForm$: AppSeasonalEpic = (
       !hasBeenShownFeedbackQuestions
       && !hasGivenFeedback
       && timesAppStarted
-      && timesAppStarted > 3
+      && timesAppStarted > 2
     ))),
     delay(10000),
     first(),
