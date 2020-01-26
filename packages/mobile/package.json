@@ -11,7 +11,8 @@
     "eject": "expo eject",
     "build:android": "expo build:android -t app-bundle",
     "build:ios": "expo build:ios",
-    "publish:ios": "expo upload:ios",
+    "upload:android": "expo upload:android --track beta",
+    "upload:ios": "expo upload:ios",
     "react-schematics": "schematics @chrisb-dev/react-schematics:react-components --scss=false"
   },
   "dependencies": {
