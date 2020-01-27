@@ -25,7 +25,8 @@ import {
   SHOW_LOCATION_SETTINGS_POPUP,
   SHOW_SEARCH_BAR,
   selectSettingsUserId,
-  INIT_SETTINGS
+  INIT_SETTINGS,
+  USER_REGION_DETECTED
 } from '@chrisb-dev/seasonal-shared';
 
 import {
@@ -61,7 +62,8 @@ const ACTIONS_TO_TRACK = [
   SEND_FEEDBACK_WANT_TO_RATE,
   SEND_FEEDBACK_IMPROVEMENTS_SUCCESS,
   SHOW_FEEDBACK_POPUP,
-  CLOSE_FEEDBACK_POPUP
+  CLOSE_FEEDBACK_POPUP,
+  USER_REGION_DETECTED
 ];
 
 export const initTrackingUser$: AppSeasonalEpic = (
