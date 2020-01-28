@@ -7,7 +7,8 @@ import { colors } from '../../styles/colors';
 const styleMultilineInput: TextStyle = {
   borderColor: colors.greyMed,
   borderWidth: 1,
-  minHeight: 100
+  minHeight: 100,
+  textAlignVertical: 'top'
 };
 
 export const MultilineInput: FC<TextInputProps> = ({

@@ -10,7 +10,8 @@ import { colors } from '../../styles/colors';
 const styleBorderedButton: ViewStyle = {
   borderColor: colors.greyMed,
   borderWidth: 1,
-  padding: 10
+  padding: 10,
+  paddingTop: 11
 };
 
 export const BorderedButton: FC<IButton> = ({
