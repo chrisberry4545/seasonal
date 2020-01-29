@@ -7,19 +7,23 @@ import {
 import { createEpicMiddleware } from 'redux-observable';
 
 import {
-  allReducers,
-  IState
+  allReducers
 } from '@chrisb-dev/seasonal-shared';
+
+import { IState } from '../../interfaces';
 
 import {
   rootEpic
 } from '../epics';
 
+import { feedbackReducer } from './feedback.reducer';
+
 const epicMiddleware = createEpicMiddleware<Action, Action, IState, {}>();
 
 export const store = createStore(
   combineReducers<IState>({
-    ...allReducers
+    ...allReducers,
+    feedback: feedbackReducer
   }),
   undefined,
   applyMiddleware(

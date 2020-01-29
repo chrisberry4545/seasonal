@@ -60,7 +60,7 @@ export const SearchBar: FC<ISearchBarProps> = ({
             onChangeText={(newSearchTerm) => onSearchChanged(newSearchTerm)}
             placeholder='Search'/>
           <BareButton
-            style={ [styleSearchBarButton, styleSearchBarCloseButton] }
+            style={ {...styleSearchBarButton, ...styleSearchBarCloseButton} }
             onClick={onHideSearchBar}>
             <CrossIcon size={ 40 } />
           </BareButton>

@@ -5,6 +5,14 @@ import {
 } from '@chrisb-dev/seasonal-shared';
 
 import {
+  showFeedbackForm$,
+  showStoreListing$,
+  storeFeedbackSettings$,
+  getStoredFeedbackSettings$,
+  sendFeedbackImprovements$
+} from './feedback.epics';
+
+import {
   goToAboutUsPage$,
   goToRecipeLink$,
   goToFoodLink$,
@@ -15,7 +23,7 @@ import {
   goBack$,
   goToSettingsPage$
 } from './route.epics';
-import { trackActionEpic$ } from './tracking.epics';
+import { initTrackingUser$, trackActionEpic$ } from './tracking.epics';
 import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings.epics';
 
 export const rootEpic = combineEpics(
@@ -29,8 +37,14 @@ export const rootEpic = combineEpics(
   goToAllSeasonsView$,
   closeMenu$,
   openMenu$,
+  initTrackingUser$,
   trackActionEpic$,
   getStoredSettings$,
   storeSettings$,
-  detectCountry$
+  detectCountry$,
+  storeFeedbackSettings$,
+  getStoredFeedbackSettings$,
+  showFeedbackForm$,
+  sendFeedbackImprovements$,
+  showStoreListing$
 );

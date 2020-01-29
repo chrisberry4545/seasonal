@@ -48,10 +48,10 @@ export const ImageGridItem: FC<IImageGridItem> = ({
   hasBottomBorder
 }) => (
   <BareButton
-    style={ [
-      styleImageGridItem,
-      hasBottomBorder ? [styleImageGridItemWithBorder] : undefined
-    ] }
+    style={{
+      ...styleImageGridItem,
+      ...(hasBottomBorder ? styleImageGridItemWithBorder : {})
+    }}
     onClick={() => {
       if (onClick) {
         onClick(id);

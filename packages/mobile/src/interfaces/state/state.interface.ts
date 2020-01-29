@@ -1,1 +1,6 @@
-export { IState } from '@chrisb-dev/seasonal-shared';
+import { IState as ISharedState } from '@chrisb-dev/seasonal-shared';
+import { IFeedbackState } from './feedback-state.interface';
+
+export interface IState extends ISharedState  {
+  feedback: IFeedbackState;
+}
