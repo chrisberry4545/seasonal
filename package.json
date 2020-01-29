@@ -28,6 +28,7 @@
     "postinstall": "yarn workspace @chrisb-dev/seasonal-shared build && yarn bootstrap",
     "lint": "tslint -c tslint.json 'packages/*/src/**/*.ts{,x}'",
     "bootstrap": "lerna bootstrap",
+    "shared:dev": "yarn workspaces @chrisb-dev/seasonal-shared dev",
     "backend:test": "yarn workspace @chrisb-dev/seasonal-backend test",
     "backend:dev": "yarn workspace @chrisb-dev/seasonal-backend dev",
     "frontend:dev": "yarn workspace @chrisb-dev/seasonal-frontend dev",
