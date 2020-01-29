@@ -46,14 +46,14 @@ const renderSideMenuButton = ({
 }) => (
   <BareButton
     key={key}
-    style={[
-      styleSideMenuButton,
+    style={{
+      ...styleSideMenuButton,
       ...(
         isSelected
           ? [styleSideMenuButtonSelected]
-          : []
+          : {}
       )
-    ]}
+    }}
     onClick={onClick}>
     <TextMedium>{ name }</TextMedium>
   </BareButton>
@@ -70,7 +70,8 @@ export const SideMenu: FC<ISideMenuProps> = ({
   onAllSeasonsSelected,
   onSeasonSelected,
   onGoToAboutUsPage,
-  onGoToSettingsPage
+  onGoToSettingsPage,
+  onMenuFeedbackSelected
 }) => (
   <View style={styleSideMenu}>
     <ScrollView style={styleSideMenuInner}>
@@ -108,6 +109,13 @@ export const SideMenu: FC<ISideMenuProps> = ({
                 isSelected: isCurrentRouteAboutUs,
                 name: 'About us',
                 onClick: onGoToAboutUsPage
+              })
+            }
+            {
+              renderSideMenuButton({
+                isSelected: false,
+                name: 'Give feedback',
+                onClick: onMenuFeedbackSelected
               })
             }
             </Fragment>)

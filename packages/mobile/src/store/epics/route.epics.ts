@@ -18,7 +18,6 @@ import {
   SELECT_SEASON,
   IFoodItemClicked,
   setCurrentFoodDetailsStart,
-  IState,
   selectCurrentSeasonRecipesById,
   GO_TO_ALL_SEASONS_VIEW,
   setAllSeasonsWithFoodStart,
@@ -29,6 +28,7 @@ import { withLatestFrom, map, tap, ignoreElements, mapTo } from 'rxjs/operators'
 import { goToLinkUrl } from '../../helpers';
 import { navigate, closeDrawer, openDrawer, navigateBackOne } from '../../services';
 import { ROUTES } from '../../const';
+import { IState } from '../../interfaces';
 
 export const goToRecipeLink$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>,
