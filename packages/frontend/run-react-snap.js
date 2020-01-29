@@ -1,9 +1,14 @@
 const { run } = require('react-snap');
 
 (async () => {
-  await run({
-    headless: true,
-    puppeteerArgs: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+  try {
+    await run({
+      fixWebpackChunksIssue: 'CRA2',
+      headless: true,
+      puppeteerArgs: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+  } catch(err) {
+    console.log('Failed to run react snap', err)
+  }
 })();
 

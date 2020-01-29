@@ -10,8 +10,7 @@ import {
   map,
   ignoreElements,
   withLatestFrom,
-  tap,
-  filter
+  tap
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
@@ -39,7 +38,6 @@ export const getStoredSettings$: WebSeasonalEpic = (
   actions$.pipe(
     ofType(INIT_APP),
     map(() => getStoredData<ISettingsState>(settingsStorageKey)),
-    filter(Boolean),
     map((settings) => initSettings(settings as ISettingsState))
   )
 );
