@@ -55,4 +55,9 @@ describe('Get countries', () => {
       .every((region) => region.code !== undefined);
     expect(allRegionsCodesDefined).toBe(true);
   });
+  test('Does not return countries where all regions are set to disabled', () => {
+    expect(
+      result.find((country) => country.name === 'Country has no enabled regions')
+    ).toBeUndefined();
+  });
 });

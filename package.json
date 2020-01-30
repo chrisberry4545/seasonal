@@ -29,7 +29,6 @@
     "lint": "tslint -c tslint.json 'packages/*/src/**/*.ts{,x}'",
     "bootstrap": "lerna bootstrap",
     "shared:dev": "yarn workspace @chrisb-dev/seasonal-shared dev",
-    "shared:dev": "yarn workspace @chrisb-dev/seasonal-shared dev",
     "backend:test": "yarn workspace @chrisb-dev/seasonal-backend test",
     "backend:dev": "yarn workspace @chrisb-dev/seasonal-backend dev",
     "frontend:dev": "yarn workspace @chrisb-dev/seasonal-frontend dev",
@@ -38,6 +37,7 @@
     "mobile:prod": "yarn workspace @chrisb-dev/seasonal-mobile start",
     "docker:database:dev": "docker-compose up -d postgres-dev && docker-compose logs --follow",
     "docker:backend:dev": "docker-compose up -d backend-dev && docker-compose logs --follow",
+    "docker:backend:test": "./tests/backend-run-functional-tests.sh",
     "docker:frontend:dev": "docker-compose up -d frontend-dev && docker-compose logs --follow"
   },
   "pre-commit": [
