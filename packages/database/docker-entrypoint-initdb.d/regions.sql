@@ -6,7 +6,8 @@ CREATE TABLE public.regions
     name text,
     country_id uuid,
     lat numeric,
-    lng numeric
+    lng numeric,
+    is_disabled boolean
 );
 
 INSERT INTO public.regions (
@@ -14,7 +15,8 @@ INSERT INTO public.regions (
   name,
   country_id,
   lat,
-  lng
+  lng,
+  is_disabled
 )
 VALUES
   (
@@ -22,12 +24,22 @@ VALUES
     'UK',
     '1fc52423-eb83-4cd9-9fdd-b6f9cb323c37',
     50,
-    50
+    50,
+    FALSE
   ),
   (
     'aus-sydney',
     'Sydney',
     'd6e57673-eee8-444a-b7be-d9ab553052cf',
     -50,
-    -50
+    -50,
+    FALSE
+  ),
+  (
+    'region_is_disabled',
+    'Region set to disabled',
+    '2168cb5e-a2e9-4bf6-b50d-95ad6a79227c',
+    -25,
+    -25,
+    TRUE
   );
