@@ -1,21 +1,16 @@
-import {
-  app
-} from '../../app';
+import { Response } from 'supertest';
+import { callLoginEndpointForUser } from './test-utils/login-utils';
 
-import supertest, { Response } from 'supertest';
-
-const loginUrl = `/login`;
-
-describe('Login', () => {
+describe('login-api', () => {
   let response: Response;
 
   describe('when the correct user data is used', () => {
     let result: { token: string };
     beforeAll(async () => {
-      response = await supertest(app).post(loginUrl).send({
-        password: 'admin-user-password',
-        username: 'admin-user'
-      });
+      response = await callLoginEndpointForUser(
+        'admin-user',
+        'admin-user-password'
+      );
       result = response.body;
     });
 
@@ -30,10 +25,10 @@ describe('Login', () => {
   describe('when the user is not found', () => {
     let result: string;
     beforeAll(async () => {
-      response = await supertest(app).post(loginUrl).send({
-        password: 'admin-user-password',
-        username: 'user-does-not-exist'
-      });
+      response = await callLoginEndpointForUser(
+        'user-does-not-exist',
+        'admin-user-password'
+      );
       result = response.body;
     });
 
@@ -48,10 +43,10 @@ describe('Login', () => {
   describe('when the password does not match', () => {
     let result: string;
     beforeAll(async () => {
-      response = await supertest(app).post(loginUrl).send({
-        password: 'wrong-password',
-        username: 'admin-user'
-      });
+      response = await callLoginEndpointForUser(
+        'admin-user',
+        'wrong-password'
+      );
       result = response.body;
     });
 
