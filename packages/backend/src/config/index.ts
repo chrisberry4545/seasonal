@@ -11,7 +11,7 @@ export const COUNTRY_ENDPOINT =
   process.env.COUNTRY_ENDPOINT || 'country';
 export const V2_ENDPOINT = process.env.V2_ENDPOINT || 'v2';
 export const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
-export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
+export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY || 'test-secret';
 
 export const DEFAULT_COUNTRY_ID =
   process.env.DEFAULT_COUNTRY_ID || 'gbr';

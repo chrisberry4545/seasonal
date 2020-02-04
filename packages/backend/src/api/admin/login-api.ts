@@ -12,24 +12,24 @@ import { JWT_SECRET_KEY } from '../../config';
 export const loginApi = (router = Router()) => {
   router.post('/', (req: Request, res: Response, next: NextFunction) => {
     appPassport.authenticate('login', async (err, user) => {
-      const sendAuthorizationError = (message: string) => {
-        res.status(401).send(message);
+      const sendAuthorizationError = () => {
+        res.status(401).send({ error: 'Login failed' });
         return;
       };
       try {
         if (err || !user) {
-          return sendAuthorizationError('No user found');
+          return sendAuthorizationError();
         }
         req.login(user, { session: false }, (error) => {
           if (error) {
-            return sendAuthorizationError('Login failed');
+            return sendAuthorizationError();
           }
           const body = { id : user.id, username : user.username };
           const token = jwt.sign({ user : body }, JWT_SECRET_KEY as string);
           return res.json({ token });
         });
       } catch (error) {
-        return sendAuthorizationError('Login failed');
+        return sendAuthorizationError();
       }
     })(req, res, next);
   });

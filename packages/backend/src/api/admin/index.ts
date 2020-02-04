@@ -2,7 +2,7 @@ import {
   Router
 } from 'express';
 
-import { usersApi } from './users-api';
+import { usersApi } from './user-api';
 import { appPassport } from './auth/app-passport';
 import { loginApi } from './login-api';
 import { adminAuth } from './auth/admin-auth';

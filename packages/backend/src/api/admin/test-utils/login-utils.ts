@@ -8,7 +8,7 @@ export const callLoginEndpointForUser = async (
   username: string,
   password: string
 ) => {
-  const response = await supertest(app).post('/login').send({
+  const response = await supertest(app).post('/admin/login').send({
     password,
     username
   });

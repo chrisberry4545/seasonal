@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`users-api get all when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "id": "30e59fda-220b-4e8b-9e01-3a9f8ceeec45",
+    "roles": Array [
+      "admin",
+    ],
+    "username": "admin-user",
+  },
+  Object {
+    "id": "53f5a3d1-db75-4c62-a309-79b3eea329b3",
+    "roles": Array [],
+    "username": "non-admin-user",
+  },
+]
+`;
