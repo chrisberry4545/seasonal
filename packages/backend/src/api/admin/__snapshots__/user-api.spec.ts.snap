@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create user when logged in as an admin and the username and password are present Returns the expected result 1`] = `
+Object {
+  "username": "new-user",
+}
+`;
+
+exports[`get all users when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "id": "30e59fda-220b-4e8b-9e01-3a9f8ceeec45",
+    "roles": Array [
+      "admin",
+    ],
+    "username": "admin-user",
+  },
+  Object {
+    "id": "53f5a3d1-db75-4c62-a309-79b3eea329b3",
+    "roles": Array [],
+    "username": "non-admin-user",
+  },
+]
+`;
+
+exports[`get single user when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "id": "30e59fda-220b-4e8b-9e01-3a9f8ceeec45",
+  "roles": Array [
+    "admin",
+  ],
+  "username": "admin-user",
+}
+`;

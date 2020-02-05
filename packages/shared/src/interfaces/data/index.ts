@@ -19,3 +19,5 @@ export * from './hydrated-food.interface';
 export * from './hydrated-season.interface';
 
 export * from './lat-lng.interface';
+
+export * from './user.interface';
