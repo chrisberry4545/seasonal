@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS public.users;
 
 CREATE TABLE public.users
 (
-  id uuid,
+  id uuid NOT NULL DEFAULT uuid_generate_v1(),
   username text,
   password text,
   roles text[]

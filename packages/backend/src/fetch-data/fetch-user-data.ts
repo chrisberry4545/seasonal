@@ -12,7 +12,7 @@ const saltRounds = 10;
 export const createUser = async (
   username: string,
   password: string
-): Promise<void> => {
+): Promise<IUser> => {
   const salt = await bcrypt.genSalt(saltRounds);
   const hashedPassword = await bcrypt.hash(password, salt);
   return await createDbUser(username, hashedPassword);

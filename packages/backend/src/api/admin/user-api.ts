@@ -10,7 +10,7 @@ import {
   fetchAllUsers
 } from '../../fetch-data';
 
-export const usersApi = (router = Router()) => {
+export const userApi = (router = Router()) => {
   router.get('/', async (req: Request, res: Response) => {
     try {
       const results = await fetchAllUsers();
@@ -31,11 +31,11 @@ export const usersApi = (router = Router()) => {
   router.post('/', async (req: Request, res: Response) => {
     const { username, password } = req.body;
     if (!username || !password) {
-      res.status(500).send('Username or password missing');
+      res.status(400).json({ error: 'Username or password missing' });
     }
     try {
-      await createUser(username, password);
-      return res.json({ success: true });
+      const user = await createUser(username, password);
+      return res.json(user);
     } catch (err) {
       return res.status(500).send(err);
     }

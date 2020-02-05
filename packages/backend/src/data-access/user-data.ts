@@ -4,13 +4,13 @@ import { IUser } from '@chrisb-dev/seasonal-shared';
 export const createDbUser = async (
   username: string,
   hashedPassword: string
-): Promise<void> => {
+): Promise<IUser> => {
   const getUserQuery = await getSqlQuery('create-user.sql');
-  await queryPostgres<IUser>(
+  const result = await queryPostgres<IUser>(
     getUserQuery,
     [username, hashedPassword]
   );
-  return;
+  return result.rows && result.rows[0];
 };
 
 export const getUserForLogin = async (
