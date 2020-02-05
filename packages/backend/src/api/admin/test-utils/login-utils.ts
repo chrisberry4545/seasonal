@@ -30,3 +30,28 @@ export const getNonAdminJwt = async () => {
   );
   return response.body && response.body.token;
 };
+
+export const attachJwtToken = (
+  supertestInstance: supertest.Test,
+  jwtToken: string
+) => supertestInstance.set('Authorization', `Bearer ${jwtToken}`);
+
+export const attachAdminJwtToken = async (
+  supertestInstance: supertest.Test
+) => {
+  const adminJwt = await getAdminJwt();
+  return attachJwtToken(
+    supertestInstance,
+    adminJwt
+  );
+};
+
+export const attachNonAdminJwtToken = async (
+  supertestInstance: supertest.Test
+) => {
+  const nonAdminJwt = await getNonAdminJwt();
+  return attachJwtToken(
+    supertestInstance,
+    nonAdminJwt
+  );
+};

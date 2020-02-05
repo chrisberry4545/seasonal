@@ -2,14 +2,14 @@ DROP TABLE IF EXISTS public.recipes;
 
 CREATE TABLE public.recipes
 (
-    id uuid,
-    link_url text,
-    image_url_small text,
-    is_vegetarian boolean,
-    is_vegan boolean,
-    name text,
-    primary_food_in_recipe_ids uuid[][],
-    secondary_food_in_recipe_ids uuid[][]
+  id uuid NOT NULL DEFAULT uuid_generate_v1(),
+  link_url text,
+  image_url_small text,
+  is_vegetarian boolean,
+  is_vegan boolean,
+  name text,
+  primary_food_in_recipe_ids uuid[][],
+  secondary_food_in_recipe_ids uuid[][]
 );
 
 INSERT INTO public.recipes (
