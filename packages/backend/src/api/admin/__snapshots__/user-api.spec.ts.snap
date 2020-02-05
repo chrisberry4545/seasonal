@@ -2,7 +2,6 @@
 
 exports[`create user when logged in as an admin and the username and password are present Returns the expected result 1`] = `
 Object {
-  "id": "e6ecf786-4739-11ea-817c-0242ac1f0004",
   "username": "new-user",
 }
 `;

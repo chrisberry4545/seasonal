@@ -148,7 +148,8 @@ describe('create user', () => {
         expect(response.status).toBe(200);
       });
       test('Returns the expected result', () => {
-        expect(result).toMatchSnapshot();
+        const { id, ...rest } = result;
+        expect(rest).toMatchSnapshot();
       });
       test('the user should be added to the database', async () => {
         const createdUserResponse = await attachAdminJwtToken(
