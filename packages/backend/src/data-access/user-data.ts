@@ -42,3 +42,30 @@ export const getUserById = async (
 
 export const getAllUsers = async (): Promise<IUser[]> =>
   getUsers(null);
+
+export const deleteDbUser = async (
+  userId: string
+): Promise<IUser> => {
+  const deleteUserQuery = await getSqlQuery('delete-user.sql');
+  const result = await queryPostgres<IUser>(
+    deleteUserQuery,
+    [userId]
+  );
+  return result.rows && result.rows[0];
+};
+
+export const editDbUser = async (
+  user: IUser
+): Promise<IUser> => {
+  const editUserQuery = await getSqlQuery('edit-user.sql');
+  const result = await queryPostgres<IUser>(
+    editUserQuery,
+    [
+      user.id,
+      user.username,
+      user.password,
+      user.roles
+    ]
+  );
+  return result.rows && result.rows[0];
+};

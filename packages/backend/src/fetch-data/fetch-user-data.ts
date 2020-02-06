@@ -3,16 +3,16 @@ import {
   getUserForLogin,
   getUserById,
   createDbUser,
-  getAllUsers
+  getAllUsers,
+  deleteDbUser,
+  editDbUser
 } from '../data-access';
 import bcrypt from 'bcrypt';
 
 const saltRounds = 10;
 
-export const createUser = async (
-  username: string,
-  password: string
-): Promise<IUser> => {
+export const createUser = async (user: IUser): Promise<IUser> => {
+  const { username, password } = user;
   const salt = await bcrypt.genSalt(saltRounds);
   const hashedPassword = await bcrypt.hash(password, salt);
   return await createDbUser(username, hashedPassword);
@@ -28,8 +28,16 @@ export const fetchUserWithUsernameAndPassword = async (
 };
 
 export const fetchUserById = async (
-  id: string
-): Promise<IUser | null> => getUserById(id);
+  userId: string
+): Promise<IUser | null> => getUserById(userId);
 
 export const fetchAllUsers = async (): Promise<IUser[]> =>
   getAllUsers();
+
+export const deleteUser = async (
+  userId: string
+): Promise<IUser> => deleteDbUser(userId);
+
+export const editUser = async (
+  user: IUser
+): Promise<IUser> => editDbUser(user);

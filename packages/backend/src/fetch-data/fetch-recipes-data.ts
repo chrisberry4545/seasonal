@@ -12,7 +12,7 @@ export const fetchAllRecipes = (): Promise<IRecipe[]> =>
 
 export const fetchSingleRecipe = (
   recipeId: string
-): Promise<IRecipe> => getSingleRecipe(recipeId);
+): Promise<IRecipe | null> => getSingleRecipe(recipeId);
 
 export const createRecipe = (
   recipe: IRecipe
