@@ -1,27 +1,27 @@
 import { IRecipe } from '@chrisb-dev/seasonal-shared';
 import {
-  getAllRecipes,
-  getSingleRecipe,
-  createDbRecipe,
-  deleteDbRecipe,
-  editDbRecipe
+  adminGetAllDbRecipes,
+  adminGetOneDbRecipe,
+  adminCreateDbRecipe,
+  adminDeleteDbRecipe,
+  adminEditDbRecipe
 } from '../data-access';
 
-export const fetchAllRecipes = (): Promise<IRecipe[]> =>
-  getAllRecipes();
-
-export const fetchSingleRecipe = (
-  recipeId: string
-): Promise<IRecipe | null> => getSingleRecipe(recipeId);
-
-export const createRecipe = (
+export const adminCreateRecipe = (
   recipe: IRecipe
-): Promise<IRecipe> => createDbRecipe(recipe);
+): Promise<IRecipe> => adminCreateDbRecipe(recipe);
 
-export const editRecipe = (
-  recipe: IRecipe
-): Promise<IRecipe> => editDbRecipe(recipe);
+export const adminGetAllRecipes = (): Promise<IRecipe[]> =>
+  adminGetAllDbRecipes();
 
-export const deleteRecipe = (
+export const adminGetOneRecipe = (
   recipeId: string
-): Promise<IRecipe> => deleteDbRecipe(recipeId);
+): Promise<IRecipe | null> => adminGetOneDbRecipe(recipeId);
+
+export const adminEditRecipe = (
+  recipe: IRecipe
+): Promise<IRecipe> => adminEditDbRecipe(recipe);
+
+export const adminDeleteRecipe = (
+  recipeId: string
+): Promise<IRecipe> => adminDeleteDbRecipe(recipeId);

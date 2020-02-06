@@ -8,16 +8,12 @@ Object {
 
 exports[`REST endpoint testing for /admin/user delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "id": "06fa4616-48b4-11ea-9642-0242ac140002",
-  "password": "$2b$10$giJdjgOtFHA7NGYgW5ceq.CCvmrpVAWnmH.tw68Ge/QTr1oaO65Yu",
-  "roles": Array [],
   "username": "username",
 }
 `;
 
 exports[`REST endpoint testing for /admin/user edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "id": "0738cb20-48b4-11ea-9642-0242ac140002",
   "roles": Array [
     "new-role",
   ],

@@ -1,13 +1,17 @@
 import {
-  fetchAllRecipes, fetchSingleRecipe, createRecipe, deleteRecipe, editRecipe
+  adminGetAllRecipes,
+  adminGetOneRecipe,
+  adminCreateRecipe,
+  adminDeleteRecipe,
+  adminEditRecipe
 } from '../../fetch-data';
 
 import { generateRestApi } from './generate-rest-api';
 
 export const recipeApi = () => generateRestApi({
-  create: createRecipe,
-  deleteOne: deleteRecipe,
-  edit: editRecipe,
-  getAll: fetchAllRecipes,
-  getOne: fetchSingleRecipe
+  create: adminCreateRecipe,
+  deleteOne: adminDeleteRecipe,
+  edit: adminEditRecipe,
+  getAll: adminGetAllRecipes,
+  getOne: adminGetOneRecipe
 });

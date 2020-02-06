@@ -18,7 +18,6 @@ Object {
 
 exports[`REST endpoint testing for /admin/recipe delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "id": "067b325e-48b4-11ea-9be8-0242ac140002",
   "imageUrlSmall": "http://image.com",
   "isVegan": true,
   "isVegetarian": false,
@@ -35,7 +34,6 @@ Object {
 
 exports[`REST endpoint testing for /admin/recipe edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "id": "06beeefe-48b4-11ea-9be8-0242ac140002",
   "imageUrlSmall": "http://image-edited.com",
   "isVegan": false,
   "isVegetarian": true,
