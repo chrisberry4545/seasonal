@@ -1,12 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`create user when logged in as an admin and the username and password are present Returns the expected result 1`] = `
+exports[`REST endpoint testing for /admin/user create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
 Object {
-  "username": "new-user",
+  "username": "username",
 }
 `;
 
-exports[`get all users when logged in as an admin Returns the expected result 1`] = `
+exports[`REST endpoint testing for /admin/user delete item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "username": "username",
+}
+`;
+
+exports[`REST endpoint testing for /admin/user edit item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "roles": Array [
+    "new-role",
+  ],
+  "username": "username2",
+}
+`;
+
+exports[`REST endpoint testing for /admin/user get all when logged in as an admin Returns the expected result 1`] = `
 Array [
   Object {
     "id": "30e59fda-220b-4e8b-9e01-3a9f8ceeec45",
@@ -23,12 +38,4 @@ Array [
 ]
 `;
 
-exports[`get single user when logged in as an admin Returns the expected result 1`] = `
-Object {
-  "id": "30e59fda-220b-4e8b-9e01-3a9f8ceeec45",
-  "roles": Array [
-    "admin",
-  ],
-  "username": "admin-user",
-}
-`;
+exports[`REST endpoint testing for /admin/user get single item when logged in as an admin Returns the expected result 1`] = `""`;

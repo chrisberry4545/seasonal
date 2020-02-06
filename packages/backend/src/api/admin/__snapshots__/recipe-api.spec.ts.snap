@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`create recipe when logged in as an admin and the recipe is valid Returns the expected result 1`] = `
+exports[`REST endpoint testing for /admin/recipe create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
 Object {
   "imageUrlSmall": "http://image.com",
   "isVegan": true,
@@ -16,23 +16,41 @@ Object {
 }
 `;
 
-exports[`delete recipes when logged in as an admin Returns the expected result 1`] = `
+exports[`REST endpoint testing for /admin/recipe delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "id": "053c46cd-584e-46c5-a70d-b79b9ded3cca",
-  "imageUrlSmall": "https://apple-beetroot-and-cheese.com/image",
-  "isVegan": false,
+  "imageUrlSmall": "http://image.com",
+  "isVegan": true,
   "isVegetarian": false,
-  "linkUrl": "https://apple-beetroot-and-cheese.com",
-  "name": "Apple, Beetroot & Meat",
+  "linkUrl": "http://new.com",
+  "name": "new-recipe",
   "primaryFoodInRecipeIds": Array [
-    "dd9ba012-8f8e-48af-9775-0139374dd94c",
     "c6f78568-fe23-47e4-8e65-55934199a39f",
   ],
-  "secondaryFoodInRecipeIds": Array [],
+  "secondaryFoodInRecipeIds": Array [
+    "dd9ba012-8f8e-48af-9775-0139374dd94c",
+  ],
 }
 `;
 
-exports[`get all recipes when logged in as an admin Returns the expected result 1`] = `
+exports[`REST endpoint testing for /admin/recipe edit item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "imageUrlSmall": "http://image-edited.com",
+  "isVegan": false,
+  "isVegetarian": true,
+  "linkUrl": "http://new-thing.com",
+  "name": "new-recipe-edited",
+  "primaryFoodInRecipeIds": Array [
+    "c6f78568-fe23-47e4-8e65-55934199a39f",
+    "dd9ba012-8f8e-48af-9775-0139374dd94c",
+  ],
+  "secondaryFoodInRecipeIds": Array [
+    "dd9ba012-8f8e-48af-9775-0139374dd94c",
+    "c6f78568-fe23-47e4-8e65-55934199a39f",
+  ],
+}
+`;
+
+exports[`REST endpoint testing for /admin/recipe get all when logged in as an admin Returns the expected result 1`] = `
 Array [
   Object {
     "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
@@ -76,7 +94,7 @@ Array [
 ]
 `;
 
-exports[`get single recipe when logged in as an admin Returns the expected result 1`] = `
+exports[`REST endpoint testing for /admin/recipe get single item when logged in as an admin Returns the expected result 1`] = `
 Object {
   "id": "053c46cd-584e-46c5-a70d-b79b9ded3cca",
   "imageUrlSmall": "https://apple-beetroot-and-cheese.com/image",
