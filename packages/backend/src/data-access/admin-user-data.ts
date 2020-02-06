@@ -14,7 +14,7 @@ export const adminCreateDbUser = async (
 };
 
 const getUsers = async (id: string | null) => {
-  const getUserQuery = await getSqlQuery('admin-get-users-by-id.sql');
+  const getUserQuery = await getSqlQuery('admin-get-users.sql');
   const result = await queryPostgres<IUser>(
     getUserQuery,
     [id]
