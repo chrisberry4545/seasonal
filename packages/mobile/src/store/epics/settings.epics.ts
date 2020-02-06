@@ -92,6 +92,7 @@ export const detectCountry$: AppSeasonalEpic = (
       getCurrentDeviceLocation$().pipe(
         map((location) => ({
           allRegions,
+          didError: false,
           location: {
             lat: location.coords.latitude,
             lng: location.coords.longitude
@@ -101,6 +102,7 @@ export const detectCountry$: AppSeasonalEpic = (
           const firstRegion = allRegions![0];
           return of({
             allRegions,
+            didError: true,
             location: {
               lat: firstRegion.latLng.lat,
               lng: firstRegion.latLng.lng
@@ -109,9 +111,12 @@ export const detectCountry$: AppSeasonalEpic = (
         })
       )
     )),
-    map(({ allRegions, location }) => getNearestRegionFromLatLng(
-      allRegions, location
-    )),
-    map((nearestRegion) => userRegionDetected(nearestRegion!.code))
+    map(({ allRegions, didError, location }) => ({
+      didError,
+      nearestRegion: getNearestRegionFromLatLng(allRegions, location)
+    })),
+    map(({ nearestRegion, didError }) => userRegionDetected(
+      nearestRegion!.code, didError
+    ))
   )
 );
