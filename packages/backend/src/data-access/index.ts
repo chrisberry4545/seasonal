@@ -2,8 +2,8 @@ export * from './country-data';
 
 export * from './food-data';
 
-export * from './recipes-data';
+export * from './admin-recipes-data';
 
 export * from './season-data';
 
-export * from './user-data';
+export * from './admin-user-data';
