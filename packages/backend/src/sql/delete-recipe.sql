@@ -1,0 +1,3 @@
+DELETE FROM recipes
+WHERE id = $1
+RETURNING *;

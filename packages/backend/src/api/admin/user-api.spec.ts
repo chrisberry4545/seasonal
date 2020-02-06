@@ -1,43 +1,24 @@
 import supertest, { Response } from 'supertest';
-import { getAdminJwt, getNonAdminJwt } from './test-utils/login-utils';
+import {
+  attachAdminJwtToken
+} from './test-utils/login-utils';
 import { IUser } from '@chrisb-dev/seasonal-shared';
 import { app } from '../../app';
-
-const attachJwtToken = (
-  supertestInstance: supertest.Test,
-  jwtToken: string
-) => supertestInstance.set('Authorization', `Bearer ${jwtToken}`);
-
-const attachAdminJwtToken = async (
-  supertestInstance: supertest.Test
-) => {
-  const adminJwt = await getAdminJwt();
-  return attachJwtToken(
-    supertestInstance,
-    adminJwt
-  );
-};
-
-const attachNonAdminJwtToken = async (
-  supertestInstance: supertest.Test
-) => {
-  const nonAdminJwt = await getNonAdminJwt();
-  return attachJwtToken(
-    supertestInstance,
-    nonAdminJwt
-  );
-};
+import { testFailedAuthorzation } from './test-utils/authorization-tests';
 
 const userPath = '/admin/user';
 
 describe('get all users', () => {
   let response: Response;
   let result: IUser[];
+  const supertestRequestGenerator = () => supertest(app).get(userPath);
+
+  testFailedAuthorzation(supertestRequestGenerator);
 
   describe('when logged in as an admin', () => {
     beforeAll(async () => {
       response = await attachAdminJwtToken(
-        supertest(app).get(userPath)
+        supertestRequestGenerator()
       );
       result = response.body;
     });
@@ -52,42 +33,20 @@ describe('get all users', () => {
       expect(result).toMatchSnapshot();
     });
   });
-
-  describe('when the user is not an admin', () => {
-    beforeAll(async () => {
-      response = await attachNonAdminJwtToken(
-        supertest(app).get(userPath)
-      );
-    });
-
-    test('Returns a status of 401', () => {
-      expect(response.status).toBe(401);
-    });
-  });
-
-  describe('when using a random token', () => {
-    beforeAll(async () => {
-      response = await attachJwtToken(
-        supertest(app).get(userPath),
-        'invalid-jwt-token'
-      );
-    });
-
-    test('Returns a status of 401', () => {
-      expect(response.status).toBe(401);
-    });
-  });
 });
 
 describe('get single user', () => {
   let response: Response;
   let result: IUser;
   const singleUserPath = `${userPath}/30e59fda-220b-4e8b-9e01-3a9f8ceeec45`;
+  const supertestRequestGenerator = () => supertest(app).get(singleUserPath);
+
+  testFailedAuthorzation(supertestRequestGenerator);
 
   describe('when logged in as an admin', () => {
     beforeAll(async () => {
       response = await attachAdminJwtToken(
-        supertest(app).get(singleUserPath)
+        supertestRequestGenerator()
       );
       result = response.body;
     });
@@ -99,47 +58,26 @@ describe('get single user', () => {
       expect(result).toMatchSnapshot();
     });
   });
-
-  describe('when the user is not an admin', () => {
-    beforeAll(async () => {
-      response = await attachNonAdminJwtToken(
-        supertest(app).get(singleUserPath)
-      );
-    });
-
-    test('Returns a status of 401', () => {
-      expect(response.status).toBe(401);
-    });
-  });
-
-  describe('when using a random token', () => {
-    beforeAll(async () => {
-      response = await attachJwtToken(
-        supertest(app).get(singleUserPath),
-        'invalid-jwt-token'
-      );
-    });
-
-    test('Returns a status of 401', () => {
-      expect(response.status).toBe(401);
-    });
-  });
 });
 
 describe('create user', () => {
   let response: Response;
   let result: IUser;
   let errorResponse: { error: string };
+  const supertestRequestGenerator = () =>
+    supertest(app).post(userPath).send({
+      password: 'new-password',
+      username: 'new-user'
+    });
+
+  testFailedAuthorzation(supertestRequestGenerator);
 
   describe('when logged in as an admin', () => {
 
     describe('and the username and password are present', () => {
       beforeAll(async () => {
         response = await attachAdminJwtToken(
-          supertest(app).post(userPath).send({
-            password: 'new-password',
-            username: 'new-user'
-          })
+          supertestRequestGenerator()
         );
         result = response.body;
       });
@@ -196,37 +134,6 @@ describe('create user', () => {
       test('Returns the expected result', () => {
         expect(errorResponse.error).toBe('Username or password missing');
       });
-    });
-  });
-
-  describe('when the user is not an admin', () => {
-    beforeAll(async () => {
-      response = await attachNonAdminJwtToken(
-        supertest(app).post(userPath).send({
-          password: 'new-password',
-          username: 'new-user'
-        })
-      );
-    });
-
-    test('Returns a status of 401', () => {
-      expect(response.status).toBe(401);
-    });
-  });
-
-  describe('when using a random token', () => {
-    beforeAll(async () => {
-      response = await attachJwtToken(
-        supertest(app).post(userPath).send({
-          password: 'new-password',
-          username: 'new-user'
-        }),
-        'invalid-jwt-token'
-      );
-    });
-
-    test('Returns a status of 401', () => {
-      expect(response.status).toBe(401);
     });
   });
 });

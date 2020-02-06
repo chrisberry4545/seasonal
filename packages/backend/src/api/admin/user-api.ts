@@ -19,10 +19,10 @@ export const userApi = (router = Router()) => {
       return res.status(500).send(err);
     }
   });
-  router.get('/:id', async (req: Request, res: Response) => {
-    const { id } = req.params;
+  router.get('/:userId', async (req: Request, res: Response) => {
+    const { userId } = req.params;
     try {
-      const results = await fetchUserById(id);
+      const results = await fetchUserById(userId);
       return res.json(results);
     } catch (err) {
       return res.status(500).send(err);
@@ -31,7 +31,7 @@ export const userApi = (router = Router()) => {
   router.post('/', async (req: Request, res: Response) => {
     const { username, password } = req.body;
     if (!username || !password) {
-      res.status(400).json({ error: 'Username or password missing' });
+      return res.status(400).json({ error: 'Username or password missing' });
     }
     try {
       const user = await createUser(username, password);

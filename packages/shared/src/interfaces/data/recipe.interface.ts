@@ -8,4 +8,6 @@ export interface IRecipe extends IAirtableBaseRecord {
   imageUrlSmall: string;
   isVegan?: boolean;
   isVegetarian?: boolean;
+  primaryFoodInRecipeIds?: string[];
+  secondaryFoodInRecipeIds?: string[];
 }
