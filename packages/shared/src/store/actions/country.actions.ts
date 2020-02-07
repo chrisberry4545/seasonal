@@ -35,15 +35,15 @@ export function setRegion(
 }
 
 interface ISetUserRegionDetectedAction extends ISetRegionAction {
-  didError?: boolean;
+  error: string | null;
 }
 export const USER_REGION_DETECTED = 'USER_REGION_DETECTED';
 export function userRegionDetected(
   regionCode: string,
-  didError?: boolean
+  error: string | null
 ): ISetUserRegionDetectedAction {
   return {
-    didError,
+    error,
     regionCode,
     type: USER_REGION_DETECTED
   };
