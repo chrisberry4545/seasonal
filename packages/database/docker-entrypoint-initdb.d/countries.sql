@@ -2,8 +2,8 @@ DROP TABLE IF EXISTS public.countries;
 
 CREATE TABLE public.countries
 (
-    id uuid NOT NULL,
-    name text
+  id uuid NOT NULL DEFAULT uuid_generate_v1(),
+  name text
 );
 
 INSERT INTO public.countries (

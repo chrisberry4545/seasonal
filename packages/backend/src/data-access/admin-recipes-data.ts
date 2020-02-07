@@ -2,19 +2,19 @@ import { queryPostgres, getSqlQuery } from '../postgres';
 import { IRecipe } from '@chrisb-dev/seasonal-shared';
 
 export const adminCreateDbRecipe = async (
-  recipe: IRecipe
+  item: IRecipe
 ): Promise<IRecipe> => {
-  const createRecipeQuery = await getSqlQuery('admin-create-recipe.sql');
+  const query = await getSqlQuery('admin-create-recipe.sql');
   const result = await queryPostgres<IRecipe>(
-    createRecipeQuery,
+    query,
     [
-      recipe.linkUrl,
-      recipe.imageUrlSmall,
-      recipe.isVegetarian,
-      recipe.isVegan,
-      recipe.name,
-      recipe.primaryFoodInRecipeIds,
-      recipe.secondaryFoodInRecipeIds
+      item.linkUrl,
+      item.imageUrlSmall,
+      item.isVegetarian,
+      item.isVegan,
+      item.name,
+      item.primaryFoodInRecipeIds,
+      item.secondaryFoodInRecipeIds
     ]
   );
   return result.rows && result.rows[0];
@@ -24,52 +24,52 @@ const getRecipesQuery = (): Promise<string> =>
   getSqlQuery('admin-get-recipes.sql');
 
 export const adminGetAllDbRecipes = async (): Promise<IRecipe[]> => {
-  const getAllRecipesQuery = await getRecipesQuery();
+  const query = await getRecipesQuery();
   const result = await queryPostgres<IRecipe>(
-    getAllRecipesQuery,
+    query,
     [null]
   );
   return result.rows;
 };
 
 export const adminGetOneDbRecipe = async (
-  recipeId: string
+  id: string
 ): Promise<IRecipe> => {
-  const recipeQuery = await getRecipesQuery();
+  const query = await getRecipesQuery();
   const result = await queryPostgres<IRecipe>(
-    recipeQuery,
-    [recipeId]
+    query,
+    [id]
   );
   return result.rows && result.rows[0];
 };
 
 export const adminEditDbRecipe = async (
-  recipe: IRecipe
+  item: IRecipe
 ): Promise<IRecipe> => {
-  const createRecipeQuery = await getSqlQuery('admin-edit-recipe.sql');
+  const query = await getSqlQuery('admin-edit-recipe.sql');
   const result = await queryPostgres<IRecipe>(
-    createRecipeQuery,
+    query,
     [
-      recipe.id,
-      recipe.linkUrl,
-      recipe.imageUrlSmall,
-      recipe.isVegetarian,
-      recipe.isVegan,
-      recipe.name,
-      recipe.primaryFoodInRecipeIds,
-      recipe.secondaryFoodInRecipeIds
+      item.id,
+      item.linkUrl,
+      item.imageUrlSmall,
+      item.isVegetarian,
+      item.isVegan,
+      item.name,
+      item.primaryFoodInRecipeIds,
+      item.secondaryFoodInRecipeIds
     ]
   );
   return result.rows && result.rows[0];
 };
 
 export const adminDeleteDbRecipe = async (
-  recipeId: string
+  id: string
 ): Promise<IRecipe> => {
-  const deleteRecipeQuery = await getSqlQuery('admin-delete-recipe.sql');
+  const query = await getSqlQuery('admin-delete-recipe.sql');
   const result = await queryPostgres<IRecipe>(
-    deleteRecipeQuery,
-    [recipeId]
+    query,
+    [id]
   );
   return result.rows && result.rows[0];
 };

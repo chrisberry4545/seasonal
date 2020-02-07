@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS public.seasons;
 
 CREATE TABLE public.seasons
 (
-  id uuid,
+  id uuid NOT NULL DEFAULT uuid_generate_v1(),
   season_index numeric,
   name text
 );
