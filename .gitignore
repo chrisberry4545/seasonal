@@ -20,6 +20,9 @@ packages/frontend/.env.development.local
 packages/frontend/.env.test.local
 packages/frontend/.env.production.local
 
+# Frontend Admin
+packages/frontend-admin/build
+
 # Mobile
 packages/mobile/.expo/*
 packages/mobile/npm-debug.*

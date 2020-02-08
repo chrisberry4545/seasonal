@@ -1,0 +1,16 @@
+{
+  "name": "@chrisb-dev/seasonal-frontend-admin",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://chrisberry4545.github.io/",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir build && cp ./index.html ./build/",
+    "gh-pages": "node ./release/gh-pages.js",
+    "deploy": "./release/deploy-frontend-admin.sh"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
