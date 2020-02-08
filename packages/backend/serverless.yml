@@ -14,6 +14,7 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):FOOD_ENDPOINT}/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -24,15 +25,18 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_ENDPOINT}
           method: get
+          cors: true
   v2SeasonWithFood:
     handler: index-serverless.handler
     events:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_FOOD_ENDPOINT}
           method: get
+          cors: true
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_FOOD_ENDPOINT}/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -43,9 +47,11 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_RECIPES_ENDPOINT}
           method: get
+          cors: true
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_RECIPES_ENDPOINT}/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -56,6 +62,7 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):COUNTRY_ENDPOINT}
           method: get
+          cors: true
   adminLogin:
     handler: index-serverless.handler
     events:
