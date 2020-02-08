@@ -60,11 +60,6 @@ jobs:
           fingerprints:
             - cd:42:e8:de:36:e3:c0:f9:0d:6f:55:27:47:57:ab:4b
       - run:
-          name: Git configuration
-          command: |
-            git config user.email "chrisbery4545@googlemail.com"
-            git config user.name "chrisbery4545"
-      - run:
           name: Deploy frontend
           command: yarn frontend:deploy
 
