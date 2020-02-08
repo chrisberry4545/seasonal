@@ -3,6 +3,7 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 
 generateRestEndpointTests<ICountry>({
   path: '/admin/country',
+  singleItemId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
   validItem: {
     name: 'test-1'
   } as ICountry,

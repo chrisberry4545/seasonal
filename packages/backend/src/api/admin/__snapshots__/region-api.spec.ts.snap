@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REST endpoint testing for /admin/region create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
+Object {
+  "code": "test-region",
+  "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+  "isDisabled": false,
+  "lat": "10",
+  "lng": "15",
+  "name": "Test region",
+}
+`;
+
+exports[`REST endpoint testing for /admin/region delete item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "code": "test-region",
+  "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+  "isDisabled": true,
+  "lat": "15",
+  "lng": "-5",
+  "name": "Test region 2",
+}
+`;
+
+exports[`REST endpoint testing for /admin/region edit item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+  "isDisabled": true,
+  "lat": "15",
+  "lng": "-5",
+  "name": "Test region 2",
+}
+`;
+
+exports[`REST endpoint testing for /admin/region get all when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "code": "gbr",
+    "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
+    "isDisabled": false,
+    "latLng": Object {
+      "lat": 50,
+      "lng": 50,
+    },
+    "name": "UK",
+  },
+  Object {
+    "code": "aus-sydney",
+    "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+    "isDisabled": false,
+    "latLng": Object {
+      "lat": -50,
+      "lng": -50,
+    },
+    "name": "Sydney",
+  },
+  Object {
+    "code": "region_is_disabled",
+    "countryId": "2168cb5e-a2e9-4bf6-b50d-95ad6a79227c",
+    "isDisabled": true,
+    "latLng": Object {
+      "lat": -25,
+      "lng": -25,
+    },
+    "name": "Region set to disabled",
+  },
+]
+`;
+
+exports[`REST endpoint testing for /admin/region get single item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "code": "aus-sydney",
+  "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+  "isDisabled": false,
+  "latLng": Object {
+    "lat": -50,
+    "lng": -50,
+  },
+  "name": "Sydney",
+}
+`;

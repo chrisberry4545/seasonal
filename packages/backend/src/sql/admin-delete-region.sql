@@ -1,0 +1,3 @@
+DELETE FROM regions
+WHERE code = $1
+RETURNING *;

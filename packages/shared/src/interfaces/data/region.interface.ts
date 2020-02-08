@@ -4,4 +4,6 @@ export interface IRegion {
   name: string;
   code: string;
   latLng: ILatLng;
+  countryId?: string;
+  isDisabled?: boolean;
 }
