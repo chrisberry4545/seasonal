@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { MainLinks } from '../../components-main';
 
 export const HomePage: FC<{}> = () => (
-  <div>
-    <Link to='/recipes'>View recipes</Link>
-  </div>
+  <MainLinks />
 );

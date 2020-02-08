@@ -4,5 +4,8 @@ const BACKEND_URL = process.env.BACKEND_URL
 export const LOGIN_URL =
   process.env.LOGIN_URL || `${BACKEND_URL}/login`;
 
-export const RECIPES_URL =
-  process.env.RECIPES_URL || `${BACKEND_URL}/recipes`;
+export const COUNTRY_URL =
+  process.env.COUNTRY_URL || `${BACKEND_URL}/country`;
+
+export const RECIPE_URL =
+  process.env.RECIPE_URL || `${BACKEND_URL}/recipe`;
