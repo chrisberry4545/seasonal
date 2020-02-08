@@ -56,3 +56,139 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):COUNTRY_ENDPOINT}
           method: get
+  adminLogin:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/login
+          method: post
+  adminCountry:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/country
+          method: post
+      - http:
+          path: admin/country
+          method: get
+      - http:
+          path: admin/country
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+      - http:
+          path: admin/country
+          method: patch
+      - http:
+          path: admin/country
+          method: delete
+          request:
+            parameters:
+              paths:
+                id: true
+  adminFood:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/food
+          method: post
+      - http:
+          path: admin/food
+          method: get
+      - http:
+          path: admin/food
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+      - http:
+          path: admin/food
+          method: patch
+      - http:
+          path: admin/food
+          method: delete
+          request:
+            parameters:
+              paths:
+                id: true
+  adminRecipe:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/recipe
+          method: post
+      - http:
+          path: admin/recipe
+          method: get
+      - http:
+          path: admin/recipe
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+      - http:
+          path: admin/recipe
+          method: patch
+      - http:
+          path: admin/recipe
+          method: delete
+          request:
+            parameters:
+              paths:
+                id: true
+  adminRegion:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/region
+          method: post
+      - http:
+          path: admin/region
+          method: get
+      - http:
+          path: admin/region
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+      - http:
+          path: admin/region
+          method: patch
+      - http:
+          path: admin/region
+          method: delete
+          request:
+            parameters:
+              paths:
+                id: true
+  adminUser:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/user
+          method: post
+      - http:
+          path: admin/user
+          method: get
+      - http:
+          path: admin/user
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+      - http:
+          path: admin/user
+          method: patch
+      - http:
+          path: admin/user
+          method: delete
+          request:
+            parameters:
+              paths:
+                id: true
