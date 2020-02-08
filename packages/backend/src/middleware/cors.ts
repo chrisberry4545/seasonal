@@ -21,7 +21,7 @@ export const cors = (req: Request, res: Response, next: NextFunction) => {
       'Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     );
-    res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,PATCH,DELETE');
     res.header(
       'Access-Control-Allow-Credentials',
       'true'
