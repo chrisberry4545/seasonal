@@ -8,20 +8,20 @@ import {
 } from '../data-access';
 
 export const adminCreateRecipe = (
-  recipe: IRecipe
-): Promise<IRecipe> => adminCreateDbRecipe(recipe);
+  item: IRecipe
+): Promise<IRecipe> => adminCreateDbRecipe(item);
 
 export const adminGetAllRecipes = (): Promise<IRecipe[]> =>
   adminGetAllDbRecipes();
 
 export const adminGetOneRecipe = (
-  recipeId: string
-): Promise<IRecipe | null> => adminGetOneDbRecipe(recipeId);
+  id: string
+): Promise<IRecipe | null> => adminGetOneDbRecipe(id);
 
 export const adminEditRecipe = (
-  recipe: IRecipe
-): Promise<IRecipe> => adminEditDbRecipe(recipe);
+  item: IRecipe
+): Promise<IRecipe> => adminEditDbRecipe(item);
 
 export const adminDeleteRecipe = (
-  recipeId: string
-): Promise<IRecipe> => adminDeleteDbRecipe(recipeId);
+  id: string
+): Promise<IRecipe> => adminDeleteDbRecipe(id);

@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS public.food;
 
 CREATE TABLE public.food
 (
-  id uuid,
+  id uuid NOT NULL DEFAULT uuid_generate_v1(),
   name text,
   substitute_food_ids uuid[],
   image_url_small text,

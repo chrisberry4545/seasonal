@@ -1,4 +1,10 @@
+export * from './admin-fetch-country-data';
+
+export * from './admin-fetch-food-data';
+
 export * from './admin-fetch-recipes-data';
+
+export * from './admin-fetch-region-data';
 
 export * from './admin-fetch-user-data';
 

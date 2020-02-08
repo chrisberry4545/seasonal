@@ -3,6 +3,7 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 
 generateRestEndpointTests<IRecipe>({
   path: '/admin/recipe',
+  singleItemId: 'fefc209f-ddaf-465d-941f-fe3fefa6b931',
   validItem: {
     imageUrlSmall: 'http://image.com',
     isVegan: true,

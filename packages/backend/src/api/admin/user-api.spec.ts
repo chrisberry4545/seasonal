@@ -4,6 +4,7 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 generateRestEndpointTests<IUser>({
   path: '/admin/user',
   propertiesNotReturned: ['password'],
+  singleItemId: '53f5a3d1-db75-4c62-a309-79b3eea329b3',
   validItem: {
     password: 'password',
     roles: ['admin'],

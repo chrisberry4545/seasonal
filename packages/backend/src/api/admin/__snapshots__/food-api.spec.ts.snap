@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REST endpoint testing for /admin/food create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
+Object {
+  "description": "This is food 1",
+  "imageUrlSmall": "https://food-1-image.com",
+  "name": "Food 1",
+  "substituteFoodIds": null,
+}
+`;
+
+exports[`REST endpoint testing for /admin/food delete item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "description": "This is food 1",
+  "imageUrlSmall": "https://food-1-image.com",
+  "name": "Food 1",
+  "substituteFoodIds": null,
+}
+`;
+
+exports[`REST endpoint testing for /admin/food edit item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "description": "This is food 2",
+  "imageUrlSmall": "https://food-2-image.com",
+  "name": "Food 2",
+  "substituteFoodIds": null,
+}
+`;
+
+exports[`REST endpoint testing for /admin/food get all when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "description": "beetroot description",
+    "id": "c6f78568-fe23-47e4-8e65-55934199a39f",
+    "imageUrlSmall": "https://beetroot.com",
+    "name": "Beetroot",
+    "substituteFoodIds": Array [],
+  },
+  Object {
+    "description": "apple description",
+    "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
+    "imageUrlSmall": "https://apple.com",
+    "name": "Apple",
+    "substituteFoodIds": Array [],
+  },
+  Object {
+    "description": "onion description",
+    "id": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
+    "imageUrlSmall": "https://onion.com",
+    "name": "Onion",
+    "substituteFoodIds": Array [],
+  },
+]
+`;
+
+exports[`REST endpoint testing for /admin/food get single item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "description": "apple description",
+  "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
+  "imageUrlSmall": "https://apple.com",
+  "name": "Apple",
+  "substituteFoodIds": Array [],
+}
+`;

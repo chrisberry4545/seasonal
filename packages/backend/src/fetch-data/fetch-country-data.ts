@@ -13,3 +13,5 @@ export const fetchAllCountryData = cacheFunctionResponse(
   allCountryDataCacheKey,
   (): Promise<ICountry[]> => getAllCountries()
 );
+
+// export const fetchSingleCountryDate =
