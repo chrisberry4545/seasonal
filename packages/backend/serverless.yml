@@ -62,18 +62,22 @@ functions:
       - http:
           path: admin/login
           method: post
+          cors: true
   adminCountry:
     handler: index-serverless.handler
     events:
       - http:
           path: admin/country
           method: post
+          cors: true
       - http:
           path: admin/country
           method: get
+          cors: true
       - http:
           path: admin/country
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -81,9 +85,11 @@ functions:
       - http:
           path: admin/country
           method: patch
+          cors: true
       - http:
           path: admin/country
           method: delete
+          cors: true
           request:
             parameters:
               paths:
@@ -94,12 +100,15 @@ functions:
       - http:
           path: admin/food
           method: post
+          cors: true
       - http:
           path: admin/food
           method: get
+          cors: true
       - http:
           path: admin/food
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -107,9 +116,11 @@ functions:
       - http:
           path: admin/food
           method: patch
+          cors: true
       - http:
           path: admin/food
           method: delete
+          cors: true
           request:
             parameters:
               paths:
@@ -120,12 +131,15 @@ functions:
       - http:
           path: admin/recipe
           method: post
+          cors: true
       - http:
           path: admin/recipe
           method: get
+          cors: true
       - http:
           path: admin/recipe
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -133,9 +147,11 @@ functions:
       - http:
           path: admin/recipe
           method: patch
+          cors: true
       - http:
           path: admin/recipe
           method: delete
+          cors: true
           request:
             parameters:
               paths:
@@ -146,12 +162,15 @@ functions:
       - http:
           path: admin/region
           method: post
+          cors: true
       - http:
           path: admin/region
           method: get
+          cors: true
       - http:
           path: admin/region
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -159,9 +178,11 @@ functions:
       - http:
           path: admin/region
           method: patch
+          cors: true
       - http:
           path: admin/region
           method: delete
+          cors: true
           request:
             parameters:
               paths:
@@ -172,12 +193,15 @@ functions:
       - http:
           path: admin/user
           method: post
+          cors: true
       - http:
           path: admin/user
           method: get
+          cors: true
       - http:
           path: admin/user
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -185,9 +209,11 @@ functions:
       - http:
           path: admin/user
           method: patch
+          cors: true
       - http:
           path: admin/user
           method: delete
+          cors: true
           request:
             parameters:
               paths:
