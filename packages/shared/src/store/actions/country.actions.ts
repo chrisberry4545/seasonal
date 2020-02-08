@@ -34,11 +34,16 @@ export function setRegion(
   };
 }
 
+interface ISetUserRegionDetectedAction extends ISetRegionAction {
+  error: string | null;
+}
 export const USER_REGION_DETECTED = 'USER_REGION_DETECTED';
 export function userRegionDetected(
-  regionCode: string
-): ISetRegionAction {
+  regionCode: string,
+  error: string | null
+): ISetUserRegionDetectedAction {
   return {
+    error,
     regionCode,
     type: USER_REGION_DETECTED
   };

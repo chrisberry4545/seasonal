@@ -7,7 +7,8 @@ import {
   INIT_APP,
   initSettings,
   ISettingsState,
-  SET_REGION, DIET_TYPE,
+  SET_REGION,
+  DIET_TYPE,
   GET_COUNTRIES_SUCCESS,
   selectAllRegions,
   userRegionDetected,
@@ -86,21 +87,23 @@ export const detectCountry$: AppSeasonalEpic = (
       regionCode: selectSettingsRegionCode(state)
     })),
     filter(({ allRegions, regionCode }) =>
-      Boolean(!regionCode && allRegions)
+    Boolean(!regionCode && allRegions)
     ),
     switchMap(({ allRegions }) => (
       getCurrentDeviceLocation$().pipe(
         map((location) => ({
           allRegions,
+          error: null,
           location: {
             lat: location.coords.latitude,
             lng: location.coords.longitude
           }
         })),
-        catchError(() => {
+        catchError((error) => {
           const firstRegion = allRegions![0];
           return of({
             allRegions,
+            error,
             location: {
               lat: firstRegion.latLng.lat,
               lng: firstRegion.latLng.lng
@@ -109,9 +112,12 @@ export const detectCountry$: AppSeasonalEpic = (
         })
       )
     )),
-    map(({ allRegions, location }) => getNearestRegionFromLatLng(
-      allRegions, location
-    )),
-    map((nearestRegion) => userRegionDetected(nearestRegion!.code))
+    map(({ allRegions, error, location }) => ({
+      error,
+      nearestRegion: getNearestRegionFromLatLng(allRegions, location)
+    })),
+    map(({ nearestRegion, error }) => userRegionDetected(
+      nearestRegion!.code, error
+    ))
   )
 );
