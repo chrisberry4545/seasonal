@@ -26,7 +26,8 @@ import {
   tap,
   switchMap,
   catchError,
-  filter
+  filter,
+  debounceTime
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable, of } from 'rxjs';
@@ -89,6 +90,7 @@ export const detectCountry$: AppSeasonalEpic = (
     filter(({ allRegions, regionCode }) =>
       Boolean(!regionCode && allRegions)
     ),
+    debounceTime(100),
     switchMap(({ allRegions }) => (
       getCurrentDeviceLocation$().pipe(
         map((location) => ({

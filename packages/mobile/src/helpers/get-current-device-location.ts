@@ -1,13 +1,13 @@
 import { Observable } from 'rxjs';
 import {
   getCurrentPositionAsync,
-  LocationData,
-  getPermissionsAsync
+  LocationData
 } from 'expo-location';
+import { askAsync, LOCATION } from 'expo-permissions';
 
 export const getCurrentDeviceLocation$ = (): Observable<LocationData> => (
   new Observable((observer) => {
-    getPermissionsAsync().then(({ status }) => {
+    askAsync(LOCATION).then(({ status }) => {
       if (status !== 'granted') {
         observer.error('Permission denied');
         observer.complete();
