@@ -9,7 +9,7 @@
       "ios",
       "android"
     ],
-    "version": "1.17.6",
+    "version": "1.17.11",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -24,16 +24,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "icon": "./assets/icon-ios.png",
       "bundleIdentifier": "com.chrisbdev.seasonal"
     },
     "android": {
       "package": "com.chrisbdev.seasonal",
       "permissions": [
-        "ACCESS_COARSE_LOCATION"
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
       ],
-      "versionCode": 60
+      "versionCode": 64
     }
   }
 }

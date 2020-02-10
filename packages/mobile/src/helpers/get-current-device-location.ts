@@ -1,5 +1,8 @@
 import { Observable } from 'rxjs';
-import { getCurrentPositionAsync, LocationData } from 'expo-location';
+import {
+  getCurrentPositionAsync,
+  LocationData
+} from 'expo-location';
 import { askAsync, LOCATION } from 'expo-permissions';
 
 export const getCurrentDeviceLocation$ = (): Observable<LocationData> => (
@@ -11,6 +14,9 @@ export const getCurrentDeviceLocation$ = (): Observable<LocationData> => (
       } else {
         getCurrentPositionAsync({}).then((location) => {
           observer.next(location);
+          observer.complete();
+        }).catch((err) => {
+          observer.error(err);
           observer.complete();
         });
       }
