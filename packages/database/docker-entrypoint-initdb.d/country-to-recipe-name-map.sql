@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS public.country_to_recipe_name_map;
 
 CREATE TABLE public.country_to_recipe_name_map
 (
-  id uuid,
+  id uuid NOT NULL DEFAULT uuid_generate_v1(),
   country_id uuid,
   recipe_id uuid,
   name text

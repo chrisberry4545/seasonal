@@ -5,18 +5,18 @@ export const adminCreateDbUser = async (
   username: string,
   hashedPassword: string
 ): Promise<IUser> => {
-  const getUserQuery = await getSqlQuery('admin-create-user.sql');
+  const query = await getSqlQuery('admin-create-user.sql');
   const result = await queryPostgres<IUser>(
-    getUserQuery,
+    query,
     [username, hashedPassword]
   );
   return result.rows && result.rows[0];
 };
 
 const getUsers = async (id: string | null) => {
-  const getUserQuery = await getSqlQuery('admin-get-users.sql');
+  const query = await getSqlQuery('admin-get-users.sql');
   const result = await queryPostgres<IUser>(
-    getUserQuery,
+    query,
     [id]
   );
   return result.rows;
@@ -35,9 +35,9 @@ export const adminGetAllDbUsers = async (): Promise<IUser[]> =>
 export const adminEditDbUser = async (
   user: IUser
 ): Promise<IUser> => {
-  const editUserQuery = await getSqlQuery('admin-edit-user.sql');
+  const query = await getSqlQuery('admin-edit-user.sql');
   const result = await queryPostgres<IUser>(
-    editUserQuery,
+    query,
     [
       user.id,
       user.username,
@@ -49,12 +49,12 @@ export const adminEditDbUser = async (
 };
 
 export const adminDeleteDbUser = async (
-  userId: string
+  id: string
 ): Promise<IUser> => {
-  const deleteUserQuery = await getSqlQuery('admin-delete-user.sql');
+  const query = await getSqlQuery('admin-delete-user.sql');
   const result = await queryPostgres<IUser>(
-    deleteUserQuery,
-    [userId]
+    query,
+    [id]
   );
   return result.rows && result.rows[0];
 };

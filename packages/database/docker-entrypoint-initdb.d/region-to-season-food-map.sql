@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS public.region_to_season_food_map;
 
 CREATE TABLE public.region_to_season_food_map
 (
-  id uuid,
+  id uuid NOT NULL DEFAULT uuid_generate_v1(),
   region_id text,
   food_id uuid,
   season_id uuid

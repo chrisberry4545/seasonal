@@ -38,4 +38,10 @@ Array [
 ]
 `;
 
-exports[`REST endpoint testing for /admin/user get single item when logged in as an admin Returns the expected result 1`] = `""`;
+exports[`REST endpoint testing for /admin/user get single item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "id": "53f5a3d1-db75-4c62-a309-79b3eea329b3",
+  "roles": Array [],
+  "username": "non-admin-user",
+}
+`;

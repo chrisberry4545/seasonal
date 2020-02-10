@@ -96,16 +96,17 @@ Array [
 
 exports[`REST endpoint testing for /admin/recipe get single item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "id": "053c46cd-584e-46c5-a70d-b79b9ded3cca",
-  "imageUrlSmall": "https://apple-beetroot-and-cheese.com/image",
+  "id": "fefc209f-ddaf-465d-941f-fe3fefa6b931",
+  "imageUrlSmall": "https://apple-and-cheese.com/image",
   "isVegan": false,
-  "isVegetarian": false,
-  "linkUrl": "https://apple-beetroot-and-cheese.com",
-  "name": "Apple, Beetroot & Meat",
+  "isVegetarian": true,
+  "linkUrl": "https://apple-and-cheese.com",
+  "name": "Apple, Cheese & Onion",
   "primaryFoodInRecipeIds": Array [
     "dd9ba012-8f8e-48af-9775-0139374dd94c",
-    "c6f78568-fe23-47e4-8e65-55934199a39f",
   ],
-  "secondaryFoodInRecipeIds": Array [],
+  "secondaryFoodInRecipeIds": Array [
+    "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
+  ],
 }
 `;

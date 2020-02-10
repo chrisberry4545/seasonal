@@ -6,3 +6,9 @@ export const getAllCountries = async (): Promise<ICountry[]> => {
   const result = await queryPostgres<ICountry>(getAllCountriesQuery);
   return result.rows;
 };
+
+export const getSingleCountry = async (): Promise<ICountry> => {
+  const getAllCountriesQuery = await getSqlQuery('get-countries.sql');
+  const result = await queryPostgres<ICountry>(getAllCountriesQuery);
+  return result.rows && result.rows[0];
+};
