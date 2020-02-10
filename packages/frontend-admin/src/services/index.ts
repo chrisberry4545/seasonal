@@ -4,6 +4,8 @@ export * from './get-all-countries';
 
 export * from './get-all-recipes';
 
+export * from './get-single-recipe';
+
 export * from './login-request';
 
 export * from './make-authorized-request';

@@ -4,7 +4,9 @@ import {
   HomePage,
   LoginPage,
   ViewCountriesPage,
-  ViewRecipesPage
+  ViewRecipesPage,
+  EditRecipePage,
+  EditCountryPage
 } from '../components-pages';
 
 export const App: FC<{}> = () => (
@@ -16,12 +18,14 @@ export const App: FC<{}> = () => (
       <Route exact path='/home'>
         <HomePage />
       </Route>
-      <Route exact path='/countries'>
+      <Route exact path='/country'>
         <ViewCountriesPage />
       </Route>
+      <Route exact path='/country/:id' children={<EditCountryPage />} />
       <Route exact path='/recipes'>
         <ViewRecipesPage />
       </Route>
+      <Route exact path='/recipes/:id' children={<EditRecipePage />} />
     </div>
   </HashRouter>
 );

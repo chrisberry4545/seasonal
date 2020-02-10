@@ -1,18 +1,18 @@
 import React, { Component, FC } from 'react';
 
 export interface IGenericFullListInnerProps<T> {
-  items: T[];
+  items: T;
 }
 
 interface IGenericFullListState<T> {
   isLoading: boolean;
-  items: T[];
+  items: T | null;
   error?: string;
 }
 
 export function GenericFullList<T>(
   InnerComponent: FC<IGenericFullListInnerProps<T>>,
-  requestDataMethod: () => Promise<T[]>
+  requestDataMethod: () => Promise<T>
 ) {
   return class extends Component<
     {}, IGenericFullListState<T>
@@ -21,30 +21,11 @@ export function GenericFullList<T>(
       super(props);
       this.state = {
         isLoading: true,
-        items: []
+        items: null
       };
-      this.loadData();
     }
 
-    public render() {
-      return (
-        <div>
-          {
-            this.state.isLoading
-              ? <div>Loading...</div>
-              : <div>
-                {
-                  !this.state.error
-                    ? <InnerComponent items={this.state.items} />
-                    : <div>{this.state.error}</div>
-                }
-              </div>
-          }
-        </div>
-      );
-    }
-
-    private async loadData() {
+    public async componentWillMount() {
       try {
         const items = await requestDataMethod();
         this.setState({
@@ -55,9 +36,27 @@ export function GenericFullList<T>(
         this.setState({
           error: error.message,
           isLoading: false,
-          items: []
+          items: null
         });
       }
+    }
+
+    public render() {
+      return (
+        <div>
+          {
+            this.state.isLoading
+              ? <div>Loading...</div>
+              : <div>
+                {
+                  !this.state.error && this.state.items
+                    ? <InnerComponent items={this.state.items} />
+                    : <div>{this.state.error}</div>
+                }
+              </div>
+          }
+        </div>
+      );
     }
   };
 }

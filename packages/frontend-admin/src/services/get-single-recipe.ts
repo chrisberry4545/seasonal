@@ -2,5 +2,5 @@ import { IRecipe } from '@chrisb-dev/seasonal-shared';
 import { RECIPE_URL } from '../config';
 import { makeAuthorizedRequest } from './make-authorized-request';
 
-export const getAllRecipes = async (): Promise<IRecipe[]> =>
-  makeAuthorizedRequest<IRecipe[]>(RECIPE_URL);
+export const getSingleRecipe = async (id: string): Promise<IRecipe> =>
+  makeAuthorizedRequest<IRecipe>(`${RECIPE_URL}/${id}`);

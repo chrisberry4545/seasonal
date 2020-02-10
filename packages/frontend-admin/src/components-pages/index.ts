@@ -1,3 +1,7 @@
+export * from './EditCountryPage/EditCountryPage';
+
+export * from './EditRecipePage/EditRecipePage';
+
 export * from './HomePage/HomePage';
 
 export * from './LoginPage/LoginPage';

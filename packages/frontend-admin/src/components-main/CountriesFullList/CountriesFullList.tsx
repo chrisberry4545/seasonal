@@ -6,7 +6,7 @@ import {
 } from '../GenericFullList/GenericFullList';
 import { ICountry } from '@chrisb-dev/seasonal-shared';
 
-const CountriesFullListInner: FC<IGenericFullListInnerProps<ICountry>> = ({
+const CountriesFullListInner: FC<IGenericFullListInnerProps<ICountry[]>> = ({
   items
 }) => (
   <div>
@@ -18,7 +18,7 @@ const CountriesFullListInner: FC<IGenericFullListInnerProps<ICountry>> = ({
   </div>
 );
 
-export const CountriesFullList = GenericFullList<ICountry>(
+export const CountriesFullList = GenericFullList<ICountry[]>(
   CountriesFullListInner,
   getAllCountries
 );
