@@ -87,7 +87,7 @@ export const detectCountry$: AppSeasonalEpic = (
       regionCode: selectSettingsRegionCode(state)
     })),
     filter(({ allRegions, regionCode }) =>
-    Boolean(!regionCode && allRegions)
+      Boolean(!regionCode && allRegions)
     ),
     switchMap(({ allRegions }) => (
       getCurrentDeviceLocation$().pipe(
