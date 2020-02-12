@@ -9,7 +9,7 @@
       "ios",
       "android"
     ],
-    "version": "1.17.11",
+    "version": "1.17.12",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -26,7 +26,10 @@
     "ios": {
       "supportsTablet": false,
       "icon": "./assets/icon-ios.png",
-      "bundleIdentifier": "com.chrisbdev.seasonal"
+      "bundleIdentifier": "com.chrisbdev.seasonal",
+      "infoPlist": {
+        "NSLocationUsageDescription": "Location is used to determine where we should show seasonal data for"
+      }
     },
     "android": {
       "package": "com.chrisbdev.seasonal",
@@ -34,7 +37,7 @@
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"
       ],
-      "versionCode": 64
+      "versionCode": 65
     }
   }
 }
