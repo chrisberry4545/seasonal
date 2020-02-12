@@ -1,12 +1,18 @@
 import { getAccessTokenHeaders } from './access-token';
 
 export const makeAuthorizedRequest = async <T>(
-  url: string
+  url: string,
+  requestOptions?: RequestInit
 ): Promise<T> => {
   const response = await fetch(
     url,
     {
-      headers: getAccessTokenHeaders()
+      ...requestOptions,
+      headers: {
+        ...(requestOptions && requestOptions.headers),
+        'Content-Type': 'application/json',
+        ...getAccessTokenHeaders()
+      }
     }
   );
   if (response.status === 401) {

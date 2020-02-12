@@ -1,10 +1,12 @@
 export * from './CountriesFullList/CountriesFullList';
 
+export * from './DataForm/DataForm';
+
 export * from './EditCountryForm/EditCountryForm';
 
 export * from './EditRecipeForm/EditRecipeForm';
 
-export * from './GenericFullList/GenericFullList';
+export * from './GetAuthorizedBackendData/GetAuthorizedBackendData';
 
 export * from './LoginForm/LoginForm';
 

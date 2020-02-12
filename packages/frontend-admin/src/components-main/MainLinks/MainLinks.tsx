@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../../config';
 
 export const MainLinks: FC<{}> = () => (
   <div>
     <div>
-      <Link to='/countries'>View countries</Link>
+      <Link to={`/${ROUTES.COUNTRY}`}>View countries</Link>
     </div>
     <div>
-      <Link to='/recipes'>View recipes</Link>
+      <Link to={`/${ROUTES.RECIPE}`}>View recipes</Link>
     </div>
   </div>
 );

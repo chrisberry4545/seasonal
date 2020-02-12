@@ -8,24 +8,25 @@ import {
   EditRecipePage,
   EditCountryPage
 } from '../components-pages';
+import { ROUTES } from '../config';
 
 export const App: FC<{}> = () => (
   <HashRouter>
     <div>
-      <Route exact path='/'>
+      <Route exact path={`/${ROUTES.LOGIN}`}>
         <LoginPage />
       </Route>
-      <Route exact path='/home'>
+      <Route exact path={`/${ROUTES.HOME}`}>
         <HomePage />
       </Route>
-      <Route exact path='/country'>
+      <Route exact path={`/${ROUTES.COUNTRY}`}>
         <ViewCountriesPage />
       </Route>
-      <Route exact path='/country/:id' children={<EditCountryPage />} />
-      <Route exact path='/recipes'>
+      <Route exact path={`/${ROUTES.COUNTRY}/:id`} children={<EditCountryPage />} />
+      <Route exact path={`/${ROUTES.RECIPE}`}>
         <ViewRecipesPage />
       </Route>
-      <Route exact path='/recipes/:id' children={<EditRecipePage />} />
+      <Route exact path={`/${ROUTES.RECIPE}/:id`} children={<EditRecipePage />} />
     </div>
   </HashRouter>
 );
