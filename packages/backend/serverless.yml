@@ -82,25 +82,17 @@ functions:
           method: get
           cors: true
       - http:
-          path: admin/country
+          path: admin/country/{id}
           method: get
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
       - http:
           path: admin/country
           method: patch
           cors: true
       - http:
-          path: admin/country
+          path: admin/country/{id}
           method: delete
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
   adminFood:
     handler: index-serverless.handler
     events:
@@ -113,25 +105,17 @@ functions:
           method: get
           cors: true
       - http:
-          path: admin/food
+          path: admin/food/{id}
           method: get
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
       - http:
           path: admin/food
           method: patch
           cors: true
       - http:
-          path: admin/food
+          path: admin/food/{id}
           method: delete
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
   adminRecipe:
     handler: index-serverless.handler
     events:
@@ -144,25 +128,17 @@ functions:
           method: get
           cors: true
       - http:
-          path: admin/recipe
+          path: admin/recipe/{id}
           method: get
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
       - http:
           path: admin/recipe
           method: patch
           cors: true
       - http:
-          path: admin/recipe
+          path: admin/recipe/{id}
           method: delete
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
   adminRegion:
     handler: index-serverless.handler
     events:
@@ -175,25 +151,17 @@ functions:
           method: get
           cors: true
       - http:
-          path: admin/region
+          path: admin/region/{id}
           method: get
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
       - http:
           path: admin/region
           method: patch
           cors: true
       - http:
-          path: admin/region
+          path: admin/region/{id}
           method: delete
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
   adminUser:
     handler: index-serverless.handler
     events:
@@ -206,22 +174,14 @@ functions:
           method: get
           cors: true
       - http:
-          path: admin/user
+          path: admin/user/{id}
           method: get
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
       - http:
           path: admin/user
           method: patch
           cors: true
       - http:
-          path: admin/user
+          path: admin/user/{id}
           method: delete
           cors: true
-          request:
-            parameters:
-              paths:
-                id: true
