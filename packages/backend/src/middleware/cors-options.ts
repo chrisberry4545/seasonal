@@ -2,7 +2,7 @@ import allowedOrigins from './allowed-origins.json';
 import { CorsOptions } from 'cors';
 
 const isAllowedOrigin = (origin: string | undefined) => {
-  return origin && (
+  return !origin || (
     origin.includes('localhost') ||
     (allowedOrigins as string[]).includes(origin)
   );
