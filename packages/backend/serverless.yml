@@ -14,6 +14,7 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):FOOD_ENDPOINT}/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -24,15 +25,18 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_ENDPOINT}
           method: get
+          cors: true
   v2SeasonWithFood:
     handler: index-serverless.handler
     events:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_FOOD_ENDPOINT}
           method: get
+          cors: true
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_FOOD_ENDPOINT}/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -43,9 +47,11 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_RECIPES_ENDPOINT}
           method: get
+          cors: true
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):SEASON_WITH_RECIPES_ENDPOINT}/{id}
           method: get
+          cors: true
           request:
             parameters:
               paths:
@@ -56,139 +62,126 @@ functions:
       - http:
           path: ${file(.env.yml):V2_ENDPOINT}/${file(.env.yml):COUNTRY_ENDPOINT}
           method: get
+          cors: true
   adminLogin:
     handler: index-serverless.handler
     events:
       - http:
           path: admin/login
           method: post
+          cors: true
   adminCountry:
     handler: index-serverless.handler
     events:
       - http:
           path: admin/country
           method: post
+          cors: true
       - http:
           path: admin/country
           method: get
+          cors: true
       - http:
-          path: admin/country
+          path: admin/country/{id}
           method: get
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
       - http:
           path: admin/country
           method: patch
+          cors: true
       - http:
-          path: admin/country
+          path: admin/country/{id}
           method: delete
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
   adminFood:
     handler: index-serverless.handler
     events:
       - http:
           path: admin/food
           method: post
+          cors: true
       - http:
           path: admin/food
           method: get
+          cors: true
       - http:
-          path: admin/food
+          path: admin/food/{id}
           method: get
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
       - http:
           path: admin/food
           method: patch
+          cors: true
       - http:
-          path: admin/food
+          path: admin/food/{id}
           method: delete
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
   adminRecipe:
     handler: index-serverless.handler
     events:
       - http:
           path: admin/recipe
           method: post
+          cors: true
       - http:
           path: admin/recipe
           method: get
+          cors: true
       - http:
-          path: admin/recipe
+          path: admin/recipe/{id}
           method: get
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
       - http:
           path: admin/recipe
           method: patch
+          cors: true
       - http:
-          path: admin/recipe
+          path: admin/recipe/{id}
           method: delete
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
   adminRegion:
     handler: index-serverless.handler
     events:
       - http:
           path: admin/region
           method: post
+          cors: true
       - http:
           path: admin/region
           method: get
+          cors: true
       - http:
-          path: admin/region
+          path: admin/region/{id}
           method: get
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
       - http:
           path: admin/region
           method: patch
+          cors: true
       - http:
-          path: admin/region
+          path: admin/region/{id}
           method: delete
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
   adminUser:
     handler: index-serverless.handler
     events:
       - http:
           path: admin/user
           method: post
+          cors: true
       - http:
           path: admin/user
           method: get
+          cors: true
       - http:
-          path: admin/user
+          path: admin/user/{id}
           method: get
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true
       - http:
           path: admin/user
           method: patch
+          cors: true
       - http:
-          path: admin/user
+          path: admin/user/{id}
           method: delete
-          request:
-            parameters:
-              paths:
-                id: true
+          cors: true

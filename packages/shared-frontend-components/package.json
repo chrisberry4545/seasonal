@@ -1,0 +1,54 @@
+{
+  "name": "@chrisb-dev/seasonal-shared-frontend-components",
+  "version": "0.1.0",
+  "homepage": "https://github.com/chrisberry4545/seasonal-shared#readme",
+  "description": "Seasonal shared frontend components",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=6.4.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "prepare": "yarn build",
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisberry4545/seasonal-shared.git"
+  },
+  "author": "Chris Berry <chrisberry4545@googlemail.com> (http://chrisbdev.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisberry4545/seasonal-shared/issues"
+  },
+  "files": [
+    "/src"
+  ],
+  "dependencies": {
+    "@chrisb-dev/seasonal-shared": "2.7.10",
+    "node-sass": "^4.11.0",
+    "react": "16.9.0",
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/node": "^11.11.3",
+    "@types/react": "^16.9.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "webpack": "4.28.3",
+    "webpack-cli": "^3.3.11"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

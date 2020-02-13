@@ -60,13 +60,26 @@ jobs:
           fingerprints:
             - cd:42:e8:de:36:e3:c0:f9:0d:6f:55:27:47:57:ab:4b
       - run:
+          name: Deploy frontend
+          command: yarn frontend:deploy
+
+  frontend_admin_deploy:
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - checkout
+      - install-dependencies
+      - add_ssh_keys:
+          fingerprints:
+            - 3f:1a:98:c5:19:4c:cf:92:c8:5d:f6:eb:2d:d5:37:f9
+      - run:
           name: Git configuration
           command: |
             git config user.email "chrisbery4545@googlemail.com"
             git config user.name "chrisbery4545"
       - run:
-          name: Deploy frontend
-          command: yarn frontend:deploy
+          name: Deploy frontend admin
+          command: yarn frontend-admin:deploy
 
 workflows:
   version: 2
@@ -85,3 +98,8 @@ workflows:
       - frontend_deploy:
           requires:
             - frontend_approval
+      - frontend_admin_approval:
+          type: approval
+      - frontend_admin_deploy:
+          requires:
+            - frontend_admin_approval
