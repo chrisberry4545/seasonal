@@ -12,4 +12,6 @@ export * from './login-request';
 
 export * from './make-authorized-request';
 
+export * from './update-country';
+
 export * from './update-recipe';

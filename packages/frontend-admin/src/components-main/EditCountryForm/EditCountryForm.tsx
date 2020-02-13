@@ -6,13 +6,23 @@ import {
 import { ICountry } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { getSingleCountry } from '../../services/get-single-country';
+import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
+import { updateCountry } from '../../services';
+
+type ICountryFormConfigProps = IDataFormConfigProps<ICountry>;
+
+const countryFormConfig: ICountryFormConfigProps = {
+  name: {
+    type: 'text'
+  }
+};
 
 const EditCountriesFormInner: FC<IGetAuthorizedBackendDataProps<ICountry>> = ({
   items
 }) => (
-  <div>
-    { items.name }
-  </div>
+  <DataForm item={items}
+    sendData={updateCountry}
+    formConfig={countryFormConfig} />
 );
 
 export const EditCountryForm: FC<{}> = () => {

@@ -56,11 +56,6 @@ const EditRecipeFormInner: FC<IGetAuthorizedBackendDataProps<IRecipe>> = ({
   useEffect(() => {
     getAllFood()
       .then((food) => updateConfigWithFoodDropdowns(food));
-      // .catch((error) => setState({
-      //   error: error.message,
-      //   isLoading: false,
-      //   items: null
-      // }));
   }, []);
 
   return <DataForm item={items} sendData={updateRecipe} formConfig={config} />;
