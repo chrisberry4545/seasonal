@@ -17,9 +17,11 @@ export const Multiselect: FC<{
   options,
   value
 }) => {
+
+  const isSelected = (optionValue: string | number) =>
+    value.includes(optionValue);
   const onOptionClicked = (selectedValue: string | number) => {
-    const isSelected = value.includes(selectedValue as string);
-    const newValue = isSelected
+    const newValue = isSelected(selectedValue)
       ? value.filter((innerValue) => innerValue !== selectedValue)
       : [...value, selectedValue];
     onChange(newValue);
@@ -30,6 +32,7 @@ export const Multiselect: FC<{
       {
         options.map((option) =>
           <div key={option.value}
+            className={isSelected(option.value) ? 'c-multi-select-option--selected' : ''}
             onClick={() => onOptionClicked(option.value)}>
               {option.label}
           </div>
