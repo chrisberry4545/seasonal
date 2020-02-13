@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react';
-import { ISelectOption, Multiselect } from '../../components-elements';
+import { ISelectOption, Multiselect } from '@chrisb-dev/seasonal-shared-frontend-components';
 import './DataForm.scss';
 
 export interface IFormField {
@@ -92,7 +92,10 @@ export function DataForm<T>({
     }
   };
 
-  const updateField = (name: keyof T, value: number | string) => {
+  const updateField = (
+    name: keyof T,
+    value: number | string | string[]
+  ) => {
     setItemState({
       ...itemState,
       [name]: value
@@ -110,8 +113,9 @@ export function DataForm<T>({
             const placeholder = key[0].toUpperCase()
               + key.replace( /([A-Z])/g, ' $1').slice(1);
             const inputs = {
-              onChange: (changedValue: number | string) =>
-                updateField(prop, changedValue),
+              onChange: (
+                changedValue: number | string | string[]
+              ) => updateField(prop, changedValue),
               options,
               placeholder,
               type,
@@ -135,7 +139,7 @@ export function DataForm<T>({
                         return <Multiselect {...{
                           ...inputs,
                           options: inputs.options!
-                        }} />;
+                        } as any} />;
                       case 'select':
                         return <Select {...{
                           ...inputs,
