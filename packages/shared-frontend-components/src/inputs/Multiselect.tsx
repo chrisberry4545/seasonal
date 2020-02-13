@@ -1,10 +1,6 @@
 import React, { FC } from 'react';
+import { ISelectOption } from './select-option.interface';
 import './Multiselect.scss';
-
-export interface ISelectOption {
-  label: string;
-  value: string | number;
-}
 
 export const Multiselect: FC<{
   className?: string,

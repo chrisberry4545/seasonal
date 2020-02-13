@@ -1,5 +1,11 @@
-import React, { useState, FC } from 'react';
-import { ISelectOption, Multiselect } from '@chrisb-dev/seasonal-shared-frontend-components';
+import React, { useState } from 'react';
+import {
+  Checkbox,
+  Input,
+  ISelectOption,
+  Multiselect,
+  Select
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 import './DataForm.scss';
 
 export interface IFormField {
@@ -12,66 +18,6 @@ export interface IDateFormProps<T> {
   sendData: (data: T) => Promise<T>;
   formConfig: IDataFormConfigProps<T> | null;
 }
-
-export const Input: FC<{
-  className?: string,
-  type?: 'text' | 'number',
-  placeholder?: string,
-  onChange: (newValue: string) => void,
-  value: string | number
-}> = ({
-  className,
-  type = 'text',
-  placeholder,
-  onChange,
-  value
-}) => (
-  <input
-    className={`${(className || '')}`}
-    placeholder={placeholder}
-    type={type}
-    value={value}
-    onChange={(event) => onChange(event.target.value)} />
-);
-
-export const Checkbox: FC<{
-  className?: string,
-  onChange: (newValue: string) => void,
-  value: boolean
-}> = ({
-  className,
-  onChange,
-  value
-}) => (
-  <input
-    className={`${(className || '')}`}
-    type='checkbox'
-    checked={value}
-    onChange={(event) => onChange(event.target.value)} />
-);
-
-export const Select: FC<{
-  className?: string,
-  onChange: (newValue: string) => void,
-  options: ISelectOption[],
-  value: string | number
-}> = ({
-  className,
-  onChange,
-  options,
-  value
-}) => (
-  <select
-    className={`${(className || '')}`}
-    value={value}
-    onChange={(event) => onChange(event.target.value)}>
-      {
-        options.map((option) =>
-          <option key={option.value} value={option.value}>{option.label}</option>
-        )
-      }
-  </select>
-);
 
 export function DataForm<T>({
   item,

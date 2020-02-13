@@ -14,7 +14,10 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: [
+          'babel-loader',
+          'ts-loader'
+        ]
       },
       {
         test: /\.scss$/,
