@@ -9,7 +9,7 @@
       "ios",
       "android"
     ],
-    "version": "1.17.13",
+    "version": "1.17.14",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -28,9 +28,10 @@
       "icon": "./assets/icon-ios.png",
       "bundleIdentifier": "com.chrisbdev.seasonal",
       "infoPlist": {
-        "NSLocationAlwaysUsageDescription": "Location is used to determine where we should show seasonal data for",
-        "NSLocationAlwaysAndWhenInUseUsageDescription": "Location is used to determine where we should show seasonal data for",
-        "NSLocationUsageDescription": "Location is used to determine where we should show seasonal data for"
+        "NSLocationWhenInUseUsageDescription": "Eat Seasonal uses your location to find what's in season near you",
+        "NSLocationAlwaysUsageDescription": "Eat Seasonal uses your location to find what's in season near you",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Eat Seasonal uses your location to find what's in season near you",
+        "NSLocationUsageDescription": "Eat Seasonal uses your location to find what's in season near you"
       }
     },
     "android": {
