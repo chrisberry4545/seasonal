@@ -37,7 +37,7 @@ export const Input: FC<{
 export const Checkbox: FC<{
   className?: string,
   onChange: (newValue: string) => void,
-  value: string | number
+  value: boolean
 }> = ({
   className,
   onChange,
@@ -46,7 +46,7 @@ export const Checkbox: FC<{
   <input
     className={`${(className || '')}`}
     type='checkbox'
-    value={value}
+    checked={value}
     onChange={(event) => onChange(event.target.value)} />
 );
 
