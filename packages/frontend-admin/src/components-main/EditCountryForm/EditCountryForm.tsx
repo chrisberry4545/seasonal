@@ -8,12 +8,16 @@ import { useParams } from 'react-router-dom';
 import { getSingleCountry } from '../../services/get-single-country';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import { updateCountry } from '../../services';
+import {
+  requiredValidation
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 type ICountryFormConfigProps = IDataFormConfigProps<ICountry>;
 
 const countryFormConfig: ICountryFormConfigProps = {
   name: {
-    type: 'text'
+    type: 'text',
+    validation: [requiredValidation]
   }
 };
 

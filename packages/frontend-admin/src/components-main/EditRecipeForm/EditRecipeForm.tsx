@@ -7,20 +7,24 @@ import {
 import { IRecipe, IFood } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { DataForm, IDataFormConfigProps } from '../DataForm/DataForm';
+import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 type IRecipeFormConfigProps = IDataFormConfigProps<IRecipe>;
 
 const initialRecipeFormConfig: IRecipeFormConfigProps = {
   name: {
-    type: 'text'
+    type: 'text',
+    validation: [requiredValidation]
   },
 
   linkUrl: {
-    type: 'text'
+    type: 'text',
+    validation: [requiredValidation]
   },
 
   imageUrlSmall: {
-    type: 'text'
+    type: 'text',
+    validation: [requiredValidation]
   },
   isVegan: {
     type: 'checkbox'

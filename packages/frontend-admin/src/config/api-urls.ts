@@ -1,4 +1,5 @@
 const BACKEND_URL = process.env.BACKEND_URL
+  || 'http://localhost:3000/admin'
   || 'https://6usraevcmc.execute-api.eu-west-2.amazonaws.com/prod/admin';
 
 export const LOGIN_URL =

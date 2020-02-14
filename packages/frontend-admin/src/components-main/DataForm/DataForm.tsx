@@ -4,13 +4,15 @@ import {
   Input,
   ISelectOption,
   Multiselect,
-  Select
+  Select,
+  IValidation
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import './DataForm.scss';
 
 export interface IFormField {
   options?: ISelectOption[];
   type: 'text' | 'number' | 'checkbox' | 'select' | 'multiselect';
+  validation?: IValidation[];
 }
 export type IDataFormConfigProps<T> = { [key in keyof T & string]?: IFormField };
 export interface IDateFormProps<T> {
@@ -24,10 +26,13 @@ export function DataForm<T>({
   sendData,
   formConfig
 }: IDateFormProps<T>) {
-  const [itemState, setItemState] = useState({
+  const [itemState, setItemState] = useState<T>({
     ...item
   });
-  const [errorState, setErrorState] = useState(null);
+  const [errorState, setErrorState] = useState<string | null>(null);
+  const [validationState, setValidationState] = useState<
+    { [key in keyof T]?: string[] }
+  >({});
 
   const submit = async () => {
     try {
@@ -40,8 +45,18 @@ export function DataForm<T>({
 
   const updateField = (
     name: keyof T,
-    value: number | string | string[]
+    value: string | string[] | number | boolean,
+    validation: IValidation[] | undefined
   ) => {
+    if (validation) {
+      const errors = validation.map((validationFunction) =>
+        validationFunction(value)
+      );
+      setValidationState({
+        ...validationState,
+        name: errors
+      });
+    }
     setItemState({
       ...itemState,
       [name]: value
@@ -53,7 +68,7 @@ export function DataForm<T>({
       <div>
         {
           formConfig && Object.entries(formConfig).map(([key, formField]) => {
-            const { options, type } = formField as IFormField;
+            const { options, type, validation } = formField as IFormField;
             const prop = key as keyof T;
             const value = itemState[prop] as any;
             const placeholder = key[0].toUpperCase()
@@ -61,12 +76,13 @@ export function DataForm<T>({
             const inputs = {
               onChange: (
                 changedValue: number | string | string[]
-              ) => updateField(prop, changedValue),
+              ) => updateField(prop, changedValue, validation),
               options,
               placeholder,
               type,
               value
             };
+            const validationErrors = validationState[prop];
             return (
               <label key={key} className='c-data-form__field'>
                 {placeholder}
@@ -94,6 +110,9 @@ export function DataForm<T>({
                     }
                   })()
                 }
+                <div>
+                  { validationErrors && validationErrors[0] }
+                </div>
               </label>
             );
           })
