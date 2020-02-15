@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
@@ -6,15 +6,25 @@ import {
 import { IFood } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
-import { updateFood, getSingleFood } from '../../services';
+import { updateFood, getSingleFood, getAllFood } from '../../services';
 import {
   requiredValidation
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 type IFoodFormConfigProps = IDataFormConfigProps<IFood>;
 
-const foodFormConfig: IFoodFormConfigProps = {
+const initialFoodFormConfig: IFoodFormConfigProps = {
   name: {
+    type: 'text',
+    validation: [requiredValidation]
+  },
+
+  imageUrlSmall: {
+    type: 'text',
+    validation: [requiredValidation]
+  },
+
+  description: {
     type: 'text',
     validation: [requiredValidation]
   }
@@ -22,11 +32,32 @@ const foodFormConfig: IFoodFormConfigProps = {
 
 const EditFoodFormInner: FC<IGetAuthorizedBackendDataProps<IFood>> = ({
   items
-}) => (
-  <DataForm item={items}
+}) => {
+  const [config, setConfig] = useState<IFoodFormConfigProps | null>(null);
+
+  const updateConfigWithFoodDropdowns = (food: IFood[]) => {
+    const options = food.map((foodItem) => ({
+      label: foodItem.name,
+      value: foodItem.id
+    }));
+    setConfig({
+      ...initialFoodFormConfig,
+      substituteFoodIds: {
+        options,
+        type: 'multiselect'
+      }
+    });
+  };
+
+  useEffect(() => {
+    getAllFood()
+      .then((food) => updateConfigWithFoodDropdowns(food));
+  }, []);
+
+  return <DataForm item={items}
     sendData={updateFood}
-    formConfig={foodFormConfig} />
-);
+    formConfig={config} />;
+};
 
 export const EditFoodForm: FC<{}> = () => {
   const { id } = useParams();

@@ -17,6 +17,11 @@ const userFormConfig: IUserFormConfigProps = {
   username: {
     type: 'text',
     validation: [requiredValidation]
+  },
+
+  password: {
+    type: 'text',
+    validation: [requiredValidation]
   }
 };
 

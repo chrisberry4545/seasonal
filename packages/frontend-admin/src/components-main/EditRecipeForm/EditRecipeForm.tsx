@@ -26,9 +26,11 @@ const initialRecipeFormConfig: IRecipeFormConfigProps = {
     type: 'text',
     validation: [requiredValidation]
   },
+
   isVegan: {
     type: 'checkbox'
   },
+
   isVegetarian: {
     type: 'checkbox'
   }
