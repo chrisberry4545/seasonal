@@ -8,7 +8,7 @@ import {
 
 import {
   LoadingSpinner
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 import { IFoodTableProps } from './FoodTable.interface';
 
 export const FoodTable: FC<IFoodTableProps> = ({

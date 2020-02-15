@@ -8,7 +8,7 @@ import {
 
 import {
   LoadingSpinner
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 import { IRecipeTableProps } from './RecipeTable.interface';
 import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
 

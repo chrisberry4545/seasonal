@@ -3,7 +3,7 @@ import './SeasonNameView.scss';
 import {
   ISeasonNameViewProps
 } from './SeasonNameView.interface';
-import { TextHeadingSmall } from '../../components-elements';
+import { TextHeadingSmall } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 export const SeasonNameView: FC<ISeasonNameViewProps> = ({
   name

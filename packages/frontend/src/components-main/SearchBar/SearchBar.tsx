@@ -3,15 +3,13 @@ import React, { FC } from 'react';
 import './SearchBar.scss';
 
 import { ISearchBarProps } from './SearchBar.interface';
-import {
-  Input
-} from '../../components-elements';
 
 import {
   BareButton,
   CrossIcon,
-  MagnifyingGlassIcon
-} from '../../components-elements';
+  MagnifyingGlassIcon,
+  Input
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 const getSearchBarClassName = (isSearchBarVisible: boolean) => (
   'c-search-bar' +

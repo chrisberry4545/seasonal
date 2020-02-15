@@ -11,7 +11,10 @@ import {
   Bar,
   YAxis
 } from 'recharts';
-import { TextHeadingMedium, TextMedium } from '../../components-elements';
+import {
+  TextHeadingMedium,
+  TextMedium
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 export const AllSeasonsGraph: FC<IAllSeasonsGraphInputProps> = ({
   foodInSeasonGraphData

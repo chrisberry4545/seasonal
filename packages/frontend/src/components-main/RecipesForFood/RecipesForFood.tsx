@@ -4,7 +4,9 @@ import './RecipesForFood.scss';
 
 import { IRecipesForFoodProps } from './RecipesForFood.interface';
 import { ImageGrid } from '../../components-layout';
-import { TextHeadingSmall } from '../../components-elements';
+import {
+  TextHeadingSmall
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
 
 export const RecipesForFood: FC<IRecipesForFoodProps> = ({

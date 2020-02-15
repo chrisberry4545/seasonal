@@ -6,7 +6,7 @@ import {
   ImageGridItem
 } from '../ImageGridItem/ImageGridItem';
 import { IImageGrid } from './ImageGrid.interface';
-import { TextMedium } from '../../components-elements';
+import { TextMedium } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 export const ImageGrid: FC<IImageGrid> = ({
   data,

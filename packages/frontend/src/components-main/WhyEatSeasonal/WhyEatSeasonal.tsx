@@ -4,7 +4,7 @@ import './WhyEatSeasonal.scss';
 
 import {
   TextHeadingLarge
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
   ISummaryColumnList,

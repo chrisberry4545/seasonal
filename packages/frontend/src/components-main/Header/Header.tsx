@@ -6,7 +6,7 @@ import {
   BareButton,
   BurgerIcon,
   TextHeadingLarge
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 import {
   SearchBarConnecter
 } from '../';

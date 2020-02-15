@@ -29,6 +29,7 @@
     "@chrisb-dev/seasonal-shared": "2.7.10",
     "node-sass": "^4.11.0",
     "react": "16.9.0",
+    "sass-mq": "^5.0.1",
     "typescript": "^3.7.2"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "@types/node": "^11.11.3",
     "@types/react": "^16.9.0",
     "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
