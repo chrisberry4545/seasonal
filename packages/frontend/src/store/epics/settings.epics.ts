@@ -1,7 +1,12 @@
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 
 import {
-  SET_DIET_TYPE, selectSettingsState, INIT_APP, initSettings, ISettingsState
+  SET_DIET_TYPE,
+  selectSettingsState,
+  INIT_APP,
+  initSettings,
+  ISettingsState,
+  DIET_TYPE
 } from '@chrisb-dev/seasonal-shared';
 
 import { IState } from '../../interfaces';
@@ -38,6 +43,18 @@ export const getStoredSettings$: WebSeasonalEpic = (
   actions$.pipe(
     ofType(INIT_APP),
     map(() => getStoredData<ISettingsState>(settingsStorageKey)),
-    map((settings) => initSettings(settings as ISettingsState))
+    map((settings) => initSettings(
+      settings
+      ? {
+        ...settings,
+        timesAppStarted: (settings.timesAppStarted || 0) + 1
+      }
+      :
+      {
+        dietType: DIET_TYPE.ALL,
+        selectedRegionCode: undefined,
+        timesAppStarted: 1
+      })
+    )
   )
 );

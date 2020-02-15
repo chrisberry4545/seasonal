@@ -4,7 +4,7 @@ import {
   IAllSeasonsProps
 } from './AllSeasons.interface';
 import { SeasonNameView, ImageGrid } from '../../components-layout';
-import { LoadingSpinner } from '../../components-elements';
+import { LoadingSpinner } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import InfiniteScroll from 'react-infinite-scroller';
 

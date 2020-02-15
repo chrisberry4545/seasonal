@@ -4,7 +4,7 @@ import './ImageGridItem.scss';
 
 import {
   TextMedium
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
   BackgroundImageWithLoadingSpinner

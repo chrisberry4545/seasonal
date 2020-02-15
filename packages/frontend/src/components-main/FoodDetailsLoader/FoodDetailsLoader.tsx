@@ -4,7 +4,7 @@ import './FoodDetailsLoader.scss';
 
 import {
   LoadingSpinner
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
   IFoodDetailsLoaderInputProps

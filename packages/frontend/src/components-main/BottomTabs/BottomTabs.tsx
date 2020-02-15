@@ -4,7 +4,7 @@ import './BottomTabs.scss';
 
 import {
   BareButton
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 import { IBottomTabProps } from './BottomTabs.interface';
 
 const addTabClasses = (isSelected: boolean) => (

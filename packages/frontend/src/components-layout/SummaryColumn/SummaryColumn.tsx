@@ -5,7 +5,7 @@ import './SummaryColumn.scss';
 import {
   TextMedium,
   TextHeadingSmall
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
   ISummaryColumn

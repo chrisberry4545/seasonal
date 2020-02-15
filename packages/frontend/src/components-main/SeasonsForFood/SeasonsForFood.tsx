@@ -7,7 +7,7 @@ import {
   TextSmall,
   BareButton,
   TextHeadingSmall
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
 

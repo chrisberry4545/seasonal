@@ -5,7 +5,7 @@ import './AboutEatSeasonal.scss';
 import {
   TextHeadingLarge,
   TextMedium
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 export const AboutEatSeasonal: FC<{}> = ({}) => (
   <div className='c-about-eat-seasonal'>

@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "@chrisb-dev/seasonal-shared": "2.7.10",
-    "@chrisb-dev/seasonal-shared-frontend-components": "file:../shared-frontend-components",
-    "inuitcss": "^6.0.0",
+    "@chrisb-dev/seasonal-shared-frontend-components": "0.1.0",
     "node-sass": "^4.11.0",
     "react": "16.9.0",
     "react-dom": "^16.8.2",
@@ -27,7 +26,6 @@
     "redux-observable": "^1.1.0",
     "reselect": "^4.0.0",
     "rxjs": "^6.4.0",
-    "sass-mq": "^5.0.0",
     "typescript": "^3.7.2"
   },
   "devDependencies": {
@@ -38,14 +36,6 @@
     "@types/react-router": "^4.4.5",
     "@types/react-router-dom": "^5.1.3",
     "gh-pages": "^2.2.0"
-  },
-  "workspaces": {
-    "nohoist": [
-      "inuitcss",
-      "inuitcss/**",
-      "sass-mq",
-      "sass-mq/**"
-    ]
   },
   "browserslist": [
     ">0.2%",

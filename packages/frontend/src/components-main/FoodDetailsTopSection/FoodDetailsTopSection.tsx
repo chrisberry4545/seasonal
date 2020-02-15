@@ -6,7 +6,7 @@ import {
   ArrowIcon,
   BareButton,
   TextHeadingMedium
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
   IFoodDetailsTopSectionProps

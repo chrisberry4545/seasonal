@@ -7,7 +7,7 @@ import {
   CrossIcon,
   TextMedium,
   LoadingSpinner
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
   fadeInOutAnimation

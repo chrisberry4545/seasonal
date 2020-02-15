@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import {
   PrimaryButton
-} from '../../components-elements';
+} from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
   IViewWebAppVersionDispatchProps
