@@ -16,7 +16,6 @@
     "@types/react-router": "^4.4.5",
     "@types/recharts": "^1.1.16",
     "connected-react-router": "^6.3.2",
-    "inuitcss": "^6.0.0",
     "node-sass": "^4.11.0",
     "react": "16.9.0",
     "react-dom": "^16.8.2",
@@ -30,7 +29,6 @@
     "redux-observable": "^1.1.0",
     "reselect": "^4.0.0",
     "rxjs": "^6.4.0",
-    "sass-mq": "^5.0.0",
     "typescript": "^3.7.2"
   },
   "scripts": {
@@ -56,8 +54,5 @@
     "gh-pages": "^2.2.0",
     "jest": "23.6.0",
     "react-snap": "^1.23.0"
-  },
-  "workspaces": {
-    "nohoist": ["inuitcss", "inuitcss/**", "sass-mq", "sass-mq/**"]
   }
 }
