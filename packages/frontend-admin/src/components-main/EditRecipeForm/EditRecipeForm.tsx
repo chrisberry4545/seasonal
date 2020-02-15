@@ -73,7 +73,8 @@ export const EditRecipeForm: FC<{}> = () => {
     EditRecipeFormInner,
     () => {
       return getSingleRecipe(id as string);
-    }
+    },
+    updateRecipe
   );
   return <CreatedComponent />;
 };

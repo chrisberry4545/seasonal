@@ -1,3 +1,5 @@
+export * from './CreateFoodPage/CreateFoodPage';
+
 export * from './EditCountryPage/EditCountryPage';
 
 export * from './EditFoodPage/EditFoodPage';

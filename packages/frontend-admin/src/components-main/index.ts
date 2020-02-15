@@ -1,3 +1,7 @@
+export * from './BaseFormFood/BaseFormFood';
+
+export * from './CreateFoodForm/CreateFoodForm';
+
 export * from './DataForm/DataForm';
 
 export * from './EditCountryForm/EditCountryForm';

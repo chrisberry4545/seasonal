@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 
 export interface IGetAuthorizedBackendDataProps<T> {
   items: T;
+  updateMethod?: (item: T) => Promise<T>;
 }
 
 interface IGetAuthorizedBackendDataState<T> {
@@ -12,7 +13,8 @@ interface IGetAuthorizedBackendDataState<T> {
 
 export function GetAuthorizedBackendData<T>(
   InnerComponent: FC<IGetAuthorizedBackendDataProps<T>>,
-  requestDataMethod: () => Promise<T>
+  requestDataMethod: () => Promise<T>,
+  updateMethod?: (item: T) => Promise<T>
 ): FC<{}> {
   return () => {
     const [state, setState] = useState<IGetAuthorizedBackendDataState<T>>({
@@ -42,7 +44,7 @@ export function GetAuthorizedBackendData<T>(
             : <div>
               {
                 !state.error && state.items
-                  ? <InnerComponent items={state.items} />
+                  ? <InnerComponent items={state.items} updateMethod={updateMethod} />
                   : <div>{state.error}</div>
               }
             </div>

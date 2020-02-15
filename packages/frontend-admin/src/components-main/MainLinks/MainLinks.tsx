@@ -11,6 +11,9 @@ export const MainLinks: FC<{}> = () => (
       <Link to={`/${ROUTES.FOOD}`}>View food</Link>
     </div>
     <div>
+      <Link to={`/${ROUTES.FOOD}/${ROUTES.CREATE}`}>Create food</Link>
+    </div>
+    <div>
       <Link to={`/${ROUTES.RECIPE}`}>View recipes</Link>
     </div>
     <div>

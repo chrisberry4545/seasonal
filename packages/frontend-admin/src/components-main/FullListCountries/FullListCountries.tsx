@@ -13,10 +13,12 @@ const FullListCountriesInner: FC<IGetAuthorizedBackendDataProps<ICountry[]>> = (
 }) => (
   <div>
     {
-      items.map((item) =>
+      items && items.map((item) =>
         <div key={item.id}>
           {item.name}
-          <Link to={`${ROUTES.COUNTRY}/${item.id}`}>Edit</Link>
+          <Link to={`${ROUTES.COUNTRY}/${ROUTES.EDIT}/${item.id}`}>
+            Edit
+          </Link>
         </div>
       )
     }

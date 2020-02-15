@@ -1,5 +1,7 @@
 export * from './access-token';
 
+export * from './create-food';
+
 export * from './get-all-countries';
 
 export * from './get-all-food';

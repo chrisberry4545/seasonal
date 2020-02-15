@@ -13,10 +13,12 @@ const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegion[]>> = ({
 }) => (
   <div>
     {
-      items.map((item) =>
+      items && items.map((item) =>
         <div key={item.code}>
           {item.name}
-          <Link to={`${ROUTES.REGION}/${item.code}`}>Edit</Link>
+          <Link to={`${ROUTES.REGION}/${ROUTES.EDIT}/${item.code}`}>
+            Edit
+          </Link>
         </div>
       )
     }

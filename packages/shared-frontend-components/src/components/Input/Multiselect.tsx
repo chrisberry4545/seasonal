@@ -15,7 +15,7 @@ export const Multiselect: FC<{
 }) => {
 
   const isSelected = (optionValue: string | number) =>
-    value.includes(optionValue);
+    value && value.includes(optionValue);
   const onOptionClicked = (selectedValue: string | number) => {
     const newValue = isSelected(selectedValue)
       ? value.filter((innerValue) => innerValue !== selectedValue)

@@ -39,7 +39,8 @@ export const EditUserForm: FC<{}> = () => {
     EditUserFormInner,
     () => {
       return getSingleUser(id as string);
-    }
+    },
+    updateUser
   );
   return <CreatedComponent />;
 };

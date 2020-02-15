@@ -64,7 +64,8 @@ export const EditRegionForm: FC<{}> = () => {
     EditRegionFormInner,
     () => {
       return getSingleRegion(id as string);
-    }
+    },
+    updateRegion
   );
   return <CreatedComponent />;
 };

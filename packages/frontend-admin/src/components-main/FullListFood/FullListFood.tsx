@@ -13,10 +13,12 @@ const FullListFoodInner: FC<IGetAuthorizedBackendDataProps<IFood[]>> = ({
 }) => (
   <div>
     {
-      items.map((item) =>
+      items && items.map((item) =>
         <div key={item.id}>
           {item.name}
-          <Link to={`${ROUTES.FOOD}/${item.id}`}>Edit</Link>
+          <Link to={`${ROUTES.FOOD}/${ROUTES.EDIT}/${item.id}`}>
+            Edit
+          </Link>
         </div>
       )
     }

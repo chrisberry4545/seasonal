@@ -13,10 +13,12 @@ const FullListUsersInner: FC<IGetAuthorizedBackendDataProps<IUser[]>> = ({
 }) => (
   <div>
     {
-      items.map((item) =>
+      items && items.map((item) =>
         <div key={item.id}>
           {item.username}
-          <Link to={`${ROUTES.USER}/${item.id}`}>Edit</Link>
+          <Link to={`${ROUTES.USER}/${ROUTES.EDIT}/${item.id}`}>
+            Edit
+          </Link>
         </div>
       )
     }

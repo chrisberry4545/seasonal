@@ -34,7 +34,8 @@ export const EditCountryForm: FC<{}> = () => {
     EditCountriesFormInner,
     () => {
       return getSingleCountry(id as string);
-    }
+    },
+    updateCountry
   );
   return <CreatedComponent />;
 };

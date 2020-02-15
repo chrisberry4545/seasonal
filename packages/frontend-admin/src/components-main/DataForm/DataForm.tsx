@@ -16,8 +16,8 @@ export interface IFormField {
 }
 export type IDataFormConfigProps<T> = { [key in keyof T & string]?: IFormField };
 export interface IDateFormProps<T> {
-  item: T;
-  sendData: (data: T) => Promise<T>;
+  item: Partial<T>;
+  sendData?: (data: T) => Promise<T>;
   formConfig: IDataFormConfigProps<T> | null;
 }
 
@@ -26,7 +26,7 @@ export function DataForm<T>({
   sendData,
   formConfig
 }: IDateFormProps<T>) {
-  const [itemState, setItemState] = useState<T>({
+  const [itemState, setItemState] = useState<Partial<T>>({
     ...item
   });
   const [errorState, setErrorState] = useState<string | null>(null);
@@ -36,7 +36,7 @@ export function DataForm<T>({
 
   const submit = async () => {
     try {
-      const updatedItem = await sendData(itemState);
+      const updatedItem = await sendData!(itemState as T);
       setItemState(updatedItem);
     } catch (error) {
       setErrorState(error.message);
