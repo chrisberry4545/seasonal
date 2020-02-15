@@ -1158,14 +1158,6 @@
     "@types/node" "^8.0.31"
     typescript "~3.2.2"
 
-"@chrisb-dev/seasonal-shared-frontend-components@file:packages/shared-frontend-components":
-  version "0.1.0"
-  dependencies:
-    "@chrisb-dev/seasonal-shared" "2.7.10"
-    node-sass "^4.11.0"
-    react "16.9.0"
-    typescript "^3.7.2"
-
 "@chrisb-dev/tslint@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@chrisb-dev/tslint/-/tslint-1.0.1.tgz#843b069054479b575868d4c76ad099a347ff481e"

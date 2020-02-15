@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@chrisb-dev/seasonal-shared": "2.7.10",
-    "@chrisb-dev/seasonal-shared-frontend-components": "file:../shared-frontend-components",
+    "@chrisb-dev/seasonal-shared-frontend-components": "0.1.0",
     "inuitcss": "^6.0.0",
     "node-sass": "^4.11.0",
     "react": "16.9.0",
