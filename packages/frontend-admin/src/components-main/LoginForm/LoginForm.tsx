@@ -1,6 +1,7 @@
-import React, { Component, FormEvent, ChangeEvent } from 'react';
+import React, { Component, FormEvent } from 'react';
 import { loginRequest } from '../../services';
 import { Redirect } from 'react-router';
+import { Input } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 interface ILoginFormState {
   error: string | null;
@@ -33,12 +34,12 @@ export class LoginForm extends Component<{}, ILoginFormState> {
     }
   }
 
-  public usernameChanged(event: ChangeEvent<HTMLInputElement>) {
-    this.setState({ username: event.target.value });
+  public usernameChanged(username: string) {
+    this.setState({ username });
   }
 
-  public passwordChanged(event: ChangeEvent<HTMLInputElement>) {
-    this.setState({ password: event.target.value });
+  public passwordChanged(password: string) {
+    this.setState({ password });
   }
 
   public render() {
@@ -49,13 +50,13 @@ export class LoginForm extends Component<{}, ILoginFormState> {
       <form onSubmit={this.handleSubmit}>
         <label>
           Username:
-          <input type='text'
+          <Input type='text'
             value={this.state.username}
             onChange={this.usernameChanged} />
         </label>
         <label>
           Password:
-          <input type='password'
+          <Input type='password'
             value={this.state.password}
             onChange={this.passwordChanged} />
         </label>
