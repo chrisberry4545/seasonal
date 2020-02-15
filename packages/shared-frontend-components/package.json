@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "@chrisb-dev/seasonal-shared": "2.7.10",
+    "inuitcss": "^6.0.0",
     "node-sass": "^4.11.0",
     "react": "16.9.0",
     "sass-mq": "^5.0.1",
