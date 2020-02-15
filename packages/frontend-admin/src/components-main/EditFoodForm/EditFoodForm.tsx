@@ -3,37 +3,37 @@ import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { ICountry } from '@chrisb-dev/seasonal-shared';
+import { IFood } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
-import { getSingleCountry, updateCountry } from '../../services';
+import { updateFood, getSingleFood } from '../../services';
 import {
   requiredValidation
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
-type ICountryFormConfigProps = IDataFormConfigProps<ICountry>;
+type IFoodFormConfigProps = IDataFormConfigProps<IFood>;
 
-const countryFormConfig: ICountryFormConfigProps = {
+const foodFormConfig: IFoodFormConfigProps = {
   name: {
     type: 'text',
     validation: [requiredValidation]
   }
 };
 
-const EditCountriesFormInner: FC<IGetAuthorizedBackendDataProps<ICountry>> = ({
+const EditFoodFormInner: FC<IGetAuthorizedBackendDataProps<IFood>> = ({
   items
 }) => (
   <DataForm item={items}
-    sendData={updateCountry}
-    formConfig={countryFormConfig} />
+    sendData={updateFood}
+    formConfig={foodFormConfig} />
 );
 
-export const EditCountryForm: FC<{}> = () => {
+export const EditFoodForm: FC<{}> = () => {
   const { id } = useParams();
-  const CreatedComponent = GetAuthorizedBackendData<ICountry>(
-    EditCountriesFormInner,
+  const CreatedComponent = GetAuthorizedBackendData<IFood>(
+    EditFoodFormInner,
     () => {
-      return getSingleCountry(id as string);
+      return getSingleFood(id as string);
     }
   );
   return <CreatedComponent />;

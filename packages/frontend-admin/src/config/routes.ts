@@ -1,6 +1,9 @@
 export enum ROUTES {
   COUNTRY = 'country',
+  FOOD = 'food',
   HOME = 'home',
   LOGIN = '',
-  RECIPE = 'recipes'
+  RECIPE = 'recipe',
+  REGION = 'region',
+  USER = 'user'
 }

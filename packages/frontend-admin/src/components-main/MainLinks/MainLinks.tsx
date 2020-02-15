@@ -8,7 +8,16 @@ export const MainLinks: FC<{}> = () => (
       <Link to={`/${ROUTES.COUNTRY}`}>View countries</Link>
     </div>
     <div>
+      <Link to={`/${ROUTES.FOOD}`}>View food</Link>
+    </div>
+    <div>
       <Link to={`/${ROUTES.RECIPE}`}>View recipes</Link>
+    </div>
+    <div>
+      <Link to={`/${ROUTES.REGION}`}>View regions</Link>
+    </div>
+    <div>
+      <Link to={`/${ROUTES.USER}`}>View users</Link>
     </div>
   </div>
 );

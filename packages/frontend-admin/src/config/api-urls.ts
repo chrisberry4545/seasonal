@@ -12,3 +12,9 @@ export const FOOD_URL =
 
 export const RECIPE_URL =
   process.env.RECIPE_URL || `${BACKEND_URL}/recipe`;
+
+export const REGION_URL =
+  process.env.REGION_URL || `${BACKEND_URL}/region`;
+
+export const USER_URL =
+  process.env.USER_URL || `${BACKEND_URL}/user`;
