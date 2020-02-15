@@ -1,11 +1,11 @@
-@import 'node_modules/inuitcss/settings/settings.core';
+@import '../../node_modules/inuitcss/settings/settings.core';
 
-@import 'node_modules/sass-mq/mq';
+@import '../../node_modules/sass-mq/mq';
 
-@import 'node_modules/inuitcss/generic/generic.reset';
-@import 'node_modules/inuitcss/generic/generic.box-sizing';
-@import 'node_modules/inuitcss/generic/generic.normalize';
-@import 'node_modules/inuitcss/generic/generic.shared';
+@import '../../node_modules/inuitcss/generic/generic.reset';
+@import '../../node_modules/inuitcss/generic/generic.box-sizing';
+@import '../../node_modules/inuitcss/generic/generic.normalize';
+@import '../../node_modules/inuitcss/generic/generic.shared';
 
 @import './settings';
 @import './tools';
