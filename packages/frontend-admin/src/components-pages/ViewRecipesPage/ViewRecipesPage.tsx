@@ -1,4 +1,4 @@
 import React, { FC } from 'react';
-import { RecipesFullList } from '../../components-main';
+import { FullListRecipes } from '../../components-main';
 
-export const ViewRecipesPage: FC<{}> = () => <RecipesFullList />;
+export const ViewRecipesPage: FC<{}> = () => <FullListRecipes />;

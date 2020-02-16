@@ -1,14 +1,24 @@
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../config';
+import { mainLinks } from '../../consts';
 
 export const MainLinks: FC<{}> = () => (
   <div>
-    <div>
-      <Link to={`/${ROUTES.COUNTRY}`}>View countries</Link>
-    </div>
-    <div>
-      <Link to={`/${ROUTES.RECIPE}`}>View recipes</Link>
-    </div>
+    {
+      mainLinks.map((link) =>
+        <Fragment key={link.viewUrl}>
+          <div>
+            <Link to={`/${link.viewUrl}`}>
+              {link.viewLinkText}
+            </Link>
+          </div>
+          <div>
+            <Link to={`/${link.createLinkUrl}`}>
+              {link.createLinkText}
+            </Link>
+          </div>
+        </Fragment>
+      )
+    }
   </div>
 );

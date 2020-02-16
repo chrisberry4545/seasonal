@@ -3,7 +3,7 @@ import './Input.scss';
 
 export const Input: FC<{
   className?: string,
-  type?: 'text' | 'number',
+  type?: 'text' | 'number' | 'password',
   placeholder?: string,
   onChange: (newValue: string) => void,
   value?: string | number

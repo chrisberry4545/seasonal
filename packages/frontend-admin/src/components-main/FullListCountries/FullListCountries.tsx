@@ -8,22 +8,24 @@ import { ICountry } from '@chrisb-dev/seasonal-shared';
 import { ROUTES } from '../../config';
 import { Link } from 'react-router-dom';
 
-const CountriesFullListInner: FC<IGetAuthorizedBackendDataProps<ICountry[]>> = ({
+const FullListCountriesInner: FC<IGetAuthorizedBackendDataProps<ICountry[]>> = ({
   items
 }) => (
   <div>
     {
-      items.map((item) =>
+      items && items.map((item) =>
         <div key={item.id}>
           {item.name}
-          <Link to={`${ROUTES.COUNTRY}/${item.id}`}>Edit</Link>
+          <Link to={`${ROUTES.COUNTRY}/${ROUTES.EDIT}/${item.id}`}>
+            Edit
+          </Link>
         </div>
       )
     }
   </div>
 );
 
-export const CountriesFullList = GetAuthorizedBackendData<ICountry[]>(
-  CountriesFullListInner,
+export const FullListCountries = GetAuthorizedBackendData<ICountry[]>(
+  FullListCountriesInner,
   getAllCountries
 );
