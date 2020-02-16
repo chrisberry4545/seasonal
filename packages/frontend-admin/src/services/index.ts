@@ -1,6 +1,14 @@
 export * from './access-token';
 
+export * from './create-country';
+
 export * from './create-food';
+
+export * from './create-recipe';
+
+export * from './create-region';
+
+export * from './create-user';
 
 export * from './get-all-countries';
 

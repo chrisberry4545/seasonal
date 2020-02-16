@@ -1,37 +1,16 @@
 import React, { FC } from 'react';
 import {
-  IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { ICountry } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
-import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import { getSingleCountry, updateCountry } from '../../services';
-import {
-  requiredValidation
-} from '@chrisb-dev/seasonal-shared-frontend-components';
-
-type ICountryFormConfigProps = IDataFormConfigProps<ICountry>;
-
-const countryFormConfig: ICountryFormConfigProps = {
-  name: {
-    type: 'text',
-    validation: [requiredValidation]
-  }
-};
-
-const EditCountriesFormInner: FC<IGetAuthorizedBackendDataProps<ICountry>> = ({
-  items
-}) => (
-  <DataForm item={items}
-    sendData={updateCountry}
-    formConfig={countryFormConfig} />
-);
+import { BaseFormCountry } from '../BaseFormCountry/BaseFormCountry';
 
 export const EditCountryForm: FC<{}> = () => {
   const { id } = useParams();
   const CreatedComponent = GetAuthorizedBackendData<ICountry>(
-    EditCountriesFormInner,
+    BaseFormCountry,
     () => {
       return getSingleCountry(id as string);
     },

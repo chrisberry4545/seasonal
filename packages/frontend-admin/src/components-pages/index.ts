@@ -1,4 +1,12 @@
+export * from './CreateCountryPage/CreateCountryPage';
+
 export * from './CreateFoodPage/CreateFoodPage';
+
+export * from './CreateRecipePage/CreateRecipePage';
+
+export * from './CreateRegionPage/CreateRegionPage';
+
+export * from './CreateUserPage/CreateUserPage';
 
 export * from './EditCountryPage/EditCountryPage';
 

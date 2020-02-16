@@ -1,6 +1,22 @@
+export * from './BaseFormCountry/BaseFormCountry';
+
 export * from './BaseFormFood/BaseFormFood';
 
+export * from './BaseFormRecipe/BaseFormRecipe';
+
+export * from './BaseFormRegion/BaseFormRegion';
+
+export * from './BaseFormUser/BaseFormUser';
+
+export * from './CreateCountryForm/CreateCountryForm';
+
 export * from './CreateFoodForm/CreateFoodForm';
+
+export * from './CreateRecipeForm/CreateRecipeForm';
+
+export * from './CreateRegionForm/CreateRegionForm';
+
+export * from './CreateUserForm/CreateUserForm';
 
 export * from './DataForm/DataForm';
 
