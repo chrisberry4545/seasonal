@@ -25,7 +25,11 @@ export const loginApi = (router = Router()) => {
             return sendAuthorizationError();
           }
           const body = { id : user.id, username : user.username };
-          const token = jwt.sign({ user : body }, JWT_SECRET_KEY as string);
+          const token = jwt.sign(
+            { user : body },
+            JWT_SECRET_KEY as string,
+            { expiresIn: '30m' }
+          );
           return res.json({ token });
         });
       } catch (error) {
