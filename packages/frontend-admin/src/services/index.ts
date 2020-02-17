@@ -10,6 +10,16 @@ export * from './create-region';
 
 export * from './create-user';
 
+export * from './delete-country';
+
+export * from './delete-food';
+
+export * from './delete-recipe';
+
+export * from './delete-region';
+
+export * from './delete-user';
+
 export * from './get-all-countries';
 
 export * from './get-all-food';

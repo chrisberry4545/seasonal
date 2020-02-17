@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getAllUsers } from '../../services';
+import { getAllUsers, deleteUser } from '../../services';
 import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
@@ -7,9 +7,11 @@ import {
 import { IUser } from '@chrisb-dev/seasonal-shared';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../config';
+import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListUsersInner: FC<IGetAuthorizedBackendDataProps<IUser[]>> = ({
-  items
+  items,
+  reload
 }) => (
   <div>
     {
@@ -19,6 +21,14 @@ const FullListUsersInner: FC<IGetAuthorizedBackendDataProps<IUser[]>> = ({
           <Link to={`${ROUTES.USER}/${ROUTES.EDIT}/${item.id}`}>
             Edit
           </Link>
+          <DeleteItemButton deleteItem={
+            () => deleteUser(item.id).then((user) => {
+              if (reload) {
+                reload();
+              }
+              return user;
+            })
+          } />
         </div>
       )
     }

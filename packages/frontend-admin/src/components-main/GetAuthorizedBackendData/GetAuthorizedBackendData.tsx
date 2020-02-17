@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 
 export interface IGetAuthorizedBackendDataProps<T> {
   items: T;
+  reload?: () => void;
   updateMethod?: (item: T) => Promise<T>;
 }
 
@@ -23,7 +24,7 @@ export function GetAuthorizedBackendData<T>(
       items: null
     });
 
-    useEffect(() => {
+    const requestNewData = () => {
       requestDataMethod()
         .then((items) => setState({
           error: null,
@@ -34,7 +35,9 @@ export function GetAuthorizedBackendData<T>(
           isLoading: false,
           items: null
         }));
-    }, []);
+    };
+
+    useEffect(requestNewData, []);
 
     return (
       <div>
@@ -44,7 +47,11 @@ export function GetAuthorizedBackendData<T>(
             : <div>
               {
                 !state.error && state.items
-                  ? <InnerComponent items={state.items} updateMethod={updateMethod} />
+                  ? <InnerComponent
+                      items={state.items}
+                      reload={requestNewData}
+                      updateMethod={updateMethod}
+                    />
                   : <div>{state.error}</div>
               }
             </div>

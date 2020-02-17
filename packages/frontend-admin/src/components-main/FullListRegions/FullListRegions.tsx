@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getAllRegions } from '../../services';
+import { getAllRegions, deleteRegion } from '../../services';
 import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
@@ -7,9 +7,11 @@ import {
 import { IRegion } from '@chrisb-dev/seasonal-shared';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../config';
+import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegion[]>> = ({
-  items
+  items,
+  reload
 }) => (
   <div>
     {
@@ -19,6 +21,14 @@ const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegion[]>> = ({
           <Link to={`${ROUTES.REGION}/${ROUTES.EDIT}/${item.code}`}>
             Edit
           </Link>
+          <DeleteItemButton deleteItem={
+            () => deleteRegion(item.code).then((region) => {
+              if (reload) {
+                reload();
+              }
+              return region;
+            })
+          } />
         </div>
       )
     }
