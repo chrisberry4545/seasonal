@@ -10,7 +10,8 @@ import { ROUTES } from '../../config';
 import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListRecipesInner: FC<IGetAuthorizedBackendDataProps<IRecipe[]>> = ({
-  items
+  items,
+  reload
 }) => (
   <div>
     {
@@ -22,7 +23,9 @@ const FullListRecipesInner: FC<IGetAuthorizedBackendDataProps<IRecipe[]>> = ({
           </Link>
           <DeleteItemButton deleteItem={
             () => deleteRecipe(item.id).then((recipe) => {
-              location.reload();
+              if (reload) {
+                reload();
+              }
               return recipe;
             })
           } />

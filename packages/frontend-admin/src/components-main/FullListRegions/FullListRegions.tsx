@@ -10,7 +10,8 @@ import { ROUTES } from '../../config';
 import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegion[]>> = ({
-  items
+  items,
+  reload
 }) => (
   <div>
     {
@@ -22,7 +23,9 @@ const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegion[]>> = ({
           </Link>
           <DeleteItemButton deleteItem={
             () => deleteRegion(item.code).then((region) => {
-              location.reload();
+              if (reload) {
+                reload();
+              }
               return region;
             })
           } />

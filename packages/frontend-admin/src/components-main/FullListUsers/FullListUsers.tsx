@@ -10,7 +10,8 @@ import { ROUTES } from '../../config';
 import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListUsersInner: FC<IGetAuthorizedBackendDataProps<IUser[]>> = ({
-  items
+  items,
+  reload
 }) => (
   <div>
     {
@@ -22,7 +23,9 @@ const FullListUsersInner: FC<IGetAuthorizedBackendDataProps<IUser[]>> = ({
           </Link>
           <DeleteItemButton deleteItem={
             () => deleteUser(item.id).then((user) => {
-              location.reload();
+              if (reload) {
+                reload();
+              }
               return user;
             })
           } />

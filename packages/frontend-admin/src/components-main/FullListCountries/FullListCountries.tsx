@@ -10,7 +10,8 @@ import { Link } from 'react-router-dom';
 import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListCountriesInner: FC<IGetAuthorizedBackendDataProps<ICountry[]>> = ({
-  items
+  items,
+  reload
 }) => (
   <div>
     {
@@ -22,7 +23,9 @@ const FullListCountriesInner: FC<IGetAuthorizedBackendDataProps<ICountry[]>> = (
           </Link>
           <DeleteItemButton deleteItem={
             () => deleteCountry(item.id).then((country) => {
-              location.reload();
+              if (reload) {
+                reload();
+              }
               return country;
             })
           } />
