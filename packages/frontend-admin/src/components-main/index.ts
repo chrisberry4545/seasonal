@@ -20,6 +20,8 @@ export * from './CreateUserForm/CreateUserForm';
 
 export * from './DataForm/DataForm';
 
+export * from './DeleteItemButton/DeleteItemButton';
+
 export * from './EditCountryForm/EditCountryForm';
 
 export * from './EditFoodForm/EditFoodForm';

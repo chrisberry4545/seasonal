@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getAllRecipes } from '../../services';
+import { getAllRecipes, deleteRecipe } from '../../services';
 import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
@@ -7,6 +7,7 @@ import {
 import { IRecipe } from '@chrisb-dev/seasonal-shared';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../config';
+import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListRecipesInner: FC<IGetAuthorizedBackendDataProps<IRecipe[]>> = ({
   items
@@ -19,6 +20,12 @@ const FullListRecipesInner: FC<IGetAuthorizedBackendDataProps<IRecipe[]>> = ({
           <Link to={`${ROUTES.RECIPE}/${ROUTES.EDIT}/${item.id}`}>
             Edit
           </Link>
+          <DeleteItemButton deleteItem={
+            () => deleteRecipe(item.id).then((recipe) => {
+              location.reload();
+              return recipe;
+            })
+          } />
         </div>
       )
     }

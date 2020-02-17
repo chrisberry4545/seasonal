@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getAllFood } from '../../services';
+import { getAllFood, deleteFood } from '../../services';
 import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
@@ -7,6 +7,7 @@ import {
 import { IFood } from '@chrisb-dev/seasonal-shared';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../config';
+import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
 const FullListFoodInner: FC<IGetAuthorizedBackendDataProps<IFood[]>> = ({
   items
@@ -19,6 +20,12 @@ const FullListFoodInner: FC<IGetAuthorizedBackendDataProps<IFood[]>> = ({
           <Link to={`${ROUTES.FOOD}/${ROUTES.EDIT}/${item.id}`}>
             Edit
           </Link>
+          <DeleteItemButton deleteItem={
+            () => deleteFood(item.id).then((food) => {
+              location.reload();
+              return food;
+            })
+          } />
         </div>
       )
     }
