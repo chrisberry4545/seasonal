@@ -34,6 +34,8 @@ export * from './EditUserForm/EditUserForm';
 
 export * from './FullListCountries/FullListCountries';
 
+export * from './FullListCountryFoodNameMaps/FullListCountryFoodNameMaps';
+
 export * from './FullListFood/FullListFood';
 
 export * from './FullListRecipes/FullListRecipes';
