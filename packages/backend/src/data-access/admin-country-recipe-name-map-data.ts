@@ -44,6 +44,7 @@ export const adminEditDbCountryRecipeNameMap = async (
   const result = await queryPostgres<ICountryRecipeNameMap>(
     query,
     [
+      item.id,
       item.name,
       item.country.id,
       item.recipe.id

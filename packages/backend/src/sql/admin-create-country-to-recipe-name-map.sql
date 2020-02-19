@@ -4,6 +4,8 @@ INSERT INTO country_to_recipe_name_map (
   food_id,
 )
 VALUES (
-  $1
+  $1,
+  $2,
+  $3
 )
 RETURNING *;
