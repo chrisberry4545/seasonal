@@ -6,20 +6,22 @@ generateRestEndpointTests<ICountryRecipeNameMap>({
   singleItemId: '8651458c-3827-4172-b668-b43657f23f73',
   validItem: {
     country: {
-      id: 'country-id'
+      id: '1fc52423-eb83-4cd9-9fdd-b6f9cb323c37',
+      name: 'UK'
     },
     name: 'test-1',
     recipe: {
-      id: 'food-id'
+      id: '0f7fb18e-ac1d-4023-b315-91ca7e29ce4a'
     }
   } as ICountryRecipeNameMap,
   validItemForEdit: {
     country: {
-      id: 'country-id-2'
+      id: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
+      name: 'Australia'
     },
     name: 'test-2',
     recipe: {
-      id: 'food-id-2'
+      id: '0f7fb18e-ac1d-4023-b315-91ca7e29ce4a'
     }
   } as ICountryRecipeNameMap
 });

@@ -23,7 +23,7 @@ SELECT
       json_build_object(
         'id', all_food.id,
         'name', all_food.name,
-        'image_url_small', all_food.image_url_small
+        'imageUrlSmall', all_food.image_url_small
       )
     ) AS food
     FROM all_food

@@ -6,20 +6,26 @@ generateRestEndpointTests<ICountryFoodNameMap>({
   singleItemId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
   validItem: {
     country: {
-      id: 'country-id'
+      id: '1fc52423-eb83-4cd9-9fdd-b6f9cb323c37',
+      name: 'UK'
     },
     food: {
-      id: 'food-id'
+      id: 'c6f78568-fe23-47e4-8e65-55934199a39f',
+      imageUrlSmall: 'https://pickled-beetroot.com/image',
+      name: 'Pickled Beetroot'
     },
-    name: 'test-1'
+    name: 'c6f78568-fe23-47e4-8e65-55934199a39f'
   } as ICountryFoodNameMap,
   validItemForEdit: {
     country: {
-      id: 'country-id-2'
+      id: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
+      name: 'Australia'
     },
     food: {
-      id: 'food-id-2'
+      id: 'c6f78568-fe23-47e4-8e65-55934199a39f',
+      imageUrlSmall: 'https://pickled-beetroot.com/image',
+      name: 'Pickled Beetroot'
     },
-    name: 'test-2'
+    name: 'c6f78568-fe23-47e4-8e65-55934199a39f'
   } as ICountryFoodNameMap
 });
