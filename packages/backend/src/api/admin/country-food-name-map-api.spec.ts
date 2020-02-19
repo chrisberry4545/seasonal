@@ -3,29 +3,15 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 
 generateRestEndpointTests<ICountryFoodNameMap>({
   path: '/admin/country-food-name-map',
-  singleItemId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
+  singleItemId: 'dcec5b2c-403b-43ae-8745-ef368987552c',
   validItem: {
-    country: {
-      id: '1fc52423-eb83-4cd9-9fdd-b6f9cb323c37',
-      name: 'UK'
-    },
-    food: {
-      id: 'c6f78568-fe23-47e4-8e65-55934199a39f',
-      imageUrlSmall: 'https://pickled-beetroot.com/image',
-      name: 'Pickled Beetroot'
-    },
+    countryId: '1fc52423-eb83-4cd9-9fdd-b6f9cb323c37',
+    foodId: 'c6f78568-fe23-47e4-8e65-55934199a39f',
     name: 'c6f78568-fe23-47e4-8e65-55934199a39f'
   } as ICountryFoodNameMap,
   validItemForEdit: {
-    country: {
-      id: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
-      name: 'Australia'
-    },
-    food: {
-      id: 'c6f78568-fe23-47e4-8e65-55934199a39f',
-      imageUrlSmall: 'https://pickled-beetroot.com/image',
-      name: 'Pickled Beetroot'
-    },
+    countryId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
+    foodId: 'c6f78568-fe23-47e4-8e65-55934199a39f',
     name: 'c6f78568-fe23-47e4-8e65-55934199a39f'
   } as ICountryFoodNameMap
 });

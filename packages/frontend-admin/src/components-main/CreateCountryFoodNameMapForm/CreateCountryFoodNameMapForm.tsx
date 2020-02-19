@@ -6,12 +6,8 @@ import {
 } from '../BaseFormCountryFoodNameMap/BaseFormCountryFoodNameMap';
 
 const createEmptyCountryFoodNameMapItem = (): ICountryFoodNameMap => ({
-  country: {
-    id: ''
-  },
-  food: {
-    id: ''
-  },
+  countryId: '',
+  foodId: '',
   name: ''
 } as ICountryFoodNameMap);
 

@@ -6,13 +6,9 @@ import {
 } from '../BaseFormCountryRecipeNameMap/BaseFormCountryRecipeNameMap';
 
 const createEmptyCountryRecipeNameMapItem = (): ICountryRecipeNameMap => ({
-  country: {
-    id: ''
-  },
+  countryId: '',
   name: '',
-  recipe: {
-    id: ''
-  }
+  recipeId: ''
 } as ICountryRecipeNameMap);
 
 export const CreateCountryRecipeNameMapForm: FC<{}> = () =>

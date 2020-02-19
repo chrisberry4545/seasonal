@@ -9,8 +9,8 @@ export const adminCreateDbCountryRecipeNameMap = async (
     query,
     [
       item.name,
-      item.country.id,
-      item.recipe.id
+      item.countryId,
+      item.recipeId
     ]
   );
   return result.rows && result.rows[0];
@@ -46,8 +46,8 @@ export const adminEditDbCountryRecipeNameMap = async (
     [
       item.id,
       item.name,
-      item.country.id,
-      item.recipe.id
+      item.countryId,
+      item.recipeId
     ]
   );
   return result.rows && result.rows[0];
