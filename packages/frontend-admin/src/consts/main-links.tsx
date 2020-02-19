@@ -14,7 +14,13 @@ import {
   CreateUserPage,
   EditUserPage,
   ViewUsersPage,
-  ViewRecipesPage
+  ViewRecipesPage,
+  ViewCountryFoodNameMapsPage,
+  ViewCountryRecipeNameMapsPage,
+  CreateCountryFoodNameMapPage,
+  CreateCountryRecipeNameMapPage,
+  EditCountryFoodNameMapPage,
+  EditCountryRecipeNameMapPage
 } from '../components-pages';
 
 export const mainLinks = [
@@ -25,6 +31,22 @@ export const mainLinks = [
     viewLinkText: 'View countries',
     viewPageComponent: ViewCountriesPage,
     viewUrl: ROUTES.COUNTRY
+  },
+  {
+    createLinkText: 'Create country food name map',
+    createPageComponent: CreateCountryFoodNameMapPage,
+    editPageComponent: EditCountryFoodNameMapPage,
+    viewLinkText: 'View country food name map',
+    viewPageComponent: ViewCountryFoodNameMapsPage,
+    viewUrl: ROUTES.COUNTRY_FOOD_NAME_MAP
+  },
+  {
+    createLinkText: 'Create country recipe name map',
+    createPageComponent: CreateCountryRecipeNameMapPage,
+    editPageComponent: EditCountryRecipeNameMapPage,
+    viewLinkText: 'View country recipe name map',
+    viewPageComponent: ViewCountryRecipeNameMapsPage,
+    viewUrl: ROUTES.COUNTRY_RECIPE_NAME_MAP
   },
   {
     createLinkText: 'Create food',

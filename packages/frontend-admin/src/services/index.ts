@@ -1,5 +1,9 @@
 export * from './access-token';
 
+export * from './create-country-food-name-map';
+
+export * from './create-country-recipe-name-map';
+
 export * from './create-country';
 
 export * from './create-food';
@@ -9,6 +13,10 @@ export * from './create-recipe';
 export * from './create-region';
 
 export * from './create-user';
+
+export * from './delete-country-food-name-map';
+
+export * from './delete-country-recipe-name-map';
 
 export * from './delete-country';
 
@@ -22,6 +30,10 @@ export * from './delete-user';
 
 export * from './get-all-countries';
 
+export * from './get-all-country-food-name-map';
+
+export * from './get-all-country-recipe-name-map';
+
 export * from './get-all-food';
 
 export * from './get-all-recipes';
@@ -31,6 +43,10 @@ export * from './get-all-regions';
 export * from './get-all-users';
 
 export * from './get-single-country';
+
+export * from './get-single-country-food-name-map';
+
+export * from './get-single-country-recipe-name-map';
 
 export * from './get-single-food';
 
@@ -45,6 +61,10 @@ export * from './login-request';
 export * from './make-authorized-request';
 
 export * from './update-country';
+
+export * from './update-country-food-name-map';
+
+export * from './update-country-recipe-name-map';
 
 export * from './update-food';
 
