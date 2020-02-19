@@ -7,6 +7,12 @@ export const LOGIN_URL =
 export const COUNTRY_URL =
   process.env.REACT_APP_COUNTRY_URL || `${BACKEND_URL}/country`;
 
+export const COUNTRY_FOOD_NAME_MAP_URL =
+  process.env.REACT_APP_COUNTRY_FOOD_NAME_MAP_URL || `${BACKEND_URL}/country-food-name-map`;
+
+export const COUNTRY_RECIPE_NAME_MAP_URL =
+  process.env.REACT_APP_COUNTRY_RECIPE_NAME_MAP_URL || `${BACKEND_URL}/country-recipe-name-map`;
+
 export const FOOD_URL =
   process.env.REACT_APP_FOOD_URL || `${BACKEND_URL}/food`;
 

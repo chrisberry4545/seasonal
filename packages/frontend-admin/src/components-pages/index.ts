@@ -1,4 +1,8 @@
+export * from './CreateCountryFoodNameMapPage/CreateCountryFoodNameMapPage';
+
 export * from './CreateCountryPage/CreateCountryPage';
+
+export * from './CreateCountryRecipeNameMapPage/CreateCountryRecipeNameMapPage';
 
 export * from './CreateFoodPage/CreateFoodPage';
 
@@ -8,7 +12,11 @@ export * from './CreateRegionPage/CreateRegionPage';
 
 export * from './CreateUserPage/CreateUserPage';
 
+export * from './EditCountryFoodNameMapPage/EditCountryFoodNameMapPage';
+
 export * from './EditCountryPage/EditCountryPage';
+
+export * from './EditCountryRecipeNameMapPage/EditCountryRecipeNameMapPage';
 
 export * from './EditFoodPage/EditFoodPage';
 
@@ -23,6 +31,10 @@ export * from './HomePage/HomePage';
 export * from './LoginPage/LoginPage';
 
 export * from './ViewCountriesPage/ViewCountriesPage';
+
+export * from './ViewCountryFoodNameMapsPage/ViewCountryFoodNameMapsPage';
+
+export * from './ViewCountryRecipeNameMapsPage/ViewCountryRecipeNameMapsPage';
 
 export * from './ViewFoodPage/ViewFoodPage';
 

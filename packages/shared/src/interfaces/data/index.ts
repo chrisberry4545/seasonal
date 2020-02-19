@@ -6,6 +6,10 @@ export * from './airtable-recipe.interface';
 
 export * from './airtable-season.interface';
 
+export * from './country-food-name-map.interface';
+
+export * from './country-recipe-name-map.interface';
+
 export * from './country.interface';
 
 export * from './food.interface';

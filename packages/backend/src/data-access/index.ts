@@ -1,5 +1,9 @@
 export * from './admin-country-data';
 
+export * from './admin-country-food-name-map-data';
+
+export * from './admin-country-recipe-name-map-data';
+
 export * from './admin-food-data';
 
 export * from './admin-recipes-data';

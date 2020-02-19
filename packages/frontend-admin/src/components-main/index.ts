@@ -8,7 +8,11 @@ export * from './BaseFormRegion/BaseFormRegion';
 
 export * from './BaseFormUser/BaseFormUser';
 
+export * from './CreateCountryFoodNameMapForm/CreateCountryFoodNameMapForm';
+
 export * from './CreateCountryForm/CreateCountryForm';
+
+export * from './CreateCountryRecipeNameMapForm/CreateCountryRecipeNameMapForm';
 
 export * from './CreateFoodForm/CreateFoodForm';
 
@@ -22,7 +26,11 @@ export * from './DataForm/DataForm';
 
 export * from './DeleteItemButton/DeleteItemButton';
 
+export * from './EditCountryFoodNameMapForm/EditCountryFoodNameMapForm';
+
 export * from './EditCountryForm/EditCountryForm';
+
+export * from './EditCountryRecipeNameMapForm/EditCountryRecipeNameMapForm';
 
 export * from './EditFoodForm/EditFoodForm';
 
@@ -33,6 +41,10 @@ export * from './EditRegionForm/EditRegionForm';
 export * from './EditUserForm/EditUserForm';
 
 export * from './FullListCountries/FullListCountries';
+
+export * from './FullListCountryFoodNameMaps/FullListCountryFoodNameMaps';
+
+export * from './FullListCountryRecipeNameMaps/FullListCountryRecipeNameMaps';
 
 export * from './FullListFood/FullListFood';
 
