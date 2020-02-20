@@ -1,10 +1,14 @@
 export * from './BaseFormCountry/BaseFormCountry';
 
+export * from './BaseFormCountryRecipeNameMap/BaseFormCountryRecipeNameMap';
+
 export * from './BaseFormFood/BaseFormFood';
 
 export * from './BaseFormRecipe/BaseFormRecipe';
 
 export * from './BaseFormRegion/BaseFormRegion';
+
+export * from './BaseFormRegionFoodSeasonMap/BaseFormRegionFoodSeasonMap';
 
 export * from './BaseFormUser/BaseFormUser';
 
@@ -20,11 +24,15 @@ export * from './CreateRecipeForm/CreateRecipeForm';
 
 export * from './CreateRegionForm/CreateRegionForm';
 
+export * from './CreateRegionFoodSeasonMapForm/CreateRegionFoodSeasonMapForm';
+
 export * from './CreateUserForm/CreateUserForm';
 
 export * from './DataForm/DataForm';
 
 export * from './DeleteItemButton/DeleteItemButton';
+
+export * from './EditRegionFoodSeasonMapForm/EditRegionFoodSeasonMapForm';
 
 export * from './EditCountryFoodNameMapForm/EditCountryFoodNameMapForm';
 

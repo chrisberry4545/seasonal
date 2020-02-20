@@ -9,5 +9,6 @@ export enum ROUTES {
   LOGIN = '',
   RECIPE = 'recipe',
   REGION = 'region',
+  REGION_FOOD_SEASON_MAP = 'region-food-season-map',
   USER = 'user'
 }

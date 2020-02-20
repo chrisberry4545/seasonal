@@ -10,6 +10,8 @@ export * from './create-food';
 
 export * from './create-recipe';
 
+export * from './create-region-food-season-map';
+
 export * from './create-region';
 
 export * from './create-user';
@@ -46,6 +48,8 @@ export * from './get-single-country';
 
 export * from './get-single-country-food-name-map';
 
+export * from './get-single-region-food-season-map';
+
 export * from './get-single-country-recipe-name-map';
 
 export * from './get-single-food';
@@ -63,6 +67,8 @@ export * from './make-authorized-request';
 export * from './update-country';
 
 export * from './update-country-food-name-map';
+
+export * from './update-region-food-season-map';
 
 export * from './update-country-recipe-name-map';
 

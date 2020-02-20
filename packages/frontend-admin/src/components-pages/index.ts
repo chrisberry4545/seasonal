@@ -8,6 +8,8 @@ export * from './CreateFoodPage/CreateFoodPage';
 
 export * from './CreateRecipePage/CreateRecipePage';
 
+export * from './CreateRegionFoodNameMapPage/CreateRegionFoodNameMapPage';
+
 export * from './CreateRegionPage/CreateRegionPage';
 
 export * from './CreateUserPage/CreateUserPage';
@@ -21,6 +23,8 @@ export * from './EditCountryRecipeNameMapPage/EditCountryRecipeNameMapPage';
 export * from './EditFoodPage/EditFoodPage';
 
 export * from './EditRecipePage/EditRecipePage';
+
+export * from './EditRegionFoodSeasonMapPage/EditRegionFoodSeasonMapPage';
 
 export * from './EditRegionPage/EditRegionPage';
 
