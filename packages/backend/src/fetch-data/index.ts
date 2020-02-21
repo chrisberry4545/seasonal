@@ -10,6 +10,8 @@ export * from './admin-fetch-recipes-data';
 
 export * from './admin-fetch-region-data';
 
+export * from './admin-fetch-region-food-season-map-data';
+
 export * from './admin-fetch-user-data';
 
 export * from './fetch-food-data';
