@@ -19,12 +19,17 @@ export interface IDateFormProps<T> {
   item: Partial<T>;
   sendData?: (data: T) => Promise<T>;
   formConfig: IDataFormConfigProps<T> | null;
+  processItem?: (
+    item: Partial<T>,
+    previousItem: Partial<T> | null
+  ) => Partial<T>;
 }
 
 export function DataForm<T>({
   item,
   sendData,
-  formConfig
+  formConfig,
+  processItem
 }: IDateFormProps<T>) {
   const [itemState, setItemState] = useState<Partial<T>>({
     ...item
@@ -34,10 +39,21 @@ export function DataForm<T>({
     { [key in keyof T]?: string[] }
   >({});
 
+  const updateItem = (
+    newItem: Partial<T>
+  ) => {
+    if (processItem) {
+      const processedItem = processItem(newItem, itemState);
+      setItemState(processedItem);
+    } else {
+      setItemState(newItem);
+    }
+  };
+
   const submit = async () => {
     try {
       const updatedItem = await sendData!(itemState as T);
-      setItemState(updatedItem);
+      updateItem(updatedItem);
     } catch (error) {
       setErrorState(error.message);
     }
@@ -57,10 +73,11 @@ export function DataForm<T>({
         name: errors
       });
     }
-    setItemState({
+    const newItem = {
       ...itemState,
       [name]: value
-    });
+    };
+    updateItem(newItem);
   };
 
   return (

@@ -21,7 +21,6 @@ import {
   CreateCountryRecipeNameMapPage,
   EditCountryFoodNameMapPage,
   EditCountryRecipeNameMapPage,
-  CreateRegionFoodNameMapPage,
   EditRegionFoodSeasonMapPage
 } from '../components-pages';
 
@@ -75,11 +74,8 @@ export const mainLinks = [
     viewUrl: ROUTES.REGION
   },
   {
-    createLinkText: 'Create region food season map',
-    createPageComponent: CreateRegionFoodNameMapPage,
-    editPageComponent: EditRegionFoodSeasonMapPage,
-    viewLinkText: 'View region food season maps',
-    viewPageComponent: ViewCountryFoodNameMapsPage,
+    viewLinkText: 'Edit region food season maps',
+    viewPageComponent: EditRegionFoodSeasonMapPage,
     viewUrl: ROUTES.REGION_FOOD_SEASON_MAP
   },
   {

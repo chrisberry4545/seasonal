@@ -24,15 +24,11 @@ export * from './CreateRecipeForm/CreateRecipeForm';
 
 export * from './CreateRegionForm/CreateRegionForm';
 
-export * from './CreateRegionFoodSeasonMapForm/CreateRegionFoodSeasonMapForm';
-
 export * from './CreateUserForm/CreateUserForm';
 
 export * from './DataForm/DataForm';
 
 export * from './DeleteItemButton/DeleteItemButton';
-
-export * from './EditRegionFoodSeasonMapForm/EditRegionFoodSeasonMapForm';
 
 export * from './EditCountryFoodNameMapForm/EditCountryFoodNameMapForm';
 

@@ -26,6 +26,8 @@ export * from './delete-food';
 
 export * from './delete-recipe';
 
+export * from './delete-region-food-season-map';
+
 export * from './delete-region';
 
 export * from './delete-user';
@@ -39,6 +41,8 @@ export * from './get-all-country-recipe-name-map';
 export * from './get-all-food';
 
 export * from './get-all-recipes';
+
+export * from './get-all-region-food-season-map';
 
 export * from './get-all-regions';
 
