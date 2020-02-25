@@ -20,6 +20,13 @@ type IRegionFoodSeasonMapFormConfigProps =
   IDataFormConfigProps<IRegionFoodSeasonMapForm>;
 
 export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
+  const [itemData, setItemData] =
+    useState<Partial<IRegionFoodSeasonMapForm | null>>(null);
+  const [config, setConfig] =
+    useState<IRegionFoodSeasonMapFormConfigProps | null>(null);
+  const [allRegionFoodSeasonMaps, setAllRegionFoodSeasonMaps] =
+    useState<IRegionFoodSeasonMap[] | null>(null);
+
   const updateRegionFoodSeasonMap = async (
     form: IRegionFoodSeasonMapForm
   ) => {
@@ -43,15 +50,10 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
     for (const item of toCreate) {
       await createRegionFoodSeasonMap(item);
     }
+    const allRegionFoodSeasonMap = await getAllRegionFoodSeasonMap();
+    setAllRegionFoodSeasonMaps(allRegionFoodSeasonMap);
     return form;
   };
-
-  const [itemData, setItemData] =
-    useState<Partial<IRegionFoodSeasonMapForm | null>>(null);
-  const [config, setConfig] =
-    useState<IRegionFoodSeasonMapFormConfigProps | null>(null);
-  const [allRegionFoodSeasonMaps, setAllRegionFoodSeasonMaps] =
-    useState<IRegionFoodSeasonMap[] | null>(null);
 
   const updateSeasonIds = (
     item: Partial<IRegionFoodSeasonMap>,
