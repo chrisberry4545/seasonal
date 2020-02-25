@@ -11,6 +11,7 @@ import { countryRecipeNameMapApi } from './country-recipe-name-map-api';
 import { foodApi } from './food-api';
 import { recipeApi } from './recipe-api';
 import { regionApi } from './region-api';
+import { regionFoodSeasonMapApi } from './region-food-season-map.api';
 import { userApi } from './user-api';
 
 export const adminApi = (router = Router()) => {
@@ -49,6 +50,11 @@ export const adminApi = (router = Router()) => {
     `/region`,
     adminAuth,
     regionApi()
+  );
+  router.use(
+    `/region-food-season-map`,
+    adminAuth,
+    regionFoodSeasonMapApi()
   );
   router.use(
     `/user`,

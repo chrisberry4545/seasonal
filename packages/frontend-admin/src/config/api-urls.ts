@@ -10,6 +10,9 @@ export const COUNTRY_URL =
 export const COUNTRY_FOOD_NAME_MAP_URL =
   process.env.REACT_APP_COUNTRY_FOOD_NAME_MAP_URL || `${BACKEND_URL}/country-food-name-map`;
 
+export const REGION_FOOD_SEASON_MAP_URL =
+  process.env.REACT_APP_REGION_FOOD_SEASON_MAP_URL || `${BACKEND_URL}/region-food-season-map`;
+
 export const COUNTRY_RECIPE_NAME_MAP_URL =
   process.env.REACT_APP_COUNTRY_RECIPE_NAME_MAP_URL || `${BACKEND_URL}/country-recipe-name-map`;
 

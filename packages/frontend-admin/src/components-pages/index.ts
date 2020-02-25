@@ -22,6 +22,8 @@ export * from './EditFoodPage/EditFoodPage';
 
 export * from './EditRecipePage/EditRecipePage';
 
+export * from './EditRegionFoodSeasonMapPage/EditRegionFoodSeasonMapPage';
+
 export * from './EditRegionPage/EditRegionPage';
 
 export * from './EditUserPage/EditUserPage';

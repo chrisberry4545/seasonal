@@ -1,10 +1,14 @@
 export * from './BaseFormCountry/BaseFormCountry';
 
+export * from './BaseFormCountryRecipeNameMap/BaseFormCountryRecipeNameMap';
+
 export * from './BaseFormFood/BaseFormFood';
 
 export * from './BaseFormRecipe/BaseFormRecipe';
 
 export * from './BaseFormRegion/BaseFormRegion';
+
+export * from './BaseFormRegionFoodSeasonMap/BaseFormRegionFoodSeasonMap';
 
 export * from './BaseFormUser/BaseFormUser';
 
