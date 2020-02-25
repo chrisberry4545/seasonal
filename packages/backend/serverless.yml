@@ -93,6 +93,52 @@ functions:
           path: admin/country/{id}
           method: delete
           cors: true
+  adminCountryFoodNameMap:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/country-food-name-map
+          method: post
+          cors: true
+      - http:
+          path: admin/country-food-name-map
+          method: get
+          cors: true
+      - http:
+          path: admin/country-food-name-map/{id}
+          method: get
+          cors: true
+      - http:
+          path: admin/country-food-name-map
+          method: patch
+          cors: true
+      - http:
+          path: admin/country-food-name-map/{id}
+          method: delete
+          cors: true
+  adminCountryRecipeNameMap:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/country-recipe-name-map
+          method: post
+          cors: true
+      - http:
+          path: admin/country-recipe-name-map
+          method: get
+          cors: true
+      - http:
+          path: admin/country-recipe-name-map/{id}
+          method: get
+          cors: true
+      - http:
+          path: admin/country-recipe-name-map
+          method: patch
+          cors: true
+      - http:
+          path: admin/country-recipe-name-map/{id}
+          method: delete
+          cors: true
   adminFood:
     handler: index-serverless.handler
     events:
@@ -160,6 +206,29 @@ functions:
           cors: true
       - http:
           path: admin/region/{id}
+          method: delete
+          cors: true
+  adminRegionFoodSeasonMap:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: admin/region-food-season-map
+          method: post
+          cors: true
+      - http:
+          path: admin/region-food-season-map
+          method: get
+          cors: true
+      - http:
+          path: admin/region-food-season-map/{id}
+          method: get
+          cors: true
+      - http:
+          path: admin/region-food-season-map
+          method: patch
+          cors: true
+      - http:
+          path: admin/region-food-season-map/{id}
           method: delete
           cors: true
   adminUser:
