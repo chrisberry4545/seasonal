@@ -5,7 +5,8 @@ import {
   ISelectOption,
   Multiselect,
   Select,
-  IValidation
+  IValidation,
+  LoadingSpinner
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import './DataForm.scss';
 
@@ -38,6 +39,7 @@ export function DataForm<T>({
   const [validationState, setValidationState] = useState<
     { [key in keyof T]?: string[] }
   >({});
+  const [isLoadingState, setIsLoadingState] = useState<boolean>(false);
 
   const updateItem = (
     newItem: Partial<T>
@@ -52,9 +54,12 @@ export function DataForm<T>({
 
   const submit = async () => {
     try {
+      setIsLoadingState(true);
       const updatedItem = await sendData!(itemState as T);
       updateItem(updatedItem);
+      setIsLoadingState(false);
     } catch (error) {
+      setIsLoadingState(false);
       setErrorState(error.message);
     }
   };
@@ -81,7 +86,7 @@ export function DataForm<T>({
   };
 
   return (
-    <div>
+    <div className='c-data-form'>
       <div>
         {
           formConfig && Object.entries(formConfig).map(([key, formField]) => {
@@ -138,6 +143,12 @@ export function DataForm<T>({
       <button onClick={submit}>Update</button>
       {
         errorState ? <div>{errorState}</div> : null
+      }
+      {
+        isLoadingState
+        && <div className='c-data-form__loading-spinner'>
+            <LoadingSpinner />
+          </div>
       }
     </div>
   );
