@@ -2,7 +2,8 @@ SELECT
   code,
   name,
   country_id,
-  json_build_object('lat', lat, 'lng', lng) AS lat_lng,
+  lat,
+  lng,
   is_disabled
 FROM regions
 WHERE

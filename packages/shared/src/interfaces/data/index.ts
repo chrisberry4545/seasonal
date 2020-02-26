@@ -12,6 +12,8 @@ export * from './country-recipe-name-map.interface';
 
 export * from './country.interface';
 
+export * from './db-region.interface';
+
 export * from './food.interface';
 
 export * from './recipe.interface';

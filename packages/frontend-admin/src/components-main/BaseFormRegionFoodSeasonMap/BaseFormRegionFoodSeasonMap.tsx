@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
-import { IBaseSeason, getAllSeasons, IFood, IRegion } from '@chrisb-dev/seasonal-shared';
+import { IBaseSeason, getAllSeasons, IFood, IDbRegion } from '@chrisb-dev/seasonal-shared';
 import {
   getAllFood,
   getAllRegions,
@@ -80,7 +80,7 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
   };
 
   const updateConfigWithDropdowns = (
-    regions: IRegion[],
+    regions: IDbRegion[],
     food: IFood[],
     seasons: IBaseSeason[],
     allRegionFoodSeasonMap: IRegionFoodSeasonMap[]

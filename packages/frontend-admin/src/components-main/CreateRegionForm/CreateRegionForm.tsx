@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
 import { createRegion } from '../../services';
-import { IRegion } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared';
 import { BaseFormRegion } from '../BaseFormRegion/BaseFormRegion';
 
-const createEmptyRegionItem = (): IRegion => ({
+const createEmptyRegionItem = (): IDbRegion => ({
   code: '',
   countryId: '',
   isDisabled: false,
+  lat: 0,
+  lng: 0,
   name: ''
-} as IRegion);
+} as IDbRegion);
 
 export const CreateRegionForm: FC<{}> = () =>
   <BaseFormRegion items={createEmptyRegionItem()} updateMethod={createRegion} />;

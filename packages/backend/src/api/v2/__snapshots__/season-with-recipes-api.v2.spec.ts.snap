@@ -31,7 +31,7 @@ Array [
         "name": "Pickled Beetroot",
       },
     ],
-    "seasonIndex": "0",
+    "seasonIndex": 0,
   },
   Object {
     "id": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
@@ -62,7 +62,7 @@ Array [
         "name": "Pickled Beetroot",
       },
     ],
-    "seasonIndex": "1",
+    "seasonIndex": 1,
   },
   Object {
     "id": "f4812071-b0e2-4255-8ccf-e38768ad0c3c",
@@ -93,7 +93,7 @@ Array [
         "name": "Pickled Beetroot",
       },
     ],
-    "seasonIndex": "2",
+    "seasonIndex": 2,
   },
 ]
 `;
@@ -112,7 +112,7 @@ Object {
       "name": "Pickled Beetroot",
     },
   ],
-  "seasonIndex": "1",
+  "seasonIndex": 1,
 }
 `;
 
@@ -138,7 +138,7 @@ Object {
       "name": "Pickled Beetroot",
     },
   ],
-  "seasonIndex": "0",
+  "seasonIndex": 0,
 }
 `;
 
@@ -156,7 +156,7 @@ Object {
       "name": "Pickled Beetroot",
     },
   ],
-  "seasonIndex": "1",
+  "seasonIndex": 1,
 }
 `;
 
@@ -165,7 +165,7 @@ Object {
   "id": "f4812071-b0e2-4255-8ccf-e38768ad0c3c",
   "name": "March",
   "recipes": Array [],
-  "seasonIndex": "2",
+  "seasonIndex": 2,
 }
 `;
 
@@ -199,6 +199,6 @@ Object {
       "name": "Pickled Beetroot",
     },
   ],
-  "seasonIndex": "0",
+  "seasonIndex": 0,
 }
 `;
