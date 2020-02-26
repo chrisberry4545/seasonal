@@ -97,7 +97,7 @@ export function DataForm<T>({
               + key.replace( /([A-Z])/g, ' $1').slice(1);
             const inputs = {
               onChange: (
-                changedValue: number | string | string[]
+                changedValue: number | string | string[] | boolean
               ) => updateField(prop, changedValue, validation),
               options,
               placeholder,

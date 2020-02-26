@@ -1,4 +1,4 @@
-import { IRegion } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared';
 import {
   adminGetAllDbRegions,
   adminGetOneDbRegion,
@@ -8,20 +8,20 @@ import {
 } from '../data-access';
 
 export const adminCreateRegion = (
-  item: IRegion
-): Promise<IRegion> => adminCreateDbRegion(item);
+  item: IDbRegion
+): Promise<IDbRegion> => adminCreateDbRegion(item);
 
-export const adminGetAllRegions = (): Promise<IRegion[]> =>
+export const adminGetAllRegions = (): Promise<IDbRegion[]> =>
   adminGetAllDbRegions();
 
 export const adminGetOneRegion = (
   id: string
-): Promise<IRegion | null> => adminGetOneDbRegion(id);
+): Promise<IDbRegion | null> => adminGetOneDbRegion(id);
 
 export const adminEditRegion = (
-  item: IRegion
-): Promise<IRegion> => adminEditDbRegion(item);
+  item: IDbRegion
+): Promise<IDbRegion> => adminEditDbRegion(item);
 
 export const adminDeleteRegion = (
   id: string
-): Promise<IRegion> => adminDeleteDbRegion(id);
+): Promise<IDbRegion> => adminDeleteDbRegion(id);

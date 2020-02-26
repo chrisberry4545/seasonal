@@ -1,18 +1,18 @@
 import { queryPostgres, getSqlQuery } from '../postgres';
-import { IRegion } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared';
 
 export const adminCreateDbRegion = async (
-  item: IRegion
-): Promise<IRegion> => {
+  item: IDbRegion
+): Promise<IDbRegion> => {
   const query = await getSqlQuery('admin-create-region.sql');
-  const result = await queryPostgres<IRegion>(
+  const result = await queryPostgres<IDbRegion>(
     query,
     [
       item.code,
       item.name,
       item.countryId,
-      item.latLng.lat,
-      item.latLng.lng,
+      item.lat,
+      item.lng,
       item.isDisabled
     ]
   );
@@ -22,9 +22,9 @@ export const adminCreateDbRegion = async (
 const getRegionQuery = (): Promise<string> =>
   getSqlQuery('admin-get-regions.sql');
 
-export const adminGetAllDbRegions = async (): Promise<IRegion[]> => {
+export const adminGetAllDbRegions = async (): Promise<IDbRegion[]> => {
   const query = await getRegionQuery();
-  const result = await queryPostgres<IRegion>(
+  const result = await queryPostgres<IDbRegion>(
     query,
     [null]
   );
@@ -33,9 +33,9 @@ export const adminGetAllDbRegions = async (): Promise<IRegion[]> => {
 
 export const adminGetOneDbRegion = async (
   id: string
-): Promise<IRegion> => {
+): Promise<IDbRegion> => {
   const query = await getRegionQuery();
-  const result = await queryPostgres<IRegion>(
+  const result = await queryPostgres<IDbRegion>(
     query,
     [id]
   );
@@ -43,17 +43,17 @@ export const adminGetOneDbRegion = async (
 };
 
 export const adminEditDbRegion = async (
-  item: IRegion
-): Promise<IRegion> => {
+  item: IDbRegion
+): Promise<IDbRegion> => {
   const query = await getSqlQuery('admin-edit-region.sql');
-  const result = await queryPostgres<IRegion>(
+  const result = await queryPostgres<IDbRegion>(
     query,
     [
       item.code,
       item.name,
       item.countryId,
-      item.latLng.lat,
-      item.latLng.lng,
+      item.lat,
+      item.lng,
       item.isDisabled
     ]
   );
@@ -62,9 +62,9 @@ export const adminEditDbRegion = async (
 
 export const adminDeleteDbRegion = async (
   id: string
-): Promise<IRegion> => {
+): Promise<IDbRegion> => {
   const query = await getSqlQuery('admin-delete-region.sql');
-  const result = await queryPostgres<IRegion>(
+  const result = await queryPostgres<IDbRegion>(
     query,
     [id]
   );

@@ -4,12 +4,12 @@ import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IRegion } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../config';
 import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 
-const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegion[]>> = ({
+const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IDbRegion[]>> = ({
   items,
   reload
 }) => (
@@ -34,7 +34,7 @@ const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegion[]>> = ({
     }
   </div>
 );
-export const FullListRegions = GetAuthorizedBackendData<IRegion[]>(
+export const FullListRegions = GetAuthorizedBackendData<IDbRegion[]>(
   FullListRegionsInner,
   getAllRegions
 );
