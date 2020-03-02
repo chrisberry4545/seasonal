@@ -13,8 +13,8 @@
   },
   "scripts": {
     "start": "yarn dev",
-    "dev": "yarn copy-env && yarn copy-sql && concurrently \"yarn dev:watch\" \"yarn test:watch\"",
-    "dev:watch": "tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
+    "dev": "yarn copy-env && yarn copy-sql && yarn dev:watch",
+    "dev:watch": "tsc-watch --onSuccess \"node ./dist/index-dev.js\" --noClear",
     "ci": "yarn copy-sql && tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
     "build": "tsc && yarn copy-env && yarn copy-sql",
     "copy-env": "mkdir -p dist && cp .env.yml dist/.env.yml",

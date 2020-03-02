@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "yarn build",
-    "dev": "yarn build && tsc-watch"
+    "dev": "yarn build && tsc-watch --noClear"
   },
   "repository": {
     "type": "git",
