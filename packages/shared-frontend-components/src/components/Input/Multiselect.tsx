@@ -28,7 +28,13 @@ export const Multiselect: FC<{
       {
         options.map((option) =>
           <div key={option.value}
-            className={isSelected(option.value) ? 'c-multi-select-option--selected' : ''}
+            className={
+              'c-multi-select-option' + (
+                isSelected(option.value)
+                  ? ' c-multi-select-option--selected'
+                  : ''
+              )
+            }
             onClick={() => onOptionClicked(option.value)}>
               {option.label}
           </div>

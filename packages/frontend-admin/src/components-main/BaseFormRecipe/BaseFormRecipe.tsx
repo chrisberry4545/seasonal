@@ -36,7 +36,8 @@ const initialRecipeFormConfig: IRecipeFormConfigProps = {
 
 export const BaseFormRecipe: FC<IGetAuthorizedBackendDataProps<IRecipe>> = ({
   items,
-  updateMethod
+  updateMethod,
+  buttonText
 }) => {
   const [config, setConfig] = useState<IRecipeFormConfigProps | null>(null);
 
@@ -63,5 +64,8 @@ export const BaseFormRecipe: FC<IGetAuthorizedBackendDataProps<IRecipe>> = ({
       .then((food) => updateConfigWithFoodDropdowns(food));
   }, []);
 
-  return <DataForm item={items} sendData={updateMethod} formConfig={config} />;
+  return <DataForm item={items}
+    sendData={updateMethod}
+    formConfig={config}
+    buttonText={buttonText} />;
 };

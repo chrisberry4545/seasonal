@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { createRegion } from '../../services';
 import { IDbRegion } from '@chrisb-dev/seasonal-shared';
 import { BaseFormRegion } from '../BaseFormRegion/BaseFormRegion';
+import { FORM_BUTTON_TEXT } from '../../consts';
 
 const createEmptyRegionItem = (): IDbRegion => ({
   code: '',
@@ -13,4 +14,6 @@ const createEmptyRegionItem = (): IDbRegion => ({
 } as IDbRegion);
 
 export const CreateRegionForm: FC<{}> = () =>
-  <BaseFormRegion items={createEmptyRegionItem()} updateMethod={createRegion} />;
+  <BaseFormRegion items={createEmptyRegionItem()}
+    updateMethod={createRegion}
+    buttonText={FORM_BUTTON_TEXT.CREATE} />;

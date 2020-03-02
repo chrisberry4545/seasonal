@@ -24,9 +24,11 @@ const userFormConfig: IUserFormConfigProps = {
 
 export const BaseFormUser: FC<IGetAuthorizedBackendDataProps<IUser>> = ({
   items,
-  updateMethod
+  updateMethod,
+  buttonText
 }) => (
   <DataForm item={items}
     sendData={updateMethod}
-    formConfig={userFormConfig} />
+    formConfig={userFormConfig}
+    buttonText={buttonText} />
 );

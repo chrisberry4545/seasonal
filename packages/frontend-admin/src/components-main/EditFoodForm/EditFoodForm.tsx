@@ -6,6 +6,7 @@ import { IFood } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { getSingleFood, updateFood } from '../../services';
 import { BaseFormFood } from '../BaseFormFood/BaseFormFood';
+import { FORM_BUTTON_TEXT } from '../../consts';
 
 export const EditFoodForm: FC<{}> = () => {
   const { id } = useParams();
@@ -14,7 +15,8 @@ export const EditFoodForm: FC<{}> = () => {
     () => {
       return getSingleFood(id as string);
     },
-    updateFood
+    updateFood,
+    FORM_BUTTON_TEXT.CREATE
   );
   return <CreatedComponent />;
 };

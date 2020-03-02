@@ -4,6 +4,7 @@ export interface IGetAuthorizedBackendDataProps<T> {
   items: T;
   reload?: () => void;
   updateMethod?: (item: T) => Promise<T>;
+  buttonText?: string;
 }
 
 interface IGetAuthorizedBackendDataState<T> {
@@ -15,7 +16,8 @@ interface IGetAuthorizedBackendDataState<T> {
 export function GetAuthorizedBackendData<T>(
   InnerComponent: FC<IGetAuthorizedBackendDataProps<T>>,
   requestDataMethod: () => Promise<T>,
-  updateMethod?: (item: T) => Promise<T>
+  updateMethod?: (item: T) => Promise<T>,
+  buttonText?: string
 ): FC<{}> {
   return () => {
     const [state, setState] = useState<IGetAuthorizedBackendDataState<T>>({
@@ -51,6 +53,7 @@ export function GetAuthorizedBackendData<T>(
                       items={state.items}
                       reload={requestNewData}
                       updateMethod={updateMethod}
+                      buttonText={buttonText}
                     />
                   : <div>{state.error}</div>
               }

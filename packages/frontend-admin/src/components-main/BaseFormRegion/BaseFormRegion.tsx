@@ -33,7 +33,8 @@ const initialRegionFormConfig: IDbRegionFormConfigProps = {
 
 export const BaseFormRegion: FC<IGetAuthorizedBackendDataProps<IDbRegion>> = ({
   items,
-  updateMethod
+  updateMethod,
+  buttonText
 }) => {
   const [config, setConfig] = useState<IDbRegionFormConfigProps | null>(null);
 
@@ -58,5 +59,6 @@ export const BaseFormRegion: FC<IGetAuthorizedBackendDataProps<IDbRegion>> = ({
 
   return <DataForm item={items}
     sendData={updateMethod}
-    formConfig={config} />;
+    formConfig={config}
+    buttonText={buttonText} />;
 };

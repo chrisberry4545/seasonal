@@ -2,8 +2,8 @@
 @import '../../styles/tools';
 
 .c-input {
-  border: 1px solid $grey-med;
+  border: $input-border;
+  border-radius: $input-border-radius;
   padding: 0.5rem;
-  border-radius: 5px;
-  opacity: 0.6;
+  color: $primary-text-color;
 }
