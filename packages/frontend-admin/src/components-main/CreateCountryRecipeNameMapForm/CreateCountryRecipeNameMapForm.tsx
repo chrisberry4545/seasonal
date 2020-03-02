@@ -5,6 +5,7 @@ import {
   BaseFormCountryRecipeNameMap
 } from '../BaseFormCountryRecipeNameMap/BaseFormCountryRecipeNameMap';
 import { FORM_BUTTON_TEXT } from '../../consts';
+import { FormLayout } from '../../components-layouts';
 
 const createEmptyCountryRecipeNameMapItem = (): ICountryRecipeNameMap => ({
   countryId: '',
@@ -13,7 +14,9 @@ const createEmptyCountryRecipeNameMapItem = (): ICountryRecipeNameMap => ({
 } as ICountryRecipeNameMap);
 
 export const CreateCountryRecipeNameMapForm: FC<{}> = () =>
-  <BaseFormCountryRecipeNameMap
-    items={createEmptyCountryRecipeNameMapItem()}
-    updateMethod={createCountryRecipeNameMap}
-    buttonText={FORM_BUTTON_TEXT.CREATE} />;
+  <FormLayout title='Create Country Recipe Name Map'>
+    <BaseFormCountryRecipeNameMap
+      items={createEmptyCountryRecipeNameMapItem()}
+      updateMethod={createCountryRecipeNameMap}
+      buttonText={FORM_BUTTON_TEXT.CREATE} />
+  </FormLayout>;

@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { getSingleFood, updateFood } from '../../services';
 import { BaseFormFood } from '../BaseFormFood/BaseFormFood';
 import { FORM_BUTTON_TEXT } from '../../consts';
+import { FormLayout } from '../../components-layouts';
 
 export const EditFoodForm: FC<{}> = () => {
   const { id } = useParams();
@@ -18,5 +19,9 @@ export const EditFoodForm: FC<{}> = () => {
     updateFood,
     FORM_BUTTON_TEXT.CREATE
   );
-  return <CreatedComponent />;
+  return (
+    <FormLayout title='Edit Food'>
+      <CreatedComponent />
+    </FormLayout>
+  );
 };

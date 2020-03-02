@@ -1,18 +1,14 @@
 .c-data-form {
   position: relative;
-  max-width: 100%;
-  width: 600px;
-  margin: auto;
-  padding: 40px 20px;
 }
 
 .c-data-form__field {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: .75rem;
 }
 
 .c-data-form__label {
-  margin-bottom: 6px;
+  margin-bottom: .375rem;
   display: block;
 }
 
@@ -22,7 +18,7 @@
 
 .c-data-form__submit-btn {
   width: 100%;
-  margin-top: 12px;
+  margin-top: .75rem;
 }
 
 .c-data-form__loading-spinner {
