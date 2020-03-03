@@ -65,6 +65,7 @@ export function DataForm<T>({
       if (updatedItem) {
         updateItem(updatedItem);
         setIsLoadingState(false);
+        history.back();
       }
     } catch (error) {
       setIsLoadingState(false);
