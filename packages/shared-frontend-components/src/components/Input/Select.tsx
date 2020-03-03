@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { ISelectOption } from './select-option.interface';
+import './Select.scss';
 
 export const Select: FC<{
   className?: string,
@@ -13,7 +14,7 @@ export const Select: FC<{
   value
 }) => (
   <select
-    className={`${(className || '')}`}
+    className={`${(className || '')} c-select`}
     value={value}
     onChange={(event) => onChange(event.target.value)}>
       {
