@@ -6,7 +6,7 @@ import {
 import { IRecipe } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { BaseFormRecipe } from '../BaseFormRecipe/BaseFormRecipe';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditRecipeForm: FC<{}> = () => {
   const { id } = useParams();
@@ -18,8 +18,8 @@ export const EditRecipeForm: FC<{}> = () => {
     updateRecipe
   );
   return (
-    <FormLayout title='Edit Recipe'>
+    <LayoutWithTitle title='Edit Recipe'>
       <CreatedComponent />
-    </FormLayout>
+    </LayoutWithTitle>
   );
 };

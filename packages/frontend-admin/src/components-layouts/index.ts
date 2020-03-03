@@ -1,1 +1,3 @@
-export * from './FormLayout/FormLayout';
+export * from './LayoutWithTitle/LayoutWithTitle';
+
+export * from './MainPageLayout/MainPageLayout';

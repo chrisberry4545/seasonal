@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { getSingleFood, updateFood } from '../../services';
 import { BaseFormFood } from '../BaseFormFood/BaseFormFood';
 import { FORM_BUTTON_TEXT } from '../../consts';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditFoodForm: FC<{}> = () => {
   const { id } = useParams();
@@ -20,8 +20,8 @@ export const EditFoodForm: FC<{}> = () => {
     FORM_BUTTON_TEXT.CREATE
   );
   return (
-    <FormLayout title='Edit Food'>
+    <LayoutWithTitle title='Edit Food'>
       <CreatedComponent />
-    </FormLayout>
+    </LayoutWithTitle>
   );
 };

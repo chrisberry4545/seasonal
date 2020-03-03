@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { loginRequest } from '../../services';
 import { Redirect } from 'react-router';
 import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 import { DataForm, IDataFormConfigProps } from '../DataForm/DataForm';
 import { IUser } from '@chrisb-dev/seasonal-shared';
 
@@ -35,12 +35,12 @@ export const LoginForm: FC<{}> = () => {
     return <Redirect push to='/home' />;
   }
   return (
-    <FormLayout>
+    <LayoutWithTitle title='Login'>
       <DataForm
         item={{ username: '', password: '' } as IUser}
         sendData={handleSubmit}
         formConfig={loginFormConfig}
         buttonText='Login' />
-    </FormLayout>
+    </LayoutWithTitle>
   );
 };

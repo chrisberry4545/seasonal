@@ -3,7 +3,7 @@ import { createRecipe } from '../../services';
 import { IRecipe } from '@chrisb-dev/seasonal-shared';
 import { BaseFormRecipe } from '../BaseFormRecipe/BaseFormRecipe';
 import { FORM_BUTTON_TEXT } from '../../consts';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 const createEmptyRecipeItem = (): IRecipe => ({
   imageUrlSmall: '',
@@ -16,8 +16,8 @@ const createEmptyRecipeItem = (): IRecipe => ({
 } as IRecipe);
 
 export const CreateRecipeForm: FC<{}> = () =>
-  <FormLayout title='Create Recipe'>
+  <LayoutWithTitle title='Create Recipe'>
     <BaseFormRecipe items={createEmptyRecipeItem()}
         updateMethod={createRecipe}
         buttonText={FORM_BUTTON_TEXT.CREATE} />
-  </FormLayout>;
+  </LayoutWithTitle>;

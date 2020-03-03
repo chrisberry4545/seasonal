@@ -6,7 +6,7 @@ import { IUser } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { getSingleUser, updateUser } from '../../services';
 import { BaseFormUser } from '../BaseFormUser/BaseFormUser';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditUserForm: FC<{}> = () => {
   const { id } = useParams();
@@ -18,8 +18,8 @@ export const EditUserForm: FC<{}> = () => {
     updateUser
   );
   return (
-    <FormLayout title='Edit User'>
+    <LayoutWithTitle title='Edit User'>
       <CreatedComponent />
-    </FormLayout>
+    </LayoutWithTitle>
   );
 };

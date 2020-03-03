@@ -6,29 +6,32 @@ import {
   HomePage,
   LoginPage
 } from '../components-pages';
+import { MainPageLayout } from '../components-layouts';
 
 export const App: FC<{}> = () => (
-  <HashRouter>
-    <div>
-      <Route exact path={`/${ROUTES.LOGIN}`}>
-        <LoginPage />
-      </Route>
-      <Route exact path={`/${ROUTES.HOME}`}>
-        <HomePage />
-      </Route>
+  <MainPageLayout>
+    <HashRouter>
+      <div>
+        <Route exact path={`/${ROUTES.LOGIN}`}>
+          <LoginPage />
+        </Route>
+        <Route exact path={`/${ROUTES.HOME}`}>
+          <HomePage />
+        </Route>
 
-      {
-        mainLinks.map((link) =>
-          <Fragment key={link.viewUrl}>
-            <Route exact path={`/${link.viewUrl}`}
-              component={link.viewPageComponent} />
-            <Route exact path={`/${link.editLinkUrl}`}
-              component={link.editPageComponent} />
-            <Route exact path={`/${link.createLinkUrl}`}
-              component={link.createPageComponent} />
-          </Fragment>
-        )
-      }
-    </div>
-  </HashRouter>
+        {
+          mainLinks.map((link) =>
+            <Fragment key={link.viewUrl}>
+              <Route exact path={`/${link.viewUrl}`}
+                component={link.viewPageComponent} />
+              <Route exact path={`/${link.editLinkUrl}`}
+                component={link.editPageComponent} />
+              <Route exact path={`/${link.createLinkUrl}`}
+                component={link.createPageComponent} />
+            </Fragment>
+          )
+        }
+      </div>
+    </HashRouter>
+  </MainPageLayout>
 );

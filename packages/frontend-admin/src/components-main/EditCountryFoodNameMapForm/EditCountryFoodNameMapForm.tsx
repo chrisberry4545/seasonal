@@ -6,7 +6,7 @@ import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { getSingleCountryFoodNameMap, updateCountryFoodNameMap } from '../../services';
 import { BaseFormCountryFoodNameMap } from '../BaseFormCountryFoodNameMap/BaseFormCountryFoodNameMap';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditCountryFoodNameMapForm: FC<{}> = () => {
   const { id } = useParams();
@@ -18,8 +18,8 @@ export const EditCountryFoodNameMapForm: FC<{}> = () => {
     updateCountryFoodNameMap
   );
   return (
-    <FormLayout title='Edit Country Food Name Map'>
+    <LayoutWithTitle title='Edit Country Food Name Map'>
       <CreatedComponent />
-    </FormLayout>
+    </LayoutWithTitle>
   );
 };

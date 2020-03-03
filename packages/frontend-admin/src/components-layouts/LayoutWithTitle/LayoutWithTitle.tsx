@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
-import './FormLayout.scss';
+import React, { FC, Fragment } from 'react';
+import './LayoutWithTitle.scss';
 import { TextHeadingMedium } from '@chrisb-dev/seasonal-shared-frontend-components';
 
-interface IFormLayout {
+interface ILayoutWithTitle {
   title?: string;
 }
 
-export const FormLayout: FC<IFormLayout> = ({
+export const LayoutWithTitle: FC<ILayoutWithTitle> = ({
   children,
   title
 }) => (
-  <div className='c-form-layout'>
+  <Fragment>
     {
       title
       && <TextHeadingMedium className='c-form-layout__title'>
@@ -18,5 +18,5 @@ export const FormLayout: FC<IFormLayout> = ({
       </TextHeadingMedium>
     }
     { children }
-  </div>
+  </Fragment>
 );

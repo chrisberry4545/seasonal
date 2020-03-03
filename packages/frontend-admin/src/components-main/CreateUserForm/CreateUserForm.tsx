@@ -3,7 +3,7 @@ import { createUser } from '../../services';
 import { IUser } from '@chrisb-dev/seasonal-shared';
 import { BaseFormUser } from '../BaseFormUser/BaseFormUser';
 import { FORM_BUTTON_TEXT } from '../../consts';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 const createEmptyUserItem = (): IUser => ({
   password: '',
@@ -12,8 +12,8 @@ const createEmptyUserItem = (): IUser => ({
 } as IUser);
 
 export const CreateUserForm: FC<{}> = () =>
-  <FormLayout title='Create User'>
+  <LayoutWithTitle title='Create User'>
     <BaseFormUser items={createEmptyUserItem()}
         updateMethod={createUser}
         buttonText={FORM_BUTTON_TEXT.CREATE} />
-  </FormLayout>;
+  </LayoutWithTitle>;

@@ -2,8 +2,8 @@ import React, { FC, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { mainLinks } from '../../consts';
 import './MainLinks.scss';
-import { TextMedium, TextHeadingMedium, TextHeadingSmall } from '@chrisb-dev/seasonal-shared-frontend-components';
-import { FormLayout } from '../../components-layouts';
+import { TextMedium, TextHeadingSmall } from '@chrisb-dev/seasonal-shared-frontend-components';
+import { LayoutWithTitle } from '../../components-layouts';
 
 const SingleLink: FC<{
   url: string
@@ -17,10 +17,7 @@ const SingleLink: FC<{
 );
 
 export const MainLinks: FC<{}> = () => (
-  <FormLayout>
-    <TextHeadingMedium className='c-main-links__heading'>
-      Update Data
-    </TextHeadingMedium>
+  <LayoutWithTitle title='Update Data'>
     {
       mainLinks.map((link) =>
         <div key={link.viewUrl} className='c-main-links__section'>
@@ -46,5 +43,5 @@ export const MainLinks: FC<{}> = () => (
         </div>
       )
     }
-  </FormLayout>
+  </LayoutWithTitle>
 );

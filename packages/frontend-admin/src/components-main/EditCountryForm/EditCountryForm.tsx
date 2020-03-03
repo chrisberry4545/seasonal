@@ -6,7 +6,7 @@ import { ICountry } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { getSingleCountry, updateCountry } from '../../services';
 import { BaseFormCountry } from '../BaseFormCountry/BaseFormCountry';
-import { FormLayout } from '../../components-layouts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditCountryForm: FC<{}> = () => {
   const { id } = useParams();
@@ -18,8 +18,8 @@ export const EditCountryForm: FC<{}> = () => {
     updateCountry
   );
   return (
-    <FormLayout title='Edit Country'>
+    <LayoutWithTitle title='Edit Country'>
       <CreatedComponent />
-    </FormLayout>
+    </LayoutWithTitle>
   );
 };

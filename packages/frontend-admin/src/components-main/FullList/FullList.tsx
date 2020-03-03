@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { FormLayout } from '../../components-layouts';
-import { TextHeadingMedium, TextSmall, TextMedium, BareButton } from '@chrisb-dev/seasonal-shared-frontend-components';
+import { TextSmall, TextMedium, BareButton } from '@chrisb-dev/seasonal-shared-frontend-components';
 import { Redirect } from 'react-router-dom';
 import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
 import './FullList.scss';
+import { LayoutWithTitle } from '../../components-layouts';
 
 export interface IFullListProps<T> {
   title: string;
@@ -26,8 +26,7 @@ export const FullList = <T extends {}>({
     return <Redirect to={goToEditLink} push={true} />;
   }
 
-  return <FormLayout>
-    <TextHeadingMedium className='c-full-list__heading'>{title}</TextHeadingMedium>
+  return <LayoutWithTitle title={title}>
     {
       items && items.map((item) =>
         <div className='c-full-list__item' key={getItemEditUrl(item)}>
@@ -44,5 +43,5 @@ export const FullList = <T extends {}>({
         </div>
       )
     }
-  </FormLayout>;
+  </LayoutWithTitle>;
 };
