@@ -6,33 +6,24 @@ import {
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared';
 import { ROUTES } from '../../config';
-import { Link } from 'react-router-dom';
-import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
+import { FullList } from '../FullList/FullList';
 
 const FullListCountryRecipeNameMapInner: FC<IGetAuthorizedBackendDataProps<ICountryRecipeNameMap[]>> = ({
   items,
   reload
 }) => (
-  <div>
-    {
-      items && items.map((item) =>
-        <div key={item.id}>
-          {item.name}
-          <Link to={`${ROUTES.COUNTRY_RECIPE_NAME_MAP}/${ROUTES.EDIT}/${item.id}`}>
-            Edit
-          </Link>
-          <DeleteItemButton deleteItem={
-            () => deleteCountryToRecipeNameMap(item.id).then((country) => {
-              if (reload) {
-                reload();
-              }
-              return country;
-            })
-          } />
-        </div>
-      )
-    }
-  </div>
+  <FullList
+    title='Country Recipe Name Map'
+    items={items}
+    getItemName={(item) => item.name}
+    getItemEditUrl={(item) => `${ROUTES.COUNTRY_RECIPE_NAME_MAP}/${ROUTES.EDIT}/${item.id}`}
+    deleteItemFunc={(item) => deleteCountryToRecipeNameMap(item.id).then((country) => {
+      if (reload) {
+        reload();
+      }
+      return country;
+    })}
+  />
 );
 
 export const FullListCountryRecipeNameMaps = GetAuthorizedBackendData<ICountryRecipeNameMap[]>(

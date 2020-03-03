@@ -5,34 +5,25 @@ import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { IDbRegion } from '@chrisb-dev/seasonal-shared';
-import { Link } from 'react-router-dom';
 import { ROUTES } from '../../config';
-import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
+import { FullList } from '../FullList/FullList';
 
 const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IDbRegion[]>> = ({
   items,
   reload
 }) => (
-  <div>
-    {
-      items && items.map((item) =>
-        <div key={item.code}>
-          {item.name}
-          <Link to={`${ROUTES.REGION}/${ROUTES.EDIT}/${item.code}`}>
-            Edit
-          </Link>
-          <DeleteItemButton deleteItem={
-            () => deleteRegion(item.code).then((region) => {
-              if (reload) {
-                reload();
-              }
-              return region;
-            })
-          } />
-        </div>
-      )
-    }
-  </div>
+  <FullList
+    title='Regions'
+    items={items}
+    getItemName={(item) => item.name}
+    getItemEditUrl={(item) => `${ROUTES.REGION}/${ROUTES.EDIT}/${item.code}`}
+    deleteItemFunc={(item) => deleteRegion(item.code).then((region) => {
+      if (reload) {
+        reload();
+      }
+      return region;
+    })}
+  />
 );
 export const FullListRegions = GetAuthorizedBackendData<IDbRegion[]>(
   FullListRegionsInner,

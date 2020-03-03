@@ -3,13 +3,15 @@ import './PrimaryButton.scss';
 
 export const PrimaryButton: FC<{
   className?: string,
-  onClick?: () => void
+  onClick?: () => void,
+  type?: 'button' | 'submit'
 }> = ({
   className,
   children,
-  onClick
+  onClick,
+  type = 'button'
 }) => (
-  <button className={`${(className || '')} c-primary-button`}
+  <button type={type} className={`${(className || '')} c-primary-button`}
     onClick={onClick}>
     { children }
   </button>

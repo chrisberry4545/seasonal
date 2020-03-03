@@ -1,0 +1,40 @@
+@import '../../styles/settings';
+
+.c-main-links__heading {
+  border-bottom: 1px solid $grey-med;
+  display: block;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.c-main-links__section {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid $grey-med;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.c-main-links__section-heading {
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.c-main-links__options {
+  display: flex;
+  align-items: center;
+}
+
+.c-main-links__link {
+  display: block;
+  &:first-child {
+    margin-right: 6px;
+  }
+  &:last-child {
+    margin-left: 6px;
+  }
+  &:only-child {
+    margin: 0;
+  }
+}

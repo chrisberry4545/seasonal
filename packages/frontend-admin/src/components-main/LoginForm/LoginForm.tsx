@@ -1,70 +1,46 @@
-import React, { Component, FormEvent } from 'react';
+import React, { FC, useState } from 'react';
 import { loginRequest } from '../../services';
 import { Redirect } from 'react-router';
-import { Input } from '@chrisb-dev/seasonal-shared-frontend-components';
+import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
+import { FormLayout } from '../../components-layouts';
+import { DataForm, IDataFormConfigProps } from '../DataForm/DataForm';
+import { IUser } from '@chrisb-dev/seasonal-shared';
 
-interface ILoginFormState {
-  error: string | null;
-  username: string;
-  password: string;
-  redirectToNextPage?: boolean;
-}
+type ILoginFormConfigProps = IDataFormConfigProps<IUser>;
 
-export class LoginForm extends Component<{}, ILoginFormState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      error: null,
-      password: '',
-      username: ''
-    };
+const loginFormConfig: ILoginFormConfigProps = {
+  username: {
+    type: 'text',
+    validation: [requiredValidation]
+  },
 
-    this.usernameChanged = this.usernameChanged.bind(this);
-    this.passwordChanged = this.passwordChanged.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  password: {
+    type: 'password',
+    validation: [requiredValidation]
   }
+};
 
-  public async handleSubmit(event: FormEvent) {
-    event.preventDefault();
-    try {
-      await loginRequest(this.state.username, this.state.password);
-      this.setState({ redirectToNextPage: true });
-    } catch (error) {
-      this.setState({ error });
-    }
-  }
+export const LoginForm: FC<{}> = () => {
+  const [redirectToNextPageState, setRedirectToNextPageState] = useState(
+    false
+  );
 
-  public usernameChanged(username: string) {
-    this.setState({ username });
-  }
+  const handleSubmit = async (user: IUser) => {
+    await loginRequest(user.username, user.password);
+    setRedirectToNextPageState(true);
+    return;
+  };
 
-  public passwordChanged(password: string) {
-    this.setState({ password });
+  if (redirectToNextPageState) {
+    return <Redirect push to='/home' />;
   }
-
-  public render() {
-    if (this.state.redirectToNextPage) {
-      return <Redirect push to='/home' />;
-    }
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Username:
-          <Input type='text'
-            value={this.state.username}
-            onChange={this.usernameChanged} />
-        </label>
-        <label>
-          Password:
-          <Input type='password'
-            value={this.state.password}
-            onChange={this.passwordChanged} />
-        </label>
-        <input type='submit' value='Login' />
-        {
-          this.state.error && <div>{this.state.error}</div>
-        }
-      </form>
-    );
-  }
-}
+  return (
+    <FormLayout>
+      <DataForm
+        item={{ username: '', password: '' } as IUser}
+        sendData={handleSubmit}
+        formConfig={loginFormConfig}
+        buttonText='Login' />
+    </FormLayout>
+  );
+};

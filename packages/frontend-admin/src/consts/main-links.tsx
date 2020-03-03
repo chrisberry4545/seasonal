@@ -26,63 +26,56 @@ import {
 
 export const mainLinks = [
   {
-    createLinkText: 'Create country',
     createPageComponent: CreateCountryPage,
     editPageComponent: EditCountryPage,
-    viewLinkText: 'View countries',
+    sectionName: 'Countries',
     viewPageComponent: ViewCountriesPage,
     viewUrl: ROUTES.COUNTRY
   },
   {
-    createLinkText: 'Create country food name map',
     createPageComponent: CreateCountryFoodNameMapPage,
     editPageComponent: EditCountryFoodNameMapPage,
-    viewLinkText: 'View country food name map',
+    sectionName: 'Country Food Name Maps',
     viewPageComponent: ViewCountryFoodNameMapsPage,
     viewUrl: ROUTES.COUNTRY_FOOD_NAME_MAP
   },
   {
-    createLinkText: 'Create country recipe name map',
     createPageComponent: CreateCountryRecipeNameMapPage,
     editPageComponent: EditCountryRecipeNameMapPage,
-    viewLinkText: 'View country recipe name map',
+    sectionName: 'Country Recipe Name Maps',
     viewPageComponent: ViewCountryRecipeNameMapsPage,
     viewUrl: ROUTES.COUNTRY_RECIPE_NAME_MAP
   },
   {
-    createLinkText: 'Create food',
     createPageComponent: CreateFoodPage,
     editPageComponent: EditFoodPage,
-    viewLinkText: 'View food',
+    sectionName: 'Food',
     viewPageComponent: ViewFoodPage,
     viewUrl: ROUTES.FOOD
   },
   {
-    createLinkText: 'Create recipe',
     createPageComponent: CreateRecipePage,
     editPageComponent: EditRecipePage,
-    viewLinkText: 'View recipes',
+    sectionName: 'Recipes',
     viewPageComponent: ViewRecipesPage,
     viewUrl: ROUTES.RECIPE
   },
   {
-    createLinkText: 'Create region',
     createPageComponent: CreateRegionPage,
     editPageComponent: EditRegionPage,
-    viewLinkText: 'View regions',
+    sectionName: 'Regions',
     viewPageComponent: ViewRegionsPage,
     viewUrl: ROUTES.REGION
   },
   {
-    viewLinkText: 'Edit region food season maps',
+    sectionName: 'Region Food Season Maps',
     viewPageComponent: EditRegionFoodSeasonMapPage,
     viewUrl: ROUTES.REGION_FOOD_SEASON_MAP
   },
   {
-    createLinkText: 'Create user',
     createPageComponent: CreateUserPage,
     editPageComponent: EditUserPage,
-    viewLinkText: 'View users',
+    sectionName: 'Users',
     viewPageComponent: ViewUsersPage,
     viewUrl: ROUTES.USER
   }

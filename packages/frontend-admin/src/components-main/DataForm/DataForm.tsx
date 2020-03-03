@@ -14,14 +14,15 @@ import './DataForm.scss';
 import { FORM_BUTTON_TEXT } from '../../consts';
 
 export interface IFormField {
+  name?: string;
   options?: ISelectOption[];
-  type: 'text' | 'number' | 'checkbox' | 'select' | 'multiselect';
+  type: 'text' | 'number' | 'password' | 'checkbox' | 'select' | 'multiselect';
   validation?: IValidation[];
 }
 export type IDataFormConfigProps<T> = { [key in keyof T & string]?: IFormField };
 export interface IDateFormProps<T> {
   item: Partial<T>;
-  sendData?: (data: T) => Promise<T>;
+  sendData?: (data: T) => Promise<T | void>;
   formConfig: IDataFormConfigProps<T> | null;
   processItem?: (
     item: Partial<T>,
@@ -61,8 +62,10 @@ export function DataForm<T>({
     try {
       setIsLoadingState(true);
       const updatedItem = await sendData!(itemState as T);
-      updateItem(updatedItem);
-      setIsLoadingState(false);
+      if (updatedItem) {
+        updateItem(updatedItem);
+        setIsLoadingState(false);
+      }
     } catch (error) {
       setIsLoadingState(false);
       setErrorState(error.message);
@@ -119,6 +122,7 @@ export function DataForm<T>({
                     switch (type) {
                       case 'number':
                       case 'text':
+                      case 'password':
                         return <Input {...{
                           ...inputs,
                           type: inputs.type as 'text' | 'number' }
