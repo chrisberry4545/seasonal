@@ -15,6 +15,7 @@ const FullListRecipesInner: FC<IGetAuthorizedBackendDataProps<IRecipe[]>> = ({
   <FullList
     title='Recipes'
     items={items}
+    getItemId={(item) => item.id}
     getItemName={(item) => item.name}
     getItemEditUrl={(item) => `${ROUTES.RECIPE}/${ROUTES.EDIT}/${item.id}`}
     deleteItemFunc={(item) => deleteRecipe(item.id).then((recipe) => {

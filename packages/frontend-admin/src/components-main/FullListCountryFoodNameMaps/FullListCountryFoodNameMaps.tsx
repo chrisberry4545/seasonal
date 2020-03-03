@@ -15,6 +15,7 @@ const FullListCountryFoodNameMapInner: FC<IGetAuthorizedBackendDataProps<ICountr
   <FullList
     title='Country Food Name Map'
     items={items}
+    getItemId={(item) => item.id}
     getItemName={(item) => item.name}
     getItemEditUrl={(item) => `${ROUTES.COUNTRY_FOOD_NAME_MAP}/${ROUTES.EDIT}/${item.id}`}
     deleteItemFunc={(item) => deleteCountryToFoodNameMap(item.id).then((country) => {

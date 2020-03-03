@@ -15,6 +15,7 @@ const FullListUsersInner: FC<IGetAuthorizedBackendDataProps<IUser[]>> = ({
   <FullList
     title='Users'
     items={items}
+    getItemId={(item) => item.id}
     getItemName={(item) => item.username}
     getItemEditUrl={(item) => `${ROUTES.USER}/${ROUTES.EDIT}/${item.id}`}
     deleteItemFunc={(item) => (

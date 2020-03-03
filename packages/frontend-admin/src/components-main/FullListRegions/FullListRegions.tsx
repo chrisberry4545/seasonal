@@ -15,6 +15,7 @@ const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IDbRegion[]>> = ({
   <FullList
     title='Regions'
     items={items}
+    getItemId={(item) => item.code}
     getItemName={(item) => item.name}
     getItemEditUrl={(item) => `${ROUTES.REGION}/${ROUTES.EDIT}/${item.code}`}
     deleteItemFunc={(item) => deleteRegion(item.code).then((region) => {

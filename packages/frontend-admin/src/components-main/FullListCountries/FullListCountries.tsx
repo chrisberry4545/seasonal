@@ -15,6 +15,7 @@ const FullListCountriesInner: FC<IGetAuthorizedBackendDataProps<ICountry[]>> = (
   <FullList
     title='Countries'
     items={items}
+    getItemId={(item) => item.id}
     getItemName={(item) => item.name}
     getItemEditUrl={(item) => `${ROUTES.COUNTRY}/${ROUTES.EDIT}/${item.id}`}
     deleteItemFunc={(item) => deleteCountry(item.id).then((country) => {
