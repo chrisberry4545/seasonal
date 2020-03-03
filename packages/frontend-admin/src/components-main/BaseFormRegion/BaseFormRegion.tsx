@@ -9,7 +9,7 @@ import {
   requiredValidation
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
-type IDbRegionFormConfigProps = IDataFormConfigProps<IDbRegion>;
+export type IDbRegionFormConfigProps = IDataFormConfigProps<IDbRegion>;
 
 const initialRegionFormConfig: IDbRegionFormConfigProps = {
   name: {
@@ -34,7 +34,8 @@ const initialRegionFormConfig: IDbRegionFormConfigProps = {
 export const BaseFormRegion: FC<IGetAuthorizedBackendDataProps<IDbRegion>> = ({
   items,
   updateMethod,
-  buttonText
+  buttonText,
+  additionalConfig
 }) => {
   const [config, setConfig] = useState<IDbRegionFormConfigProps | null>(null);
 
@@ -44,6 +45,7 @@ export const BaseFormRegion: FC<IGetAuthorizedBackendDataProps<IDbRegion>> = ({
       value: country.id
     }));
     setConfig({
+      ...additionalConfig,
       ...initialRegionFormConfig,
       countryId: {
         options,
