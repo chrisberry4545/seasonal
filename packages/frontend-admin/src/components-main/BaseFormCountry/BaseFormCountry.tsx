@@ -19,9 +19,11 @@ const countryFormConfig: ICountryFormConfigProps = {
 
 export const BaseFormCountry: FC<IGetAuthorizedBackendDataProps<ICountry>> = ({
   items,
-  updateMethod
+  updateMethod,
+  buttonText
 }) => (
   <DataForm item={items}
     sendData={updateMethod}
-    formConfig={countryFormConfig} />
+    formConfig={countryFormConfig}
+    buttonText={buttonText} />
 );

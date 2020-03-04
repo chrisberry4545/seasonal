@@ -1,9 +1,12 @@
 import React, { FC, useState, useEffect } from 'react';
+import { IDataFormConfigProps } from '../DataForm/DataForm';
 
 export interface IGetAuthorizedBackendDataProps<T> {
   items: T;
   reload?: () => void;
   updateMethod?: (item: T) => Promise<T>;
+  buttonText?: string;
+  additionalConfig?: IDataFormConfigProps<T>;
 }
 
 interface IGetAuthorizedBackendDataState<T> {
@@ -15,7 +18,9 @@ interface IGetAuthorizedBackendDataState<T> {
 export function GetAuthorizedBackendData<T>(
   InnerComponent: FC<IGetAuthorizedBackendDataProps<T>>,
   requestDataMethod: () => Promise<T>,
-  updateMethod?: (item: T) => Promise<T>
+  updateMethod?: (item: T) => Promise<T>,
+  buttonText?: string,
+  additionalConfig?: IDataFormConfigProps<T>
 ): FC<{}> {
   return () => {
     const [state, setState] = useState<IGetAuthorizedBackendDataState<T>>({
@@ -51,6 +56,8 @@ export function GetAuthorizedBackendData<T>(
                       items={state.items}
                       reload={requestNewData}
                       updateMethod={updateMethod}
+                      buttonText={buttonText}
+                      additionalConfig={additionalConfig}
                     />
                   : <div>{state.error}</div>
               }

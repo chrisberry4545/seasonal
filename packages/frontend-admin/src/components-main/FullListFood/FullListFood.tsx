@@ -5,34 +5,26 @@ import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { IFood } from '@chrisb-dev/seasonal-shared';
-import { Link } from 'react-router-dom';
 import { ROUTES } from '../../config';
-import { DeleteItemButton } from '../DeleteItemButton/DeleteItemButton';
+import { FullList } from '../FullList/FullList';
 
 const FullListFoodInner: FC<IGetAuthorizedBackendDataProps<IFood[]>> = ({
   items,
   reload
 }) => (
-  <div>
-    {
-      items && items.map((item) =>
-        <div key={item.id}>
-          {item.name}
-          <Link to={`${ROUTES.FOOD}/${ROUTES.EDIT}/${item.id}`}>
-            Edit
-          </Link>
-          <DeleteItemButton deleteItem={
-            () => deleteFood(item.id).then((food) => {
-              if (reload) {
-                reload();
-              }
-              return food;
-            })
-          } />
-        </div>
-      )
-    }
-  </div>
+  <FullList
+    title='Food'
+    items={items}
+    getItemId={(item) => item.id}
+    getItemName={(item) => item.name}
+    getItemEditUrl={(item) => `${ROUTES.FOOD}/${ROUTES.EDIT}/${item.id}`}
+    deleteItemFunc={(item) => deleteFood(item.id).then((food) => {
+      if (reload) {
+        reload();
+      }
+      return food;
+    })}
+  />
 );
 export const FullListFood = GetAuthorizedBackendData<IFood[]>(
   FullListFoodInner,

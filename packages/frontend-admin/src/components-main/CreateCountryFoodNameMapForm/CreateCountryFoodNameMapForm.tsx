@@ -4,6 +4,8 @@ import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared';
 import {
   BaseFormCountryFoodNameMap
 } from '../BaseFormCountryFoodNameMap/BaseFormCountryFoodNameMap';
+import { FORM_BUTTON_TEXT } from '../../consts';
+import { LayoutWithTitle } from '../../components-layouts';
 
 const createEmptyCountryFoodNameMapItem = (): ICountryFoodNameMap => ({
   countryId: '',
@@ -12,6 +14,9 @@ const createEmptyCountryFoodNameMapItem = (): ICountryFoodNameMap => ({
 } as ICountryFoodNameMap);
 
 export const CreateCountryFoodNameMapForm: FC<{}> = () =>
-  <BaseFormCountryFoodNameMap
-    items={createEmptyCountryFoodNameMapItem()}
-    updateMethod={createCountryFoodNameMap} />;
+  <LayoutWithTitle title='Create Country Food Name Map'>
+    <BaseFormCountryFoodNameMap
+        items={createEmptyCountryFoodNameMapItem()}
+        updateMethod={createCountryFoodNameMap}
+        buttonText={FORM_BUTTON_TEXT.CREATE} />
+  </LayoutWithTitle>;

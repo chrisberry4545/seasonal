@@ -1,0 +1,17 @@
+.c-delete-modal {
+  position: relative;
+}
+
+.c-delete-modal__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.c-delete-modal__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

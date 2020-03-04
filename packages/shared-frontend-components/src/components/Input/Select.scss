@@ -1,0 +1,10 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-select {
+  border: $input-border;
+  border-radius: $input-border-radius;
+  color: $primary-text-color;
+  background: none;
+  height: 2.375rem;
+}

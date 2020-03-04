@@ -6,6 +6,7 @@ import { IDbRegion } from '@chrisb-dev/seasonal-shared';
 import { useParams } from 'react-router-dom';
 import { getSingleRegion, updateRegion } from '../../services';
 import { BaseFormRegion } from '../BaseFormRegion/BaseFormRegion';
+import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditRegionForm: FC<{}> = () => {
   const { id } = useParams();
@@ -16,5 +17,9 @@ export const EditRegionForm: FC<{}> = () => {
     },
     updateRegion
   );
-  return <CreatedComponent />;
+  return (
+    <LayoutWithTitle title='Edit Region'>
+      <CreatedComponent />
+    </LayoutWithTitle>
+  );
 };

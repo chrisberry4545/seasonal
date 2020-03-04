@@ -144,5 +144,6 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
     formConfig={config}
     processItem={(item, previousItem) => updateSeasonIds(
       item, previousItem, allRegionFoodSeasonMaps
-    )} />;
+    )}
+    buttonText='Create' />;
 };

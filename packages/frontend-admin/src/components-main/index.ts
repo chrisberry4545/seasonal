@@ -28,8 +28,6 @@ export * from './CreateUserForm/CreateUserForm';
 
 export * from './DataForm/DataForm';
 
-export * from './DeleteItemButton/DeleteItemButton';
-
 export * from './EditCountryFoodNameMapForm/EditCountryFoodNameMapForm';
 
 export * from './EditCountryForm/EditCountryForm';

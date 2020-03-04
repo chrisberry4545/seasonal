@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 import { createRegion } from '../../services';
 import { IDbRegion } from '@chrisb-dev/seasonal-shared';
-import { BaseFormRegion } from '../BaseFormRegion/BaseFormRegion';
+import { BaseFormRegion, IDbRegionFormConfigProps } from '../BaseFormRegion/BaseFormRegion';
+import { FORM_BUTTON_TEXT } from '../../consts';
+import { LayoutWithTitle } from '../../components-layouts';
+import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 const createEmptyRegionItem = (): IDbRegion => ({
   code: '',
@@ -12,5 +15,17 @@ const createEmptyRegionItem = (): IDbRegion => ({
   name: ''
 } as IDbRegion);
 
+const createOnlyFields: IDbRegionFormConfigProps = {
+  code: {
+    type: 'text',
+    validation: [requiredValidation]
+  }
+};
+
 export const CreateRegionForm: FC<{}> = () =>
-  <BaseFormRegion items={createEmptyRegionItem()} updateMethod={createRegion} />;
+  <LayoutWithTitle title='Create Region'>
+    <BaseFormRegion items={createEmptyRegionItem()}
+      updateMethod={createRegion}
+      buttonText={FORM_BUTTON_TEXT.CREATE}
+      additionalConfig={createOnlyFields} />
+  </LayoutWithTitle>;

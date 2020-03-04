@@ -30,7 +30,8 @@ const initialFoodFormConfig: IFoodFormConfigProps = {
 
 export const BaseFormFood: FC<IGetAuthorizedBackendDataProps<IFood>> = ({
   items,
-  updateMethod
+  updateMethod,
+  buttonText
 }) => {
   const [config, setConfig] = useState<IFoodFormConfigProps | null>(null);
 
@@ -55,5 +56,6 @@ export const BaseFormFood: FC<IGetAuthorizedBackendDataProps<IFood>> = ({
 
   return <DataForm item={items}
     sendData={updateMethod}
-    formConfig={config} />;
+    formConfig={config}
+    buttonText={buttonText} />;
 };

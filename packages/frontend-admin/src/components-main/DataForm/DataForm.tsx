@@ -6,31 +6,37 @@ import {
   Multiselect,
   Select,
   IValidation,
-  LoadingSpinner
+  LoadingSpinner,
+  PrimaryButton,
+  TextMedium
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import './DataForm.scss';
+import { FORM_BUTTON_TEXT } from '../../consts';
 
 export interface IFormField {
+  name?: string;
   options?: ISelectOption[];
-  type: 'text' | 'number' | 'checkbox' | 'select' | 'multiselect';
+  type: 'text' | 'number' | 'password' | 'checkbox' | 'select' | 'multiselect';
   validation?: IValidation[];
 }
 export type IDataFormConfigProps<T> = { [key in keyof T & string]?: IFormField };
 export interface IDateFormProps<T> {
   item: Partial<T>;
-  sendData?: (data: T) => Promise<T>;
+  sendData?: (data: T) => Promise<T | void>;
   formConfig: IDataFormConfigProps<T> | null;
   processItem?: (
     item: Partial<T>,
     previousItem: Partial<T> | null
   ) => Partial<T>;
+  buttonText?: string;
 }
 
 export function DataForm<T>({
   item,
   sendData,
   formConfig,
-  processItem
+  processItem,
+  buttonText = FORM_BUTTON_TEXT.UPDATE
 }: IDateFormProps<T>) {
   const [itemState, setItemState] = useState<Partial<T>>({
     ...item
@@ -56,8 +62,11 @@ export function DataForm<T>({
     try {
       setIsLoadingState(true);
       const updatedItem = await sendData!(itemState as T);
-      updateItem(updatedItem);
-      setIsLoadingState(false);
+      if (updatedItem) {
+        updateItem(updatedItem);
+        setIsLoadingState(false);
+        history.back();
+      }
     } catch (error) {
       setIsLoadingState(false);
       setErrorState(error.message);
@@ -96,6 +105,7 @@ export function DataForm<T>({
             const placeholder = key[0].toUpperCase()
               + key.replace( /([A-Z])/g, ' $1').slice(1);
             const inputs = {
+              className: 'c-data-form__input',
               onChange: (
                 changedValue: number | string | string[] | boolean
               ) => updateField(prop, changedValue, validation),
@@ -107,12 +117,13 @@ export function DataForm<T>({
             const validationErrors = validationState[prop];
             return (
               <label key={key} className='c-data-form__field'>
-                {placeholder}
+                <TextMedium className='c-data-form__label'>{placeholder}</TextMedium>
                 {
                   (() => {
                     switch (type) {
                       case 'number':
                       case 'text':
+                      case 'password':
                         return <Input {...{
                           ...inputs,
                           type: inputs.type as 'text' | 'number' }
@@ -140,7 +151,9 @@ export function DataForm<T>({
           })
         }
       </div>
-      <button onClick={submit}>Update</button>
+      <PrimaryButton className='c-data-form__submit-btn' onClick={submit}>
+        {buttonText}
+      </PrimaryButton>
       {
         errorState ? <div>{errorState}</div> : null
       }

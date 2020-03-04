@@ -23,7 +23,8 @@ export const BaseFormCountryRecipeNameMap: FC<
   IGetAuthorizedBackendDataProps<ICountryRecipeNameMap>
 > = ({
   items,
-  updateMethod
+  updateMethod,
+  buttonText
 }) => {
   const [
     config,
@@ -66,5 +67,6 @@ export const BaseFormCountryRecipeNameMap: FC<
 
   return <DataForm item={items}
     sendData={updateMethod}
-    formConfig={config} />;
+    formConfig={config}
+    buttonText={buttonText} />;
 };
