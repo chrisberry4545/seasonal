@@ -145,5 +145,6 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
     processItem={(item, previousItem) => updateSeasonIds(
       item, previousItem, allRegionFoodSeasonMaps
     )}
-    buttonText='Create' />;
+    buttonText='Create'
+    goBackOnUpdate={false} />;
 };
