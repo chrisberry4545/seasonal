@@ -29,6 +29,7 @@ export interface IDateFormProps<T> {
     previousItem: Partial<T> | null
   ) => Partial<T>;
   buttonText?: string;
+  goBackOnUpdate?: boolean;
 }
 
 export function DataForm<T>({
@@ -36,7 +37,8 @@ export function DataForm<T>({
   sendData,
   formConfig,
   processItem,
-  buttonText = FORM_BUTTON_TEXT.UPDATE
+  buttonText = FORM_BUTTON_TEXT.UPDATE,
+  goBackOnUpdate = true
 }: IDateFormProps<T>) {
   const [itemState, setItemState] = useState<Partial<T>>({
     ...item
@@ -65,7 +67,9 @@ export function DataForm<T>({
       if (updatedItem) {
         updateItem(updatedItem);
         setIsLoadingState(false);
-        history.back();
+        if (goBackOnUpdate) {
+          history.back();
+        }
       }
     } catch (error) {
       setIsLoadingState(false);
