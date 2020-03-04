@@ -30,17 +30,17 @@ Object {
 exports[`REST endpoint testing for /admin/food get all when logged in as an admin Returns the expected result 1`] = `
 Array [
   Object {
-    "description": "beetroot description",
-    "id": "c6f78568-fe23-47e4-8e65-55934199a39f",
-    "imageUrlSmall": "https://beetroot.com",
-    "name": "Beetroot",
-    "substituteFoodIds": Array [],
-  },
-  Object {
     "description": "apple description",
     "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
     "imageUrlSmall": "https://apple.com",
     "name": "Apple",
+    "substituteFoodIds": Array [],
+  },
+  Object {
+    "description": "beetroot description",
+    "id": "c6f78568-fe23-47e4-8e65-55934199a39f",
+    "imageUrlSmall": "https://beetroot.com",
+    "name": "Beetroot",
     "substituteFoodIds": Array [],
   },
   Object {
