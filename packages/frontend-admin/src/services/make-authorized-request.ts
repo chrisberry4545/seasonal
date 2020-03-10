@@ -16,7 +16,7 @@ export const makeAuthorizedRequest = async <T>(
     }
   );
   if (response.status === 401) {
-    location.href = '/';
+    location.href = process.env.PUBLIC_URL;
     throw new Error('Unauthorized');
   }
   const result = await response.json();
