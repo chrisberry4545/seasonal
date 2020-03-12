@@ -1,5 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { IDataFormConfigProps } from '../DataForm/DataForm';
+import { LoadingSpinner } from '@chrisb-dev/seasonal-shared-frontend-components';
+import './GetAuthorizedBackendData.css';
 
 export interface IGetAuthorizedBackendDataProps<T> {
   items: T;
@@ -48,7 +50,9 @@ export function GetAuthorizedBackendData<T>(
       <div>
         {
           state.isLoading
-            ? <div>Loading...</div>
+            ? <div className='c-get-authorized-backend-data__loading'>
+              <LoadingSpinner />
+            </div>
             : <div>
               {
                 !state.error && state.items
