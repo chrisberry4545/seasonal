@@ -1,0 +1,8 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-validation-message {
+  color: $error-color;
+  margin-top: 0.5rem;
+  display: inline-block;
+}

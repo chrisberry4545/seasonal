@@ -1,5 +1,7 @@
 export * from './Checkbox';
 
+export * from './ValidationMessage';
+
 export * from './Input';
 
 export * from './Multiselect';

@@ -8,7 +8,8 @@ import {
   IValidation,
   LoadingSpinner,
   PrimaryButton,
-  TextMedium
+  TextMedium,
+  ValidationMessage
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import './DataForm.scss';
 import { FORM_BUTTON_TEXT } from '../../consts';
@@ -148,7 +149,11 @@ export function DataForm<T>({
                   })()
                 }
                 <div>
-                  { validationErrors && validationErrors[0] }
+                  {
+                    validationErrors
+                    && validationErrors[0]
+                    && <ValidationMessage>{validationErrors[0]}</ValidationMessage>
+                  }
                 </div>
               </label>
             );
@@ -159,7 +164,7 @@ export function DataForm<T>({
         {buttonText}
       </PrimaryButton>
       {
-        errorState ? <div>{errorState}</div> : null
+        errorState && <ValidationMessage>{errorState}</ValidationMessage>
       }
       {
         isLoadingState
