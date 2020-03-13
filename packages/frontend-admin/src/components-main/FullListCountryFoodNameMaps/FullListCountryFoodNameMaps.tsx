@@ -56,7 +56,10 @@ export const FullListCountryFoodNameMaps = GetAuthorizedBackendData<ICountryFood
       };
     }).sort((a, b) => (
       (a && a.countryName ? a.countryName : '') > (b && b.countryName ? b.countryName : '')
-        ? -1 : 1
+        ? 1 : (
+          a.foodName && a.foodName ? a.foodName : ''
+        ) > (b && b.foodName ? b.foodName : '')
+          ? 1 : -1
     ));
   }
 );

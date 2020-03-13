@@ -56,7 +56,11 @@ export const FullListCountryRecipeNameMaps = GetAuthorizedBackendData<ICountryRe
       };
     }).sort((a, b) => (
       (a && a.countryName ? a.countryName : '') > (b && b.countryName ? b.countryName : '')
-        ? -1 : 1
+        ? 1
+          : (
+            a.recipeName && a.recipeName ? a.recipeName : ''
+          ) > (b && b.recipeName ? b.recipeName : '')
+            ? 1 : -1
     ));
   }
 );
