@@ -85,14 +85,14 @@ workflows:
   version: 2
   backend:
     jobs:
-      - backend_test
       - backend_approval:
           type: approval
+      - backend_test:
           requires:
-           - backend_test
+           - backend_approval
       - backend_deploy:
           requires:
-            - backend_approval
+            - backend_test
       - frontend_approval:
           type: approval
       - frontend_deploy:
