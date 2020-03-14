@@ -11,7 +11,7 @@
   @include mq($from: tablet) {
     flex-direction: row-reverse;
     min-height: 0;
-    max-width: 400px;
+    max-width: 570px;
     margin: auto;
   }
 }

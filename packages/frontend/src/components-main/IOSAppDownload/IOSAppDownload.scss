@@ -1,0 +1,26 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-ios-app-download {
+  max-width: 175px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparentize($background-color, 0.8);
+  }
+
+  @include mq($from: tablet) {
+    max-width: 154px;
+  }
+}
+
+  .c-ios-app-download__image {
+    width: 100%;
+  }
