@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IUser } from '@chrisb-dev/seasonal-shared';
+import { IUser, USER_ROLES } from '@chrisb-dev/seasonal-shared';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import {
   requiredValidation
@@ -17,8 +17,16 @@ const userFormConfig: IUserFormConfigProps = {
   },
 
   password: {
-    type: 'text',
+    type: 'password',
     validation: [requiredValidation]
+  },
+
+  roles: {
+    options: Object.values(USER_ROLES).map((role) => ({
+      label: role,
+      value: role
+    })),
+    type: 'multiselect'
   }
 };
 

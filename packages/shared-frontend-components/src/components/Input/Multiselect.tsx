@@ -26,7 +26,7 @@ export const Multiselect: FC<{
   return <div
     className={`c-multiselect ${(className || '')}`}>
       {
-        options.map((option) =>
+        options && options.map((option) =>
           <div key={option.value}
             className={
               'c-multi-select-option' + (
