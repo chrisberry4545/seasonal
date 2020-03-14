@@ -13,8 +13,9 @@
     "deploy": "./release/deploy-frontend-admin.sh"
   },
   "dependencies": {
-    "@chrisb-dev/seasonal-shared": "2.7.10",
-    "@chrisb-dev/seasonal-shared-frontend-components": "0.1.0",
+    "@chrisb-dev/seasonal-shared-models": "1.0.0",
+    "@chrisb-dev/seasonal-shared-frontend-components": "1.0.0",
+    "@chrisb-dev/seasonal-shared-frontend-utilities": "1.0.0",
     "node-sass": "^4.11.0",
     "react": "16.9.0",
     "react-dom": "^16.8.2",

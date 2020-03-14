@@ -2,7 +2,7 @@ const path = require('path');
 
 const extraNodeModules = new Proxy(
   {
-    '@chrisb-dev/seasonal-shared': path.resolve(__dirname, '../shared'),
+    '@chrisb-dev/seasonal-shared-models': path.resolve(__dirname, '../shared'),
   },
   {
     get: (target, name) => {

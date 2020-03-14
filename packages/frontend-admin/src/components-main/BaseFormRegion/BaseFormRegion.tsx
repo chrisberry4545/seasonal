@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IDbRegion, ICountry } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion, ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import { getAllCountries } from '../../services';
 import {

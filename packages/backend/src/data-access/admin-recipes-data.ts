@@ -1,5 +1,5 @@
 import { queryPostgres, getSqlQuery } from '../postgres';
-import { IRecipe } from '@chrisb-dev/seasonal-shared';
+import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateDbRecipe = async (
   item: IRecipe

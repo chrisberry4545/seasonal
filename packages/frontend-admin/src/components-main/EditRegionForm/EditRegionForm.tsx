@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IDbRegion } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
 import { getSingleRegion, updateRegion } from '../../services';
 import { BaseFormRegion } from '../BaseFormRegion/BaseFormRegion';

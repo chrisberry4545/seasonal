@@ -9,7 +9,7 @@ import {
 import {
   closeLocationPopup,
   selectIsLocationSettingsPopupVisible
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../../interfaces';
 import { Dispatch } from 'redux';
 

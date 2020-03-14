@@ -6,7 +6,7 @@ import {
   selectIsFoodDataOrBasicSeasonsLoading,
   selectVisibleRecipesForFoodDetailsData,
   foodDetailsSelectRecipe
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-models';
 
 import { IState } from '../../interfaces';
 import {

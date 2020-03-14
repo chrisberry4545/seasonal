@@ -1,5 +1,5 @@
 import { queryPostgres, getSqlQuery } from '../postgres';
-import { IUser } from '@chrisb-dev/seasonal-shared';
+import { IUser } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateDbUser = async (
   username: string,

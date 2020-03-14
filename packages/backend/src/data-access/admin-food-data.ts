@@ -1,5 +1,5 @@
 import { queryPostgres, getSqlQuery } from '../postgres';
-import { IFood } from '@chrisb-dev/seasonal-shared';
+import { IFood } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateDbFood = async (
   item: IFood

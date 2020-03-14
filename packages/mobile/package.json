@@ -16,7 +16,8 @@
     "react-schematics": "schematics @chrisb-dev/react-schematics:react-components --scss=false"
   },
   "dependencies": {
-    "@chrisb-dev/seasonal-shared": "2.7.10",
+    "@chrisb-dev/seasonal-shared-models": "1.0.0",
+    "@chrisb-dev/seasonal-shared-frontend-utilities": "1.0.0",
     "@expo/vector-icons": "^10.0.0",
     "expo": "^36.0.0",
     "expo-analytics-amplitude": "~8.0.0",

@@ -1,6 +1,6 @@
 {
   "name": "@chrisb-dev/seasonal-shared-frontend-components",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/chrisberry4545/seasonal-shared#readme",
   "description": "Seasonal shared frontend components",
   "main": "dist/index.js",
@@ -26,7 +26,7 @@
     "/src"
   ],
   "dependencies": {
-    "@chrisb-dev/seasonal-shared": "2.7.10",
+    "@chrisb-dev/seasonal-shared-models": "1.0.0",
     "inuitcss": "^6.0.0",
     "node-sass": "^4.11.0",
     "react": "16.9.0",

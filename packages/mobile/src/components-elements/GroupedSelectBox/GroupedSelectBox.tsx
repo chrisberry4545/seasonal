@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react';
-import { IGroupedSelectOptions } from '@chrisb-dev/seasonal-shared';
+import { IGroupedSelectOptions } from '@chrisb-dev/seasonal-shared-models';
 import { TextStyle, View, ViewStyle } from 'react-native';
 import { TextLarge } from '../Text';
 import { colors } from '../../styles/colors';

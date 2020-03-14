@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IFood } from '@chrisb-dev/seasonal-shared';
+import { IFood } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
 import { getSingleFood, updateFood } from '../../services';
 import { BaseFormFood } from '../BaseFormFood/BaseFormFood';

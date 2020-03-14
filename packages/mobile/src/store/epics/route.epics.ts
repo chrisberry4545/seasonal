@@ -23,7 +23,7 @@ import {
   setAllSeasonsWithFoodStart,
   FOOD_DETAILS_SELECT_RECIPE,
   SET_REGION
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-models';
 import { withLatestFrom, map, tap, ignoreElements, mapTo } from 'rxjs/operators';
 import { goToLinkUrl } from '../../helpers';
 import { navigate, closeDrawer, openDrawer, navigateBackOne } from '../../services';

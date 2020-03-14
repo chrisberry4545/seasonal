@@ -4,7 +4,7 @@ import {
 } from './CurrentSeasonName';
 import {
   selectCurrentSeasonName
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-models';
 import {
   ICurrentSeasonName
 } from './CurrentSeasonName.interface';

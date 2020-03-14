@@ -1,5 +1,5 @@
 import { queryPostgres, getSqlQuery } from '../postgres';
-import { IHydratedSeason, IBaseSeason } from '@chrisb-dev/seasonal-shared';
+import { IHydratedSeason, IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
 
 export const getAllSeasonData = async (): Promise<IBaseSeason[]> => {
   const getAllSeasonsQuery = await getSqlQuery('get-basic-seasons.sql');

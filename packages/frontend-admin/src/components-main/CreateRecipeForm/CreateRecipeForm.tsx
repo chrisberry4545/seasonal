@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { createRecipe } from '../../services';
-import { IRecipe } from '@chrisb-dev/seasonal-shared';
+import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import { BaseFormRecipe } from '../BaseFormRecipe/BaseFormRecipe';
 import { FORM_BUTTON_TEXT } from '../../consts';
 import { LayoutWithTitle } from '../../components-layouts';

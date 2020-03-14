@@ -1,4 +1,4 @@
-import { IRecipe } from '@chrisb-dev/seasonal-shared';
+import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IRecipeTableInputProps {
   isCurrentTabFood: boolean;

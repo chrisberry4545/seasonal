@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared';
+import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
 import { getSingleCountryFoodNameMap, updateCountryFoodNameMap } from '../../services';
 import { BaseFormCountryFoodNameMap } from '../BaseFormCountryFoodNameMap/BaseFormCountryFoodNameMap';

@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { ICountryRecipeNameMap, ICountry, IRecipe } from '@chrisb-dev/seasonal-shared';
+import { ICountryRecipeNameMap, ICountry, IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import {
   requiredValidation

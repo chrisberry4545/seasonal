@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import {
   IDietaryFiltersProps
 } from './DietaryFilters.interface';
-import { DIET_TYPE } from '@chrisb-dev/seasonal-shared';
+import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 import { RadioButtonGroup } from '../../components-elements';
 import { ViewStyle } from 'react-native';
 

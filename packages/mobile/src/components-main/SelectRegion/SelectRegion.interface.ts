@@ -1,4 +1,4 @@
-import { IGroupedSelectOptions } from '@chrisb-dev/seasonal-shared';
+import { IGroupedSelectOptions } from '@chrisb-dev/seasonal-shared-models';
 
 export interface ISelectRegionInputProps {
   countrySelectGroups: IGroupedSelectOptions[] | undefined;

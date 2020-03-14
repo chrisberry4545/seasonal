@@ -1,4 +1,4 @@
-import { IHydratedFood } from '@chrisb-dev/seasonal-shared';
+import { IHydratedFood } from '@chrisb-dev/seasonal-shared-models';
 import { queryPostgres, getSqlQuery } from '../postgres';
 
 export const getFoodDetailsData = async (

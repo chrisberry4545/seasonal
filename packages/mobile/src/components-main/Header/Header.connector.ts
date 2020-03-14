@@ -4,7 +4,7 @@ import {
 } from './Header';
 import {
   openMenu, closeMenu
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-models';
 import { IHeaderDispatchProps } from './Header.interface';
 import { Dispatch } from 'redux';
 

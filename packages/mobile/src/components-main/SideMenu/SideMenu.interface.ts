@@ -1,4 +1,4 @@
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 
 export interface ISideMenuInputProps {
   allBasicSeasonData: IHydratedSeason[] | undefined;

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IUser, USER_ROLES } from '@chrisb-dev/seasonal-shared';
+import { IUser, USER_ROLES } from '@chrisb-dev/seasonal-shared-models';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import {
   requiredValidation

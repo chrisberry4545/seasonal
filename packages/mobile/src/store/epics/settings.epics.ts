@@ -15,7 +15,7 @@ import {
   SET_USER_REGION_DETECTED,
   selectSettingsRegionCode,
   INIT_SETTINGS
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-models';
 
 import { IState } from '../../interfaces';
 

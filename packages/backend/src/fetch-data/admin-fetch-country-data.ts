@@ -6,7 +6,7 @@ import {
   adminDeleteDbCountry
 } from '../data-access';
 
-import { ICountry } from '@chrisb-dev/seasonal-shared';
+import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateCountry = (
   item: ICountry

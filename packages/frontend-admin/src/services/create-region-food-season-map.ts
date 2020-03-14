@@ -1,4 +1,4 @@
-import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared';
+import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
 import { makeAuthorizedRequest } from './make-authorized-request';
 import { REGION_FOOD_SEASON_MAP_URL } from '../config';
 

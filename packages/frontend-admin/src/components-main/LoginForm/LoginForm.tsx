@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
 import { LayoutWithTitle } from '../../components-layouts';
 import { DataForm, IDataFormConfigProps } from '../DataForm/DataForm';
-import { IUser } from '@chrisb-dev/seasonal-shared';
+import { IUser } from '@chrisb-dev/seasonal-shared-models';
 
 type ILoginFormConfigProps = IDataFormConfigProps<IUser>;
 

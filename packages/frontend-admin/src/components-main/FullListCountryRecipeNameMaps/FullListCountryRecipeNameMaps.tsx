@@ -4,7 +4,7 @@ import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared';
+import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
 import { ROUTES } from '../../config';
 import { FullList } from '../FullList/FullList';
 

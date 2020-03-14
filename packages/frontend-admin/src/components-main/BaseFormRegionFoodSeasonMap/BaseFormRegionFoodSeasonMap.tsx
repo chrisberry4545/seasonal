@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
-import { IBaseSeason, getAllSeasons, IFood, IDbRegion } from '@chrisb-dev/seasonal-shared';
+import { IBaseSeason, IFood, IDbRegion } from '@chrisb-dev/seasonal-shared-models';
+import { getAllSeasons } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import {
   getAllFood,
   getAllRegions,
@@ -8,7 +9,7 @@ import {
   createRegionFoodSeasonMap,
   getAllRegionFoodSeasonMap
 } from '../../services';
-import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared';
+import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IRegionFoodSeasonMapForm {
   regionId: string;

@@ -13,7 +13,7 @@ import {
   CLOSE_MENU,
   RECIPE_ITEM_CLICKED,
   FOOD_ITEM_CLICKED
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
   map,

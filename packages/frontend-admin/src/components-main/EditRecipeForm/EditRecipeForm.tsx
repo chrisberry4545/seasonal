@@ -3,7 +3,7 @@ import { getSingleRecipe, updateRecipe } from '../../services';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IRecipe } from '@chrisb-dev/seasonal-shared';
+import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
 import { BaseFormRecipe } from '../BaseFormRecipe/BaseFormRecipe';
 import { LayoutWithTitle } from '../../components-layouts';

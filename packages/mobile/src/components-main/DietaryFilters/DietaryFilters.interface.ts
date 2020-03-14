@@ -1,4 +1,4 @@
-import { DIET_TYPE } from '@chrisb-dev/seasonal-shared';
+import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IDietaryFiltersInputProps {
   dietType: DIET_TYPE;

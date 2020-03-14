@@ -5,7 +5,7 @@ import './DietaryFilters.scss';
 import {
   IDietaryFiltersProps
 } from './DietaryFilters.interface';
-import { DIET_TYPE } from '@chrisb-dev/seasonal-shared';
+import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 import { RadioButtonGroup } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 const radioButtons = [{

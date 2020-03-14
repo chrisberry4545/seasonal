@@ -1,6 +1,6 @@
 import {
   IRecipe
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-models';
 
 export interface ISeasonRecipesInputProps {
   isLoading: boolean;

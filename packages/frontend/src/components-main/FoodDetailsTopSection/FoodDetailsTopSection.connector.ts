@@ -9,7 +9,7 @@ import {
   selectCurrentFoodDetailsName,
   selectCurrentFoodDetailsImageUrl,
   selectIsFoodDataOrBasicSeasonsLoading
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import { IState } from '../../interfaces';
 import {

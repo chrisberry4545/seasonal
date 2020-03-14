@@ -1,4 +1,4 @@
-import { IFood } from '@chrisb-dev/seasonal-shared';
+import { IFood } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IFoodTableInputProps {
   isCurrentTabFood: boolean;

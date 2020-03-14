@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IUser } from '@chrisb-dev/seasonal-shared';
+import { IUser } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
 import { getSingleUser, updateUser } from '../../services';
 import { BaseFormUser } from '../BaseFormUser/BaseFormUser';
