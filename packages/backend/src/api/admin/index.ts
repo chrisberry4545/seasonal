@@ -4,6 +4,7 @@ import {
 
 import { appPassport } from './auth/app-passport';
 import { adminAuth } from './auth/admin-auth';
+import { editorAuth } from './auth/editor-auth';
 import { loginApi } from './login-api';
 import { countryApi } from './country-api';
 import { countryFoodNameMapApi } from './country-food-name-map-api';
@@ -23,37 +24,37 @@ export const adminApi = (router = Router()) => {
   );
   router.use(
     `/country`,
-    adminAuth,
+    editorAuth,
     countryApi()
   );
   router.use(
     `/country-food-name-map`,
-    adminAuth,
+    editorAuth,
     countryFoodNameMapApi()
   );
   router.use(
     `/country-recipe-name-map`,
-    adminAuth,
+    editorAuth,
     countryRecipeNameMapApi()
   );
   router.use(
     `/food`,
-    adminAuth,
+    editorAuth,
     foodApi()
   );
   router.use(
     `/recipe`,
-    adminAuth,
+    editorAuth,
     recipeApi()
   );
   router.use(
     `/region`,
-    adminAuth,
+    editorAuth,
     regionApi()
   );
   router.use(
     `/region-food-season-map`,
-    adminAuth,
+    editorAuth,
     regionFoodSeasonMapApi()
   );
   router.use(

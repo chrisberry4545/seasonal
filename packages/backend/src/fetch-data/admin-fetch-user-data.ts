@@ -10,10 +10,14 @@ import bcrypt from 'bcrypt';
 
 const saltRounds = 10;
 
+const hashPassword = async (password: string) => {
+  const salt = await bcrypt.genSalt(saltRounds);
+  return await bcrypt.hash(password, salt);
+};
+
 export const adminCreateUser = async (item: IUser): Promise<IUser> => {
   const { username, password } = item;
-  const salt = await bcrypt.genSalt(saltRounds);
-  const hashedPassword = await bcrypt.hash(password, salt);
+  const hashedPassword = await hashPassword(password);
   return await adminCreateDbUser(username, hashedPassword);
 };
 
@@ -26,7 +30,13 @@ export const adminGetAllUsers = async (): Promise<IUser[]> =>
 
 export const adminEditUser = async (
   item: IUser
-): Promise<IUser> => adminEditDbUser(item);
+): Promise<IUser> => {
+  const hashedPassword = await hashPassword(item.password);
+  return adminEditDbUser({
+    ...item,
+    password: hashedPassword
+  });
+};
 
 export const adminDeleteUser = async (
   id: string

@@ -19,7 +19,13 @@ VALUES
   '30e59fda-220b-4e8b-9e01-3a9f8ceeec45',
   'admin-user',
   '$2b$10$wbQP.RBFpp4jQ0EqOyaPqer8n7Dqv1mTCje5E2TtH13uJCHbZAO5u',
-  ARRAY['admin']::text[]
+  ARRAY['admin', 'editor']::text[]
+),
+(
+  '30e59fda-220b-4e8b-9e01-3a9f8dceca52',
+  'editor-user',
+  '$2b$10$wbQP.RBFpp4jQ0EqOyaPqer8n7Dqv1mTCje5E2TtH13uJCHbZAO5u',
+  ARRAY['editor']::text[]
 ),
 (
   '53f5a3d1-db75-4c62-a309-79b3eea329b3',

@@ -2,6 +2,7 @@ import { IUser } from '@chrisb-dev/seasonal-shared';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
 
 generateRestEndpointTests<IUser>({
+  adminOnly: true,
   path: '/admin/user',
   propertiesNotReturned: ['password'],
   singleItemId: '53f5a3d1-db75-4c62-a309-79b3eea329b3',

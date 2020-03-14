@@ -12,8 +12,12 @@ export const EditUserForm: FC<{}> = () => {
   const { id } = useParams();
   const CreatedComponent = GetAuthorizedBackendData<IUser>(
     BaseFormUser,
-    () => {
-      return getSingleUser(id as string);
+    async () => {
+      const user = await getSingleUser(id as string);
+      return {
+        ...user,
+        password: ''
+      };
     },
     updateUser
   );

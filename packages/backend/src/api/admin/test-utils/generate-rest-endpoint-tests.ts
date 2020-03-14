@@ -1,6 +1,7 @@
 import supertest, { Response } from 'supertest';
 import {
-  attachAdminJwtToken
+  attachAdminJwtToken,
+  attachEditorJwtToken
 } from './login-utils';
 import { app } from '../../../app';
 import { testFailedAuthorzation } from './authorization-tests';
@@ -10,13 +11,15 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
   singleItemId,
   validItem,
   validItemForEdit,
-  propertiesNotReturned = []
+  propertiesNotReturned = [],
+  adminOnly = false
 }: {
   path: string,
   singleItemId: string,
   validItem: T,
   validItemForEdit: T,
-  propertiesNotReturned?: Array<keyof T>
+  propertiesNotReturned?: Array<keyof T>,
+  adminOnly?: boolean
 }) => {
 
   const getId = (item: T) => item.id || item.code;
@@ -60,6 +63,25 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           });
         });
       });
+
+      if (!adminOnly) {
+        describe('when logged in as an editor', () => {
+          beforeAll(async () => {
+            response = await attachEditorJwtToken(
+              supertestRequestGenerator()
+            );
+            result = response.body;
+          });
+          afterAll(async () =>
+            await attachAdminJwtToken(
+              supertest(app).delete(`${path}/${getId(result)}`)
+            ));
+
+          test('Returns a status of 200', () => {
+            expect(response.status).toBe(200);
+          });
+        });
+      }
     });
 
     describe('get all', () => {
@@ -84,6 +106,21 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           expect(result).toMatchSnapshot();
         });
       });
+
+      if (!adminOnly) {
+        describe('when logged in as an editor', () => {
+          beforeAll(async () => {
+            response = await attachEditorJwtToken(
+              supertestRequestGenerator()
+            );
+            result = response.body;
+          });
+
+          test('Returns a status of 200', () => {
+            expect(response.status).toBe(200);
+          });
+        });
+      }
     });
 
     describe('get single item', () => {
@@ -109,6 +146,21 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           expect(result).toMatchSnapshot();
         });
       });
+
+      if (!adminOnly) {
+        describe('when logged in as an editor', () => {
+          beforeAll(async () => {
+            response = await attachEditorJwtToken(
+              supertestRequestGenerator()
+            );
+            result = response.body;
+          });
+
+          test('Returns a status of 200', () => {
+            expect(response.status).toBe(200);
+          });
+        });
+      }
     });
 
     describe('edit item', () => {
@@ -162,6 +214,21 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           expect(otherProps).toEqual(withPropertiesRemoved);
         });
       });
+
+      if (!adminOnly) {
+        describe('when logged in as an editor', () => {
+          beforeAll(async () => {
+            response = await attachEditorJwtToken(
+              supertestRequestGenerator()
+            );
+            result = response.body;
+          });
+
+          test('Returns a status of 200', () => {
+            expect(response.status).toBe(200);
+          });
+        });
+      }
     });
 
     describe('delete item', () => {
@@ -205,6 +272,21 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           expect(deletedItemResponse.body).toBe('');
         });
       });
+
+      if (!adminOnly) {
+        describe('when logged in as an editor', () => {
+          beforeAll(async () => {
+            response = await attachEditorJwtToken(
+              supertestRequestGenerator()
+            );
+            result = response.body;
+          });
+
+          test('Returns a status of 200', () => {
+            expect(response.status).toBe(200);
+          });
+        });
+      }
     });
   });
 };
