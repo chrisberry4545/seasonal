@@ -27,8 +27,16 @@ Array [
     "id": "30e59fda-220b-4e8b-9e01-3a9f8ceeec45",
     "roles": Array [
       "admin",
+      "editor",
     ],
     "username": "admin-user",
+  },
+  Object {
+    "id": "30e59fda-220b-4e8b-9e01-3a9f8dceca52",
+    "roles": Array [
+      "editor",
+    ],
+    "username": "editor-user",
   },
   Object {
     "id": "53f5a3d1-db75-4c62-a309-79b3eea329b3",

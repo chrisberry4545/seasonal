@@ -23,6 +23,14 @@ export const getAdminJwt = async () => {
   return response.body && response.body.token;
 };
 
+export const getEditorJwt = async () => {
+  const response = await callLoginEndpointForUser(
+    'editor-user',
+    'admin-user-password'
+  );
+  return response.body && response.body.token;
+};
+
 export const getNonAdminJwt = async () => {
   const response = await callLoginEndpointForUser(
     'non-admin-user',
@@ -37,6 +45,16 @@ export const attachJwtToken = (
 ) => supertestInstance.set('Authorization', `Bearer ${jwtToken}`);
 
 export const attachAdminJwtToken = async (
+  supertestInstance: supertest.Test
+) => {
+  const adminJwt = await getAdminJwt();
+  return attachJwtToken(
+    supertestInstance,
+    adminJwt
+  );
+};
+
+export const attachEditorJwtToken = async (
   supertestInstance: supertest.Test
 ) => {
   const adminJwt = await getAdminJwt();
