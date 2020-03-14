@@ -55,11 +55,11 @@ export const FullListCountryFoodNameMaps = GetAuthorizedBackendData<ICountryFood
         foodName: matchingFood && matchingFood.name
       };
     }).sort((a, b) => (
-      (a && a.countryName ? a.countryName : '') > (b && b.countryName ? b.countryName : '')
-        ? 1 : (
+      (a && a.countryName ? a.countryName : '') < (b && b.countryName ? b.countryName : '')
+        ? -1 : (
           a.foodName && a.foodName ? a.foodName : ''
-        ) > (b && b.foodName ? b.foodName : '')
-          ? 1 : -1
+        ) < (b && b.foodName ? b.foodName : '')
+          ? -1 : 1
     ));
   }
 );
