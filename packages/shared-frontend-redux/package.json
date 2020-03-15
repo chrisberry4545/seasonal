@@ -27,8 +27,8 @@
   ],
   "homepage": "https://github.com/chrisberry4545/seasonal-shared#readme",
   "dependencies": {
-    "@chrisb-dev/seasonal-shared-models": "1.0.0",
     "@chrisb-dev/seasonal-shared-frontend-utilities": "1.0.0",
+    "@chrisb-dev/seasonal-shared-models": "1.0.0",
     "redux": "^4.0.1",
     "redux-observable": "^1.1.0",
     "reselect": "^4.0.0",

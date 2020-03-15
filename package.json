@@ -25,9 +25,8 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "postinstall": "yarn shared-models:build && yarn shared-frontend-utilities:build && yarn shared-frontend-components:build && yarn shared-frontend-redux:build && yarn bootstrap",
+    "postinstall": "yarn workspaces foreach run build",
     "lint": "tslint -c tslint.json 'packages/*/src/**/*.ts{,x}'",
-    "bootstrap": "lerna bootstrap",
     "shared-frontend-components:build": "yarn workspace @chrisb-dev/seasonal-shared-frontend-components build",
     "shared-frontend-components:dev": "yarn workspace @chrisb-dev/seasonal-shared-frontend-components dev",
     "shared-frontend-redux:build": "yarn workspace @chrisb-dev/seasonal-shared-frontend-redux build",
@@ -55,6 +54,8 @@
     "lint"
   ],
   "workspaces": {
-    "packages": [ "packages/*"]
+    "packages": [
+      "packages/*"
+    ]
   }
 }

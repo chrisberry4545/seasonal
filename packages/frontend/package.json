@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://chrisberry4545.github.io/",
   "dependencies": {
-    "@chrisb-dev/seasonal-shared-frontend-redux": "1.0.0",
     "@chrisb-dev/seasonal-shared": "2.7.10",
     "@chrisb-dev/seasonal-shared-frontend-components": "0.1.0",
+    "@chrisb-dev/seasonal-shared-frontend-redux": "1.0.0",
     "@types/google.analytics": "^0.0.39",
     "@types/jest": "^24.0.13",
     "@types/node": "^11.11.3",
