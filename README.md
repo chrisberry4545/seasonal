@@ -14,4 +14,5 @@ Monorepo for the Eat Seasonal Mobile App, Website and Backend.
 - [Mobile app](./packages/mobile)
 - [Shared models](./packages/shared-models)
 - [Shared frontend components](./packages/shared-frontend-components)
+- [Shared frontend redux](./packages/shared-frontend-redux)
 - [Shared frontend utilities](./packages/shared-frontend-utilities)

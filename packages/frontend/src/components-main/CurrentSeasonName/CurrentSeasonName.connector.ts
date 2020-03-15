@@ -5,7 +5,7 @@ import {
 import {
   selectCurrentSeasonName,
   selectIsCurrentSeasonFoodLoading
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import {
   ICurrentSeasonName
 } from './CurrentSeasonName.interface';

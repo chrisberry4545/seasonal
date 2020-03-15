@@ -9,7 +9,7 @@ import {
   selectVisibleRecipeData,
   recipeItemClicked,
   selectIsCurrentSeasonRecipesLoading
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { IState } from '../../interfaces';
 import {
   IRecipeTableInputProps,

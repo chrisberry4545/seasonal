@@ -1,7 +1,7 @@
 {
-  "name": "@chrisb-dev/seasonal-shared-frontend-utilities",
+  "name": "@chrisb-dev/seasonal-shared-frontend-redux",
   "version": "1.0.0",
-  "description": "Seasonal shared frontend utilities",
+  "description": "Seasonal shared frontend redux store",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
@@ -28,10 +28,19 @@
   "homepage": "https://github.com/chrisberry4545/seasonal-shared#readme",
   "dependencies": {
     "@chrisb-dev/seasonal-shared-models": "1.0.0",
-    "typescript": "^3.7.2"
+    "@chrisb-dev/seasonal-shared-frontend-utilities": "1.0.0",
+    "redux": "^4.0.1",
+    "redux-observable": "^1.1.0",
+    "reselect": "^4.0.0",
+    "typescript": "^3.7.2",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@types/node": "^11.11.3",
+    "@types/uuid": "^3.4.6",
     "tsc-watch": "^4.0.0"
+  },
+  "peerDependencies": {
+    "rxjs": "6.4.0"
   }
 }

@@ -2,7 +2,7 @@ import { ofType, ActionsObservable, StateObservable } from 'redux-observable';
 
 import {
   getFoodDetailsData
-} from '../../services';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
   setCurrentFoodDetailsSuccess,

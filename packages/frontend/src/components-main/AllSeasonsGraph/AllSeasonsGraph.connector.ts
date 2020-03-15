@@ -9,7 +9,7 @@ import {
 } from './AllSeasonsGraph.interface';
 import {
   selectFoodInSeasonGraphData
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 const mapStateToProps = (
   state: IState

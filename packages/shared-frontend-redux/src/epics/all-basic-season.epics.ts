@@ -2,7 +2,7 @@ import { ofType, ActionsObservable, StateObservable } from 'redux-observable';
 
 import {
   getAllSeasons
-} from '../../services';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
   INIT_SETTINGS,

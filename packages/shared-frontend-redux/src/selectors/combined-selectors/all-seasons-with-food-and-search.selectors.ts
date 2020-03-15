@@ -4,7 +4,7 @@ import {
   selectAllSeasons,
   selectNumberOfAllSeasonsInView
 } from '../all-seasons-with-food.selectors';
-import { getDataThatContainsSearchTerm } from '../../../helpers';
+import { getDataThatContainsSearchTerm } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { selectCurrentSearchTerm } from '../ui.selectors';
 
 export const selectAllSeasonsWithFoodAndSearchAppliedData = createSelector(

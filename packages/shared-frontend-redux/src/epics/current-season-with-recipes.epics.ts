@@ -2,7 +2,7 @@ import { ofType, ActionsObservable, StateObservable } from 'redux-observable';
 
 import {
   getSeasonWithRecipes
-} from '../../services';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
   FOOD_DETAILS_SELECT_SEASON,

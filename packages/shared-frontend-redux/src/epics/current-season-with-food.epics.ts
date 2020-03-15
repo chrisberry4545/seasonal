@@ -2,7 +2,7 @@ import { ofType, ActionsObservable, StateObservable } from 'redux-observable';
 
 import {
   getSeasonWithFood
-} from '../../services';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
   SET_CURRENT_SEASON_WITH_FOOD_START,

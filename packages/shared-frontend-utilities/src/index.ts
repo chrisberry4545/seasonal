@@ -1,5 +1,5 @@
-export * from './helpers';
+export * from './get-nearest-region-from-lat-lng';
 
-export * from './services';
+export * from './name-search';
 
-export * from './store';
+export * from './retrieve-backend-data';

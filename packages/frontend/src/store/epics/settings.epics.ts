@@ -9,7 +9,7 @@ import {
   selectSettingsState,
   INIT_APP,
   initSettings
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import { IState } from '../../interfaces';
 

@@ -1,12 +1,12 @@
 import { ofType, ActionsObservable, StateObservable } from 'redux-observable';
 
 import {
-  getAllSeasonsWithFood
-} from '../../services';
+  getAllSeasonsWithRecipes
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
-  SET_ALL_SEASONS_WITH_FOOD_START,
-  setAllSeasonsWithFoodSuccess
+  SET_ALL_SEASONS_WITH_RECIPES_START,
+  setAllSeasonsWithRecipesSuccess
 } from '../actions';
 
 import {
@@ -20,15 +20,15 @@ import { SharedSeasonalEpic } from './seasonal-epic.type';
 import { IState } from '@chrisb-dev/seasonal-shared-models';
 import { selectSettingsRegionCode } from '../selectors';
 
-export const getAllSeasonsWithFood$: SharedSeasonalEpic = (
+export const getAllSeasonsWithRecipes$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
   state$: StateObservable<IState>
 ): Observable<Action> => (
   actions$.pipe(
-    ofType(SET_ALL_SEASONS_WITH_FOOD_START),
+    ofType(SET_ALL_SEASONS_WITH_RECIPES_START),
     withLatestFrom(state$),
     map(([, state]) => selectSettingsRegionCode(state)),
-    switchMap((regionCode) => getAllSeasonsWithFood(regionCode)),
-    map((seasonData) => setAllSeasonsWithFoodSuccess(seasonData))
+    switchMap((regionCode) => getAllSeasonsWithRecipes(regionCode)),
+    map((seasonData) => setAllSeasonsWithRecipesSuccess(seasonData))
   )
 );

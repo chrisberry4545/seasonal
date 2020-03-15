@@ -7,7 +7,7 @@ import {
   selectIsSearchBarVisible,
   showSearchBar,
   hideSearchBar
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import {
   ISearchBarDispatchProps,
   ISearchBarInputProps

@@ -12,7 +12,7 @@ import {
 } from '../actions';
 import { ICurrentSeasonDataState } from '@chrisb-dev/seasonal-shared-models';
 import { Action } from 'redux';
-import { getCurrentSeasonIndex } from '../../services';
+import { getCurrentSeasonIndex } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 const getDefaultState = (): ICurrentSeasonDataState => ({
   currentSeasonIndex: getCurrentSeasonIndex(),

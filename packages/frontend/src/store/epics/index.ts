@@ -1,6 +1,6 @@
 import { combineEpics } from 'redux-observable';
 
-import { rootEpics } from '@chrisb-dev/seasonal-shared-frontend-utilities';
+import { rootEpics } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { trackActionEpic$ } from './tracking.epics';
 
 import {

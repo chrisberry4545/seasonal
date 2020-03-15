@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 import { selectCurrentSearchTerm } from '../ui.selectors';
 import { selectCurrentSeasonFood, selectCurrentSeasonRecipes } from '../current-season.selectors';
 import { IFood, IRecipe } from '@chrisb-dev/seasonal-shared-models';
-import { getDataThatContainsSearchTerm } from '../../../helpers';
+import { getDataThatContainsSearchTerm } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 export const selectVisibleFoodData = createSelector(
   selectCurrentSearchTerm,

@@ -14,7 +14,7 @@ import {
 } from '@chrisb-dev/seasonal-shared-models';
 import {
   setDietType, selectSettingsDietType
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 const mapStateToProps = (
   state: IState
