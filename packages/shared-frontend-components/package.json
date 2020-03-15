@@ -9,7 +9,7 @@
     "npm": ">=6.4.1"
   },
   "scripts": {
-    "build": "webpack",
+    "shared:build": "webpack",
     "prepare": "yarn build",
     "dev": "webpack --watch"
   },

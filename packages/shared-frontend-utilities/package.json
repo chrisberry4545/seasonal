@@ -9,7 +9,7 @@
     "npm": ">=6.4.1"
   },
   "scripts": {
-    "build": "tsc",
+    "shared:build": "tsc",
     "prepare": "yarn build",
     "dev": "yarn build && tsc-watch --noClear"
   },
