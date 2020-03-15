@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "yarn dev",
-    "dev": "yarn copy-env && yarn copy-sql && yarn dev:watch & yarn watch-sql",
+    "dev": "yarn copy-env && yarn copy-sql && concurrently \"yarn dev:watch\" \"yarn watch-sql\" --kill-others",
     "dev:watch": "tsc-watch --onSuccess \"node ./dist/index-dev.js\" --noClear",
     "ci": "yarn copy-sql && tsc-watch --onSuccess \"node ./dist/index-dev.js\"",
     "build": "tsc && yarn copy-env && yarn copy-sql",

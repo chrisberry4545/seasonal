@@ -32,6 +32,7 @@ export const FoodDetailsTopSection: FC<IFoodDetailsTopSectionProps> = ({
     </div>
     {
       foodImageUrl && <img src={foodImageUrl}
+        alt={foodName}
         className='c-food-details-top-section__food-image'/>
     }
   </div>

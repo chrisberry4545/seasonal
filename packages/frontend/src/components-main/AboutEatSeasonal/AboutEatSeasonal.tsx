@@ -7,7 +7,7 @@ import {
   TextMedium
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
-export const AboutEatSeasonal: FC<{}> = ({}) => (
+export const AboutEatSeasonal: FC = () => (
   <div className='c-about-eat-seasonal'>
     <h1 className='c-about-eat-seasonal__heading'>
       <TextHeadingLarge>

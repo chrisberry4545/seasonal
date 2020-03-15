@@ -8,10 +8,11 @@ import {
   WhyEatSeasonal
 } from '../../components-main';
 
-export const IntroPage: FC<{}> = () => (
+export const IntroPage: FC = () => (
   <div className='c-intro-page'>
     <div className='c-intro-page__top-section'>
-      <img className='c-intro-page__splash-image' src='/splash.png'/>
+      <img alt='Eat Seasonal splash'
+        className='c-intro-page__splash-image' src='/splash.png'/>
       <ViewAppLinks />
     </div>
     <AboutEatSeasonal />
