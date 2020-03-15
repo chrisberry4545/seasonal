@@ -14,7 +14,7 @@ import {
   selectAllSeasonsVisibleFoodData,
   increaseNumberOfAllFoodSeasonsInView,
   foodItemClicked
-} from '@chrisb-dev/seasonal-shared-models';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 const mapStateToProps = (
   state: IState

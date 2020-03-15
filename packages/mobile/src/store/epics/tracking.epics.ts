@@ -27,7 +27,7 @@ import {
   selectSettingsUserId,
   INIT_SETTINGS,
   USER_REGION_DETECTED
-} from '@chrisb-dev/seasonal-shared-models';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
   map,

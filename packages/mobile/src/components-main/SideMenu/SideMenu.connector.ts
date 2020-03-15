@@ -8,7 +8,7 @@ import {
   selectSeason,
   selectCurrentSeasonIndex,
   goToAllSeasonsView
-} from '@chrisb-dev/seasonal-shared-models';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import {
   goToAboutUsPage, goToSettingsPage,
   onMenuFeedbackSelected

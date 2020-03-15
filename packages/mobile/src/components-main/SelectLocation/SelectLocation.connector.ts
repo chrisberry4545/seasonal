@@ -4,7 +4,7 @@ import {
 } from './SelectLocation';
 import {
   selectAreCountriesLoading
-} from '@chrisb-dev/seasonal-shared-models';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import {
   ISelectLocationInputProps
 } from './SelectLocation.interface';

@@ -4,7 +4,7 @@ import {
 } from './FoodDetailsLoader';
 import {
   selectIsFoodDataOrBasicSeasonsLoading
-} from '@chrisb-dev/seasonal-shared-models';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import { IState } from '../../interfaces';
 import {

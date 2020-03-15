@@ -2,7 +2,7 @@ import { combineEpics } from 'redux-observable';
 
 import {
   rootEpics
-} from '@chrisb-dev/seasonal-shared-models';
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import {
   showFeedbackForm$,

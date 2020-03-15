@@ -29,8 +29,8 @@ services:
     volumes:
       - ./packages/backend:/usr/app/packages/backend/
       - /usr/app/packages/backend/node_modules
-      - ./packages/shared:/usr/app/packages/shared/
-      - /usr/app/packages/shared/node_modules
+      - ./packages/shared-models:/usr/app/packages/shared-models/
+      - /usr/app/packages/shared-models/node_modules
 
   frontend-dev:
     build:
@@ -46,5 +46,5 @@ services:
     volumes:
       - ./packages/frontend:/usr/app/packages/frontend/
       - /usr/app/packages/frontend/node_modules
-      - ./packages/shared:/usr/app/packages/shared/
-      - /usr/app/packages/shared/node_modules
+      - ./packages/shared-models:/usr/app/packages/shared-models/
+      - /usr/app/packages/shared-models/node_modules

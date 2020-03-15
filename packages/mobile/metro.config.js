@@ -2,7 +2,8 @@ const path = require('path');
 
 const extraNodeModules = new Proxy(
   {
-    '@chrisb-dev/seasonal-shared-models': path.resolve(__dirname, '../shared'),
+    '@chrisb-dev/seasonal-shared-models': path.resolve(__dirname, '../shared-models'),
+    '@chrisb-dev/seasonal-shared-frontend-utilities': path.resolve(__dirname, '../shared-frontend-utilities'),
   },
   {
     get: (target, name) => {
@@ -19,6 +20,7 @@ module.exports = {
     extraNodeModules
   },
   watchFolders: [
-    path.resolve(__dirname, '../shared')
+    path.resolve(__dirname, '../shared-models'),
+    path.resolve(__dirname, '../shared-frontend-utilities')
   ],
 };
