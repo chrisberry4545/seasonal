@@ -11,7 +11,7 @@ import {
 import { Dispatch } from 'redux';
 import {
   setDietType, selectSettingsDietType, DIET_TYPE
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 const mapStateToProps = (
   state: IState

@@ -5,7 +5,7 @@ import {
 import {
   setRegion,
   selectCountryAndRegionsSelectGroup
-} from '@chrisb-dev/seasonal-shared-frontend-utilities';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import {
   ISelectRegionDispatchProps,
   ISelectRegionInputProps
