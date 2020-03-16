@@ -26,7 +26,7 @@
   },
   "scripts": {
     "postinstall": "yarn workspaces foreach run shared:build",
-    "lint": "tslint -c tslint.json 'packages/*/src/**/*.ts{,x}'",
+    "lint": "./node_modules/tslint/bin/tslint -c tslint.json 'packages/*/src/**/*.ts{,x}'",
     "shared-frontend-components:build": "yarn workspace @chrisb-dev/seasonal-shared-frontend-components shared:build",
     "shared-frontend-components:dev": "yarn workspace @chrisb-dev/seasonal-shared-frontend-components dev",
     "shared-frontend-redux:build": "yarn workspace @chrisb-dev/seasonal-shared-frontend-redux shared:build",
