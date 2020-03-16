@@ -36,7 +36,7 @@ jobs:
           name: Deploy backend
           command: |
             cd ./packages/backend
-            yarn dlx sls deploy --stage prod
+            yarn dlx serverless deploy --stage prod
 
   frontend_deploy:
     docker:
