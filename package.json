@@ -55,7 +55,14 @@
   ],
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/shared-models",
+      "packages/shared-frontend-utilities",
+      "packages/shared-frontend-components",
+      "packages/shared-frontend-redux",
+      "packages/backend",
+      "packages/frontend",
+      "packages/frontend-admin",
+      "packages/mobile"
     ]
   }
 }
