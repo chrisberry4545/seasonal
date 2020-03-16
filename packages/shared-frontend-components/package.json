@@ -10,7 +10,7 @@
   },
   "scripts": {
     "shared:build": "webpack",
-    "prepare": "yarn build",
+    "prepare": "yarn shared:build",
     "dev": "webpack --watch"
   },
   "repository": {
