@@ -55,6 +55,7 @@
   ],
   "workspaces": {
     "packages": [
+      "packages/mobile-5",
       "packages/shared-models",
       "packages/shared-frontend-utilities",
       "packages/shared-frontend-components",
