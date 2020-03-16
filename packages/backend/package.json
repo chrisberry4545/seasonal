@@ -21,7 +21,8 @@
     "watch-sql": "onchange 'src/**/*.sql' -- yarn copy-sql",
     "copy-sql": "mkdir -p dist/src && cp -r ./src/sql/ ./dist/src/sql/",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "deploy": "serverless deploy --stage prod"
   },
   "author": "Chris Berry <chrisberry4545@googlemail.com> (http://chrisbdev.com)",
   "license": "ISC",
@@ -44,6 +45,7 @@
     "passport-local": "^1.0.0",
     "pg": "^7.12.1",
     "promise-fs": "^2.1.1",
+    "serverless": "^1.66.0",
     "serverless-http": "^2.0.2",
     "typescript": "^3.7.2",
     "winston": "^3.2.1"

@@ -35,8 +35,7 @@ jobs:
       - run:
           name: Deploy backend
           command: |
-            cd ./packages/backend
-            yarn dlx serverless deploy --stage prod
+            yarn workspace @chrisb-dev/seasonal-backend deploy
 
   frontend_deploy:
     docker:
