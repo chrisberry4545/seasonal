@@ -33,13 +33,10 @@ jobs:
             yarn workspace @chrisb-dev/seasonal-backend build
             cp -r ./packages/backend/dist/* ./packages/backend/
       - run:
-          name: Install Serverless CLI
-          command: sudo yarn global add serverless
-      - run:
           name: Deploy backend
           command: |
             cd ./packages/backend
-            sls deploy --stage prod
+            yarn dlx sls deploy --stage prod
 
   frontend_deploy:
     docker:
