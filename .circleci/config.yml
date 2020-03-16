@@ -31,7 +31,7 @@ jobs:
           name: Build dist version
           command: |
             yarn workspace @chrisb-dev/seasonal-backend build
-            yarn workspace @chrisb-dev/seasonal-backend move-dist-to-top-level
+            cp -r ./packages/backend/dist/* ./packages/backend/
       - run:
           name: Install Serverless CLI
           command: sudo yarn global add serverless

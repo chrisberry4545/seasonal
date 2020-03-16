@@ -20,7 +20,6 @@
     "copy-env": "mkdir -p dist && cp .env.yml dist/.env.yml",
     "watch-sql": "onchange 'src/**/*.sql' -- yarn copy-sql",
     "copy-sql": "mkdir -p dist/src && cp -r ./src/sql/ ./dist/src/sql/",
-    "move-dist-to-top-level": "cp -r ./dist/* ./",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
