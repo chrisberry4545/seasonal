@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { BaseFormRegionFoodSeasonMap } from '../../components-main';
+import { EditRegionFoodSeasonMap } from '../../components-main';
 
 export const EditRegionFoodSeasonMapPage: FC<{}> = () =>
-  <BaseFormRegionFoodSeasonMap />;
+  <EditRegionFoodSeasonMap />;
