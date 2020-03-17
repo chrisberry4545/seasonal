@@ -48,3 +48,7 @@ services:
       - /usr/app/packages/frontend/node_modules
       - ./packages/shared-models:/usr/app/packages/shared-models/
       - /usr/app/packages/shared-models/node_modules
+      - ./packages/shared-frontend-components:/usr/app/packages/shared-frontend-components/
+      - /usr/app/packages/shared-frontend-components/node_modules
+      - ./packages/shared-frontend-utilities:/usr/app/packages/shared-frontend-utilities/
+      - /usr/app/packages/shared-frontend-utilities/node_modules

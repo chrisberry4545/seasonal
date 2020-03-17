@@ -1,0 +1,8 @@
+# Override of docker-compose.test.yml
+
+version: "3.3"
+services:
+  backend-test:
+    volumes:
+      - ./packages/backend:/usr/app/packages/backend
+      - /usr/app/packages/backend/node_modules
