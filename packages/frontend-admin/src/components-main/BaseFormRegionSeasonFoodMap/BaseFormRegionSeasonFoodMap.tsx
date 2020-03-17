@@ -10,39 +10,39 @@ import {
 } from '../../services';
 import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
 
-export interface IRegionFoodSeasonMapForm {
+export interface IRegionSeasonFoodMapForm {
   regionId: string;
-  foodId: string;
-  seasonIds: string[];
+  seasonId: string;
+  foodIds: string[];
 }
 
-type IRegionFoodSeasonMapFormConfigProps =
-  IDataFormConfigProps<IRegionFoodSeasonMapForm>;
+type IRegionSeasonFoodMapFormConfigProps =
+  IDataFormConfigProps<IRegionSeasonFoodMapForm>;
 
-export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
+export const BaseFormRegionSeasonFoodMap: FC<{}> = () => {
   const [itemData, setItemData] =
-    useState<Partial<IRegionFoodSeasonMapForm | null>>(null);
+    useState<Partial<IRegionSeasonFoodMapForm | null>>(null);
   const [config, setConfig] =
-    useState<IRegionFoodSeasonMapFormConfigProps | null>(null);
+    useState<IRegionSeasonFoodMapFormConfigProps | null>(null);
   const [allRegionFoodSeasonMaps, setAllRegionFoodSeasonMaps] =
     useState<IRegionFoodSeasonMap[] | null>(null);
 
   const updateRegionFoodSeasonMap = async (
-    form: IRegionFoodSeasonMapForm
+    form: IRegionSeasonFoodMapForm
   ) => {
     const existingItemsForRegionAndSeason =
       allRegionFoodSeasonMaps!
         .filter((item) =>
           item.regionId === form.regionId
-          && item.foodId === form.foodId
+          && item.seasonId === form.seasonId
         ).map((item) => item.id);
-    const generateItems = (seasonIds: string[]): IRegionFoodSeasonMap[] =>
-      seasonIds.map((seasonId) => ({
-        foodId: form.foodId,
+    const generateItems = (foodIds: string[]): IRegionFoodSeasonMap[] =>
+    foodIds.map((foodId) => ({
+        foodId,
         regionId: form.regionId,
-        seasonId
+        seasonId: form.seasonId
       }) as IRegionFoodSeasonMap);
-    const toCreate = generateItems(form.seasonIds);
+    const toCreate = generateItems(form.foodIds);
 
     for (const id of existingItemsForRegionAndSeason) {
       await deleteRegionFoodSeasonMap(id);
@@ -55,25 +55,25 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
     return form;
   };
 
-  const updateSeasonIds = (
+  const updateFoodIds = (
     item: Partial<IRegionFoodSeasonMap>,
     previousItem: Partial<IRegionFoodSeasonMap> | null,
     allRegionFoodSeasonMapsResult: IRegionFoodSeasonMap[] | null
   ) => {
     if (
       previousItem === null
-      || item.foodId !== previousItem.foodId
+      || item.seasonId !== previousItem.seasonId
       || item.regionId !== previousItem.regionId
     ) {
-      const seasonIds = allRegionFoodSeasonMapsResult
+      const foodIds = allRegionFoodSeasonMapsResult
         ? allRegionFoodSeasonMapsResult.filter((regionFoodSeason) =>
           regionFoodSeason.regionId === item.regionId
-          && regionFoodSeason.foodId === item.foodId
-        ).map((regionFoodSeason) => regionFoodSeason.seasonId)
+          && regionFoodSeason.seasonId === item.seasonId
+        ).map((regionFoodSeason) => regionFoodSeason.foodId)
         : undefined;
       return {
         ...item,
-        seasonIds
+        foodIds
       };
     }
     return item;
@@ -102,11 +102,11 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
         label: season.name,
         value: season.id
       }));
-      setItemData((item) => updateSeasonIds({
-        ...item,
+      setItemData((data) => updateFoodIds({
+        ...data,
         regionId: regionOptions[0].value,
 
-        foodId: foodOptions[0].value
+        seasonId: seasonOptions[0].value
       }, null, allRegionFoodSeasonMap));
       setConfig((currentConfig) => ({
         ...currentConfig,
@@ -115,13 +115,13 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
           type: 'select'
         },
 
-        foodId: {
-          options: foodOptions,
+        seasonId: {
+          options: seasonOptions,
           type: 'select'
         },
 
-        seasonIds: {
-          options: seasonOptions,
+        foodIds: {
+          options: foodOptions,
           type: 'multiselect'
         }
       }));
@@ -131,7 +131,7 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
   return itemData && <DataForm item={itemData}
     sendData={updateRegionFoodSeasonMap}
     formConfig={config}
-    processItem={(item, previousItem) => updateSeasonIds(
+    processItem={(item, previousItem) => updateFoodIds(
       item, previousItem, allRegionFoodSeasonMaps
     )}
     buttonText='Create'

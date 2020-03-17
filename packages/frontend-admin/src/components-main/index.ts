@@ -10,6 +10,8 @@ export * from './BaseFormRegion/BaseFormRegion';
 
 export * from './BaseFormRegionFoodSeasonMap/BaseFormRegionFoodSeasonMap';
 
+export * from './BaseFormRegionSeasonFoodMap/BaseFormRegionSeasonFoodMap';
+
 export * from './BaseFormUser/BaseFormUser';
 
 export * from './CreateCountryFoodNameMapForm/CreateCountryFoodNameMapForm';
@@ -37,6 +39,8 @@ export * from './EditCountryRecipeNameMapForm/EditCountryRecipeNameMapForm';
 export * from './EditFoodForm/EditFoodForm';
 
 export * from './EditRecipeForm/EditRecipeForm';
+
+export * from './EditRegionFoodSeasonMap/EditRegionFoodSeasonMap';
 
 export * from './EditRegionForm/EditRegionForm';
 
