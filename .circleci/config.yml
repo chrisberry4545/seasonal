@@ -16,7 +16,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Run backend tests
-          command: ./tests/backend-run-functional-tests.sh
+          command: IS_CI=true ./tests/backend-run-functional-tests.sh
 
   backend_deploy:
     docker:

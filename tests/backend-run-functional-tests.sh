@@ -1,12 +1,17 @@
 #! /bin/bash
 
-docker-compose -f ./docker-compose.test.yml down
+DOCKER_COMPOSE_FILES="-f ./docker-compose.test.yml"
+if [[ -z "$IS_CI" ]]; then
+  DOCKER_COMPOSE_FILES="${DOCKER_COMPOSE_FILES} -f ./docker-compose.test.dev.yml"
+fi
+
+eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
 echo "Starting tests..."
 
-docker-compose -f ./docker-compose.test.yml run --rm backend-test
+eval "docker-compose ${DOCKER_COMPOSE_FILES} run --rm backend-test"
 status=$?
 
-docker-compose -f ./docker-compose.test.yml down
+eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
 
 if [ "$status" = "0" ]; then
   echo "Tests passed"
