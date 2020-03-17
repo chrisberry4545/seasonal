@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react';
-import { ISelectOption } from '@chrisb-dev/seasonal-shared';
+import { ISelectOption } from '@chrisb-dev/seasonal-shared-models';
 import { ViewStyle, TextStyle } from 'react-native';
 import { BareButton } from '../Buttons';
 import { TextMedium } from '../Text';

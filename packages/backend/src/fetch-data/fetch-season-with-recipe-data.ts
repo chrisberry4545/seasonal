@@ -8,7 +8,7 @@ import {
   cacheFunctionResponse
 } from '../cache';
 
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { filterRecipesByDiet } from './filter-recipes-by-diet';
 import { DEFAULT_COUNTRY_ID } from '../config';
 

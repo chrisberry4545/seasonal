@@ -1,4 +1,4 @@
-import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared';
+import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared-models';
 import { makeAuthorizedRequest } from './make-authorized-request';
 import { COUNTRY_FOOD_NAME_MAP_URL } from '../config';
 

@@ -6,7 +6,7 @@ import {
   adminDeleteDbCountryRecipeNameMap
 } from '../data-access';
 
-import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared';
+import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateCountryRecipeNameMap = (
   item: ICountryRecipeNameMap

@@ -9,7 +9,7 @@ import { createEpicMiddleware } from 'redux-observable';
 
 import {
   allReducers
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import { webUiReducer } from './web-ui.reducer';
 

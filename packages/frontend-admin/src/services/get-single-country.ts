@@ -1,4 +1,4 @@
-import { ICountry } from '@chrisb-dev/seasonal-shared';
+import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { COUNTRY_URL } from '../config';
 import { makeAuthorizedRequest } from './make-authorized-request';
 

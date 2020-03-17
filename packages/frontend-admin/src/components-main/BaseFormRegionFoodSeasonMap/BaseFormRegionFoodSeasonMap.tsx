@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
-import { IBaseSeason, getAllSeasons, IFood, IDbRegion } from '@chrisb-dev/seasonal-shared';
+import { getAllSeasons } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import {
   getAllFood,
   getAllRegions,
@@ -8,7 +8,7 @@ import {
   createRegionFoodSeasonMap,
   getAllRegionFoodSeasonMap
 } from '../../services';
-import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared';
+import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IRegionFoodSeasonMapForm {
   regionId: string;
@@ -79,49 +79,6 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
     return item;
   };
 
-  const updateConfigWithDropdowns = (
-    regions: IDbRegion[],
-    food: IFood[],
-    seasons: IBaseSeason[],
-    allRegionFoodSeasonMap: IRegionFoodSeasonMap[]
-  ) => {
-    const regionOptions = regions.map((region) => ({
-      label: region.name,
-      value: region.code
-    }));
-    const foodOptions = food.map((foodItem) => ({
-      label: foodItem.name,
-      value: foodItem.id
-    }));
-    const seasonOptions = seasons.map((season) => ({
-      label: season.name,
-      value: season.id
-    }));
-    setItemData(updateSeasonIds({
-      ...itemData,
-      regionId: regionOptions[0].value,
-
-      foodId: foodOptions[0].value
-    }, null, allRegionFoodSeasonMap));
-    setConfig({
-      ...config,
-      regionId: {
-        options: regionOptions,
-        type: 'select'
-      },
-
-      foodId: {
-        options: foodOptions,
-        type: 'select'
-      },
-
-      seasonIds: {
-        options: seasonOptions,
-        type: 'multiselect'
-      }
-    });
-  };
-
   useEffect(() => {
     Promise.all([
       getAllRegions(),
@@ -133,11 +90,43 @@ export const BaseFormRegionFoodSeasonMap: FC<{}> = () => {
       allRegionFoodSeasonMap
     ]) => {
       setAllRegionFoodSeasonMaps(allRegionFoodSeasonMap);
-      updateConfigWithDropdowns(
-        regions, food, seasons, allRegionFoodSeasonMap
-      );
+      const regionOptions = regions.map((region) => ({
+        label: region.name,
+        value: region.code
+      }));
+      const foodOptions = food.map((foodItem) => ({
+        label: foodItem.name,
+        value: foodItem.id
+      }));
+      const seasonOptions = seasons.map((season) => ({
+        label: season.name,
+        value: season.id
+      }));
+      setItemData(updateSeasonIds({
+        ...itemData,
+        regionId: regionOptions[0].value,
+
+        foodId: foodOptions[0].value
+      }, null, allRegionFoodSeasonMap));
+      setConfig({
+        ...config,
+        regionId: {
+          options: regionOptions,
+          type: 'select'
+        },
+
+        foodId: {
+          options: foodOptions,
+          type: 'select'
+        },
+
+        seasonIds: {
+          options: seasonOptions,
+          type: 'multiselect'
+        }
+      });
     });
-  }, []);
+  }, [setAllRegionFoodSeasonMaps, config, itemData]);
 
   return itemData && <DataForm item={itemData}
     sendData={updateRegionFoodSeasonMap}

@@ -10,7 +10,7 @@ import {
   selectVisibleRecipeData,
   recipeItemClicked,
   selectIsCurrentSeasonRecipesLoading
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { IState } from '../../interfaces';
 
 import { Dispatch } from 'redux';

@@ -1,4 +1,4 @@
-import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared';
+import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
 
 generateRestEndpointTests<ICountryFoodNameMap>({

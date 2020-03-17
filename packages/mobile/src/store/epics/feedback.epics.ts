@@ -25,7 +25,10 @@ import {
   delay
 } from 'rxjs/operators';
 import { IState, IFeedbackState } from '../../interfaces';
-import { selectSettingsTimesAppStarted, INIT_APP } from '@chrisb-dev/seasonal-shared';
+import {
+  selectSettingsTimesAppStarted,
+  INIT_APP
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { goToLinkUrl, setStoredData, getStoredData } from '../../helpers';
 import {
   selectHasGivenFeedback,

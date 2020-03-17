@@ -1,4 +1,4 @@
-import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared';
+import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
 import { makeAuthorizedRequest } from './make-authorized-request';
 import { COUNTRY_RECIPE_NAME_MAP_URL } from '../config';
 

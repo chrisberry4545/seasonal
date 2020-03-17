@@ -4,7 +4,7 @@ import {
   IGetAuthorizedBackendDataProps,
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IDbRegion } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 import { ROUTES } from '../../config';
 import { FullList } from '../FullList/FullList';
 

@@ -3,7 +3,7 @@ import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { getUserLogin, adminGetOneUser } from '../../../fetch-data';
 import { JWT_SECRET_KEY } from '../../../config';
-import { USER_ROLES } from '@chrisb-dev/seasonal-shared/dist/enums/user-roles.enum';
+import { USER_ROLES } from '@chrisb-dev/seasonal-shared-models';
 
 const setupPassportForUser = (
   requiredRole: USER_ROLES

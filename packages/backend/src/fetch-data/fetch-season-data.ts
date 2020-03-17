@@ -6,7 +6,7 @@ import {
   Cache,
   cacheFunctionResponse
 } from '../cache';
-import { IBaseSeason } from '@chrisb-dev/seasonal-shared';
+import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
 
 const allSeasonDataCache = new Cache<IBaseSeason[]>();
 const allSeasonDataCacheKey = 'seasons';

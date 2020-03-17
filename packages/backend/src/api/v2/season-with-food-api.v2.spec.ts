@@ -4,7 +4,7 @@ import {
 
 import supertest, { Response } from 'supertest';
 import { V2_ENDPOINT, SEASON_WITH_FOOD_ENDPOINT } from '../../config';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import {
   SEASON_ID_JANUARY,
   SEASON_ID_FEBRUARY,

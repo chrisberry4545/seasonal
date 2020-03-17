@@ -1,0 +1,36 @@
+{
+  "name": "@chrisb-dev/seasonal-shared-models",
+  "version": "1.0.0",
+  "description": "Seasonal shared models",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=6.4.1"
+  },
+  "scripts": {
+    "shared:build": "tsc",
+    "prepare": "yarn shared:build",
+    "dev": "yarn build && tsc-watch --noClear"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisberry4545/seasonal-shared.git"
+  },
+  "author": "Chris Berry <chrisberry4545@googlemail.com> (http://chrisbdev.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisberry4545/seasonal-shared/issues"
+  },
+  "files": [
+    "/dist"
+  ],
+  "homepage": "https://github.com/chrisberry4545/seasonal-shared#readme",
+  "dependencies": {
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.3",
+    "tsc-watch": "^4.0.0"
+  }
+}

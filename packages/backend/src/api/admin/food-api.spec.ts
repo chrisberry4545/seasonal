@@ -1,4 +1,4 @@
-import { IFood } from '@chrisb-dev/seasonal-shared';
+import { IFood } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
 
 generateRestEndpointTests<IFood>({

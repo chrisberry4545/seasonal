@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { createCountryFoodNameMap } from '../../services';
-import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared';
+import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared-models';
 import {
   BaseFormCountryFoodNameMap
 } from '../BaseFormCountryFoodNameMap/BaseFormCountryFoodNameMap';

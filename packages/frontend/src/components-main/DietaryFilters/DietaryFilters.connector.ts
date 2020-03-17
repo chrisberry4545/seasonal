@@ -10,8 +10,11 @@ import {
 } from './DietaryFilters.interface';
 import { Dispatch } from 'redux';
 import {
-  setDietType, selectSettingsDietType, DIET_TYPE
-} from '@chrisb-dev/seasonal-shared';
+  DIET_TYPE
+} from '@chrisb-dev/seasonal-shared-models';
+import {
+  setDietType, selectSettingsDietType
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 const mapStateToProps = (
   state: IState

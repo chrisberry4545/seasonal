@@ -1,5 +1,5 @@
 import { queryPostgres, getSqlQuery } from '../postgres';
-import { ICountry } from '@chrisb-dev/seasonal-shared';
+import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateDbCountry = async (
   item: ICountry

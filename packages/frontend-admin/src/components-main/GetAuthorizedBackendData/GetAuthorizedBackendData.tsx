@@ -17,57 +17,77 @@ interface IGetAuthorizedBackendDataState<T> {
   error: string | null;
 }
 
+function InnerAuthorizedComponent<T>({
+  InnerComponent,
+  requestDataMethod,
+  updateMethod,
+  buttonText,
+  additionalConfig
+}: {
+  InnerComponent: FC<IGetAuthorizedBackendDataProps<T>>,
+  requestDataMethod: () => Promise<T>,
+  updateMethod?: (item: T) => Promise<T>,
+  buttonText?: string,
+  additionalConfig?: IDataFormConfigProps<T>
+}) {
+  const [state, setState] = useState<IGetAuthorizedBackendDataState<T>>({
+    error: null,
+    isLoading: true,
+    items: null
+  });
+
+  const requestNewData = () => {
+    requestDataMethod()
+      .then((items) => setState({
+        error: null,
+        isLoading: false,
+        items
+      })).catch((error) => setState({
+        error: error.message,
+        isLoading: false,
+        items: null
+      }));
+  };
+
+  useEffect(requestNewData, [requestNewData]);
+
+  return (
+    <div>
+      {
+        state.isLoading
+          ? <div className='c-get-authorized-backend-data__loading'>
+            <LoadingSpinner />
+          </div>
+          : <div>
+            {
+              !state.error && state.items
+                ? <InnerComponent
+                    items={state.items}
+                    reload={requestNewData}
+                    updateMethod={updateMethod}
+                    buttonText={buttonText}
+                    additionalConfig={additionalConfig}
+                  />
+                : <div>{state.error}</div>
+            }
+          </div>
+      }
+    </div>
+  );
+}
+
 export function GetAuthorizedBackendData<T>(
   InnerComponent: FC<IGetAuthorizedBackendDataProps<T>>,
   requestDataMethod: () => Promise<T>,
   updateMethod?: (item: T) => Promise<T>,
   buttonText?: string,
   additionalConfig?: IDataFormConfigProps<T>
-): FC<{}> {
-  return () => {
-    const [state, setState] = useState<IGetAuthorizedBackendDataState<T>>({
-      error: null,
-      isLoading: true,
-      items: null
-    });
-
-    const requestNewData = () => {
-      requestDataMethod()
-        .then((items) => setState({
-          error: null,
-          isLoading: false,
-          items
-        })).catch((error) => setState({
-          error: error.message,
-          isLoading: false,
-          items: null
-        }));
-    };
-
-    useEffect(requestNewData, []);
-
-    return (
-      <div>
-        {
-          state.isLoading
-            ? <div className='c-get-authorized-backend-data__loading'>
-              <LoadingSpinner />
-            </div>
-            : <div>
-              {
-                !state.error && state.items
-                  ? <InnerComponent
-                      items={state.items}
-                      reload={requestNewData}
-                      updateMethod={updateMethod}
-                      buttonText={buttonText}
-                      additionalConfig={additionalConfig}
-                    />
-                  : <div>{state.error}</div>
-              }
-            </div>
-        }
-      </div>
-    );
-  };
+) {
+  return () =>
+    <InnerAuthorizedComponent
+      InnerComponent={InnerComponent}
+      requestDataMethod={requestDataMethod}
+      updateMethod={updateMethod}
+      buttonText={buttonText}
+      additionalConfig={additionalConfig} />;
 }

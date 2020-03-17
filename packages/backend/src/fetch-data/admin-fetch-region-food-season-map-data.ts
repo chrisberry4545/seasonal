@@ -5,7 +5,7 @@ import {
   adminEditDbRegionFoodSeasonMap,
   adminDeleteDbRegionFoodSeasonMap
 } from '../data-access';
-import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared';
+import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateRegionFoodSeasonMap = (
   item: IRegionFoodSeasonMap

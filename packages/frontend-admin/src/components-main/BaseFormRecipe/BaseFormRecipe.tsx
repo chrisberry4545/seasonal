@@ -3,7 +3,7 @@ import { getAllFood } from '../../services';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IRecipe, IFood } from '@chrisb-dev/seasonal-shared';
+import { IRecipe, IFood } from '@chrisb-dev/seasonal-shared-models';
 import { DataForm, IDataFormConfigProps } from '../DataForm/DataForm';
 import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
 

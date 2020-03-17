@@ -1,13 +1,15 @@
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 
 import {
+  ISettingsState,
+  DIET_TYPE
+} from '@chrisb-dev/seasonal-shared-models';
+import {
   SET_DIET_TYPE,
   selectSettingsState,
   INIT_APP,
-  initSettings,
-  ISettingsState,
-  DIET_TYPE
-} from '@chrisb-dev/seasonal-shared';
+  initSettings
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import { IState } from '../../interfaces';
 

@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IDbRegion, ICountry } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import { getAllCountries } from '../../services';
 import {
@@ -39,25 +39,23 @@ export const BaseFormRegion: FC<IGetAuthorizedBackendDataProps<IDbRegion>> = ({
 }) => {
   const [config, setConfig] = useState<IDbRegionFormConfigProps | null>(null);
 
-  const updateConfigWithFoodDropdowns = (countries: ICountry[]) => {
-    const options = countries.map((country) => ({
-      label: country.name,
-      value: country.id
-    }));
-    setConfig({
-      ...additionalConfig,
-      ...initialRegionFormConfig,
-      countryId: {
-        options,
-        type: 'select'
-      }
-    });
-  };
-
   useEffect(() => {
     getAllCountries()
-      .then((countries) => updateConfigWithFoodDropdowns(countries));
-  }, []);
+      .then((countries) => {
+        const options = countries.map((country) => ({
+          label: country.name,
+          value: country.id
+        }));
+        setConfig({
+          ...additionalConfig,
+          ...initialRegionFormConfig,
+          countryId: {
+            options,
+            type: 'select'
+          }
+        });
+      });
+  }, [additionalConfig]);
 
   return <DataForm item={items}
     sendData={updateMethod}

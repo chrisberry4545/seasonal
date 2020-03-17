@@ -1,4 +1,4 @@
-import { IUser } from '@chrisb-dev/seasonal-shared';
+import { IUser } from '@chrisb-dev/seasonal-shared-models';
 import { makeAuthorizedRequest } from './make-authorized-request';
 import { USER_URL } from '../config';
 

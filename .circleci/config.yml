@@ -3,18 +3,9 @@ version: 2.1
 commands:
   install-dependencies:
     steps:
-      - restore_cache:
-          name: Restore dependency cache
-          keys:
-            - seasonal-deps-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
           command: yarn install
-      - save_cache:
-          name: Save dependency cache
-          paths:
-            - node_modules
-          key: seasonal-deps-{{ checksum "yarn.lock" }}
 
 jobs:
   backend_test:
@@ -25,7 +16,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Run backend tests
-          command: yarn docker:backend:test
+          command: ./tests/backend-run-functional-tests.sh
 
   backend_deploy:
     docker:
@@ -40,15 +31,11 @@ jobs:
           name: Build dist version
           command: |
             yarn workspace @chrisb-dev/seasonal-backend build
-            yarn workspace @chrisb-dev/seasonal-backend move-dist-to-top-level
-      - run:
-          name: Install Serverless CLI
-          command: sudo yarn global add serverless
+            cp -r ./packages/backend/dist/* ./packages/backend/
       - run:
           name: Deploy backend
           command: |
-            cd ./packages/backend
-            sls deploy --stage prod
+            yarn workspace @chrisb-dev/seasonal-backend deploy
 
   frontend_deploy:
     docker:

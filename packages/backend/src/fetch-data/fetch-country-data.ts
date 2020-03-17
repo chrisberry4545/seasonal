@@ -2,7 +2,7 @@ import {
   Cache, cacheFunctionResponse
 } from '../cache';
 
-import { ICountry } from '@chrisb-dev/seasonal-shared';
+import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCountries } from '../data-access';
 
 const allCountryDataCache = new Cache<ICountry[]>();

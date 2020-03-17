@@ -17,7 +17,7 @@ const summaryColumns: ISummaryColumnList = {
   columns
 };
 
-export const WhyEatSeasonal: FC<{}> = ({}) => (
+export const WhyEatSeasonal: FC = () => (
   <div className='c-why-eat-seasonal'>
     <h2 className='c-why-eat-seasonal__heading'>
       <TextHeadingLarge>

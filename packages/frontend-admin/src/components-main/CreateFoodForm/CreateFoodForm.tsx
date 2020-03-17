@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { createFood } from '../../services';
 import { BaseFormFood } from '../BaseFormFood/BaseFormFood';
-import { IFood } from '@chrisb-dev/seasonal-shared';
+import { IFood } from '@chrisb-dev/seasonal-shared-models';
 import { FORM_BUTTON_TEXT } from '../../consts';
 import { LayoutWithTitle } from '../../components-layouts';
 

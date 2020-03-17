@@ -1,4 +1,4 @@
-import { ISelectableItem } from '@chrisb-dev/seasonal-shared';
+import { ISelectableItem } from '@chrisb-dev/seasonal-shared-models';
 
 export interface ISeasonForFoodInputProps {
   isLoading: boolean;

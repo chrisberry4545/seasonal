@@ -20,7 +20,7 @@ import {
   INIT_APP,
   selectCurrentSeasonRecipesById,
   setAllSeasonsWithFoodStart
-} from '@chrisb-dev/seasonal-shared';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { push, goBack } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL } from '../../const';
 import { IState } from '../../interfaces';

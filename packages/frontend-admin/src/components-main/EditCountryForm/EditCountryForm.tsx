@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { ICountry } from '@chrisb-dev/seasonal-shared';
+import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
 import { getSingleCountry, updateCountry } from '../../services';
 import { BaseFormCountry } from '../BaseFormCountry/BaseFormCountry';

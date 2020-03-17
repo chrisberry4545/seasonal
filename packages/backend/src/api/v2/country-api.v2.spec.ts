@@ -4,7 +4,7 @@ import {
 
 import supertest, { Response } from 'supertest';
 import { V2_ENDPOINT, COUNTRY_ENDPOINT } from '../../config';
-import { ICountry, IRegion } from '@chrisb-dev/seasonal-shared';
+import { ICountry, IRegion } from '@chrisb-dev/seasonal-shared-models';
 
 const countryUrl = `${V2_ENDPOINT}/${COUNTRY_ENDPOINT}`;
 

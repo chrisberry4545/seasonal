@@ -69,7 +69,7 @@ export function DataForm<T>({
         updateItem(updatedItem);
         setIsLoadingState(false);
         if (goBackOnUpdate) {
-          history.back();
+          window.history.back();
         }
       }
     } catch (error) {

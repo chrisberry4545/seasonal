@@ -18,7 +18,9 @@ export const SummaryColumn: FC<ISummaryColumn> = ({
 }) => (
   <div className='c-summary-column'>
     {
-      imageUrl && <img src={imageUrl} className='c-summary-column__image' />
+      imageUrl && <img
+        alt='Column item'
+        src={imageUrl} className='c-summary-column__image' />
     }
     <h3 className='c-summary-column__heading'>
       <TextHeadingSmall>

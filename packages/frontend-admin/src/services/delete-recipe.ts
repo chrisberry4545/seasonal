@@ -1,4 +1,4 @@
-import { IRecipe } from '@chrisb-dev/seasonal-shared';
+import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import { RECIPE_URL } from '../config';
 import { makeAuthorizedRequest } from './make-authorized-request';
 

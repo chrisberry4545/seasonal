@@ -1,5 +1,5 @@
 import { queryPostgres, getSqlQuery } from '../postgres';
-import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared';
+import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateDbRegionFoodSeasonMap = async (
   item: IRegionFoodSeasonMap

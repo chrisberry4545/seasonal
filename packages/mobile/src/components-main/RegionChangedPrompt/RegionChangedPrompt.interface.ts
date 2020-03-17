@@ -1,4 +1,4 @@
-import { IRegion } from '@chrisb-dev/seasonal-shared';
+import { IRegion } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IRegionChangedPromptInputProps {
   isVisible: boolean;

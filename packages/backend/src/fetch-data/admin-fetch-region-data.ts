@@ -1,4 +1,4 @@
-import { IDbRegion } from '@chrisb-dev/seasonal-shared';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 import {
   adminGetAllDbRegions,
   adminGetOneDbRegion,

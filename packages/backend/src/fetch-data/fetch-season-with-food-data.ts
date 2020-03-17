@@ -8,7 +8,7 @@ import {
   cacheFunctionResponse
 } from '../cache';
 
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { DEFAULT_COUNTRY_ID } from '../config';
 
 const allSeasonsWithFoodCache = new Cache<IHydratedSeason[]>();
