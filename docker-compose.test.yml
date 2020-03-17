@@ -23,5 +23,4 @@ services:
       DEFAULT_COUNTRY_ID: gbr
     command: yarn backend:test
     volumes:
-      - ./packages/backend:/usr/app/packages/backend/
       - /usr/app/packages/backend/node_modules
