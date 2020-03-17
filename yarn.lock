@@ -1518,6 +1518,7 @@ __metadata:
     promise-fs: ^2.1.1
     serverless: ^1.66.0
     serverless-http: ^2.0.2
+    serverless-plugin-monorepo: ^0.8.0
     supertest: ^4.0.2
     ts-jest: ^24.0.2
     ts-node: ^8.5.4
@@ -22521,6 +22522,17 @@ __metadata:
     "@types/aws-lambda":
       optional: true
   checksum: 2/05fb8abeb162ec29e796beb685080c1b0a541b3fe6dbb08e06f2568396f113954b66031e1ccd18ddd5523916c86dc16a1ac88acae66861f3f85a01445924eebb
+  languageName: node
+  linkType: hard
+
+"serverless-plugin-monorepo@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "serverless-plugin-monorepo@npm:0.8.0"
+  dependencies:
+    fs-extra: ^7.0.0
+  peerDependencies:
+    serverless: 1.x
+  checksum: 2/936922e0c7a90b95ab39f05686ff877705052ed8719c8d9627770fdbc378f68b5109ba01ec825dbacf527d138f1416033be724007ac31041d4886993014c105b
   languageName: node
   linkType: hard
 
