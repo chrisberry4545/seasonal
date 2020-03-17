@@ -50,10 +50,5 @@
   },
   "peerDependencies": {
     "rxjs": "6.4.0"
-  },
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
   }
 }
