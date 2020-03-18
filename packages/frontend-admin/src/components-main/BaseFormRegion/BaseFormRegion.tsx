@@ -51,7 +51,8 @@ export const BaseFormRegion: FC<IGetAuthorizedBackendDataProps<IDbRegion>> = ({
           ...initialRegionFormConfig,
           countryId: {
             options,
-            type: 'select'
+            type: 'select',
+            validation: [requiredValidation]
           }
         });
       });

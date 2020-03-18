@@ -8,7 +8,7 @@ import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-compone
 
 const createEmptyRegionItem = (): IDbRegion => ({
   code: '',
-  countryId: '',
+  countryId: undefined,
   isDisabled: false,
   lat: 0,
   lng: 0,

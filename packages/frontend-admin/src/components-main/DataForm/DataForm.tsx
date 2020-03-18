@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Checkbox,
   Input,
@@ -41,9 +41,29 @@ export function DataForm<T>({
   buttonText = FORM_BUTTON_TEXT.UPDATE,
   goBackOnUpdate = true
 }: IDateFormProps<T>) {
-  const [itemState, setItemState] = useState<Partial<T>>({
-    ...item
-  });
+  const [itemState, setItemState] = useState<Partial<T>>(item);
+
+  useEffect(() => {
+    // Select first item from select if not set
+    if (formConfig && item) {
+      const selectFields = Object.entries(formConfig)
+        .filter(([, field]) => (field as IFormField).type === 'select');
+      const newItem = Object.entries(item).reduce((builtItem, [key, value]) => {
+        const matchingField = selectFields
+          .find(([fieldKey]) => fieldKey === key);
+        const selectOptions = matchingField
+          && (matchingField[1] as IFormField).options!.map((option) => option.value);
+        return {
+          ...builtItem,
+          [key]: selectOptions && !selectOptions.includes(value as string | number)
+            ? selectOptions[0]
+            : value
+        };
+      }, {} as T);
+      setItemState(newItem);
+    }
+  }, [item, formConfig]);
+
   const [errorState, setErrorState] = useState<string | null>(null);
   const [validationState, setValidationState] = useState<
     { [key in keyof T]?: string[] }
