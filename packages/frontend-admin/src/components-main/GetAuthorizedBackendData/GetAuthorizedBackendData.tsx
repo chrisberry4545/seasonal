@@ -49,7 +49,7 @@ function InnerAuthorizedComponent<T>({
       }));
   };
 
-  useEffect(requestNewData, [requestNewData]);
+  useEffect(requestNewData, []);
 
   return (
     <div>
