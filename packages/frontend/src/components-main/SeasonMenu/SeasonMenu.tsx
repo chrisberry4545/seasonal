@@ -21,11 +21,13 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
   allBasicSeasonData,
   currentSeasonIndex,
   isCurrentRouteAllSeasons,
+  isCurrentRouteSettings,
   isLoading,
   isMenuOpen,
   onSeasonSelected,
   onClose,
-  onAllSeasonsSelected
+  onAllSeasonsSelected,
+  onSettingsSelected
 }) => (
   <div>
     <PoseGroup>
@@ -66,6 +68,16 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
                 }
                 onClick={onAllSeasonsSelected}>
                 <TextMedium>All seasons</TextMedium>
+              </BareButton>
+              <BareButton className={
+                `c-season-menu__button ${
+                  isCurrentRouteSettings
+                    ? 'c-season-menu__button--selected'
+                    : ''
+                }`
+                }
+                onClick={onSettingsSelected}>
+                <TextMedium>Settings</TextMedium>
               </BareButton>
           </Fragment>
           : <div className='c-season-menu__loading-spinner-wrapper'>

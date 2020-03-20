@@ -7,10 +7,11 @@ import {
   selectIsBasicSeasonsLoading,
   selectSeason,
   selectCurrentSeasonIndex,
-  goToAllSeasonsView
+  goToAllSeasonsView,
+  goToSettingsPage
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import {
-  goToAboutUsPage, goToSettingsPage,
+  goToAboutUsPage,
   onMenuFeedbackSelected
 } from '../../store';
 

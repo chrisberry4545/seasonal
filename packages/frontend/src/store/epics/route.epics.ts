@@ -19,10 +19,12 @@ import {
   setCurrentFoodDetailsStart,
   INIT_APP,
   selectCurrentSeasonRecipesById,
-  setAllSeasonsWithFoodStart
+  setAllSeasonsWithFoodStart,
+  GO_BACK_FROM_SETTINGS_PAGE,
+  GO_TO_SETTINGS_PAGE
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { push, goBack } from 'connected-react-router';
-import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL } from '../../const';
+import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
 import { IState } from '../../interfaces';
 import { selectCurrentFoodDetailsId, selectIsCurrentRouteAllSeasons } from '../selectors';
 import { WebSeasonalEpic } from './seasonal-epic.type';
@@ -129,6 +131,7 @@ export const goBack$: WebSeasonalEpic = (
 ): Observable<Action> => (
   actions$.pipe(
     ofType(
+      GO_BACK_FROM_SETTINGS_PAGE,
       GO_BACK_FROM_FOOD_DETAILS
     ),
     mapTo(goBack())
@@ -141,5 +144,14 @@ export const goToAllSeasonsView$: WebSeasonalEpic = (
   actions$.pipe(
     ofType(GO_TO_ALL_SEASONS_VIEW),
     mapTo(push(ALL_SEASONS_URL))
+  )
+);
+
+export const goToSettingsPage$: WebSeasonalEpic = (
+  actions$: ActionsObservable<Action>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(GO_TO_SETTINGS_PAGE),
+    mapTo(push(SETTINGS_URL))
   )
 );

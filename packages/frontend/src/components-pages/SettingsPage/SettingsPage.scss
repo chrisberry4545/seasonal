@@ -1,0 +1,11 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-settings-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include mq($from: tablet) {
+    width: calc(100% - #{$sidebar-width-desktop});
+  }
+}

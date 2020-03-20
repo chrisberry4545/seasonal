@@ -4,7 +4,8 @@ import {
   IntroPage,
   FoodTablePage,
   FoodDetailsPage,
-  AllSeasonsPage
+  AllSeasonsPage,
+  SettingsPage
 } from '../components-pages';
 import './App.scss';
 
@@ -17,7 +18,8 @@ import {
   FOOD_TABLE_URL,
   LANDING_URL,
   FOOD_DETAILS_URL,
-  ALL_SEASONS_URL
+  ALL_SEASONS_URL,
+  SETTINGS_URL
 } from '../const';
 
 import { ConnectedRouter } from 'connected-react-router';
@@ -31,6 +33,7 @@ export const App: FC<{}> = () => (
           <Route path={FOOD_TABLE_URL} component={FoodTablePage} />
           <Route path={`${FOOD_DETAILS_URL}/:id`} component={FoodDetailsPage} />
           <Route path={ALL_SEASONS_URL} component={AllSeasonsPage} />
+          <Route path={SETTINGS_URL} component={SettingsPage} />
         </Switch>
       </div>
     </ConnectedRouter>

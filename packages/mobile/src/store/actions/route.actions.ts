@@ -13,17 +13,3 @@ export function goToAboutUsPage(): Action {
     type: GO_TO_ABOUT_US_PAGE
   };
 }
-
-export const GO_TO_SETTINGS_PAGE = 'GO_TO_SETTINGS_PAGE';
-export function goToSettingsPage() {
-  return {
-    type: GO_TO_SETTINGS_PAGE
-  };
-}
-
-export const GO_BACK_FROM_SETTINGS_PAGE = 'GO_BACK_FROM_SETTINGS_PAGE';
-export function goBackFromSettingsPage() {
-  return {
-    type: GO_BACK_FROM_SETTINGS_PAGE
-  };
-}

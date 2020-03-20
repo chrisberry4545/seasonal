@@ -8,7 +8,8 @@ import {
   SET_DIET_TYPE,
   selectSettingsState,
   INIT_APP,
-  initSettings
+  initSettings,
+  SET_REGION
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import { IState } from '../../interfaces';
@@ -31,7 +32,10 @@ export const storeSettings$: WebSeasonalEpic = (
   state$: StateObservable<IState>
 ): Observable<Action> => (
   actions$.pipe(
-    ofType(SET_DIET_TYPE),
+    ofType(
+      SET_DIET_TYPE,
+      SET_REGION
+    ),
     withLatestFrom(state$),
     map(([, state]) => selectSettingsState(state)),
     tap((settingsState) => setStoredData(settingsStorageKey, settingsState)),
