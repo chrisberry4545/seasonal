@@ -1,8 +1,7 @@
-import { IRegion } from '@chrisb-dev/seasonal-shared-models';
+import { IGroupedSelectOptions } from '@chrisb-dev/seasonal-shared-models';
 
 export interface ILocationSelectorInputProps {
-  regions: IRegion[] | undefined;
-  selectedRegion: IRegion | undefined;
+  countryAndRegionSelectGroup: IGroupedSelectOptions[] | undefined;
 }
 
 export interface ILocationSelectorDispatchProps {

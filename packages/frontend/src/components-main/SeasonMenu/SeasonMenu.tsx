@@ -49,8 +49,9 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
                     key={name}
                     className={
                       `c-season-menu__button ${
-                        !isCurrentRouteAllSeasons &&
-                        index === currentSeasonIndex
+                        !isCurrentRouteSettings
+                        && !isCurrentRouteAllSeasons
+                        && index === currentSeasonIndex
                           ? 'c-season-menu__button--selected'
                           : ''
                         }`}

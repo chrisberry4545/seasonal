@@ -21,7 +21,8 @@ import {
   selectCurrentSeasonRecipesById,
   setAllSeasonsWithFoodStart,
   GO_BACK_FROM_SETTINGS_PAGE,
-  GO_TO_SETTINGS_PAGE
+  GO_TO_SETTINGS_PAGE,
+  SET_REGION
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { push, goBack } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
@@ -131,6 +132,7 @@ export const goBack$: WebSeasonalEpic = (
 ): Observable<Action> => (
   actions$.pipe(
     ofType(
+      SET_REGION,
       GO_BACK_FROM_SETTINGS_PAGE,
       GO_BACK_FROM_FOOD_DETAILS
     ),

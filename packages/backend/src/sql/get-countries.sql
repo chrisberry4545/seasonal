@@ -23,6 +23,6 @@ FROM (
         AND regions.is_disabled != TRUE
     )
     FROM countries
-    ORDER BY countries.name DESC
+    ORDER BY countries.name
 ) AS result
 WHERE json_array_length(result.regions) > 0

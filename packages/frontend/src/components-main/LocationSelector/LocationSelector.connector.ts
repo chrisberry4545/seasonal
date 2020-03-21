@@ -4,8 +4,7 @@ import {
 } from './LocationSelector';
 import {
   setRegion,
-  selectAllRegions,
-  selectCurrentRegion
+  selectCountryAndRegionsSelectGroup
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import {
   ILocationSelectorDispatchProps,
@@ -15,8 +14,7 @@ import { Dispatch } from 'redux';
 import { IState } from '../../interfaces';
 
 const mapStateToProps = (state: IState): ILocationSelectorInputProps => ({
-  regions: selectAllRegions(state),
-  selectedRegion: selectCurrentRegion(state)
+  countryAndRegionSelectGroup: selectCountryAndRegionsSelectGroup(state)
 });
 
 const mapDispatchToProps = (
