@@ -1,5 +1,4 @@
-const BACKEND_URL = process.env.BACKEND_URL
-  || process.env.REACT_APP_BACKEND_URL
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL
   || 'https://6usraevcmc.execute-api.eu-west-2.amazonaws.com/prod/v2';
 
 export const SEASON_URL =

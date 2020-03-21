@@ -11,6 +11,9 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
+  externals: {
+    react: 'react'
+  },
   module: {
     rules: [
       {

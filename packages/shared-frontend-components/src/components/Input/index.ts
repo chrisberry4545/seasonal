@@ -13,3 +13,5 @@ export * from './RadioButtonGroup';
 export * from './select-option.interface';
 
 export * from './Select';
+
+export * from './SearchableMultiselect';
