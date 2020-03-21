@@ -4,9 +4,7 @@ import { StateObservable, ActionsObservable, ofType } from 'redux-observable';
 import { Observable } from 'rxjs';
 import {
   GO_BACK_FROM_FOOD_DETAILS,
-  GO_TO_ABOUT_US_PAGE,
-  GO_TO_SETTINGS_PAGE,
-  GO_BACK_FROM_SETTINGS_PAGE
+  GO_TO_ABOUT_US_PAGE
 } from '../actions';
 import {
   RECIPE_ITEM_CLICKED,
@@ -22,7 +20,9 @@ import {
   GO_TO_ALL_SEASONS_VIEW,
   setAllSeasonsWithFoodStart,
   FOOD_DETAILS_SELECT_RECIPE,
-  SET_REGION
+  SET_REGION,
+  GO_TO_SETTINGS_PAGE,
+  GO_BACK_FROM_SETTINGS_PAGE
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { withLatestFrom, map, tap, ignoreElements, mapTo } from 'rxjs/operators';
 import { goToLinkUrl } from '../../helpers';

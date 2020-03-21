@@ -4,7 +4,7 @@ import {
 } from './SettingsBackButton';
 import {
   goBackFromSettingsPage
-} from '../../store';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import {
   ISettingsBackButtonDispatchProps

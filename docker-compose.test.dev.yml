@@ -3,6 +3,7 @@
 version: "3.3"
 services:
   backend-test:
+    command: yarn backend:test
     volumes:
       - ./packages/backend:/usr/app/packages/backend
       - /usr/app/packages/backend/node_modules

@@ -1,0 +1,23 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-grouped-select-box__group {
+  margin-bottom: 2rem;
+}
+
+.c-grouped-select-box__group-name {
+  display: block;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px  solid $grey-med;
+}
+
+.c-grouped-select-box__option {
+  display: block;
+  margin-bottom: 0.25rem;
+  opacity: 0.6;
+}
+
+  .c-grouped-select-box__option--selected {
+    opacity: 1;
+  }

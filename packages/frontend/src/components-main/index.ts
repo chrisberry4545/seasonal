@@ -18,6 +18,8 @@ export * from './Header/Header.connector';
 
 export * from './IOSAppDownload/IOSAppDownload';
 
+export * from './LocationSelector/LocationSelector.connector';
+
 export * from './PageWithMenu/PageWithMenu';
 
 export * from './RecipesForFood/RecipesForFood.connector';
