@@ -44,7 +44,7 @@ export const BaseFormFood: FC<IGetAuthorizedBackendDataProps<IFood>> = ({
       ...initialFoodFormConfig,
       substituteFoodIds: {
         options,
-        type: 'multiselect'
+        type: 'searchable-multiselect'
       }
     });
   };

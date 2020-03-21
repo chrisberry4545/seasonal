@@ -122,7 +122,7 @@ export const BaseFormRegionSeasonFoodMap: FC<{}> = () => {
 
         foodIds: {
           options: foodOptions,
-          type: 'multiselect'
+          type: 'searchable-multiselect'
         }
       }));
     });

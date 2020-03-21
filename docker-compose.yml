@@ -39,7 +39,7 @@ services:
     depends_on:
       - backend-dev
     environment:
-      BACKEND_URL: http://localhost:5205/v2
+      REACT_APP_BACKEND_URL: http://localhost:5205/v2
     ports:
       - "5200:3000"
     command: yarn frontend:dev

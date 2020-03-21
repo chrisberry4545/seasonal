@@ -50,11 +50,11 @@ export const BaseFormRecipe: FC<IGetAuthorizedBackendDataProps<IRecipe>> = ({
       ...initialRecipeFormConfig,
       primaryFoodInRecipeIds: {
         options,
-        type: 'multiselect'
+        type: 'searchable-multiselect'
       },
       secondaryFoodInRecipeIds: {
         options,
-        type: 'multiselect'
+        type: 'searchable-multiselect'
       }
     });
   };

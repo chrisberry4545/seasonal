@@ -4,6 +4,7 @@ import {
   Input,
   ISelectOption,
   Multiselect,
+  SearchableMultiselect,
   Select,
   IValidation,
   LoadingSpinner,
@@ -17,7 +18,8 @@ import { FORM_BUTTON_TEXT } from '../../consts';
 export interface IFormField {
   name?: string;
   options?: ISelectOption[];
-  type: 'text' | 'number' | 'password' | 'checkbox' | 'select' | 'multiselect';
+  type: 'text' | 'number' | 'password' | 'checkbox' | 'select'
+    | 'multiselect'| 'searchable-multiselect';
   validation?: IValidation[];
 }
 export type IDataFormConfigProps<T> = { [key in keyof T & string]?: IFormField };
@@ -157,6 +159,11 @@ export function DataForm<T>({
                         return <Checkbox {...inputs} />;
                       case 'multiselect':
                         return <Multiselect {...{
+                          ...inputs,
+                          options: inputs.options!
+                        } as any} />;
+                      case 'searchable-multiselect':
+                        return <SearchableMultiselect {...{
                           ...inputs,
                           options: inputs.options!
                         } as any} />;
