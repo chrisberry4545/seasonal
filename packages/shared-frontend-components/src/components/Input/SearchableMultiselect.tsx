@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useState } from 'react';
+import React, { FC, Fragment, useState, KeyboardEventHandler } from 'react';
 import { ISelectOption } from './select-option.interface';
 import { Multiselect } from './Multiselect';
 import { Input } from './Input';
@@ -21,10 +21,34 @@ export const SearchableMultiselect: FC<{
     setFilteredOptions(filtered);
   };
 
+  const handleKeyPress: KeyboardEventHandler = (
+    event
+  ) => {
+    if (event.keyCode === 13) {
+      const visibleOptions = filteredOptions.map((option) => option.value);
+      const areAllOptionsSelected = visibleOptions
+        .every((option) => inputs.value.includes(option));
+      if (areAllOptionsSelected) {
+        const withOptionsRemoved = inputs.value
+          .filter((value) => !visibleOptions.includes(value));
+        inputs.onChange(withOptionsRemoved);
+      } else {
+        const optionsToAdd = visibleOptions
+          .filter((value) => !inputs.value.includes(value));
+        inputs.onChange([
+          ...inputs.value,
+          ...optionsToAdd
+        ]);
+      }
+    }
+  };
+
   return <Fragment>
     <Input
       className='c-searchable-multiselect__search'
-      placeholder='Search' onChange={searchUpdated} />
+      placeholder='Search'
+      onKeyDown={handleKeyPress}
+      onChange={searchUpdated} />
     <Multiselect {...{
       ...inputs,
       className: (inputs.className || '')
