@@ -6,11 +6,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 150px;
+  min-height: 190px;
 
   @include mq($from: tablet) {
     flex-direction: row-reverse;
-    min-height: 0;
+    min-height: 78px;
     max-width: 570px;
     margin: auto;
   }

@@ -33,7 +33,7 @@ export const App: FC<{}> = () => (
           <Route path={`${FOOD_DETAILS_URL}/:id`} component={FoodDetailsPage} />
           <Route path={ALL_SEASONS_URL} component={AllSeasonsPage} />
           <Route path={SETTINGS_URL} component={SettingsPage} />
-          <Route path={LANDING_URL} component={IntroPage} exact />
+          <Route path={LANDING_URL} component={IntroPage} />
         </Switch>
       </div>
     </ConnectedRouter>
