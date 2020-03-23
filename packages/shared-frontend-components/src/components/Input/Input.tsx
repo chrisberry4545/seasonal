@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, KeyboardEventHandler } from 'react';
 import './Input.scss';
 
 export const Input: FC<{
@@ -6,6 +6,7 @@ export const Input: FC<{
   type?: 'text' | 'number' | 'password',
   placeholder?: string,
   onChange: (newValue: string) => void,
+  onKeyDown?: KeyboardEventHandler,
   value?: string | number
 }> = ({
   children,
@@ -13,6 +14,7 @@ export const Input: FC<{
   type = 'text',
   placeholder,
   onChange,
+  onKeyDown,
   value
 }) => (
   <input
@@ -20,6 +22,7 @@ export const Input: FC<{
     placeholder={placeholder}
     type={type}
     value={value}
+    onKeyDown={onKeyDown}
     onChange={(event) => onChange(event.target.value)}>
     { children }
   </input>

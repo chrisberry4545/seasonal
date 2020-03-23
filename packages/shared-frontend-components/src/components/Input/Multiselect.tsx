@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { ISelectOption } from './select-option.interface';
 import './Multiselect.scss';
+import { BareButton } from '../Buttons';
 
 export const Multiselect: FC<{
   className?: string,
@@ -27,7 +28,7 @@ export const Multiselect: FC<{
     className={`c-multiselect ${(className || '')}`}>
       {
         options && options.map((option) =>
-          <div key={option.value}
+          <BareButton key={option.value}
             className={
               'c-multi-select-option' + (
                 isSelected(option.value)
@@ -37,7 +38,7 @@ export const Multiselect: FC<{
             }
             onClick={() => onOptionClicked(option.value)}>
               {option.label}
-          </div>
+          </BareButton>
         )
       }
   </div>;
