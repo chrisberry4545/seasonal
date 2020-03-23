@@ -25,11 +25,13 @@
   "files": [
     "/src"
   ],
+  "peerDependencies": {
+    "react": "16.9.0"
+  },
   "dependencies": {
     "@chrisb-dev/seasonal-shared-models": "1.0.0",
     "inuitcss": "^6.0.0",
     "node-sass": "^4.11.0",
-    "react": "16.9.0",
     "sass-mq": "^5.0.1",
     "typescript": "^3.7.2"
   },
