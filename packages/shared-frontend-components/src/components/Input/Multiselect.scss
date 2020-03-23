@@ -2,15 +2,19 @@
 
 .c-multiselect {
   cursor: pointer;
-  max-height: 200px;
+  height: 200px;
   overflow-y: auto;
   border: $input-border;
   border-radius: $input-border-radius;
+  padding: 0.25rem 0;
 }
 
 .c-multi-select-option {
   padding: 0.25rem;
   color: $primary-text-color;
+  display: block;
+  width: 100%;
+  text-align: left;
 }
 
   .c-multi-select-option--selected {
