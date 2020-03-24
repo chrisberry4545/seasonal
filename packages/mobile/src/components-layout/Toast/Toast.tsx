@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ViewStyle, View } from 'react-native';
-import { BareButton } from '../Buttons';
-import { CrossIcon } from '../Icons';
+import { BareButton } from '../../components-elements/Buttons';
+import { CrossIcon } from '../../components-elements/Icons';
 import { colors } from '../../styles/colors';
 
 const styleToast: ViewStyle = {

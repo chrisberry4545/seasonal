@@ -1,5 +1,5 @@
 import { StyleProp, TextStyle } from 'react-native';
 
-export interface ITextInterface {
+export interface IText {
   style?: StyleProp<TextStyle>;
 }

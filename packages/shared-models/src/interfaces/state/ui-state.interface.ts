@@ -1,7 +1,7 @@
 export interface IUiState {
-  isCountryChangePromptVisible: boolean;
   isLocationSettingsPopupVisible: boolean;
   isMenuOpen: boolean;
+  isRegionChangePromptVisible: boolean;
   isSearchBarVisible: boolean;
   searchTerm?: string;
 }

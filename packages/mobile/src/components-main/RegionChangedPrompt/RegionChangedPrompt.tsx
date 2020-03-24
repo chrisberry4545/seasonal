@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 
 import { IRegionChangedPromptProps } from './RegionChangedPrompt.interface';
-import { TextLarge, BareButton, Toast } from '../../components-elements';
+import { TextLarge, BareButton } from '../../components-elements';
 import { ViewStyle, TextStyle } from 'react-native';
 import { colors } from '../../styles/colors';
+import { Toast } from '../../components-layout';
 
 const styleRegionChangedPromptButton: ViewStyle = {
   marginTop: 4

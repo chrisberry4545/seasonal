@@ -24,7 +24,7 @@ export const selectIsLocationSettingsPopupVisible = createSelector(
   (uiState): boolean => uiState.isLocationSettingsPopupVisible
 );
 
-export const selectIsCountryChangePromptVisible = createSelector(
+export const selectIsRegionChangePromptVisible = createSelector(
   selectUiState,
-  (uiState): boolean => uiState.isCountryChangePromptVisible
+  (uiState): boolean => uiState.isRegionChangePromptVisible
 );

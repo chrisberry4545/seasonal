@@ -13,5 +13,3 @@ export * from './LoadingSpinner/LoadingSpinner';
 export * from './SelectBox/SelectBox';
 
 export * from './Text';
-
-export * from './Toast';

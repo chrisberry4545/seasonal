@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import './TextMedium.scss';
-import { ITextInterface } from './Text.interface';
+import { IText } from './Text.interface';
 
-export const TextMedium: FC<ITextInterface> = ({
+export const TextMedium: FC<IText> = ({
   className,
   children
 }) => (

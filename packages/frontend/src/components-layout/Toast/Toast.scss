@@ -1,0 +1,23 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+.c-toast {
+  align-items: center;
+  background-color: $selection-color-alt-2;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 1rem 2rem 2rem;
+  position: fixed;
+  width: 100%;
+}
+
+.c-toast__close-btn {
+  width: 40px;
+  min-width: 40px;
+}
+
+.c-toast__cross-icon {
+  fill: $white-color;
+}

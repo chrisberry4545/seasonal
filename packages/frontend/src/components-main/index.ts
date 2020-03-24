@@ -26,6 +26,8 @@ export * from './RecipesForFood/RecipesForFood.connector';
 
 export * from './RecipeTable/RecipeTable.connector';
 
+export * from './RegionChangedPrompt/RegionChangedPrompt.connector';
+
 export * from './SearchBar/SearchBar.connector';
 
 export * from './SeasonMenu/SeasonMenu.connector';

@@ -12,4 +12,6 @@ export * from './ModalLayout/ModalLayout';
 
 export * from './SeasonNameView/SeasonNameView';
 
+export * from './Toast/Toast';
+
 export * from './TopLoadingSpinner/TopLoadingSpinner';
