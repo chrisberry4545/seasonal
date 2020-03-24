@@ -18,7 +18,8 @@ import {
 
 import {
   getStoredSettings$,
-  storeSettings$
+  storeSettings$,
+  detectCountry$
 } from './settings.epics';
 
 export const rootEpic = combineEpics(
@@ -35,5 +36,6 @@ export const rootEpic = combineEpics(
   goToAllSeasonsView$,
   getStoredSettings$,
   storeSettings$,
-  goToSettingsPage$
+  goToSettingsPage$,
+  detectCountry$
 );

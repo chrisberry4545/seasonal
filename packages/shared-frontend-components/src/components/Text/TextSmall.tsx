@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import './TextSmall.scss';
-import { ITextInterface } from './Text.interface';
+import { IText } from './Text.interface';
 
-export const TextSmall: FC<ITextInterface> = ({
+export const TextSmall: FC<IText> = ({
   className,
   children
 }) => (

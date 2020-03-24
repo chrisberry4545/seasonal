@@ -1,0 +1,11 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+.c-region-changed-prompt__btn {
+  text-align: left;
+}
+
+.c-region-changed-prompt__text {
+  color: $white-color !important;
+  display: block;
+}

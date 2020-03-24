@@ -1,3 +1,3 @@
-export interface ITextInterface {
+export interface IText {
   className?: string;
 }

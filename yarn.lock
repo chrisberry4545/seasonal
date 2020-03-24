@@ -1556,7 +1556,7 @@ __metadata:
   dependencies:
     "@chrisb-dev/react-schematics": 1.1.1
     "@chrisb-dev/seasonal-shared": 2.7.10
-    "@chrisb-dev/seasonal-shared-frontend-components": 0.1.0
+    "@chrisb-dev/seasonal-shared-frontend-components": 1.0.0
     "@chrisb-dev/seasonal-shared-frontend-redux": 1.0.0
     "@types/google.analytics": ^0.0.39
     "@types/jest": ^24.0.13
@@ -1652,19 +1652,6 @@ __metadata:
     react: 16.9.0
   languageName: unknown
   linkType: soft
-
-"@chrisb-dev/seasonal-shared-frontend-components@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@chrisb-dev/seasonal-shared-frontend-components@npm:0.1.0"
-  dependencies:
-    "@chrisb-dev/seasonal-shared": 2.7.10
-    node-sass: ^4.11.0
-    react: 16.9.0
-    sass-mq: ^5.0.1
-    typescript: ^3.7.2
-  checksum: 2/9e73f686fa003296cd51da020fa1742c7d9636e15a371617f992e1ca79004b4d198ccb5fff5f2b0975f832e37a8755a67735b33c6cb2799f5efd62e9d89b42f7
-  languageName: node
-  linkType: hard
 
 "@chrisb-dev/seasonal-shared-frontend-redux@1.0.0, @chrisb-dev/seasonal-shared-frontend-redux@workspace:packages/shared-frontend-redux":
   version: 0.0.0-use.local

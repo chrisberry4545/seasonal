@@ -23,6 +23,7 @@ import {
 } from '../const';
 
 import { ConnectedRouter } from 'connected-react-router';
+import { GlobalModals } from '../components-main/GlobalModals/GlobalModals';
 
 export const App: FC<{}> = () => (
   <Provider store={store}>
@@ -37,5 +38,6 @@ export const App: FC<{}> = () => (
         </Switch>
       </div>
     </ConnectedRouter>
+    <GlobalModals />
   </Provider>
 );

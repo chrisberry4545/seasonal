@@ -17,9 +17,9 @@ import { IUiState } from '@chrisb-dev/seasonal-shared-models';
 import { Action } from 'redux';
 
 const getDefaultState = (): IUiState => ({
-  isCountryChangePromptVisible: false,
   isLocationSettingsPopupVisible: false,
   isMenuOpen: false,
+  isRegionChangePromptVisible: false,
   isSearchBarVisible: false
 });
 
@@ -64,12 +64,12 @@ export function uiReducer(
     case SET_USER_REGION_DETECTED:
       return {
         ...state,
-        isCountryChangePromptVisible: true
+        isRegionChangePromptVisible: true
       };
     case HIDE_REGION_CHANGE_PROMPT:
       return {
         ...state,
-        isCountryChangePromptVisible: false
+        isRegionChangePromptVisible: false
       };
     case SHOW_LOCATION_SETTINGS_POPUP:
       return {

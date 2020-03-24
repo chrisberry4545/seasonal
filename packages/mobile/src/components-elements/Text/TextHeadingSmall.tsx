@@ -3,7 +3,7 @@ import { Text, TextStyle } from 'react-native';
 import { headingBase } from './SharedTextStyles';
 
 import {
-  ITextInterface
+  IText
 } from './Text.interface';
 
 export const styleTextHeadingSmall: TextStyle = {
@@ -12,7 +12,7 @@ export const styleTextHeadingSmall: TextStyle = {
   lineHeight: 20
 };
 
-export const TextHeadingSmall: FC<ITextInterface> = ({
+export const TextHeadingSmall: FC<IText> = ({
   children,
   style
 }) => (
