@@ -1,7 +1,7 @@
 FROM node:12.14.0-alpine
 
 WORKDIR /usr/app
-COPY .yarnrc.yml package*.json yarn.lock lerna.json ./
+COPY .yarnrc.yml package*.json yarn.lock ./
 COPY .yarn ./.yarn
 RUN yarn policies set-version berry
 
