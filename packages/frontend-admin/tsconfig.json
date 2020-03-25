@@ -1,29 +1,14 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es5",
     "module": "esnext",
-    "allowJs": true,
     "jsx": "preserve",
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "isolatedModules": true,
     "noEmit": true
