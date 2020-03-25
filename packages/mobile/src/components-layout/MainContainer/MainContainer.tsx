@@ -8,8 +8,6 @@ import { FC } from 'react';
 const styleMainContainer: ViewStyle = {
   backgroundColor: styles.colors.backgroundColor,
   flex: 1,
-  paddingLeft: 20,
-  paddingRight: 20,
   paddingTop: 10
 };
 

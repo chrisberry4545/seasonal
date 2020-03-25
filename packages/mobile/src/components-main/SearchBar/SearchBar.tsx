@@ -12,16 +12,17 @@ import { View, ViewStyle } from 'react-native';
 import { colors } from '../../styles/colors';
 
 const styleSearchBar: ViewStyle = {
+  alignItems: 'center',
   backgroundColor: colors.backgroundColor,
   flexDirection: 'row',
   height: 40,
   justifyContent: 'flex-end',
-  left: 0,
+  left: 20,
   marginTop: 19,
   paddingRight: 12,
   position: 'absolute',
-  right: 0,
-  top: 0
+  right: 20,
+  top: 4
 };
 
 const styleSearchBarButton: ViewStyle = {
@@ -37,7 +38,7 @@ const styleSearchBarButton: ViewStyle = {
 const styleSearchBarCloseButton: ViewStyle = {
   position: 'absolute',
   right: 2,
-  top: -10
+  top: -15
 };
 
 export const SearchBar: FC<ISearchBarProps> = ({

@@ -5,7 +5,7 @@ import {
   SelectLocationConnecter
 } from '../../components-main';
 
-import { MainContainer } from '../../components-layout';
+import { MainContainer, DefaultPaddingContainer } from '../../components-layout';
 import { View, ViewStyle } from 'react-native';
 import { SettingsBackButtonConnecter } from '../../components-main/SettingsBackButton/SettingsBackButton.connector';
 
@@ -16,10 +16,12 @@ const styleSettingsPageContent: ViewStyle = {
 export const SettingsPage: FC<{}> = () => (
   <MainContainer>
     <HeaderConnecter />
-    <View style={styleSettingsPageContent}>
-      <SelectLocationConnecter>
-        <SettingsBackButtonConnecter />
-      </SelectLocationConnecter>
-    </View>
+    <DefaultPaddingContainer>
+      <View style={styleSettingsPageContent}>
+        <SelectLocationConnecter>
+          <SettingsBackButtonConnecter />
+        </SelectLocationConnecter>
+      </View>
+    </DefaultPaddingContainer>
   </MainContainer>
 );

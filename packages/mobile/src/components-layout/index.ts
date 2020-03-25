@@ -1,5 +1,7 @@
 export * from './ConfirmButtonLayout/ConfirmButtonLayout';
 
+export * from './DefaultPaddingContainer/DefaultPaddingContainer';
+
 export * from './FeedbackQuestionsLayout/FeedbackQuestionsLayout';
 
 export * from './ImageGrid/ImageGrid';

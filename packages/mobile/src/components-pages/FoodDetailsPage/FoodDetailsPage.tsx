@@ -8,17 +8,19 @@ import {
   RecipesForFoodConnecter
 } from '../../components-main';
 
-import { MainContainer } from '../../components-layout';
+import { MainContainer, DefaultPaddingContainer } from '../../components-layout';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export const FoodDetailsPage: FC<{}> = () => (
   <MainContainer>
     <HeaderConnecter />
-    <ScrollView>
-      <FoodDetailsLoaderConnecter />
-      <FoodDetailsTopSectionConnecter />
-      <RecipesForFoodConnecter />
-      <SeasonsForFoodConnecter />
-    </ScrollView>
+    <DefaultPaddingContainer>
+      <ScrollView>
+        <FoodDetailsLoaderConnecter />
+        <FoodDetailsTopSectionConnecter />
+        <RecipesForFoodConnecter />
+        <SeasonsForFoodConnecter />
+      </ScrollView>
+    </DefaultPaddingContainer>
   </MainContainer>
 );
