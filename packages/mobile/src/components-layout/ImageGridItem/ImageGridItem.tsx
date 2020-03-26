@@ -9,8 +9,7 @@ const gridPadding = 18;
 const styleImageGridItem: ViewStyle = {
   aspectRatio: 1,
   marginBottom: gridPadding,
-  paddingBottom: gridPadding,
-  width: '50%'
+  paddingBottom: gridPadding
 };
 
 const styleImageGridItemWithBorder: ViewStyle = {
@@ -20,14 +19,6 @@ const styleImageGridItemWithBorder: ViewStyle = {
 
 const styleImageGridItemInner: ViewStyle = {
   flex: 1
-};
-
-const styleImageGridItemInnerEven: ViewStyle = {
-  paddingRight: 10
-};
-
-const styleImageGridItemInnerOdd: ViewStyle = {
-  paddingLeft: 10
 };
 
 const styleImageGridItemImage: ImageStyle = {
@@ -41,15 +32,22 @@ const styleImageGridItemText: ViewStyle = {
 
 export const ImageGridItem: FC<IImageGridItem> = ({
   id,
-  evenGridItem,
   name,
   imageUrlSmall,
   onClick,
-  hasBottomBorder
+  hasBottomBorder,
+  paddingLeft,
+  paddingRight,
+  width
 }) => (
   <BareButton
     style={{
       ...styleImageGridItem,
+      ...{
+        paddingLeft: paddingLeft || 0,
+        paddingRight: paddingRight || 0,
+        width: width || '50%'
+      },
       ...(hasBottomBorder ? styleImageGridItemWithBorder : {})
     }}
     onClick={() => {
@@ -59,10 +57,7 @@ export const ImageGridItem: FC<IImageGridItem> = ({
     }}
     activeOpacity={ onClick ? 0.2 : 1 }
   >
-    <View style={ [
-      styleImageGridItemInner,
-      evenGridItem ? styleImageGridItemInnerEven : styleImageGridItemInnerOdd
-    ] }>
+    <View style={ styleImageGridItemInner }>
       <Image style={ styleImageGridItemImage } source={ { uri: imageUrlSmall } } />
       <TextMedium style={ styleImageGridItemText }>
         { name }

@@ -23,8 +23,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "packagerOpts": {
+      "config": "metro.config.js"
+    },
     "ios": {
-      "supportsTablet": false,
+      "supportsTablet": true,
       "icon": "./assets/icon-ios.png",
       "bundleIdentifier": "com.chrisbdev.seasonal",
       "infoPlist": {

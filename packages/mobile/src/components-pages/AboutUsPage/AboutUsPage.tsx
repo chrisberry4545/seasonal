@@ -6,12 +6,17 @@ import {
   PrivacyPolicyLink
 } from '../../components-main';
 
-import { MainContainer } from '../../components-layout';
+import {
+  MainContainer,
+  DefaultPaddingContainer
+} from '../../components-layout';
 
 export const AboutUsPage: FC<{}> = () => (
   <MainContainer>
     <HeaderConnecter />
-    <AboutUs />
-    <PrivacyPolicyLink />
+    <DefaultPaddingContainer>
+      <AboutUs />
+      <PrivacyPolicyLink />
+    </DefaultPaddingContainer>
   </MainContainer>
 );

@@ -3,7 +3,7 @@ FROM node:12.14.0-alpine
 RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
 WORKDIR /usr/app
 
-COPY .yarnrc.yml package*.json yarn.lock lerna.json ./
+COPY .yarnrc.yml package*.json yarn.lock ./
 COPY .yarn ./.yarn
 RUN yarn policies set-version berry
 

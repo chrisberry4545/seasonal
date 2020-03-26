@@ -30,7 +30,10 @@ export const RecipesForFood: FC<IRecipeForFoodProps> = ({
         Recipes
       </TextHeadingSmall>
       <DietaryFiltersConnector />
-      <ImageGrid data={currentFoodDetailsRecipes} onClick={onRecipeSelected} noResultsMessage='No results found' />
+      <ImageGrid
+        maxItemsPerRow={3}
+        data={currentFoodDetailsRecipes}
+        onClick={onRecipeSelected} noResultsMessage='No results found' />
     </View>
     : null
 );

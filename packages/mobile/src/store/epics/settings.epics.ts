@@ -1,14 +1,11 @@
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 
 import {
-  getNearestRegionFromLatLng,
   SET_DIET_TYPE,
   selectSettingsState,
   INIT_APP,
   initSettings,
-  ISettingsState,
   SET_REGION,
-  DIET_TYPE,
   GET_COUNTRIES_SUCCESS,
   selectAllRegions,
   userRegionDetected,
@@ -16,6 +13,13 @@ import {
   selectSettingsRegionCode,
   INIT_SETTINGS
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import {
+  ISettingsState,
+  DIET_TYPE
+} from '@chrisb-dev/seasonal-shared-models';
+import {
+  getNearestRegionFromLatLng
+} from '@chrisb-dev/seasonal-shared-frontend-utilities';
 
 import { IState } from '../../interfaces';
 

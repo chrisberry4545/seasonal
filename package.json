@@ -19,7 +19,6 @@
   "devDependencies": {
     "@chrisb-dev/tslint": "^1.0.1",
     "concurrently": "^5.0.2",
-    "lerna": "^3.20.2",
     "pre-commit": "^1.2.2",
     "tslint": "^5.17.0",
     "typescript": "^3.7.2"

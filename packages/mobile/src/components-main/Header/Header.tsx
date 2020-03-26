@@ -17,6 +17,8 @@ const styleHeader: ViewStyle = {
   borderColor: styles.colors.greyMed,
   flexDirection: 'row',
   paddingBottom: 10,
+  paddingLeft: 20,
+  paddingRight: 20,
   paddingTop: 16
 };
 
