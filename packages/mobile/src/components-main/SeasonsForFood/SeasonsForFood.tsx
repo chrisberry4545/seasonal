@@ -25,6 +25,8 @@ const styleSeasonsForFoodSeasonWrapper: ViewStyle = {
   flexWrap: 'wrap',
   justifyContent: 'center',
   marginBottom: 16,
+  marginLeft: 'auto',
+  marginRight: 'auto',
   maxWidth: 300
 };
 

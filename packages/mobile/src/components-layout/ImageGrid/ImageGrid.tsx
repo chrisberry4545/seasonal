@@ -24,15 +24,19 @@ const styleImageGridNoResults: TextStyle = {
 export const ImageGrid: FC<IImageGrid> = ({
   data,
   onClick,
-  noResultsMessage
+  noResultsMessage,
+  maxItemsPerRow
 }) => {
   const screenWidth = getScreenWidth();
 
-  const numberPerRow =
+  const numberPerRowForScreen =
     screenWidth < 500 ? 2
     : screenWidth < 700 ? 3
     : screenWidth < 1000 ? 4
     : 5;
+  const numberPerRow = maxItemsPerRow
+    ? Math.min(numberPerRowForScreen, maxItemsPerRow)
+    : numberPerRowForScreen;
   const isFirstInRow = (index: number) =>
     index % numberPerRow === 0;
   const isLastInRow = (index: number) =>
