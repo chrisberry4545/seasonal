@@ -11,7 +11,8 @@
     "webpack": "4.41.5"
   },
   "scripts": {
-    "start": "cypress open"
+    "start": "cypress open",
+    "headless": "cypress run --headless --browser chrome"
   },
   "browserslist": [
     ">0.2%",

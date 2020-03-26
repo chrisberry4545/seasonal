@@ -21,10 +21,9 @@ services:
     environment:
       DB_CONNECTION_STRING: postgres://user:pass@postgres-dev:5432/db
       NODE_ENV: development
-      PORT: 3005
       DEFAULT_COUNTRY_ID: gbr
     ports:
-      - "5205:3005"
+      - "5200:5200"
     command: yarn backend:dev
     volumes:
       - ./packages/backend:/usr/app/packages/backend/
@@ -39,9 +38,9 @@ services:
     depends_on:
       - backend-dev
     environment:
-      REACT_APP_BACKEND_URL: http://localhost:5205/v2
+      REACT_APP_BACKEND_URL: http://localhost:5200/v2
     ports:
-      - "5200:3000"
+      - "5201:5201"
     command: yarn frontend:dev
     volumes:
       - ./packages/frontend:/usr/app/packages/frontend/

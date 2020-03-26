@@ -21,4 +21,54 @@ services:
     environment:
       DB_CONNECTION_STRING: postgres://user:pass@postgres-test:5432/db
       DEFAULT_COUNTRY_ID: gbr
-    command: yarn backend:test
+    command: yarn workspace @chrisb-dev/seasonal-backend test
+
+  backend-server:
+    build:
+      context: .
+      dockerfile: docker-backend.Dockerfile
+    depends_on:
+      - postgres-test
+    ports:
+      - "5200:5200"
+    environment:
+      PORT: 5200
+      DB_CONNECTION_STRING: postgres://user:pass@postgres-test:5432/db
+      DEFAULT_COUNTRY_ID: gbr
+    command: yarn workspace @chrisb-dev/seasonal-backend dev
+
+  frontend-test:
+    build:
+      context: .
+      dockerfile: docker-frontend.Dockerfile
+    depends_on:
+      - backend-server
+    environment:
+      PORT: 5201
+      REACT_APP_BACKEND_URL: http://backend-server:5200/v2
+    ports:
+      - "5201:5201"
+    command: yarn workspace @chrisb-dev/seasonal-frontend dev
+
+  frontend_is_running_check:
+    image: ubuntu:14.04
+    depends_on:
+      - frontend-test
+    command: >
+      /bin/bash -c "
+        while ! nc -z web 5201;
+        do
+          echo sleeping;
+          sleep 10;
+        done;
+        echo Connected!;
+      "
+  frontend-e2e:
+    build:
+      context: .
+      dockerfile: docker-e2e.Dockerfile
+    depends_on:
+      - frontend_is_running_check
+    command: yarn workspace @chrisb-dev/seasonal-e2e-web headless
+    environment:
+      CYPRESS_BASE_URL: http://frontend-test:5201

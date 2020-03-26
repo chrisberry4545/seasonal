@@ -1,7 +1,5 @@
 const wp = require('@cypress/webpack-preprocessor')
 
-console.log('preprocessing...');
-
 const webpackOptions = {
   resolve: {
     extensions: ['.ts', '.js']
