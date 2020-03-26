@@ -9,7 +9,7 @@ import {
   ISetRegionAction,
   SET_USER_REGION_DETECTED
 } from '../actions';
-import uuidv4 from 'uuid/v4';
+import { v4 } from 'uuid';
 
 const getDefaultState = (): ISettingsState => ({
   dietType: DIET_TYPE.ALL,
@@ -28,7 +28,7 @@ export function settingsReducer(
       return {
         ...state,
         ...initialSettings,
-        userId: initialSettings.userId || uuidv4()
+        userId: initialSettings.userId || v4()
       };
     case SET_DIET_TYPE:
       return {
