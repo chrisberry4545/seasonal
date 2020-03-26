@@ -11,7 +11,7 @@ import {
 export const ViewWebAppVersion: FC<IViewWebAppVersionDispatchProps> = ({
   onGoToWebVersion
 }) => (
-  <PrimaryButton onClick={onGoToWebVersion}>
+  <PrimaryButton e2eName='view-web-version' onClick={onGoToWebVersion}>
     To web version
   </PrimaryButton>
 );

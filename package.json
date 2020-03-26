@@ -54,7 +54,6 @@
   ],
   "workspaces": {
     "packages": [
-      "packages/mobile-5",
       "packages/shared-models",
       "packages/shared-frontend-utilities",
       "packages/shared-frontend-components",
@@ -62,7 +61,8 @@
       "packages/backend",
       "packages/frontend",
       "packages/frontend-admin",
-      "packages/mobile"
+      "packages/mobile",
+      "packages/e2e-web"
     ]
   }
 }

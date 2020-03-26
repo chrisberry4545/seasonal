@@ -4,14 +4,18 @@ import './PrimaryButton.scss';
 export const PrimaryButton: FC<{
   className?: string,
   onClick?: () => void,
-  type?: 'button' | 'submit'
+  type?: 'button' | 'submit',
+  e2eName?: string
 }> = ({
   className,
   children,
   onClick,
-  type = 'button'
+  type = 'button',
+  e2eName
 }) => (
-  <button type={type} className={`${(className || '')} c-primary-button`}
+  <button
+    data-e2e={e2eName}
+    type={type} className={`${(className || '')} c-primary-button`}
     onClick={onClick}>
     { children }
   </button>
