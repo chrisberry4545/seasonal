@@ -35,7 +35,7 @@ services:
       PORT: 5200
       DB_CONNECTION_STRING: postgres://user:pass@postgres-test:5432/db
       DEFAULT_COUNTRY_ID: gbr
-      IS_CI: true
+      IS_CI: "true"
     command: yarn workspace @chrisb-dev/seasonal-backend dev
 
   frontend-test:
