@@ -8,7 +8,7 @@ fi
 eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
 echo "Starting tests..."
 
-eval "docker-compose ${DOCKER_COMPOSE_FILES} up"
+eval "docker-compose ${DOCKER_COMPOSE_FILES} run --service-ports --rm frontend-e2e"
 status=$?
 
 eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
