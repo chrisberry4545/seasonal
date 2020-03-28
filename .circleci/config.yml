@@ -80,7 +80,7 @@ jobs:
 
 workflows:
   version: 2
-  backend:
+  seasonal:
     jobs:
       - backend_approval:
           type: approval
