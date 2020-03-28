@@ -9,6 +9,10 @@ npm-debug.log*
 packages/backend/.env.yml
 packages/backend/.serverless
 
+# E2E Web
+packages/e2e-web/cypress/screenshots
+packages/e2e-web/cypress/videos
+
 # Frontend
 packages/frontend/.pnp
 packages/frontend/.pnp.js

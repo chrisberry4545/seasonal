@@ -42,7 +42,9 @@
     "gh-pages": "node ./release/gh-pages.js",
     "run-react-snap": "node ./run-react-snap.js",
     "deploy": "yarn build && yarn gh-pages",
-    "schematics": "schematics @chrisb-dev/react-schematics:react-components"
+    "schematics": "schematics @chrisb-dev/react-schematics:react-components",
+    "healthcheck": "healthcheck $REACT_APP_BACKEND_URL",
+    "http-server": "yarn healthcheck && http-server ./build"
   },
   "browserslist": [
     ">0.2%",
@@ -51,9 +53,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@chrisb-dev/healthcheck": "1.0.0",
     "@chrisb-dev/react-schematics": "1.1.1",
     "gh-pages": "^2.2.0",
-    "jest": "23.6.0",
+    "http-server": "^0.12.1",
+    "jest": "24.9.0",
     "react-snap": "^1.23.0"
   }
 }
