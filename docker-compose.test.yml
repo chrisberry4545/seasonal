@@ -48,27 +48,14 @@ services:
       REACT_APP_BACKEND_URL: http://backend-server:5200/v2
     ports:
       - "5201:5201"
-    command: yarn workspace @chrisb-dev/seasonal-frontend dev
+    command: yarn workspace @chrisb-dev/seasonal-frontend http-server
 
-  frontend_is_running_check:
-    image: ubuntu:14.04
-    depends_on:
-      - frontend-test
-    command: >
-      /bin/bash -c "
-        while ! nc -z web 5201;
-        do
-          echo sleeping;
-          sleep 10;
-        done;
-        echo Connected!;
-      "
   frontend-e2e:
     build:
       context: .
-      dockerfile: docker-e2e.Dockerfile
+      dockerfile: docker-e2e-web.Dockerfile
     depends_on:
-      - frontend_is_running_check
-    command: yarn workspace @chrisb-dev/seasonal-e2e-web headless
+      - frontend-test
+    command: yarn workspace @chrisb-dev/seasonal-e2e-web test
     environment:
       CYPRESS_BASE_URL: http://frontend-test:5201
