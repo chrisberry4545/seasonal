@@ -1,16 +1,18 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { IGroupedSelectOptions } from '@chrisb-dev/seasonal-shared-models';
 import { BareButton, TextMedium, TextHeadingSmall } from '@chrisb-dev/seasonal-shared-frontend-components';
 import './GroupedSelectBox.scss';
 
 export const GroupedSelectBox: FC<{
   groups: IGroupedSelectOptions[] | undefined,
-  onSelected?: (selectedValue: string) => void
+  onSelected?: (selectedValue: string) => void,
+  e2eTag?: string
 }> = ({
   groups,
-  onSelected
+  onSelected,
+  e2eTag
 }) => (
-  <Fragment>
+  <div data-e2e={e2eTag}>
   {
     groups && groups.map((group) => (
       <div className='c-grouped-select-box__group' key={group.groupName}>
@@ -20,6 +22,7 @@ export const GroupedSelectBox: FC<{
         {
           group.selectOptions.map((option) =>
             <BareButton
+              e2eTag={`select-option-${option.name}`}
               className={
                 'c-grouped-select-box__option'
                 + (option.isSelected
@@ -36,5 +39,5 @@ export const GroupedSelectBox: FC<{
       </div>
     ))
   }
-  </Fragment>
+  </div>
 );

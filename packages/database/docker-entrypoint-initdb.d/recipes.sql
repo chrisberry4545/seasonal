@@ -26,11 +26,11 @@ VALUES
   (
     '0f7fb18e-ac1d-4023-b315-91ca7e29ce4a',
     'https://pickled-beetroot.com',
-    'https://pickled-beetroot.com/image',
+    'https://eat-seasonal.co.uk/images/food/broccoli.jpg',
     false,
     true,
-    'Pickled Beetroot',
-    ARRAY['c6f78568-fe23-47e4-8e65-55934199a39f']::uuid[],
+    'Pasta with a Beetroot sauce',
+    ARRAY['f6a680ee-6d6e-4c42-a99d-15e575c32c20']::uuid[],
     ARRAY[]::uuid[]
   ),
   (
@@ -46,10 +46,10 @@ VALUES
   (
     '053c46cd-584e-46c5-a70d-b79b9ded3cca',
     'https://apple-beetroot-and-cheese.com',
-    'https://apple-beetroot-and-cheese.com/image',
+    'https://eat-seasonal.co.uk/images/food/broccoli.jpg',
     false,
     false,
     'Apple, Beetroot & Meat',
-    ARRAY['dd9ba012-8f8e-48af-9775-0139374dd94c', 'c6f78568-fe23-47e4-8e65-55934199a39f']::uuid[],
+    ARRAY['dd9ba012-8f8e-48af-9775-0139374dd94c', 'f6a680ee-6d6e-4c42-a99d-15e575c32c20']::uuid[],
     ARRAY[]::uuid[]
   );

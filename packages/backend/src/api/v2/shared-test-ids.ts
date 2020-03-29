@@ -7,8 +7,8 @@ export const SEASON_INDEX_MARCH = '2';
 
 export const REGION_ID_SYDNEY = 'aus-sydney';
 
-export const RECIPES_ID_PICKLED_BEETROOT = '0f7fb18e-ac1d-4023-b315-91ca7e29ce4a';
+export const RECIPES_ID_BEETROOT_SAUCE = '0f7fb18e-ac1d-4023-b315-91ca7e29ce4a';
 export const RECIPES_ID_APPLE_CHEESE_AND_ONION = 'fefc209f-ddaf-465d-941f-fe3fefa6b931';
 
-export const FOOD_ID_BEETROOT = 'c6f78568-fe23-47e4-8e65-55934199a39f';
+export const FOOD_ID_BEETROOT = 'f6a680ee-6d6e-4c42-a99d-15e575c32c20';
 export const FOOD_ID_ONION = 'd1df368e-6ed1-4a50-bb7d-6163c15df1d3';

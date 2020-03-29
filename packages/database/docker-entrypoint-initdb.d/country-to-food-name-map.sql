@@ -18,6 +18,6 @@ VALUES
   (
     'dcec5b2c-403b-43ae-8745-ef368987552c',
     'd6e57673-eee8-444a-b7be-d9ab553052cf',
-    'c6f78568-fe23-47e4-8e65-55934199a39f',
+    'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
     'Down Under Beetroot'
   );

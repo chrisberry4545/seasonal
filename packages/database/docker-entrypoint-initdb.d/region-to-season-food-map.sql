@@ -19,13 +19,13 @@ VALUES
   (
     '01b40983-876c-42f0-959d-38cf98fea1c3',
     'gbr',
-    'c6f78568-fe23-47e4-8e65-55934199a39f',
+    'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
     '41bcbb3a-5599-4f0c-8da9-3144cc5be6de'
   ),
   (
     '22be80d3-5154-43e7-a750-f0d03e4ca91a',
     'gbr',
-    'c6f78568-fe23-47e4-8e65-55934199a39f',
+    'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
     'eec0b2bb-4fbd-46df-b905-8d2ee2fb991a'
   ),
   (
@@ -44,6 +44,6 @@ VALUES
   (
     '2214870d-ccb5-479d-b6d0-2d7fb5692857',
     'aus-sydney',
-    'c6f78568-fe23-47e4-8e65-55934199a39f',
+    'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
     'eec0b2bb-4fbd-46df-b905-8d2ee2fb991a'
   );

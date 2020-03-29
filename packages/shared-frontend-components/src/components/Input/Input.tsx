@@ -7,17 +7,20 @@ export const Input: FC<{
   placeholder?: string,
   onChange: (newValue: string) => void,
   onKeyDown?: KeyboardEventHandler,
-  value?: string | number
+  value?: string | number,
+  e2eTag?: string
 }> = ({
   children,
   className,
   type = 'text',
   placeholder,
+  e2eTag,
   onChange,
   onKeyDown,
   value
 }) => (
   <input
+    data-e2e={e2eTag}
     className={`${(className || '')} c-input`}
     placeholder={placeholder}
     type={type}

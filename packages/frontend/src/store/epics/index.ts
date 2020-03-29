@@ -12,7 +12,6 @@ import {
   initFoodDetails$,
   initAllSeasonsWithFoodData$,
   goToAllSeasonsView$,
-  goBack$,
   goToSettingsPage$
 } from './route.epics';
 
@@ -29,7 +28,6 @@ export const rootEpic = combineEpics(
   goToRecipeLink$,
   goToFoodLink$,
   goToFoodDetails$,
-  goBack$,
   initFoodDetails$,
   initAllSeasonsWithFoodData$,
   goToFoodTable$,

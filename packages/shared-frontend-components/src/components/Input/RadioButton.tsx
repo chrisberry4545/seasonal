@@ -15,6 +15,7 @@ export const RadioButton: FC<{
   label
 }) => (
   <label
+    data-e2e={`radio-btn-${value}`}
     htmlFor={value}
     className={`${(className || '')} c-radio-button ${
       defaulToChecked ? 'c-radio-button--selected' : ''

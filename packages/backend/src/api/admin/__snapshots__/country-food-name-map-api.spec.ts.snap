@@ -3,24 +3,24 @@
 exports[`REST endpoint testing for /admin/country-food-name-map create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
 Object {
   "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
-  "foodId": "c6f78568-fe23-47e4-8e65-55934199a39f",
-  "name": "c6f78568-fe23-47e4-8e65-55934199a39f",
+  "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+  "name": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
 }
 `;
 
 exports[`REST endpoint testing for /admin/country-food-name-map delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
   "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
-  "foodId": "c6f78568-fe23-47e4-8e65-55934199a39f",
-  "name": "c6f78568-fe23-47e4-8e65-55934199a39f",
+  "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+  "name": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
 }
 `;
 
 exports[`REST endpoint testing for /admin/country-food-name-map edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
-  "foodId": "c6f78568-fe23-47e4-8e65-55934199a39f",
-  "name": "c6f78568-fe23-47e4-8e65-55934199a39f",
+  "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+  "name": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
 }
 `;
 
@@ -28,7 +28,7 @@ exports[`REST endpoint testing for /admin/country-food-name-map get all when log
 Array [
   Object {
     "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
-    "foodId": "c6f78568-fe23-47e4-8e65-55934199a39f",
+    "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
     "id": "dcec5b2c-403b-43ae-8745-ef368987552c",
     "name": "Down Under Beetroot",
   },
@@ -38,7 +38,7 @@ Array [
 exports[`REST endpoint testing for /admin/country-food-name-map get single item when logged in as an admin Returns the expected result 1`] = `
 Object {
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
-  "foodId": "c6f78568-fe23-47e4-8e65-55934199a39f",
+  "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
   "id": "dcec5b2c-403b-43ae-8745-ef368987552c",
   "name": "Down Under Beetroot",
 }

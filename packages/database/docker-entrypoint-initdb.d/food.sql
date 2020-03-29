@@ -18,10 +18,10 @@ INSERT INTO public.food (
 )
 VALUES
   (
-    'c6f78568-fe23-47e4-8e65-55934199a39f',
+    'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
     'Beetroot',
     ARRAY[]::uuid[],
-    'https://beetroot.com',
+    'https://eat-seasonal.co.uk/images/food/broccoli.jpg',
     'beetroot description'
   ),
   (

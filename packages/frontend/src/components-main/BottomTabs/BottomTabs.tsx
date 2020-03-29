@@ -23,11 +23,13 @@ export const BottomTabs: FC<IBottomTabProps> = ({
 }) => (
   <nav className='c-bottom-tabs'>
     <BareButton
+      e2eTag='bottom-tab-food'
       className={addTabClasses(isCurrentTabFood)}
       onClick={goToFoodTab}>
       Food
     </BareButton>
     <BareButton
+      e2eTag='bottom-tab-recipes'
       className={addTabClasses(isCurrentTabRecipes)}
       onClick={goToRecipesTab}>
       Recipes

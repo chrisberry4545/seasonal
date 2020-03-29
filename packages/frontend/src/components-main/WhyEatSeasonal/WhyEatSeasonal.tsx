@@ -18,7 +18,7 @@ const summaryColumns: ISummaryColumnList = {
 };
 
 export const WhyEatSeasonal: FC = () => (
-  <div className='c-why-eat-seasonal'>
+  <div className='c-why-eat-seasonal' data-e2e='why-eat-seasonal-section'>
     <h2 className='c-why-eat-seasonal__heading'>
       <TextHeadingLarge>
         Why Eat Seasonal?

@@ -1,20 +1,16 @@
 import React, { FC } from 'react';
 import './PrimaryButton.scss';
+import { IButton } from './Button.interface';
 
-export const PrimaryButton: FC<{
-  className?: string,
-  onClick?: () => void,
-  type?: 'button' | 'submit',
-  e2eName?: string
-}> = ({
+export const PrimaryButton: FC<IButton> = ({
   className,
   children,
   onClick,
   type = 'button',
-  e2eName
+  e2eTag
 }) => (
   <button
-    data-e2e={e2eName}
+    data-e2e={e2eTag}
     type={type} className={`${(className || '')} c-primary-button`}
     onClick={onClick}>
     { children }

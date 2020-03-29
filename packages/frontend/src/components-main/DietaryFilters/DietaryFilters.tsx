@@ -23,7 +23,7 @@ export const DietaryFilters: FC<IDietaryFiltersProps> = ({
   dietType,
   update
 }) => (
-  <div className='c-dietary-filters'>
+  <div className='c-dietary-filters' data-e2e='dietary-filters'>
     <RadioButtonGroup
       groupName='dietary-filter'
       radioButtons={radioButtons}

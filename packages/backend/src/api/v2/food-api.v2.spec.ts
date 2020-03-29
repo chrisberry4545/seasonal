@@ -5,7 +5,7 @@ import {
 import supertest, { Response } from 'supertest';
 import { V2_ENDPOINT, FOOD_ENDPOINT } from '../../config';
 import {
-  RECIPES_ID_PICKLED_BEETROOT,
+  RECIPES_ID_BEETROOT_SAUCE,
   SEASON_ID_JANUARY,
   SEASON_ID_FEBRUARY,
   FOOD_ID_BEETROOT,
@@ -62,10 +62,10 @@ describe('Get single food item', () => {
     expect(response.body.seasons[1].id).toBe(SEASON_ID_FEBRUARY);
   });
   test('Hydrates a foods primaryFoodInRecipe ids if they exist', () => {
-    expect(response.body.primaryFoodInRecipe[0].id).toBe(RECIPES_ID_PICKLED_BEETROOT);
+    expect(response.body.primaryFoodInRecipe[0].id).toBe(RECIPES_ID_BEETROOT_SAUCE);
   });
   test('Hydrates a foods primaryFoodInRecipe names if they exist', () => {
-    expect(response.body.primaryFoodInRecipe[0].name).toBe('Pickled Beetroot');
+    expect(response.body.primaryFoodInRecipe[0].name).toBe('Pasta with a Beetroot sauce');
   });
   test('Returns an empty array for a foods secondaryFoodInRecipe if there is none', () => {
     expect(response.body.secondaryFoodInRecipe).toHaveLength(0);
