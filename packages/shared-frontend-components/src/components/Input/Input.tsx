@@ -8,19 +8,19 @@ export const Input: FC<{
   onChange: (newValue: string) => void,
   onKeyDown?: KeyboardEventHandler,
   value?: string | number,
-  e2eTag?: string
+  'data-e2e'?: string
 }> = ({
   children,
   className,
   type = 'text',
   placeholder,
-  e2eTag,
   onChange,
   onKeyDown,
-  value
+  value,
+  ...rest
 }) => (
   <input
-    data-e2e={e2eTag}
+    data-e2e={rest['data-e2e']}
     className={`${(className || '')} c-input`}
     placeholder={placeholder}
     type={type}

@@ -28,7 +28,7 @@ VALUES
     'dd9ba012-8f8e-48af-9775-0139374dd94c',
     'Apple',
     ARRAY[]::uuid[],
-    'https://apple.com',
+    'https://eat-seasonal.co.uk/images/food/broccoli.jpg',
     'apple description'
   ),
   (

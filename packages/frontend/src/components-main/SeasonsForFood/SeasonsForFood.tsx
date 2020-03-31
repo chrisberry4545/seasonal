@@ -32,7 +32,7 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
           seasonIndex
         ) => (
           <BareButton
-            e2eTag='season-for-food-btn'
+            data-e2e='season-for-food-btn'
             key={name}
             className={
               `c-season-for-food__season` +

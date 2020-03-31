@@ -1,9 +1,10 @@
 import { goToSettingsPage, clickRegion } from '../support/settings-page';
 import { expectToBeOnFoodListPage } from '../support/food-list-page';
-import { expectAllLoadingToBeComplete } from '../support/general';
+import { expectAllLoadingToBeComplete, reset } from '../support/general';
 
 describe('Settings page', () => {
   beforeEach(() => {
+    reset();
     goToSettingsPage();
     expectAllLoadingToBeComplete();
   });

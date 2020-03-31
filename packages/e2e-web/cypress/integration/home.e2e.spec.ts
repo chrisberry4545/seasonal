@@ -7,9 +7,13 @@ import {
   expectWhyEatSeasonalSectionToExist
 } from '../support/home-page';
 import { expectToBeOnFoodListPage } from '../support/food-list-page';
+import { reset } from '../support/general';
 
 describe('Home page', () => {
-  beforeEach(() => goToHomePage());
+  beforeEach(() => {
+    reset();
+    goToHomePage();
+  });
 
   it('can go to food list page', () => {
     clickGoToWebVersion();

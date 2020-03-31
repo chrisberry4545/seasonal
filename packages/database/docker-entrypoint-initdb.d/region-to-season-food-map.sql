@@ -40,10 +40,10 @@ VALUES
     '053c46cd-584e-46c5-a70d-b79b9ded3cca',
     '41bcbb3a-5599-4f0c-8da9-3144cc5be6de'
   ),
-  -- Sydney
+  -- USA-1
   (
     '2214870d-ccb5-479d-b6d0-2d7fb5692857',
-    'aus-sydney',
+    'usa-1',
     'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
     'eec0b2bb-4fbd-46df-b905-8d2ee2fb991a'
   );

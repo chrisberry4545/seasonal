@@ -10,13 +10,19 @@ import {
   clickDietFiltersAll,
   clickDietFiltersVegan,
   clickDietFiltersVegetarian,
-  expectAllLoadingToBeComplete
+  expectAllLoadingToBeComplete,
+  reset,
+  clickCloseRegionChangePrompt
 } from '../support/general';
+import { clickMenuSeasonJan } from '../support/menu';
 
 describe('Recipes list', () => {
   beforeEach(() => {
+    reset();
     goToFoodListPage();
     expectAllLoadingToBeComplete();
+    clickCloseRegionChangePrompt();
+    clickMenuSeasonJan();
     clickRecipesTab();
   });
 

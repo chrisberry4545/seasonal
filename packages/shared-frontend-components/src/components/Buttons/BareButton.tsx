@@ -7,10 +7,10 @@ export const BareButton: FC<IButton> = ({
   children,
   onClick,
   type = 'button',
-  e2eTag
+  ...rest
 }) => (
   <button
-    data-e2e={e2eTag}
+    data-e2e={rest['data-e2e']}
     type={type}
     className={`${(className || '')} c-bare-button`}
     onClick={onClick}>

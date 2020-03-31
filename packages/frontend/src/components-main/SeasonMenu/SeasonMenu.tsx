@@ -47,7 +47,7 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
               { allBasicSeasonData &&
                   allBasicSeasonData.map(({ name }, index) => (
                   <BareButton
-                    e2eTag={`season-menu-${name}`}
+                    data-e2e={`season-menu-${name}`}
                     key={name}
                     className={
                       `c-season-menu__button ${
@@ -63,7 +63,7 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
                 ))
               }
               <BareButton
-                e2eTag='season-menu-All'
+                data-e2e='season-menu-All'
                 className={
                   `c-season-menu__button ${
                     isCurrentRouteAllSeasons
@@ -75,7 +75,7 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
                 <TextMedium>All seasons</TextMedium>
               </BareButton>
               <BareButton
-                e2eTag='season-menu-Settings'
+                data-e2e='season-menu-Settings'
                 className={
                   `c-season-menu__button ${
                     isCurrentRouteSettings

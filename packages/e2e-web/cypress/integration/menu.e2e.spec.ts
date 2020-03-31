@@ -10,10 +10,11 @@ import {
 } from '../support/menu';
 import { expectToBeOnAllSeasonsPage } from '../support/all-seasons-page';
 import { expectToBeOnSettingsPage } from '../support/settings-page';
-import { expectAllLoadingToBeComplete } from '../support/general';
+import { expectAllLoadingToBeComplete, reset } from '../support/general';
 
 describe('Menu', () => {
   beforeEach(() => {
+    reset();
     goToFoodListPage();
     expectAllLoadingToBeComplete();
   });

@@ -20,7 +20,7 @@ export const RecipesForFood: FC<IRecipesForFoodProps> = ({
         Recipes
       </TextHeadingSmall>
       <DietaryFiltersConnector />
-      <ImageGrid e2eTag='recipes-for-food-grid'
+      <ImageGrid data-e2e='recipes-for-food-grid'
         data={currentFoodDetailsRecipes} onClick={onRecipeSelected} />
     </div>
     : null

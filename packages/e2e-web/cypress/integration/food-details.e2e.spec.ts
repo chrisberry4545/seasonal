@@ -15,11 +15,13 @@ import {
   clickDietFiltersAll,
   clickDietFiltersVegan,
   clickDietFiltersVegetarian,
-  expectAllLoadingToBeComplete
+  expectAllLoadingToBeComplete,
+  reset
 } from '../support/general';
 
 describe('Food details', () => {
   beforeEach(() => {
+    reset();
     goToFoodDetailsPage();
     expectAllLoadingToBeComplete();
   });

@@ -22,7 +22,7 @@ export const FoodDetailsTopSection: FC<IFoodDetailsTopSectionProps> = ({
     ? <div className='c-food-details-top-section'>
     <div className='c-food-details-top-section__top-bar'>
       <BareButton
-        e2eTag='food-details-go-back'
+        data-e2e='food-details-go-back'
         className='c-food-details-top-section__back-button'
         onClick={onGoBack}>
         <ArrowIcon />

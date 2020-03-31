@@ -19,7 +19,7 @@ Object {
 exports[`REST endpoint testing for /admin/region-food-season-map edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
   "foodId": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
-  "regionId": "aus-sydney",
+  "regionId": "usa-1",
   "seasonId": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
 }
 `;
@@ -53,7 +53,7 @@ Array [
   Object {
     "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
     "id": "2214870d-ccb5-479d-b6d0-2d7fb5692857",
-    "regionId": "aus-sydney",
+    "regionId": "usa-1",
     "seasonId": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
   },
 ]

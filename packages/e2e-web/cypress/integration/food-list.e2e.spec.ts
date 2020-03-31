@@ -5,13 +5,15 @@ import {
   expectOnlyBeetrootToBeShown
 } from '../support/food-list-page';
 import { expectToBeOnFoodDetailsPage } from '../support/food-details-page';
-import { expectAllLoadingToBeComplete } from '../support/general';
-import { clickMenuSeasonFeb } from '../support/menu';
+import { expectAllLoadingToBeComplete, reset } from '../support/general';
+import { clickMenuSeasonJan } from '../support/menu';
 
 describe('Food list', () => {
   beforeEach(() => {
+    reset();
     goToFoodListPage();
-    clickMenuSeasonFeb();
+    expectAllLoadingToBeComplete();
+    clickMenuSeasonJan();
     expectAllLoadingToBeComplete();
   });
 

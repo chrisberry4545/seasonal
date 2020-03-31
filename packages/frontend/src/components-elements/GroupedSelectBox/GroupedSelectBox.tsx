@@ -6,13 +6,13 @@ import './GroupedSelectBox.scss';
 export const GroupedSelectBox: FC<{
   groups: IGroupedSelectOptions[] | undefined,
   onSelected?: (selectedValue: string) => void,
-  e2eTag?: string
+  'data-e2e'?: string
 }> = ({
   groups,
   onSelected,
-  e2eTag
+  ...rest
 }) => (
-  <div data-e2e={e2eTag}>
+  <div data-e2e={rest['data-e2e']}>
   {
     groups && groups.map((group) => (
       <div className='c-grouped-select-box__group' key={group.groupName}>
@@ -22,7 +22,7 @@ export const GroupedSelectBox: FC<{
         {
           group.selectOptions.map((option) =>
             <BareButton
-              e2eTag={`select-option-${option.name}`}
+              data-e2e={`select-option-${option.name}`}
               className={
                 'c-grouped-select-box__option'
                 + (option.isSelected

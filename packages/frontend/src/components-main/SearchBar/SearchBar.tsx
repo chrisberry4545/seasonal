@@ -44,7 +44,7 @@ export const SearchBar: FC<ISearchBarProps> = ({
         focusOnInputIfSearchVisible(ref, isSearchBarVisible)
       )
     }>
-    <Input e2eTag='search-bar'
+    <Input data-e2e='search-bar'
       className='c-search-bar__input'
       onChange={(newSearchTerm) => onSearchChanged(newSearchTerm)}
       placeholder='Search' />

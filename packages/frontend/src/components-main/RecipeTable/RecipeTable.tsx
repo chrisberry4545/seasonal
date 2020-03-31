@@ -26,7 +26,7 @@ export const RecipeTable: FC<IRecipeTableProps> = ({
         ? <div className='c-food-table__loading-spinner-wrapper'>
           <LoadingSpinner />
         </div>
-        : <ImageGrid e2eTag='recipes-grid'
+        : <ImageGrid data-e2e='recipes-grid'
             data={recipes} onClick={onRecipeClick} />
       }
     </div>
