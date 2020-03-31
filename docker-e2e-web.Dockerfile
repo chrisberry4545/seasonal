@@ -7,4 +7,4 @@ RUN yarn policies set-version berry
 
 COPY packages/healthcheck ./packages/healthcheck
 COPY packages/e2e-web ./packages/e2e-web
-RUN yarn install
+RUN yarn install --immutable

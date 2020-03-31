@@ -5,7 +5,7 @@ commands:
     steps:
       - run:
           name: Install dependencies
-          command: yarn install
+          command: yarn install --immutable
 
 jobs:
   backend_test:
