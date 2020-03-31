@@ -60,3 +60,5 @@ services:
     command: yarn workspace @chrisb-dev/seasonal-e2e-web test
     environment:
       CYPRESS_BASE_URL: http://frontend-test:5201
+      CYPRESS_VIDEO: "false"
+      CYPRESS_SCREENSHOT_ON_RUN_FAILURE: "false"

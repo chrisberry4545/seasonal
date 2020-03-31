@@ -2,21 +2,21 @@
 
 exports[`Get single food item Retrieves a single food item 1`] = `
 Object {
-  "id": "c6f78568-fe23-47e4-8e65-55934199a39f",
-  "imageUrlSmall": "https://beetroot.com",
+  "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+  "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
   "name": "Beetroot",
   "primaryFoodInRecipe": Array [
     Object {
       "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
-      "imageUrlSmall": "https://pickled-beetroot.com/image",
+      "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
       "isVegan": true,
       "isVegetarian": false,
       "linkUrl": "https://pickled-beetroot.com",
-      "name": "Pickled Beetroot",
+      "name": "Pasta with a Beetroot sauce",
     },
     Object {
       "id": "053c46cd-584e-46c5-a70d-b79b9ded3cca",
-      "imageUrlSmall": "https://apple-beetroot-and-cheese.com/image",
+      "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
       "isVegan": false,
       "isVegetarian": false,
       "linkUrl": "https://apple-beetroot-and-cheese.com",

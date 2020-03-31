@@ -8,6 +8,7 @@ export const LocationSelector: FC<ILocationSelectorProps> = ({
   setRegion
 }) => (
   <GroupedSelectBox
+    data-e2e='location-selector'
     groups={countryAndRegionSelectGroup}
     onSelected={setRegion} />
 );

@@ -14,13 +14,14 @@ export const RecipesForFood: FC<IRecipesForFoodProps> = ({
   currentFoodDetailsRecipes,
   onRecipeSelected
 }) => (
-  !isLoading && currentFoodDetailsRecipes && currentFoodDetailsRecipes.length > 0
+  !isLoading
     ? <div className='c-recipes-for-food'>
       <TextHeadingSmall className='c-recipes-for-food__heading'>
         Recipes
       </TextHeadingSmall>
       <DietaryFiltersConnector />
-      <ImageGrid data={currentFoodDetailsRecipes} onClick={onRecipeSelected} />
+      <ImageGrid data-e2e='recipes-for-food-grid'
+        data={currentFoodDetailsRecipes} onClick={onRecipeSelected} />
     </div>
     : null
 );

@@ -2,6 +2,11 @@
 
 version: "3.3"
 services:
+
+  postgres-test:
+    volumes:
+      - ./packages/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
+
   backend-test:
     volumes:
       - ./packages/backend:/usr/app/packages/backend
@@ -19,6 +24,9 @@ services:
       - /usr/app/packages/shared-frontend-utilities/node_modules
 
   frontend-e2e:
+    environment:
+      CYPRESS_VIDEO: "true"
+      CYPRESS_SCREENSHOT_ON_RUN_FAILURE: "true"
     volumes:
       - ./packages/e2e-web:/usr/app/packages/e2e-web/
       - /usr/app/packages/e2e-web/node_modules

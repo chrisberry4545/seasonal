@@ -8,7 +8,7 @@ import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import {
   SEASON_ID_JANUARY,
   SEASON_ID_FEBRUARY,
-  REGION_ID_SYDNEY,
+  REGION_ID_USA,
   SEASON_INDEX_JANUARY,
   SEASON_INDEX_FEBRUARY,
   SEASON_INDEX_MARCH
@@ -85,7 +85,7 @@ describe('Get single season with food', () => {
   describe('when the requested season has food data', () => {
     beforeAll(async () => {
       response = await makeSingleSeasonWithFoodRequest(
-        SEASON_INDEX_FEBRUARY, REGION_ID_SYDNEY
+        SEASON_INDEX_FEBRUARY, REGION_ID_USA
       );
     });
 

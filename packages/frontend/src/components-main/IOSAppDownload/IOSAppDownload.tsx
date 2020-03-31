@@ -4,6 +4,7 @@ import './IOSAppDownload.scss';
 
 export const IOSAppDownload: FC<{}> = () => (
   <a className='c-ios-app-download'
+    data-e2e='ios-app-download'
     href='https://apps.apple.com/us/app/eat-seasonal/id1496551124?ls=1'>
     <img className='c-ios-app-download__image'
       alt='Get it on the iOS store'

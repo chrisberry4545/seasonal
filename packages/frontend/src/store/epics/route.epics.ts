@@ -25,7 +25,7 @@ import {
   SET_REGION,
   SHOW_LOCATION_SETTINGS_POPUP
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { push, goBack } from 'connected-react-router';
+import { push } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
 import { IState } from '../../interfaces';
 import { selectCurrentFoodDetailsId, selectIsCurrentRouteAllSeasons } from '../selectors';
@@ -121,23 +121,13 @@ export const goToFoodTable$: WebSeasonalEpic = (
 ): Observable<Action> => (
   actions$.pipe(
     ofType(
+      SET_REGION,
+      GO_BACK_FROM_SETTINGS_PAGE,
+      GO_BACK_FROM_FOOD_DETAILS,
       FOOD_DETAILS_SELECT_SEASON,
       SELECT_SEASON
     ),
     mapTo(push(FOOD_TABLE_URL))
-  )
-);
-
-export const goBack$: WebSeasonalEpic = (
-  actions$: ActionsObservable<Action>
-): Observable<Action> => (
-  actions$.pipe(
-    ofType(
-      SET_REGION,
-      GO_BACK_FROM_SETTINGS_PAGE,
-      GO_BACK_FROM_FOOD_DETAILS
-    ),
-    mapTo(goBack())
   )
 );
 

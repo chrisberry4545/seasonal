@@ -1,2 +1,5 @@
+import './food-details-page';
+import './food-list-page';
 import './home-page';
-import './navigation';
+import './menu';
+import './settings-page';

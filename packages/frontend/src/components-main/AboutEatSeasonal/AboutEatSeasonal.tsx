@@ -8,7 +8,7 @@ import {
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 export const AboutEatSeasonal: FC = () => (
-  <div className='c-about-eat-seasonal'>
+  <div className='c-about-eat-seasonal' data-e2e='about-section'>
     <h1 className='c-about-eat-seasonal__heading'>
       <TextHeadingLarge>
         About Eat Seasonal

@@ -10,7 +10,7 @@ generateRestEndpointTests<IRecipe>({
     isVegetarian: false,
     linkUrl: 'http://new.com',
     name: 'new-recipe',
-    primaryFoodInRecipeIds: ['c6f78568-fe23-47e4-8e65-55934199a39f'],
+    primaryFoodInRecipeIds: ['f6a680ee-6d6e-4c42-a99d-15e575c32c20'],
     secondaryFoodInRecipeIds: ['dd9ba012-8f8e-48af-9775-0139374dd94c']
   } as IRecipe,
   validItemForEdit: {
@@ -20,12 +20,12 @@ generateRestEndpointTests<IRecipe>({
     linkUrl: 'http://new-thing.com',
     name: 'new-recipe-edited',
     primaryFoodInRecipeIds: [
-      'c6f78568-fe23-47e4-8e65-55934199a39f',
+      'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
       'dd9ba012-8f8e-48af-9775-0139374dd94c'
     ],
     secondaryFoodInRecipeIds: [
       'dd9ba012-8f8e-48af-9775-0139374dd94c',
-      'c6f78568-fe23-47e4-8e65-55934199a39f'
+      'f6a680ee-6d6e-4c42-a99d-15e575c32c20'
     ]
   } as IRecipe
 });

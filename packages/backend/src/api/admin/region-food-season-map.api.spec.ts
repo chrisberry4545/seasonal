@@ -11,7 +11,7 @@ generateRestEndpointTests<IRegionFoodSeasonMap>({
   } as IRegionFoodSeasonMap,
   validItemForEdit: {
     foodId: 'd1df368e-6ed1-4a50-bb7d-6163c15df1d3',
-    regionId: 'aus-sydney',
+    regionId: 'usa-1',
     seasonId: '41bcbb3a-5599-4f0c-8da9-3144cc5be6de'
   } as IRegionFoodSeasonMap
 });

@@ -4,6 +4,7 @@ import './AndroidAppDownload.scss';
 
 export const AndroidAppDownload: FC<{}> = () => (
   <a className='c-android-app-download'
+    data-e2e='android-app-download'
     href={
     'https://play.google.com/store/apps/details?id=com.chrisbdev.seasonal&p' +
       'campaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'

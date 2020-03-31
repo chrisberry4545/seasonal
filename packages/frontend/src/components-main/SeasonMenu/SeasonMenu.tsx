@@ -39,6 +39,7 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
       }
     </PoseGroup>
     <nav
+      data-e2e='season-menu'
       className={`c-season-menu ${isMenuOpen ? 'c-season-menu--is-open' : ''}`}>
       {
         !isLoading
@@ -46,6 +47,7 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
               { allBasicSeasonData &&
                   allBasicSeasonData.map(({ name }, index) => (
                   <BareButton
+                    data-e2e={`season-menu-${name}`}
                     key={name}
                     className={
                       `c-season-menu__button ${
@@ -60,22 +62,26 @@ export const SeasonMenu: FC<ISeasonMenuProps> = ({
                   </BareButton>
                 ))
               }
-              <BareButton className={
-                `c-season-menu__button ${
-                  isCurrentRouteAllSeasons
-                    ? 'c-season-menu__button--selected'
-                    : ''
-                }`
-                }
+              <BareButton
+                data-e2e='season-menu-All'
+                className={
+                  `c-season-menu__button ${
+                    isCurrentRouteAllSeasons
+                      ? 'c-season-menu__button--selected'
+                      : ''
+                    }`
+                  }
                 onClick={onAllSeasonsSelected}>
                 <TextMedium>All seasons</TextMedium>
               </BareButton>
-              <BareButton className={
-                `c-season-menu__button ${
-                  isCurrentRouteSettings
-                    ? 'c-season-menu__button--selected'
-                    : ''
-                }`
+              <BareButton
+                data-e2e='season-menu-Settings'
+                className={
+                  `c-season-menu__button ${
+                    isCurrentRouteSettings
+                      ? 'c-season-menu__button--selected'
+                      : ''
+                    }`
                 }
                 onClick={onSettingsSelected}>
                 <TextMedium>Settings</TextMedium>

@@ -11,9 +11,10 @@ import { TextMedium } from '@chrisb-dev/seasonal-shared-frontend-components';
 export const ImageGrid: FC<IImageGrid> = ({
   data,
   onClick,
-  skipAnimation
+  skipAnimation,
+  ...rest
 }) => (
-  <div className='c-image-grid'>
+  <div data-e2e={rest['data-e2e']} className='c-image-grid'>
     {
       data && data.length
         ? data.map((item) => (

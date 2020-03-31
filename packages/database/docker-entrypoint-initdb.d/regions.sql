@@ -28,8 +28,8 @@ VALUES
     FALSE
   ),
   (
-    'aus-sydney',
-    'Sydney',
+    'usa-1',
+    'USA',
     'd6e57673-eee8-444a-b7be-d9ab553052cf',
     -50,
     -50,

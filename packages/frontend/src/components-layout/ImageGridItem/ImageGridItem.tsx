@@ -18,14 +18,15 @@ export const ImageGridItem: FC<IImageGridItem> = ({
   name,
   skipAnimation
 }) => (
-  <div onClick={() => onClick && onClick(id)}
+  <div data-e2e='grid-item' onClick={() => onClick && onClick(id)}
     className='c-image-grid-item'>
     <div className='c-image-grid-item__inner'>
       <div className='c-image-grid-item__image'>
         <BackgroundImageWithLoadingSpinner
           src={imageUrlSmall} skipAnimation={skipAnimation}/>
       </div>
-      <TextMedium className='c-image-grid-item__text'>
+      <TextMedium
+        className='c-image-grid-item__text'>
         {name}
       </TextMedium>
     </div>

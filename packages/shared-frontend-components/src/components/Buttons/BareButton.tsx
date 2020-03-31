@@ -1,15 +1,19 @@
 import React, { FC } from 'react';
 import './BareButton.scss';
+import { IButton } from './Button.interface';
 
-export const BareButton: FC<{
-  className?: string,
-  onClick?: () => void
-}> = ({
+export const BareButton: FC<IButton> = ({
   className,
   children,
-  onClick
+  onClick,
+  type = 'button',
+  ...rest
 }) => (
-  <button className={`${(className || '')} c-bare-button`} onClick={onClick}>
+  <button
+    data-e2e={rest['data-e2e']}
+    type={type}
+    className={`${(className || '')} c-bare-button`}
+    onClick={onClick}>
     { children }
   </button>
 );

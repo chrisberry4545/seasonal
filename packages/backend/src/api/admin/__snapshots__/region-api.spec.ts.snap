@@ -43,14 +43,6 @@ Array [
     "name": "Region set to disabled",
   },
   Object {
-    "code": "aus-sydney",
-    "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
-    "isDisabled": false,
-    "lat": -50,
-    "lng": -50,
-    "name": "Sydney",
-  },
-  Object {
     "code": "gbr",
     "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
     "isDisabled": false,
@@ -58,16 +50,24 @@ Array [
     "lng": 50,
     "name": "UK",
   },
+  Object {
+    "code": "usa-1",
+    "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+    "isDisabled": false,
+    "lat": -50,
+    "lng": -50,
+    "name": "USA",
+  },
 ]
 `;
 
 exports[`REST endpoint testing for /admin/region get single item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "code": "aus-sydney",
+  "code": "usa-1",
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
   "isDisabled": false,
   "lat": -50,
   "lng": -50,
-  "name": "Sydney",
+  "name": "USA",
 }
 `;

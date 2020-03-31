@@ -22,6 +22,7 @@ export const FoodDetailsTopSection: FC<IFoodDetailsTopSectionProps> = ({
     ? <div className='c-food-details-top-section'>
     <div className='c-food-details-top-section__top-bar'>
       <BareButton
+        data-e2e='food-details-go-back'
         className='c-food-details-top-section__back-button'
         onClick={onGoBack}>
         <ArrowIcon />
@@ -33,6 +34,7 @@ export const FoodDetailsTopSection: FC<IFoodDetailsTopSectionProps> = ({
     {
       foodImageUrl && <img src={foodImageUrl}
         alt={foodName}
+        data-e2e='food-details-img'
         className='c-food-details-top-section__food-image'/>
     }
   </div>
