@@ -22,13 +22,21 @@ const getQueryString = (
   return queryString;
 };
 
+const handleErrors = async (resp: Response) => {
+  const result = await resp.json();
+  if (resp.status !== 200) {
+    throw result;
+  }
+  return result;
+};
+
 export const getCurrentSeasonIndex = (): number => new Date().getUTCMonth();
 
 export const getAllSeasons = (
   countryCode?: string
 ): Promise<IBaseSeason[]> => {
   const queryString = getQueryString(undefined, undefined, countryCode);
-  return fetch(`${SEASON_URL}${queryString}`).then((resp) => resp.json());
+  return fetch(`${SEASON_URL}${queryString}`).then(handleErrors);
 };
 
 export const getSeasonWithFood = (
@@ -37,8 +45,8 @@ export const getSeasonWithFood = (
 ): Promise<IHydratedSeason> => {
   const queryString = getQueryString(undefined, undefined, countryCode);
   return fetch(
-      `${SEASON_WITH_FOOD_URL}/${seasonIndex}${queryString}`
-  ).then((resp) => resp.json());
+    `${SEASON_WITH_FOOD_URL}/${seasonIndex}${queryString}`
+  ).then(handleErrors);
 };
 
 export const getAllSeasonsWithFood = (
@@ -46,7 +54,7 @@ export const getAllSeasonsWithFood = (
 ): Promise<IHydratedSeason[]> => {
   const queryString = getQueryString(undefined, undefined, countryCode);
   return fetch(`${SEASON_WITH_FOOD_URL}${queryString}`)
-    .then((resp) => resp.json());
+    .then(handleErrors);
 };
 
 export const getSeasonWithRecipes = (
@@ -57,8 +65,8 @@ export const getSeasonWithRecipes = (
 ): Promise<IHydratedSeason> => {
   const queryString = getQueryString(isVegetarian, isVegan, countryCode);
   return fetch(
-      `${SEASON_WITH_RECIPES_URL}/${seasonIndex}${queryString}`
-  ).then((resp) => resp.json());
+    `${SEASON_WITH_RECIPES_URL}/${seasonIndex}${queryString}`
+  ).then(handleErrors);
 };
 
 export const getAllSeasonsWithRecipes = (
@@ -66,7 +74,7 @@ export const getAllSeasonsWithRecipes = (
 ): Promise<IHydratedSeason[]> => {
   const queryString = getQueryString(undefined, undefined, countryCode);
   return fetch(`${SEASON_WITH_RECIPES_URL}${queryString}`)
-    .then((resp) => resp.json());
+    .then(handleErrors);
 };
 
 export const getFoodDetailsData = (
@@ -77,9 +85,8 @@ export const getFoodDetailsData = (
 ): Promise<IHydratedFood> => {
   const queryString = getQueryString(isVegetarian, isVegan, countryCode);
   return fetch(`${FOOD_DETAILS_URL}/${foodId}${queryString}`)
-    .then((resp) => resp.json());
+    .then(handleErrors);
 };
 
-export const getCountries = (): Promise<ICountry[]> => (
-  fetch(COUNTRY_URL).then((resp) => resp.json())
-);
+export const getCountries = (): Promise<ICountry[]> =>
+  fetch(COUNTRY_URL).then(handleErrors);

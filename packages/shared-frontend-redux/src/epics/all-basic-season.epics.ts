@@ -10,7 +10,8 @@ import {
   setAllSeasonsStart,
   setAllBasicSeasonsSuccess,
   SET_REGION,
-  SET_USER_REGION_DETECTED
+  SET_USER_REGION_DETECTED,
+  setError
 } from '../actions';
 
 import {
@@ -22,7 +23,7 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
-import { IState } from '@chrisb-dev/seasonal-shared-models';
+import { IState, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { selectSettingsRegionCode } from '../selectors';
 
 export const getAllBasicSeasonsStartEpic$: SharedSeasonalEpic = (
@@ -46,7 +47,10 @@ export const getAllBasicSeasonsEpic$: SharedSeasonalEpic = (
     ofType(SET_ALL_BASIC_SEASONS_START),
     withLatestFrom(state$),
     map(([, state]) => selectSettingsRegionCode(state)),
-    switchMap((regionCode) => getAllSeasons(regionCode)),
-    map((seasonData) => setAllBasicSeasonsSuccess(seasonData))
+    switchMap((regionCode) =>
+      getAllSeasons(regionCode)
+        .then((seasonData) => setAllBasicSeasonsSuccess(seasonData))
+        .catch((error: IBackendError) => setError(error))
+    )
   )
 );

@@ -16,7 +16,9 @@ export const seasonApi = (router = Router()) => {
       const results = await fetchAllSeasonData(countryCode);
       return res.json(results);
     } catch (err) {
-      return res.status(500).send(err);
+      return res.status(500).send({
+        message: err.message
+      });
     }
   });
   return router;

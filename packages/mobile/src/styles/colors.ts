@@ -1,6 +1,7 @@
 export const colors = {
   backgroundColor: '#FFFFFF',
   black: '#000000',
+  errorColor: '#FF6363',
   greyLight: '#EEEEEE',
   greyMed: '#CCCCCC',
   primaryText: '#20303C',

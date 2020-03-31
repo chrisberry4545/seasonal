@@ -8,6 +8,8 @@ export * from './current-food-details-data-state.interface';
 
 export * from './current-season-data-state.interface';
 
+export * from './error-state.interface';
+
 export * from './settings-state.interface';
 
 export * from './ui-state.interface';

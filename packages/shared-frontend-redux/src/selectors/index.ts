@@ -8,6 +8,8 @@ export * from './current-food-details.selectors';
 
 export * from './current-season.selectors';
 
+export * from './error.selectors';
+
 export * from './settings.selectors';
 
 export * from './ui.selectors';

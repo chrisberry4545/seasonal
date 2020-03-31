@@ -14,6 +14,7 @@ import { settingsReducer } from './settings.reducer';
 
 import { uiReducer } from './ui.reducer';
 import { countryReducer } from './country.reducer';
+import { errorReducer } from './error.reducer';
 
 export const allReducers = {
   allBasicSeasonData: allBasicSeasonReducer,
@@ -21,6 +22,7 @@ export const allReducers = {
   countryData: countryReducer,
   currentFoodDetailsData: currentFoodDetailsReducer,
   currentSeasonData: currentSeasonWithFoodReducer,
+  error: errorReducer,
   settings: settingsReducer,
   ui: uiReducer
 };

@@ -11,7 +11,9 @@ export const countryApi = (router = Router()) => {
       const result = await fetchAllCountryData();
       return res.json(result);
     } catch (err) {
-      return res.status(500).send(err);
+      return res.status(500).send({
+        message: err.message
+      });
     }
   });
   return router;
