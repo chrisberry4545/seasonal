@@ -3,7 +3,6 @@
 
 .c-toast {
   align-items: center;
-  background-color: $selection-color-alt-2;
   bottom: 0;
   display: flex;
   flex-direction: row;
@@ -12,6 +11,12 @@
   position: fixed;
   width: 100%;
 }
+  .c-toast--info {
+    background-color: $selection-color-alt-2;
+  }
+  .c-toast--error {
+    background-color: $error-color;
+  }
 
 .c-toast__close-btn {
   width: 40px;
