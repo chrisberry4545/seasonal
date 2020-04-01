@@ -4,6 +4,8 @@ export * from './CurrentSeasonName/CurrentSeasonName.connector';
 
 export * from './DietaryFilters/DietaryFilters.connector';
 
+export * from './ErrorDisplay/ErrorDisplay.connector';
+
 export * from './FoodDetailsLoader/FoodDetailsLoader.connector';
 
 export * from './FoodDetailsTopSection/FoodDetailsTopSection.connector';

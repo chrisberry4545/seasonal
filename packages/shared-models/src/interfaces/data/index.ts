@@ -1,3 +1,5 @@
+export * from './backend-error.interface';
+
 export * from './base-season.interface';
 
 export * from './country-food-name-map.interface';

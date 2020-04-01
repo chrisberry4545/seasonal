@@ -12,7 +12,8 @@ import {
   OPEN_MENU,
   CLOSE_MENU,
   RECIPE_ITEM_CLICKED,
-  FOOD_ITEM_CLICKED
+  FOOD_ITEM_CLICKED,
+  SET_ERROR
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import {
@@ -33,7 +34,8 @@ const ACTIONS_TO_TRACK = [
   GO_TO_RECIPES_TABS,
   GO_TO_WEB_VERSION,
   RECIPE_ITEM_CLICKED,
-  FOOD_ITEM_CLICKED
+  FOOD_ITEM_CLICKED,
+  SET_ERROR
 ];
 
 export const trackActionEpic$: WebSeasonalEpic = (

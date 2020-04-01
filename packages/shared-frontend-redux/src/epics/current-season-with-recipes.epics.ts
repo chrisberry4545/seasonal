@@ -13,7 +13,8 @@ import {
   INIT_SETTINGS,
   SET_DIET_TYPE,
   SET_REGION,
-  SET_USER_REGION_DETECTED
+  SET_USER_REGION_DETECTED,
+  setError
 } from '../actions';
 
 import {
@@ -25,7 +26,7 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
-import { IState, DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { IState, DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { selectCurrentSeasonIndex, selectSettingsDietType, selectSettingsRegionCode } from '../selectors';
 
 export const getCurrentSeasonWithRecipesStartEpic$: SharedSeasonalEpic = (
@@ -63,7 +64,8 @@ export const getCurrentSeasonWithRecipesEpic$: SharedSeasonalEpic = (
         dietType === DIET_TYPE.VEGAN,
         regionCode
       )
-    )),
-    map((recipesData) => setCurrentSeasonWithRecipesSuccess(recipesData))
+        .then((recipesData) => setCurrentSeasonWithRecipesSuccess(recipesData))
+        .catch((error: IBackendError) => setError(error))
+    ))
   )
 );

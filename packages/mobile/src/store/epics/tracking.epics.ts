@@ -26,7 +26,8 @@ import {
   SHOW_SEARCH_BAR,
   selectSettingsUserId,
   INIT_SETTINGS,
-  USER_REGION_DETECTED
+  USER_REGION_DETECTED,
+  SET_ERROR
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import {
@@ -63,7 +64,8 @@ const ACTIONS_TO_TRACK = [
   SEND_FEEDBACK_IMPROVEMENTS_SUCCESS,
   SHOW_FEEDBACK_POPUP,
   CLOSE_FEEDBACK_POPUP,
-  USER_REGION_DETECTED
+  USER_REGION_DETECTED,
+  SET_ERROR
 ];
 
 export const initTrackingUser$: AppSeasonalEpic = (

@@ -8,7 +8,8 @@ import {
   USER_REGION_DETECTED,
   setUserRegionDetected,
   SET_USER_REGION_DETECTED,
-  hideRegionChangePrompt
+  hideRegionChangePrompt,
+  setError
 } from '../actions';
 import {
   map,
@@ -22,7 +23,7 @@ import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
 import { getCountries } from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { IState } from '@chrisb-dev/seasonal-shared-models';
+import { IState, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { selectSettingsRegionCode } from '../selectors';
 
 export const getCountriesStart$: SharedSeasonalEpic = (
@@ -39,8 +40,11 @@ export const getCountries$: SharedSeasonalEpic = (
 ): Observable<Action> => (
   actions$.pipe(
     ofType(INIT_APP),
-    switchMap(() => getCountries()),
-    map((countries) => getCountriesSuccess(countries))
+    switchMap(() =>
+      getCountries()
+        .then((countries) => getCountriesSuccess(countries))
+        .catch((error: IBackendError) => setError(error))
+    )
   )
 );
 

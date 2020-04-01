@@ -12,7 +12,8 @@ import {
   setCurrentSeasonWithFoodStart,
   SELECT_SEASON,
   SET_REGION,
-  SET_USER_REGION_DETECTED
+  SET_USER_REGION_DETECTED,
+  setError
 } from '../actions';
 
 import {
@@ -24,7 +25,7 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
-import { IState } from '@chrisb-dev/seasonal-shared-models';
+import { IState, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { selectCurrentSeasonIndex, selectSettingsRegionCode } from '../selectors';
 
 export const getCurrentSeasonWithFoodStartEpic$: SharedSeasonalEpic = (
@@ -55,7 +56,8 @@ export const getCurrentSeasonWithFoodEpic$: SharedSeasonalEpic = (
     })),
     switchMap(({regionCode, seasonIndex}) => (
       getSeasonWithFood(seasonIndex, regionCode))
-    ),
-    map((foodData) => setCurrentSeasonWithFoodSuccess(foodData))
+        .then((foodData) => setCurrentSeasonWithFoodSuccess(foodData))
+        .catch((error: IBackendError) => setError(error))
+    )
   )
 );

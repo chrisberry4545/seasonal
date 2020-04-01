@@ -6,7 +6,8 @@ import {
 
 import {
   SET_ALL_SEASONS_WITH_FOOD_START,
-  setAllSeasonsWithFoodSuccess
+  setAllSeasonsWithFoodSuccess,
+  setError
 } from '../actions';
 
 import {
@@ -17,7 +18,7 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
-import { IState } from '@chrisb-dev/seasonal-shared-models';
+import { IState, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { selectSettingsRegionCode } from '../selectors';
 
 export const getAllSeasonsWithFood$: SharedSeasonalEpic = (
@@ -28,7 +29,10 @@ export const getAllSeasonsWithFood$: SharedSeasonalEpic = (
     ofType(SET_ALL_SEASONS_WITH_FOOD_START),
     withLatestFrom(state$),
     map(([, state]) => selectSettingsRegionCode(state)),
-    switchMap((regionCode) => getAllSeasonsWithFood(regionCode)),
-    map((seasonData) => setAllSeasonsWithFoodSuccess(seasonData))
+    switchMap((regionCode) =>
+      getAllSeasonsWithFood(regionCode)
+        .then((seasonData) => setAllSeasonsWithFoodSuccess(seasonData))
+        .catch((error: IBackendError) => setError(error))
+    )
   )
 );

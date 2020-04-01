@@ -20,7 +20,9 @@ export const seasonWithRecipesApi = (router = Router()) => {
       const result = await fetchAllSeasonsWithRecipes(countryCode);
       return res.json(result);
     } catch (err) {
-      return res.status(500).send(err);
+      return res.status(500).send({
+        message: err.message
+      });
     }
   });
   router.get('/:seasonIndex', async (req: Request, res: Response) => {
@@ -37,7 +39,9 @@ export const seasonWithRecipesApi = (router = Router()) => {
       );
       return res.json(result);
     } catch (err) {
-      return res.status(500).send(err.message);
+      return res.status(500).send({
+        message: err.message
+      });
     }
   });
   return router;

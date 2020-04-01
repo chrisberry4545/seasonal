@@ -8,6 +8,7 @@ services:
       - ./packages/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
 
   backend-test:
+    command: yarn workspace @chrisb-dev/seasonal-backend test
     volumes:
       - ./packages/backend:/usr/app/packages/backend
       - /usr/app/packages/backend/node_modules

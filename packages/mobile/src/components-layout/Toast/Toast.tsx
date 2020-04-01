@@ -6,7 +6,6 @@ import { colors } from '../../styles/colors';
 
 const styleToast: ViewStyle = {
   alignItems: 'center',
-  backgroundColor: colors.selectionColorAlt2,
   bottom: 0,
   display: 'flex',
   flexDirection: 'row',
@@ -19,18 +18,32 @@ const styleToastInner: ViewStyle = {
   width: '90%'
 };
 
+type ToastTypes = 'error' | 'info';
+const getTypeColor = (type: ToastTypes): ViewStyle => {
+  switch (type) {
+    case 'info':
+      return {
+        backgroundColor: colors.selectionColorAlt2
+      };
+    case 'error':
+      return {
+        backgroundColor: colors.errorColor
+      };
+  }
+};
+
 export const Toast: FC<{
   onClose?: () => void,
-  isVisible: boolean
+  isVisible: boolean,
+  type: ToastTypes
 }> = ({
   children,
   onClose,
-  isVisible
-} = {
-  isVisible: false
+  isVisible = false,
+  type = 'info'
 }) => (
   isVisible
-    ? <View style={styleToast}>
+    ? <View style={[styleToast, getTypeColor(type)]}>
         <View style={styleToastInner}>
           { children }
         </View>

@@ -22,7 +22,9 @@ export const foodApi = (router = Router()) => {
       );
       return res.json(result);
     } catch (err) {
-      return res.status(500).send(err);
+      return res.status(500).json({
+        message: err.message
+      });
     }
   });
   return router;
