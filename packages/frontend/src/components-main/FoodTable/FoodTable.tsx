@@ -22,7 +22,7 @@ export const FoodTable: FC<IFoodTableProps> = ({
       ? <div className='c-food-table__loading-spinner-wrapper'>
         <LoadingSpinner />
       </div>
-      : <Switable <ImageGrid data-e2e='food-grid'
+      : <ImageGrid data-e2e='food-grid'
           data={food} onClick={onFoodClick} />
     : null
 );
