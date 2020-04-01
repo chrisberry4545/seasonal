@@ -11,8 +11,10 @@ import {
 export const IntroPage: FC = () => (
   <div className='c-intro-page'>
     <div className='c-intro-page__top-section'>
-      <img alt='Eat Seasonal splash'
-        className='c-intro-page__splash-image' src='/splash.png'/>
+      <div className='c-intro-page__splash-wrapper'>
+        <img alt='Eat Seasonal splash'
+          className='c-intro-page__splash-image' src='/splash.png'/>
+      </div>
       <ViewAppLinks />
     </div>
     <AboutEatSeasonal />

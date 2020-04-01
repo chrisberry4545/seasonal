@@ -72,6 +72,7 @@ export const getStoredSettings$: WebSeasonalEpic = (
       :
       {
         dietType: DIET_TYPE.ALL,
+        isListViewShown: false,
         selectedRegionCode: undefined,
         timesAppStarted: 1
       })
