@@ -13,7 +13,7 @@ import {
   SET_USER_REGION_DETECTED,
   HIDE_REGION_CHANGE_PROMPT
 } from '../actions';
-import { IUiState } from '@chrisb-dev/seasonal-shared-models';
+import { IUiState } from '../interfaces';
 import { Action } from 'redux';
 
 const getDefaultState = (): IUiState => ({

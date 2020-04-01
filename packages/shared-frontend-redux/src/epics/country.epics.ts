@@ -23,7 +23,8 @@ import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
 import { getCountries } from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { IState, IBackendError } from '@chrisb-dev/seasonal-shared-models';
+import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 import { selectSettingsRegionCode } from '../selectors';
 
 export const getCountriesStart$: SharedSeasonalEpic = (

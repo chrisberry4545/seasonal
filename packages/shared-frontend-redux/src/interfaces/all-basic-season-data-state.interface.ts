@@ -1,4 +1,4 @@
-import { IBaseSeason } from '../../interfaces';
+import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IAllBasicSeasonDataState {
   isLoading: boolean;

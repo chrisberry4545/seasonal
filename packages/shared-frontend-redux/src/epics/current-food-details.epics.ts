@@ -25,9 +25,9 @@ import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
 import {
   IBackendError,
-  IState,
   DIET_TYPE
 } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 import { selectSettingsDietType, selectCurrentFoodDetailsId, selectSettingsRegionCode } from '../selectors';
 
 export const updateFoodDetailsOnDietTypeChangeEpic$: SharedSeasonalEpic = (

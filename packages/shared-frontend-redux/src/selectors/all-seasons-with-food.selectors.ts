@@ -1,6 +1,7 @@
 
 import { createSelector } from 'reselect';
-import { IState, IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 
 const selectAllSeasonsWithFoodState = (
   state: IState

@@ -1,10 +1,10 @@
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 
 import {
-  ISettingsState,
   DIET_TYPE
 } from '@chrisb-dev/seasonal-shared-models';
 import {
+  ISettingsState,
   SET_DIET_TYPE,
   selectSettingsState,
   INIT_APP,

@@ -1,4 +1,4 @@
-import { IErrorState } from '@chrisb-dev/seasonal-shared-models';
+import { IErrorState } from '../interfaces';
 import { Action } from 'redux';
 import {
   HIDE_ERROR_DISPLAY,

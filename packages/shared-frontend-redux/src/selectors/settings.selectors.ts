@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 import {
-  IState,
   DIET_TYPE
 } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 
 export const selectSettingsState = (state: IState) => state.settings;
 

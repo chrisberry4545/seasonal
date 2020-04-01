@@ -1,6 +1,6 @@
 import { Epic } from 'redux-observable';
 import { Action } from 'redux';
-import { IState } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 
 export type SeasonalEpic<
   TInputAction extends Action,

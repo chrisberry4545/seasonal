@@ -26,7 +26,8 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
-import { IState, DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
+import { DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 import { selectCurrentSeasonIndex, selectSettingsDietType, selectSettingsRegionCode } from '../selectors';
 
 export const getCurrentSeasonWithRecipesStartEpic$: SharedSeasonalEpic = (

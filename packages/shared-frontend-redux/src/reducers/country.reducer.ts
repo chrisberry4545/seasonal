@@ -3,7 +3,7 @@ import {
   GET_COUNTRIES_SUCCESS,
   IGetCountriesSuccess
 } from '../actions';
-import { ICountryState } from '@chrisb-dev/seasonal-shared-models';
+import { ICountryState } from '../interfaces';
 import { Action } from 'redux';
 
 const getDefaultState = (): ICountryState => ({

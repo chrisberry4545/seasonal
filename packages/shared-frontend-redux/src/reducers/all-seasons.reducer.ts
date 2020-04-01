@@ -6,7 +6,7 @@ import {
   SET_ALL_SEASONS_WITH_RECIPES_START,
   SET_ALL_SEASONS_WITH_RECIPES_SUCCESS
 } from '../actions';
-import { IAllSeasonDataWithFoodState } from '@chrisb-dev/seasonal-shared-models';
+import { IAllSeasonDataWithFoodState } from '../interfaces';
 import { Action } from 'redux';
 
 const populateApiData = (

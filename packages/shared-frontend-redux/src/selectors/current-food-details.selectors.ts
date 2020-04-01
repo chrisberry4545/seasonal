@@ -2,10 +2,9 @@ import { createSelector } from 'reselect';
 import {
   IHydratedFood,
   IBaseSeason,
-  IState,
-  ICurrentFoodDetailsDataState,
   IRecipe
 } from '@chrisb-dev/seasonal-shared-models';
+import { IState, ICurrentFoodDetailsDataState } from '../interfaces';
 
 const selectCurrentFoodDetailsState = (
   state: IState

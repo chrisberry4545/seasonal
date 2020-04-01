@@ -10,7 +10,7 @@ import {
   SET_SELECTED_SEASON_NAME,
   ISetSelectedSeasonName
 } from '../actions';
-import { ICurrentSeasonDataState } from '@chrisb-dev/seasonal-shared-models';
+import { ICurrentSeasonDataState } from '../interfaces';
 import { Action } from 'redux';
 import { getCurrentSeasonIndex } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 

@@ -3,7 +3,7 @@ import {
   SET_ALL_BASIC_SEASONS_SUCCESS,
   ISetAllBasicSeasonDataSuccess
 } from '../actions';
-import { IAllBasicSeasonDataState } from '@chrisb-dev/seasonal-shared-models';
+import { IAllBasicSeasonDataState } from '../interfaces';
 import { Action } from 'redux';
 
 const getDefaultState = (): IAllBasicSeasonDataState => ({
