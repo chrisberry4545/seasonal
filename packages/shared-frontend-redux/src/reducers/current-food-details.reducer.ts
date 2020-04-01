@@ -3,7 +3,7 @@ import {
   SET_CURRENT_FOOD_DETAILS_SUCCESS,
   ISetCurrentFoodDetailsSuccess
 } from '../actions';
-import { ICurrentFoodDetailsDataState } from '@chrisb-dev/seasonal-shared-models';
+import { ICurrentFoodDetailsDataState } from '../interfaces';
 import { Action } from 'redux';
 
 const getDefaultState = (): ICurrentFoodDetailsDataState => ({

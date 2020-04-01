@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { IState } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 
 const selectErrorState = (state: IState) => state.error;
 

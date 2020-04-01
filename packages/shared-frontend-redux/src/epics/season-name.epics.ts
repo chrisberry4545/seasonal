@@ -13,7 +13,7 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
-import { IState } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 import { selectAllBasicSeasons } from '../selectors';
 
 export const setSeasonSelectedSeasonName$: SharedSeasonalEpic = (

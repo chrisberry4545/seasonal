@@ -1,4 +1,4 @@
-import { IHydratedSeason } from '../../interfaces';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 
 export interface IAllSeasonDataWithFoodState {
   isFoodLoading: boolean;

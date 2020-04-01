@@ -1,6 +1,6 @@
 import {
   IHydratedSeason
-} from '../../interfaces';
+} from '@chrisb-dev/seasonal-shared-models';
 
 export interface ICurrentSeasonDataState {
   currentSeasonIndex: number;

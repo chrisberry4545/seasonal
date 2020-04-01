@@ -11,16 +11,15 @@ import {
   userRegionDetected,
   SET_USER_REGION_DETECTED,
   selectSettingsRegionCode,
-  INIT_SETTINGS
+  INIT_SETTINGS,
+  ISettingsState
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import {
-  ISettingsState,
   DIET_TYPE
 } from '@chrisb-dev/seasonal-shared-models';
 import {
   getNearestRegionFromLatLng
 } from '@chrisb-dev/seasonal-shared-frontend-utilities';
-
 import { IState } from '../../interfaces';
 
 import {

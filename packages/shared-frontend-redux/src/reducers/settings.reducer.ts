@@ -1,4 +1,5 @@
-import { DIET_TYPE, ISettingsState } from '@chrisb-dev/seasonal-shared-models';
+import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { ISettingsState } from '../interfaces';
 import { Action } from 'redux';
 import {
   SET_DIET_TYPE,

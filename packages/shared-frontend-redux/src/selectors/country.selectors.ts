@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect';
 import {
-  IState, ICountryState, ICountry, IRegion
+  ICountry, IRegion
 } from '@chrisb-dev/seasonal-shared-models';
+import { IState, ICountryState } from '../interfaces';
 
 const selectCountryState = (
   state: IState

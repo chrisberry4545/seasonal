@@ -1,6 +1,7 @@
 
 import { createSelector } from 'reselect';
-import { IState, IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IState } from '../interfaces';
 
 const selectAllBasicSeasonDataState = (
   state: IState

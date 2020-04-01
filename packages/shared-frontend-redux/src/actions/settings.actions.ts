@@ -1,5 +1,6 @@
 import { Action } from 'redux';
-import { ISettingsState, DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { ISettingsState } from '../interfaces';
 
 export interface IInitSettings extends Action {
   settings: ISettingsState;
