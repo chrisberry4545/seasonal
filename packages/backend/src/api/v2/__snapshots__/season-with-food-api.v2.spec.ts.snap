@@ -37,6 +37,60 @@ Array [
     "name": "March",
     "seasonIndex": 2,
   },
+  Object {
+    "food": Array [],
+    "id": "a4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "April",
+    "seasonIndex": 3,
+  },
+  Object {
+    "food": Array [],
+    "id": "b4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "May",
+    "seasonIndex": 4,
+  },
+  Object {
+    "food": Array [],
+    "id": "c4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "June",
+    "seasonIndex": 5,
+  },
+  Object {
+    "food": Array [],
+    "id": "d4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "July",
+    "seasonIndex": 6,
+  },
+  Object {
+    "food": Array [],
+    "id": "e4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "August",
+    "seasonIndex": 7,
+  },
+  Object {
+    "food": Array [],
+    "id": "f5812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "September",
+    "seasonIndex": 8,
+  },
+  Object {
+    "food": Array [],
+    "id": "a1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "October",
+    "seasonIndex": 9,
+  },
+  Object {
+    "food": Array [],
+    "id": "b1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "November",
+    "seasonIndex": 10,
+  },
+  Object {
+    "food": Array [],
+    "id": "c1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "December",
+    "seasonIndex": 11,
+  },
 ]
 `;
 

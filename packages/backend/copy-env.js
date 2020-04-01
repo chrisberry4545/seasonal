@@ -9,7 +9,7 @@ copyfiles(
       console.error('Failed to copy', err);
       return;
     }
-    if (process.env.IS_CI) {
+    if (process.env.IS_CI === 'true') {
       fs.rename(
         './dist/.env-ci.yml',
         './dist/.env.yml',

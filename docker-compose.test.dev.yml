@@ -9,6 +9,8 @@ services:
 
   backend-test:
     command: yarn workspace @chrisb-dev/seasonal-backend test
+    environment:
+      IS_CI: "false"
     volumes:
       - ./packages/backend:/usr/app/packages/backend
       - /usr/app/packages/backend/node_modules
