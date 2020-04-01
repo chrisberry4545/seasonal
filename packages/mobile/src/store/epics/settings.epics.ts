@@ -73,6 +73,7 @@ export const getStoredSettings$: AppSeasonalEpic = (
       :
       {
         dietType: DIET_TYPE.ALL,
+        isListViewShown: false,
         selectedRegionCode: undefined,
         timesAppStarted: 1
       })

@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react';
-import { ScrollView, ViewStyle, TextStyle } from 'react-native';
+import { ScrollView } from 'react-native';
 import {
   HeaderConnecter
 } from '../Header/Header.connector';
@@ -7,20 +7,11 @@ import {
 import {
   ISeasonDetailsContentWrapperInputProps
 } from './SeasonDetailsContentWrapper.interface';
-import { MainContainer, TopLoadingSpinner } from '../../components-layout';
-import { TextHeadingSmall } from '../../components-elements';
-
-const styleSeasonDetailsContentWrapper: TextStyle = {
-  height: 20,
-  marginBottom: 12,
-  marginTop: 12,
-  textAlign: 'center',
-  width: '100%'
-};
-
-const styleSeasonalDetailsContentWrapper: ViewStyle = {
-  flex: 1
-};
+import {
+  MainContainer,
+  TopLoadingSpinner,
+  SeasonNameView
+} from '../../components-layout';
 
 export const SeasonDetailsContentWrapper:
 FC<ISeasonDetailsContentWrapperInputProps> = ({
@@ -30,10 +21,8 @@ FC<ISeasonDetailsContentWrapperInputProps> = ({
 }) => (
       <MainContainer>
         <HeaderConnecter />
-        <ScrollView style={ styleSeasonalDetailsContentWrapper }>
-          <TextHeadingSmall style={styleSeasonDetailsContentWrapper}>
-            {currentSeasonName}
-          </TextHeadingSmall>
+        <ScrollView>
+          <SeasonNameView name={currentSeasonName} />
           {
             !isLoading
               ? <Fragment>{children}</Fragment>

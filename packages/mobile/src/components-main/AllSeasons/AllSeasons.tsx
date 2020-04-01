@@ -4,7 +4,7 @@ import {
   IAllSeasonsProps
 } from './AllSeasons.interface';
 import {
-  ImageGrid,
+  SwitchableGridOfList,
   SeasonNameView,
   TopLoadingSpinner
 } from '../../components-layout';
@@ -14,17 +14,22 @@ export const AllSeasons: FC<IAllSeasonsProps> = ({
   isLoading,
   increaseNumberOfAllFoodSeasonsInView,
   onFoodClick,
-  seasons
+  seasons,
+  isListViewShown,
+  onToggleListView
 }) => (
   isLoading || !seasons
     ? <TopLoadingSpinner />
-    : <FlatList
+    :  <FlatList
         data={seasons}
         renderItem={({ item }) => (
           <Fragment>
             <SeasonNameView name={item.name} />
-            <ImageGrid data={item.food} onClick={onFoodClick}
-              noResultsMessage='No results found' />
+            <SwitchableGridOfList data={ item.food }
+              onClick={ onFoodClick }
+              isListViewShown={isListViewShown}
+              onToggleListView={onToggleListView}
+              />
           </Fragment>
         )}
         keyExtractor={(item) => item.name}

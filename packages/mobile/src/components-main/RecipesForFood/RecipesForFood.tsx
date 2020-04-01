@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { View, TextStyle, ViewStyle, StyleSheet } from 'react-native';
 
 import { IRecipeForFoodProps } from './RecipesForFood.interface';
-import { ImageGrid } from '../../components-layout';
+import { SwitchableGridOfList } from '../../components-layout';
 import { TextHeadingSmall } from '../../components-elements';
 import { styles } from '../../styles';
 import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
@@ -22,7 +22,9 @@ const styleRecipesForFoodTitle: TextStyle = {
 export const RecipesForFood: FC<IRecipeForFoodProps> = ({
   isLoading,
   currentFoodDetailsRecipes,
-  onRecipeSelected
+  onRecipeSelected,
+  isListViewShown,
+  onToggleListView
 }) => (
   !isLoading && currentFoodDetailsRecipes
     ? <View style={styleRecipesForFood}>
@@ -30,10 +32,13 @@ export const RecipesForFood: FC<IRecipeForFoodProps> = ({
         Recipes
       </TextHeadingSmall>
       <DietaryFiltersConnector />
-      <ImageGrid
+      <SwitchableGridOfList
         maxItemsPerRow={3}
+        isListViewShown={isListViewShown}
+        onToggleListView={onToggleListView}
         data={currentFoodDetailsRecipes}
-        onClick={onRecipeSelected} noResultsMessage='No results found' />
+        onClick={onRecipeSelected}
+        noResultsMessage='No results found' />
     </View>
     : null
 );

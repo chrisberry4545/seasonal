@@ -26,3 +26,10 @@ export function setDietType(
     type: SET_DIET_TYPE
   };
 }
+
+export const TOGGLE_LIST_VIEW = 'TOGGLE_LIST_VIEW';
+export function toggleListView(): Action {
+  return {
+    type: TOGGLE_LIST_VIEW
+  };
+}

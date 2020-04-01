@@ -12,7 +12,11 @@ export * from './MainContainer/MainContainer';
 
 export * from './ModalLayout/ModalLayout';
 
+export * from './NoResultsText/NoResultsText';
+
 export * from './SeasonNameView/SeasonNameView';
+
+export * from './SwitchableGridOrList/SwitchableGridOrList';
 
 export * from './Toast/Toast';
 

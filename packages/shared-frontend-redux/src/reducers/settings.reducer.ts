@@ -7,12 +7,14 @@ import {
   IInitSettings,
   SET_REGION,
   ISetRegionAction,
-  SET_USER_REGION_DETECTED
+  SET_USER_REGION_DETECTED,
+  TOGGLE_LIST_VIEW
 } from '../actions';
 import { v4 } from 'uuid';
 
 const getDefaultState = (): ISettingsState => ({
   dietType: DIET_TYPE.ALL,
+  isListViewShown: true,
   selectedRegionCode: undefined,
   timesAppStarted: 0,
   userId: undefined
@@ -40,6 +42,11 @@ export function settingsReducer(
       return {
         ...state,
         selectedRegionCode: (action as ISetRegionAction).regionCode
+      };
+    case TOGGLE_LIST_VIEW:
+      return {
+        ...state,
+        isListViewShown: !state.isListViewShown
       };
     default:
       return state;
