@@ -9,7 +9,9 @@ import {
 import {
   selectVisibleFoodData,
   foodItemClicked,
-  selectIsCurrentSeasonFoodLoading
+  selectIsCurrentSeasonFoodLoading,
+  selectIsListViewShown,
+  toggleListView
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { IState } from '../../interfaces';
 import { Dispatch } from 'redux';
@@ -19,6 +21,7 @@ const mapStateToProps = (
 ): ISeasonFoodInputProps => {
   return {
     food: selectVisibleFoodData(state),
+    isListViewShown: selectIsListViewShown(state),
     isLoading: selectIsCurrentSeasonFoodLoading(state)
   };
 };
@@ -27,7 +30,8 @@ const mapDispatchToProps = (
   dispatch: Dispatch
 ): ISeasonFoodDispatchProps => {
   return {
-    onFoodClick: (foodItemId) => dispatch(foodItemClicked(foodItemId))
+    onFoodClick: (foodItemId) => dispatch(foodItemClicked(foodItemId)),
+    onToggleListView: () => dispatch(toggleListView())
   };
 };
 

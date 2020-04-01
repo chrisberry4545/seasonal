@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import {
-  ImageGrid, TopLoadingSpinner
+  TopLoadingSpinner, SwitchableGridOfList
 } from '../../components-layout';
 
 import {
@@ -13,13 +13,19 @@ import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connec
 export const SeasonRecipes: FC<ISeasonRecipesProps> = ({
   isLoading,
   recipes,
-  onRecipeClick
+  onRecipeClick,
+  isListViewShown,
+  onToggleListView
 }) => (
   <SeasonDetailsContentWrapperConnector>
     <DietaryFiltersConnector />
     {
       !isLoading
-        ? <ImageGrid data={ recipes } onClick={ onRecipeClick } />
+        ? <SwitchableGridOfList data={ recipes }
+            onClick={ onRecipeClick }
+            isListViewShown={isListViewShown}
+            onToggleListView={onToggleListView}
+            />
         : <TopLoadingSpinner />
     }
   </SeasonDetailsContentWrapperConnector>

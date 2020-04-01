@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { View, ViewStyle, TextStyle } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 
 import { IImageGrid } from './ImageGrid.interface';
 
 import { ImageGridItem } from '../ImageGridItem/ImageGridItem';
-import { TextMedium } from '../../components-elements';
+import { NoResultsText } from '../NoResultsText/NoResultsText';
 import { getScreenWidth } from '../../helpers';
 
 const styleImageGrid: ViewStyle = {
@@ -12,13 +12,6 @@ const styleImageGrid: ViewStyle = {
   flexDirection: 'row',
   flexWrap: 'wrap',
   paddingTop: 8
-};
-
-const styleImageGridNoResults: TextStyle = {
-  flex: 1,
-  marginBottom: 40,
-  marginTop: 20,
-  textAlign: 'center'
 };
 
 export const ImageGrid: FC<IImageGrid> = ({
@@ -75,12 +68,7 @@ export const ImageGrid: FC<IImageGrid> = ({
             hasBottomBorder={isNotInLastRow(index)}
             width={getWidth(index)}/>
         ))
-        : noResultsMessage
-          ? <TextMedium
-              style={ styleImageGridNoResults }>
-              { noResultsMessage }
-            </TextMedium>
-          : null
+        : <NoResultsText text={noResultsMessage} />
     }
   </View>;
 };

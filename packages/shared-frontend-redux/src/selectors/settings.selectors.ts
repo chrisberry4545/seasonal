@@ -25,3 +25,8 @@ export const selectSettingsTimesAppStarted = createSelector(
   selectSettingsState,
   (settings): number | undefined => settings.timesAppStarted
 );
+
+export const selectIsListViewShown = createSelector(
+  selectSettingsState,
+  (settings): boolean => settings.isListViewShown
+);

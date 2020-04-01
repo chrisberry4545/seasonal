@@ -6,18 +6,24 @@ import {
 import { ISeasonFoodProps } from './SeasonFood.interface';
 
 import {
-  ImageGrid, TopLoadingSpinner
+  SwitchableGridOfList, TopLoadingSpinner
 } from '../../components-layout';
 
 export const SeasonFood: FC<ISeasonFoodProps> = ({
   isLoading,
   food,
-  onFoodClick
+  onFoodClick,
+  isListViewShown,
+  onToggleListView
 }) => (
   <SeasonDetailsContentWrapperConnector>
     {
     !isLoading
-      ? <ImageGrid data={ food } onClick={onFoodClick} noResultsMessage='No results found' />
+      ? <SwitchableGridOfList
+          isListViewShown={isListViewShown}
+          onToggleListView={onToggleListView}
+          data={food}
+          onClick={onFoodClick} noResultsMessage='No results found' />
       : <TopLoadingSpinner />
     }
   </SeasonDetailsContentWrapperConnector>

@@ -13,12 +13,15 @@ import {
   selectIsAllSeasonsFoodLoading,
   selectAllSeasonsVisibleFoodData,
   increaseNumberOfAllFoodSeasonsInView,
-  foodItemClicked
+  foodItemClicked,
+  toggleListView,
+  selectIsListViewShown
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 const mapStateToProps = (
   state: IState
 ): IAllSeasonsInputProps => ({
+  isListViewShown: selectIsListViewShown(state),
   isLoading: selectIsAllSeasonsFoodLoading(state),
   seasons: selectAllSeasonsVisibleFoodData(state)
 });
@@ -29,7 +32,8 @@ const mapDispatchToProps = (
   increaseNumberOfAllFoodSeasonsInView: () => (
     dispatch(increaseNumberOfAllFoodSeasonsInView())
   ),
-  onFoodClick: (foodItemId: string) => dispatch(foodItemClicked(foodItemId))
+  onFoodClick: (foodItemId: string) => dispatch(foodItemClicked(foodItemId)),
+  onToggleListView: () => dispatch(toggleListView())
 });
 
 export const AllSeasonsConnector = connect(

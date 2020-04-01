@@ -5,7 +5,9 @@ import {
 import {
   selectIsFoodDataOrBasicSeasonsLoading,
   selectVisibleRecipesForFoodDetailsData,
-  foodDetailsSelectRecipe
+  foodDetailsSelectRecipe,
+  selectIsListViewShown,
+  toggleListView
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import { IState } from '../../interfaces';
@@ -19,6 +21,7 @@ const mapStateToProps = (
   state: IState
 ): IRecipeForFoodInputProps => ({
   currentFoodDetailsRecipes: selectVisibleRecipesForFoodDetailsData(state),
+  isListViewShown: selectIsListViewShown(state),
   isLoading: selectIsFoodDataOrBasicSeasonsLoading(state)
 });
 
@@ -27,7 +30,8 @@ const mapDispatchToProps = (
 ): IRecipeForFoodDispatchProps => ({
   onRecipeSelected: (recipeId: string) => (
     dispatch(foodDetailsSelectRecipe(recipeId))
-  )
+  ),
+  onToggleListView: () => dispatch(toggleListView())
 });
 
 export const RecipesForFoodConnecter = connect(
