@@ -12,10 +12,8 @@ import { JWT_SECRET_KEY } from '../../config';
 export const loginApi = (router = Router()) => {
   router.post('/', (req: Request, res: Response, next: NextFunction) => {
     appPassport.authenticate('login', async (err, user) => {
-      const sendAuthorizationError = () => {
-        res.status(401).send({ error: 'Login failed' });
-        return;
-      };
+      const sendAuthorizationError = () =>
+        next({ status: 401, message: 'Login failed' });
       try {
         if (err || !user) {
           return sendAuthorizationError();

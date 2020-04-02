@@ -265,17 +265,32 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
         test('Returns an id', () => {
           expect(getId(result)).toBeDefined();
         });
-        test('the item should be deleted from the database', async () => {
-          const deletedItemResponse = await attachAdminJwtToken(
-            supertest(app).get(`${path}/${getId(result)}`)
-          );
-          expect(deletedItemResponse.body).toBe('');
+
+        describe('when getting the delete item', () => {
+          let deletedItemResponse: Response;
+          beforeAll(async () => {
+            deletedItemResponse = await attachAdminJwtToken(
+              supertest(app).get(`${path}/${getId(result)}`)
+            );
+          });
+
+          test('the item should be deleted from the database', () => {
+            expect(deletedItemResponse.body.message).toBe('Not found');
+          });
+
+          test('the status code should be not found', () => {
+            expect(deletedItemResponse.status).toBe(404);
+          });
         });
       });
 
       if (!adminOnly) {
         describe('when logged in as an editor', () => {
           beforeAll(async () => {
+            const existingItemResponse = await attachAdminJwtToken(
+              supertest(app).post(path).send(validItem)
+            );
+            existingItem = existingItemResponse.body;
             response = await attachEditorJwtToken(
               supertestRequestGenerator()
             );

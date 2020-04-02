@@ -12,7 +12,7 @@ import {
   SEASON_INDEX_JANUARY,
   SEASON_INDEX_FEBRUARY,
   SEASON_INDEX_MARCH
-} from './shared-test-ids';
+} from '../admin/test-utils/shared-test-ids';
 
 const v2SeasonWithFoodUrl = `${V2_ENDPOINT}/${SEASON_WITH_FOOD_ENDPOINT}`;
 

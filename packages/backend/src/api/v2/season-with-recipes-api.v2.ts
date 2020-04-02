@@ -1,7 +1,8 @@
 import {
     Router,
     Request,
-    Response
+    Response,
+    NextFunction
   } from 'express';
 import {
   fetchAllSeasonsWithRecipes,
@@ -12,20 +13,19 @@ import {
   getIsVegetarianFromQueryParams,
   getIsVeganFromQueryParams
 } from '../utils/get-query-params';
+import { get500Error, get404Error } from '../utils';
 
 export const seasonWithRecipesApi = (router = Router()) => {
-  router.get('/', async (req: Request, res: Response) => {
+  router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     const countryCode = getCountryCodeFromQueryParams(req);
     try {
       const result = await fetchAllSeasonsWithRecipes(countryCode);
       return res.json(result);
     } catch (err) {
-      return res.status(500).send({
-        message: err.message
-      });
+      return next(get500Error(err.message));
     }
   });
-  router.get('/:seasonIndex', async (req: Request, res: Response) => {
+  router.get('/:seasonIndex', async (req: Request, res: Response, next: NextFunction) => {
     const { seasonIndex } = req.params;
     const isVegetarian = getIsVegetarianFromQueryParams(req);
     const isVegan = getIsVeganFromQueryParams(req);
@@ -37,11 +37,12 @@ export const seasonWithRecipesApi = (router = Router()) => {
         isVegan,
         countryCode
       );
+      if (!result) {
+        return next(get404Error());
+      }
       return res.json(result);
     } catch (err) {
-      return res.status(500).send({
-        message: err.message
-      });
+      return next(get500Error(err.message));
     }
   });
   return router;

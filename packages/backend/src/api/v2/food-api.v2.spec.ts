@@ -11,7 +11,7 @@ import {
   FOOD_ID_BEETROOT,
   FOOD_ID_ONION,
   RECIPES_ID_APPLE_CHEESE_AND_ONION
-} from './shared-test-ids';
+} from '../admin/test-utils/shared-test-ids';
 
 const v2FoodUrl = `${V2_ENDPOINT}/${FOOD_ENDPOINT}`;
 
