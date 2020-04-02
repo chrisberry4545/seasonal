@@ -1,21 +1,20 @@
-# Override of docker-compose.test.yml
+# Override of docker-compose.yml
 
 version: "3.3"
 services:
 
-  postgres-test:
+  seasonal-database:
     volumes:
       - ./packages/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
 
-  backend-test:
-    command: yarn workspace @chrisb-dev/seasonal-backend test
+  seasonal-backend:
     environment:
       IS_CI: "false"
     volumes:
       - ./packages/backend:/usr/app/packages/backend
       - /usr/app/packages/backend/node_modules
 
-  frontend-test:
+  seasonal-frontend:
     volumes:
       - ./packages/frontend:/usr/app/packages/frontend/
       - /usr/app/packages/frontend/node_modules
@@ -26,7 +25,7 @@ services:
       - ./packages/shared-frontend-utilities:/usr/app/packages/shared-frontend-utilities/
       - /usr/app/packages/shared-frontend-utilities/node_modules
 
-  frontend-e2e:
+  seasonal-e2e-web:
     environment:
       CYPRESS_VIDEO: "true"
       CYPRESS_SCREENSHOT_ON_RUN_FAILURE: "true"

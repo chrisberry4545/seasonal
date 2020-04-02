@@ -1,55 +1,53 @@
 version: "3.3"
 services:
 
-  postgres-dev:
+  seasonal-database:
     build:
       context: .
-      dockerfile: docker-database.Dockerfile
+      dockerfile: docker-seasonal-database.Dockerfile
     ports:
-      - "35432:5432"
+      - "45432:5432"
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: db
-    volumes:
-      - ./packages/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
 
-  backend-dev:
+  seasonal-backend:
     build:
       context: .
-      dockerfile: docker-backend.Dockerfile
+      dockerfile: docker-seasonal-backend.Dockerfile
     depends_on:
-      - postgres-dev
-    environment:
-      DB_CONNECTION_STRING: postgres://user:pass@postgres-dev:5432/db
-      NODE_ENV: development
-      DEFAULT_COUNTRY_ID: gbr
+      - seasonal-database
     ports:
       - "5200:5200"
-    command: yarn backend:dev
-    volumes:
-      - ./packages/backend:/usr/app/packages/backend/
-      - /usr/app/packages/backend/node_modules
-      - ./packages/shared-models:/usr/app/packages/shared-models/
-      - /usr/app/packages/shared-models/node_modules
+    environment:
+      PORT: 5200
+      DB_CONNECTION_STRING: postgres://user:pass@seasonal-database:5432/db
+      DEFAULT_COUNTRY_ID: gbr
+      IS_CI: "true"
+    command: yarn workspace @chrisb-dev/seasonal-backend dev
 
-  frontend-dev:
+  seasonal-frontend:
     build:
       context: .
-      dockerfile: docker-frontend.Dockerfile
+      dockerfile: docker-seasonal-frontend.Dockerfile
     depends_on:
-      - backend-dev
+      - seasonal-backend
     environment:
-      REACT_APP_BACKEND_URL: http://localhost:5200/v2
+      PORT: 5201
+      REACT_APP_BACKEND_URL: http://seasonal-backend:5200/v2
     ports:
       - "5201:5201"
-    command: yarn frontend:dev-only
-    volumes:
-      - ./packages/frontend:/usr/app/packages/frontend/
-      - /usr/app/packages/frontend/node_modules
-      - ./packages/shared-models:/usr/app/packages/shared-models/
-      - /usr/app/packages/shared-models/node_modules
-      - ./packages/shared-frontend-components:/usr/app/packages/shared-frontend-components/
-      - /usr/app/packages/shared-frontend-components/node_modules
-      - ./packages/shared-frontend-utilities:/usr/app/packages/shared-frontend-utilities/
-      - /usr/app/packages/shared-frontend-utilities/node_modules
+    command: yarn workspace @chrisb-dev/seasonal-frontend http-server
+
+  seasonal-e2e-web:
+    build:
+      context: .
+      dockerfile: docker-seasonal-e2e-web.Dockerfile
+    depends_on:
+      - seasonal-frontend
+    command: yarn workspace @chrisb-dev/seasonal-e2e-web test
+    environment:
+      CYPRESS_BASE_URL: http://seasonal-frontend:5201
+      CYPRESS_VIDEO: "false"
+      CYPRESS_SCREENSHOT_ON_RUN_FAILURE: "false"

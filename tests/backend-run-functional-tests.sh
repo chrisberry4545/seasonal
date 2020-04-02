@@ -1,14 +1,14 @@
 #! /bin/bash
 
-DOCKER_COMPOSE_FILES="-f ./docker-compose.test.yml"
+DOCKER_COMPOSE_FILES="-f ./docker-compose.yml"
 if [[ -z "$IS_CI" ]]; then
-  DOCKER_COMPOSE_FILES="${DOCKER_COMPOSE_FILES} -f ./docker-compose.test.dev.yml"
+  DOCKER_COMPOSE_FILES="${DOCKER_COMPOSE_FILES} -f ./docker-compose.dev.yml"
 fi
 
 eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
 echo "Starting tests..."
 
-eval "docker-compose ${DOCKER_COMPOSE_FILES} run --rm backend-test"
+eval "docker-compose ${DOCKER_COMPOSE_FILES} run --rm seasonal-backend yarn backend:test"
 status=$?
 
 eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
