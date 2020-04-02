@@ -45,10 +45,10 @@
     "mobile:dev": "concurrently \"REACT_APP_BACKEND_URL=http://localhost:5200/v2 yarn workspace @chrisb-dev/seasonal-mobile start\" \"yarn backend:dev\" \"yarn shared-models:dev\" \"yarn shared-frontend-utilities:dev\" \"yarn shared-frontend-redux:dev\" --kill-others",
     "mobile:prod": "yarn workspace @chrisb-dev/seasonal-mobile start",
     "e2e:web": "yarn workspace @chrisb-dev/seasonal-e2e-web start",
-    "docker:database:dev": "docker-compose up -d postgres-dev && docker-compose logs --follow",
-    "docker:backend:dev": "docker-compose up -d backend-dev && docker-compose logs --follow",
+    "docker:database:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-database",
+    "docker:backend:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-backend",
+    "docker:frontend:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-frontend",
     "docker:backend:test": "./tests/backend-run-functional-tests.sh",
-    "docker:frontend:dev": "docker-compose up -d frontend-dev && docker-compose logs --follow",
     "docker:e2e:web": "./tests/web-run-e2e-tests.sh"
   },
   "pre-commit": [

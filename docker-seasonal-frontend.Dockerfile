@@ -1,9 +1,8 @@
 FROM node:12.14.0-alpine
 
+# Get Chromium and set variables so React Snap can be used
 ENV CHROME_BIN=/usr/bin/chromium-browser \
     PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-
-# Installs latest Chromium package.
 RUN set -x \
     && apk update \
     && apk upgrade \
@@ -25,4 +24,4 @@ COPY packages/shared-frontend-redux ./packages/shared-frontend-redux
 COPY packages/frontend/package*.json ./packages/frontend/
 RUN yarn install
 COPY packages/frontend ./packages/frontend
-RUN REACT_APP_BACKEND_URL=http://backend-server:5200/v2 yarn workspace @chrisb-dev/seasonal-frontend build
+RUN REACT_APP_BACKEND_URL=http://seasonal-backend:5200/v2 yarn workspace @chrisb-dev/seasonal-frontend build
