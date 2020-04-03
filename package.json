@@ -48,7 +48,7 @@
     "docker:database:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-database",
     "docker:backend:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-backend",
     "docker:frontend:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-frontend",
-    "docker:backend:test": "./tests/backend-run-functional-tests.sh",
+    "docker:backend:test": "./tests/backend-run-integration-tests.sh",
     "docker:e2e:web": "./tests/web-run-e2e-tests.sh"
   },
   "pre-commit": [

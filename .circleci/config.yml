@@ -8,15 +8,15 @@ commands:
           command: yarn install
 
 jobs:
-  backend_test:
+  backend_test_integration:
     docker:
       - image: circleci/node:12.14
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Run backend tests
-          command: IS_CI=true ./tests/backend-run-functional-tests.sh
+          name: Run backend integration tests
+          command: IS_CI=true ./tests/backend-run-integration-tests.sh
 
   backend_deploy:
     docker:
@@ -84,12 +84,12 @@ workflows:
     jobs:
       - backend_approval:
           type: approval
-      - backend_test:
+      - backend_test_integration:
           requires:
            - backend_approval
       - backend_deploy:
           requires:
-            - backend_test
+            - backend_test_integration
       - frontend_approval:
           type: approval
       - frontend_test_e2e:
