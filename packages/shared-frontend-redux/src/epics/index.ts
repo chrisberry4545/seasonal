@@ -8,8 +8,6 @@ import {
   getCurrentSeasonWithRecipesEpic$
 } from './current-season-with-recipes.epics';
 
-import { initAppEpic$ } from './init.epics';
-
 import {
   getAllBasicSeasonsStartEpic$,
   getAllBasicSeasonsEpic$
@@ -36,7 +34,6 @@ import {
 } from './country.epics';
 
 export const rootEpics = [
-  initAppEpic$,
   getCurrentSeasonWithFoodStartEpic$,
   getCurrentSeasonWithFoodEpic$,
   getCurrentSeasonWithRecipesStartEpic$,

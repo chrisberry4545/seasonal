@@ -20,9 +20,11 @@ import {
   storeSettings$,
   detectCountry$
 } from './settings.epics';
+import { initAppEpic$ } from './init.epics';
 
 export const rootEpic = combineEpics(
   ...rootEpics,
+  initAppEpic$,
   trackActionEpic$,
   goToWebVersion$,
   goToRecipeLink$,
