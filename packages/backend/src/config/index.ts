@@ -15,3 +15,5 @@ export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY || 'test-secret';
 
 export const DEFAULT_COUNTRY_ID =
   process.env.DEFAULT_COUNTRY_ID || 'gbr';
+
+export const ENV = process.env.ENV || 'prod';

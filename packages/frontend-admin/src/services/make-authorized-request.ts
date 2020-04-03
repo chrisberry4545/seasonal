@@ -8,6 +8,7 @@ export const makeAuthorizedRequest = async <T>(
     url,
     {
       ...requestOptions,
+      credentials: 'include',
       headers: {
         ...(requestOptions && requestOptions.headers),
         'Content-Type': 'application/json',

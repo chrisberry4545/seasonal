@@ -7,7 +7,7 @@ import {
 
 import { appPassport } from './auth/app-passport';
 import jwt from 'jsonwebtoken';
-import { JWT_SECRET_KEY } from '../../config';
+import { JWT_SECRET_KEY, ENV } from '../../config';
 
 export const loginApi = (router = Router()) => {
   router.post('/', (req: Request, res: Response, next: NextFunction) => {
@@ -28,7 +28,13 @@ export const loginApi = (router = Router()) => {
             JWT_SECRET_KEY as string,
             { expiresIn: '30m' }
           );
-          return res.json({ token });
+          res.cookie('jwt', token, {
+            httpOnly: true,
+            ...(
+              ENV === 'dev' ? {} : { secure: true }
+            )
+          });
+          return res.json({ success: true });
         });
       } catch (error) {
         return sendAuthorizationError();

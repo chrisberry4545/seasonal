@@ -9,6 +9,7 @@ const isAllowedOrigin = (origin: string | undefined) => {
 };
 
 export const corsOptions: CorsOptions = {
+  credentials: true,
   origin: (origin, callback) => {
     if (isAllowedOrigin(origin)) {
       callback(null, true);

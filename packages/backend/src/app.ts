@@ -5,6 +5,7 @@ import {
 } from './middleware/cors-options';
 import { v2Api } from './api/v2';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import { adminApi } from './api/admin';
 import cors from 'cors';
 import {
@@ -17,6 +18,7 @@ const app = express();
 app.use(cors(corsOptions));
 app.use(helmet());
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.use('/', v2Api());
 app.use('/admin', adminApi());

@@ -9,6 +9,7 @@ export const loginRequest = async (
       password,
       username
     }),
+    credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
