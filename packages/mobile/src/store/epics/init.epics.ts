@@ -1,6 +1,6 @@
 import {
   initApp
-} from '../actions';
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import {
   of,
@@ -11,9 +11,9 @@ import {
   mapTo
 } from 'rxjs/operators';
 import { Action } from 'redux';
-import { SharedSeasonalEpic } from './seasonal-epic.type';
+import { AppSeasonalEpic } from './seasonal-epic.type';
 
-export const initAppEpic$: SharedSeasonalEpic = (): Observable<Action> => (
+export const initAppEpic$: AppSeasonalEpic = (): Observable<Action> => (
   of(null).pipe(
     mapTo(initApp())
   )

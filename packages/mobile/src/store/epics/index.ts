@@ -25,9 +25,11 @@ import {
 } from './route.epics';
 import { initTrackingUser$, trackActionEpic$ } from './tracking.epics';
 import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings.epics';
+import { initAppEpic$ } from './init.epics';
 
 export const rootEpic = combineEpics(
   ...rootEpics,
+  initAppEpic$,
   goToAboutUsPage$,
   goToSettingsPage$,
   goToRecipeLink$,
