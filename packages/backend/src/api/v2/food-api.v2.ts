@@ -1,7 +1,8 @@
 import {
   Router,
   Request,
-  Response
+  Response,
+  NextFunction
 } from 'express';
 import { fetchFoodDataWithFilteredRecipes } from '../../fetch-data';
 import {
@@ -9,23 +10,32 @@ import {
   getIsVeganFromQueryParams,
   getCountryCodeFromQueryParams
 } from '../utils/get-query-params';
+import { get500Error, get404Error } from '../utils';
+import { uuidParamValidation } from '../../middleware/uuid-param-validation';
 
 export const foodApi = (router = Router()) => {
-  router.get('/:foodId', async (req: Request, res: Response) => {
-    const { foodId } = req.params;
-    const isVegetarian = getIsVegetarianFromQueryParams(req);
-    const isVegan = getIsVeganFromQueryParams(req);
-    const countryCode = getCountryCodeFromQueryParams(req);
-    try {
-      const result = await fetchFoodDataWithFilteredRecipes(
-        foodId, isVegetarian, isVegan, countryCode
-      );
-      return res.json(result);
-    } catch (err) {
-      return res.status(500).json({
-        message: err.message
-      });
+  router.get(
+    '/:id',
+    uuidParamValidation(),
+    async (
+      req: Request, res: Response, next: NextFunction
+    ) => {
+      const { id } = req.params;
+      const isVegetarian = getIsVegetarianFromQueryParams(req);
+      const isVegan = getIsVeganFromQueryParams(req);
+      const countryCode = getCountryCodeFromQueryParams(req);
+      try {
+        const result = await fetchFoodDataWithFilteredRecipes(
+          id, isVegetarian, isVegan, countryCode
+        );
+        if (!result) {
+          return next(get404Error());
+        }
+        return res.json(result);
+      } catch (err) {
+        return next(get500Error(err.message));
+      }
     }
-  });
+  );
   return router;
 };

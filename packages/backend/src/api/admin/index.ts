@@ -14,6 +14,7 @@ import { recipeApi } from './recipe-api';
 import { regionApi } from './region-api';
 import { regionFoodSeasonMapApi } from './region-food-season-map.api';
 import { userApi } from './user-api';
+import { errorMiddleware } from '../../middleware/error-middleware';
 
 export const adminApi = (router = Router()) => {
   router.use(appPassport.initialize());
@@ -62,5 +63,6 @@ export const adminApi = (router = Router()) => {
     adminAuth,
     userApi()
   );
+  router.use(errorMiddleware());
   return router;
 };

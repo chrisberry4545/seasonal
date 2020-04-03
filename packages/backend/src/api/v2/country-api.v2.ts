@@ -1,19 +1,19 @@
 import {
   Router,
   Request,
-  Response
+  Response,
+  NextFunction
 } from 'express';
 import { fetchAllCountryData } from '../../fetch-data/fetch-country-data';
+import { get500Error } from '../utils';
 
 export const countryApi = (router = Router()) => {
-  router.get('/', async (req: Request, res: Response) => {
+  router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     try {
       const result = await fetchAllCountryData();
       return res.json(result);
     } catch (err) {
-      return res.status(500).send({
-        message: err.message
-      });
+      return next(get500Error(err.message));
     }
   });
   return router;

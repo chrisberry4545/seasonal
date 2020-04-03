@@ -1,8 +1,12 @@
 import {
   Router,
   Request,
-  Response
+  Response,
+  NextFunction
 } from 'express';
+import { get404Error, get500Error } from '../utils';
+import { getError } from '../utils/get-error';
+import { uuidParamValidation } from '../../middleware/uuid-param-validation';
 
 interface IAutoGenOptions<T> {
   getAll: () => Promise<T[]>;
@@ -10,6 +14,7 @@ interface IAutoGenOptions<T> {
   create: (object: T) => Promise<T>;
   edit: (object: T) => Promise<T>;
   deleteOne: (id: string) => Promise<T>;
+  idsAreUUIDs?: boolean;
 }
 
 export const generateRestApi = <T> (
@@ -18,56 +23,83 @@ export const generateRestApi = <T> (
     getOne,
     create,
     edit,
-    deleteOne
+    deleteOne,
+    idsAreUUIDs = true
   }: IAutoGenOptions<T>,
   router = Router()
 ) => {
-  router.get('/', async (req: Request, res: Response) => {
-    try {
-      const results = await getAll();
-      return res.json(results);
-    } catch (err) {
-      return res.status(500).send(err);
+  router.get(
+    '/',
+    async (req: Request, res: Response, next: NextFunction) => {
+      try {
+        const results = await getAll();
+        return res.json(results);
+      } catch (err) {
+        return next(get500Error(err.message));
+      }
     }
-  });
-  router.get('/:id', async (req: Request, res: Response) => {
-    const { id } = req.params;
-    try {
-      const results = await getOne(id);
-      return res.json(results);
-    } catch (err) {
-      return res.status(500).send(err);
+  );
+  router.get(
+    '/:id',
+    idsAreUUIDs ? uuidParamValidation() : [],
+    async (req: Request, res: Response, next: NextFunction) => {
+      const { id } = req.params;
+      try {
+        const result = await getOne(id);
+        if (!result) {
+          return next(get404Error());
+        }
+        return res.json(result);
+      } catch (err) {
+        return next(get500Error(err.message));
+      }
     }
-  });
-  router.post('/', async (req: Request, res: Response) => {
-    const objectToCreate = req.body;
-    if (!objectToCreate) {
-      return res.status(400).json({ error: 'Please provide an item to create' });
+  );
+  router.post(
+    '/',
+    async (req: Request, res: Response, next: NextFunction) => {
+      const objectToCreate = req.body;
+      if (!objectToCreate) {
+        return next(getError('Please provide an item to create', 400));
+      }
+      try {
+        const createdObject = await create(objectToCreate);
+        return res.json(createdObject);
+      } catch (err) {
+        return next(get500Error(err.message));
+      }
     }
-    try {
-      const createdObject = await create(objectToCreate);
-      return res.json(createdObject);
-    } catch (err) {
-      return res.status(500).send(err);
+  );
+  router.patch(
+    '/',
+    async (req: Request, res: Response, next: NextFunction) => {
+      const objectToEdit = req.body;
+      try {
+        const editedObject = await edit(objectToEdit);
+        if (!editedObject) {
+          return next(get404Error());
+        }
+        return res.json(editedObject);
+      } catch (err) {
+        return next(get500Error(err.message));
+      }
     }
-  });
-  router.patch('/', async (req: Request, res: Response) => {
-    const objectToEdit = req.body;
-    try {
-      const editedObject = await edit(objectToEdit);
-      return res.json(editedObject);
-    } catch (err) {
-      return res.status(500).send(err);
+  );
+  router.delete(
+    '/:id',
+    idsAreUUIDs ? uuidParamValidation() : [],
+    async (req: Request, res: Response, next: NextFunction) => {
+      const { id } = req.params;
+      try {
+        const deletedObject = await deleteOne(id);
+        if (!deletedObject) {
+          return next(get404Error());
+        }
+        return res.json(deletedObject);
+      } catch (err) {
+        return next(get500Error(err.message));
+      }
     }
-  });
-  router.delete('/:id', async (req: Request, res: Response) => {
-    const { id } = req.params;
-    try {
-      const deletedObject = await deleteOne(id);
-      return res.json(deletedObject);
-    } catch (err) {
-      return res.status(500).send(err);
-    }
-  });
+  );
   return router;
 };

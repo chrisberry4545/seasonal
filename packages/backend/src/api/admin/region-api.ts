@@ -13,5 +13,6 @@ export const regionApi = () => generateRestApi({
   deleteOne: adminDeleteRegion,
   edit: adminEditRegion,
   getAll: adminGetAllRegions,
-  getOne: adminGetOneRegion
+  getOne: adminGetOneRegion,
+  idsAreUUIDs: false
 });

@@ -31,7 +31,7 @@ export const fetchFoodDataWithFilteredRecipes = async (
   countryCode?: string
 ): Promise<IHydratedFood> => {
   const result = await fetchFoodDataById(foodId, countryCode);
-  return {
+  return result && {
     ...result,
     primaryFoodInRecipe: filterRecipesByDiet(
       result.primaryFoodInRecipe,

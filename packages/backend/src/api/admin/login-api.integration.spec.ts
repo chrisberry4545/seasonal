@@ -1,9 +1,10 @@
 import { Response } from 'supertest';
 import { callLoginEndpointForUser } from './test-utils/login-utils';
+import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
 
 describe('login-api', () => {
   let response: Response;
-  let errorResponse: { error: string };
+  let errorResponse: IBackendError;
 
   describe('when the correct user data is used', () => {
     let result: { token: string };
@@ -36,7 +37,7 @@ describe('login-api', () => {
       expect(response.status).toBe(401);
     });
     test('Returns an error message', () => {
-      expect(errorResponse.error).toBe('Login failed');
+      expect(errorResponse.message).toBe('Login failed');
     });
   });
 
@@ -53,7 +54,7 @@ describe('login-api', () => {
       expect(response.status).toBe(401);
     });
     test('Returns an error message', () => {
-      expect(errorResponse.error).toBe('Login failed');
+      expect(errorResponse.message).toBe('Login failed');
     });
   });
 });

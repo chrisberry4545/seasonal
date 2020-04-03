@@ -10,7 +10,7 @@ import {
   SEASON_INDEX_JANUARY,
   SEASON_INDEX_FEBRUARY,
   SEASON_INDEX_MARCH
-} from './shared-test-ids';
+} from '../admin/test-utils/shared-test-ids';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 
 const v2SeasonWithRecipesUrl = `${V2_ENDPOINT}/${SEASON_WITH_RECIPES_ENDPOINT}`;
