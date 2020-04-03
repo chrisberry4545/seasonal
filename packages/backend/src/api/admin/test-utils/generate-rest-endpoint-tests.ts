@@ -5,6 +5,7 @@ import {
 } from './login-utils';
 import { app } from '../../../app';
 import { testFailedAuthorzation } from './authorization-tests';
+import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
 
 export const generateRestEndpointTests = <T extends { id?: string, code?: string } > ({
   path,
@@ -12,14 +13,16 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
   validItem,
   validItemForEdit,
   propertiesNotReturned = [],
-  adminOnly = false
+  adminOnly = false,
+  idsAreUUIDs = true
 }: {
   path: string,
   singleItemId: string,
   validItem: T,
   validItemForEdit: T,
   propertiesNotReturned?: Array<keyof T>,
-  adminOnly?: boolean
+  adminOnly?: boolean,
+  idsAreUUIDs?: boolean
 }) => {
 
   const getId = (item: T) => item.id || item.code;
@@ -127,7 +130,9 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
       let response: Response;
       let result: T;
       const singleItemPath = `${path}/${singleItemId}`;
-      const supertestRequestGenerator = () => supertest(app).get(singleItemPath);
+      const supertestRequestGenerator = (
+        pathToGet = singleItemPath
+      ) => supertest(app).get(pathToGet);
 
       testFailedAuthorzation(supertestRequestGenerator);
 
@@ -159,6 +164,24 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           test('Returns a status of 200', () => {
             expect(response.status).toBe(200);
           });
+        });
+      }
+
+      if (idsAreUUIDs) {
+        describe('and the id is not valid', () => {
+          let error: IBackendError;
+          beforeAll(async () => {
+            response = await attachAdminJwtToken(
+              supertestRequestGenerator(
+                `${path}/invalid-uuid`
+              )
+            );
+            error = response.body;
+          });
+
+          test('returns a status of 400', () => expect(response.status).toBe(400));
+
+          test('returns an error', () => expect(error.message).toBe('Please provide a valid id'));
         });
       }
     });
@@ -242,8 +265,9 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
         existingItem = existingItemResponse.body;
       });
 
-      const supertestRequestGenerator = () =>
-        supertest(app).delete(`${path}/${getId(existingItem)}`);
+      const supertestRequestGenerator = (
+        pathToUse = `${path}/${getId(existingItem)}`
+      ) => supertest(app).delete(pathToUse);
 
       testFailedAuthorzation(supertestRequestGenerator);
 
@@ -300,6 +324,24 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           test('Returns a status of 200', () => {
             expect(response.status).toBe(200);
           });
+        });
+      }
+
+      if (idsAreUUIDs) {
+        describe('and the id is not valid', () => {
+          let error: IBackendError;
+          beforeAll(async () => {
+            response = await attachAdminJwtToken(
+              supertestRequestGenerator(
+                `${path}/invalid-uuid`
+              )
+            );
+            error = response.body;
+          });
+
+          test('returns a status of 400', () => expect(response.status).toBe(400));
+
+          test('returns an error', () => expect(error.message).toBe('Please provide a valid id'));
         });
       }
     });

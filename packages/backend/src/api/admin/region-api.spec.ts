@@ -2,6 +2,7 @@ import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
 
 generateRestEndpointTests<IDbRegion>({
+  idsAreUUIDs: false,
   path: '/admin/region',
   singleItemId: 'usa-1',
   validItem: {
