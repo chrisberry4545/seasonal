@@ -1,5 +1,3 @@
-export * from './access-token';
-
 export * from './create-country-food-name-map';
 
 export * from './create-country-recipe-name-map';

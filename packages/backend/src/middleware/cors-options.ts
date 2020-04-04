@@ -1,9 +1,8 @@
-import allowedOrigins from './allowed-origins.json';
+import { allowedOrigins } from './allowed-origins';
 import { CorsOptions } from 'cors';
 
 const isAllowedOrigin = (origin: string | undefined) => {
   return !origin || (
-    origin.includes('localhost') ||
     (allowedOrigins as string[]).includes(origin)
   );
 };
@@ -14,7 +13,7 @@ export const corsOptions: CorsOptions = {
     if (isAllowedOrigin(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback({ message: 'Not allowed by CORS', status: 400 } as any);
     }
   }
 };

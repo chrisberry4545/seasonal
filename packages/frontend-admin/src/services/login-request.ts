@@ -1,5 +1,4 @@
 import { LOGIN_URL } from '../config';
-import { setAccessToken } from './access-token';
 
 export const loginRequest = async (
   username: string, password: string
@@ -16,10 +15,9 @@ export const loginRequest = async (
     },
     method: 'POST'
   });
-  const result = await response.json();
-  if (result.status !== 200) {
+  if (response.status !== 200) {
+    const result = await response.json();
     throw new Error(result.message);
   }
-  setAccessToken(result.token);
   return;
 };

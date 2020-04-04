@@ -1,5 +1,3 @@
-import { getAccessTokenHeaders } from './access-token';
-
 export const makeAuthorizedRequest = async <T>(
   url: string,
   requestOptions?: RequestInit
@@ -11,13 +9,12 @@ export const makeAuthorizedRequest = async <T>(
       credentials: 'include',
       headers: {
         ...(requestOptions && requestOptions.headers),
-        'Content-Type': 'application/json',
-        ...getAccessTokenHeaders()
+        'Content-Type': 'application/json'
       }
     }
   );
   if (response.status === 401) {
-    window.location.href = process.env.PUBLIC_URL;
+    // window.location.href = process.env.PUBLIC_URL;
     throw new Error('Unauthorized');
   }
   const result = await response.json();
