@@ -3,17 +3,18 @@ import {
 } from '../../app';
 
 import supertest, { Response } from 'supertest';
-import { V2_ENDPOINT, COUNTRY_ENDPOINT } from '../../config';
-import { ICountry, IRegion } from '@chrisb-dev/seasonal-shared-models';
-
-const countryUrl = `${V2_ENDPOINT}/${COUNTRY_ENDPOINT}`;
+import {
+  ICountry,
+  IRegion
+} from '@chrisb-dev/seasonal-shared-models';
+import { ENDPOINT_V2_COUNTRY } from '../../config';
 
 describe('Get countries', () => {
   let response: Response;
   let result: ICountry[];
   let allRegions: IRegion[];
   beforeAll(async () => {
-    response = await supertest(app).get(`/${countryUrl}`);
+    response = await supertest(app).get(`/${ENDPOINT_V2_COUNTRY}`);
     result = response.body;
     allRegions = result.reduce((regions, country) => [
       ...regions,

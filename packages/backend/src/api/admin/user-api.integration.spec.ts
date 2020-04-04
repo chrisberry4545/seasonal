@@ -1,9 +1,10 @@
 import { IUser } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
+import { ENDPOINT_ADMIN_USER } from '../../config';
 
 generateRestEndpointTests<IUser>({
   adminOnly: true,
-  path: '/admin/user',
+  path: ENDPOINT_ADMIN_USER,
   propertiesNotReturned: ['password'],
   singleItemId: '53f5a3d1-db75-4c62-a309-79b3eea329b3',
   validItem: {

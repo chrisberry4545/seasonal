@@ -1,9 +1,10 @@
 import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
+import { ENDPOINT_ADMIN_REGION } from '../../config';
 
 generateRestEndpointTests<IDbRegion>({
   idsAreUUIDs: false,
-  path: '/admin/region',
+  path: ENDPOINT_ADMIN_REGION,
   singleItemId: 'usa-1',
   validItem: {
     code: 'test-region',

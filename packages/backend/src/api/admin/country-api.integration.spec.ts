@@ -1,8 +1,9 @@
 import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
+import { ENDPOINT_ADMIN_COUNTRY } from '../../config';
 
 generateRestEndpointTests<ICountry>({
-  path: '/admin/country',
+  path: ENDPOINT_ADMIN_COUNTRY,
   singleItemId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
   validItem: {
     name: 'test-1'
