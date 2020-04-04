@@ -13,14 +13,16 @@ export const loginApi = (router = Router()) => {
   router.post('/', (req: Request, res: Response, next: NextFunction) => {
     appPassport.authenticate('login', async (err, user) => {
       const sendAuthorizationError = () =>
-        next({ status: 401, message: 'Login failed' });
+        res.status(401).send({ message: 'Login failed' });
       try {
         if (err || !user) {
-          return sendAuthorizationError();
+          sendAuthorizationError();
+          return;
         }
         req.login(user, { session: false }, (error) => {
           if (error) {
-            return sendAuthorizationError();
+            sendAuthorizationError();
+            return;
           }
           const body = { id : user.id, username : user.username };
           const token = jwt.sign(
@@ -34,10 +36,12 @@ export const loginApi = (router = Router()) => {
               ENV === 'dev' ? {} : { secure: true }
             )
           });
-          return res.json({ success: true });
+          res.json({ success: true });
+          return;
         });
       } catch (error) {
-        return sendAuthorizationError();
+        sendAuthorizationError();
+        return;
       }
     })(req, res, next);
   });

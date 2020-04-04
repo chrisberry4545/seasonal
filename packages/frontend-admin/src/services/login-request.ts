@@ -17,8 +17,8 @@ export const loginRequest = async (
     method: 'POST'
   });
   const result = await response.json();
-  if (result.error) {
-    throw new Error(result.error);
+  if (result.status !== 200) {
+    throw new Error(result.message);
   }
   setAccessToken(result.token);
   return;

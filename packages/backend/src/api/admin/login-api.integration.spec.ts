@@ -1,5 +1,5 @@
 import { Response } from 'supertest';
-import { callLoginEndpointForUser } from './test-utils/login-utils';
+import { callLoginEndpointForUser, extractJwtCookie } from './test-utils/login-utils';
 import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
 
 describe('login-api', () => {
@@ -7,20 +7,18 @@ describe('login-api', () => {
   let errorResponse: IBackendError;
 
   describe('when the correct user data is used', () => {
-    let result: { token: string };
     beforeAll(async () => {
       response = await callLoginEndpointForUser(
         'admin-user',
         'admin-user-password'
       );
-      result = response.body;
     });
 
     test('Returns a status of 200', () => {
       expect(response.status).toBe(200);
     });
     test('Returns the JSON token', () => {
-      expect(result.token).toBeDefined();
+      expect(extractJwtCookie(response)).toBeDefined();
     });
   });
 
