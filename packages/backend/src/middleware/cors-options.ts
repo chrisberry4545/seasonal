@@ -1,10 +1,7 @@
-import { allowedOrigins } from './allowed-origins';
 import { CorsOptions } from 'cors';
 
 const isAllowedOrigin = (origin: string | undefined) => {
-  return !origin || (
-    (allowedOrigins as string[]).includes(origin)
-  );
+  return true;
 };
 
 export const corsOptions: CorsOptions = {
