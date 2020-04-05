@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, FC, useEffect } from 'react';
 
 import './BackgroundImageWithLoadingSpinner.scss';
 
@@ -11,74 +11,52 @@ import {
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import {
-  fadeInOutAnimation, makePromiseCancelable
+  makePromiseCancelable
 } from '../../helpers';
-
-import { PoseGroup } from 'react-pose';
-import { ICancelablePromise } from '../../interfaces';
-
-const FadeInOutAnimation = fadeInOutAnimation();
 
 interface IBackgroundImageWithLoadingSpinnerPropsInterface {
   src: string;
   skipAnimation?: boolean;
 }
-interface IBackgroundImageWithLoadingSpinnerStateInterface {
-  isVisible: boolean;
-}
 
-export class BackgroundImageWithLoadingSpinner
-extends Component<
-  IBackgroundImageWithLoadingSpinnerPropsInterface,
-  IBackgroundImageWithLoadingSpinnerStateInterface
-> {
-  public loadImagePromise: ICancelablePromise<HTMLImageElement> | null = null;
+export const BackgroundImageWithLoadingSpinner: FC<
+  IBackgroundImageWithLoadingSpinnerPropsInterface
+> = ({
+  children,
+  src,
+  skipAnimation
+}) => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  constructor(props: IBackgroundImageWithLoadingSpinnerPropsInterface) {
-    super(props);
-    this.state = {
-      isVisible: false
+  const getBackgroundImageStyle = () => {
+    return { backgroundImage: `url(${src})` };
+  };
+
+  useEffect(() => {
+    const loadImagePromise = makePromiseCancelable(loadImage(src));
+    loadImagePromise.promise
+      .then(() => setIsVisible(true))
+      .catch(() => undefined);
+    return () => {
+      if (loadImagePromise) {
+        loadImagePromise.cancel();
+      }
     };
-  }
+  }, [src]);
 
-  public componentDidMount() {
-    this.loadImagePromise = makePromiseCancelable(loadImage(this.props.src));
-    this.loadImagePromise.promise.then(() => {
-      this.setState({
-        isVisible: true
-      });
-    }, () => undefined);
-  }
-
-  public componentWillUnmount() {
-    if (this.loadImagePromise) {
-      this.loadImagePromise.cancel();
-    }
-  }
-
-  public getBackgroundImageStyle() {
-    return { backgroundImage: `url(${this.props.src})` };
-  }
-
-  public render() {
-    return !this.props.skipAnimation
-      ? (
-        <PoseGroup>
-          {
-            this.state.isVisible
-              ? <FadeInOutAnimation key='background-image-fade-in-out'
-                className='c-background-image-with-loading-spinner'
-                style={this.getBackgroundImageStyle()}>
-                { this.props.children }
-              </FadeInOutAnimation>
-              : <FadeInOutAnimation key='loading-spinner-fade-in-out'
-                className='c-background-image-with-loading-spinner'>
-                <LoadingSpinner />
-              </FadeInOutAnimation>
-          }
-        </PoseGroup>
-      )
-      : <div className='c-background-image-with-loading-spinner'
-          style={this.getBackgroundImageStyle()} />;
-  }
-}
+  return !skipAnimation
+    ? (
+      isVisible
+        ? <div key='background-image-fade-in-out'
+          className='c-background-image-with-loading-spinner'
+          style={getBackgroundImageStyle()}>
+          { children }
+        </div>
+        : <div key='loading-spinner-fade-in-out'
+          className='c-background-image-with-loading-spinner'>
+          <LoadingSpinner />
+        </div>
+    )
+    : <div className='c-background-image-with-loading-spinner'
+        style={getBackgroundImageStyle()} />;
+};

@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { AppLoading } from 'expo';
 import {
   loadFonts,
@@ -10,28 +10,23 @@ import { store } from './src/store';
 import { AppContainer } from './src/components-app';
 import { GlobalModals } from './src/components-main/GlobalModals/GlobalModals';
 
-interface IAppState {
-  fontsLoaded: boolean;
-}
+const App: FC = () => {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-export default class App extends Component<{}, IAppState> {
-  public async componentDidMount() {
+  useEffect(() => {
     initAnalytics();
-    await loadFonts();
-    this.setState({
-      fontsLoaded: true
-    });
-  }
+    loadFonts().then(() => setFontsLoaded(true));
+  }, []);
 
-  public render() {
-    if (!this.state || !this.state.fontsLoaded) {
-      return <AppLoading />;
-    }
-    return (
-      <Provider store={store}>
-        <AppContainer />
-        <GlobalModals />
-      </Provider>
-    );
+  if (!fontsLoaded) {
+    return <AppLoading />;
   }
-}
+  return (
+    <Provider store={store}>
+      <AppContainer />
+      <GlobalModals />
+    </Provider>
+  );
+};
+
+export default App;
