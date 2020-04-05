@@ -242,7 +242,7 @@ functions:
           method: post
           cors: true
       - http:
-          path: admin/user
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminUser}
           method: get
           cors: true
       - http:
