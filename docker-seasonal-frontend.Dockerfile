@@ -16,7 +16,6 @@ COPY .yarnrc.yml package*.json yarn.lock tsconfig.json ./
 COPY .yarn ./.yarn
 RUN yarn policies set-version berry
 
-COPY packages/healthcheck ./packages/healthcheck
 COPY packages/shared-models ./packages/shared-models
 COPY packages/shared-frontend-utilities ./packages/shared-frontend-utilities
 COPY packages/shared-frontend-components ./packages/shared-frontend-components
