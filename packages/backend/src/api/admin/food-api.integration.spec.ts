@@ -3,7 +3,7 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 import { ENDPOINT_ADMIN_FOOD } from '../../config';
 
 generateRestEndpointTests<IFood>({
-  path: ENDPOINT_ADMIN_FOOD,
+  path: `/${ENDPOINT_ADMIN_FOOD}`,
   singleItemId: 'dd9ba012-8f8e-48af-9775-0139374dd94c',
   validItem: {
     description: 'This is food 1',

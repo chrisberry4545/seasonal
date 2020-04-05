@@ -3,7 +3,7 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 import { ENDPOINT_ADMIN_COUNTRY_FOOD_NAME_MAP } from '../../config';
 
 generateRestEndpointTests<ICountryFoodNameMap>({
-  path: ENDPOINT_ADMIN_COUNTRY_FOOD_NAME_MAP,
+  path: `/${ENDPOINT_ADMIN_COUNTRY_FOOD_NAME_MAP}`,
   singleItemId: 'dcec5b2c-403b-43ae-8745-ef368987552c',
   validItem: {
     countryId: '1fc52423-eb83-4cd9-9fdd-b6f9cb323c37',

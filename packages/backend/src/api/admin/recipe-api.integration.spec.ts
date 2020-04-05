@@ -3,7 +3,7 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 import { ENDPOINT_ADMIN_RECIPE } from '../../config';
 
 generateRestEndpointTests<IRecipe>({
-  path: ENDPOINT_ADMIN_RECIPE,
+  path: `/${ENDPOINT_ADMIN_RECIPE}`,
   singleItemId: 'fefc209f-ddaf-465d-941f-fe3fefa6b931',
   validItem: {
     imageUrlSmall: 'http://image.com',

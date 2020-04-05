@@ -3,7 +3,7 @@ import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-t
 import { ENDPOINT_ADMIN_REGION_FOOD_SEASON_MAP } from '../../config';
 
 generateRestEndpointTests<IRegionFoodSeasonMap>({
-  path: ENDPOINT_ADMIN_REGION_FOOD_SEASON_MAP,
+  path: `/${ENDPOINT_ADMIN_REGION_FOOD_SEASON_MAP}`,
   singleItemId: '22be80d3-5154-43e7-a750-f0d03e4ca91a',
   validItem: {
     foodId: 'dd9ba012-8f8e-48af-9775-0139374dd94c',

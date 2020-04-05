@@ -10,7 +10,7 @@ export const callLoginEndpointForUser = async (
   password: string
 ) => {
   const response = await supertest(app).post(
-    ENDPOINT_ADMIN_LOGIN
+    `/${ENDPOINT_ADMIN_LOGIN}`
   ).send({
     password,
     username
