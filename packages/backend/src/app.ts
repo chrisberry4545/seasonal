@@ -11,6 +11,7 @@ import {
   error404Middleware,
   errorMiddleware
 } from './middleware/error-middleware';
+import { ENDPOINT_ADMIN, ENDPOINT_V2 } from '@chrisb-dev/seasonal-shared-models';
 
 const app = express();
 
@@ -18,8 +19,8 @@ app.use(cors(corsOptions));
 app.use(helmet());
 app.use(bodyParser.json());
 
-app.use('/', v2Api());
-app.use('/admin', adminApi());
+app.use(`/${ENDPOINT_V2}`, v2Api());
+app.use(`/${ENDPOINT_ADMIN}`, adminApi());
 app.use(errorMiddleware());
 app.use(error404Middleware());
 

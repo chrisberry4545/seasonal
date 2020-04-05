@@ -15,51 +15,62 @@ import { regionApi } from './region-api';
 import { regionFoodSeasonMapApi } from './region-food-season-map.api';
 import { userApi } from './user-api';
 import { errorMiddleware } from '../../middleware/error-middleware';
+import {
+  ENDPOINT_LOGIN,
+  ENDPOINT_COUNTRY,
+  ENDPOINT_COUNTRY_RECIPE_NAME_MAP,
+  ENDPOINT_COUNTRY_FOOD_NAME_MAP,
+  ENDPOINT_FOOD_DETAILS,
+  ENDPOINT_RECIPE,
+  ENDPOINT_REGION,
+  ENDPOINT_REGION_FOOD_SEASON_MAP,
+  ENDPOINT_USER
+} from '@chrisb-dev/seasonal-shared-models';
 
 export const adminApi = (router = Router()) => {
   router.use(appPassport.initialize());
   router.use(appPassport.session());
   router.use(
-    `/login`,
+    `/${ENDPOINT_LOGIN}`,
     loginApi()
   );
   router.use(
-    `/country`,
+    `/${ENDPOINT_COUNTRY}`,
     editorAuth,
     countryApi()
   );
   router.use(
-    `/country-food-name-map`,
+    `/${ENDPOINT_COUNTRY_FOOD_NAME_MAP}`,
     editorAuth,
     countryFoodNameMapApi()
   );
   router.use(
-    `/country-recipe-name-map`,
+    `/${ENDPOINT_COUNTRY_RECIPE_NAME_MAP}`,
     editorAuth,
     countryRecipeNameMapApi()
   );
   router.use(
-    `/food`,
+    `/${ENDPOINT_FOOD_DETAILS}`,
     editorAuth,
     foodApi()
   );
   router.use(
-    `/recipe`,
+    `/${ENDPOINT_RECIPE}`,
     editorAuth,
     recipeApi()
   );
   router.use(
-    `/region`,
+    `/${ENDPOINT_REGION}`,
     editorAuth,
     regionApi()
   );
   router.use(
-    `/region-food-season-map`,
+    `/${ENDPOINT_REGION_FOOD_SEASON_MAP}`,
     editorAuth,
     regionFoodSeasonMapApi()
   );
   router.use(
-    `/user`,
+    `/${ENDPOINT_USER}`,
     adminAuth,
     userApi()
   );

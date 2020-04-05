@@ -3,12 +3,15 @@ import {
   app
 } from '../../../app';
 import supertest from 'supertest';
+import { ENDPOINT_ADMIN_LOGIN } from '../../../config';
 
 export const callLoginEndpointForUser = async (
   username: string,
   password: string
 ) => {
-  const response = await supertest(app).post('/admin/login').send({
+  const response = await supertest(app).post(
+    `/${ENDPOINT_ADMIN_LOGIN}`
+  ).send({
     password,
     username
   });

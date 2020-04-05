@@ -1,8 +1,9 @@
 import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
+import { ENDPOINT_ADMIN_RECIPE } from '../../config';
 
 generateRestEndpointTests<IRecipe>({
-  path: '/admin/recipe',
+  path: `/${ENDPOINT_ADMIN_RECIPE}`,
   singleItemId: 'fefc209f-ddaf-465d-941f-fe3fefa6b931',
   validItem: {
     imageUrlSmall: 'http://image.com',

@@ -3,7 +3,6 @@ import {
 } from '../../app';
 
 import supertest, { Response } from 'supertest';
-import { V2_ENDPOINT, FOOD_ENDPOINT } from '../../config';
 import {
   RECIPES_ID_BEETROOT_SAUCE,
   SEASON_ID_JANUARY,
@@ -12,8 +11,7 @@ import {
   FOOD_ID_ONION,
   RECIPES_ID_APPLE_CHEESE_AND_ONION
 } from '../admin/test-utils/shared-test-ids';
-
-const v2FoodUrl = `${V2_ENDPOINT}/${FOOD_ENDPOINT}`;
+import { ENDPOINT_V2_FOOD } from '../../config';
 
 const makeSingleFoodRequest = async (
   id: string = FOOD_ID_BEETROOT,
@@ -25,7 +23,7 @@ const makeSingleFoodRequest = async (
     isVegan && 'is-vegan=true'
   ].filter(Boolean).join('&');
   const queryString = query ? `?${query}` : '';
-  return supertest(app).get(`/${v2FoodUrl}/${id}${queryString}`);
+  return supertest(app).get(`/${ENDPOINT_V2_FOOD}/${id}${queryString}`);
 };
 
 describe('Get single food item', () => {

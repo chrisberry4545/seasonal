@@ -3,7 +3,7 @@ import {
 } from '../../app';
 
 import supertest, { Response } from 'supertest';
-import { V2_ENDPOINT, SEASON_WITH_FOOD_ENDPOINT } from '../../config';
+import { ENDPOINT_V2_SEASON_WITH_FOOD } from '../../config';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import {
   SEASON_ID_JANUARY,
@@ -14,14 +14,12 @@ import {
   SEASON_INDEX_MARCH
 } from '../admin/test-utils/shared-test-ids';
 
-const v2SeasonWithFoodUrl = `${V2_ENDPOINT}/${SEASON_WITH_FOOD_ENDPOINT}`;
-
 describe('Get all seasons with food', () => {
   let response: Response;
   let seasonJanuary: IHydratedSeason | undefined;
   let seasonFebruary: IHydratedSeason | undefined;
   beforeAll(async () => {
-    response = await supertest(app).get(`/${v2SeasonWithFoodUrl}`);
+    response = await supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_FOOD}`);
     const seasonData: IHydratedSeason[] = response.body;
     seasonJanuary = seasonData.find((season) => season.id === SEASON_ID_JANUARY);
     seasonFebruary = seasonData.find((season) => season.id === SEASON_ID_FEBRUARY);
@@ -57,7 +55,7 @@ describe('Get single season with food', () => {
     seasonIndex: string = SEASON_INDEX_JANUARY,
     countryCode?: string
   ) => {
-    return supertest(app).get(`/${v2SeasonWithFoodUrl}/${seasonIndex}${
+    return supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_FOOD}/${seasonIndex}${
       countryCode
         ? `?country-code=${countryCode}`
         : ''

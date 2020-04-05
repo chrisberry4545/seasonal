@@ -21,34 +21,33 @@ import {
 import { countryApi } from './country-api.v2';
 
 import {
-  V2_ENDPOINT,
-  COUNTRY_ENDPOINT,
-  SEASON_ENDPOINT,
-  SEASON_WITH_FOOD_ENDPOINT,
-  SEASON_WITH_RECIPES_ENDPOINT,
-  FOOD_ENDPOINT
-} from '../../config';
+  ENDPOINT_COUNTRY,
+  ENDPOINT_FOOD_DETAILS,
+  ENDPOINT_SEASON,
+  ENDPOINT_SEASON_WITH_FOOD,
+  ENDPOINT_SEASON_WITH_RECIPES
+} from '@chrisb-dev/seasonal-shared-models';
 
 export const v2Api = (router = Router()) => {
   router.use(
-    `/${V2_ENDPOINT}/${COUNTRY_ENDPOINT}`,
+    `/${ENDPOINT_COUNTRY}`,
     countryApi()
   );
   router.use(
-    `/${V2_ENDPOINT}/${SEASON_ENDPOINT}`,
+    `/${ENDPOINT_FOOD_DETAILS}`,
+    foodApi()
+  );
+  router.use(
+    `/${ENDPOINT_SEASON}`,
     seasonApi()
   );
   router.use(
-    `/${V2_ENDPOINT}/${SEASON_WITH_FOOD_ENDPOINT}`,
+    `/${ENDPOINT_SEASON_WITH_FOOD}`,
     seasonWithFoodApi()
   );
   router.use(
-    `/${V2_ENDPOINT}/${SEASON_WITH_RECIPES_ENDPOINT}`,
+    `/${ENDPOINT_SEASON_WITH_RECIPES}`,
     seasonWithRecipesApi()
-  ),
-  router.use(
-    `/${V2_ENDPOINT}/${FOOD_ENDPOINT}`,
-    foodApi()
   );
   return router;
 };

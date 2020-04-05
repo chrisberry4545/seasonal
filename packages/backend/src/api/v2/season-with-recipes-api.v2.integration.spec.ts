@@ -3,7 +3,7 @@ import {
 } from '../../app';
 
 import supertest, { Response } from 'supertest';
-import { V2_ENDPOINT, SEASON_WITH_RECIPES_ENDPOINT } from '../../config';
+import { ENDPOINT_V2_SEASON_WITH_RECIPES } from '../../config';
 import {
   SEASON_ID_JANUARY,
   SEASON_ID_FEBRUARY,
@@ -13,14 +13,12 @@ import {
 } from '../admin/test-utils/shared-test-ids';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 
-const v2SeasonWithRecipesUrl = `${V2_ENDPOINT}/${SEASON_WITH_RECIPES_ENDPOINT}`;
-
 describe('Get all seasons with recipes', () => {
   let response: Response;
   let seasonJanuary: IHydratedSeason | undefined;
   let seasonFebruary: IHydratedSeason | undefined;
   beforeEach(async () => {
-    response = await supertest(app).get(`/${v2SeasonWithRecipesUrl}`);
+    response = await supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_RECIPES}`);
     const seasonData: IHydratedSeason[] = response.body;
     seasonJanuary = seasonData.find((season) => season.id === SEASON_ID_JANUARY);
     seasonFebruary = seasonData.find((season) => season.id === SEASON_ID_FEBRUARY);
@@ -60,7 +58,9 @@ const makeSingleSeasonWithRecipesRequest = (
     isVegan && 'is-vegan=true'
   ].filter(Boolean).join('&');
   const queryString = query ? `?${query}` : '';
-  return supertest(app).get(`/${v2SeasonWithRecipesUrl}/${seasonIndex}${queryString}`);
+  return supertest(app).get(
+    `/${ENDPOINT_V2_SEASON_WITH_RECIPES}/${seasonIndex}${queryString}`
+  );
 };
 
 describe('Get single season with recipes', () => {

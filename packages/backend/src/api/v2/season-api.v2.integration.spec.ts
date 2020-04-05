@@ -3,15 +3,13 @@ import {
 } from '../../app';
 
 import supertest, { Response } from 'supertest';
-import { V2_ENDPOINT, SEASON_ENDPOINT } from '../../config';
-
-const v2SeasonUrl = `${V2_ENDPOINT}/${SEASON_ENDPOINT}`;
+import { ENDPOINT_V2_SEASON } from '../../config';
 
 describe('Get all seasons', () => {
   let response: Response;
 
   beforeAll(async () => {
-    response = await supertest(app).get(`/${v2SeasonUrl}`);
+    response = await supertest(app).get(`/${ENDPOINT_V2_SEASON}`);
   });
 
   test('Returns a status of 200', () => {
