@@ -246,7 +246,7 @@ functions:
           method: get
           cors: true
       - http:
-          path: admin/user/{id}
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminUser}/{id}
           method: get
           cors: true
       - http:
