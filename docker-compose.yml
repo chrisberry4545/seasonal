@@ -23,7 +23,7 @@ services:
     environment:
       PORT: 5200
       DB_CONNECTION_STRING: postgres://user:pass@seasonal-database:5432/db
-      DEFAULT_COUNTRY_ID: gbr
+      DEFAULT_REGION_ID: gbr
       IS_CI: "true"
     command: yarn workspace @chrisb-dev/seasonal-backend dev
 

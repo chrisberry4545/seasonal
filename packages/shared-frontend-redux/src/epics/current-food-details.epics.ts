@@ -28,7 +28,11 @@ import {
   DIET_TYPE
 } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../interfaces';
-import { selectSettingsDietType, selectCurrentFoodDetailsId, selectSettingsRegionCode } from '../selectors';
+import {
+  selectSettingsDietType,
+  selectCurrentFoodDetailsId,
+  selectSettingsRegionId
+} from '../selectors';
 
 export const updateFoodDetailsOnDietTypeChangeEpic$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
@@ -58,14 +62,14 @@ export const getCurrentFoodDetailsEpic$: SharedSeasonalEpic = (
     map(([action, state]: [Action, IState]) => ({
       dietType: selectSettingsDietType(state),
       foodItemId: (action as IFoodItemClicked).foodItemId,
-      regionCode: selectSettingsRegionCode(state)
+      regionId: selectSettingsRegionId(state)
     })),
-    switchMap(({ dietType, foodItemId, regionCode }) => (
+    switchMap(({ dietType, foodItemId, regionId }) => (
       getFoodDetailsData(
         foodItemId,
         dietType === DIET_TYPE.VEGETARIAN,
         dietType === DIET_TYPE.VEGAN,
-        regionCode
+        regionId
       )
       .then((currentFoodData) => setCurrentFoodDetailsSuccess(currentFoodData))
       .catch((error: IBackendError) => setError(error))

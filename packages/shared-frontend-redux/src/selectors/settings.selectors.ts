@@ -11,9 +11,9 @@ export const selectSettingsDietType = createSelector(
   (settings): DIET_TYPE => settings.dietType
 );
 
-export const selectSettingsRegionCode = createSelector(
+export const selectSettingsRegionId = createSelector(
   selectSettingsState,
-  (settings): string | undefined => settings.selectedRegionCode
+  (settings): string | undefined => settings.selectedRegionId
 );
 
 export const selectSettingsUserId = createSelector(

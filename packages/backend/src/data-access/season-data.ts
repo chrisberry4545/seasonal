@@ -12,21 +12,21 @@ const getSeasonDataWithFoodQuery = (): Promise<string> =>
 
 export const getSeasonsDataWithFoodBySeasonIndex = async (
   seasonIndex: number,
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason> => {
   const result = await queryPostgres<IHydratedSeason>(
     await getSeasonDataWithFoodQuery(),
-    [countryCode, seasonIndex]
+    [regionId, seasonIndex]
   );
   return result.rows[0];
 };
 
 export const getAllSeasonDataWithFood = async (
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason[]> => {
   const result = await queryPostgres<IHydratedSeason>(
     await getSeasonDataWithFoodQuery(),
-    [countryCode, null]
+    [regionId, null]
   );
   return result.rows;
 };
@@ -36,21 +36,21 @@ const getSeasonDataWithRecipesQuery = () =>
 
 export const getSeasonsDataWithRecipesBySeasonIndex = async (
   seasonIndex: number,
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason  > => {
   const result = await queryPostgres<IHydratedSeason>(
     await getSeasonDataWithRecipesQuery(),
-    [countryCode, seasonIndex]
+    [regionId, seasonIndex]
   );
   return result.rows[0];
 };
 
 export const getAllSeasonDataWithRecipes = async (
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason[]> => {
   const result = await queryPostgres<IHydratedSeason>(
     await getSeasonDataWithRecipesQuery(),
-    [countryCode, null]
+    [regionId, null]
   );
   return result.rows;
 };

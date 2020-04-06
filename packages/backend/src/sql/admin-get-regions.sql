@@ -1,4 +1,5 @@
 SELECT
+  id,
   code,
   name,
   country_id,
@@ -9,5 +10,5 @@ FROM regions
 WHERE
   $1::text is NULL
 OR
-  code = $1
+  id = $1
 ORDER BY name;

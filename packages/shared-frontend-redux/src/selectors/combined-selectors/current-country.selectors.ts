@@ -3,29 +3,29 @@ import {
   selectAllRegions, selectCountries
 } from '../country.selectors';
 import {
-  selectSettingsRegionCode
+  selectSettingsRegionId
 } from '../settings.selectors';
 import { IRegion, IGroupedSelectOptions } from '@chrisb-dev/seasonal-shared-models';
 
 export const selectCurrentRegion = createSelector(
   selectAllRegions,
-  selectSettingsRegionCode,
-  (allRegions, regionCode): IRegion | undefined => (
+  selectSettingsRegionId,
+  (allRegions, regionId): IRegion | undefined => (
     allRegions &&
-    allRegions.find((region) => region.code === regionCode)
+    allRegions.find((region) => region.id === regionId)
   )
 );
 
 export const selectCountryAndRegionsSelectGroup = createSelector(
   selectCountries,
-  selectSettingsRegionCode,
-  (countries, regionCode): IGroupedSelectOptions[] | undefined => (
+  selectSettingsRegionId,
+  (countries, regionId): IGroupedSelectOptions[] | undefined => (
     countries && countries.map((country) => ({
       groupName: country.name,
       selectOptions: country.regions.map((region) => ({
-        isSelected: region.code === regionCode,
+        isSelected: region.id === regionId,
         name: region.name,
-        value: region.code
+        value: region.id
       }))
     }))
   )

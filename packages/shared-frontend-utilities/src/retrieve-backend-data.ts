@@ -11,12 +11,12 @@ import {
 } from '@chrisb-dev/seasonal-shared-models';
 
 const getQueryString = (
-  isVegetarian?: boolean, isVegan?: boolean, countryCode?: string
+  isVegetarian?: boolean, isVegan?: boolean, regionId?: string
 ) => {
   const query = [
     isVegetarian && 'is-vegetarian=true',
     isVegan && 'is-vegan=true',
-    countryCode && `country-code=${countryCode}`
+    regionId && `region-id=${regionId}`
   ].filter(Boolean).join('&');
   const queryString = query && `?${query}`;
   return queryString;
@@ -33,26 +33,26 @@ const handleErrors = async (resp: Response) => {
 export const getCurrentSeasonIndex = (): number => new Date().getUTCMonth();
 
 export const getAllSeasons = (
-  countryCode?: string
+  regionId?: string
 ): Promise<IBaseSeason[]> => {
-  const queryString = getQueryString(undefined, undefined, countryCode);
+  const queryString = getQueryString(undefined, undefined, regionId);
   return fetch(`${SEASON_URL}${queryString}`).then(handleErrors);
 };
 
 export const getSeasonWithFood = (
   seasonIndex: number,
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason> => {
-  const queryString = getQueryString(undefined, undefined, countryCode);
+  const queryString = getQueryString(undefined, undefined, regionId);
   return fetch(
     `${SEASON_WITH_FOOD_URL}/${seasonIndex}${queryString}`
   ).then(handleErrors);
 };
 
 export const getAllSeasonsWithFood = (
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason[]> => {
-  const queryString = getQueryString(undefined, undefined, countryCode);
+  const queryString = getQueryString(undefined, undefined, regionId);
   return fetch(`${SEASON_WITH_FOOD_URL}${queryString}`)
     .then(handleErrors);
 };
@@ -61,18 +61,18 @@ export const getSeasonWithRecipes = (
   seasonIndex: number,
   isVegetarian?: boolean,
   isVegan?: boolean,
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason> => {
-  const queryString = getQueryString(isVegetarian, isVegan, countryCode);
+  const queryString = getQueryString(isVegetarian, isVegan, regionId);
   return fetch(
     `${SEASON_WITH_RECIPES_URL}/${seasonIndex}${queryString}`
   ).then(handleErrors);
 };
 
 export const getAllSeasonsWithRecipes = (
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason[]> => {
-  const queryString = getQueryString(undefined, undefined, countryCode);
+  const queryString = getQueryString(undefined, undefined, regionId);
   return fetch(`${SEASON_WITH_RECIPES_URL}${queryString}`)
     .then(handleErrors);
 };
@@ -81,9 +81,9 @@ export const getFoodDetailsData = (
   foodId: string | null,
   isVegetarian?: boolean,
   isVegan?: boolean,
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedFood> => {
-  const queryString = getQueryString(isVegetarian, isVegan, countryCode);
+  const queryString = getQueryString(isVegetarian, isVegan, regionId);
   return fetch(`${FOOD_DETAILS_URL}/${foodId}${queryString}`)
     .then(handleErrors);
 };

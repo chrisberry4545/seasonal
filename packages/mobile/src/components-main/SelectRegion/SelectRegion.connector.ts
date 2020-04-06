@@ -20,7 +20,7 @@ const mapStateToProps = (state: IState): ISelectRegionInputProps => ({
 const mapDispatchToProps = (
   dispatch: Dispatch
 ): ISelectRegionDispatchProps => ({
-  onRegionSelected: (regionCode: string) => dispatch(setRegion(regionCode))
+  onRegionSelected: (regionId: string) => dispatch(setRegion(regionId))
 });
 
 export const SelectRegionConnecter = connect(

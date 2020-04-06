@@ -8,7 +8,7 @@ import { fetchFoodDataWithFilteredRecipes } from '../../fetch-data';
 import {
   getIsVegetarianFromQueryParams,
   getIsVeganFromQueryParams,
-  getCountryCodeFromQueryParams
+  getRegionIdFromQueryParams
 } from '../utils/get-query-params';
 import { get500Error, get404Error } from '../utils';
 import { uuidParamValidation } from '../../middleware/uuid-param-validation';
@@ -23,10 +23,10 @@ export const foodApi = (router = Router()) => {
       const { id } = req.params;
       const isVegetarian = getIsVegetarianFromQueryParams(req);
       const isVegan = getIsVeganFromQueryParams(req);
-      const countryCode = getCountryCodeFromQueryParams(req);
+      const regionId = getRegionIdFromQueryParams(req);
       try {
         const result = await fetchFoodDataWithFilteredRecipes(
-          id, isVegetarian, isVegan, countryCode
+          id, isVegetarian, isVegan, regionId
         );
         if (!result) {
           return next(get404Error());

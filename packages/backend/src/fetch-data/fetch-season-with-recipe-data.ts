@@ -10,7 +10,7 @@ import {
 
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { filterRecipesByDiet } from './filter-recipes-by-diet';
-import { DEFAULT_COUNTRY_ID } from '../config';
+import { DEFAULT_REGION_ID } from '../config';
 
 const allSeasonsWithRecipesCache = new Cache<IHydratedSeason[]>();
 const allSeasonsWithRecipesCacheKey = 'season-with-recipes';
@@ -22,27 +22,27 @@ export const fetchSeasonWithRecipes = cacheFunctionResponse(
   singleSeasonWithRecipeCache,
   singleSeasonWithRecipeCacheKey,
   async (
-    seasonIndex: number, countryCode: string = DEFAULT_COUNTRY_ID
+    seasonIndex: number, regionId: string = DEFAULT_REGION_ID
   ): Promise<IHydratedSeason> =>
-    getSeasonsDataWithRecipesBySeasonIndex(seasonIndex, countryCode)
+    getSeasonsDataWithRecipesBySeasonIndex(seasonIndex, regionId)
 );
 
 export const fetchAllSeasonsWithRecipes = cacheFunctionResponse(
   allSeasonsWithRecipesCache,
   allSeasonsWithRecipesCacheKey,
   async (
-    countryCode: string = DEFAULT_COUNTRY_ID
+    regionId: string = DEFAULT_REGION_ID
   ): Promise<IHydratedSeason[]> =>
-    getAllSeasonDataWithRecipes(countryCode)
+    getAllSeasonDataWithRecipes(regionId)
 );
 
 export const fetchFilteredSeasonsWithRecipes = async (
   seasonIndex: number,
   isVegetarian: boolean,
   isVegan: boolean,
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedSeason> => {
-  const result = await fetchSeasonWithRecipes(seasonIndex, countryCode);
+  const result = await fetchSeasonWithRecipes(seasonIndex, regionId);
   return {
     ...result,
     recipes: filterRecipesByDiet(result.recipes, isVegetarian, isVegan)

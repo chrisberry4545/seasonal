@@ -92,7 +92,7 @@ export const BaseFormRegionSeasonFoodMap: FC<{}> = () => {
       setAllRegionFoodSeasonMaps(allRegionFoodSeasonMap);
       const regionOptions = regions.map((region) => ({
         label: region.name,
-        value: region.code
+        value: region.id
       }));
       const foodOptions = food.map((foodItem) => ({
         label: foodItem.name,

@@ -8,7 +8,7 @@ import {
 
 import { IHydratedFood } from '@chrisb-dev/seasonal-shared-models';
 import { filterRecipesByDiet } from './filter-recipes-by-diet';
-import { DEFAULT_COUNTRY_ID } from '../config';
+import { DEFAULT_REGION_ID } from '../config';
 
 const singleFoodCache = new Cache<IHydratedFood>();
 const singleFoodCacheKey = 'single-food';
@@ -18,9 +18,9 @@ export const fetchFoodDataById = cacheFunctionResponse(
   singleFoodCacheKey,
   (
     foodId: string,
-    countryCode: string = DEFAULT_COUNTRY_ID
+    regionId: string = DEFAULT_REGION_ID
   ): Promise<IHydratedFood> => getFoodDetailsData(
-    foodId, countryCode
+    foodId, regionId
   )
 );
 
@@ -28,9 +28,9 @@ export const fetchFoodDataWithFilteredRecipes = async (
   foodId: string,
   isVegetarian: boolean,
   isVegan: boolean,
-  countryCode?: string
+  regionId?: string
 ): Promise<IHydratedFood> => {
-  const result = await fetchFoodDataById(foodId, countryCode);
+  const result = await fetchFoodDataById(foodId, regionId);
   return result && {
     ...result,
     primaryFoodInRecipe: filterRecipesByDiet(

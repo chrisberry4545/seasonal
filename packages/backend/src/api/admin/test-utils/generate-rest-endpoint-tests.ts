@@ -6,8 +6,9 @@ import {
 import { app } from '../../../app';
 import { testFailedAuthorzation } from './authorization-tests';
 import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
+import { IDbBaseRecord } from '@chrisb-dev/seasonal-shared-models/dist/interfaces/data/db-base-record.interface';
 
-export const generateRestEndpointTests = <T extends { id?: string, code?: string } > ({
+export const generateRestEndpointTests = <T extends IDbBaseRecord > ({
   path,
   singleItemId,
   validItem,
@@ -24,8 +25,6 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
   adminOnly?: boolean,
   idsAreUUIDs?: boolean
 }) => {
-
-  const getId = (item: T) => item.id || item.code;
 
   describe(`REST endpoint testing for ${path}`, () => {
     describe('create item', () => {
@@ -47,7 +46,7 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           });
           afterAll(async () =>
             await attachAdminJwtToken(
-              supertest(app).delete(`${path}/${getId(result)}`)
+              supertest(app).delete(`${path}/${result.id}`)
             ));
 
           test('Returns a status of 200', () => {
@@ -59,10 +58,10 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           });
           test('the item should be added to the database', async () => {
             const createdItemResponse = await attachAdminJwtToken(
-              supertest(app).get(`${path}/${getId(result)}`)
+              supertest(app).get(`${path}/${result.id}`)
             );
             const createdItem: T = createdItemResponse.body;
-            expect(getId(createdItem)).toBe(getId(result));
+            expect(createdItem.id).toBe(result.id);
           });
         });
       });
@@ -77,7 +76,7 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           });
           afterAll(async () =>
             await attachAdminJwtToken(
-              supertest(app).delete(`${path}/${getId(result)}`)
+              supertest(app).delete(`${path}/${result.id}`)
             ));
 
           test('Returns a status of 200', () => {
@@ -200,7 +199,7 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
       const supertestRequestGenerator = () =>
         supertest(app).patch(path).send({
           ...validItemForEdit,
-          [existingItem.id ? 'id' : 'code']: getId(existingItem)
+          id: existingItem.id
         });
 
       testFailedAuthorzation(supertestRequestGenerator);
@@ -217,15 +216,15 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           expect(response.status).toBe(200);
         });
         test('Returns the expected result', () => {
-          const { id, code, ...otherProps } = result;
+          const { id, ...otherProps } = result;
           expect(otherProps).toMatchSnapshot();
         });
         test('Returns an id', () => {
-          expect(getId(result)).toBeDefined();
+          expect(result.id).toBeDefined();
         });
         test('the item should be edited in the database', async () => {
           const editedItemResponse = await attachAdminJwtToken(
-            supertest(app).get(`${path}/${getId(result)}`)
+            supertest(app).get(`${path}/${result.id}`)
           );
           const { id, ...otherProps } = editedItemResponse.body;
           const withPropertiesRemoved =
@@ -266,7 +265,7 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
       });
 
       const supertestRequestGenerator = (
-        pathToUse = `${path}/${getId(existingItem)}`
+        pathToUse = `${path}/${existingItem.id}`
       ) => supertest(app).delete(pathToUse);
 
       testFailedAuthorzation(supertestRequestGenerator);
@@ -287,14 +286,14 @@ export const generateRestEndpointTests = <T extends { id?: string, code?: string
           expect(otherProps).toMatchSnapshot();
         });
         test('Returns an id', () => {
-          expect(getId(result)).toBeDefined();
+          expect(result.id).toBeDefined();
         });
 
         describe('when getting the delete item', () => {
           let deletedItemResponse: Response;
           beforeAll(async () => {
             deletedItemResponse = await attachAdminJwtToken(
-              supertest(app).get(`${path}/${getId(result)}`)
+              supertest(app).get(`${path}/${result.id}`)
             );
           });
 

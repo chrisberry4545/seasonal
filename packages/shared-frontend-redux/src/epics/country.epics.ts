@@ -25,7 +25,7 @@ import { SharedSeasonalEpic } from './seasonal-epic.type';
 import { getCountries } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../interfaces';
-import { selectSettingsRegionCode } from '../selectors';
+import { selectSettingsRegionId } from '../selectors';
 
 export const getCountriesStart$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>
@@ -57,11 +57,11 @@ export const promptCountryChangeOnNewDetected$: SharedSeasonalEpic = (
     ofType(USER_REGION_DETECTED),
     withLatestFrom(state$),
     map(([action, state]) => ({
-      detectedRegion: (action as ISetRegionAction).regionCode,
-      settingsRegionCode: selectSettingsRegionCode(state)
+      detectedRegion: (action as ISetRegionAction).regionId,
+      settingsRegionId: selectSettingsRegionId(state)
     })),
-    filter(({ detectedRegion, settingsRegionCode }) => (
-      detectedRegion !== settingsRegionCode
+    filter(({ detectedRegion, settingsRegionId }) => (
+      detectedRegion !== settingsRegionId
     )),
     map(({ detectedRegion }) => setUserRegionDetected(detectedRegion))
   )

@@ -9,7 +9,7 @@ import {
   fetchFilteredSeasonsWithRecipes
 } from '../../fetch-data';
 import {
-  getCountryCodeFromQueryParams,
+  getRegionIdFromQueryParams,
   getIsVegetarianFromQueryParams,
   getIsVeganFromQueryParams
 } from '../utils/get-query-params';
@@ -17,9 +17,9 @@ import { get500Error, get404Error } from '../utils';
 
 export const seasonWithRecipesApi = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
-    const countryCode = getCountryCodeFromQueryParams(req);
+    const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await fetchAllSeasonsWithRecipes(countryCode);
+      const result = await fetchAllSeasonsWithRecipes(regionId);
       return res.json(result);
     } catch (err) {
       return next(get500Error(err.message));
@@ -29,13 +29,13 @@ export const seasonWithRecipesApi = (router = Router()) => {
     const { seasonIndex } = req.params;
     const isVegetarian = getIsVegetarianFromQueryParams(req);
     const isVegan = getIsVeganFromQueryParams(req);
-    const countryCode = getCountryCodeFromQueryParams(req);
+    const regionId = getRegionIdFromQueryParams(req);
     try {
       const result = await fetchFilteredSeasonsWithRecipes(
         parseInt(seasonIndex, 10),
         isVegetarian,
         isVegan,
-        countryCode
+        regionId
       );
       if (!result) {
         return next(get404Error());
