@@ -1,6 +1,7 @@
 export interface IDbRegion {
-  name: string;
+  id: string;
   code: string;
+  name: string;
   lat: number;
   lng: number;
   countryId?: string;

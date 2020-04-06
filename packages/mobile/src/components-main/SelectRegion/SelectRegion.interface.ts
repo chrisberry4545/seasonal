@@ -5,7 +5,7 @@ export interface ISelectRegionInputProps {
 }
 
 export interface ISelectRegionDispatchProps {
-  onRegionSelected: (regionCode: string) => void;
+  onRegionSelected: (regionId: string) => void;
 }
 
 export interface ISelectRegionProps

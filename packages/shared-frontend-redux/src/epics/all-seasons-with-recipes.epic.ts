@@ -20,7 +20,7 @@ import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
 import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../interfaces';
-import { selectSettingsRegionCode } from '../selectors';
+import { selectSettingsRegionId } from '../selectors';
 
 export const getAllSeasonsWithRecipes$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
@@ -29,9 +29,9 @@ export const getAllSeasonsWithRecipes$: SharedSeasonalEpic = (
   actions$.pipe(
     ofType(SET_ALL_SEASONS_WITH_RECIPES_START),
     withLatestFrom(state$),
-    map(([, state]) => selectSettingsRegionCode(state)),
-    switchMap((regionCode) =>
-      getAllSeasonsWithRecipes(regionCode)
+    map(([, state]) => selectSettingsRegionId(state)),
+    switchMap((regionId) =>
+      getAllSeasonsWithRecipes(regionId)
         .then((seasonData) => setAllSeasonsWithRecipesSuccess(seasonData))
         .catch((error: IBackendError) => setError(error))
     )

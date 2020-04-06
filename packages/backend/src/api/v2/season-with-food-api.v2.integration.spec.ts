@@ -53,11 +53,11 @@ describe('Get single season with food', () => {
   let response: Response;
   const makeSingleSeasonWithFoodRequest = (
     seasonIndex: string = SEASON_INDEX_JANUARY,
-    countryCode?: string
+    regionId?: string
   ) => {
     return supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_FOOD}/${seasonIndex}${
-      countryCode
-        ? `?country-code=${countryCode}`
+      regionId
+        ? `?region-id=${regionId}`
         : ''
     }`);
   };

@@ -8,6 +8,7 @@ export const adminCreateDbRegion = async (
   const result = await queryPostgres<IDbRegion>(
     query,
     [
+      item.id,
       item.code,
       item.name,
       item.countryId,
@@ -49,6 +50,7 @@ export const adminEditDbRegion = async (
   const result = await queryPostgres<IDbRegion>(
     query,
     [
+      item.id,
       item.code,
       item.name,
       item.countryId,

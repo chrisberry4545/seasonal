@@ -28,7 +28,11 @@ import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from './seasonal-epic.type';
 import { DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../interfaces';
-import { selectCurrentSeasonIndex, selectSettingsDietType, selectSettingsRegionCode } from '../selectors';
+import {
+  selectCurrentSeasonIndex,
+  selectSettingsDietType,
+  selectSettingsRegionId
+ } from '../selectors';
 
 export const getCurrentSeasonWithRecipesStartEpic$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>
@@ -55,15 +59,15 @@ export const getCurrentSeasonWithRecipesEpic$: SharedSeasonalEpic = (
     withLatestFrom(state$),
     map(([, state]) => ({
       dietType: selectSettingsDietType(state),
-      regionCode: selectSettingsRegionCode(state),
+      regionId: selectSettingsRegionId(state),
       seasonIndex: selectCurrentSeasonIndex(state)
     })),
-    switchMap(({ seasonIndex, regionCode, dietType }) => (
+    switchMap(({ seasonIndex, regionId, dietType }) => (
       getSeasonWithRecipes(
         seasonIndex,
         dietType === DIET_TYPE.VEGETARIAN,
         dietType === DIET_TYPE.VEGAN,
-        regionCode
+        regionId
       )
         .then((recipesData) => setCurrentSeasonWithRecipesSuccess(recipesData))
         .catch((error: IBackendError) => setError(error))

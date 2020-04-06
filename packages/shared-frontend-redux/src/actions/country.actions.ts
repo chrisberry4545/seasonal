@@ -22,14 +22,14 @@ export function getCountriesSuccess(
 }
 
 export interface ISetRegionAction extends Action {
-  regionCode: string;
+  regionId: string;
 }
 export const SET_REGION = 'SET_REGION';
 export function setRegion(
-  regionCode: string
+  regionId: string
 ): ISetRegionAction {
   return {
-    regionCode,
+    regionId,
     type: SET_REGION
   };
 }
@@ -39,22 +39,22 @@ interface ISetUserRegionDetectedAction extends ISetRegionAction {
 }
 export const USER_REGION_DETECTED = 'USER_REGION_DETECTED';
 export function userRegionDetected(
-  regionCode: string,
+  regionId: string,
   error: string | null
 ): ISetUserRegionDetectedAction {
   return {
     error,
-    regionCode,
+    regionId,
     type: USER_REGION_DETECTED
   };
 }
 
 export const SET_USER_REGION_DETECTED = 'SET_USER_REGION_DETECTED';
 export function setUserRegionDetected(
-  regionCode: string
+  regionId: string
 ): ISetRegionAction {
   return {
-    regionCode,
+    regionId,
     type: SET_USER_REGION_DETECTED
   };
 }

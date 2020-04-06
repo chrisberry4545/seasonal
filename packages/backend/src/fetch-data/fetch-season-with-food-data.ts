@@ -9,7 +9,7 @@ import {
 } from '../cache';
 
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
-import { DEFAULT_COUNTRY_ID } from '../config';
+import { DEFAULT_REGION_ID } from '../config';
 
 const allSeasonsWithFoodCache = new Cache<IHydratedSeason[]>();
 const allSeasonsWithFoodCacheKey = 'season-with-food';
@@ -21,10 +21,10 @@ export const fetchSeasonWithFood = cacheFunctionResponse(
   singleSeasonWithFoodCache,
   singleSeasonWithFoodCacheKey,
   async (
-    seasonIndex: number, countryCode: string = DEFAULT_COUNTRY_ID
+    seasonIndex: number, regionId: string = DEFAULT_REGION_ID
   ): Promise<IHydratedSeason> => getSeasonsDataWithFoodBySeasonIndex(
     seasonIndex,
-    countryCode
+    regionId
   )
 );
 
@@ -32,6 +32,6 @@ export const fetchAllSeasonsWithFood = cacheFunctionResponse(
   allSeasonsWithFoodCache,
   allSeasonsWithFoodCacheKey,
   async (
-    countryCode: string = DEFAULT_COUNTRY_ID
-  ): Promise<IHydratedSeason[]> => getAllSeasonDataWithFood(countryCode)
+    regionId: string = DEFAULT_REGION_ID
+  ): Promise<IHydratedSeason[]> => getAllSeasonDataWithFood(regionId)
 );

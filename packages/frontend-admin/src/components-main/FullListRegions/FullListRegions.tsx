@@ -19,10 +19,10 @@ const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegionViewItem[]>
   <FullList
     title='Regions'
     items={items}
-    getItemId={(item) => item.code}
+    getItemId={(item) => item.id}
     getItemName={(item) => `${item.countryName} - ${item.name}`}
-    getItemEditUrl={(item) => `${ROUTES.REGION}/${ROUTES.EDIT}/${item.code}`}
-    deleteItemFunc={(item) => deleteRegion(item.code).then((region) => {
+    getItemEditUrl={(item) => `${ROUTES.REGION}/${ROUTES.EDIT}/${item.id}`}
+    deleteItemFunc={(item) => deleteRegion(item.id).then((region) => {
       if (reload) {
         reload();
       }

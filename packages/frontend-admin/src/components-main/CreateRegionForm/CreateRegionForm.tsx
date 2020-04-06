@@ -7,7 +7,8 @@ import { LayoutWithTitle } from '../../components-layouts';
 import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 const createEmptyRegionItem = (): IDbRegion => ({
-  code: '',
+  id: '',
+
   countryId: undefined,
   isDisabled: false,
   lat: 0,
@@ -16,6 +17,11 @@ const createEmptyRegionItem = (): IDbRegion => ({
 } as IDbRegion);
 
 const createOnlyFields: IDbRegionFormConfigProps = {
+  id: {
+    type: 'text',
+    validation: [requiredValidation]
+  },
+
   code: {
     type: 'text',
     validation: [requiredValidation]

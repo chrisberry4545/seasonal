@@ -10,7 +10,7 @@ import {
   selectAllRegions,
   userRegionDetected,
   SET_USER_REGION_DETECTED,
-  selectSettingsRegionCode,
+  selectSettingsRegionId,
   INIT_SETTINGS,
   ISettingsState
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
@@ -73,7 +73,7 @@ export const getStoredSettings$: AppSeasonalEpic = (
       {
         dietType: DIET_TYPE.ALL,
         isListViewShown: false,
-        selectedRegionCode: undefined,
+        selectedRegionId: undefined,
         timesAppStarted: 1
       })
     )
@@ -89,10 +89,10 @@ export const detectCountry$: AppSeasonalEpic = (
     withLatestFrom(state$),
     map(([, state]) => ({
       allRegions: selectAllRegions(state),
-      regionCode: selectSettingsRegionCode(state)
+      regionId: selectSettingsRegionId(state)
     })),
-    filter(({ allRegions, regionCode }) =>
-      Boolean(!regionCode && allRegions)
+    filter(({ allRegions, regionId }) =>
+      Boolean(!regionId && allRegions)
     ),
     debounceTime(100),
     switchMap(({ allRegions }) => (
@@ -123,7 +123,7 @@ export const detectCountry$: AppSeasonalEpic = (
       nearestRegion: getNearestRegionFromLatLng(allRegions, location)
     })),
     map(({ nearestRegion, error }) => userRegionDetected(
-      nearestRegion!.code, error
+      nearestRegion!.id, error
     ))
   )
 );

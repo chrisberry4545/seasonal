@@ -4,5 +4,5 @@ export const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 
 export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY || 'test-secret';
 
-export const DEFAULT_COUNTRY_ID =
-  process.env.DEFAULT_COUNTRY_ID || 'gbr';
+export const DEFAULT_REGION_ID =
+  process.env.DEFAULT_REGION_ID || 'gbr';

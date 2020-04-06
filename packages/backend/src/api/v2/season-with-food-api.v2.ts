@@ -5,14 +5,14 @@ import {
   NextFunction
 } from 'express';
 import { fetchAllSeasonsWithFood, fetchSeasonWithFood } from '../../fetch-data';
-import { getCountryCodeFromQueryParams } from '../utils/get-query-params';
+import { getRegionIdFromQueryParams } from '../utils/get-query-params';
 import { get500Error, get404Error } from '../utils';
 
 export const seasonWithFoodApi = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
-    const countryCode = getCountryCodeFromQueryParams(req);
+    const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await fetchAllSeasonsWithFood(countryCode);
+      const result = await fetchAllSeasonsWithFood(regionId);
       return res.json(result);
     } catch (err) {
       return next(get500Error(err.message));
@@ -20,9 +20,9 @@ export const seasonWithFoodApi = (router = Router()) => {
   });
   router.get('/:seasonIndex', async (req: Request, res: Response, next: NextFunction) => {
     const { seasonIndex } = req.params;
-    const countryCode = getCountryCodeFromQueryParams(req);
+    const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await fetchSeasonWithFood(parseInt(seasonIndex, 10), countryCode);
+      const result = await fetchSeasonWithFood(parseInt(seasonIndex, 10), regionId);
       if (!result) {
         return next(get404Error());
       }

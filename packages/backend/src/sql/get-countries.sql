@@ -7,6 +7,7 @@ FROM (
         SELECT COALESCE(
           json_agg(
             json_build_object(
+              'id', regions.id,
               'code' , regions.code,
               'name', regions.name,
               'latLng', json_build_object(

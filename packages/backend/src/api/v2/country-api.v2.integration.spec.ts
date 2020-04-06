@@ -25,7 +25,7 @@ describe('Get countries', () => {
   test('Returns a status of 200', () => {
     expect(response.status).toBe(200);
   });
-  test('Retrieves a single food item', async () => {
+  test('Retrieves a list of countries', async () => {
     expect(result).toMatchSnapshot();
   });
   test('Returns multiple countries', () => {
@@ -50,6 +50,11 @@ describe('Get countries', () => {
     const allRegionsNamesDefined = allRegions
       .every((region) => region.name !== undefined);
     expect(allRegionsNamesDefined).toBe(true);
+  });
+  test('Populates every regions id', () => {
+    const allRegionsIdsDefined = allRegions
+      .every((region) => region.id !== undefined);
+    expect(allRegionsIdsDefined).toBe(true);
   });
   test('Populates every regions code', () => {
     const allRegionsCodesDefined = allRegions
