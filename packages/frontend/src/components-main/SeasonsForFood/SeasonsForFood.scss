@@ -1,13 +1,13 @@
 @import '../../styles/settings';
 @import '../../styles/tools';
 
-$season-unselected-color: $grey-med !default;
+$season-selected-color: $alt-color-1 !default;
 $season-marker-size: 50px !default;
 
 @mixin create-season-marker() {
   height: $season-marker-size;
   width: $season-marker-size;
-  border: 1px solid $season-unselected-color;
+  border: 1px solid $grey-med;
   border-radius: 5px;
   margin: 5px;
   display: flex;
@@ -39,11 +39,11 @@ $season-marker-size: 50px !default;
 
   .c-season-for-food__season {
     @include create-season-marker;
-    background-color: $season-unselected-color;
+    background-color: transparent;
   }
 
     .c-season-for-food__season--selected {
-      background-color: transparent;
+      background-color: $season-selected-color;
     }
 
   .c-season-food__in-season-key {
@@ -58,12 +58,12 @@ $season-marker-size: 50px !default;
       height: 20px;
       display: inline-block;
       margin-left: 0.5rem;
-      background-color: $season-unselected-color;
+      background-color: transparent;
     }
   }
 
     .c-season-food__in-season-key--in-season::after {
-      background-color: transparent;
+      background-color: $season-selected-color;
     }
 
     .c-season-food__in-season-key__text {
