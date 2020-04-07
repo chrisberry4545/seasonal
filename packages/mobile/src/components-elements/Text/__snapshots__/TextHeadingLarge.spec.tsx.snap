@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextHeadingLarge /> renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "Roboto",
+        "fontSize": 30,
+        "lineHeight": 40,
+      },
+      Object {
+        "color": "#000000",
+      },
+    ]
+  }
+>
+  Text
+</Text>
+`;

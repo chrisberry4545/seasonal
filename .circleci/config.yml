@@ -8,6 +8,16 @@ commands:
           command: yarn install
 
 jobs:
+  mobile_test_unit:
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - checkout
+      - install-dependencies
+      - run:
+          name: Run mobile unit tests
+          command: yarn workspace @chrisb-dev/seasonal-mobile test
+
   backend_test_integration:
     docker:
       - image: circleci/node:12.14
@@ -36,6 +46,16 @@ jobs:
           name: Deploy backend
           command: |
             yarn workspace @chrisb-dev/seasonal-backend deploy
+
+  frontend_test_unit:
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - checkout
+      - install-dependencies
+      - run:
+          name: Run frontend unit tests
+          command: yarn workspace @chrisb-dev/seasonal-frontend test
 
   frontend_test_e2e:
     docker:
@@ -82,6 +102,7 @@ workflows:
   version: 2
   seasonal:
     jobs:
+      - mobile_test_unit
       - backend_approval:
           type: approval
       - backend_test_integration:
@@ -92,9 +113,12 @@ workflows:
             - backend_test_integration
       - frontend_approval:
           type: approval
-      - frontend_test_e2e:
+      - frontend_test_unit:
           requires:
             - frontend_approval
+      - frontend_test_e2e:
+          requires:
+            - frontend_test_unit
       - frontend_deploy:
           requires:
             - frontend_test_e2e

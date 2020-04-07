@@ -72,7 +72,7 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "./tests/setup.ts"
+      "./src/setupTests.ts"
     ],
     "moduleFileExtensions": [
       "js",
@@ -82,7 +82,7 @@
       "tsx"
     ],
     "transform": {
-      "\\.ts$": "<rootDir>/../../node_modules/ts-jest/preprocessor.js"
+      "\\.ts$": "ts-jest"
     },
     "testRegex": ".*spec.ts$"
   }

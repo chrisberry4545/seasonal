@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GridIcon /> renders correctly 1`] = `
+<IconBase
+  color="#000000"
+  name="md-grid"
+  size={50}
+/>
+`;

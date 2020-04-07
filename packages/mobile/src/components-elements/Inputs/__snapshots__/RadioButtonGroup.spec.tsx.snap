@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      },
+      Object {
+        "backgroundColor": "#000000",
+      },
+    ]
+  }
+>
+  <RadioButton
+    isSelected={false}
+    key="v1"
+    label="l1"
+    onClick={[Function]}
+  />
+  <RadioButton
+    isSelected={true}
+    key="v2"
+    label="l2"
+    onClick={[Function]}
+  />
+</View>
+`;

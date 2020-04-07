@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> renders correctly 1`] = `
+<BareButton
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flex": 1,
+      "justifyContent": "center",
+      "minHeight": 30,
+    }
+  }
+>
+  <TextMedium>
+    Radio button test
+  </TextMedium>
+</BareButton>
+`;

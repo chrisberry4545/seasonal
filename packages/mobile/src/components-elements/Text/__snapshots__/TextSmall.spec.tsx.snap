@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextSmall /> renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#20303C",
+        "fontFamily": "Roboto",
+        "fontSize": 10,
+        "lineHeight": 12,
+      },
+      Object {
+        "color": "#000000",
+      },
+    ]
+  }
+>
+  Text
+</Text>
+`;

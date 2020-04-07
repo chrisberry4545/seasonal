@@ -1,11 +1,11 @@
 import React, { FC, Fragment } from 'react';
 import { ISelectOption } from '@chrisb-dev/seasonal-shared-models';
-import { ViewStyle, TextStyle } from 'react-native';
+import { TextStyle } from 'react-native';
 import { BareButton } from '../Buttons';
 import { TextMedium } from '../Text';
 import { colors } from '../../styles/colors';
 
-const styleSelectOption: ViewStyle = {
+const styleSelectOption: TextStyle = {
   padding: 10
 };
 
@@ -24,13 +24,13 @@ export const SelectBox: FC<{
   {
     options && options.map((selectOptions) => (
       <BareButton
-        style={[
-          styleSelectOption,
-            ...(selectOptions.isSelected
-              ? [styleSelectOptionSelected]
-              : []
-            )
-        ]}
+        style={{
+          ...styleSelectOption,
+          ...(selectOptions.isSelected
+            ? styleSelectOptionSelected
+            : undefined
+          )
+        }}
         key={selectOptions.value}
         onClick={() => onSelected && onSelected(selectOptions.value)}>
         <TextMedium>

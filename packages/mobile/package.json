@@ -7,10 +7,11 @@
     "postinstall": "expo-yarn-workspaces postinstall",
     "start": "yarn dev",
     "dev": "expo start",
+    "test": "jest",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "build:android": "expo build:android -t app-bundle",
+    "build:android": "yarn test && expo build:android -t app-bundle",
     "build:ios": "expo build:ios",
     "upload:android": "expo upload:android --track beta",
     "upload:ios": "expo upload:ios",
@@ -45,12 +46,40 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@chrisb-dev/react-schematics": "1.1.1",
+    "@types/enzyme": "^3.10.5",
     "babel-preset-expo": "~8.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "expo-yarn-workspaces": "^1.2.1",
     "fs-extra": "8.1.0",
+    "jest-expo": "^37.0.0",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.7.2"
   },
   "peerDependencies": {
     "rxjs": "6.4.0"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest",
+      "\\.(js|jsx)$": "<rootDir>/../../node_modules/react-native/jest/preprocessor.js"
+    },
+    "testRegex": ".*spec.(ts|tsx)$",
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js",
+      "<rootDir>/../../node_modules/react-native-gesture-handler/jestSetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
