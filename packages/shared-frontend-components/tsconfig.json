@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "esnext",
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": [
       "dom",
       "dom.iterable",

@@ -62,13 +62,6 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "ts",
-      "tsx"
-    ],
     "transform": {
       "\\.(ts|tsx)$": "ts-jest",
       "\\.(js|jsx)$": "<rootDir>/../../node_modules/react-native/jest/preprocessor.js"

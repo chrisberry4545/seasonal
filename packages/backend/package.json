@@ -74,13 +74,6 @@
     "setupFilesAfterEnv": [
       "./src/setupTests.ts"
     ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "ts",
-      "tsx"
-    ],
     "transform": {
       "\\.ts$": "ts-jest"
     },

@@ -8,17 +8,8 @@ commands:
           command: yarn install
 
 jobs:
-  mobile_test_unit:
-    docker:
-      - image: circleci/node:12.14
-    steps:
-      - checkout
-      - install-dependencies
-      - run:
-          name: Run mobile unit tests
-          command: yarn workspace @chrisb-dev/seasonal-mobile test
 
-  backend_test_integration:
+  backend_integration_tests:
     docker:
       - image: circleci/node:12.14
     steps:
@@ -47,7 +38,23 @@ jobs:
           command: |
             yarn workspace @chrisb-dev/seasonal-backend deploy
 
-  frontend_test_unit:
+  shared_frontend_unit_tests:
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - checkout
+      - install-dependencies
+      - run:
+          name: Run shared frontend components tests
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test
+      - run:
+          name: Run shared frontend redux tests
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test
+      - run:
+          name: Run shared frontend utilities tests
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test
+
+  frontend_unit_tests:
     docker:
       - image: circleci/node:12.14
     steps:
@@ -57,7 +64,7 @@ jobs:
           name: Run frontend unit tests
           command: yarn workspace @chrisb-dev/seasonal-frontend test
 
-  frontend_test_e2e:
+  web_e2e_tests:
     docker:
       - image: circleci/node:12.14
     steps:
@@ -102,28 +109,32 @@ workflows:
   version: 2
   seasonal:
     jobs:
-      - mobile_test_unit
       - backend_approval:
           type: approval
-      - backend_test_integration:
+      - backend_integration_tests:
           requires:
            - backend_approval
       - backend_deploy:
           requires:
-            - backend_test_integration
+            - backend_integration_tests
       - frontend_approval:
           type: approval
-      - frontend_test_unit:
+      - shared_frontend_unit_tests:
           requires:
             - frontend_approval
-      - frontend_test_e2e:
+      - frontend_unit_tests:
           requires:
-            - frontend_test_unit
+            - frontend_approval
+      - web_e2e_tests:
+          requires:
+            - shared_frontend_unit_tests
+            - frontend_unit_tests
       - frontend_deploy:
           requires:
-            - frontend_test_e2e
+            - web_e2e_tests
       - frontend_admin_approval:
           type: approval
       - frontend_admin_deploy:
           requires:
             - frontend_admin_approval
+            - shared_frontend_unit_tests

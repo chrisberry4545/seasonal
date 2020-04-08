@@ -11,7 +11,9 @@
   "scripts": {
     "shared:build": "tsc",
     "prepare": "yarn shared:build",
-    "dev": "yarn shared:build && tsc-watch --noClear"
+    "dev": "yarn shared:build && concurrently \"tsc-watch --noClear\" \"yarn test:watch\"",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,15 @@
     "typescript": "^3.7.2"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
+    "jest": "24.9.0",
+    "ts-jest": "^24.0.2",
     "tsc-watch": "^4.0.0"
+  },
+  "jest": {
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": ".*spec.ts$"
   }
 }

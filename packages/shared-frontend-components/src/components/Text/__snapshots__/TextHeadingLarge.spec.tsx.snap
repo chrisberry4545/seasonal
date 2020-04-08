@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextHeadingLarge /> renders correctly 1`] = `
+<span
+  className="class c-text-heading-large"
+>
+  Text
+</span>
+`;
