@@ -1,9 +1,11 @@
+import { getStorage } from '../consts';
+
 export const setAccessToken = (token: string) => {
-  sessionStorage.accessToken = token;
+  getStorage().accessToken = token;
 };
 
 export const getAccessTokenHeaders = (): HeadersInit => {
-  const token = sessionStorage.accessToken;
+  const token = getStorage().accessToken;
   return token
   ? {
     Authorization: `Bearer ${token}`
