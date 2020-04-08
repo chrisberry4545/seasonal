@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectBox /> renders correctly 1`] = `
+<Fragment>
+  <BareButton
+    key="v1"
+    onClick={[Function]}
+    style={
+      Object {
+        "padding": 10,
+      }
+    }
+  >
+    <TextMedium>
+      n1
+    </TextMedium>
+  </BareButton>
+  <BareButton
+    key="v2"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#EEEEEE",
+        "padding": 10,
+      }
+    }
+  >
+    <TextMedium>
+      n2
+    </TextMedium>
+  </BareButton>
+</Fragment>
+`;

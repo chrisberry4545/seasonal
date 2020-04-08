@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BackgroundImageWithLoadingSpinner /> renders correctly 1`] = `
+<div
+  className="c-background-image-with-loading-spinner"
+  key="loading-spinner-fade-in-out"
+>
+  <LoadingSpinner />
+</div>
+`;

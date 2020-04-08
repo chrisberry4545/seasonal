@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BackArrowIconButton /> renders correctly 1`] = `
+<BareButton
+  activeOpacity={0.3}
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "blue",
+    }
+  }
+>
+  <ArrowIcon
+    size={24}
+  />
+</BareButton>
+`;

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { RadioButton } from './RadioButton';
-import { View, ViewStyle, StyleProp } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 
 const styleRadioButtonGroup: ViewStyle = {
   display: 'flex',
@@ -15,7 +15,7 @@ export const RadioButtonGroup: FC<{
   }>,
   selectedValue?: string,
   onChange: (newValue: string) => void,
-  style?: StyleProp<ViewStyle>;
+  style?: ViewStyle;
 }> = ({
   selectedValue,
   radioButtons,

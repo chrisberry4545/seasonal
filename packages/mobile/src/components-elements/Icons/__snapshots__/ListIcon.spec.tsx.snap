@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListIcon /> renders correctly 1`] = `
+<IconBase
+  color="#000000"
+  name="md-list"
+  size={50}
+/>
+`;

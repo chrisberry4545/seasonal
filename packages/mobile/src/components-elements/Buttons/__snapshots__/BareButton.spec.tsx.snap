@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BareButton /> renders correctly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[MockFunction]}
+  style={
+    Object {
+      "color": "blue",
+    }
+  }
+>
+  Button
+</TouchableOpacity>
+`;

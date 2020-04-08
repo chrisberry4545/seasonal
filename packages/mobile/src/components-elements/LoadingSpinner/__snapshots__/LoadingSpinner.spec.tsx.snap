@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadingSpinner /> renders correctly 1`] = `
+<ActivityIndicator
+  size="small"
+  style={
+    Object {
+      "backgroundColor": "#000000",
+    }
+  }
+/>
+`;

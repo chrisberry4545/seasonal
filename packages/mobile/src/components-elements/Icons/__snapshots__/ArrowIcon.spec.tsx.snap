@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArrowIcon /> renders correctly 1`] = `
+<IconBase
+  color="#000000"
+  name="ios-arrow-round-back"
+  size={50}
+/>
+`;

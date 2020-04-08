@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GroupedSelectBox /> renders correctly 1`] = `
+<Fragment>
+  <View
+    key="g1"
+    style={
+      Object {
+        "paddingBottom": 12,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#EEEEEE",
+          "marginBottom": 8,
+          "padding": 10,
+          "paddingLeft": 0,
+        }
+      }
+    >
+      <TextLarge>
+        g1
+      </TextLarge>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <SelectBox
+        onSelected={[MockFunction]}
+        options={
+          Array [
+            Object {
+              "isSelected": true,
+              "name": "n1",
+              "value": "v1",
+            },
+            Object {
+              "isSelected": false,
+              "name": "n2",
+              "value": "v2",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</Fragment>
+`;

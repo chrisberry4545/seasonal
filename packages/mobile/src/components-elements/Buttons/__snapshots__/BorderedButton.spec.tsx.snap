@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BorderedButton /> renders correctly 1`] = `
+<Component
+  style={
+    Object {
+      "borderColor": "#CCCCCC",
+      "borderWidth": 1,
+      "padding": 10,
+      "paddingTop": 11,
+    }
+  }
+/>
+`;

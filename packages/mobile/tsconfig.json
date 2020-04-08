@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "dist",
     "lib": ["es2015", "esnext.asynciterable"],
-    "jsx": "react-native",
+    "jsx": "react"
   }
 }

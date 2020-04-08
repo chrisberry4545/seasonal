@@ -8,7 +8,8 @@ commands:
           command: yarn install
 
 jobs:
-  backend_test_integration:
+
+  backend_integration_tests:
     docker:
       - image: circleci/node:12.14
     steps:
@@ -37,7 +38,26 @@ jobs:
           command: |
             yarn workspace @chrisb-dev/seasonal-backend deploy
 
-  frontend_test_e2e:
+  shared_frontend_unit_tests:
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - checkout
+      - install-dependencies
+      - run:
+          name: Run shared frontend components tests
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test
+      - run:
+          name: Run shared frontend redux tests
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test
+      - run:
+          name: Run shared frontend utilities tests
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test
+      - run:
+          name: Run frontend unit tests
+          command: yarn workspace @chrisb-dev/seasonal-frontend test
+
+  web_e2e_tests:
     docker:
       - image: circleci/node:12.14
     steps:
@@ -84,22 +104,25 @@ workflows:
     jobs:
       - backend_approval:
           type: approval
-      - backend_test_integration:
+      - backend_integration_tests:
           requires:
            - backend_approval
       - backend_deploy:
           requires:
-            - backend_test_integration
+            - backend_integration_tests
+      - shared_frontend_unit_tests
       - frontend_approval:
           type: approval
-      - frontend_test_e2e:
+      - web_e2e_tests:
           requires:
             - frontend_approval
+            - shared_frontend_unit_tests
       - frontend_deploy:
           requires:
-            - frontend_test_e2e
+            - web_e2e_tests
       - frontend_admin_approval:
           type: approval
       - frontend_admin_deploy:
           requires:
             - frontend_admin_approval
+            - shared_frontend_unit_tests

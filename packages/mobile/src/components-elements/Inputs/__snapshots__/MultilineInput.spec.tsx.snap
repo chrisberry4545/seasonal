@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MultilineInput /> renders correctly 1`] = `
+<Component
+  multiline={true}
+  onChange={[Function]}
+  style={
+    Array [
+      Object {
+        "borderColor": "#CCCCCC",
+        "borderWidth": 1,
+        "minHeight": 100,
+        "textAlignVertical": "top",
+      },
+      Object {
+        "color": "#000000",
+      },
+    ]
+  }
+/>
+`;
