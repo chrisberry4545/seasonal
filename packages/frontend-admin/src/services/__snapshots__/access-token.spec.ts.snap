@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getAccessTokenHeaders when there is an access token in the session storage returns the expected object 1`] = `
+Object {
+  "Authorization": "Bearer abc",
+}
+`;

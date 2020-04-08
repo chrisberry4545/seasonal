@@ -11,7 +11,8 @@
   "scripts": {
     "shared:build": "tsc",
     "prepare": "yarn shared:build",
-    "dev": "yarn shared:build && concurrently \"tsc-watch --noClear\" \"yarn test:watch\"",
+    "start": "concurrently \"yarn dev\" \"yarn test:watch\"",
+    "dev": "yarn shared:build && tsc-watch --noClear",
     "test": "jest",
     "test:watch": "jest --watch"
   },

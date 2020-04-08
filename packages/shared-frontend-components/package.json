@@ -11,7 +11,8 @@
   "scripts": {
     "shared:build": "webpack",
     "prepare": "yarn shared:build",
-    "dev": "concurrently \"webpack --watch\" \"yarn test:watch\"",
+    "start": "concurrently \"yarn dev\" \"yarn test:watch\"",
+    "dev": "webpack --watch",
     "test": "jest",
     "test:watch": "jest --watch"
   },

@@ -11,6 +11,7 @@
   "scripts": {
     "shared:build": "tsc",
     "prepare": "yarn shared:build",
+    "start": "yarn dev",
     "dev": "yarn shared:build && tsc-watch --noClear"
   },
   "repository": {
