@@ -53,13 +53,6 @@ jobs:
       - run:
           name: Run shared frontend utilities tests
           command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test
-
-  frontend_unit_tests:
-    docker:
-      - image: circleci/node:12.14
-    steps:
-      - checkout
-      - install-dependencies
       - run:
           name: Run frontend unit tests
           command: yarn workspace @chrisb-dev/seasonal-frontend test
@@ -117,18 +110,13 @@ workflows:
       - backend_deploy:
           requires:
             - backend_integration_tests
+      - shared_frontend_unit_tests
       - frontend_approval:
           type: approval
-      - shared_frontend_unit_tests:
-          requires:
-            - frontend_approval
-      - frontend_unit_tests:
-          requires:
-            - frontend_approval
       - web_e2e_tests:
           requires:
+            - frontend_approval
             - shared_frontend_unit_tests
-            - frontend_unit_tests
       - frontend_deploy:
           requires:
             - web_e2e_tests
