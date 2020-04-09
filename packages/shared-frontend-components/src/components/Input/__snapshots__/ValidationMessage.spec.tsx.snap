@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ValidationMessage /> renders correctly 1`] = `
+<TextMedium
+  className="class c-validation-message"
+>
+  Validation Message
+</TextMedium>
+`;

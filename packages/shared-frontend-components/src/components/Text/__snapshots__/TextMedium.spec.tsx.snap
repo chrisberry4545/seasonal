@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextMedium /> renders correctly 1`] = `
+<span
+  className="class c-text-medium"
+>
+  Text
+</span>
+`;

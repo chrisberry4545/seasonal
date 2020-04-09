@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> when the checkbox is checked renders correctly 1`] = `
+<input
+  checked={true}
+  className="class"
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;

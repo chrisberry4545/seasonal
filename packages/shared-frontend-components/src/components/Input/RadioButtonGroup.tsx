@@ -32,7 +32,7 @@ export const RadioButtonGroup: FC<{
         <RadioButton
           key={value}
           className={radioButtonClassName}
-          defaulToChecked={selectedValue === value}
+          defaultToChecked={selectedValue === value}
           groupName={groupName}
           value={value}
           label={label}

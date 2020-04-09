@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButtonGroup /> when no values are selected renders correctly 1`] = `
+<div
+  className="class c-radio-button-group"
+  onChange={[Function]}
+>
+  <RadioButton
+    className="radio-button-class"
+    defaultToChecked={false}
+    groupName="test-group"
+    key="v1"
+    label="l1"
+    value="v1"
+  />
+  <RadioButton
+    className="radio-button-class"
+    defaultToChecked={false}
+    groupName="test-group"
+    key="v2"
+    label="l2"
+    value="v2"
+  />
+</div>
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> renders correctly 1`] = `
+<input
+  className="class c-input"
+  data-e2e="data-e2e-test"
+  onChange={[Function]}
+  onKeyDown={[MockFunction]}
+  placeholder="placeholder"
+  type="text"
+  value="test-value"
+/>
+`;

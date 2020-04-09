@@ -3,13 +3,13 @@ import './RadioButton.scss';
 
 export const RadioButton: FC<{
   className?: string,
-  defaulToChecked?: boolean,
+  defaultToChecked?: boolean,
   groupName: string,
   value: string,
   label: string
 }> = ({
   className,
-  defaulToChecked,
+  defaultToChecked,
   groupName,
   value,
   label
@@ -17,12 +17,12 @@ export const RadioButton: FC<{
   <label
     data-e2e={`radio-btn-${value}`}
     htmlFor={value}
-    className={`${(className || '')} c-radio-button ${
-      defaulToChecked ? 'c-radio-button--selected' : ''
+    className={`${(className || '')} c-radio-button${
+      defaultToChecked ? ' c-radio-button--selected' : ''
     }`}>
     <input
       className='c-radio-button__input'
-      defaultChecked={defaulToChecked}
+      defaultChecked={defaultToChecked}
       id={value}
       type='radio'
       name={groupName}
