@@ -10,7 +10,6 @@ export const Input: FC<{
   value?: string | number,
   'data-e2e'?: string
 }> = ({
-  children,
   className,
   type = 'text',
   placeholder,
@@ -27,6 +26,5 @@ export const Input: FC<{
     value={value}
     onKeyDown={onKeyDown}
     onChange={(event) => onChange(event.target.value)}>
-    { children }
   </input>
 );

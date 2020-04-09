@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrimaryButton /> renders correctly 1`] = `
+<button
+  className="class c-primary-button"
+  onClick={[MockFunction]}
+  type="button"
+>
+  Button
+</button>
+`;

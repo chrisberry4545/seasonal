@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> when the radio button is not selected renders correctly 1`] = `
+<label
+  className="class c-radio-button"
+  data-e2e="radio-btn-test-value"
+  htmlFor="test-value"
+>
+  <input
+    className="c-radio-button__input"
+    defaultChecked={false}
+    id="test-value"
+    name="test-group"
+    type="radio"
+    value="test-value"
+  />
+  test-label
+</label>
+`;

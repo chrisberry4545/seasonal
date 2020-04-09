@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BurgerIcon /> renders correctly 1`] = `
+<svg
+  className="c-icon class"
+  viewBox="0 0 24 24"
+>
+  <rect
+    height="2"
+    width="24"
+    y="5"
+  />
+  <rect
+    height="2"
+    width="24"
+    y="11"
+  />
+  <rect
+    height="2"
+    width="24"
+    y="17"
+  />
+</svg>
+`;

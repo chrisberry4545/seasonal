@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Multiselect /> when no values are selected renders correctly 1`] = `
+<div
+  className="c-multiselect class"
+>
+  <BareButton
+    className="c-multi-select-option"
+    key="v1"
+    onClick={[Function]}
+  >
+    l1
+  </BareButton>
+  <BareButton
+    className="c-multi-select-option"
+    key="v2"
+    onClick={[Function]}
+  >
+    l2
+  </BareButton>
+</div>
+`;

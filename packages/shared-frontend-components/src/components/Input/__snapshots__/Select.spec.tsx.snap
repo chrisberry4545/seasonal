@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> renders correctly 1`] = `
+<select
+  className="class c-select"
+  onChange={[Function]}
+  value="v1"
+>
+  <option
+    key="v1"
+    value="v1"
+  >
+    l1
+  </option>
+  <option
+    key="v2"
+    value="v2"
+  >
+    l2
+  </option>
+</select>
+`;

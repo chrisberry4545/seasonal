@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchableMultiselect /> renders correctly 1`] = `
+<Fragment>
+  <Input
+    className="c-searchable-multiselect__search"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    placeholder="Search"
+  />
+  <Multiselect
+    className="class c-searchable-multiselect__multi-select"
+    onChange={[MockFunction]}
+    options={
+      Array [
+        Object {
+          "label": "l1",
+          "value": "v1",
+        },
+        Object {
+          "label": "l2",
+          "value": "v2",
+        },
+      ]
+    }
+    value={
+      Array [
+        "v1",
+      ]
+    }
+  />
+</Fragment>
+`;
