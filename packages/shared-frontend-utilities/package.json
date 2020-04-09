@@ -44,6 +44,9 @@
     "transform": {
       "\\.(ts|tsx)$": "ts-jest"
     },
-    "testRegex": ".*spec.ts$"
+    "testRegex": ".*spec.ts$",
+    "setupFiles": [
+      "./src/setupTests.js"
+    ]
   }
 }
