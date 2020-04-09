@@ -1823,6 +1823,7 @@ __metadata:
     enzyme-to-json: ^3.4.4
     gh-pages: ^2.2.0
     jest: 24.9.0
+    jest-fetch-mock: ^3.0.3
     node-sass: ^4.11.0
     react: 16.9.0
     react-dom: ^16.8.2
@@ -7246,6 +7247,16 @@ __metadata:
     loose-envify: ^1.3.1
     object-assign: ^4.1.1
   checksum: 2/d71a513045d95f38f69c31e606c8647cc7c3ee1306b9d8ff778d9568c28cc5d6afcc2d2d3bdcbe89a41a245942fd9a4171d202a52845251e13a67a2f94906208
+  languageName: node
+  linkType: hard
+
+"cross-fetch@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "cross-fetch@npm:3.0.4"
+  dependencies:
+    node-fetch: 2.6.0
+    whatwg-fetch: 3.0.0
+  checksum: 2/2ffab89e23d7cb07a33e6c8c8e7aa214dcd6047dec59c78e15da061c4246bb8521572909ec66caf71bf59455c7460d9deea8f7bd15603301e6c79e70a35639a1
   languageName: node
   linkType: hard
 
@@ -13227,6 +13238,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jest-fetch-mock@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "jest-fetch-mock@npm:3.0.3"
+  dependencies:
+    cross-fetch: ^3.0.4
+    promise-polyfill: ^8.1.3
+  checksum: 2/5c7dc1ba7ac0637e63e22afa3b58cdb699539f2d3a22b154cebf56d044d134785cbaec46e6fc4b657868b0db75fffabb39f49cbf4c1b9c324d7890b47f4e3da4
+  languageName: node
+  linkType: hard
+
 "jest-get-type@npm:^24.9.0":
   version: 24.9.0
   resolution: "jest-get-type@npm:24.9.0"
@@ -15856,6 +15877,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-fetch@npm:2.6.0, node-fetch@npm:^2.2.0, node-fetch@npm:^2.5.0, node-fetch@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "node-fetch@npm:2.6.0"
+  checksum: 2/dd9f586a9f7ddb7dd94d2aba9cb693d32f5001e9850098512fbc8a4cbdd56838afa08ed0a6725b9fce9b01ec12b713e622cbfc16d92762d8b937b238330a632a
+  languageName: node
+  linkType: hard
+
 "node-fetch@npm:^1.0.1, node-fetch@npm:^1.7.3":
   version: 1.7.3
   resolution: "node-fetch@npm:1.7.3"
@@ -15863,13 +15891,6 @@ __metadata:
     encoding: ^0.1.11
     is-stream: ^1.0.1
   checksum: 2/d04afb2e328ffb974a5ac4800fe5714d7419243d72f089a6a2383d3b93368c61ae88954a4866c476c0d7f95d7af414c1b9a885e051971061efe4054d526e23ed
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:^2.2.0, node-fetch@npm:^2.5.0, node-fetch@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "node-fetch@npm:2.6.0"
-  checksum: 2/dd9f586a9f7ddb7dd94d2aba9cb693d32f5001e9850098512fbc8a4cbdd56838afa08ed0a6725b9fce9b01ec12b713e622cbfc16d92762d8b937b238330a632a
   languageName: node
   linkType: hard
 
@@ -18568,6 +18589,13 @@ __metadata:
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
   checksum: 2/c06bce0fc60b1c7979f291e489b9017db9c15f872d5cef0dfbb2b56694e9db574bc5c28f332a7033cdbd3a1d6417c5a1ee03889743638f0241e82e5a6b9c277f
+  languageName: node
+  linkType: hard
+
+"promise-polyfill@npm:^8.1.3":
+  version: 8.1.3
+  resolution: "promise-polyfill@npm:8.1.3"
+  checksum: 2/f8134da02b0dbb43dc8ed6835f7dd3cc02866ce383bf926b240e679d68a13ec6ac7f3a935d084e5a4c8f7f787ae5e441d488be94872ba924e85a88ce926ee4fe
   languageName: node
   linkType: hard
 
@@ -23839,7 +23867,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatwg-fetch@npm:>=0.10.0, whatwg-fetch@npm:^3.0.0":
+"whatwg-fetch@npm:3.0.0, whatwg-fetch@npm:>=0.10.0, whatwg-fetch@npm:^3.0.0":
   version: 3.0.0
   resolution: "whatwg-fetch@npm:3.0.0"
   checksum: 2/56ffff2db0908b2180830c1c543b16b3cb93f07c771f15af9ce1a31f426c4b843e0a22cb0afd9de585d7583c07f4b84cb5dbf42fe22bcf6ad34f96103b456aaf
