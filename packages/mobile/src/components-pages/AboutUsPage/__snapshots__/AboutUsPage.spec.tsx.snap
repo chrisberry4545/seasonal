@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AboutUsPage /> renders correctly 1`] = `
+<MainContainer>
+  <HeaderConnecter />
+  <DefaultPaddingContainer>
+    <AboutUs />
+    <PrivacyPolicyLink />
+  </DefaultPaddingContainer>
+</MainContainer>
+`;
