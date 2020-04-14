@@ -14,7 +14,7 @@ import {
 import {
   SET_REGION,
   SET_USER_REGION_DETECTED
-} from '../country';
+} from '../country/country.actions';
 import { IUiState } from './ui-state.interface';
 import { Action } from 'redux';
 

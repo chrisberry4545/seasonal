@@ -32,11 +32,13 @@ import { SharedSeasonalEpic } from '../seasonal-epic.type';
 import { DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../state.interface';
 import {
-  selectCurrentSeasonIndex,
   setCurrentSeasonWithRecipesStart,
   SET_CURRENT_SEASON_WITH_RECIPES_START,
   setCurrentSeasonWithRecipesSuccess
-} from '../current-season';
+} from './current-season.actions';
+import {
+  selectCurrentSeasonIndex
+} from './current-season.selectors';
 import {
   selectSettingsDietType,
   selectSettingsRegionId

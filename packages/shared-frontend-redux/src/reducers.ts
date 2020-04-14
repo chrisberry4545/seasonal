@@ -13,7 +13,7 @@ import { errorReducer } from './error';
 
 export const allReducers = {
   allBasicSeasonData: allBasicSeasonsReducer,
-  allSeasonsWithFoodData: allSeasonsReducer,
+  allSeasons: allSeasonsReducer,
   countryData: countryReducer,
   currentFoodDetailsData: currentFoodDetailsReducer,
   currentSeasonData: currentSeasonWithFoodReducer,

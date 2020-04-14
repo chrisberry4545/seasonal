@@ -7,9 +7,11 @@ import {
 import {
   SET_CURRENT_SEASON_WITH_FOOD_START,
   setCurrentSeasonWithFoodSuccess,
-  setCurrentSeasonWithFoodStart,
+  setCurrentSeasonWithFoodStart
+} from './current-season.actions';
+import {
   selectCurrentSeasonIndex
-} from '../current-season';
+} from './current-season.selectors';
 import {
   INIT_SETTINGS,
   selectSettingsRegionId

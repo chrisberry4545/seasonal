@@ -16,14 +16,14 @@ import {
   setDietType
 } from '../settings';
 import { setCurrentFoodDetailsSuccess } from './current-food-details.actions';
-import * as currentFoodDetails from '../current-food-details';
+import * as selectors from './current-food-details.selectors';
 import * as settings from '../settings';
 
 describe('updateFoodDetailsOnDietTypeChangeEpic$', () => {
 
   describe('when the current foodId is not defined', () => {
     beforeEach(() =>
-      jest.spyOn(currentFoodDetails, 'selectCurrentFoodDetailsId')
+      jest.spyOn(selectors, 'selectCurrentFoodDetailsId')
         .mockReturnValue(undefined)
     );
 
@@ -39,7 +39,7 @@ describe('updateFoodDetailsOnDietTypeChangeEpic$', () => {
   describe('when the current foodId is defined', () => {
     const foodId = 'foodId';
     beforeEach(() =>
-      jest.spyOn(currentFoodDetails, 'selectCurrentFoodDetailsId')
+      jest.spyOn(selectors, 'selectCurrentFoodDetailsId')
         .mockReturnValue(foodId)
     );
 

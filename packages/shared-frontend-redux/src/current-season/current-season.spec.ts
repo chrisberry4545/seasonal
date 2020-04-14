@@ -22,7 +22,7 @@ import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { ICurrentSeasonState } from './current-season-state.interface';
 import {
   selectCurrentSeasonRecipesById
-} from '../current-season';
+} from './current-season.selectors';
 import { setSelectedSeasonName } from './current-season-name.actions';
 import {
   foodDetailsSelectSeason,

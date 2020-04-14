@@ -1,17 +1,23 @@
 import {
-  allSeasonsReducer,
+  allSeasonsReducer
+} from './all-seasons.reducer';
+import {
+  IAllSeasonState
+} from './all-seasons.state.interface';
+import {
   setAllSeasonsWithFoodStart,
-  IAllSeasonState,
+  setAllSeasonsWithFoodSuccess,
+  setAllSeasonsWithRecipesStart,
+  setAllSeasonsWithRecipesSuccess,
+  increaseNumberOfAllFoodSeasonsInView
+} from './all-seasons.actions';
+import {
   selectIsAllSeasonsFoodLoading,
   selectAllSeasons,
   selectIsAllSeasonsRecipesLoading,
   selectNumberOfAllSeasonsInView,
-  setAllSeasonsWithFoodSuccess,
-  selectHasMoreSeasonsInAllSeasonsView,
-  setAllSeasonsWithRecipesStart,
-  setAllSeasonsWithRecipesSuccess,
-  increaseNumberOfAllFoodSeasonsInView
-} from './';
+  selectHasMoreSeasonsInAllSeasonsView
+} from './all-seasons.selectors';
 import { IState } from '../state.interface';
 import { Action } from 'redux';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';

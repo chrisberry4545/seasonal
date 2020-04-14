@@ -2,7 +2,7 @@ import {
   SET_ALL_BASIC_SEASONS_START,
   SET_ALL_BASIC_SEASONS_SUCCESS,
   ISetAllBasicSeasonDataSuccess
-} from '../all-basic-seasons';
+} from './all-basic-seasons.actions';
 import { IAllBasicSeasonsState } from './all-basic-seasons-state.interface';
 import { Action } from 'redux';
 

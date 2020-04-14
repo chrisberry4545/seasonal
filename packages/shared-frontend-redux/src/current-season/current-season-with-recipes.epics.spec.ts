@@ -21,7 +21,7 @@ import {
 import { of } from 'rxjs';
 import { setCurrentSeasonWithRecipesStart, setCurrentSeasonWithRecipesSuccess } from './current-season.actions';
 import * as settings from '../settings';
-import * as currentSeason from '../current-season';
+import * as selectors from './current-season.selectors';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { IHydratedSeason, DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 
@@ -49,7 +49,7 @@ describe('getCurrentSeasonWithRecipesEpic$', () => {
       .mockReturnValue(DIET_TYPE.ALL);
     jest.spyOn(settings, 'selectSettingsRegionId')
       .mockReturnValue('regionId');
-    jest.spyOn(currentSeason, 'selectCurrentSeasonIndex')
+    jest.spyOn(selectors, 'selectCurrentSeasonIndex')
       .mockReturnValue(1);
   });
 

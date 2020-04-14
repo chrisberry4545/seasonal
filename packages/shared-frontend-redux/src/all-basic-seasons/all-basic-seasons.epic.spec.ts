@@ -2,7 +2,7 @@ import {
   getAllBasicSeasonsStartEpic$,
   getAllBasicSeasonsEpic$
 } from './all-basic-seasons.epics';
-import { setAllSeasonsStart } from './';
+import { setAllSeasonsStart } from './all-basic-seasons.actions';
 import {
   initSettings,
   ISettingsState
@@ -16,7 +16,7 @@ import {
 } from '../error';
 import {
   setAllBasicSeasonsSuccess
-} from '../all-basic-seasons';
+} from './all-basic-seasons.actions';
 import { of } from 'rxjs';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';

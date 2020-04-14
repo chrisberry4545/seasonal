@@ -12,7 +12,7 @@ import {
   SET_REGION,
   ISetRegionAction,
   SET_USER_REGION_DETECTED
-} from '../country';
+} from '../country/country.actions';
 import { v4 } from 'uuid';
 
 const getDefaultState = (): ISettingsState => ({

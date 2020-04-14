@@ -40,7 +40,7 @@ import {
 } from '../settings';
 import {
   selectCurrentFoodDetailsId
-} from '../current-food-details';
+} from './current-food-details.selectors';
 
 export const updateFoodDetailsOnDietTypeChangeEpic$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,

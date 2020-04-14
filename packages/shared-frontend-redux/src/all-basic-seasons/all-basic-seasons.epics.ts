@@ -8,7 +8,7 @@ import {
   SET_ALL_BASIC_SEASONS_START,
   setAllSeasonsStart,
   setAllBasicSeasonsSuccess
-} from '../all-basic-seasons';
+} from './all-basic-seasons.actions';
 import {
   SET_REGION,
   SET_USER_REGION_DETECTED
