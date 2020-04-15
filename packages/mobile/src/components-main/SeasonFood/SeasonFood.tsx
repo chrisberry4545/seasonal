@@ -6,7 +6,7 @@ import {
 import { ISeasonFoodProps } from './SeasonFood.interface';
 
 import {
-  SwitchableGridOfList, TopLoadingSpinner
+  SwitchableGridOrList, TopLoadingSpinner
 } from '../../components-layout';
 
 export const SeasonFood: FC<ISeasonFoodProps> = ({
@@ -19,7 +19,7 @@ export const SeasonFood: FC<ISeasonFoodProps> = ({
   <SeasonDetailsContentWrapperConnector>
     {
     !isLoading
-      ? <SwitchableGridOfList
+      ? <SwitchableGridOrList
           isListViewShown={isListViewShown}
           onToggleListView={onToggleListView}
           data={food}

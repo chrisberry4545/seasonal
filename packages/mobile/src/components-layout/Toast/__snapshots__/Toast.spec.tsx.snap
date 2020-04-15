@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toast /> renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "bottom": 0,
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": 12,
+        "position": "absolute",
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#424242",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "width": "90%",
+      }
+    }
+  >
+    Children
+  </View>
+  <BareButton
+    onClick={[MockFunction]}
+  >
+    <CrossIcon
+      color="#FFFFFF"
+      size={32}
+    />
+  </BareButton>
+</View>
+`;
+
+exports[`<Toast /> when the type is error renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "bottom": 0,
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": 12,
+        "position": "absolute",
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#FF6363",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "width": "90%",
+      }
+    }
+  >
+    Children
+  </View>
+</View>
+`;

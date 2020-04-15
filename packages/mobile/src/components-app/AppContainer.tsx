@@ -13,7 +13,7 @@ import {
 } from '../components-pages';
 import {
   setTopLevelNavigator
-} from '../services';
+} from '../helpers';
 import { ROUTES } from '../const';
 import { SideMenuConnecter } from '../components-main';
 

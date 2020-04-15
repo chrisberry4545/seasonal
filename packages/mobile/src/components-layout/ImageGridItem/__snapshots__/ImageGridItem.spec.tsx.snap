@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageGridItem /> renders correctly 1`] = `
+<BareButton
+  activeOpacity={0.2}
+  onClick={[Function]}
+  style={
+    Object {
+      "aspectRatio": 1,
+      "borderBottomWidth": 0.5,
+      "borderColor": "#CCCCCC",
+      "marginBottom": 18,
+      "paddingBottom": 18,
+      "paddingLeft": 10,
+      "paddingRight": 30,
+      "width": 25,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "http://image.com",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 15,
+          "flex": 1,
+        }
+      }
+    />
+    <TextMedium
+      style={
+        Object {
+          "marginTop": 18,
+        }
+      }
+    >
+      name
+    </TextMedium>
+  </View>
+</BareButton>
+`;

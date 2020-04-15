@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import {
-  TopLoadingSpinner, SwitchableGridOfList
+  TopLoadingSpinner, SwitchableGridOrList
 } from '../../components-layout';
 
 import {
@@ -21,7 +21,7 @@ export const SeasonRecipes: FC<ISeasonRecipesProps> = ({
     <DietaryFiltersConnector />
     {
       !isLoading
-        ? <SwitchableGridOfList data={ recipes }
+        ? <SwitchableGridOrList data={ recipes }
             onClick={ onRecipeClick }
             isListViewShown={isListViewShown}
             onToggleListView={onToggleListView}

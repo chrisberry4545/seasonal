@@ -26,7 +26,7 @@ import {
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { withLatestFrom, map, tap, ignoreElements, mapTo } from 'rxjs/operators';
 import { goToLinkUrl } from '../../helpers';
-import { navigate, closeDrawer, openDrawer, navigateBackOne } from '../../services';
+import { navigate, closeDrawer, openDrawer, navigateBackOne } from '../../helpers';
 import { ROUTES } from '../../const';
 import { IState } from '../../interfaces';
 

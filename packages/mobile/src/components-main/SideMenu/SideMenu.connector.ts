@@ -26,7 +26,7 @@ import {
   getIsCurrentRouteAboutUs,
   getIsCurrentRouteSeasonDetails,
   getIsCurrentRouteSettings
-} from '../../services';
+} from '../../helpers';
 
 const mapStateToProps = (
   state: IState

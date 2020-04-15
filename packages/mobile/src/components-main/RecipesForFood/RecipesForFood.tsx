@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { View, TextStyle, ViewStyle, StyleSheet } from 'react-native';
 
 import { IRecipeForFoodProps } from './RecipesForFood.interface';
-import { SwitchableGridOfList } from '../../components-layout';
+import { SwitchableGridOrList } from '../../components-layout';
 import { TextHeadingSmall } from '../../components-elements';
 import { styles } from '../../styles';
 import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
@@ -32,7 +32,7 @@ export const RecipesForFood: FC<IRecipeForFoodProps> = ({
         Recipes
       </TextHeadingSmall>
       <DietaryFiltersConnector />
-      <SwitchableGridOfList
+      <SwitchableGridOrList
         maxItemsPerRow={3}
         isListViewShown={isListViewShown}
         onToggleListView={onToggleListView}

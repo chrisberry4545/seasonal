@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageListItem /> renders correctly 1`] = `
+<BareButton
+  activeOpacity={0.2}
+  onClick={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 6,
+      "width": 25,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "http://image.com",
+      }
+    }
+    style={
+      Object {
+        "aspectRatio": 1,
+        "borderRadius": 15,
+        "marginLeft": 12,
+        "width": 40,
+      }
+    }
+  />
+  <TextMedium
+    style={
+      Object {
+        "marginLeft": 6,
+      }
+    }
+  >
+    name
+  </TextMedium>
+</BareButton>
+`;

@@ -4,7 +4,7 @@ import {
   IAllSeasonsProps
 } from './AllSeasons.interface';
 import {
-  SwitchableGridOfList,
+  SwitchableGridOrList,
   SeasonNameView,
   TopLoadingSpinner
 } from '../../components-layout';
@@ -25,7 +25,7 @@ export const AllSeasons: FC<IAllSeasonsProps> = ({
         renderItem={({ item }) => (
           <Fragment>
             <SeasonNameView name={item.name} />
-            <SwitchableGridOfList data={ item.food }
+            <SwitchableGridOrList data={ item.food }
               onClick={ onFoodClick }
               isListViewShown={isListViewShown}
               onToggleListView={onToggleListView}

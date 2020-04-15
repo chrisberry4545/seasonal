@@ -8,4 +8,6 @@ export * from './linking';
 
 export * from './load-fonts';
 
+export * from './navigation';
+
 export * from './stored-data';

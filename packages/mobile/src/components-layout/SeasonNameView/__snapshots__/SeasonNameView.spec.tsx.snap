@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SeasonNameView /> renders correctly 1`] = `
+<TextHeadingMedium
+  style={
+    Object {
+      "marginTop": 8,
+      "textAlign": "center",
+    }
+  }
+>
+  Season name
+</TextHeadingMedium>
+`;

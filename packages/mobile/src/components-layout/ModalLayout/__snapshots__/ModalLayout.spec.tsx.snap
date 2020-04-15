@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ModalLayout /> renders correctly 1`] = `
+<Component
+  animationType="fade"
+  hardwareAccelerated={false}
+  presentationStyle="overFullScreen"
+  transparent={true}
+  visible={true}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0,0,0,0.5)",
+        "height": "100%",
+        "justifyContent": "center",
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "margin": 10,
+          "maxWidth": 350,
+          "paddingBottom": 20,
+          "paddingHorizontal": 40,
+          "paddingTop": 50,
+        }
+      }
+    >
+      <BareButton
+        onClick={[MockFunction]}
+        style={
+          Object {
+            "position": "absolute",
+            "right": 12,
+            "top": 4,
+          }
+        }
+      >
+        <CrossIcon
+          size={32}
+        />
+      </BareButton>
+      Child
+    </View>
+  </View>
+</Component>
+`;

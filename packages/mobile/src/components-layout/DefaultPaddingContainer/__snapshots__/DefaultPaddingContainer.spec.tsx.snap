@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DefaultPaddingContainer /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "paddingLeft": 24,
+      "paddingRight": 24,
+    }
+  }
+>
+  Child
+</View>
+`;
