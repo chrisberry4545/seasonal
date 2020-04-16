@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import {
   GO_BACK_FROM_FOOD_DETAILS,
   GO_TO_ABOUT_US_PAGE
-} from '../route';
+} from '.';
 import {
   RECIPE_ITEM_CLICKED,
   IRecipeItemClicked,

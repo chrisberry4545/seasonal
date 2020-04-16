@@ -12,7 +12,7 @@ import {
   SEND_FEEDBACK_WANT_TO_RATE,
   CLOSE_FEEDBACK_POPUP,
   SHOW_FEEDBACK_POPUP
-} from './../feedback/feedback.actions';
+} from '../feedback/feedback.actions';
 
 import {
   SELECT_SEASON,
