@@ -11,8 +11,8 @@ import {
   ON_MENU_FEEDBACK_SELECTED,
   FEEDBACK_IMPROVEMENTS_CHANGED,
   IFeedbackImprovementsChanged
-} from '../actions';
-import { IFeedbackState, FeedbackViewStates } from '../../interfaces';
+} from './feedback.actions';
+import { IFeedbackState, FeedbackViewStates } from './feedback-state.interface';
 import { Action } from 'redux';
 
 const getDefaultState = (): IFeedbackState => ({

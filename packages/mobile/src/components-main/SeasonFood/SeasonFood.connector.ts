@@ -13,7 +13,7 @@ import {
   selectIsListViewShown,
   toggleListView
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import { Dispatch } from 'redux';
 
 const mapStateToProps = (

@@ -10,13 +10,13 @@ import {
   allReducers
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
-import { IState } from '../../interfaces';
+import { IState } from './state.interface';
 
 import {
   rootEpic
-} from '../epics';
+} from './epics';
 
-import { feedbackReducer } from './feedback.reducer';
+import { feedbackReducer } from './feedback/feedback.reducer';
 
 const epicMiddleware = createEpicMiddleware<Action, Action, IState, {}>();
 

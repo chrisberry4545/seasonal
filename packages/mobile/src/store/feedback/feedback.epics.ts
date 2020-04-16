@@ -1,4 +1,4 @@
-import { AppSeasonalEpic } from './seasonal-epic.type';
+import { AppSeasonalEpic } from '../seasonal-epic.type';
 import { Action } from 'redux';
 import { StateObservable, ActionsObservable, ofType } from 'redux-observable';
 import { Observable } from 'rxjs';
@@ -12,7 +12,7 @@ import {
   CLOSE_FEEDBACK_POPUP,
   SEND_FEEDBACK_IMPROVEMENTS_START,
   sendFeedbackImprovementsSuccess
-} from '../actions';
+} from './feedback.actions';
 import {
   tap,
   ignoreElements,
@@ -21,10 +21,10 @@ import {
   filter,
   mapTo,
   switchMap,
-  first,
   delay
 } from 'rxjs/operators';
-import { IState, IFeedbackState } from '../../interfaces';
+import { IState } from '../state.interface';
+import { IFeedbackState } from './feedback-state.interface';
 import {
   selectSettingsTimesAppStarted,
   INIT_APP
@@ -35,7 +35,7 @@ import {
   selectHasBeenShownFeedbackQuestions,
   selectFeedbackState,
   selectFeedbackImprovements
-} from '../selectors';
+} from './feedback.selectors';
 import { STORE_URL } from '../../config';
 
 const feedbackStorageKey = 'feedbackStorage';
@@ -92,7 +92,6 @@ export const showFeedbackForm$: AppSeasonalEpic = (
       && timesAppStarted > 2
     ))),
     delay(10000),
-    first(),
     mapTo(showFeedbackPopup())
   )
 );

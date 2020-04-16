@@ -11,7 +11,7 @@ import {
   mapTo
 } from 'rxjs/operators';
 import { Action } from 'redux';
-import { AppSeasonalEpic } from './seasonal-epic.type';
+import { AppSeasonalEpic } from '../seasonal-epic.type';
 
 export const initAppEpic$: AppSeasonalEpic = (): Observable<Action> => (
   of(null).pipe(

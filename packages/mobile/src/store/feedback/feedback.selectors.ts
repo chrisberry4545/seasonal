@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
-import { IState, FeedbackViewStates } from '../../interfaces';
+import { FeedbackViewStates } from './feedback-state.interface';
+import { IState } from '../state.interface';
 
 export const selectFeedbackState = (state: IState) => state.feedback;
 

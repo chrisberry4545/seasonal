@@ -10,7 +10,7 @@ import {
   storeFeedbackSettings$,
   getStoredFeedbackSettings$,
   sendFeedbackImprovements$
-} from './feedback.epics';
+} from '../feedback/feedback.epics';
 
 import {
   goToAboutUsPage$,

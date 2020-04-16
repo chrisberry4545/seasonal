@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { IFeedbackState } from '../../interfaces';
+import { IFeedbackState } from './feedback-state.interface';
 
 export interface IInitFeedbackState extends Action {
   feedbackState: IFeedbackState | null;

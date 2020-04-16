@@ -8,7 +8,7 @@ import {
 import {
   ISelectLocationInputProps
 } from './SelectLocation.interface';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 const mapStateToProps = (state: IState): ISelectLocationInputProps => ({
   isLoading: selectAreCountriesLoading(state)

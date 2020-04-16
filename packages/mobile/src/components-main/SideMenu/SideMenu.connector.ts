@@ -15,7 +15,7 @@ import {
   onMenuFeedbackSelected
 } from '../../store';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   ISideMenuInputProps,
   ISideMenuDispatchProps
