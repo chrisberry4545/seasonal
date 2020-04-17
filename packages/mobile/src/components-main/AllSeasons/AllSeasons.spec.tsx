@@ -3,7 +3,7 @@ import { AllSeasons } from './AllSeasons';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { FlatList } from 'react-native-gesture-handler';
-import { TopLoadingSpinner } from '../../components-layout';
+import { TopLoadingSpinner, SwitchableGridOrList } from '../../components-layout';
 
 jest.mock('react-native-gesture-handler', () => ({
   FlatList: () => 'FlatList'
@@ -96,4 +96,31 @@ describe('<AllSeasons />', () => {
 
   });
 
+  describe('inner list', () => {
+    let innerListWrapper: ShallowWrapper;
+    beforeEach(() => {
+      const RenderItem = wrapper.find(FlatList).first().props().renderItem;
+      innerListWrapper = shallow(<RenderItem {...({
+        item: seasons
+      } as any)} />);
+    });
+
+    test('renders the list correctly', () => expect(innerListWrapper).toMatchSnapshot());
+
+    test('can click the food items', () => {
+      const onClick = innerListWrapper.find(SwitchableGridOrList).first().props().onClick;
+      if (onClick) {
+        onClick('id');
+      }
+      expect(mockOnFoodClick).toHaveBeenCalledWith('id');
+    });
+
+    test('can toggle the list view', () => {
+      const onToggleListView = innerListWrapper.find(SwitchableGridOrList).first().props().onToggleListView;
+      if (onToggleListView) {
+        onToggleListView();
+      }
+      expect(mockOnToggleListView).toHaveBeenCalled();
+    });
+  });
 });
