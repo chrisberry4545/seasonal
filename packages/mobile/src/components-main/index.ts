@@ -1,4 +1,4 @@
-export * from './AboutUs/AbousUs';
+export * from './AboutUs/AboutUs';
 
 export * from './CurrentSeasonName/CurrentSeasonName.connector';
 

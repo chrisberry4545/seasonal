@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageList /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+      "paddingBottom": 30,
+      "paddingTop": 8,
+    }
+  }
+>
+  <ImageListItem
+    id="1"
+    key="1"
+    onClick={[MockFunction]}
+    width="100%"
+  />
+  <ImageListItem
+    id="2"
+    key="2"
+    onClick={[MockFunction]}
+    width="100%"
+  />
+</View>
+`;

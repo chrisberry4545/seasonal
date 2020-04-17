@@ -30,8 +30,6 @@ export const ImageGrid: FC<IImageGrid> = ({
   const numberPerRow = maxItemsPerRow
     ? Math.min(numberPerRowForScreen, maxItemsPerRow)
     : numberPerRowForScreen;
-  const isFirstInRow = (index: number) =>
-    index % numberPerRow === 0;
   const isLastInRow = (index: number) =>
     index !== 0
       && index % numberPerRow === (numberPerRow - 1);
@@ -41,8 +39,6 @@ export const ImageGrid: FC<IImageGrid> = ({
     return index < (length - numberInLastRow);
   };
 
-  const getPaddingLeft = (index: number) =>
-    isFirstInRow(index) ? 0 : 0;
   const padding = 10 / numberPerRow;
   const getPaddingRight = (index: number) =>
     isLastInRow(index) ? 0 : `${padding}%`;
@@ -62,7 +58,7 @@ export const ImageGrid: FC<IImageGrid> = ({
           <ImageGridItem
             { ...item }
             key={item.id}
-            paddingLeft={getPaddingLeft(index)}
+            paddingLeft={0}
             paddingRight={getPaddingRight(index)}
             onClick={onClick}
             hasBottomBorder={isNotInLastRow(index)}

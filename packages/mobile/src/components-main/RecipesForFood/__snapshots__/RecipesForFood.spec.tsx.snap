@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipesForFood /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomWidth": 0.5,
+      "borderColor": "#CCCCCC",
+    }
+  }
+>
+  <TextHeadingSmall
+    style={
+      Object {
+        "marginBottom": 10,
+        "marginTop": 24,
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    Recipes
+  </TextHeadingSmall>
+  <DietaryFiltersConnector />
+  <SwitchableGridOrList
+    data={
+      Array [
+        Object {
+          "id": "1",
+        },
+      ]
+    }
+    isListViewShown={true}
+    maxItemsPerRow={3}
+    noResultsMessage="No results found"
+    onClick={[MockFunction]}
+    onToggleListView={[MockFunction]}
+  />
+</View>
+`;

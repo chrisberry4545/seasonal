@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomWidth": 0.5,
+      "borderColor": "#CCCCCC",
+      "flexDirection": "row",
+      "paddingBottom": 10,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 16,
+    }
+  }
+>
+  <withNavigation(NavigationEvents)
+    onDidFocus={[MockFunction]}
+  />
+  <BareButton
+    onClick={[MockFunction]}
+    style={
+      Object {
+        "flex": 0,
+        "paddingTop": 4,
+      }
+    }
+  >
+    <BurgerIcon
+      size={32}
+    />
+  </BareButton>
+  <TextHeadingLarge
+    style={
+      Object {
+        "flex": 1,
+        "textAlign": "center",
+      }
+    }
+  >
+    Eat Seasonal
+  </TextHeadingLarge>
+  <Connect(Component) />
+</View>
+`;

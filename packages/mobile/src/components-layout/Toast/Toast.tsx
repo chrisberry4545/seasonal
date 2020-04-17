@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { ViewStyle, View } from 'react-native';
-import { BareButton } from '../../components-elements/Buttons';
-import { CrossIcon } from '../../components-elements/Icons';
+import { BareButton, CrossIcon } from '../../components-elements';
 import { colors } from '../../styles/colors';
 
 const styleToast: ViewStyle = {
@@ -35,7 +34,7 @@ const getTypeColor = (type: ToastTypes): ViewStyle => {
 export const Toast: FC<{
   onClose?: () => void,
   isVisible: boolean,
-  type: ToastTypes
+  type?: ToastTypes
 }> = ({
   children,
   onClose,

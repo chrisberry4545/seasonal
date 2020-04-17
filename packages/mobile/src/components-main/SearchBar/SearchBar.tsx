@@ -2,11 +2,10 @@ import React, { FC, Fragment } from 'react';
 
 import { ISearchBarProps } from './SearchBar.interface';
 import {
-  Input, MagnifyingGlassIcon, CrossIcon
-} from '../../components-elements';
-
-import {
-  BareButton
+  BareButton,
+  Input,
+  MagnifyingGlassIcon,
+  CrossIcon
 } from '../../components-elements';
 import { View, ViewStyle } from 'react-native';
 import { colors } from '../../styles/colors';

@@ -9,7 +9,7 @@ import {
 import {
   selectIsBasicSeasonsLoading, selectCurrentSeasonName
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 const mapStateToProps = (
   state: IState

@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedbackQuestionsLayout /> renders correctly 1`] = `
+<Fragment>
+  <TextHeadingMedium
+    style={
+      Object {
+        "lineHeight": 24,
+        "textAlign": "center",
+      }
+    }
+  >
+    Title
+  </TextHeadingMedium>
+  <View
+    style={
+      Object {
+        "marginTop": 14,
+      }
+    }
+  >
+    <View>
+      Children
+    </View>
+  </View>
+  <ConfirmButtonLayout
+    style={
+      Object {
+        "marginTop": 24,
+      }
+    }
+  >
+    <BorderedButton
+      onClick={[MockFunction]}
+      style={
+        Object {
+          "flex": 1,
+          "marginRight": 6,
+        }
+      }
+    >
+      <TextMedium
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Reject
+      </TextMedium>
+    </BorderedButton>
+    <BorderedButton
+      onClick={[MockFunction]}
+      style={
+        Object {
+          "flex": 1,
+          "marginLeft": 6,
+        }
+      }
+    >
+      <TextMedium
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Confirm
+      </TextMedium>
+    </BorderedButton>
+  </ConfirmButtonLayout>
+</Fragment>
+`;
+
+exports[`<FeedbackQuestionsLayout /> when there are no children does not render any children 1`] = `
+<Fragment>
+  <TextHeadingMedium
+    style={
+      Object {
+        "lineHeight": 24,
+        "textAlign": "center",
+      }
+    }
+  >
+    Title
+  </TextHeadingMedium>
+  <ConfirmButtonLayout
+    style={
+      Object {
+        "marginTop": 24,
+      }
+    }
+  >
+    <BorderedButton
+      onClick={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginRight": 6,
+        }
+      }
+    >
+      <TextMedium
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Reject
+      </TextMedium>
+    </BorderedButton>
+    <BorderedButton
+      onClick={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginLeft": 6,
+        }
+      }
+    >
+      <TextMedium
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Confirm
+      </TextMedium>
+    </BorderedButton>
+  </ConfirmButtonLayout>
+</Fragment>
+`;

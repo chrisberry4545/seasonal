@@ -3,15 +3,16 @@ import {
   DietaryFilters
 } from './DietaryFilters';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   IDietaryFiltersInputProps,
   IDietaryFiltersDispatchProps
 } from './DietaryFilters.interface';
 import { Dispatch } from 'redux';
 import {
-  setDietType, selectSettingsDietType, DIET_TYPE
+  setDietType, selectSettingsDietType
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 
 const mapStateToProps = (
   state: IState

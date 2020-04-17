@@ -46,16 +46,16 @@ jobs:
       - install-dependencies
       - run:
           name: Run shared frontend components tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test --runInBand
       - run:
           name: Run shared frontend redux tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test --runInBand
       - run:
           name: Run shared frontend utilities tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test --runInBand
       - run:
           name: Run frontend unit tests
-          command: yarn workspace @chrisb-dev/seasonal-frontend test
+          command: yarn workspace @chrisb-dev/seasonal-frontend test --runInBand
 
   web_e2e_tests:
     docker:

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SeasonDetailsContentWrapper /> when it is not loading renders correctly 1`] = `
+<MainContainer>
+  <HeaderConnecter />
+  <ScrollViewMock>
+    <SeasonNameView
+      name="January"
+    />
+    Children
+  </ScrollViewMock>
+</MainContainer>
+`;

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import {
   FeedbackModal
 } from './FeedbackModal';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   selectIsFeedbackPopupVisible,
   closeFeedbackPopup

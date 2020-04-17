@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar /> when the search bar is visible renders correctly 1`] = `
+<Fragment>
+  <BareButton
+    onClick={[MockFunction]}
+    style={
+      Object {
+        "display": "flex",
+        "flex": 0,
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "paddingBottom": 12,
+        "paddingLeft": 12,
+        "paddingTop": 12,
+      }
+    }
+  >
+    <MagnifyingGlassIcon
+      size={24}
+    />
+  </BareButton>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "flex-end",
+        "left": 20,
+        "marginTop": 19,
+        "paddingRight": 12,
+        "position": "absolute",
+        "right": 20,
+        "top": 4,
+      }
+    }
+  >
+    <Input
+      autoFocus={true}
+      onChangeText={[Function]}
+      placeholder="Search"
+    />
+    <BareButton
+      onClick={[MockFunction]}
+      style={
+        Object {
+          "display": "flex",
+          "flex": 0,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 12,
+          "paddingLeft": 12,
+          "paddingTop": 12,
+          "position": "absolute",
+          "right": 2,
+          "top": -15,
+        }
+      }
+    >
+      <CrossIcon
+        size={40}
+      />
+    </BareButton>
+  </View>
+</Fragment>
+`;

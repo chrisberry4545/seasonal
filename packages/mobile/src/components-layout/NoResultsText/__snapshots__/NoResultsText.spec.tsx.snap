@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoResultsText /> renders correctly 1`] = `
+<TextMedium
+  style={
+    Object {
+      "flex": 1,
+      "marginBottom": 40,
+      "marginTop": 20,
+      "textAlign": "center",
+    }
+  }
+>
+  No results
+</TextMedium>
+`;

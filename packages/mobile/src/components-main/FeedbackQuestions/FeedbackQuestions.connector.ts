@@ -11,7 +11,7 @@ import {
   selectIsFeedbackImprovementsQuestionVisible,
   selectIsFeedbackRateOnStoreQuestionVisible
 } from '../../store';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 const mapStateToProps = (
   state: IState

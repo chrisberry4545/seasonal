@@ -15,7 +15,7 @@ import {
   onMenuFeedbackSelected
 } from '../../store';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   ISideMenuInputProps,
   ISideMenuDispatchProps
@@ -26,7 +26,7 @@ import {
   getIsCurrentRouteAboutUs,
   getIsCurrentRouteSeasonDetails,
   getIsCurrentRouteSettings
-} from '../../services';
+} from '../../helpers';
 
 const mapStateToProps = (
   state: IState

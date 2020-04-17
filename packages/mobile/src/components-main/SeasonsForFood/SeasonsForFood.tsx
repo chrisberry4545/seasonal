@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
-
 import {
   TextMedium,
   TextHeadingSmall,
   TextSmall,
   BareButton
 } from '../../components-elements';
-
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
 import { View, ViewStyle, TextStyle } from 'react-native';
 import { styles } from '../../styles';

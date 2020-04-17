@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import {
   BackArrowIconButton
 } from '../../components-elements';
-
 import {
   ISettingsBackButtonDispatchProps
 } from './SettingsBackButton.interface';

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectRegion /> renders correctly 1`] = `
+<Fragment>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 8,
+      }
+    }
+  >
+    Children
+    <TextHeadingMedium>
+      Select your region
+    </TextHeadingMedium>
+  </View>
+  <GroupedSelectBox
+    groups={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    onSelected={[MockFunction]}
+  />
+</Fragment>
+`;

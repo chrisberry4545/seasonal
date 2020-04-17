@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DietaryFilters /> renders correctly 1`] = `
+<RadioButtonGroup
+  onChange={[Function]}
+  radioButtons={
+    Array [
+      Object {
+        "label": "All",
+        "value": "ALL",
+      },
+      Object {
+        "label": "Vegetarian",
+        "value": "VEGETARIAN",
+      },
+      Object {
+        "label": "Vegan",
+        "value": "VEGAN",
+      },
+    ]
+  }
+  selectedValue="VEGAN"
+  style={
+    Object {
+      "marginBottom": 12,
+    }
+  }
+/>
+`;

@@ -11,7 +11,7 @@ import {
   ISelectRegionInputProps
 } from './SelectRegion.interface';
 import { Dispatch } from 'redux';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 const mapStateToProps = (state: IState): ISelectRegionInputProps => ({
   countrySelectGroups: selectCountryAndRegionsSelectGroup(state)

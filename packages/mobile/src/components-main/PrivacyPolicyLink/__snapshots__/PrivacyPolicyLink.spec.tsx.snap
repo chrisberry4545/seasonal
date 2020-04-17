@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrivacyPolicyLink /> renders correctly 1`] = `
+<BareButton
+  onClick={[Function]}
+  style={
+    Object {
+      "height": 40,
+      "textAlign": "center",
+    }
+  }
+>
+  <TextHeadingMedium
+    style={
+      Object {
+        "flex": 1,
+        "textAlign": "center",
+      }
+    }
+  >
+    Privacy Policy
+  </TextHeadingMedium>
+</BareButton>
+`;

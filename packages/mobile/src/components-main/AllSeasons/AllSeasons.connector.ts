@@ -3,7 +3,7 @@ import {
   AllSeasons
 } from './AllSeasons';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   IAllSeasonsInputProps,
   IAllSeasonsDispatchProps

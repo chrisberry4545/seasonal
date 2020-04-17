@@ -5,7 +5,7 @@ import { ImageList } from '../ImageList/ImageList';
 import { BareButton, GridIcon, ListIcon, TextSmall } from '../../components-elements';
 import { ISwitchableGridOrListInterface } from './SwitchableGridOrList.interface';
 
-const switchableGridOfListButton: ViewStyle = {
+const switchableGridOrListButton: ViewStyle = {
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'row',
@@ -14,11 +14,11 @@ const switchableGridOfListButton: ViewStyle = {
   marginRight: 24
 };
 
-const switchableGridOfListButtonText: TextStyle = {
+const switchableGridOrListButtonText: TextStyle = {
   paddingLeft: 4
 };
 
-export const SwitchableGridOfList: FC<
+export const SwitchableGridOrList: FC<
   ISwitchableGridOrListInterface
 > = ({
   isListViewShown,
@@ -27,10 +27,10 @@ export const SwitchableGridOfList: FC<
 }) => (
   <View>
     <BareButton
-      style={switchableGridOfListButton}
+      style={switchableGridOrListButton}
       onClick={onToggleListView}>
       { isListViewShown ? <GridIcon /> : <ListIcon /> }
-      <TextSmall style={switchableGridOfListButtonText}>
+      <TextSmall style={switchableGridOrListButtonText}>
         { isListViewShown ? 'Grid view' : 'List view' }
       </TextSmall>
     </BareButton>

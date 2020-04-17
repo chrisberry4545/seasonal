@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SettingsPage /> renders correctly 1`] = `
+<MainContainer>
+  <HeaderConnecter />
+  <DefaultPaddingContainer>
+    <View
+      style={
+        Object {
+          "marginTop": 16,
+        }
+      }
+    >
+      <SelectLocationConnecter>
+        <SettingsBackButtonConnecter />
+      </SelectLocationConnecter>
+    </View>
+  </DefaultPaddingContainer>
+</MainContainer>
+`;

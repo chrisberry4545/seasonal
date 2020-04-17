@@ -4,8 +4,11 @@ import {
   styles
 } from '../../styles';
 import { NavigationEvents } from 'react-navigation';
-import { BareButton, TextHeadingLarge, BurgerIcon } from '../../components-elements';
-
+import {
+  BareButton,
+  TextHeadingLarge,
+  BurgerIcon
+} from '../../components-elements';
 import {
   SearchBarConnecter
 } from '../SearchBar/SearchBar.connector';

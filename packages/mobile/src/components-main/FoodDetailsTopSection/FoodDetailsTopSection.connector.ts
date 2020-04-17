@@ -11,7 +11,7 @@ import {
   goBackFromFoodDetails
 } from '../../store';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   IFoodDetailsTopSectionInputProps,
   IFoodDetailsTopSectionDispatchProps

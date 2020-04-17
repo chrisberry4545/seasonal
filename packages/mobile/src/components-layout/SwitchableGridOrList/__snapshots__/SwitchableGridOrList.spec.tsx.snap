@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwitchableGridOrList /> when grid view is shown renders correctly 1`] = `
+<View>
+  <BareButton
+    onClick={[MockFunction]}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "marginBottom": 6,
+        "marginLeft": "auto",
+        "marginRight": 24,
+      }
+    }
+  >
+    <ListIcon />
+    <TextSmall
+      style={
+        Object {
+          "paddingLeft": 4,
+        }
+      }
+    >
+      List view
+    </TextSmall>
+  </BareButton>
+  <ImageGrid
+    data={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    onClick={[MockFunction]}
+  />
+</View>
+`;
+
+exports[`<SwitchableGridOrList /> when list view is shown renders correctly 1`] = `
+<View>
+  <BareButton
+    onClick={[MockFunction]}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "marginBottom": 6,
+        "marginLeft": "auto",
+        "marginRight": 24,
+      }
+    }
+  >
+    <GridIcon />
+    <TextSmall
+      style={
+        Object {
+          "paddingLeft": 4,
+        }
+      }
+    >
+      Grid view
+    </TextSmall>
+  </BareButton>
+  <ImageList
+    data={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    onClick={[MockFunction]}
+  />
+</View>
+`;

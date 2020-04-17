@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedbackImprovementsQuestion /> renders correctly 1`] = `
+<FeedbackQuestionsLayout
+  confirmButtonText="Send feedback"
+  onConfirmButtonClicked={[Function]}
+  onRejectButtonClicked={[MockFunction]}
+  questionTitle="We'd love to hear feedback on how we could improve"
+  rejectButtonText="Not now"
+>
+  <MultilineInput
+    onChangeText={[Function]}
+    placeholder="Your feedback"
+  />
+</FeedbackQuestionsLayout>
+`;

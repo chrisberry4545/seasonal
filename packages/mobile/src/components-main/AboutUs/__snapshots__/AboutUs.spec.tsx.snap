@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AboutUs /> renders correctly 1`] = `
+<ScrollView
+  style={
+    Object {
+      "flex": 1,
+      "marginBottom": 30,
+      "marginTop": 20,
+    }
+  }
+>
+  <TextHeadingLarge
+    style={
+      Object {
+        "marginBottom": 30,
+        "textAlign": "center",
+      }
+    }
+  >
+    About Eat Seasonal
+  </TextHeadingLarge>
+  <TextLarge
+    style={
+      Object {
+        "marginBottom": 30,
+      }
+    }
+  >
+    Eat Seasonal started because we wanted a way to easily see what fruit and vegetables are in seasons. Walking around a supermarket, trying to plan seasonal meals becomes much easier when you can quickly access information on everything that's in season through your phone.
+  </TextLarge>
+  <TextLarge
+    style={
+      Object {
+        "marginBottom": 30,
+      }
+    }
+  >
+    The app and website give you quick and simple view of all the food currently in seasons. They also provide a recipes section including carefully selected recipes which use ingredients which are mostly in seasons. New recipes are being added all the time!
+  </TextLarge>
+</ScrollView>
+`;
