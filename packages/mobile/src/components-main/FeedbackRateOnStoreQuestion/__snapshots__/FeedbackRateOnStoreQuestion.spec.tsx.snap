@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedbackRateOnStoreQuestion /> renders correctly 1`] = `
+<FeedbackQuestionsLayout
+  confirmButtonText="Rate the app"
+  onConfirmButtonClicked={[MockFunction]}
+  onRejectButtonClicked={[MockFunction]}
+  questionTitle="Help others Eat Seasonal"
+  rejectButtonText="Not now"
+>
+  <TextMedium
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Rating the app will help other people find the app and start eating seasonally
+  </TextMedium>
+</FeedbackQuestionsLayout>
+`;

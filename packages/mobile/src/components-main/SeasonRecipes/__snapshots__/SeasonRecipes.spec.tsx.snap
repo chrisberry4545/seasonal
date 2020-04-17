@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SeasonRecipes /> when it is not loading renders correctly 1`] = `
+<SeasonDetailsContentWrapperConnector>
+  <DietaryFiltersConnector />
+  <SwitchableGridOrList
+    data={
+      Array [
+        Object {},
+      ]
+    }
+    isListViewShown={true}
+    onClick={[MockFunction]}
+    onToggleListView={[MockFunction]}
+  />
+</SeasonDetailsContentWrapperConnector>
+`;

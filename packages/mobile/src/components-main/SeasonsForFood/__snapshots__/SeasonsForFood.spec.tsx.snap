@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SeasonsForFood /> when it is not loading renders correctly 1`] = `
+<View>
+  <TextHeadingSmall
+    style={
+      Object {
+        "marginBottom": 15,
+        "marginTop": 24,
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    When are they in season?
+  </TextHeadingSmall>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+        "marginBottom": 16,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "maxWidth": 300,
+      }
+    }
+  >
+    <BareButton
+      key="January"
+      onClick={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#CCCCCC",
+          "borderWidth": 1,
+          "display": "flex",
+          "height": 50,
+          "justifyContent": "center",
+          "margin": 6,
+          "width": 50,
+        }
+      }
+    >
+      <TextMedium>
+        Jan
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      key="February"
+      onClick={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#CCCCCC",
+          "borderWidth": 1,
+          "display": "flex",
+          "height": 50,
+          "justifyContent": "center",
+          "margin": 6,
+          "width": 50,
+        }
+      }
+    >
+      <TextMedium>
+        Feb
+      </TextMedium>
+    </BareButton>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "marginBottom": 6,
+        "width": "100%",
+      }
+    }
+  >
+    <TextSmall
+      style={
+        Object {
+          "marginRight": 8,
+          "opacity": 0.6,
+        }
+      }
+    >
+      In season
+    </TextSmall>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "#CCCCCC",
+            "borderWidth": 1,
+            "display": "flex",
+            "height": 24,
+            "justifyContent": "center",
+            "margin": 0,
+            "width": 24,
+          },
+          Object {
+            "backgroundColor": "#BAF9FE",
+            "borderColor": "#BAF9FE",
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "marginBottom": 6,
+        "width": "100%",
+      }
+    }
+  >
+    <TextSmall
+      style={
+        Object {
+          "marginRight": 8,
+          "opacity": 0.6,
+        }
+      }
+    >
+      Not in season
+    </TextSmall>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#CCCCCC",
+          "borderWidth": 1,
+          "display": "flex",
+          "height": 24,
+          "justifyContent": "center",
+          "margin": 0,
+          "width": 24,
+        }
+      }
+    />
+  </View>
+</View>
+`;

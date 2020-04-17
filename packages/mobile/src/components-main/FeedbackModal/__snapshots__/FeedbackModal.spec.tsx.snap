@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedbackModal /> renders correctly 1`] = `
+<ModalLayout
+  isVisible={true}
+  onClose={[MockFunction]}
+>
+  <FeedbackQuestionsConnector />
+</ModalLayout>
+`;

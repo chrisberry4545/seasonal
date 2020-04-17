@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedbackDoYouLikeTheAppQuestion /> renders correctly 1`] = `
+<FeedbackQuestionsLayout
+  confirmButtonText="Yes"
+  onConfirmButtonClicked={[MockFunction]}
+  onRejectButtonClicked={[MockFunction]}
+  questionTitle="Is Eat Seasonal useful?"
+  rejectButtonText="No"
+/>
+`;

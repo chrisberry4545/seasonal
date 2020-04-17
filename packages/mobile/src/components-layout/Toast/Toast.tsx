@@ -34,7 +34,7 @@ const getTypeColor = (type: ToastTypes): ViewStyle => {
 export const Toast: FC<{
   onClose?: () => void,
   isVisible: boolean,
-  type: ToastTypes
+  type?: ToastTypes
 }> = ({
   children,
   onClose,

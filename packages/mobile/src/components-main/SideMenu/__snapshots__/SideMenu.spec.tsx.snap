@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SideMenu /> when the menu has loaded renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginBottom": 60,
+      "paddingTop": 60,
+    }
+  }
+>
+  <ScrollView
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <BareButton
+      onClick={[MockFunction]}
+      style={
+        Object {
+          "padding": 18,
+        }
+      }
+    >
+      <TextMedium>
+        Change region
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      onClick={[MockFunction]}
+      style={
+        Object {
+          "padding": 18,
+        }
+      }
+    >
+      <TextMedium>
+        All seasons
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      key="January"
+      onClick={[Function]}
+      style={
+        Object {
+          "padding": 18,
+        }
+      }
+    >
+      <TextMedium>
+        January
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      key="February"
+      onClick={[Function]}
+      style={
+        Object {
+          "padding": 18,
+        }
+      }
+    >
+      <TextMedium>
+        February
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      onClick={[MockFunction]}
+      style={
+        Object {
+          "padding": 18,
+        }
+      }
+    >
+      <TextMedium>
+        About us
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      onClick={[MockFunction]}
+      style={
+        Object {
+          "padding": 18,
+        }
+      }
+    >
+      <TextMedium>
+        Give feedback
+      </TextMedium>
+    </BareButton>
+  </ScrollView>
+</View>
+`;

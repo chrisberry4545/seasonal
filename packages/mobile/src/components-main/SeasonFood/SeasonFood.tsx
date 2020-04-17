@@ -4,7 +4,6 @@ import {
   SeasonDetailsContentWrapperConnector
 } from '../SeasonDetailsContentWrapper/SeasonDetailsContentWrapper.connector';
 import { ISeasonFoodProps } from './SeasonFood.interface';
-
 import {
   SwitchableGridOrList, TopLoadingSpinner
 } from '../../components-layout';

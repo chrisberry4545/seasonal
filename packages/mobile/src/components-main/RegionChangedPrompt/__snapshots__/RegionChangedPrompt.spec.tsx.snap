@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegionChangedPrompt /> renders correctly 1`] = `
+<Toast
+  isVisible={true}
+  onClose={[MockFunction]}
+>
+  <TextLarge
+    style={
+      Object {
+        "color": "#FFFFFF",
+      }
+    }
+  >
+    We've detected your closest region as:
+  </TextLarge>
+  <TextLarge
+    style={
+      Object {
+        "color": "#FFFFFF",
+      }
+    }
+  >
+    .
+  </TextLarge>
+  <BareButton
+    onClick={[MockFunction]}
+    style={
+      Object {
+        "marginTop": 4,
+      }
+    }
+  >
+    <TextLarge
+      style={
+        Object {
+          "color": "#FFFFFF",
+        }
+      }
+    >
+      If this is wrong, click here.
+    </TextLarge>
+  </BareButton>
+</Toast>
+`;
