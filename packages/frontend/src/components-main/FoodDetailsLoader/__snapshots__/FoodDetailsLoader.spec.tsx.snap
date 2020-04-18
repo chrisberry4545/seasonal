@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodDetailsLoader /> when the food details is loading renders correctly 1`] = `
+<div
+  className="c-food-details-loader"
+>
+  <LoadingSpinner />
+</div>
+`;

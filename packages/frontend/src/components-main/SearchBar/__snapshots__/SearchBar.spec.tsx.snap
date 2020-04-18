@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar /> when the search bar is visible renders correctly 1`] = `
+<div
+  className="c-search-bar c-search-bar--show-full"
+>
+  <Input
+    className="c-search-bar__input"
+    data-e2e="search-bar"
+    onChange={[Function]}
+    placeholder="Search"
+  />
+  <BareButton
+    className="c-search-bar__search-button"
+    onClick={[MockFunction]}
+  >
+    <CrossIcon />
+  </BareButton>
+</div>
+`;

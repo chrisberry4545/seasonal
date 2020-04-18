@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipesForFood /> when the recipes are loading renders correctly 1`] = `
+<div
+  className="c-recipes-for-food"
+>
+  <TextHeadingSmall
+    className="c-recipes-for-food__heading"
+  >
+    Recipes
+  </TextHeadingSmall>
+  <DietaryFiltersConnector />
+  <ImageGrid
+    data={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    data-e2e="recipes-for-food-grid"
+    onClick={[MockFunction]}
+  />
+</div>
+`;

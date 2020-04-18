@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageWithMenu /> renders correctly 1`] = `
+<PageLayout>
+  <HeaderConnecter />
+  <SeasonMenuConnecter />
+  Children
+</PageLayout>
+`;

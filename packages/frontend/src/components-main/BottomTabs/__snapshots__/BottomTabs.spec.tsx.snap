@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BottomTabs /> renders correctly 1`] = `
+<nav
+  className="c-bottom-tabs"
+>
+  <BareButton
+    className="c-bottom-tabs__tab  c-bottom-tabs__tab--selected"
+    data-e2e="bottom-tab-food"
+    onClick={[MockFunction]}
+  >
+    Food
+  </BareButton>
+  <BareButton
+    className="c-bottom-tabs__tab "
+    data-e2e="bottom-tab-recipes"
+    onClick={[MockFunction]}
+  >
+    Recipes
+  </BareButton>
+</nav>
+`;

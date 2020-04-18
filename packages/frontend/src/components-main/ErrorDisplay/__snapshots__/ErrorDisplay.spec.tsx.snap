@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorDisplay /> renders correctly 1`] = `
+<Toast
+  isVisible={true}
+  onClose={[MockFunction]}
+  type="error"
+>
+  <s
+    className="c-error__text"
+  >
+    It looks like something has gone wrong!
+    <br />
+    Please try again later.
+  </s>
+</Toast>
+`;

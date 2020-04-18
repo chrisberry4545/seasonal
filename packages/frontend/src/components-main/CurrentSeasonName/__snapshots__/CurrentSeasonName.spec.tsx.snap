@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CurrentSeasonName /> when the current season is not loading renders correctly 1`] = `
+<SeasonNameView
+  name="January"
+/>
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WhyEatSeasonal /> renders correctly 1`] = `
+<div
+  className="c-why-eat-seasonal"
+  data-e2e="why-eat-seasonal-section"
+>
+  <h2
+    className="c-why-eat-seasonal__heading"
+  >
+    <TextHeadingLarge>
+      Why Eat Seasonal?
+    </TextHeadingLarge>
+  </h2>
+  <SummaryColumnList
+    columns={
+      Array [
+        Object {
+          "imageUrl": "https://images.unsplash.com/photo-1457296898342-cdd24585d095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+          "text": "Seasonal produce generally requires fewer chemicals and the food miles are often significantly lower as product is grown more locally. This keeps the environmental impact lower.",
+          "title": "Environment",
+        },
+        Object {
+          "imageUrl": "https://images.freeimages.com/images/small-previews/c22/strawberry-1324897.jpg",
+          "text": "In season food usually hasn't travelled far. This helps food maintain nutrients and flavor. Picking food when it's fully ripe not only means it's at it's tastiest but also that it will be more nutritious than fruit picked too early or late.",
+          "title": "Taste and nutrition",
+        },
+        Object {
+          "imageUrl": "https://images.freeimages.com/images/small-previews/3c9/spring-onions-1321365.jpg",
+          "text": "For similar reasons that seasonal food is usually the freshest it is also often the cheapest. When it's in season the food is readily available and doesn't have to travel as far which helps drive down the cost.",
+          "title": "Cost",
+        },
+      ]
+    }
+  />
+</div>
+`;

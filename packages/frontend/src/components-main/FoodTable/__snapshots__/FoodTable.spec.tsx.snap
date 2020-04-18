@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodTable /> when the food has finished loading renders correctly 1`] = `
+<ImageGrid
+  data={
+    Array [
+      Object {
+        "id": "1",
+      },
+    ]
+  }
+  data-e2e="food-grid"
+  onClick={[MockFunction]}
+/>
+`;

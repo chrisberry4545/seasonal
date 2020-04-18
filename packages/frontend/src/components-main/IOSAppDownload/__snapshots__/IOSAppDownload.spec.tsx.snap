@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IOSAppDownload /> renders correctly 1`] = `
+<a
+  className="c-ios-app-download"
+  data-e2e="ios-app-download"
+  href="https://apps.apple.com/us/app/eat-seasonal/id1496551124?ls=1"
+>
+  <img
+    alt="Get it on the iOS store"
+    className="c-ios-app-download__image"
+    src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred_2x.png"
+  />
+</a>
+`;

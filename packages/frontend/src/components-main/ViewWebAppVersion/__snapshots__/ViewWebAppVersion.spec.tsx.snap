@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ViewWebAppVersion /> renders correctly 1`] = `
+<PrimaryButton
+  data-e2e="view-web-version"
+  onClick={[MockFunction]}
+>
+  To web version
+</PrimaryButton>
+`;
