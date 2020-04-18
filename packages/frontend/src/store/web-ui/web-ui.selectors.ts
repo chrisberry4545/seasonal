@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import { TABS } from '../../const';
 
 const selectWebUiState = (state: IState) => state.webUi;

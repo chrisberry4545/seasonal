@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import {
   GO_TO_WEB_VERSION,
   GO_BACK_FROM_FOOD_DETAILS
-} from '../actions';
+} from '../route/route.actions';
 import {
   GO_TO_ALL_SEASONS_VIEW,
   RECIPE_ITEM_CLICKED,
@@ -27,9 +27,12 @@ import {
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { push } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
-import { IState } from '../../interfaces';
-import { selectCurrentFoodDetailsId, selectIsCurrentRouteAllSeasons } from '../selectors';
-import { WebSeasonalEpic } from './seasonal-epic.type';
+import { IState } from '../state.interface';
+import {
+  selectCurrentFoodDetailsId,
+  selectIsCurrentRouteAllSeasons
+} from '../route/route.selectors';
+import { WebSeasonalEpic } from '../seasonal-epic.type';
 
 export const goToWebVersion$: WebSeasonalEpic = (
   actions$: ActionsObservable<Action>

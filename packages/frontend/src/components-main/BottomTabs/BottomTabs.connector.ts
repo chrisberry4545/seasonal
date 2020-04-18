@@ -13,7 +13,7 @@ import {
   IBottomTabInputProps
 } from './BottomTabs.interface';
 import { Dispatch } from 'redux';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 const mapStateToProps = (
   state: IState

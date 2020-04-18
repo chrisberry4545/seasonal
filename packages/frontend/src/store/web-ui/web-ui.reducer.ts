@@ -1,8 +1,8 @@
 import {
   GO_TO_FOOD_TAB,
   GO_TO_RECIPES_TABS
-} from '../actions';
-import { IWebUiState } from '../../interfaces';
+} from './web-ui.actions';
+import { IWebUiState } from './web-ui-state.interface';
 import { Action } from 'redux';
 import { TABS } from '../../const';
 

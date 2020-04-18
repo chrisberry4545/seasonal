@@ -1,7 +1,7 @@
 import { combineEpics } from 'redux-observable';
 
 import { rootEpics } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { trackActionEpic$ } from './tracking.epics';
+import { trackActionEpic$ } from './tracking/tracking.epics';
 
 import {
   goToWebVersion$,
@@ -13,14 +13,14 @@ import {
   initAllSeasonsWithFoodData$,
   goToAllSeasonsView$,
   goToSettingsPage$
-} from './route.epics';
+} from './route/route.epics';
 
 import {
   getStoredSettings$,
   storeSettings$,
   detectCountry$
-} from './settings.epics';
-import { initAppEpic$ } from './init.epics';
+} from './settings/settings.epics';
+import { initAppEpic$ } from './init/init.epics';
 
 export const rootEpic = combineEpics(
   ...rootEpics,

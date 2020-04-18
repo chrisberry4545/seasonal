@@ -1,7 +1,7 @@
 import { createMatchSelector, RouterRootState, getLocation } from 'connected-react-router';
 import { FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
 import { createSelector } from 'reselect';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 export const selectCurrentFoodDetailsParams = createMatchSelector<
   RouterRootState,

@@ -11,13 +11,13 @@ import {
   allReducers
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
-import { webUiReducer } from './web-ui.reducer';
+import { webUiReducer } from './web-ui/web-ui.reducer';
 
 import {
   rootEpic
-} from '../epics';
+} from './epics';
 
-import { IState } from '../../interfaces';
+import { IState } from './state.interface';
 
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createHashHistory } from 'history';

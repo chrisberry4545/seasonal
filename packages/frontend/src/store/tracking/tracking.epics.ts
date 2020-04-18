@@ -2,9 +2,12 @@ import { ActionsObservable } from 'redux-observable';
 
 import {
   GO_TO_FOOD_TAB,
-  GO_TO_RECIPES_TABS,
+  GO_TO_RECIPES_TABS
+} from '../web-ui/web-ui.actions';
+
+import {
   GO_TO_WEB_VERSION
-} from '../actions';
+} from '../route/route.actions';
 
 import {
   SELECT_SEASON,
@@ -23,7 +26,7 @@ import {
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
-import { WebSeasonalEpic } from './seasonal-epic.type';
+import { WebSeasonalEpic } from '../seasonal-epic.type';
 
 const ACTIONS_TO_TRACK = [
   SELECT_SEASON,
