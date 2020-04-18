@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageGrid /> when there are data items renders correctly 1`] = `
+<div
+  className="c-image-grid"
+>
+  <ImageGridItem
+    id="1"
+    key="n1"
+    name="n1"
+    onClick={[MockFunction]}
+  />
+  <ImageGridItem
+    id="2"
+    key="n2"
+    name="n2"
+    onClick={[MockFunction]}
+  />
+</div>
+`;

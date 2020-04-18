@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageGridItem /> renders correctly 1`] = `
+<div
+  className="c-image-grid-item"
+  data-e2e="grid-item"
+  onClick={[Function]}
+>
+  <div
+    className="c-image-grid-item__inner"
+  >
+    <div
+      className="c-image-grid-item__image"
+    >
+      <BackgroundImageWithLoadingSpinner
+        skipAnimation={true}
+        src="https://image.com"
+      />
+    </div>
+    <TextMedium
+      className="c-image-grid-item__text"
+    >
+      name
+    </TextMedium>
+  </div>
+</div>
+`;

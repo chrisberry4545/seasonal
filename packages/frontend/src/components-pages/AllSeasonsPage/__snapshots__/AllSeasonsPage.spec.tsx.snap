@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AllSeasonsPage /> renders correctly 1`] = `
+<PageWithMenu>
+  <div
+    className="c-all-seasons-page"
+  >
+    <AllSeasonsGraphConnector />
+    <AllSeasonsConnector />
+  </div>
+</PageWithMenu>
+`;

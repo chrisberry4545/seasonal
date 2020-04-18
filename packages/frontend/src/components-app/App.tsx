@@ -23,7 +23,7 @@ import {
 } from '../const';
 
 import { ConnectedRouter } from 'connected-react-router';
-import { GlobalModals } from '../components-main/GlobalModals/GlobalModals';
+import { GlobalModals } from '../components-main';
 
 export const App: FC<{}> = () => (
   <Provider store={store}>

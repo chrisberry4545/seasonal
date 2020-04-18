@@ -38,6 +38,7 @@
     "build": "react-scripts build && yarn copy-cname && yarn run-react-snap",
     "copy-cname": "cp CNAME ./build",
     "test": "react-scripts test",
+    "test:watch": "yarn test",
     "eject": "react-scripts eject",
     "gh-pages": "node ./release/gh-pages.js",
     "run-react-snap": "node ./run-react-snap.js",

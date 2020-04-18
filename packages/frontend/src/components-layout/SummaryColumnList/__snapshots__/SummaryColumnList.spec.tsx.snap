@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SummaryColumnList /> renders correctly 1`] = `
+<ul
+  className="c-summary-column-list"
+>
+  <SummaryColumn
+    key="0"
+    title="t1"
+  />
+  <SummaryColumn
+    key="1"
+    title="t2"
+  />
+</ul>
+`;
