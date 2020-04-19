@@ -19,7 +19,6 @@ import {
 import {
   getNearestRegionFromLatLng
 } from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { getCurrentDeviceLocation$ } from '../../helpers';
 
 import { IState } from '../state.interface';
 
@@ -36,7 +35,11 @@ import {
 import { Action } from 'redux';
 import { Observable, of } from 'rxjs';
 import { WebSeasonalEpic } from '../seasonal-epic.type';
-import { setStoredData, getStoredData } from '../../helpers';
+import {
+  getCurrentDeviceLocation$,
+  setStoredData,
+  getStoredData
+} from '../../helpers';
 
 const settingsStorageKey = 'seasonalSettings';
 

@@ -27,6 +27,7 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { WebSeasonalEpic } from '../seasonal-epic.type';
+import { getAnalytics } from '../../helpers/functions/get-analytics';
 
 const ACTIONS_TO_TRACK = [
   SELECT_SEASON,
@@ -46,7 +47,7 @@ export const trackActionEpic$: WebSeasonalEpic = (
 ): Observable<Action> => (
   actions$.pipe(
     filter(({ type }) => ACTIONS_TO_TRACK.includes(type)),
-    map(({ type }) => ga('send', 'event', type, type)),
+    map(({ type }) => getAnalytics()('send', 'event', type, type)),
     ignoreElements()
   )
 );

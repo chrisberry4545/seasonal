@@ -23,7 +23,8 @@ import {
   GO_BACK_FROM_SETTINGS_PAGE,
   GO_TO_SETTINGS_PAGE,
   SET_REGION,
-  SHOW_LOCATION_SETTINGS_POPUP
+  SHOW_LOCATION_SETTINGS_POPUP,
+  FOOD_DETAILS_SELECT_RECIPE
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { push } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
@@ -48,7 +49,10 @@ export const goToRecipeLink$: WebSeasonalEpic = (
   state$: StateObservable<IState>
 ): Observable<Action> => (
   actions$.pipe(
-    ofType(RECIPE_ITEM_CLICKED),
+    ofType(
+      FOOD_DETAILS_SELECT_RECIPE,
+      RECIPE_ITEM_CLICKED
+    ),
     withLatestFrom(state$),
     map(([
       action,
