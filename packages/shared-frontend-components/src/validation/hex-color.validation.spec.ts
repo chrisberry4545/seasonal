@@ -12,11 +12,11 @@ describe('hexColorValidation', () => {
   test('is valid if empty', () =>
     expect(hexColorValidation('')).toBeNull());
 
-  test('is not valid if it includes lower case', () =>
-    expect(hexColorValidation('#fFFFFF')).toBeNull());
-
-  test('is not valid if it is a valid hex', () =>
+  test('is valid if it is a valid hex', () =>
     expect(hexColorValidation('#FFFFFF')).toBeNull());
+
+  test('is not valid if it includes lower case', () =>
+    expect(hexColorValidation('#fFFFFF')).toBe(invalidMessage));
 
   test('is not valid if missing #', () =>
     expect(hexColorValidation('FFFFFF')).toBe(invalidMessage));
