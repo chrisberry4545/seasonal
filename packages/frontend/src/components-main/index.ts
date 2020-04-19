@@ -16,6 +16,8 @@ export * from './FoodDetailsTopSection/FoodDetailsTopSection.connector';
 
 export * from './FoodTable/FoodTable.connector';
 
+export * from './GlobalModals/GlobalModals';
+
 export * from './Header/Header.connector';
 
 export * from './IOSAppDownload/IOSAppDownload';

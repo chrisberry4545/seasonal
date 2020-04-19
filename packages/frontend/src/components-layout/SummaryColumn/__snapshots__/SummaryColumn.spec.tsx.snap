@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SummaryColumn /> when there is an image url renders correctly 1`] = `
+<div
+  className="c-summary-column"
+>
+  <img
+    alt="Column item"
+    className="c-summary-column__image"
+    src="https://image.com"
+  />
+  <h3
+    className="c-summary-column__heading"
+  >
+    <TextHeadingSmall>
+      Title
+    </TextHeadingSmall>
+  </h3>
+  <TextMedium>
+    Some column text
+  </TextMedium>
+</div>
+`;

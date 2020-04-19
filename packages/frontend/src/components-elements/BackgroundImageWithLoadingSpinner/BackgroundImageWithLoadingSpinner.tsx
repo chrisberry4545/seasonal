@@ -1,18 +1,14 @@
-import React, { useState, FC, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 
 import './BackgroundImageWithLoadingSpinner.scss';
 
 import {
+  makePromiseCancelable,
   loadImage
-} from '../../services/image-loader.service';
-
+} from '../../helpers';
 import {
   LoadingSpinner
 } from '@chrisb-dev/seasonal-shared-frontend-components';
-
-import {
-  makePromiseCancelable
-} from '../../helpers';
 
 interface IBackgroundImageWithLoadingSpinnerPropsInterface {
   src: string;

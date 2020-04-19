@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IntroPage /> renders correctly 1`] = `
+<div
+  className="c-intro-page"
+>
+  <div
+    className="c-intro-page__top-section"
+  >
+    <div
+      className="c-intro-page__splash-wrapper"
+    >
+      <img
+        alt="Eat Seasonal splash"
+        className="c-intro-page__splash-image"
+        src="/splash.png"
+      />
+    </div>
+    <ViewAppLinks />
+  </div>
+  <AboutEatSeasonal />
+  <WhyEatSeasonal />
+  <div
+    className="c-intro-page__mobile-extra-app-links"
+  >
+    <ViewAppLinks />
+  </div>
+</div>
+`;

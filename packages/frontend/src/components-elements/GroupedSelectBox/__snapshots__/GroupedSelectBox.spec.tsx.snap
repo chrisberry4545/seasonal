@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GroupedSelectBox /> renders correctly 1`] = `
+<div>
+  <div
+    className="c-grouped-select-box__group"
+    key="g1"
+  >
+    <TextHeadingSmall
+      className="c-grouped-select-box__group-name"
+    >
+      g1
+    </TextHeadingSmall>
+    <BareButton
+      className="c-grouped-select-box__option"
+      data-e2e="select-option-n1"
+      key="v1"
+      onClick={[Function]}
+    >
+      <TextMedium>
+        n1
+      </TextMedium>
+    </BareButton>
+  </div>
+  <div
+    className="c-grouped-select-box__group"
+    key="g2"
+  >
+    <TextHeadingSmall
+      className="c-grouped-select-box__group-name"
+    >
+      g2
+    </TextHeadingSmall>
+    <BareButton
+      className="c-grouped-select-box__option"
+      data-e2e="select-option-n2"
+      key="v2"
+      onClick={[Function]}
+    >
+      <TextMedium>
+        n2
+      </TextMedium>
+    </BareButton>
+  </div>
+</div>
+`;

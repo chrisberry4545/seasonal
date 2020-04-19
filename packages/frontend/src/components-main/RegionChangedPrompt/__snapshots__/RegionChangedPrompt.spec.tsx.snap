@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegionChangedPrompt /> renders correctly 1`] = `
+<Toast
+  data-e2e="region-changed-prompt"
+  isVisible={true}
+  onClose={[MockFunction]}
+>
+  <BareButton
+    className="c-region-changed-prompt__btn"
+    onClick={[MockFunction]}
+  >
+    <TextMedium
+      className="c-region-changed-prompt__text"
+    >
+      We've detected your closest region as: 
+      .
+    </TextMedium>
+    <TextMedium
+      className="c-region-changed-prompt__text"
+    >
+      If this is wrong, click here.
+    </TextMedium>
+  </BareButton>
+</Toast>
+`;

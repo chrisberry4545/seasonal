@@ -13,7 +13,7 @@ import {
   goToSettingsPage
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   ISeasonMenuInputProps,
   ISeasonMenuDispatchProps

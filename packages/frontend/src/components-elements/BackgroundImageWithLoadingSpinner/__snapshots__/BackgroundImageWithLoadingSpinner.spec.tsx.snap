@@ -1,10 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BackgroundImageWithLoadingSpinner /> renders correctly 1`] = `
+exports[`<BackgroundImageWithLoadingSpinner /> when loading is complete renders correctly 1`] = `
 <div
   className="c-background-image-with-loading-spinner"
-  key="loading-spinner-fade-in-out"
+  key="background-image-fade-in-out"
+  style={
+    Object {
+      "backgroundImage": "url(https://image.com)",
+    }
+  }
 >
-  <LoadingSpinner />
+  Children
 </div>
+`;
+
+exports[`<BackgroundImageWithLoadingSpinner /> when skipAnimation is false renders the image immediately 1`] = `
+<div
+  className="c-background-image-with-loading-spinner"
+  style={
+    Object {
+      "backgroundImage": "url(https://image.com)",
+    }
+  }
+/>
 `;

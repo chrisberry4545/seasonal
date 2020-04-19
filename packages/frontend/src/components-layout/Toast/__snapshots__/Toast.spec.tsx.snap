@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toast /> when the toast is visible renders correctly 1`] = `
+<div
+  className="c-toast c-toast--info"
+>
+  <div>
+    Children
+  </div>
+  <BareButton
+    className="c-toast__close-btn"
+    data-e2e="modal-close-btn"
+    onClick={[MockFunction]}
+  >
+    <CrossIcon
+      className="c-toast__cross-icon"
+    />
+  </BareButton>
+</div>
+`;

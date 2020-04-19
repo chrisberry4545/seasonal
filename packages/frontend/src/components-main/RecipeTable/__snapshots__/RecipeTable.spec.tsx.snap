@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeTable /> when the recipe has finished loading renders correctly 1`] = `
+<div>
+  <DietaryFiltersConnector />
+  <ImageGrid
+    data={
+      Array [
+        Object {
+          "id": "1",
+        },
+      ]
+    }
+    data-e2e="recipes-grid"
+    onClick={[MockFunction]}
+  />
+</div>
+`;

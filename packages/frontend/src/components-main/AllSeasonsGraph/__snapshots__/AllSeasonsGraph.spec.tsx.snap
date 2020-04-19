@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AllSeasonsGraph /> when there is graph data renders correctly 1`] = `
+<div
+  className="c-all-seasons-graph"
+>
+  <TextHeadingMedium
+    className="c-all-seasons-graph__heading"
+  >
+    Number of food items in seasons
+  </TextHeadingMedium>
+  <ResponsiveContainer
+    height={400}
+    width="100%"
+  >
+    <BarChart
+      data={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      <XAxis
+        dataKey="name"
+      />
+      <YAxis
+        allowDecimals={false}
+        dataKey="Number of food items in season"
+      />
+      <Tooltip />
+      <Bar
+        dataKey="Number of food items in season"
+        fill="#5CB5CD"
+      />
+    </BarChart>
+  </ResponsiveContainer>
+  <TextMedium
+    className="c-all-seasons-graph__text"
+  >
+    Enter some text in the search bar to find when certain items are in season
+  </TextMedium>
+</div>
+`;

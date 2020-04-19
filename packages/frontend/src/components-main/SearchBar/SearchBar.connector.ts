@@ -13,7 +13,7 @@ import {
   ISearchBarInputProps
 } from './SearchBar.interface';
 import { Dispatch } from 'redux';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 const mapStateToProps = (state: IState): ISearchBarInputProps => ({
   isSearchBarVisible: selectIsSearchBarVisible(state)

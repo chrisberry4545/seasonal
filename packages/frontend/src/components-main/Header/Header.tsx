@@ -9,7 +9,7 @@ import {
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import {
   SearchBarConnecter
-} from '../';
+} from '../SearchBar/SearchBar.connector';
 import { IHeaderDispatchProps } from './Header.interface';
 
 export const Header: FC<IHeaderDispatchProps> = ({

@@ -9,7 +9,7 @@ import {
 import {
   ICurrentSeasonName
 } from './CurrentSeasonName.interface';
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 
 const mapStateToProps = (
   state: IState

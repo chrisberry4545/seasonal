@@ -3,7 +3,7 @@ import {
   DietaryFilters
 } from './DietaryFilters';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   IDietaryFiltersInputProps,
   IDietaryFiltersDispatchProps

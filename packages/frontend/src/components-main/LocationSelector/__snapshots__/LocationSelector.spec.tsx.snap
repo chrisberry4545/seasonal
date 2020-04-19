@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LocationSelector /> renders correctly 1`] = `
+<GroupedSelectBox
+  data-e2e="location-selector"
+  groups={
+    Array [
+      Object {
+        "groupName": "g1",
+        "selectOptions": Array [
+          Object {
+            "name": "n1",
+          },
+        ],
+      },
+    ]
+  }
+  onSelected={[MockFunction]}
+/>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodDetailsTopSection /> when the food has finished loading renders correctly 1`] = `
+<div
+  className="c-food-details-top-section"
+>
+  <div
+    className="c-food-details-top-section__top-bar"
+  >
+    <BareButton
+      className="c-food-details-top-section__back-button"
+      data-e2e="food-details-go-back"
+      onClick={[MockFunction]}
+    >
+      <ArrowIcon />
+    </BareButton>
+    <TextHeadingMedium
+      className="c-food-details-top-section__food-name"
+    >
+      Food
+    </TextHeadingMedium>
+  </div>
+  <img
+    alt="Food"
+    className="c-food-details-top-section__food-image"
+    data-e2e="food-details-img"
+    src="https://image.com"
+  />
+</div>
+`;

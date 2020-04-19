@@ -3,7 +3,7 @@ import {
   AllSeasonsGraph
 } from './AllSeasonsGraph';
 
-import { IState } from '../../interfaces';
+import { IState } from '../../store';
 import {
   IAllSeasonsGraphInputProps
 } from './AllSeasonsGraph.interface';

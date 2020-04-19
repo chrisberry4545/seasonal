@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SeasonMenu /> when the seasons have loaded renders correctly 1`] = `
+<div>
+  <PoseGroup />
+  <nav
+    className="c-season-menu "
+    data-e2e="season-menu"
+  >
+    <BareButton
+      className="c-season-menu__button "
+      data-e2e="season-menu-January"
+      key="January"
+      onClick={[Function]}
+    >
+      <TextMedium>
+        January
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      className="c-season-menu__button c-season-menu__button--selected"
+      data-e2e="season-menu-February"
+      key="February"
+      onClick={[Function]}
+    >
+      <TextMedium>
+        February
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      className="c-season-menu__button "
+      data-e2e="season-menu-All"
+      onClick={[MockFunction]}
+    >
+      <TextMedium>
+        All seasons
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      className="c-season-menu__button "
+      data-e2e="season-menu-Settings"
+      onClick={[MockFunction]}
+    >
+      <TextMedium>
+        Settings
+      </TextMedium>
+    </BareButton>
+    <BareButton
+      className="c-season-menu__close-btn"
+      onClick={[MockFunction]}
+    >
+      <CrossIcon />
+    </BareButton>
+  </nav>
+</div>
+`;

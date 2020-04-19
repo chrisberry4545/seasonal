@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ConnectedRouter
+    history={Object {}}
+  >
+    <div
+      className="c-app"
+    >
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/food"
+        />
+        <Route
+          component={[Function]}
+          path="/food-details/:id"
+        />
+        <Route
+          component={[Function]}
+          path="/all-seasons"
+        />
+        <Route
+          component={[Function]}
+          path="/settings"
+        />
+      </Switch>
+    </div>
+  </ConnectedRouter>
+  <GlobalModals />
+</Provider>
+`;

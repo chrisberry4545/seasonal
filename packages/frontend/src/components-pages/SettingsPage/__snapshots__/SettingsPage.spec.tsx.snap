@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SettingsPage /> renders correctly 1`] = `
+<PageWithMenu>
+  <div
+    className="c-settings-page"
+  >
+    <LocationSelectorConnecter />
+  </div>
+</PageWithMenu>
+`;

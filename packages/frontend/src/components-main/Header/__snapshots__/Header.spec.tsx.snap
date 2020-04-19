@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<header
+  className="c-header"
+>
+  <BareButton
+    className="c-header__btn"
+    onClick={[MockFunction]}
+  >
+    <BurgerIcon />
+  </BareButton>
+  <h1
+    className="c-header__text"
+  >
+    <TextHeadingLarge>
+      Eat Seasonal
+    </TextHeadingLarge>
+  </h1>
+  <SearchBarConnecter />
+</header>
+`;

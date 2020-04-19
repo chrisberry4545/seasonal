@@ -4,7 +4,7 @@ import './SummaryColumnList.scss';
 
 import {
   SummaryColumn
-} from './../SummaryColumn';
+} from '../SummaryColumn';
 
 import {
   ISummaryColumnList
