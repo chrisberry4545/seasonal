@@ -1,4 +1,5 @@
 export enum ROUTES {
+  BADGES = 'badges',
   CREATE = 'create',
   COUNTRY = 'country',
   COUNTRY_FOOD_NAME_MAP = 'country-food-name-map',
