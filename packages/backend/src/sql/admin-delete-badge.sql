@@ -1,0 +1,3 @@
+DELETE FROM badges
+WHERE id = $1
+RETURNING *;

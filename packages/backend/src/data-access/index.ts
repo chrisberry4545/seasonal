@@ -1,3 +1,5 @@
+export * from './admin-badge-data';
+
 export * from './admin-country-data';
 
 export * from './admin-country-food-name-map-data';

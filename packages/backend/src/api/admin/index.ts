@@ -6,6 +6,7 @@ import { appPassport } from './auth/app-passport';
 import { adminAuth } from './auth/admin-auth';
 import { editorAuth } from './auth/editor-auth';
 import { loginApi } from './login-api';
+import { badgeApi } from './badge-api';
 import { countryApi } from './country-api';
 import { countryFoodNameMapApi } from './country-food-name-map-api';
 import { countryRecipeNameMapApi } from './country-recipe-name-map-api';
@@ -17,6 +18,7 @@ import { userApi } from './user-api';
 import { errorMiddleware } from '../../middleware/error-middleware';
 import {
   ENDPOINT_LOGIN,
+  ENDPOINT_BADGE,
   ENDPOINT_COUNTRY,
   ENDPOINT_COUNTRY_RECIPE_NAME_MAP,
   ENDPOINT_COUNTRY_FOOD_NAME_MAP,
@@ -34,6 +36,11 @@ export const adminApi = (router = Router()) => {
     `/${ENDPOINT_LOGIN}`,
     loginApi()
   );
+  router.use(
+    `/${ENDPOINT_BADGE}`,
+    editorAuth,
+    badgeApi()
+  ),
   router.use(
     `/${ENDPOINT_COUNTRY}`,
     editorAuth,
