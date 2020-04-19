@@ -12,12 +12,14 @@ import {
   errorMiddleware
 } from './middleware/error-middleware';
 import { ENDPOINT_ADMIN, ENDPOINT_V2 } from '@chrisb-dev/seasonal-shared-models';
+import { initGraphQl } from './api/graphql/init-graphql';
 
 const app = express();
 
 app.use(cors(corsOptions));
 app.use(helmet());
 app.use(bodyParser.json());
+initGraphQl(app);
 
 app.use(`/${ENDPOINT_V2}`, v2Api());
 app.use(`/${ENDPOINT_ADMIN}`, adminApi());
