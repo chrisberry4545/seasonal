@@ -111,7 +111,7 @@ export function DataForm<T>({
       );
       setValidationState({
         ...validationState,
-        name: errors
+        [name]: errors
       });
     }
     const newItem = {
@@ -141,7 +141,8 @@ export function DataForm<T>({
               type,
               value
             };
-            const validationErrors = validationState[prop];
+            const validationErrors = validationState[prop]
+              && validationState[prop]!.filter((error) => error !== null);
             return (
               <label key={key} className='c-data-form__field'>
                 <TextMedium className='c-data-form__label'>{placeholder}</TextMedium>

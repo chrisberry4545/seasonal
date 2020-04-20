@@ -7,7 +7,7 @@ export const Multiselect: FC<{
   className?: string,
   onChange: (newValue: Array<(string | number)>) => void,
   options: ISelectOption[],
-  value: Array<(string | number)>
+  value: Array<(string | number)> | null
 }> = ({
   className,
   onChange,
@@ -15,12 +15,13 @@ export const Multiselect: FC<{
   value
 }) => {
 
+  const valueToUse = value || [];
   const isSelected = (optionValue: string | number) =>
-    value && value.includes(optionValue);
+    valueToUse && valueToUse.includes(optionValue);
   const onOptionClicked = (selectedValue: string | number) => {
     const newValue = isSelected(selectedValue)
-      ? value.filter((innerValue) => innerValue !== selectedValue)
-      : [...value, selectedValue];
+      ? valueToUse.filter((innerValue) => innerValue !== selectedValue)
+      : [...valueToUse, selectedValue];
     onChange(newValue);
   };
 

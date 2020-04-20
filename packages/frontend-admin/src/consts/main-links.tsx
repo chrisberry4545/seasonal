@@ -1,5 +1,8 @@
 import { ROUTES } from '../config';
 import {
+  CreateBadgePage,
+  EditBadgePage,
+  ViewBadgesPage,
   CreateCountryPage,
   EditCountryPage,
   ViewCountriesPage,
@@ -25,6 +28,13 @@ import {
 } from '../components-pages';
 
 export const mainLinks = [
+  {
+    createPageComponent: CreateBadgePage,
+    editPageComponent: EditBadgePage,
+    sectionName: 'Badges',
+    viewPageComponent: ViewBadgesPage,
+    viewUrl: ROUTES.BADGES
+  },
   {
     createPageComponent: CreateCountryPage,
     editPageComponent: EditCountryPage,

@@ -11,7 +11,8 @@ export const adminCreateDbFood = async (
       item.name,
       item.description,
       item.imageUrlSmall,
-      item.substituteFoodIds
+      item.substituteFoodIds,
+      item.badgeIds
     ]
   );
   return result.rows && result.rows[0];
@@ -51,7 +52,8 @@ export const adminEditDbFood = async (
       item.name,
       item.description,
       item.imageUrlSmall,
-      item.substituteFoodIds
+      item.substituteFoodIds,
+      item.badgeIds
     ]
   );
   return result.rows && result.rows[0];

@@ -7,13 +7,16 @@ import {
   ENDPOINT_FOOD_DETAILS,
   ENDPOINT_RECIPE,
   ENDPOINT_REGION,
-  ENDPOINT_USER
+  ENDPOINT_USER,
+  ENDPOINT_BADGE
 } from '@chrisb-dev/seasonal-shared-models';
 
 const ADMIN_BACKEND_URL = process.env.REACT_APP_ADMIN_BACKEND_URL
   || 'https://6usraevcmc.execute-api.eu-west-2.amazonaws.com/prod/admin';
 
 export const LOGIN_URL = `${ADMIN_BACKEND_URL}/${ENDPOINT_LOGIN}`;
+
+export const BADGE_URL = `${ADMIN_BACKEND_URL}/${ENDPOINT_BADGE}`;
 
 export const COUNTRY_URL = `${ADMIN_BACKEND_URL}/${ENDPOINT_COUNTRY}`;
 

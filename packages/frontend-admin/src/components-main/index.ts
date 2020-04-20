@@ -14,6 +14,8 @@ export * from './BaseFormRegionSeasonFoodMap/BaseFormRegionSeasonFoodMap';
 
 export * from './BaseFormUser/BaseFormUser';
 
+export * from './CreateBadgeForm/CreateBadgeForm';
+
 export * from './CreateCountryFoodNameMapForm/CreateCountryFoodNameMapForm';
 
 export * from './CreateCountryForm/CreateCountryForm';
@@ -30,6 +32,8 @@ export * from './CreateUserForm/CreateUserForm';
 
 export * from './DataForm/DataForm';
 
+export * from './EditBadgeForm/EditBadgeForm';
+
 export * from './EditCountryFoodNameMapForm/EditCountryFoodNameMapForm';
 
 export * from './EditCountryForm/EditCountryForm';
@@ -45,6 +49,8 @@ export * from './EditRegionFoodSeasonMap/EditRegionFoodSeasonMap';
 export * from './EditRegionForm/EditRegionForm';
 
 export * from './EditUserForm/EditUserForm';
+
+export * from './FullListBadges/FullListBadges';
 
 export * from './FullListCountries/FullListCountries';
 

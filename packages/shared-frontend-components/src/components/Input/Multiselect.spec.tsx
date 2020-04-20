@@ -47,6 +47,25 @@ describe('<Multiselect />', () => {
     });
   });
 
+  describe('when the values are null', () => {
+    beforeEach(() => {
+      wrapper = shallow(
+        <Multiselect onChange={mockOnChange}
+          className='class'
+          value={null}
+          options={options} />
+      );
+    });
+
+    test('selects the first value when clicked', () => {
+      const onClick = wrapper.find(BareButton).first().prop('onClick');
+      if (onClick) {
+        onClick();
+      }
+      expect(mockOnChange).toHaveBeenCalledWith(['v1']);
+    });
+  });
+
   describe('when an option is selected', () => {
     beforeEach(() => {
       wrapper = shallow(

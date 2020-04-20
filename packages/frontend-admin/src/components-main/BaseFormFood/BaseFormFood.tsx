@@ -2,9 +2,9 @@ import React, { FC, useState, useEffect } from 'react';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IFood } from '@chrisb-dev/seasonal-shared-models';
+import { IFood, IBadge } from '@chrisb-dev/seasonal-shared-models';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
-import { getAllFood } from '../../services';
+import { getAllFood, getAllBadges } from '../../services';
 import {
   requiredValidation
 } from '@chrisb-dev/seasonal-shared-frontend-components';
@@ -35,23 +35,39 @@ export const BaseFormFood: FC<IGetAuthorizedBackendDataProps<IFood>> = ({
 }) => {
   const [config, setConfig] = useState<IFoodFormConfigProps | null>(null);
 
-  const updateConfigWithFoodDropdowns = (food: IFood[]) => {
-    const options = food.map((foodItem) => ({
+  const updateConfig = (
+    food: IFood[],
+    badges: IBadge[]
+  ) => {
+    const foodOptions = food.map((foodItem) => ({
       label: foodItem.name,
       value: foodItem.id
+    }));
+    const badgeOptions = badges.map((badge) => ({
+      label: badge.name,
+      value: badge.id
     }));
     setConfig({
       ...initialFoodFormConfig,
       substituteFoodIds: {
-        options,
+        options: foodOptions,
+        type: 'searchable-multiselect'
+      },
+
+      badgeIds: {
+        options: badgeOptions,
         type: 'searchable-multiselect'
       }
     });
   };
 
   useEffect(() => {
-    getAllFood()
-      .then((food) => updateConfigWithFoodDropdowns(food));
+    Promise.all([
+      getAllFood(),
+      getAllBadges()
+    ]).then(([food, badges]) => updateConfig(
+      food, badges
+    ));
   }, []);
 
   return <DataForm item={items}

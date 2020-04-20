@@ -1,3 +1,5 @@
+export * from './CreateBadgePage/CreateBadgePage';
+
 export * from './CreateCountryFoodNameMapPage/CreateCountryFoodNameMapPage';
 
 export * from './CreateCountryPage/CreateCountryPage';
@@ -11,6 +13,8 @@ export * from './CreateRecipePage/CreateRecipePage';
 export * from './CreateRegionPage/CreateRegionPage';
 
 export * from './CreateUserPage/CreateUserPage';
+
+export * from './EditBadgePage/EditBadgePage';
 
 export * from './EditCountryFoodNameMapPage/EditCountryFoodNameMapPage';
 
@@ -31,6 +35,8 @@ export * from './EditUserPage/EditUserPage';
 export * from './HomePage/HomePage';
 
 export * from './LoginPage/LoginPage';
+
+export * from './ViewBadgesPage/ViewBadgesPage';
 
 export * from './ViewCountriesPage/ViewCountriesPage';
 

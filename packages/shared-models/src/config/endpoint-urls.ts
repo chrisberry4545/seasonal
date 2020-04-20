@@ -6,6 +6,7 @@ export const ENDPOINT_SEASON_WITH_FOOD = 'season-with-food';
 export const ENDPOINT_SEASON_WITH_RECIPES = 'season-with-recipes';
 export const ENDPOINT_COUNTRY = 'country';
 
+export const ENDPOINT_BADGE = 'badge';
 export const ENDPOINT_COUNTRY_FOOD_NAME_MAP = 'country-food-name-map';
 export const ENDPOINT_LOGIN = 'login';
 export const ENDPOINT_COUNTRY_RECIPE_NAME_MAP = 'country-recipe-name-map';

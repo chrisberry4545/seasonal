@@ -2,6 +2,7 @@
 
 exports[`REST endpoint testing for /admin/food create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
 Object {
+  "badgeIds": null,
   "description": "This is food 1",
   "imageUrlSmall": "https://food-1-image.com",
   "name": "Food 1",
@@ -11,6 +12,7 @@ Object {
 
 exports[`REST endpoint testing for /admin/food delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
+  "badgeIds": null,
   "description": "This is food 1",
   "imageUrlSmall": "https://food-1-image.com",
   "name": "Food 1",
@@ -20,6 +22,7 @@ Object {
 
 exports[`REST endpoint testing for /admin/food edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
+  "badgeIds": null,
   "description": "This is food 2",
   "imageUrlSmall": "https://food-2-image.com",
   "name": "Food 2",
@@ -30,6 +33,7 @@ Object {
 exports[`REST endpoint testing for /admin/food get all when logged in as an admin Returns the expected result 1`] = `
 Array [
   Object {
+    "badgeIds": Array [],
     "description": "apple description",
     "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
     "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
@@ -37,6 +41,7 @@ Array [
     "substituteFoodIds": Array [],
   },
   Object {
+    "badgeIds": Array [],
     "description": "beetroot description",
     "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
     "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
@@ -44,6 +49,9 @@ Array [
     "substituteFoodIds": Array [],
   },
   Object {
+    "badgeIds": Array [
+      "5de57673-eee8-444a-b7be-d9ab553052cf",
+    ],
     "description": "onion description",
     "id": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
     "imageUrlSmall": "https://onion.com",
@@ -55,6 +63,7 @@ Array [
 
 exports[`REST endpoint testing for /admin/food get single item when logged in as an admin Returns the expected result 1`] = `
 Object {
+  "badgeIds": Array [],
   "description": "apple description",
   "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
   "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",

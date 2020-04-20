@@ -7,4 +7,5 @@ export interface IFood extends IDbBaseRecord {
   imageUrlSmall: string;
   description?: string;
   substituteFoodIds?: string[] | null;
+  badgeIds?: string[] | null;
 }

@@ -73,6 +73,29 @@ functions:
           path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminLogin}
           method: post
           cors: true
+  adminBadge:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminBadge}
+          method: post
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminBadge}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminBadge}/{id}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminBadge}
+          method: patch
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminBadge}/{id}
+          method: delete
+          cors: true
   adminCountry:
     handler: index-serverless.handler
     events:
