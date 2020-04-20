@@ -1,6 +1,12 @@
 import {
   selectCurrentFoodDetails,
-  selectIsCurrentFoodDetailsLoading
+  selectIsCurrentFoodDetailsLoading,
+  selectCurrentFoodDetailsBadges,
+  selectCurrentFoodDetailsId,
+  selectCurrentFoodDetailsName,
+  selectCurrentFoodDetailsImageUrl,
+  selectCurrentFoodDetailsSeasons,
+  selectCurrentFoodDetailsRecipes
 } from './current-food-details.selectors';
 import {
   currentFoodDetailsReducer
@@ -49,9 +55,20 @@ describe('set current food details start', () => {
     expect(selectIsCurrentFoodDetailsLoading(newAppState)).toBe(true));
 });
 
-describe('set current food details sucess', () => {
+describe('set current food details success', () => {
   let newAppState: IState;
-  const foodDetails = {} as IHydratedFood;
+  const foodDetails = {
+    badges: [{
+      color: '#FFFFFF',
+      id: '1'
+    }],
+    id: 'id',
+    imageUrlSmall: 'https://image.com',
+    name: 'n1',
+    primaryFoodInRecipe: [{ name: 'p1' }],
+    seasons: [{}],
+    secondaryFoodInRecipe: [{ name: 's2' }, { name: 's2' }]
+  } as IHydratedFood;
   beforeEach(() =>
     newAppState = updateState(setCurrentFoodDetailsSuccess(foodDetails))
   );
@@ -61,4 +78,25 @@ describe('set current food details sucess', () => {
 
   test('sets food details to the value in the action', () =>
     expect(selectCurrentFoodDetails(newAppState)).toBe(foodDetails));
+
+  test('sets the current food details id', () =>
+    expect(selectCurrentFoodDetailsId(newAppState)).toBe(foodDetails.id));
+
+  test('sets the current food details name', () =>
+    expect(selectCurrentFoodDetailsName(newAppState)).toBe(foodDetails.name));
+
+  test('sets the current food details image url', () =>
+    expect(selectCurrentFoodDetailsImageUrl(newAppState)).toBe(foodDetails.imageUrlSmall));
+
+  test('sets the current food details seasons', () =>
+    expect(selectCurrentFoodDetailsSeasons(newAppState)).toBe(foodDetails.seasons));
+
+  test('sets the current food details recipe', () =>
+    expect(selectCurrentFoodDetailsRecipes(newAppState)).toEqual([
+      ...foodDetails.primaryFoodInRecipe!,
+      ...foodDetails.secondaryFoodInRecipe!
+    ]));
+
+  test('sets the current food details badges', () =>
+    expect(selectCurrentFoodDetailsBadges(newAppState)).toBe(foodDetails.badges));
 });

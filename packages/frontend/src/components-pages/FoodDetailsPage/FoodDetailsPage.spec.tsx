@@ -3,6 +3,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { FoodDetailsPage } from '../FoodDetailsPage/FoodDetailsPage';
 
 jest.mock('../../components-main', () => ({
+  FoodBadgesConnecter: () => 'FoodBadgesConnecter',
   FoodDetailsLoaderConnecter: () => 'FoodDetailsLoaderConnecter',
   FoodDetailsTopSectionConnecter: () => 'FoodDetailsTopSectionConnecter',
   PageWithMenu: () => 'PageWithMenu',

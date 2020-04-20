@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
+<div
+  className="c-food-badges"
+>
+  <TextHeadingSmall
+    className="c-food-badges__heading"
+  >
+    Nutrition
+  </TextHeadingSmall>
+  <div
+    className="c-food-badges__list"
+  >
+    <div
+      className="c-food-badges__badge"
+      key="1"
+      style={
+        Object {
+          "backgroundColor": "#000000",
+        }
+      }
+    >
+      Iron
+    </div>
+    <div
+      className="c-food-badges__badge"
+      key="2"
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+        }
+      }
+    >
+      Vitamin A
+    </div>
+  </div>
+</div>
+`;
