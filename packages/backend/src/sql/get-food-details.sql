@@ -97,6 +97,21 @@ SELECT
       region_to_season_food_map.food_id = food.id
     AND
       region_to_season_food_map.region_id = $1
+  ),
+  (
+    SELECT COALESCE(
+      json_agg(
+        json_build_object(
+          'id', badges.id,
+          'name', badges.name
+        )
+        ORDER BY(badges.name)
+      ),
+      '[]'::json
+    ) as badges
+    FROM badges
+    WHERE
+      badges.id = ANY(food.badge_ids)
   )
 FROM food
 WHERE food.id = $2

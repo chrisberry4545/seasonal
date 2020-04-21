@@ -1,9 +1,7 @@
 INSERT INTO badges (
-  name,
-  color
+  name
 )
 VALUES (
-  $1,
-  $2
+  $1
 )
 RETURNING *;

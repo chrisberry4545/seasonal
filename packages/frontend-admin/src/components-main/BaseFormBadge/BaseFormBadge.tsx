@@ -5,7 +5,6 @@ import {
 import { IBadge } from '@chrisb-dev/seasonal-shared-models';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import {
-  hexColorValidation,
   requiredValidation
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
@@ -15,11 +14,6 @@ const badgeFormConfig: IBadgeFormConfigProps = {
   name: {
     type: 'text',
     validation: [requiredValidation]
-  },
-
-  color: {
-    type: 'text',
-    validation: [requiredValidation, hexColorValidation]
   }
 };
 

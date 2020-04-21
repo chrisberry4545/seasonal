@@ -6,6 +6,8 @@ export * from './DietaryFilters/DietaryFilters.connector';
 
 export * from './ErrorDisplay/ErrorDisplay.connector';
 
+export * from './FoodBadges/FoodBadges.connector';
+
 export * from './FoodDetailsLoader/FoodDetailsLoader.connector';
 
 export * from './FoodDetailsTopSection/FoodDetailsTopSection.connector';

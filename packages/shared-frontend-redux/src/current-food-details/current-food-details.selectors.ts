@@ -2,7 +2,8 @@ import { createSelector } from 'reselect';
 import {
   IHydratedFood,
   IBaseSeason,
-  IRecipe
+  IRecipe,
+  IBadge
 } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../state.interface';
 import {
@@ -54,4 +55,10 @@ export const selectCurrentFoodDetailsRecipes = createSelector(
       ...(currentFoodDetails.primaryFoodInRecipe || []),
       ...(currentFoodDetails.secondaryFoodInRecipe || [])
     ]
+);
+
+export const selectCurrentFoodDetailsBadges = createSelector(
+  selectCurrentFoodDetails,
+  (currentFoodDetails): IBadge[] | undefined =>
+    currentFoodDetails && currentFoodDetails.badges
 );

@@ -1,0 +1,29 @@
+@import './../../styles/settings';
+@import './../../styles/tools';
+
+.c-food-badges {
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid $grey-med;
+}
+
+.c-food-badges__heading {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.c-food-badges__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.c-food-badges__badge {
+  color: $black-color;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin: 0 .5rem 1rem;
+  box-shadow: 1px 2px 4px 1px transparentize($black-color, .75);
+  position: relative;
+  background-color: $alt-color-1;
+}

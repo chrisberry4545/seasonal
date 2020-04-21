@@ -8,6 +8,7 @@ import {
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
 import { View, ViewStyle, TextStyle } from 'react-native';
 import { styles } from '../../styles';
+import { shadows } from '../../styles/shadows';
 
 const styleSeasonsForFoodTitle: TextStyle = {
   marginBottom: 15,
@@ -29,9 +30,11 @@ const styleSeasonsForFoodSeasonWrapper: ViewStyle = {
 };
 
 const styleSeasonsForFoodSeason: ViewStyle = {
+  ...shadows.level1,
   alignItems: 'center',
   backgroundColor: styles.colors.backgroundColor,
   borderColor: styles.colors.greyMed,
+  borderRadius: 8,
   borderWidth: 1,
   display: 'flex',
   height: 50,

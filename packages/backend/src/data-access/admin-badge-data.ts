@@ -8,8 +8,7 @@ export const adminCreateDbBadge = async (
   const result = await queryPostgres<IBadge>(
     query,
     [
-      item.name,
-      item.color
+      item.name
     ]
   );
   return result.rows && result.rows[0];
@@ -44,8 +43,7 @@ export const adminEditDbBadge = async (
     query,
     [
       item.id,
-      item.name,
-      item.color
+      item.name
     ]
   );
   return result.rows && result.rows[0];

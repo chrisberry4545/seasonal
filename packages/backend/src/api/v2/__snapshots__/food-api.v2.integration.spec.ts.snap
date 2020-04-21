@@ -2,6 +2,7 @@
 
 exports[`Get single food item Retrieves a single food item 1`] = `
 Object {
+  "badges": Array [],
   "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
   "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
   "name": "Beetroot",
@@ -41,6 +42,12 @@ Object {
 
 exports[`Get single food item when the food is a secondary food item in recipes Retrieves a single food item 1`] = `
 Object {
+  "badges": Array [
+    Object {
+      "id": "5de57673-eee8-444a-b7be-d9ab553052cf",
+      "name": "High in Vitamin D",
+    },
+  ],
   "id": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
   "imageUrlSmall": "https://onion.com",
   "name": "Onion",
@@ -61,6 +68,12 @@ Object {
 
 exports[`Get single food item when the food is a secondary food item in recipes and the isVegan recipe is applied returns the expected result 1`] = `
 Object {
+  "badges": Array [
+    Object {
+      "id": "5de57673-eee8-444a-b7be-d9ab553052cf",
+      "name": "High in Vitamin D",
+    },
+  ],
   "id": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
   "imageUrlSmall": "https://onion.com",
   "name": "Onion",
@@ -72,6 +85,12 @@ Object {
 
 exports[`Get single food item when the food is a secondary food item in recipes and the isVegetarian recipe is applied returns the expected result 1`] = `
 Object {
+  "badges": Array [
+    Object {
+      "id": "5de57673-eee8-444a-b7be-d9ab553052cf",
+      "name": "High in Vitamin D",
+    },
+  ],
   "id": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
   "imageUrlSmall": "https://onion.com",
   "name": "Onion",

@@ -17,6 +17,7 @@ exports[`<FoodDetailsPage /> renders correctly 1`] = `
         <View>
           <FoodDetailsLoaderConnecter />
           <FoodDetailsTopSectionConnecter />
+          <FoodBadgesConnecter />
           <RecipesForFoodConnecter />
           <SeasonsForFoodConnecter />
         </View>
