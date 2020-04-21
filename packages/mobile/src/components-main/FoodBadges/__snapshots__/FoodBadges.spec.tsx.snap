@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomWidth": 0.5,
+      "borderColor": "#CCCCCC",
+      "paddingBottom": 33,
+    }
+  }
+>
+  <TextHeadingSmall
+    style={
+      Object {
+        "marginBottom": 16,
+        "marginTop": 24,
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    Nutrition
+  </TextHeadingSmall>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      key="1"
+      style={
+        Object {
+          "backgroundColor": "#BAF9FE",
+          "borderRadius": 8,
+          "color": "#000000",
+          "elevation": 2,
+          "marginBottom": 10,
+          "marginEnd": 10,
+          "padding": 10,
+          "shadowColor": "#000000",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.2,
+          "shadowRadius": 1.41,
+        }
+      }
+    >
+      <TextMedium>
+        Iron
+      </TextMedium>
+    </View>
+    <View
+      key="2"
+      style={
+        Object {
+          "backgroundColor": "#BAF9FE",
+          "borderRadius": 8,
+          "color": "#000000",
+          "elevation": 2,
+          "marginBottom": 10,
+          "marginEnd": 10,
+          "padding": 10,
+          "shadowColor": "#000000",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.2,
+          "shadowRadius": 1.41,
+        }
+      }
+    >
+      <TextMedium>
+        Vitamin A
+      </TextMedium>
+    </View>
+  </View>
+</View>
+`;
