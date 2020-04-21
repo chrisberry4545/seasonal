@@ -66,7 +66,7 @@ export const BaseFormFood: FC<IGetAuthorizedBackendDataProps<IFood>> = ({
       getAllFood(),
       getAllBadges()
     ]).then(([food, badges]) => updateConfig(
-      food, badges
+      food as IFood[], badges as IBadge[]
     ));
   }, []);
 

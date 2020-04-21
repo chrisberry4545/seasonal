@@ -59,7 +59,6 @@ describe('set current food details success', () => {
   let newAppState: IState;
   const foodDetails = {
     badges: [{
-      color: '#FFFFFF',
       id: '1'
     }],
     id: 'id',

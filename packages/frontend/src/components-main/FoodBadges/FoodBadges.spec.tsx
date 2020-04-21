@@ -11,11 +11,9 @@ jest.mock('@chrisb-dev/seasonal-shared-frontend-components', () => ({
 describe('<FoodBadges />', () => {
   let wrapper: ShallowWrapper;
   const badges = [{
-    color: '#000000',
     id: '1',
     name: 'Iron'
   }, {
-    color: '#FFFFFF',
     id: '2',
     name: 'Vitamin A'
   }] as IBadge[];

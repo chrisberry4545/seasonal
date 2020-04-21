@@ -6,7 +6,6 @@ import { FORM_BUTTON_TEXT } from '../../consts';
 import { LayoutWithTitle } from '../../components-layouts';
 
 const createEmptyBadgeItem = (): IBadge => ({
-  color: '',
   name: ''
 } as IBadge);
 

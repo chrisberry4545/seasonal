@@ -2,21 +2,18 @@
 
 exports[`REST endpoint testing for /admin/badge create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
 Object {
-  "color": "#FFFFFF",
   "name": "test-1",
 }
 `;
 
 exports[`REST endpoint testing for /admin/badge delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "color": "#FFFFFF",
   "name": "test-1",
 }
 `;
 
 exports[`REST endpoint testing for /admin/badge edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "color": "#000000",
   "name": "test-2",
 }
 `;
@@ -24,12 +21,10 @@ Object {
 exports[`REST endpoint testing for /admin/badge get all when logged in as an admin Returns the expected result 1`] = `
 Array [
   Object {
-    "color": "#FF7F00",
     "id": "a2c52423-eb83-4cd9-9fdd-b6f9cb323c37",
     "name": "High in Vitamin C",
   },
   Object {
-    "color": "#FFFF00",
     "id": "5de57673-eee8-444a-b7be-d9ab553052cf",
     "name": "High in Vitamin D",
   },
@@ -38,7 +33,6 @@ Array [
 
 exports[`REST endpoint testing for /admin/badge get single item when logged in as an admin Returns the expected result 1`] = `
 Object {
-  "color": "#FF7F00",
   "id": "a2c52423-eb83-4cd9-9fdd-b6f9cb323c37",
   "name": "High in Vitamin C",
 }

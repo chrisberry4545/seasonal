@@ -103,8 +103,7 @@ SELECT
       json_agg(
         json_build_object(
           'id', badges.id,
-          'name', badges.name,
-          'color', badges.color
+          'name', badges.name
         )
         ORDER BY(badges.name)
       ),
