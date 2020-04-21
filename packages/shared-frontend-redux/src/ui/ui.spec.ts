@@ -27,6 +27,7 @@ import {
   setUserRegionDetected,
   setRegion
 } from '../country';
+import { setCurrentFoodDetailsStart } from '../current-food-details';
 
 const updateState = (
   action: Action,
@@ -100,14 +101,25 @@ describe('on search bar shown', () => {
   });
 });
 
-describe('on search bar hidden', () => {
-  test('hides the search bar', () => {
-    const newAppState = updateState(
-      hideSearchBar()
-    );
+describe.each([
+  hideSearchBar(),
+  setCurrentFoodDetailsStart()
+])('on search bar hidden', (action) => {
+  let newAppState: IState;
+
+  beforeEach(() => newAppState = updateState(action, {
+    isSearchBarVisible: true,
+    searchTerm: 'test'
+  } as IUiState));
+
+  test('hides the search bar', () =>
     expect(selectIsSearchBarVisible(newAppState))
-      .toBe(false);
-  });
+      .toBe(false));
+
+  test('sets search term to an empty string', () =>
+    expect(selectCurrentSearchTerm(newAppState))
+      .toBe(''));
+
 });
 
 describe('on user region detected', () => {

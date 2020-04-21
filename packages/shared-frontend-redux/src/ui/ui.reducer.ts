@@ -17,6 +17,7 @@ import {
 } from '../country/country.actions';
 import { IUiState } from './ui-state.interface';
 import { Action } from 'redux';
+import { SET_CURRENT_FOOD_DETAILS_START } from '../current-food-details';
 
 const getDefaultState = (): IUiState => ({
   isLocationSettingsPopupVisible: false,
@@ -52,6 +53,7 @@ export function uiReducer(
         ...state,
         isSearchBarVisible: true
       };
+    case SET_CURRENT_FOOD_DETAILS_START:
     case HIDE_SEARCH_BAR:
       return {
         ...state,
