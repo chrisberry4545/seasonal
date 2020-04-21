@@ -33,7 +33,7 @@ export const RecipesForFood: FC<IRecipeForFoodProps> = ({
       </TextHeadingSmall>
       <DietaryFiltersConnector />
       <SwitchableGridOrList
-        maxItemsPerRow={3}
+        maxItemsPerRow={isListViewShown ? 1 : 3}
         isListViewShown={isListViewShown}
         onToggleListView={onToggleListView}
         data={currentFoodDetailsRecipes}
