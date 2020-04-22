@@ -66,7 +66,7 @@ describe('<ImageList />', () => {
   describe.each`
     screenWidth | expectedWidth
     ${500}      | ${'50%'}
-    ${700}      | ${'33%'}
+    ${700}      | ${'33.333333333333336%'}
     ${1000}     | ${'25%'}
   `('sets the correct width', ({ screenWidth, expectedWidth }) => {
 

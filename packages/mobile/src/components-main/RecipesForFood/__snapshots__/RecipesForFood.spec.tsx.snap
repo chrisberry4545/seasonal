@@ -31,7 +31,7 @@ exports[`<RecipesForFood /> renders correctly 1`] = `
       ]
     }
     isListViewShown={true}
-    maxItemsPerRow={3}
+    maxItemsPerRow={1}
     noResultsMessage="No results found"
     onClick={[MockFunction]}
     onToggleListView={[MockFunction]}

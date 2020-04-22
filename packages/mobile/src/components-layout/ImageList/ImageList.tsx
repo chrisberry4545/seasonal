@@ -17,15 +17,21 @@ const styleImageList: ViewStyle = {
 export const ImageList: FC<IImageGrid> = ({
   data,
   onClick,
-  noResultsMessage
+  noResultsMessage,
+  maxItemsPerRow
 }) => {
   const screenWidth = getScreenWidth();
 
-  const width =
-    screenWidth < 500 ? '100%'
-    : screenWidth < 700 ? '50%'
-    : screenWidth < 1000 ? '33%'
-    : '25%';
+  const numberPerRowForScreen =
+    screenWidth < 500 ? 1
+    : screenWidth < 700 ? 2
+    : screenWidth < 1000 ? 3
+    : 4;
+  const numberPerRow = maxItemsPerRow
+    ? Math.min(numberPerRowForScreen, maxItemsPerRow)
+    : numberPerRowForScreen;
+
+  const width = `${100 / numberPerRow}%`;
 
   return <View style={styleImageList}>
     {

@@ -36,7 +36,7 @@ export const ImageGrid: FC<IImageGrid> = ({
   const isNotInLastRow = (index: number) => {
     const length = data ? data.length : 0;
     const numberInLastRow = length % numberPerRow;
-    return index < (length - numberInLastRow);
+    return index < (length - (numberInLastRow || numberPerRow));
   };
 
   const padding = 10 / numberPerRow;
