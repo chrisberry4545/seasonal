@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import { ROUTES } from '../config';
-import { mainLinks } from '../consts';
+import { mainLinks, IMainLinkPages } from '../consts';
 import {
   HomePage,
   LoginPage
@@ -20,7 +20,10 @@ export const App: FC<{}> = () => (
         </Route>
 
         {
-          mainLinks.map((link) =>
+          mainLinks.reduce((array, group) => [
+            ...array,
+            ...group.pages
+          ], [] as IMainLinkPages[]).map((link) =>
             <Fragment key={link.viewUrl}>
               <Route exact path={`/${link.viewUrl}`}
                 component={link.viewPageComponent} />

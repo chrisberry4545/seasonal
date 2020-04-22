@@ -1,6 +1,10 @@
 @import '../../styles/settings';
 
-.c-form-layout__title {
+.c-layout-with-title {
+  margin-bottom: 4rem;
+}
+
+.c-layout-with-title__title {
   border-bottom: 1px solid $grey-med;
   display: block;
   margin-bottom: 1.75rem;

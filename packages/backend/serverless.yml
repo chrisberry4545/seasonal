@@ -280,3 +280,10 @@ functions:
           path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminUser}/{id}
           method: delete
           cors: true
+  adminReportFoodWithNoRecipes:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminReportFoodWithNoRecipes}
+          method: get
+          cors: true

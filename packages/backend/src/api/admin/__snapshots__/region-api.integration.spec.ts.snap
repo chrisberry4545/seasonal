@@ -15,10 +15,10 @@ exports[`REST endpoint testing for /admin/region delete item when logged in as a
 Object {
   "code": "test-region",
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
-  "isDisabled": true,
-  "lat": 15,
-  "lng": -5,
-  "name": "Test region 2",
+  "isDisabled": false,
+  "lat": 10,
+  "lng": 15,
+  "name": "Test region",
 }
 `;
 

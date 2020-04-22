@@ -15,6 +15,7 @@ import { recipeApi } from './recipe-api';
 import { regionApi } from './region-api';
 import { regionFoodSeasonMapApi } from './region-food-season-map.api';
 import { userApi } from './user-api';
+import { reportsApi } from './reports';
 import { errorMiddleware } from '../../middleware/error-middleware';
 import {
   ENDPOINT_LOGIN,
@@ -26,7 +27,8 @@ import {
   ENDPOINT_RECIPE,
   ENDPOINT_REGION,
   ENDPOINT_REGION_FOOD_SEASON_MAP,
-  ENDPOINT_USER
+  ENDPOINT_USER,
+  ENDPOINT_REPORTS
 } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminApi = (router = Router()) => {
@@ -80,6 +82,11 @@ export const adminApi = (router = Router()) => {
     `/${ENDPOINT_USER}`,
     adminAuth,
     userApi()
+  );
+  router.use(
+    `/${ENDPOINT_REPORTS}`,
+    editorAuth,
+    reportsApi()
   );
   router.use(errorMiddleware());
   return router;

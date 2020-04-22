@@ -71,3 +71,5 @@ export * from './GetAuthorizedBackendData/GetAuthorizedBackendData';
 export * from './LoginForm/LoginForm';
 
 export * from './MainLinks/MainLinks';
+
+export * from './ReportFoodWithNoRecipes/ReportFoodWithNoRecipes';
