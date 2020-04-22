@@ -201,6 +201,10 @@ export const generateRestEndpointTests = <T extends IDbBaseRecord > ({
           );
           existingItem = existingItemResponse.body;
         });
+        afterAll(async () =>
+          await attachAdminJwtToken(
+            supertest(app).delete(`${path}/${existingItem.id}`)
+          ));
 
         const supertestRequestGenerator = () =>
           supertest(app).patch(path).send({

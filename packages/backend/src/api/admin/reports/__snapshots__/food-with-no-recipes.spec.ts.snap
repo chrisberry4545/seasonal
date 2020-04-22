@@ -3,14 +3,6 @@
 exports[`REST endpoint testing for /admin/reports/food-with-no-recipes get all when logged in as an admin Returns the expected result 1`] = `
 Array [
   Object {
-    "badgeIds": null,
-    "description": "This is food 2",
-    "id": "fcf85a24-8461-11ea-bcb3-0242c0a8d002",
-    "imageUrlSmall": "https://food-2-image.com",
-    "name": "Food 2",
-    "substituteFoodIds": null,
-  },
-  Object {
     "badgeIds": Array [
       "5de57673-eee8-444a-b7be-d9ab553052cf",
     ],
