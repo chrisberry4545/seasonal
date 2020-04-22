@@ -15,14 +15,11 @@ WITH
       seasons.season_index = $2
   ),
   food_in_season AS (
-  	SELECT array_agg(region_to_season_food_map.food_id)
+  	SELECT
+      region_to_season_food_map.food_id,
+      region_to_season_food_map.season_id
     FROM region_to_season_food_map
 	  WHERE
-      region_to_season_food_map.season_id = ANY(
-        SELECT selected_season.id
-        FROM selected_season
-      )
-	  AND
       region_to_season_food_map.region_id = $1
   ),
   recipe_name_mapping AS (
@@ -68,7 +65,11 @@ FROM (
     ) AS recipes
     FROM recipes
     WHERE
-      recipes.primary_food_in_recipe_ids <@ (SELECT array_agg FROM food_in_season)
+      recipes.primary_food_in_recipe_ids <@ (
+		  	SELECT array_agg(food_in_season.food_id)
+			  FROM food_in_season
+			  WHERE food_in_season.season_id = selected_season.id
+	  )
   )
   FROM selected_season
 ) seasons;
