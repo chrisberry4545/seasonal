@@ -11,5 +11,6 @@ export enum ROUTES {
   RECIPE = 'recipe',
   REGION = 'region',
   REGION_FOOD_SEASON_MAP = 'region-food-season-map',
+  REPORTS_FOOD_MISSING_RECIPES = 'report-food-missing-recipes',
   USER = 'user'
 }

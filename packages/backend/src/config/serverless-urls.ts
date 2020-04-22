@@ -13,7 +13,8 @@ import {
   ENDPOINT_ADMIN_RECIPE,
   ENDPOINT_ADMIN_REGION,
   ENDPOINT_ADMIN_REGION_FOOD_SEASON_MAP,
-  ENDPOINT_ADMIN_USER
+  ENDPOINT_ADMIN_USER,
+  ENDPOINT_ADMIN_REPORT_FOOD_WITH_NO_RECIPES
 } from './urls';
 
 export const serverlessUrls = () => ({
@@ -27,6 +28,8 @@ export const serverlessUrls = () => ({
   adminRegion: ENDPOINT_ADMIN_REGION,
   adminRegionFoodSeasonMap: ENDPOINT_ADMIN_REGION_FOOD_SEASON_MAP,
   adminUser: ENDPOINT_ADMIN_USER,
+
+  adminReportFoodWithNoRecipes: ENDPOINT_ADMIN_REPORT_FOOD_WITH_NO_RECIPES,
 
   v2Country: ENDPOINT_V2_COUNTRY,
   v2Food: ENDPOINT_V2_FOOD,

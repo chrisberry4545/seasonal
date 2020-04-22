@@ -1,5 +1,6 @@
 export const ENDPOINT_V2 = 'v2';
 export const ENDPOINT_ADMIN = 'admin';
+export const ENDPOINT_REPORTS = 'reports';
 export const ENDPOINT_SEASON = 'season';
 export const ENDPOINT_FOOD_DETAILS = 'food';
 export const ENDPOINT_SEASON_WITH_FOOD = 'season-with-food';
@@ -14,3 +15,4 @@ export const ENDPOINT_RECIPE = 'recipe';
 export const ENDPOINT_REGION = 'region';
 export const ENDPOINT_REGION_FOOD_SEASON_MAP = 'region-food-season-map';
 export const ENDPOINT_USER = 'user';
+export const ENDPOINT_FOOD_WITH_NO_RECIPES = 'food-with-no-recipes';

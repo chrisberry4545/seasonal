@@ -36,6 +36,8 @@ export * from './HomePage/HomePage';
 
 export * from './LoginPage/LoginPage';
 
+export * from './ReportFoodWithNoRecipes/ReportFoodWithNoRecipes';
+
 export * from './ViewBadgesPage/ViewBadgesPage';
 
 export * from './ViewCountriesPage/ViewCountriesPage';

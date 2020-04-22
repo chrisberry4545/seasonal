@@ -17,31 +17,37 @@ const SingleLink: FC<{
 );
 
 export const MainLinks: FC<{}> = () => (
-  <LayoutWithTitle title='Update Data'>
+  <Fragment>
     {
-      mainLinks.map((link) =>
-        <div key={link.viewUrl} className='c-main-links__section'>
-          <TextHeadingSmall className='c-main-links__section-heading'>{ link.sectionName }</TextHeadingSmall>
-          <div className='c-main-links__options'>
-            {
-              link.createPageComponent
-                && (
-                  <Fragment>
-                    <SingleLink url={link.createLinkUrl}>
-                      Create
-                    </SingleLink>
-                    <TextMedium>
-                      -
-                    </TextMedium>
-                  </Fragment>
-                )
-            }
-            <SingleLink url={link.viewUrl}>
-              View
-            </SingleLink>
-          </div>
-        </div>
+      mainLinks.map((group) =>
+        <LayoutWithTitle title={group.title}>
+          {
+            group.pages.map((link) =>
+              <div key={link.viewUrl} className='c-main-links__section'>
+                <TextHeadingSmall className='c-main-links__section-heading'>{ link.sectionName }</TextHeadingSmall>
+                <div className='c-main-links__options'>
+                  {
+                    link.createPageComponent && link.createLinkUrl
+                      && (
+                        <Fragment>
+                          <SingleLink url={link.createLinkUrl}>
+                            Create
+                          </SingleLink>
+                          <TextMedium>
+                            -
+                          </TextMedium>
+                        </Fragment>
+                      )
+                  }
+                  <SingleLink url={link.viewUrl}>
+                    View
+                  </SingleLink>
+                </div>
+              </div>
+            )
+          }
+        </LayoutWithTitle>
       )
     }
-  </LayoutWithTitle>
+  </Fragment>
 );

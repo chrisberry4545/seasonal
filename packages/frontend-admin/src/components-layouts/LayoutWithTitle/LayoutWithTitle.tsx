@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import './LayoutWithTitle.scss';
 import { TextHeadingMedium } from '@chrisb-dev/seasonal-shared-frontend-components';
 
@@ -10,13 +10,13 @@ export const LayoutWithTitle: FC<ILayoutWithTitle> = ({
   children,
   title
 }) => (
-  <Fragment>
+  <div className='c-layout-with-title'>
     {
       title
-      && <TextHeadingMedium className='c-form-layout__title'>
+      && <TextHeadingMedium className='c-layout-with-title__title'>
         {title}
       </TextHeadingMedium>
     }
     { children }
-  </Fragment>
+  </div>
 );

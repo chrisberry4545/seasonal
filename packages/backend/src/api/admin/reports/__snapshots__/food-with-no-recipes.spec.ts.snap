@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REST endpoint testing for /admin/reports/food-with-no-recipes get all when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "badgeIds": null,
+    "description": "This is food 2",
+    "id": "fcf85a24-8461-11ea-bcb3-0242c0a8d002",
+    "imageUrlSmall": "https://food-2-image.com",
+    "name": "Food 2",
+    "substituteFoodIds": null,
+  },
+  Object {
+    "badgeIds": Array [
+      "5de57673-eee8-444a-b7be-d9ab553052cf",
+    ],
+    "description": "onion description",
+    "id": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
+    "imageUrlSmall": "https://onion.com",
+    "name": "Onion",
+    "substituteFoodIds": Array [],
+  },
+]
+`;
