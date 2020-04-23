@@ -1,6 +1,6 @@
 export * from './feedback.actions';
 
-export * from './feedback.epics';
+export * from './epics/feedback.epics';
 
 export * from './feedback.reducer';
 

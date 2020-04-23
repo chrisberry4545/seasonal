@@ -1,11 +1,11 @@
-import { AppSeasonalEpic } from '../seasonal-epic.type';
+import { AppSeasonalEpic } from '../../seasonal-epic.type';
 import { Action } from 'redux';
 import { StateObservable, ActionsObservable, ofType } from 'redux-observable';
 import { Observable } from 'rxjs';
 import {
   GO_BACK_FROM_FOOD_DETAILS,
   GO_TO_ABOUT_US_PAGE
-} from '.';
+} from '..';
 import {
   RECIPE_ITEM_CLICKED,
   IRecipeItemClicked,
@@ -25,10 +25,10 @@ import {
   GO_BACK_FROM_SETTINGS_PAGE
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { withLatestFrom, map, tap, ignoreElements, mapTo } from 'rxjs/operators';
-import { goToLinkUrl } from '../../helpers';
-import { navigate, closeDrawer, openDrawer, navigateBackOne } from '../../helpers';
-import { ROUTES } from '../../const';
-import { IState } from '../state.interface';
+import { goToLinkUrl } from '../../../helpers';
+import { navigate, closeDrawer, openDrawer, navigateBackOne } from '../../../helpers';
+import { ROUTES } from '../../../const';
+import { IState } from '../../state.interface';
 
 export const goToRecipeLink$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>,

@@ -20,7 +20,7 @@ import {
 import {
   getNearestRegionFromLatLng
 } from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { IState } from '../state.interface';
+import { IState } from '../../state.interface';
 
 import {
   map,
@@ -34,8 +34,8 @@ import {
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable, of } from 'rxjs';
-import { AppSeasonalEpic } from '../seasonal-epic.type';
-import { setStoredData, getStoredData, getCurrentDeviceLocation$ } from '../../helpers';
+import { AppSeasonalEpic } from '../../seasonal-epic.type';
+import { setStoredData, getStoredData, getCurrentDeviceLocation$ } from '../../../helpers';
 
 const settingsStorageKey = 'seasonalSettings';
 

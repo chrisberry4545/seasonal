@@ -1,7 +1,7 @@
 import {
   initTrackingUser$, trackActionEpic$
 } from './tracking.epics';
-import * as helpers from '../../helpers';
+import * as helpers from '../../../helpers';
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { of } from 'rxjs';
 import {
@@ -22,7 +22,7 @@ import {
   setError,
   toggleListView
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { goBackFromFoodDetails, goToAboutUsPage } from '../route';
+import { goBackFromFoodDetails, goToAboutUsPage } from '../../route';
 import { IHydratedFood, DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import {
   sendFeedbackDoNotLikeApp,
@@ -32,8 +32,8 @@ import {
   sendFeedbackImprovementsSuccess,
   showFeedbackPopup,
   closeFeedbackPopup
-} from '../feedback';
-import { trackEvent } from '../../helpers';
+} from '../../feedback';
+import { trackEvent } from '../../../helpers';
 
 describe('initTrackingUser$', () => {
   let mockSetTrackingUser: jest.SpyInstance;

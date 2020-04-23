@@ -15,7 +15,7 @@ import {
 import { DIET_TYPE, IRegion } from '@chrisb-dev/seasonal-shared-models';
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
 import * as sharedFrontentUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import * as helpers from '../../helpers';
+import * as helpers from '../../../helpers';
 import { of, throwError } from 'rxjs';
 import { Action } from 'redux';
 import { TestScheduler } from 'rxjs/testing';

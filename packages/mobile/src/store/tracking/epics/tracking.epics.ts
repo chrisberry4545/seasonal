@@ -3,7 +3,7 @@ import { ActionsObservable, StateObservable, ofType } from 'redux-observable';
 import {
   GO_BACK_FROM_FOOD_DETAILS,
   GO_TO_ABOUT_US_PAGE
-} from '../route';
+} from '../../route';
 import {
   SEND_FEEDBACK_DO_NOT_LIKE_APP,
   SEND_FEEDBACK_LIKE_APP,
@@ -12,7 +12,7 @@ import {
   SEND_FEEDBACK_WANT_TO_RATE,
   CLOSE_FEEDBACK_POPUP,
   SHOW_FEEDBACK_POPUP
-} from '../feedback/feedback.actions';
+} from '../../feedback/feedback.actions';
 
 import {
   SELECT_SEASON,
@@ -42,9 +42,9 @@ import {
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
-import { trackEvent, setTrackingUser } from '../../helpers';
-import { IState } from '../state.interface';
-import { AppSeasonalEpic } from '../seasonal-epic.type';
+import { trackEvent, setTrackingUser } from '../../../helpers';
+import { IState } from '../../state.interface';
+import { AppSeasonalEpic } from '../../seasonal-epic.type';
 
 const ACTIONS_TO_TRACK = [
   SELECT_SEASON,

@@ -1,4 +1,4 @@
-import { AppSeasonalEpic } from '../seasonal-epic.type';
+import { AppSeasonalEpic } from '../../seasonal-epic.type';
 import { Action } from 'redux';
 import { StateObservable, ActionsObservable, ofType } from 'redux-observable';
 import { Observable } from 'rxjs';
@@ -12,7 +12,7 @@ import {
   CLOSE_FEEDBACK_POPUP,
   SEND_FEEDBACK_IMPROVEMENTS_START,
   sendFeedbackImprovementsSuccess
-} from './feedback.actions';
+} from '../feedback.actions';
 import {
   tap,
   ignoreElements,
@@ -23,20 +23,20 @@ import {
   switchMap,
   delay
 } from 'rxjs/operators';
-import { IState } from '../state.interface';
-import { IFeedbackState } from './feedback-state.interface';
+import { IState } from '../../state.interface';
+import { IFeedbackState } from '../feedback-state.interface';
 import {
   selectSettingsTimesAppStarted,
   INIT_APP
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { goToLinkUrl, setStoredData, getStoredData } from '../../helpers';
+import { goToLinkUrl, setStoredData, getStoredData } from '../../../helpers';
 import {
   selectHasGivenFeedback,
   selectHasBeenShownFeedbackQuestions,
   selectFeedbackState,
   selectFeedbackImprovements
-} from './feedback.selectors';
-import { STORE_URL } from '../../config';
+} from '../feedback.selectors';
+import { STORE_URL } from '../../../config';
 
 const feedbackStorageKey = 'feedbackStorage';
 

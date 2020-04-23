@@ -9,7 +9,7 @@ import {
   closeMenu$,
   openMenu$
 } from './route.epics';
-import * as helpers from '../../helpers';
+import * as helpers from '../../../helpers';
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import {
@@ -28,8 +28,8 @@ import {
   openMenu
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { of } from 'rxjs';
-import { ROUTES } from '../../const';
-import { goToAboutUsPage, goBackFromFoodDetails } from './route.actions';
+import { ROUTES } from '../../../const';
+import { goToAboutUsPage, goBackFromFoodDetails } from '../route.actions';
 
 describe.each([
   foodDetailsSelectRecipe('r1'),

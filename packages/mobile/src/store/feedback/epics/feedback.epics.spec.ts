@@ -5,9 +5,9 @@ import {
   showFeedbackForm$,
   sendFeedbackImprovements$
 } from './feedback.epics';
-import * as helpers from '../../helpers';
-import * as selectors from './feedback.selectors';
-import { IFeedbackState } from './feedback-state.interface';
+import * as helpers from '../../../helpers';
+import * as selectors from '../feedback.selectors';
+import { IFeedbackState } from '../feedback-state.interface';
 import {
   showFeedbackPopup,
   sendFeedbackWantToRate,
@@ -16,10 +16,10 @@ import {
   initFeedbackState,
   sendFeedbackImprovementsStart,
   sendFeedbackImprovementsSuccess
-} from './feedback.actions';
+} from '../feedback.actions';
 import { of } from 'rxjs';
 import { initApp } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { STORE_URL } from '../../config';
+import { STORE_URL } from '../../../config';
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { TestScheduler } from 'rxjs/testing';
 
