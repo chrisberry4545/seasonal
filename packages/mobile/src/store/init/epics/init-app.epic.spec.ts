@@ -1,6 +1,6 @@
 import {
   initAppEpic$
-} from './init.epics';
+} from './init-app.epic';
 import { of } from 'rxjs';
 import { initApp } from '@chrisb-dev/seasonal-shared-frontend-redux';
 

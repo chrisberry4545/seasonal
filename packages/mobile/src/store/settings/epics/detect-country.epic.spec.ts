@@ -1,128 +1,16 @@
-import {
-  storeSettings$, getStoredSettings$, detectCountry$
-} from './settings.epics';
-import {
-  setDietType,
-  setRegion,
-  setUserRegionDetected,
-  initSettings,
-  ISettingsState,
-  IInitSettings,
-  initApp,
-  getCountriesSuccess,
-  userRegionDetected
-} from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { DIET_TYPE, IRegion } from '@chrisb-dev/seasonal-shared-models';
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
+import { getCountriesSuccess, userRegionDetected } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import * as sharedFrontentUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import * as helpers from '../../../helpers';
-import { of, throwError } from 'rxjs';
-import { Action } from 'redux';
-import { TestScheduler } from 'rxjs/testing';
+import { IRegion } from '@chrisb-dev/seasonal-shared-models';
 import { LocationData } from 'expo-location';
+import { Action } from 'redux';
+import { of, throwError } from 'rxjs';
+import { TestScheduler } from 'rxjs/testing';
+import * as helpers from '../../../helpers';
+import { detectCountry$ } from './detect-country.epic';
 
 const testScheduler = new TestScheduler((actual, expected) => {
   expect(actual).toEqual(expected);
-});
-
-describe.each([
-  setDietType(DIET_TYPE.VEGETARIAN),
-  setRegion('regionId'),
-  setUserRegionDetected('regionId'),
-  initSettings({} as ISettingsState)
-])('storeSettings$', (action) => {
-  let mockSetStoredData: jest.SpyInstance;
-  const settings = {} as ISettingsState;
-
-  beforeEach(async () => {
-    jest.spyOn(sharedFrontendRedux, 'selectSettingsState')
-      .mockReturnValue(settings);
-    mockSetStoredData = jest.spyOn(helpers, 'setStoredData');
-    mockSetStoredData.mockClear();
-    await storeSettings$(
-      of(action) as any,
-      of(null) as any,
-      {}
-    ).toPromise();
-  });
-
-  test('calls setStoredData', () =>
-    expect(mockSetStoredData).toHaveBeenCalledWith(
-      'seasonalSettings',
-      settings
-    ));
-
-});
-
-describe('getStoredSettings$', () => {
-  let result: IInitSettings;
-
-  describe('when the stored settings are null', () => {
-
-    beforeEach(async () => {
-      jest.spyOn(helpers, 'getStoredData')
-        .mockResolvedValue(null);
-      result = await getStoredSettings$(
-        of(initApp()) as any,
-        of(null) as any,
-        {}
-      ).toPromise() as any;
-    });
-
-    test('returns initSettings with the defaults', () =>
-      expect(result).toEqual(initSettings({
-        dietType: DIET_TYPE.ALL,
-        isListViewShown: false,
-        selectedRegionId: undefined,
-        timesAppStarted: 1
-      })));
-  });
-
-  describe('when the stored settings have a value and a timesAppStarted', () => {
-    const settings = {
-      dietType: DIET_TYPE.VEGETARIAN,
-      timesAppStarted: 1
-    } as ISettingsState;
-
-    beforeEach(async () => {
-      jest.spyOn(helpers, 'getStoredData')
-        .mockResolvedValue(settings);
-      result = await getStoredSettings$(
-        of(initApp()) as any,
-        of(null) as any,
-        {}
-      ).toPromise() as any;
-    });
-
-    test('returns the existing settings with timesAppStarted increased by 1', () =>
-      expect(result).toEqual(initSettings({
-        ...settings,
-        timesAppStarted: 2
-      } as ISettingsState)));
-  });
-
-  describe('when the stored settings have a value but no timesAppStarted value', () => {
-    const settings = {
-      dietType: DIET_TYPE.VEGETARIAN
-    } as ISettingsState;
-
-    beforeEach(async () => {
-      jest.spyOn(helpers, 'getStoredData')
-        .mockResolvedValue(settings);
-      result = await getStoredSettings$(
-        of(initApp()) as any,
-        of(null) as any,
-        {}
-      ).toPromise() as any;
-    });
-
-    test('returns the existing settings with timesAppStarted set to 1', () =>
-      expect(result).toEqual(initSettings({
-        ...settings,
-        timesAppStarted: 1
-      } as ISettingsState)));
-  });
-
 });
 
 describe('detectCountry$', () => {

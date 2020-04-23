@@ -10,7 +10,7 @@ import {
   storeFeedbackSettings$,
   getStoredFeedbackSettings$,
   sendFeedbackImprovements$
-} from './feedback/epics/feedback.epics';
+} from './feedback/epics';
 
 import {
   goToAboutUsPage$,
@@ -22,10 +22,10 @@ import {
   goToAllSeasonsView$,
   goBack$,
   goToSettingsPage$
-} from './route/epics/route.epics';
-import { initTrackingUser$, trackActionEpic$ } from './tracking/epics/tracking.epics';
-import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings/epics/settings.epics';
-import { initAppEpic$ } from './init/epics/init.epics';
+} from './route/epics';
+import { initTrackingUser$, trackActionEpic$ } from './tracking/epics';
+import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings/epics';
+import { initAppEpic$ } from './init/epics/init-app.epic';
 
 export const rootEpic = combineEpics(
   ...rootEpics,
