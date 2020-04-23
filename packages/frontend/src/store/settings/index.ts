@@ -1,1 +1,1 @@
-export * from './settings.epics';
+export * from './epics';
