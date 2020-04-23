@@ -1,5 +1,5 @@
 export * from './route.actions';
 
-export * from './route.epics';
+export * from './epics';
 
 export * from './route.selectors';

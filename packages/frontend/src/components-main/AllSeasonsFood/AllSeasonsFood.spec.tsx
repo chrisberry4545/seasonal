@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { AllSeasons } from './AllSeasons';
-import { IAllSeasonsProps } from './AllSeasons.interface';
+import { AllSeasonsFood } from './AllSeasonsFood';
+import { IAllSeasonsFoodProps } from './AllSeasonsFood.interface';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { ImageGrid } from '../../components-layout';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -16,7 +16,7 @@ jest.mock('@chrisb-dev/seasonal-shared-frontend-components', () => ({
   LoadingSpinner: () => 'LoadingSpinner'
 }));
 
-describe('<AllSeasons />', () => {
+describe('<AllSeasonsFood />', () => {
   let wrapper: ShallowWrapper;
   let mockOnFoodClick: jest.Mock;
   const seasons = [{
@@ -26,12 +26,13 @@ describe('<AllSeasons />', () => {
     id: '2',
     name: 'February'
   }] as IHydratedSeason[];
-  let mockIncreaseNumberOfAllFoodSeasonsInView: jest.Mock;
+  let mockIncreaseNumberOfAllSeasonsInView: jest.Mock;
 
-  const initProps = (): IAllSeasonsProps => ({
+  const initProps = (): IAllSeasonsFoodProps => ({
     hasMoreSeasonsInAllSeasonsView: true,
-    increaseNumberOfAllFoodSeasonsInView:
-      mockIncreaseNumberOfAllFoodSeasonsInView,
+    increaseNumberOfAllSeasonsInView:
+      mockIncreaseNumberOfAllSeasonsInView,
+    isCurrentTabFood: true,
     isLoading: false,
     onFoodClick: mockOnFoodClick,
     seasons
@@ -39,13 +40,13 @@ describe('<AllSeasons />', () => {
 
   beforeEach(() => {
     mockOnFoodClick = jest.fn();
-    mockIncreaseNumberOfAllFoodSeasonsInView = jest.fn();
+    mockIncreaseNumberOfAllSeasonsInView = jest.fn();
   });
 
   describe('when the seasons are loaded', () => {
     beforeEach(() =>
       wrapper = shallow(
-        <AllSeasons {...initProps()} />
+        <AllSeasonsFood {...initProps()} />
       )
     );
 
@@ -64,7 +65,7 @@ describe('<AllSeasons />', () => {
       if (loadMore) {
         loadMore(1);
       }
-      expect(mockIncreaseNumberOfAllFoodSeasonsInView).toHaveBeenCalled();
+      expect(mockIncreaseNumberOfAllSeasonsInView).toHaveBeenCalled();
     });
 
   });
@@ -72,7 +73,7 @@ describe('<AllSeasons />', () => {
   describe('when the seasons are not loaded', () => {
     beforeEach(() =>
       wrapper = shallow(
-        <AllSeasons {...({
+        <AllSeasonsFood {...({
           ...initProps(),
           isLoading: true
         })} />
@@ -81,6 +82,21 @@ describe('<AllSeasons />', () => {
 
     test('displays a loading spinner', () =>
       expect(wrapper.find(LoadingSpinner).exists()).toBe(true));
+
+  });
+
+  describe('when the current tab is not the food tab', () => {
+    beforeEach(() =>
+      wrapper = shallow(
+        <AllSeasonsFood {...({
+          ...initProps(),
+          isCurrentTabFood: false
+        })} />
+      )
+    );
+
+    test('does not render anything', () =>
+      expect(wrapper.children().exists()).toBe(false));
 
   });
 

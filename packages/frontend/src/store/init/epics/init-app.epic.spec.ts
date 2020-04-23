@@ -1,10 +1,10 @@
 import {
   initAppEpic$
-} from './init.epics';
+} from './init-app.epic';
 import { of } from 'rxjs';
 import { LOCATION_CHANGE } from 'connected-react-router';
 import { initApp } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { FOOD_TABLE_URL, LANDING_URL } from '../../const';
+import { FOOD_TABLE_URL, LANDING_URL } from '../../../const';
 
 describe('initAppEpic$', () => {
   test('returns initApp when on a page that is not the landing page', async  () => {

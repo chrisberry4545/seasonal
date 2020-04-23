@@ -3,8 +3,10 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { AllSeasonsPage } from '../AllSeasonsPage/AllSeasonsPage';
 
 jest.mock('../../components-main', () => ({
-  AllSeasonsConnector: () => 'AllSeasonsConnector',
+  AllSeasonsFoodConnector: () => 'AllSeasonsFoodConnector',
   AllSeasonsGraphConnector: () => 'AllSeasonsGraphConnector',
+  AllSeasonsRecipesConnector: () => 'AllSeasonsRecipesConnector',
+  BottomTabsConnecter: () => 'BottomTabsConnecter',
   PageWithMenu: () => 'PageWithMenu'
 }));
 

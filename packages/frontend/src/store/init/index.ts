@@ -1,1 +1,1 @@
-export * from './init.epics';
+export * from './epics/init-app.epic';

@@ -6,7 +6,9 @@ exports[`<AllSeasonsPage /> renders correctly 1`] = `
     className="c-all-seasons-page"
   >
     <AllSeasonsGraphConnector />
-    <AllSeasonsConnector />
+    <AllSeasonsFoodConnector />
+    <AllSeasonsRecipesConnector />
+    <BottomTabsConnecter />
   </div>
 </PageWithMenu>
 `;

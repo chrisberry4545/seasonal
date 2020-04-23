@@ -1,6 +1,6 @@
 import {
   trackActionEpic$
-} from './tracking.epics';
+} from './track-action.epic';
 import { of } from 'rxjs';
 import {
   selectSeason,
@@ -11,10 +11,10 @@ import {
   setError,
   closeMenu
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { goToWebVersion } from '../route';
+import { goToWebVersion } from '../../route';
 import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
-import { goToFoodTab, goToRecipesTab } from '../web-ui';
-import * as helpers from '../../helpers/functions/get-analytics';
+import { goToFoodTab, goToRecipesTab } from '../../web-ui';
+import * as helpers from '../../../helpers/functions/get-analytics';
 
 describe.each([
   selectSeason(1),

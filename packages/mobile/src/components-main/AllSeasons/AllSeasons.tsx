@@ -12,7 +12,7 @@ import { FlatList } from 'react-native-gesture-handler';
 
 export const AllSeasons: FC<IAllSeasonsProps> = ({
   isLoading,
-  increaseNumberOfAllFoodSeasonsInView,
+  increaseNumberOfAllSeasonsInView,
   onFoodClick,
   seasons,
   isListViewShown,
@@ -33,6 +33,6 @@ export const AllSeasons: FC<IAllSeasonsProps> = ({
           </Fragment>
         )}
         keyExtractor={(item) => item.name}
-        onEndReached={increaseNumberOfAllFoodSeasonsInView}
+        onEndReached={increaseNumberOfAllSeasonsInView}
         onEndReachedThreshold={2} />
 );

@@ -1,1 +1,1 @@
-export * from './tracking.epics';
+export * from './epics';
