@@ -3,7 +3,7 @@ import {
   AllSeasonsGraph
 } from './AllSeasonsGraph';
 
-import { IState } from '../../store';
+import { IState, selectIsCurrentTabFood } from '../../store';
 import {
   IAllSeasonsGraphInputProps
 } from './AllSeasonsGraph.interface';
@@ -14,7 +14,8 @@ import {
 const mapStateToProps = (
   state: IState
 ): IAllSeasonsGraphInputProps => ({
-  foodInSeasonGraphData: selectFoodInSeasonGraphData(state)
+  foodInSeasonGraphData: selectFoodInSeasonGraphData(state),
+  isCurrentTabFood: selectIsCurrentTabFood(state)
 });
 
 export const AllSeasonsGraphConnector = connect(

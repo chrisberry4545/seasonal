@@ -9,7 +9,7 @@ import {
   setAllSeasonsWithFoodSuccess,
   setAllSeasonsWithRecipesStart,
   setAllSeasonsWithRecipesSuccess,
-  increaseNumberOfAllFoodSeasonsInView
+  increaseNumberOfAllSeasonsInView
 } from './all-seasons.actions';
 import {
   selectIsAllSeasonsFoodLoading,
@@ -113,22 +113,22 @@ describe('setAllSeasonsWithRecipesSuccess', () => {
     expect(selectAllSeasons(newAppState)).toBe(seasonWithRecipes));
 });
 
-describe('increaseNumberOfAllFoodSeasonsInView', () => {
+describe('increaseNumberOfAllSeasonsInView', () => {
   let newAppState: IState;
   beforeEach(() => newAppState = updateState(
-    increaseNumberOfAllFoodSeasonsInView(),
+    increaseNumberOfAllSeasonsInView(),
     {
       numberOfSeasonsInView: 1
     } as IAllSeasonState
   ));
 
-  test('adds one to the number of all food seasons in view', () =>
+  test('adds one to the number of all seasons in view', () =>
     expect(selectNumberOfAllSeasonsInView(newAppState)).toBe(2));
 
   describe('when there are more seasons not currently in view', () => {
     beforeEach(() => {
       newAppState = updateState(
-        increaseNumberOfAllFoodSeasonsInView(),
+        increaseNumberOfAllSeasonsInView(),
         {
           data: [{}, {}, {}],
           numberOfSeasonsInView: 1
@@ -143,7 +143,7 @@ describe('increaseNumberOfAllFoodSeasonsInView', () => {
   describe('when there are not more seasons which are not currently in view', () => {
     beforeEach(() => {
       updateState(
-        increaseNumberOfAllFoodSeasonsInView(),
+        increaseNumberOfAllSeasonsInView(),
         {
           data: [{}, {}],
           numberOfSeasonsInView: 1

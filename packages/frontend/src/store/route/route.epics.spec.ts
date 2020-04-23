@@ -7,7 +7,8 @@ import {
   goToWebVersion$,
   goToFoodDetails$,
   initFoodDetails$,
-  initAllSeasonsWithFoodData$
+  initAllSeasonsWithFoodData$,
+  initAllSeasonsWithRecipesData$
 } from './route.epics';
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
@@ -25,7 +26,8 @@ import {
   goToAllSeasonsView,
   showLocationPopup,
   initApp,
-  setAllSeasonsWithFoodStart
+  setAllSeasonsWithFoodStart,
+  setAllSeasonsWithRecipesStart
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { of } from 'rxjs';
 import {
@@ -38,7 +40,9 @@ import { goBackFromFoodDetails, goToWebVersion } from './route.actions';
 import { Action } from 'redux';
 import { push } from 'connected-react-router';
 import * as selectors from '../route/route.selectors';
+import * as webUiSelectors from '../web-ui/web-ui.selectors';
 import { TestScheduler } from 'rxjs/testing';
+import { goToRecipesTab, goToFoodTab } from '../web-ui';
 
 const testScheduler = new TestScheduler((actual, expected) => {
   expect(actual).toEqual(expected);
@@ -183,58 +187,60 @@ describe('initFoodDetails$', () => {
 
 describe('initAllSeasonsWithFoodData$', () => {
 
-  describe('when the route is all seasons', () => {
-
-    beforeEach(() => {
-      jest.spyOn(selectors, 'selectIsCurrentRouteAllSeasons')
-        .mockReturnValue(true);
-    });
-
-    test('returns setAllSeasonsWithFoodStart', () => {
-      testScheduler.run(({ cold, expectObservable }) => {
-        const input = cold('a', {
-          a: initApp()
-        });
-        const expected = '50ms r';
-
-        expectObservable(
-          initAllSeasonsWithFoodData$(
-            input as any,
-            of(null) as any,
-            {}
-          )
-        ).toBe(expected, {
-          r: setAllSeasonsWithFoodStart()
-        });
-      });
-    });
-
+  beforeEach(() => {
+    jest.spyOn(selectors, 'selectIsCurrentRouteAllSeasons')
+      .mockReturnValue(true);
+    jest.spyOn(webUiSelectors, 'selectIsCurrentTabFood')
+      .mockReturnValue(true);
   });
 
-  describe('when the route is not all seasons', () => {
+  test('returns setAllSeasonsWithFoodStart', () => {
+    testScheduler.run(({ cold, expectObservable }) => {
+      const input = cold('a', {
+        a: goToFoodTab()
+      });
+      const expected = '50ms r';
 
-    beforeEach(() => {
-      jest.spyOn(selectors, 'selectIsCurrentRouteAllSeasons')
-        .mockReturnValue(false);
-    });
-
-    test('returns nothing', () => {
-      testScheduler.run(({ cold, expectObservable }) => {
-        const input = cold('a|', {
-          a: initApp()
-        });
-        const expected = '- 50ms |';
-
-        expectObservable(
-          initAllSeasonsWithFoodData$(
-            input as any,
-            of(null) as any,
-            {}
-          )
-        ).toBe(expected);
+      expectObservable(
+        initAllSeasonsWithFoodData$(
+          input as any,
+          of(null) as any,
+          {}
+        )
+      ).toBe(expected, {
+        r: setAllSeasonsWithFoodStart()
       });
     });
+  });
 
+});
+
+describe.skip('initAllSeasonsWithRecipesData$', () => {
+
+  beforeEach(() => {
+    jest.spyOn(selectors, 'selectIsCurrentRouteAllSeasons')
+      .mockReturnValue(true);
+    jest.spyOn(webUiSelectors, 'selectIsCurrentTabRecipes')
+      .mockReturnValue(true);
+  });
+
+  test('returns setAllSeasonsWithRecipesStart', () => {
+    testScheduler.run(({ cold, expectObservable }) => {
+      const input = cold('a', {
+        a: goToRecipesTab()
+      });
+      const expected = '50ms r';
+
+      expectObservable(
+        initAllSeasonsWithRecipesData$(
+          input as any,
+          of(null) as any,
+          {}
+        )
+      ).toBe(expected, {
+        r: setAllSeasonsWithRecipesStart()
+      });
+    });
   });
 
 });

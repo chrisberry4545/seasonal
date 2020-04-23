@@ -25,7 +25,8 @@ describe('<AllSeasonsGraph />', () => {
     beforeEach(() =>
       wrapper = shallow(
         <AllSeasonsGraph
-          foodInSeasonGraphData={foodInSeasonGraphData} />
+          foodInSeasonGraphData={foodInSeasonGraphData}
+          isCurrentTabFood={true} />
       )
     );
 
@@ -33,11 +34,26 @@ describe('<AllSeasonsGraph />', () => {
 
   });
 
+  describe('when the current tab is not the food tab', () => {
+    beforeEach(() =>
+      wrapper = shallow(
+        <AllSeasonsGraph
+          foodInSeasonGraphData={foodInSeasonGraphData}
+          isCurrentTabFood={false} />
+      )
+    );
+
+    test('does not display anything', () =>
+      expect(wrapper.children().exists()).toBe(false));
+
+  });
+
   describe('when there is no graph data', () => {
     beforeEach(() =>
       wrapper = shallow(
         <AllSeasonsGraph
-          foodInSeasonGraphData={undefined} />
+          foodInSeasonGraphData={undefined}
+          isCurrentTabFood={true}/>
       )
     );
 

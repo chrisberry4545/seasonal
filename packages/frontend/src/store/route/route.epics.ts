@@ -24,7 +24,8 @@ import {
   GO_TO_SETTINGS_PAGE,
   SET_REGION,
   SHOW_LOCATION_SETTINGS_POPUP,
-  FOOD_DETAILS_SELECT_RECIPE
+  FOOD_DETAILS_SELECT_RECIPE,
+  setAllSeasonsWithRecipesStart
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { push } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
@@ -34,6 +35,7 @@ import {
   selectIsCurrentRouteAllSeasons
 } from '../route/route.selectors';
 import { WebSeasonalEpic } from '../seasonal-epic.type';
+import { GO_TO_FOOD_TAB, GO_TO_RECIPES_TABS, selectIsCurrentTabRecipes, selectIsCurrentTabFood } from '../web-ui';
 
 export const goToWebVersion$: WebSeasonalEpic = (
   actions$: ActionsObservable<Action>
@@ -113,13 +115,39 @@ export const initAllSeasonsWithFoodData$: WebSeasonalEpic = (
     ofType(
       GO_TO_ALL_SEASONS_VIEW,
       INIT_APP,
-      GO_BACK_FROM_FOOD_DETAILS
+      GO_BACK_FROM_FOOD_DETAILS,
+      GO_TO_FOOD_TAB
     ),
     debounceTime(50),
     withLatestFrom(state$),
-    map(([, state]) => selectIsCurrentRouteAllSeasons(state)),
-    filter((isRouteAllSeasons) => Boolean(isRouteAllSeasons)),
+    map(([, state]) =>
+      selectIsCurrentRouteAllSeasons(state)
+      && selectIsCurrentTabFood(state)
+    ),
+    filter((isCorrectRoute) => Boolean(isCorrectRoute)),
     mapTo(setAllSeasonsWithFoodStart())
+  )
+);
+
+export const initAllSeasonsWithRecipesData$: WebSeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+  state$: StateObservable<IState>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(
+      GO_TO_ALL_SEASONS_VIEW,
+      INIT_APP,
+      GO_BACK_FROM_FOOD_DETAILS,
+      GO_TO_RECIPES_TABS
+    ),
+    debounceTime(50),
+    withLatestFrom(state$),
+    map(([, state]) =>
+      selectIsCurrentRouteAllSeasons(state)
+      && selectIsCurrentTabRecipes(state)
+    ),
+    filter((isCorrectRoute) => Boolean(isCorrectRoute)),
+    mapTo(setAllSeasonsWithRecipesStart())
   )
 );
 

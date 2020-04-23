@@ -2,7 +2,7 @@ import {
   SET_ALL_SEASONS_WITH_FOOD_START,
   SET_ALL_SEASONS_WITH_FOOD_SUCCESS,
   ISetAllSeasonsSuccess,
-  INCREASE_NUMBER_OF_ALL_FOOD_SEASONS_IN_VIEW,
+  INCREASE_NUMBER_OF_ALL_SEASONS_IN_VIEW,
   SET_ALL_SEASONS_WITH_RECIPES_START,
   SET_ALL_SEASONS_WITH_RECIPES_SUCCESS
 } from './all-seasons.actions';
@@ -54,7 +54,7 @@ export function allSeasonsReducer(
         data: populateApiData(state, action),
         isRecipesLoading: false
       };
-    case INCREASE_NUMBER_OF_ALL_FOOD_SEASONS_IN_VIEW:
+    case INCREASE_NUMBER_OF_ALL_SEASONS_IN_VIEW:
       return {
         ...state,
         numberOfSeasonsInView: state.numberOfSeasonsInView + 1

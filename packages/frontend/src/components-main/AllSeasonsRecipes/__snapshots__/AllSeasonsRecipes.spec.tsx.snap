@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AllSeasons /> when the seasons are loaded renders correctly 1`] = `
+exports[`<AllSeasonsRecipes /> when the seasons are loaded renders correctly 1`] = `
 <div
-  className="c-all-seasons"
+  className="c-all-seasons-recipes"
 >
   <InfiniteScroll
     element="div"
@@ -19,7 +19,7 @@ exports[`<AllSeasons /> when the seasons are loaded renders correctly 1`] = `
     useWindow={true}
   >
     <div
-      className="c-all-seasons__season"
+      className="c-all-seasons-recipes__season"
       key="January"
     >
       <SeasonNameView
@@ -31,7 +31,7 @@ exports[`<AllSeasons /> when the seasons are loaded renders correctly 1`] = `
       />
     </div>
     <div
-      className="c-all-seasons__season"
+      className="c-all-seasons-recipes__season"
       key="February"
     >
       <SeasonNameView

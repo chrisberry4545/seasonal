@@ -1,40 +1,41 @@
 import { connect } from 'react-redux';
 import {
-  AllSeasons
-} from './AllSeasons';
+  AllSeasonsFood
+} from './AllSeasonsFood';
 
-import { IState } from '../../store';
+import { IState, selectIsCurrentTabFood } from '../../store';
 import {
-  IAllSeasonsInputProps,
-  IAllSeasonsDispatchProps
-} from './AllSeasons.interface';
+  IAllSeasonsFoodInputProps,
+  IAllSeasonsFoodDispatchProps
+} from './AllSeasonsFood.interface';
 import { Dispatch } from 'redux';
 import {
   foodItemClicked,
   selectAllSeasonsVisibleFoodData,
   selectIsAllSeasonsFoodLoading,
-  increaseNumberOfAllFoodSeasonsInView,
+  increaseNumberOfAllSeasonsInView,
   selectHasMoreSeasonsInAllSeasonsView
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 const mapStateToProps = (
   state: IState
-): IAllSeasonsInputProps => ({
+): IAllSeasonsFoodInputProps => ({
   hasMoreSeasonsInAllSeasonsView: selectHasMoreSeasonsInAllSeasonsView(state),
+  isCurrentTabFood: selectIsCurrentTabFood(state),
   isLoading: selectIsAllSeasonsFoodLoading(state),
   seasons: selectAllSeasonsVisibleFoodData(state)
 });
 
 const mapDispatchToProps = (
   dispatch: Dispatch
-): IAllSeasonsDispatchProps => ({
-  increaseNumberOfAllFoodSeasonsInView: () => (
-    dispatch(increaseNumberOfAllFoodSeasonsInView())
+): IAllSeasonsFoodDispatchProps => ({
+  increaseNumberOfAllSeasonsInView: () => (
+    dispatch(increaseNumberOfAllSeasonsInView())
   ),
   onFoodClick: (foodItemId: string) => dispatch(foodItemClicked(foodItemId))
 });
 
-export const AllSeasonsConnector = connect(
+export const AllSeasonsFoodConnector = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AllSeasons);
+)(AllSeasonsFood);

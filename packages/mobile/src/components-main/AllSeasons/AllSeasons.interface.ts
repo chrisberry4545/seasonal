@@ -7,7 +7,7 @@ export interface IAllSeasonsInputProps {
 }
 
 export interface IAllSeasonsDispatchProps {
-  increaseNumberOfAllFoodSeasonsInView: () => void;
+  increaseNumberOfAllSeasonsInView: () => void;
   onFoodClick: (foodItemId: string) => void;
   onToggleListView: () => void;
 }

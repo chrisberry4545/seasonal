@@ -12,7 +12,7 @@ import { Dispatch } from 'redux';
 import {
   selectIsAllSeasonsFoodLoading,
   selectAllSeasonsVisibleFoodData,
-  increaseNumberOfAllFoodSeasonsInView,
+  increaseNumberOfAllSeasonsInView,
   foodItemClicked,
   toggleListView,
   selectIsListViewShown
@@ -29,8 +29,8 @@ const mapStateToProps = (
 const mapDispatchToProps = (
   dispatch: Dispatch
 ): IAllSeasonsDispatchProps => ({
-  increaseNumberOfAllFoodSeasonsInView: () => (
-    dispatch(increaseNumberOfAllFoodSeasonsInView())
+  increaseNumberOfAllSeasonsInView: () => (
+    dispatch(increaseNumberOfAllSeasonsInView())
   ),
   onFoodClick: (foodItemId: string) => dispatch(foodItemClicked(foodItemId)),
   onToggleListView: () => dispatch(toggleListView())

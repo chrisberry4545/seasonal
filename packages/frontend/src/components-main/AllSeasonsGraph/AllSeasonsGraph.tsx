@@ -17,9 +17,10 @@ import {
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 export const AllSeasonsGraph: FC<IAllSeasonsGraphInputProps> = ({
-  foodInSeasonGraphData
+  foodInSeasonGraphData,
+  isCurrentTabFood
 }) => (
-  foodInSeasonGraphData
+  (foodInSeasonGraphData && isCurrentTabFood)
     ? <div className='c-all-seasons-graph'>
         <TextHeadingMedium className='c-all-seasons-graph__heading'>
           Number of food items in seasons

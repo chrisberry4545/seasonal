@@ -21,18 +21,18 @@ describe('<AllSeasons />', () => {
   }] as IHydratedSeason[];
   let wrapper: ShallowWrapper;
   let mockOnFoodClick: jest.Mock;
-  let mockIncreaseNumberOfAllFoodSeasonsInView: jest.Mock;
+  let mockIncreaseNumberOfAllSeasonsInView: jest.Mock;
   let mockOnToggleListView: jest.Mock;
 
   beforeEach(() => {
     mockOnFoodClick = jest.fn();
-    mockIncreaseNumberOfAllFoodSeasonsInView = jest.fn();
+    mockIncreaseNumberOfAllSeasonsInView = jest.fn();
     mockOnToggleListView = jest.fn();
     wrapper = shallow(
       <AllSeasons
         isLoading={false}
-        increaseNumberOfAllFoodSeasonsInView={
-          mockIncreaseNumberOfAllFoodSeasonsInView
+        increaseNumberOfAllSeasonsInView={
+          mockIncreaseNumberOfAllSeasonsInView
         }
         onFoodClick={mockOnFoodClick}
         seasons={seasons}
@@ -50,7 +50,7 @@ describe('<AllSeasons />', () => {
     if (increaseItemsInView) {
       increaseItemsInView({} as any);
     }
-    expect(mockIncreaseNumberOfAllFoodSeasonsInView)
+    expect(mockIncreaseNumberOfAllSeasonsInView)
       .toHaveBeenCalled();
   });
 
@@ -59,8 +59,8 @@ describe('<AllSeasons />', () => {
       wrapper = shallow(
         <AllSeasons
           isLoading={true}
-          increaseNumberOfAllFoodSeasonsInView={
-            mockIncreaseNumberOfAllFoodSeasonsInView
+          increaseNumberOfAllSeasonsInView={
+            mockIncreaseNumberOfAllSeasonsInView
           }
           onFoodClick={mockOnFoodClick}
           seasons={seasons}
@@ -80,8 +80,8 @@ describe('<AllSeasons />', () => {
       wrapper = shallow(
         <AllSeasons
           isLoading={false}
-          increaseNumberOfAllFoodSeasonsInView={
-            mockIncreaseNumberOfAllFoodSeasonsInView
+          increaseNumberOfAllSeasonsInView={
+            mockIncreaseNumberOfAllSeasonsInView
           }
           onFoodClick={mockOnFoodClick}
           seasons={undefined}

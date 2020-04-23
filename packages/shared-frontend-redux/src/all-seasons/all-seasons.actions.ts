@@ -45,10 +45,10 @@ export function setAllSeasonsWithRecipesSuccess(
   };
 }
 
-export const INCREASE_NUMBER_OF_ALL_FOOD_SEASONS_IN_VIEW =
-  'INCREASE_NUMBER_OF_ALL_FOOD_SEASONS_IN_VIEW';
-export function increaseNumberOfAllFoodSeasonsInView(): Action {
+export const INCREASE_NUMBER_OF_ALL_SEASONS_IN_VIEW =
+  'INCREASE_NUMBER_OF_ALL_SEASONS_IN_VIEW';
+export function increaseNumberOfAllSeasonsInView(): Action {
   return {
-    type: INCREASE_NUMBER_OF_ALL_FOOD_SEASONS_IN_VIEW
+    type: INCREASE_NUMBER_OF_ALL_SEASONS_IN_VIEW
   };
 }

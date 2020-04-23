@@ -1,20 +1,20 @@
 @import '../../styles/settings';
 @import '../../styles/tools';
 
-.c-all-seasons__loading-spinner-wrapper {
+.c-all-seasons-food__loading-spinner-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.c-all-seasons {
+.c-all-seasons-food {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-  .c-all-seasons__season {
+  .c-all-seasons-food__season {
     margin-bottom: 2rem;
     @include mq($from: tablet) {
       margin-bottom: 3rem;
