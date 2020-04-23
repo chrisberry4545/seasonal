@@ -1,12 +1,9 @@
 import {
-  initTrackingUser$, trackActionEpic$
-} from './tracking.epics';
-import * as helpers from '../../helpers';
-import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
+  trackActionEpic$
+} from './track-action.epic';
+import * as helpers from '../../../helpers';
 import { of } from 'rxjs';
 import {
-  initSettings,
-  ISettingsState,
   selectSeason,
   foodDetailsSelectSeason,
   openMenu,
@@ -22,7 +19,7 @@ import {
   setError,
   toggleListView
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { goBackFromFoodDetails, goToAboutUsPage } from '../route';
+import { goBackFromFoodDetails, goToAboutUsPage } from '../../route';
 import { IHydratedFood, DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import {
   sendFeedbackDoNotLikeApp,
@@ -32,50 +29,8 @@ import {
   sendFeedbackImprovementsSuccess,
   showFeedbackPopup,
   closeFeedbackPopup
-} from '../feedback';
-import { trackEvent } from '../../helpers';
-
-describe('initTrackingUser$', () => {
-  let mockSetTrackingUser: jest.SpyInstance;
-
-  beforeEach(() => {
-    mockSetTrackingUser = jest.spyOn(helpers, 'setTrackingUser');
-    mockSetTrackingUser.mockClear();
-  });
-
-  describe('when the current userId is undefined', () => {
-    beforeEach(async () => {
-      jest.spyOn(sharedFrontendRedux, 'selectSettingsUserId')
-        .mockReturnValue(undefined);
-      await initTrackingUser$(
-        of(initSettings({} as ISettingsState)) as any,
-        of(null) as any,
-        {}
-      ).toPromise();
-    });
-
-    test('does not call setTrackingUser', () =>
-      expect(mockSetTrackingUser).not.toHaveBeenCalled());
-  });
-
-  describe('when the current userId is defined', () => {
-    const userId = 'userId';
-
-    beforeEach(async () => {
-      jest.spyOn(sharedFrontendRedux, 'selectSettingsUserId')
-        .mockReturnValue(userId);
-      await initTrackingUser$(
-        of(initSettings({} as ISettingsState)) as any,
-        of(null) as any,
-        {}
-      ).toPromise();
-    });
-
-    test('calls setTrackingUser', () =>
-      expect(mockSetTrackingUser).toHaveBeenCalledWith(userId));
-  });
-
-});
+} from '../../feedback';
+import { trackEvent } from '../../../helpers';
 
 describe.each([
   selectSeason(1),
