@@ -14,7 +14,7 @@ import {
   goToAllSeasonsView$,
   goToSettingsPage$,
   initAllSeasonsWithRecipesData$
-} from './route/route.epics';
+} from './route/epics';
 
 import {
   getStoredSettings$,
