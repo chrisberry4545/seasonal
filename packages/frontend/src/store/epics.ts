@@ -21,7 +21,7 @@ import {
   storeSettings$,
   detectCountry$
 } from './settings/settings.epics';
-import { initAppEpic$ } from './init/init.epics';
+import { initAppEpic$ } from './init/epics';
 
 export const rootEpic = combineEpics(
   ...rootEpics,

@@ -10,10 +10,10 @@ import {
   mapTo, first, filter
 } from 'rxjs/operators';
 import { Action } from 'redux';
-import { WebSeasonalEpic } from '../seasonal-epic.type';
+import { WebSeasonalEpic } from '../../seasonal-epic.type';
 import { LOCATION_CHANGE, LocationChangeAction } from 'connected-react-router';
 import { ActionsObservable, ofType } from 'redux-observable';
-import { LANDING_URL } from '../../const';
+import { LANDING_URL } from '../../../const';
 
 export const initAppEpic$: WebSeasonalEpic = (
   actions$: ActionsObservable<Action>
