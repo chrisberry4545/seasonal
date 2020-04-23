@@ -2,7 +2,7 @@ import { foodItemClicked, ISetCurrentFoodDetailsStart } from '@chrisb-dev/season
 import { push } from 'connected-react-router';
 import { of } from 'rxjs';
 import { FOOD_DETAILS_URL } from '../../../const';
-import { goToFoodLink$ } from './go-to-food-link';
+import { goToFoodLink$ } from './go-to-food-link.epic';
 
 describe('goToFoodLink$', () => {
   let result: ISetCurrentFoodDetailsStart;

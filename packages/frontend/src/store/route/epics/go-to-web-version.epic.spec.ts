@@ -1,6 +1,6 @@
 import {
   goToWebVersion$
-} from './go-to-web-version';
+} from './go-to-web-version.epic';
 import { of } from 'rxjs';
 import {
   FOOD_TABLE_URL

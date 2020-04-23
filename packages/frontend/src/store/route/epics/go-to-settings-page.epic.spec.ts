@@ -3,7 +3,7 @@ import { push } from 'connected-react-router';
 import { Action } from 'redux';
 import { of } from 'rxjs';
 import { SETTINGS_URL } from '../../../const';
-import { goToSettingsPage$ } from './go-to-settings-page';
+import { goToSettingsPage$ } from './go-to-settings-page.epic';
 
 describe.each([
   goToSettingsPage(),

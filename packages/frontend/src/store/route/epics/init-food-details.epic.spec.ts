@@ -2,7 +2,7 @@ import { initApp, setCurrentFoodDetailsStart } from '@chrisb-dev/seasonal-shared
 import { Action } from 'redux';
 import { of } from 'rxjs';
 import * as selectors from '../route.selectors';
-import { initFoodDetails$ } from './init-food-details';
+import { initFoodDetails$ } from './init-food-details.epic';
 
 describe('initFoodDetails$', () => {
   let result: Action | undefined;

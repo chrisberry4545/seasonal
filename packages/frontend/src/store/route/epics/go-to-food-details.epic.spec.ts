@@ -4,7 +4,7 @@ import {
   setCurrentFoodDetailsStart
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { of } from 'rxjs';
-import { goToFoodDetails$ } from './go-to-food-details';
+import { goToFoodDetails$ } from './go-to-food-details.epic';
 
 describe('goToFoodDetails$', () => {
   let result: ISetCurrentFoodDetailsStart;

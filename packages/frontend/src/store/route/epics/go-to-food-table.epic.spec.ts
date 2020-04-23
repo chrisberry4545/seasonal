@@ -9,7 +9,7 @@ import { Action } from 'redux';
 import { of } from 'rxjs';
 import { FOOD_TABLE_URL } from '../../../const';
 import { goBackFromFoodDetails } from '../route.actions';
-import { goToFoodTable$ } from './go-to-food-table';
+import { goToFoodTable$ } from './go-to-food-table.epic';
 
 describe.each([
   setRegion('regionId'),

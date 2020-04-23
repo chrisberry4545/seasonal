@@ -3,7 +3,7 @@ import { push } from 'connected-react-router';
 import { Action } from 'redux';
 import { of } from 'rxjs';
 import { ALL_SEASONS_URL } from '../../../const';
-import { goToAllSeasonsView$ } from './go-to-all-seasons-view';
+import { goToAllSeasonsView$ } from './go-to-all-seasons-view.epic';
 
 describe('goToAllSeasonsView$', () => {
   let result: Action;

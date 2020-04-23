@@ -2,7 +2,7 @@ import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux
 import { foodDetailsSelectRecipe, recipeItemClicked } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
-import { goToRecipeLink$ } from './go-to-recipe-link';
+import { goToRecipeLink$ } from './go-to-recipe-link.epic';
 
 describe.each([
   foodDetailsSelectRecipe('r1'),
