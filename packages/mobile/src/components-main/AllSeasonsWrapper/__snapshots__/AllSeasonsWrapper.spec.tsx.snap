@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AllSeasonsWrapper /> inner list renders the list correctly 1`] = `
+<Fragment>
+  <SeasonNameView />
+  <SwitchableGridOrList
+    isListViewShown={true}
+    onClick={[MockFunction]}
+    onToggleListView={[MockFunction]}
+  />
+</Fragment>
+`;
+
+exports[`<AllSeasonsWrapper /> renders correctly 1`] = `
+<MainContainer>
+  <HeaderConnecter />
+  <FlatList
+    data={
+      Array [
+        Object {
+          "food": Array [
+            Object {
+              "name": "f1",
+            },
+          ],
+          "id": "1",
+          "name": "s1",
+        },
+      ]
+    }
+    keyExtractor={[Function]}
+    onEndReached={[MockFunction]}
+    onEndReachedThreshold={2}
+    renderItem={[Function]}
+  />
+</MainContainer>
+`;

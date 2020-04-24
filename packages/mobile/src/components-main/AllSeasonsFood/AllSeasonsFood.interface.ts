@@ -1,16 +1,16 @@
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 
-export interface IAllSeasonsInputProps {
+export interface IAllSeasonsFoodInputProps {
   isLoading: boolean;
   isListViewShown: boolean;
   seasons: IHydratedSeason[] | undefined;
 }
 
-export interface IAllSeasonsDispatchProps {
+export interface IAllSeasonsFoodDispatchProps {
   increaseNumberOfAllSeasonsInView: () => void;
   onFoodClick: (foodItemId: string) => void;
   onToggleListView: () => void;
 }
 
-export interface IAllSeasonsProps
-  extends IAllSeasonsInputProps, IAllSeasonsDispatchProps {}
+export interface IAllSeasonsFoodProps
+  extends IAllSeasonsFoodInputProps, IAllSeasonsFoodDispatchProps {}

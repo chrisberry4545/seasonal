@@ -13,3 +13,10 @@ export function goToAboutUsPage(): Action {
     type: GO_TO_ABOUT_US_PAGE
   };
 }
+
+export const GO_TO_ALL_SEASONS_GET_DATA = 'GO_TO_ALL_SEASONS_GET_DATA';
+export function goToAllSeasonsGetData(): Action {
+  return {
+    type: GO_TO_ALL_SEASONS_GET_DATA
+  };
+}
