@@ -21,7 +21,9 @@ import {
   openMenu$,
   goToAllSeasonsView$,
   goBack$,
-  goToSettingsPage$
+  goToSettingsPage$,
+  getAllSeasonsWithFoodStart$,
+  getAllSeasonsWithRecipesStart$
 } from './route/epics';
 import { initTrackingUser$, trackActionEpic$ } from './tracking/epics';
 import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings/epics';
@@ -38,6 +40,8 @@ export const rootEpic = combineEpics(
   goToFoodTable$,
   goToAllSeasonsView$,
   closeMenu$,
+  getAllSeasonsWithFoodStart$,
+  getAllSeasonsWithRecipesStart$,
   openMenu$,
   initTrackingUser$,
   trackActionEpic$,

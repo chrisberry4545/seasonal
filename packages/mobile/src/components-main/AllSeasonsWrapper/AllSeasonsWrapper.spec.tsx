@@ -1,40 +1,52 @@
 import React from 'react';
-import { AllSeasons } from './AllSeasons';
+import { AllSeasonsWrapper } from './AllSeasonsWrapper';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { FlatList } from 'react-native-gesture-handler';
-import { TopLoadingSpinner, SwitchableGridOrList } from '../../components-layout';
+import { SwitchableGridOrList } from '../../components-layout';
+import { LoadingSpinner } from '../../components-elements';
 
 jest.mock('react-native-gesture-handler', () => ({
   FlatList: () => 'FlatList'
 }));
 jest.mock('../../components-layout', () => ({
+  MainContainer: () => 'MainContainer',
   SeasonNameView: () => 'SeasonNameView',
   SwitchableGridOrList: () => 'SwitchableGridOrList',
   TopLoadingSpinner: () => 'TopLoadingSpinner'
 }));
+jest.mock('../../components-elements', () => ({
+  LoadingSpinner: () => 'LoadingSpinner'
+}));
+jest.mock('../Header/Header.connector', () => ({
+  HeaderConnecter: () => 'HeaderConnecter'
+}));
 
-describe('<AllSeasons />', () => {
+describe('<AllSeasonsWrapper />', () => {
   const seasons = [{
+    food: [{
+      name: 'f1'
+    }],
     id: '1',
     name: 's1'
   }] as IHydratedSeason[];
   let wrapper: ShallowWrapper;
-  let mockOnFoodClick: jest.Mock;
+  let mockOnItemClick: jest.Mock;
   let mockIncreaseNumberOfAllSeasonsInView: jest.Mock;
   let mockOnToggleListView: jest.Mock;
 
   beforeEach(() => {
-    mockOnFoodClick = jest.fn();
+    mockOnItemClick = jest.fn();
     mockIncreaseNumberOfAllSeasonsInView = jest.fn();
     mockOnToggleListView = jest.fn();
     wrapper = shallow(
-      <AllSeasons
+      <AllSeasonsWrapper
+        propName='food'
         isLoading={false}
         increaseNumberOfAllSeasonsInView={
           mockIncreaseNumberOfAllSeasonsInView
         }
-        onFoodClick={mockOnFoodClick}
+        onItemClick={mockOnItemClick}
         seasons={seasons}
         isListViewShown={true}
         onToggleListView={mockOnToggleListView}
@@ -57,12 +69,13 @@ describe('<AllSeasons />', () => {
   describe('when isLoading is true', () => {
     beforeEach(() =>
       wrapper = shallow(
-        <AllSeasons
+        <AllSeasonsWrapper
+          propName='food'
           isLoading={true}
           increaseNumberOfAllSeasonsInView={
             mockIncreaseNumberOfAllSeasonsInView
           }
-          onFoodClick={mockOnFoodClick}
+          onItemClick={mockOnItemClick}
           seasons={seasons}
           isListViewShown={true}
           onToggleListView={mockOnToggleListView}
@@ -71,19 +84,20 @@ describe('<AllSeasons />', () => {
     );
 
     test('renders a loading spinner', () =>
-      expect(wrapper.find(TopLoadingSpinner).exists()).toBe(true));
+      expect(wrapper.find(LoadingSpinner).exists()).toBe(true));
 
   });
 
   describe('when the seasons are undefined', () => {
     beforeEach(() =>
       wrapper = shallow(
-        <AllSeasons
+        <AllSeasonsWrapper
+          propName='food'
           isLoading={false}
           increaseNumberOfAllSeasonsInView={
             mockIncreaseNumberOfAllSeasonsInView
           }
-          onFoodClick={mockOnFoodClick}
+          onItemClick={mockOnItemClick}
           seasons={undefined}
           isListViewShown={true}
           onToggleListView={mockOnToggleListView}
@@ -92,7 +106,7 @@ describe('<AllSeasons />', () => {
     );
 
     test('renders a loading spinner', () =>
-      expect(wrapper.find(TopLoadingSpinner).exists()).toBe(true));
+      expect(wrapper.find(LoadingSpinner).exists()).toBe(true));
 
   });
 
@@ -112,7 +126,7 @@ describe('<AllSeasons />', () => {
       if (onClick) {
         onClick('id');
       }
-      expect(mockOnFoodClick).toHaveBeenCalledWith('id');
+      expect(mockOnItemClick).toHaveBeenCalledWith('id');
     });
 
     test('can toggle the list view', () => {

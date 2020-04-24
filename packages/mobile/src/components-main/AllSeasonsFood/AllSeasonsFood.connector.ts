@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import {
-  AllSeasons
-} from './AllSeasons';
+  AllSeasonsFood
+} from './AllSeasonsFood';
 
 import { IState } from '../../store';
 import {
-  IAllSeasonsInputProps,
-  IAllSeasonsDispatchProps
-} from './AllSeasons.interface';
+  IAllSeasonsFoodInputProps,
+  IAllSeasonsFoodDispatchProps
+} from './AllSeasonsFood.interface';
 import { Dispatch } from 'redux';
 import {
   selectIsAllSeasonsFoodLoading,
@@ -20,7 +20,7 @@ import {
 
 const mapStateToProps = (
   state: IState
-): IAllSeasonsInputProps => ({
+): IAllSeasonsFoodInputProps => ({
   isListViewShown: selectIsListViewShown(state),
   isLoading: selectIsAllSeasonsFoodLoading(state),
   seasons: selectAllSeasonsVisibleFoodData(state)
@@ -28,7 +28,7 @@ const mapStateToProps = (
 
 const mapDispatchToProps = (
   dispatch: Dispatch
-): IAllSeasonsDispatchProps => ({
+): IAllSeasonsFoodDispatchProps => ({
   increaseNumberOfAllSeasonsInView: () => (
     dispatch(increaseNumberOfAllSeasonsInView())
   ),
@@ -36,7 +36,7 @@ const mapDispatchToProps = (
   onToggleListView: () => dispatch(toggleListView())
 });
 
-export const AllSeasonsConnector = connect(
+export const AllSeasonsFoodConnector = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AllSeasons);
+)(AllSeasonsFood);

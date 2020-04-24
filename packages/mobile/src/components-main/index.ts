@@ -40,4 +40,8 @@ export * from './SeasonsForFood/SeasonsForFood.connector';
 
 export * from './SideMenu/SideMenu.connector';
 
-export * from './AllSeasons/AllSeasons.connector';
+export * from './AllSeasonsWrapper/AllSeasonsWrapper';
+
+export * from './AllSeasonsFood/AllSeasonsFood.connector';
+
+export * from './AllSeasonsRecipes/AllSeasonsRecipes.connector';

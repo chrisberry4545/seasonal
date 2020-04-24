@@ -1,5 +1,7 @@
 export * from './ConfirmButtonLayout/ConfirmButtonLayout';
 
+export * from './CreateFoodAndRecipeTabs/CreateFoodAndRecipeTabs';
+
 export * from './DefaultPaddingContainer/DefaultPaddingContainer';
 
 export * from './FeedbackQuestionsLayout/FeedbackQuestionsLayout';

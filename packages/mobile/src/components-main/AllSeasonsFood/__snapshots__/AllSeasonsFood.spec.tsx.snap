@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AllSeasonsFood /> renders correctly 1`] = `
+<AllSeasonsWrapper
+  increaseNumberOfAllSeasonsInView={[MockFunction]}
+  isListViewShown={true}
+  isLoading={false}
+  onItemClick={[MockFunction]}
+  onToggleListView={[MockFunction]}
+  propName="food"
+  seasons={
+    Array [
+      Object {
+        "id": "1",
+        "name": "s1",
+      },
+    ]
+  }
+/>
+`;
