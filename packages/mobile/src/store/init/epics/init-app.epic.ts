@@ -13,7 +13,7 @@ import {
 import { Action } from 'redux';
 import { AppSeasonalEpic } from '../../seasonal-epic.type';
 
-export const initAppEpic$: AppSeasonalEpic = (): Observable<Action> => (
+export const initApp$: AppSeasonalEpic = (): Observable<Action> => (
   of(null).pipe(
     mapTo(initApp())
   )

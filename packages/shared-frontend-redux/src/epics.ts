@@ -1,43 +1,43 @@
 import {
-  getCurrentSeasonWithFoodStartEpic$,
-  getCurrentSeasonWithFoodEpic$,
-  getCurrentSeasonWithRecipesStartEpic$,
-  getCurrentSeasonWithRecipesEpic$,
+  getCurrentSeasonWithFoodStart$,
+  getCurrentSeasonWithFood$,
+  getCurrentSeasonWithRecipesStart$,
+  getCurrentSeasonWithRecipes$,
   setSeasonSelectedSeasonName$
-} from './current-season';
+} from './current-season/epics';
 
 import {
-  getAllBasicSeasonsStartEpic$,
-  getAllBasicSeasonsEpic$
-} from './all-basic-seasons';
+  getAllBasicSeasonsStart$,
+  getAllBasicSeasons$
+} from './all-basic-seasons/epics';
 
 import {
   getAllSeasonsWithFood$,
   getAllSeasonsWithRecipes$
-} from './all-seasons';
+} from './all-seasons/epics';
 
 import {
-  getCurrentFoodDetailsEpic$,
-  updateFoodDetailsOnDietTypeChangeEpic$
-} from './current-food-details';
+  getCurrentFoodDetails$,
+  updateFoodDetailsOnDietTypeChange$
+} from './current-food-details/epics';
 import {
   getCountriesStart$,
   getCountries$,
   promptCountryChangeOnNewDetected$,
   hideRegionChangePrompt$
-} from './country';
+} from './country/epics';
 
 export const rootEpics = [
-  getCurrentSeasonWithFoodStartEpic$,
-  getCurrentSeasonWithFoodEpic$,
-  getCurrentSeasonWithRecipesStartEpic$,
-  getCurrentSeasonWithRecipesEpic$,
-  getAllBasicSeasonsStartEpic$,
-  getAllBasicSeasonsEpic$,
+  getCurrentSeasonWithFoodStart$,
+  getCurrentSeasonWithFood$,
+  getCurrentSeasonWithRecipesStart$,
+  getCurrentSeasonWithRecipes$,
+  getAllBasicSeasonsStart$,
+  getAllBasicSeasons$,
   getAllSeasonsWithFood$,
   getAllSeasonsWithRecipes$,
-  getCurrentFoodDetailsEpic$,
-  updateFoodDetailsOnDietTypeChangeEpic$,
+  getCurrentFoodDetails$,
+  updateFoodDetailsOnDietTypeChange$,
   setSeasonSelectedSeasonName$,
   getCountriesStart$,
   getCountries$,

@@ -1,11 +1,11 @@
 import {
   setSeasonSelectedSeasonName$
-} from './current-season-name.epics';
-import * as allBasicSeasons from '../all-basic-seasons';
+} from './set-selected-season-name.epic';
+import * as allBasicSeasons from '../../all-basic-seasons';
 import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
-import { selectSeason } from '../ui';
+import { selectSeason } from '../../ui';
 import { of } from 'rxjs';
-import { setSelectedSeasonName } from './current-season-name.actions';
+import { setSelectedSeasonName } from '../current-season-name.actions';
 
 describe('setSeasonSelectedSeasonName$', () => {
   const basicSeasons = [{

@@ -15,7 +15,7 @@ import { LOCATION_CHANGE, LocationChangeAction } from 'connected-react-router';
 import { ActionsObservable, ofType } from 'redux-observable';
 import { LANDING_URL } from '../../../const';
 
-export const initAppEpic$: WebSeasonalEpic = (
+export const initApp$: WebSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(

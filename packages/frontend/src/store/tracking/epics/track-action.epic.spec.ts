@@ -1,5 +1,5 @@
 import {
-  trackActionEpic$
+  trackAction$
 } from './track-action.epic';
 import { of } from 'rxjs';
 import {
@@ -27,14 +27,14 @@ describe.each([
   recipeItemClicked('recipeId'),
   foodItemClicked('foodId'),
   setError({} as IBackendError)
-])('trackActionEpic$', (action) => {
+])('trackAction$', (action) => {
   let mockTrackEvent: jest.Mock;
 
   beforeEach(async () => {
     mockTrackEvent = jest.fn();
     jest.spyOn(helpers, 'getAnalytics')
       .mockReturnValue(mockTrackEvent as any);
-    await trackActionEpic$(
+    await trackAction$(
       of(action) as any,
       of(null) as any,
       {}

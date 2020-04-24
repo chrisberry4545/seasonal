@@ -2,11 +2,11 @@ import { ofType, ActionsObservable, StateObservable } from 'redux-observable';
 
 import {
   setSelectedSeasonName
-} from './current-season-name.actions';
+} from '../current-season-name.actions';
 import {
   SELECT_SEASON,
   ISelectSeason
-} from '../ui';
+} from '../../ui';
 
 import {
   map,
@@ -14,9 +14,9 @@ import {
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
-import { SharedSeasonalEpic } from '../seasonal-epic.type';
-import { IState } from '../state.interface';
-import { selectAllBasicSeasons } from '../all-basic-seasons';
+import { SharedSeasonalEpic } from '../../seasonal-epic.type';
+import { IState } from '../../state.interface';
+import { selectAllBasicSeasons } from '../../all-basic-seasons';
 
 export const setSeasonSelectedSeasonName$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,

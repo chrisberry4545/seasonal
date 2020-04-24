@@ -25,13 +25,13 @@ import {
   getAllSeasonsWithFoodStart$,
   getAllSeasonsWithRecipesStart$
 } from './route/epics';
-import { initTrackingUser$, trackActionEpic$ } from './tracking/epics';
+import { initTrackingUser$, trackAction$ } from './tracking/epics';
 import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings/epics';
-import { initAppEpic$ } from './init/epics/init-app.epic';
+import { initApp$ } from './init/epics/init-app.epic';
 
 export const rootEpic = combineEpics(
   ...rootEpics,
-  initAppEpic$,
+  initApp$,
   goToAboutUsPage$,
   goToSettingsPage$,
   goToRecipeLink$,
@@ -44,7 +44,7 @@ export const rootEpic = combineEpics(
   getAllSeasonsWithRecipesStart$,
   openMenu$,
   initTrackingUser$,
-  trackActionEpic$,
+  trackAction$,
   getStoredSettings$,
   storeSettings$,
   detectCountry$,

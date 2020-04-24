@@ -1,14 +1,14 @@
 import {
-  initAppEpic$
+  initApp$
 } from './init-app.epic';
 import { of } from 'rxjs';
 import { LOCATION_CHANGE } from 'connected-react-router';
 import { initApp } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { FOOD_TABLE_URL, LANDING_URL } from '../../../const';
 
-describe('initAppEpic$', () => {
+describe('initApp$', () => {
   test('returns initApp when on a page that is not the landing page', async  () => {
-    const result = await initAppEpic$(
+    const result = await initApp$(
       of({
         payload: {
           location: {
@@ -23,9 +23,9 @@ describe('initAppEpic$', () => {
     expect(result).toEqual(initApp());
   });
 
-  test('does not do anthing on the landing page', async  () => {
+  test('does not do anything on the landing page', async  () => {
     try {
-      await initAppEpic$(
+      await initApp$(
         of({
           payload: {
             location: {

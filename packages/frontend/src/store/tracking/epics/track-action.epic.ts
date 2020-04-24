@@ -42,7 +42,7 @@ const ACTIONS_TO_TRACK = [
   SET_ERROR
 ];
 
-export const trackActionEpic$: WebSeasonalEpic = (
+export const trackAction$: WebSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(

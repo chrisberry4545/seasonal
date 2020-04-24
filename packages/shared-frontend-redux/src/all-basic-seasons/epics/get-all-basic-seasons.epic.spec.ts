@@ -1,43 +1,19 @@
 import {
-  getAllBasicSeasonsStartEpic$,
-  getAllBasicSeasonsEpic$
-} from './all-basic-seasons.epics';
-import { setAllSeasonsStart } from './all-basic-seasons.actions';
-import {
-  initSettings,
-  ISettingsState
-} from '../settings';
-import {
-  setRegion,
-  setUserRegionDetected
-} from '../country';
+  getAllBasicSeasons$
+} from './get-all-basic-seasons.epic';
+import { setAllSeasonsStart } from '../all-basic-seasons.actions';
 import {
   setError
-} from '../error';
+} from '../../error';
 import {
   setAllBasicSeasonsSuccess
-} from './all-basic-seasons.actions';
+} from '../all-basic-seasons.actions';
 import { of } from 'rxjs';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
-import * as settings from '../settings';
+import * as settings from '../../settings';
 
-describe('getAllBasicSeasonsStartEpic$', () => {
-  test.each([
-    initSettings({} as ISettingsState),
-    setRegion('regionId'),
-    setUserRegionDetected('regionId')
-  ])('returns setallSeasonsStart', async (action) => {
-    const result = await getAllBasicSeasonsStartEpic$(
-      of(action) as any,
-      of(null) as any,
-      {}
-    ).toPromise();
-    expect(result).toEqual(setAllSeasonsStart());
-  });
-});
-
-describe('getAllBasicSeasonsEpic$', () => {
+describe('getAllBasicSeasons$', () => {
 
   beforeEach(() =>
     jest.spyOn(settings, 'selectSettingsRegionId')
@@ -53,7 +29,7 @@ describe('getAllBasicSeasonsEpic$', () => {
     );
 
     test('returns setAllBasicSeasonsSuccess', async () => {
-      const result = await getAllBasicSeasonsEpic$(
+      const result = await getAllBasicSeasons$(
         of(setAllSeasonsStart()) as any,
         of(null) as any,
         {}
@@ -71,7 +47,7 @@ describe('getAllBasicSeasonsEpic$', () => {
     );
 
     test('returns setError', async () => {
-      const result = await getAllBasicSeasonsEpic$(
+      const result = await getAllBasicSeasons$(
         of(setAllSeasonsStart()) as any,
         of(null) as any,
         {}

@@ -57,7 +57,7 @@ const ACTIONS_TO_TRACK = [
   TOGGLE_LIST_VIEW
 ];
 
-export const trackActionEpic$: AppSeasonalEpic = (
+export const trackAction$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(

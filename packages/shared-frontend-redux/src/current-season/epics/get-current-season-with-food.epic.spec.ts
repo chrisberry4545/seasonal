@@ -1,47 +1,13 @@
-import {
-  getCurrentSeasonWithFoodStartEpic$,
-  getCurrentSeasonWithFoodEpic$
-} from './current-season-with-food.epics';
-import {
-  selectSeason,
-  foodDetailsSelectSeason
-} from '../ui';
-import {
-  initSettings,
-  ISettingsState
-} from '../settings';
-import {
-  setError
-} from '../error';
-import {
-  setRegion,
-  setUserRegionDetected
-} from '../country';
-import { of } from 'rxjs';
-import { setCurrentSeasonWithFoodStart, setCurrentSeasonWithFoodSuccess } from './current-season.actions';
-import * as settings from '../settings';
-import * as selectors from './current-season.selectors';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { of } from 'rxjs';
+import { setError } from '../../error';
+import * as settings from '../../settings';
+import { setCurrentSeasonWithFoodStart, setCurrentSeasonWithFoodSuccess } from '../current-season.actions';
+import * as selectors from '../current-season.selectors';
+import { getCurrentSeasonWithFood$ } from './get-current-season-with-food.epic';
 
-describe('getCurrentSeasonWithFoodStartEpic$', () => {
-  test.each([
-    selectSeason(1),
-    initSettings({} as ISettingsState),
-    foodDetailsSelectSeason(1),
-    setUserRegionDetected('regionId'),
-    setRegion('regionId')
-  ])('returns setCurrentSeasonWithFoodStart', async (action) => {
-    const result = await getCurrentSeasonWithFoodStartEpic$(
-      of(action) as any,
-      of(null) as any,
-      {}
-    ).toPromise();
-    expect(result).toEqual(setCurrentSeasonWithFoodStart());
-  });
-});
-
-describe('getCurrentSeasonWithFoodEpic$', () => {
+describe('getCurrentSeasonWithFood$', () => {
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
       .mockReturnValue('regionId');
@@ -58,7 +24,7 @@ describe('getCurrentSeasonWithFoodEpic$', () => {
     );
 
     test('returns setCurrentSeasonWithFoodSuccess', async () => {
-      const result = await getCurrentSeasonWithFoodEpic$(
+      const result = await getCurrentSeasonWithFood$(
         of(setCurrentSeasonWithFoodStart()) as any,
         of(null) as any,
         {}
@@ -79,7 +45,7 @@ describe('getCurrentSeasonWithFoodEpic$', () => {
     );
 
     test('returns setError', async () => {
-      const result = await getCurrentSeasonWithFoodEpic$(
+      const result = await getCurrentSeasonWithFood$(
         of(setCurrentSeasonWithFoodStart()) as any,
         of(null) as any,
         {}
