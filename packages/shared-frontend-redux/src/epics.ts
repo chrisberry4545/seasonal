@@ -4,28 +4,28 @@ import {
   getCurrentSeasonWithRecipesStartEpic$,
   getCurrentSeasonWithRecipesEpic$,
   setSeasonSelectedSeasonName$
-} from './current-season';
+} from './current-season/epics';
 
 import {
   getAllBasicSeasonsStartEpic$,
   getAllBasicSeasonsEpic$
-} from './all-basic-seasons';
+} from './all-basic-seasons/epics';
 
 import {
   getAllSeasonsWithFood$,
   getAllSeasonsWithRecipes$
-} from './all-seasons';
+} from './all-seasons/epics';
 
 import {
   getCurrentFoodDetailsEpic$,
   updateFoodDetailsOnDietTypeChangeEpic$
-} from './current-food-details';
+} from './current-food-details/epics';
 import {
   getCountriesStart$,
   getCountries$,
   promptCountryChangeOnNewDetected$,
   hideRegionChangePrompt$
-} from './country';
+} from './country/epics';
 
 export const rootEpics = [
   getCurrentSeasonWithFoodStartEpic$,

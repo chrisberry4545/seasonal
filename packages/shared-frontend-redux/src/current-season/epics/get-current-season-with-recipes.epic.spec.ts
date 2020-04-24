@@ -1,47 +1,11 @@
-import {
-  getCurrentSeasonWithRecipesStartEpic$,
-  getCurrentSeasonWithRecipesEpic$
-} from './current-season-with-recipes.epics';
-import {
-  selectSeason,
-  foodDetailsSelectSeason
-} from '../ui';
-import {
-  setUserRegionDetected,
-  setRegion
-} from '../country';
-import {
-  setError
-} from '../error';
-import {
-  initSettings,
-  ISettingsState,
-  setDietType
-} from '../settings';
-import { of } from 'rxjs';
-import { setCurrentSeasonWithRecipesStart, setCurrentSeasonWithRecipesSuccess } from './current-season.actions';
-import * as settings from '../settings';
-import * as selectors from './current-season.selectors';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { IHydratedSeason, DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
-
-describe('getCurrentSeasonWithRecipesStartEpic$', () => {
-  test.each([
-    selectSeason(1),
-    initSettings({} as ISettingsState),
-    foodDetailsSelectSeason(1),
-    setDietType(DIET_TYPE.VEGAN),
-    setUserRegionDetected('regionId'),
-    setRegion('regionId')
-  ])('returns setCurrentSeasonWithRecipesStart', async (action) => {
-    const result = await getCurrentSeasonWithRecipesStartEpic$(
-      of(action) as any,
-      of(null) as any,
-      {}
-    ).toPromise();
-    expect(result).toEqual(setCurrentSeasonWithRecipesStart());
-  });
-});
+import { DIET_TYPE, IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { of } from 'rxjs';
+import { setError } from '../../error';
+import * as settings from '../../settings';
+import { setCurrentSeasonWithRecipesStart, setCurrentSeasonWithRecipesSuccess } from '../current-season.actions';
+import * as selectors from '../current-season.selectors';
+import { getCurrentSeasonWithRecipesEpic$ } from './get-current-season-with-recipes.epic';
 
 describe('getCurrentSeasonWithRecipesEpic$', () => {
   beforeEach(() => {

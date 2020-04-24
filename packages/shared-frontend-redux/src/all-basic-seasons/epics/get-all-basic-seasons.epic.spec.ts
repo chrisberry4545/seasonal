@@ -1,41 +1,17 @@
 import {
-  getAllBasicSeasonsStartEpic$,
   getAllBasicSeasonsEpic$
-} from './all-basic-seasons.epics';
-import { setAllSeasonsStart } from './all-basic-seasons.actions';
-import {
-  initSettings,
-  ISettingsState
-} from '../settings';
-import {
-  setRegion,
-  setUserRegionDetected
-} from '../country';
+} from './get-all-basic-seasons.epic';
+import { setAllSeasonsStart } from '../all-basic-seasons.actions';
 import {
   setError
-} from '../error';
+} from '../../error';
 import {
   setAllBasicSeasonsSuccess
-} from './all-basic-seasons.actions';
+} from '../all-basic-seasons.actions';
 import { of } from 'rxjs';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
-import * as settings from '../settings';
-
-describe('getAllBasicSeasonsStartEpic$', () => {
-  test.each([
-    initSettings({} as ISettingsState),
-    setRegion('regionId'),
-    setUserRegionDetected('regionId')
-  ])('returns setallSeasonsStart', async (action) => {
-    const result = await getAllBasicSeasonsStartEpic$(
-      of(action) as any,
-      of(null) as any,
-      {}
-    ).toPromise();
-    expect(result).toEqual(setAllSeasonsStart());
-  });
-});
+import * as settings from '../../settings';
 
 describe('getAllBasicSeasonsEpic$', () => {
 
