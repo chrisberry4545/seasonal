@@ -6,7 +6,7 @@ export * from './route';
 
 export * from './settings';
 
-export * from './tracking';
+export * from './tracking/epics';
 
 export * from './web-ui';
 

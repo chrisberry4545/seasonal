@@ -59,7 +59,14 @@ FROM (
           'isVegan', recipes.is_vegan,
           'isVegetarian', recipes.is_vegetarian
         )
-        ORDER BY recipes.name
+        ORDER BY COALESCE(
+          (
+            SELECT name
+            FROM recipe_name_mapping
+            WHERE recipe_name_mapping.recipe_id = recipes.id
+          ),
+          recipes.name
+        )
       ),
       '[]'::json
     ) AS recipes
