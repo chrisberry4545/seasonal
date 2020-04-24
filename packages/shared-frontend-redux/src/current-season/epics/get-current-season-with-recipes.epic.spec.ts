@@ -5,9 +5,9 @@ import { setError } from '../../error';
 import * as settings from '../../settings';
 import { setCurrentSeasonWithRecipesStart, setCurrentSeasonWithRecipesSuccess } from '../current-season.actions';
 import * as selectors from '../current-season.selectors';
-import { getCurrentSeasonWithRecipesEpic$ } from './get-current-season-with-recipes.epic';
+import { getCurrentSeasonWithRecipes$ } from './get-current-season-with-recipes.epic';
 
-describe('getCurrentSeasonWithRecipesEpic$', () => {
+describe('getCurrentSeasonWithRecipes$', () => {
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsDietType')
       .mockReturnValue(DIET_TYPE.ALL);
@@ -26,7 +26,7 @@ describe('getCurrentSeasonWithRecipesEpic$', () => {
     );
 
     test('returns setCurrentSeasonWithRecipesSuccess', async () => {
-      const result = await getCurrentSeasonWithRecipesEpic$(
+      const result = await getCurrentSeasonWithRecipes$(
         of(setCurrentSeasonWithRecipesStart()) as any,
         of(null) as any,
         {}
@@ -47,7 +47,7 @@ describe('getCurrentSeasonWithRecipesEpic$', () => {
     );
 
     test('returns setError', async () => {
-      const result = await getCurrentSeasonWithRecipesEpic$(
+      const result = await getCurrentSeasonWithRecipes$(
         of(setCurrentSeasonWithRecipesStart()) as any,
         of(null) as any,
         {}

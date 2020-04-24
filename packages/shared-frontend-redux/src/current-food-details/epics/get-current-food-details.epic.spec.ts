@@ -8,9 +8,9 @@ import {
   setCurrentFoodDetailsStart,
   setCurrentFoodDetailsSuccess
 } from '../current-food-details.actions';
-import { getCurrentFoodDetailsEpic$ } from './get-current-food-details.epic';
+import { getCurrentFoodDetails$ } from './get-current-food-details.epic';
 
-describe('getCurrentFoodDetailsEpic$', () => {
+describe('getCurrentFoodDetails$', () => {
 
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsDietType')
@@ -30,7 +30,7 @@ describe('getCurrentFoodDetailsEpic$', () => {
       setCurrentFoodDetailsStart('foodId'),
       setCurrentFoodDetailsOnDietChange()
     ])('returns setCurrentFoodDetailsSuccess', async (action) => {
-      const result = await getCurrentFoodDetailsEpic$(
+      const result = await getCurrentFoodDetails$(
         of(action) as any,
         of(null) as any,
         {}
@@ -50,7 +50,7 @@ describe('getCurrentFoodDetailsEpic$', () => {
       setCurrentFoodDetailsStart('foodId'),
       setCurrentFoodDetailsOnDietChange()
     ])('returns setCurrentFoodDetailsSuccess', async (action) => {
-      const result = await getCurrentFoodDetailsEpic$(
+      const result = await getCurrentFoodDetails$(
         of(action) as any,
         of(null) as any,
         {}

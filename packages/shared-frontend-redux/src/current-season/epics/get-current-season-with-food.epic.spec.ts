@@ -5,9 +5,9 @@ import { setError } from '../../error';
 import * as settings from '../../settings';
 import { setCurrentSeasonWithFoodStart, setCurrentSeasonWithFoodSuccess } from '../current-season.actions';
 import * as selectors from '../current-season.selectors';
-import { getCurrentSeasonWithFoodEpic$ } from './get-current-season-with-food.epic';
+import { getCurrentSeasonWithFood$ } from './get-current-season-with-food.epic';
 
-describe('getCurrentSeasonWithFoodEpic$', () => {
+describe('getCurrentSeasonWithFood$', () => {
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
       .mockReturnValue('regionId');
@@ -24,7 +24,7 @@ describe('getCurrentSeasonWithFoodEpic$', () => {
     );
 
     test('returns setCurrentSeasonWithFoodSuccess', async () => {
-      const result = await getCurrentSeasonWithFoodEpic$(
+      const result = await getCurrentSeasonWithFood$(
         of(setCurrentSeasonWithFoodStart()) as any,
         of(null) as any,
         {}
@@ -45,7 +45,7 @@ describe('getCurrentSeasonWithFoodEpic$', () => {
     );
 
     test('returns setError', async () => {
-      const result = await getCurrentSeasonWithFoodEpic$(
+      const result = await getCurrentSeasonWithFood$(
         of(setCurrentSeasonWithFoodStart()) as any,
         of(null) as any,
         {}

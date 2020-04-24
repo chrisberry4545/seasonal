@@ -3,9 +3,9 @@ import { of } from 'rxjs';
 import { setDietType } from '../../settings';
 import { setCurrentFoodDetailsOnDietChange } from '../current-food-details.actions';
 import * as selectors from '../current-food-details.selectors';
-import { updateFoodDetailsOnDietTypeChangeEpic$ } from './update-food-details-on-diet-type-change.epic';
+import { updateFoodDetailsOnDietTypeChange$ } from './update-food-details-on-diet-type-change.epic';
 
-describe('updateFoodDetailsOnDietTypeChangeEpic$', () => {
+describe('updateFoodDetailsOnDietTypeChange$', () => {
 
   describe('when the current foodId is not defined', () => {
     beforeEach(() =>
@@ -14,7 +14,7 @@ describe('updateFoodDetailsOnDietTypeChangeEpic$', () => {
     );
 
     test('does not return anything', async () => {
-      const result = await updateFoodDetailsOnDietTypeChangeEpic$(
+      const result = await updateFoodDetailsOnDietTypeChange$(
         of(setDietType(DIET_TYPE.VEGAN)) as any,
         of(null) as any,
         {}
@@ -30,7 +30,7 @@ describe('updateFoodDetailsOnDietTypeChangeEpic$', () => {
     );
 
     test('returns setCurrentFoodDetailsOnDietChange', async () => {
-      const result = await updateFoodDetailsOnDietTypeChangeEpic$(
+      const result = await updateFoodDetailsOnDietTypeChange$(
         of(setDietType(DIET_TYPE.VEGAN)) as any,
         of(null) as any,
         {}

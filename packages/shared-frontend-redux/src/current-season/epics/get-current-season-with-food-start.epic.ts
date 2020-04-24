@@ -8,7 +8,7 @@ import { INIT_SETTINGS } from '../../settings';
 import { FOOD_DETAILS_SELECT_SEASON, SELECT_SEASON } from '../../ui';
 import { setCurrentSeasonWithFoodStart } from '../current-season.actions';
 
-export const getCurrentSeasonWithFoodStartEpic$: SharedSeasonalEpic = (
+export const getCurrentSeasonWithFoodStart$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(

@@ -11,7 +11,7 @@ import { IState } from '../../state.interface';
 import { setCurrentSeasonWithRecipesSuccess, SET_CURRENT_SEASON_WITH_RECIPES_START } from '../current-season.actions';
 import { selectCurrentSeasonIndex } from '../current-season.selectors';
 
-export const getCurrentSeasonWithRecipesEpic$: SharedSeasonalEpic = (
+export const getCurrentSeasonWithRecipes$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
   state$: StateObservable<IState>
 ): Observable<Action> => (

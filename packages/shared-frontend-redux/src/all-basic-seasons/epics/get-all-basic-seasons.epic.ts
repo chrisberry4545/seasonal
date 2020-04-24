@@ -24,7 +24,7 @@ import {
   selectSettingsRegionId
 } from '../../settings';
 
-export const getAllBasicSeasonsEpic$: SharedSeasonalEpic = (
+export const getAllBasicSeasons$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
   state$: StateObservable<IState>
 ): Observable<Action> =>

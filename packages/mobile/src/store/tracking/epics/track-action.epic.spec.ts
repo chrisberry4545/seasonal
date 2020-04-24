@@ -1,5 +1,5 @@
 import {
-  trackActionEpic$
+  trackAction$
 } from './track-action.epic';
 import * as helpers from '../../../helpers';
 import { of } from 'rxjs';
@@ -56,13 +56,13 @@ describe.each([
   userRegionDetected('regionId', null),
   setError({} as IBackendError),
   toggleListView()
-])('trackActionEpic$', (action) => {
+])('trackAction$', (action) => {
   let mockTrackEvent: jest.SpyInstance;
 
   beforeEach(async () => {
     mockTrackEvent = jest.spyOn(helpers, 'trackEvent');
     mockTrackEvent.mockClear();
-    await trackActionEpic$(
+    await trackAction$(
       of(action) as any,
       of(null) as any,
       {}

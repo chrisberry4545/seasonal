@@ -15,7 +15,7 @@ import {
   SET_CURRENT_FOOD_DETAILS_START
 } from '../current-food-details.actions';
 
-export const getCurrentFoodDetailsEpic$: SharedSeasonalEpic = (
+export const getCurrentFoodDetails$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
   state$: StateObservable<IState>
 ): Observable<Action> => (

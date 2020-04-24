@@ -1,5 +1,5 @@
 import {
-  getAllBasicSeasonsEpic$
+  getAllBasicSeasons$
 } from './get-all-basic-seasons.epic';
 import { setAllSeasonsStart } from '../all-basic-seasons.actions';
 import {
@@ -13,7 +13,7 @@ import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-u
 import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
 import * as settings from '../../settings';
 
-describe('getAllBasicSeasonsEpic$', () => {
+describe('getAllBasicSeasons$', () => {
 
   beforeEach(() =>
     jest.spyOn(settings, 'selectSettingsRegionId')
@@ -29,7 +29,7 @@ describe('getAllBasicSeasonsEpic$', () => {
     );
 
     test('returns setAllBasicSeasonsSuccess', async () => {
-      const result = await getAllBasicSeasonsEpic$(
+      const result = await getAllBasicSeasons$(
         of(setAllSeasonsStart()) as any,
         of(null) as any,
         {}
@@ -47,7 +47,7 @@ describe('getAllBasicSeasonsEpic$', () => {
     );
 
     test('returns setError', async () => {
-      const result = await getAllBasicSeasonsEpic$(
+      const result = await getAllBasicSeasons$(
         of(setAllSeasonsStart()) as any,
         of(null) as any,
         {}

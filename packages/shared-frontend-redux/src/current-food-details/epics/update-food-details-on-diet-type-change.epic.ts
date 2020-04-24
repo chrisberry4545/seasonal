@@ -8,7 +8,7 @@ import { IState } from '../../state.interface';
 import { setCurrentFoodDetailsOnDietChange } from '../current-food-details.actions';
 import { selectCurrentFoodDetailsId } from '../current-food-details.selectors';
 
-export const updateFoodDetailsOnDietTypeChangeEpic$: SharedSeasonalEpic = (
+export const updateFoodDetailsOnDietTypeChange$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
   state$: StateObservable<IState>
 ): Observable<Action> => (

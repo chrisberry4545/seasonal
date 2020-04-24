@@ -1,12 +1,12 @@
 import {
-  initAppEpic$
+  initApp$
 } from './init-app.epic';
 import { of } from 'rxjs';
 import { initApp } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
-describe('initAppEpic$', () => {
+describe('initApp$', () => {
   test('returns initApp', async  () => {
-    const result = await initAppEpic$(
+    const result = await initApp$(
       of(null) as any,
       of(null) as any,
       {}

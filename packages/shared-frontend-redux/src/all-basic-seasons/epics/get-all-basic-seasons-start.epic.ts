@@ -16,7 +16,7 @@ import {
   INIT_SETTINGS
 } from '../../settings';
 
-export const getAllBasicSeasonsStartEpic$: SharedSeasonalEpic = (
+export const getAllBasicSeasonsStart$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> =>
   actions$.pipe(

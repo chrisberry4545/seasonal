@@ -1,5 +1,5 @@
 import {
-  getAllBasicSeasonsStartEpic$
+  getAllBasicSeasonsStart$
 } from './get-all-basic-seasons-start.epic';
 import { setAllSeasonsStart } from '../all-basic-seasons.actions';
 import {
@@ -12,13 +12,13 @@ import {
 } from '../../country';
 import { of } from 'rxjs';
 
-describe('getAllBasicSeasonsStartEpic$', () => {
+describe('getAllBasicSeasonsStart$', () => {
   test.each([
     initSettings({} as ISettingsState),
     setRegion('regionId'),
     setUserRegionDetected('regionId')
   ])('returns setAllSeasonsStart', async (action) => {
-    const result = await getAllBasicSeasonsStartEpic$(
+    const result = await getAllBasicSeasonsStart$(
       of(action) as any,
       of(null) as any,
       {}

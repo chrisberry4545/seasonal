@@ -3,9 +3,9 @@ import { setRegion, setUserRegionDetected } from '../../country';
 import { initSettings, ISettingsState } from '../../settings';
 import { foodDetailsSelectSeason, selectSeason } from '../../ui';
 import { setCurrentSeasonWithFoodStart } from '../current-season.actions';
-import { getCurrentSeasonWithFoodStartEpic$ } from './get-current-season-with-food-start.epic';
+import { getCurrentSeasonWithFoodStart$ } from './get-current-season-with-food-start.epic';
 
-describe('getCurrentSeasonWithFoodStartEpic$', () => {
+describe('getCurrentSeasonWithFoodStart$', () => {
   test.each([
     selectSeason(1),
     initSettings({} as ISettingsState),
@@ -13,7 +13,7 @@ describe('getCurrentSeasonWithFoodStartEpic$', () => {
     setUserRegionDetected('regionId'),
     setRegion('regionId')
   ])('returns setCurrentSeasonWithFoodStart', async (action) => {
-    const result = await getCurrentSeasonWithFoodStartEpic$(
+    const result = await getCurrentSeasonWithFoodStart$(
       of(action) as any,
       of(null) as any,
       {}
