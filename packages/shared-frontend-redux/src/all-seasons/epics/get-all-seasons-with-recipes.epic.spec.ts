@@ -2,7 +2,6 @@ import {
   getAllSeasonsWithRecipes$
 } from './get-all-seasons-with-recipes.epic';
 import {
-  setAllSeasonsWithFoodStart,
   setAllSeasonsWithRecipesStart,
   setAllSeasonsWithRecipesSuccess
 } from '../all-seasons.actions';
@@ -49,7 +48,7 @@ describe('getAllSeasonsWithRecipes$', () => {
 
     test('returns setError', async () => {
       const result = await getAllSeasonsWithRecipes$(
-        of(setAllSeasonsWithFoodStart()) as any,
+        of(setAllSeasonsWithRecipesStart()) as any,
         of(null) as any,
         {}
       ).toPromise();
