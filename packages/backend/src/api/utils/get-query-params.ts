@@ -1,11 +1,13 @@
 import { Request } from 'express';
 
 export const getRegionIdFromQueryParams =
-  (req: Request) => req.query['region-id']
-    || req.query['country-code'];
+  (req: Request): string => (
+    req.query['region-id']
+    || req.query['country-code']
+  ) as string;
 
 export const getIsVeganFromQueryParams =
-  (req: Request) => req.query['is-vegan'];
+  (req: Request): boolean => req.query['is-vegan'] === 'true';
 
 export const getIsVegetarianFromQueryParams =
-  (req: Request) => req.query['is-vegetarian'];
+  (req: Request): boolean => req.query['is-vegetarian'] === 'true';

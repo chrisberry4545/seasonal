@@ -8,6 +8,5 @@ COPY .yarn ./.yarn
 RUN yarn policies set-version berry
 
 COPY packages/shared-models ./packages/shared-models
-COPY packages/backend/package*.json ./packages/backend/
-RUN yarn install
 COPY packages/backend ./packages/backend
+RUN yarn install
