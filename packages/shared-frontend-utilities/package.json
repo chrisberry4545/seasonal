@@ -37,6 +37,7 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "jest": "24.9.0",
+    "jest-fetch-mock": "^3.0.3",
     "ts-jest": "^24.0.2",
     "tsc-watch": "^4.0.0"
   },
