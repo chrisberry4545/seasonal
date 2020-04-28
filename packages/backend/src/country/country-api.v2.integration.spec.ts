@@ -1,13 +1,13 @@
 import {
   app
-} from '../../app';
+} from '../app';
 
 import supertest, { Response } from 'supertest';
 import {
   ICountry,
   IRegion
 } from '@chrisb-dev/seasonal-shared-models';
-import { ENDPOINT_V2_COUNTRY } from '../../config';
+import { ENDPOINT_V2_COUNTRY } from '../config';
 
 describe('Get countries', () => {
   let response: Response;

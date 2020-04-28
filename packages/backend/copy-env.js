@@ -17,7 +17,7 @@ copyfiles(
           if (err) {
             console.error('Failed to rename', err);
           } else {
-            console.log('Succesfully copied env file');
+            console.log('Successfully copied env file');
           }
         }
       )

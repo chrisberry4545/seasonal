@@ -18,7 +18,7 @@ import {
   seasonWithRecipesApi
 } from './season-with-recipes-api.v2';
 
-import { countryApi } from './country-api.v2';
+import { countryApi } from '../../country/country-api.v2';
 
 import {
   ENDPOINT_COUNTRY,
