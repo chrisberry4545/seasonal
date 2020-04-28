@@ -1,6 +1,6 @@
 import { ICountry } from '@chrisb-dev/seasonal-shared-models';
-import { generateRestEndpointTests } from './test-utils/generate-rest-endpoint-tests';
-import { ENDPOINT_ADMIN_COUNTRY } from '../../config';
+import { generateRestEndpointTests } from '../api/admin/test-utils/generate-rest-endpoint-tests';
+import { ENDPOINT_ADMIN_COUNTRY } from '../config';
 
 generateRestEndpointTests<ICountry>({
   path: `/${ENDPOINT_ADMIN_COUNTRY}`,

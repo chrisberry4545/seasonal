@@ -7,7 +7,7 @@ import { adminAuth } from './auth/admin-auth';
 import { editorAuth } from './auth/editor-auth';
 import { loginApi } from './login-api';
 import { badgeApi } from './badge-api';
-import { countryApi } from './country-api';
+import { adminCountryApi } from '../../admin-country/admin-country-api';
 import { countryFoodNameMapApi } from './country-food-name-map-api';
 import { countryRecipeNameMapApi } from './country-recipe-name-map-api';
 import { foodApi } from './food-api';
@@ -46,7 +46,7 @@ export const adminApi = (router = Router()) => {
   router.use(
     `/${ENDPOINT_COUNTRY}`,
     editorAuth,
-    countryApi()
+    adminCountryApi()
   );
   router.use(
     `/${ENDPOINT_COUNTRY_FOOD_NAME_MAP}`,
