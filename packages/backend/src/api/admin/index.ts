@@ -5,17 +5,17 @@ import {
 import { appPassport } from './auth/app-passport';
 import { adminAuth } from './auth/admin-auth';
 import { editorAuth } from './auth/editor-auth';
-import { loginApi } from './login-api';
-import { badgeApi } from './badge-api';
+import { adminLoginApi } from '../../admin-login/admin-login-api';
+import { adminBadgeApi } from '../../admin-badge/admin-badge-api';
 import { adminCountryApi } from '../../admin-country/admin-country-api';
-import { countryFoodNameMapApi } from './country-food-name-map-api';
-import { countryRecipeNameMapApi } from './country-recipe-name-map-api';
-import { foodApi } from './food-api';
-import { recipeApi } from './recipe-api';
-import { regionApi } from './region-api';
-import { regionFoodSeasonMapApi } from './region-food-season-map.api';
-import { userApi } from './user-api';
-import { reportsApi } from './reports';
+import { adminCountryFoodNameMapApi } from '../../admin-country-food-name-map/admin-country-food-name-map-api';
+import { adminCountryRecipeNameMapApi } from '../../admin-country-recipe-name-map/admin-country-recipe-name-map-api';
+import { adminFoodApi } from '../../admin-food/admin-food-api';
+import { adminRecipeApi } from '../../admin-recipe/admin-recipe-api';
+import { adminRegionApi } from '../../admin-region/admin-region-api';
+import { adminRegionFoodSeasonMapApi } from '../../admin-region-food-season-map/admin-region-food-season-map.api';
+import { adminUserApi } from '../../admin-user/admin-user-api';
+import { adminReportsApi } from './admin-reports';
 import { errorMiddleware } from '../../middleware/error-middleware';
 import {
   ENDPOINT_LOGIN,
@@ -36,12 +36,12 @@ export const adminApi = (router = Router()) => {
   router.use(appPassport.session());
   router.use(
     `/${ENDPOINT_LOGIN}`,
-    loginApi()
+    adminLoginApi()
   );
   router.use(
     `/${ENDPOINT_BADGE}`,
     editorAuth,
-    badgeApi()
+    adminBadgeApi()
   ),
   router.use(
     `/${ENDPOINT_COUNTRY}`,
@@ -51,42 +51,42 @@ export const adminApi = (router = Router()) => {
   router.use(
     `/${ENDPOINT_COUNTRY_FOOD_NAME_MAP}`,
     editorAuth,
-    countryFoodNameMapApi()
+    adminCountryFoodNameMapApi()
   );
   router.use(
     `/${ENDPOINT_COUNTRY_RECIPE_NAME_MAP}`,
     editorAuth,
-    countryRecipeNameMapApi()
+    adminCountryRecipeNameMapApi()
   );
   router.use(
     `/${ENDPOINT_FOOD_DETAILS}`,
     editorAuth,
-    foodApi()
+    adminFoodApi()
   );
   router.use(
     `/${ENDPOINT_RECIPE}`,
     editorAuth,
-    recipeApi()
+    adminRecipeApi()
   );
   router.use(
     `/${ENDPOINT_REGION}`,
     editorAuth,
-    regionApi()
+    adminRegionApi()
   );
   router.use(
     `/${ENDPOINT_REGION_FOOD_SEASON_MAP}`,
     editorAuth,
-    regionFoodSeasonMapApi()
+    adminRegionFoodSeasonMapApi()
   );
   router.use(
     `/${ENDPOINT_USER}`,
     adminAuth,
-    userApi()
+    adminUserApi()
   );
   router.use(
     `/${ENDPOINT_REPORTS}`,
     editorAuth,
-    reportsApi()
+    adminReportsApi()
   );
   router.use(errorMiddleware());
   return router;
