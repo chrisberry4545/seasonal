@@ -19,7 +19,7 @@
     "build": "tsc && yarn copy-env && yarn copy-sql",
     "copy-env": "node ./copy-env.js",
     "watch-sql": "onchange 'src/**/*.sql' -- yarn copy-sql",
-    "copy-sql": "mkdir -p dist/src && cp -r ./src/sql/ ./dist/src/sql/",
+    "copy-sql": "mkdir -p dist/src && node ./copy-sql.js",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "deploy": "serverless deploy --stage prod"
