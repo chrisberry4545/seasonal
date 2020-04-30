@@ -1,4 +1,4 @@
-import { queryPostgres, getSqlQueryV2 } from '../../postgres';
+import { queryPostgres, getSqlQuery } from '../../postgres';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 
 export const getSeasonsWithRecipes = async (
@@ -6,7 +6,7 @@ export const getSeasonsWithRecipes = async (
   regionId: string
 ): Promise<IHydratedSeason[]> => {
   const result = await queryPostgres<IHydratedSeason>(
-    await getSqlQueryV2(`${__dirname}/get-seasons-with-recipes.sql`),
+    await getSqlQuery(`${__dirname}/get-seasons-with-recipes.sql`),
     [regionId, seasonIndex]
   );
   return result.rows;

@@ -1,4 +1,4 @@
-import { queryPostgres, getSqlQueryV2 } from '../../postgres';
+import { queryPostgres, getSqlQuery } from '../../postgres';
 import { IUser } from '@chrisb-dev/seasonal-shared-models';
 import { hashPassword } from './hash-password';
 
@@ -7,7 +7,7 @@ export const adminCreateDbUser = async (
 ): Promise<IUser> => {
   const { username, password } = item;
   const hashedPassword = await hashPassword(password);
-  const query = await getSqlQueryV2(`${__dirname}/admin-create-user.sql`);
+  const query = await getSqlQuery(`${__dirname}/admin-create-user.sql`);
   const result = await queryPostgres<IUser>(
     query,
     [username, hashedPassword]

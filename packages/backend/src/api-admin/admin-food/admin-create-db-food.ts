@@ -1,10 +1,10 @@
-import { queryPostgres, getSqlQueryV2 } from '../../postgres';
+import { queryPostgres, getSqlQuery } from '../../postgres';
 import { IFood } from '@chrisb-dev/seasonal-shared-models';
 
 export const adminCreateDbFood = async (
   item: IFood
 ): Promise<IFood> => {
-  const query = await getSqlQueryV2(`${__dirname}/admin-create-food.sql`);
+  const query = await getSqlQuery(`${__dirname}/admin-create-food.sql`);
   const result = await queryPostgres<IFood>(
     query,
     [
