@@ -1,10 +1,10 @@
 import passport from 'passport';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { JWT_SECRET_KEY } from '../../config';
+import { JWT_SECRET_KEY } from '../config';
 import { USER_ROLES } from '@chrisb-dev/seasonal-shared-models';
-import { adminGetOneDbUser } from '../admin-user/admin-get-one-db-user';
-import { getUserLogin } from '../admin-user/get-user-login';
+import { adminGetOneDbUser } from '../api-admin/admin-user/admin-get-one-db-user';
+import { getUserLogin } from '../api-admin/admin-user/get-user-login';
 
 const setupPassportForUser = (
   requiredRole: USER_ROLES

@@ -2,9 +2,9 @@ import {
   Router
 } from 'express';
 
-import { appPassport } from './auth/app-passport';
-import { adminAuth } from './auth/admin-auth';
-import { editorAuth } from './auth/editor-auth';
+import { appPassport } from '../auth/app-passport';
+import { adminAuth } from '../auth/admin-auth';
+import { editorAuth } from '../auth/editor-auth';
 import { apiAdminLogin } from './admin-login/api-admin-login';
 import { apiAdminBadge } from './admin-badge/api-admin-badge';
 import { apiAdminCountry } from './admin-country/api-admin-country';

@@ -5,7 +5,7 @@ import {
   NextFunction
 } from 'express';
 
-import { appPassport } from '../auth/app-passport';
+import { appPassport } from '../../auth/app-passport';
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET_KEY } from '../../config';
 
