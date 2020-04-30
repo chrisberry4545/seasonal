@@ -10,14 +10,20 @@ import {
   getIsVeganFromQueryParams
 } from '../../api-utils/get-query-params';
 import { get500Error, get404Error } from '../../api-utils';
-import { getAllCachedSeasonsWithRecipes } from './get-all-cached-seasons-with-recipes';
 import { getOneCachedSeasonsWithFilteredRecipes } from './get-cached-season-with-filtered-recipes';
+import { getAllCachedSeasonsWithFilteredRecipes } from './get-all-cached-seasons-with-filtered-recipes';
 
 export const apiSeasonWithRecipes = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
+    const isVegetarian = getIsVegetarianFromQueryParams(req);
+    const isVegan = getIsVeganFromQueryParams(req);
     const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await getAllCachedSeasonsWithRecipes(regionId);
+      const result = await getAllCachedSeasonsWithFilteredRecipes(
+        isVegetarian,
+        isVegan,
+        regionId
+      );
       return res.json(result);
     } catch (err) {
       return next(get500Error(err.message));

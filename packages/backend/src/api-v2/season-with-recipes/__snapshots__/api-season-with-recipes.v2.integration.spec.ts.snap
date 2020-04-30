@@ -1,6 +1,299 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Get all seasons with recipes Returns a full list of season data 1`] = `
+exports[`Get all seasons with recipes when an isVegan filter is applied Retrieves the expected data 1`] = `
+Array [
+  Object {
+    "id": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+    "name": "January",
+    "recipes": Array [
+      Object {
+        "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "isVegan": true,
+        "isVegetarian": false,
+        "linkUrl": "https://pickled-beetroot.com",
+        "name": "Pasta with a Beetroot sauce",
+      },
+    ],
+    "seasonIndex": 0,
+  },
+  Object {
+    "id": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+    "name": "February",
+    "recipes": Array [
+      Object {
+        "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "isVegan": true,
+        "isVegetarian": false,
+        "linkUrl": "https://pickled-beetroot.com",
+        "name": "Pasta with a Beetroot sauce",
+      },
+    ],
+    "seasonIndex": 1,
+  },
+  Object {
+    "id": "f4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "March",
+    "recipes": Array [],
+    "seasonIndex": 2,
+  },
+  Object {
+    "id": "a4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "April",
+    "recipes": Array [],
+    "seasonIndex": 3,
+  },
+  Object {
+    "id": "b4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "May",
+    "recipes": Array [],
+    "seasonIndex": 4,
+  },
+  Object {
+    "id": "c4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "June",
+    "recipes": Array [],
+    "seasonIndex": 5,
+  },
+  Object {
+    "id": "d4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "July",
+    "recipes": Array [],
+    "seasonIndex": 6,
+  },
+  Object {
+    "id": "e4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "August",
+    "recipes": Array [],
+    "seasonIndex": 7,
+  },
+  Object {
+    "id": "f5812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "September",
+    "recipes": Array [],
+    "seasonIndex": 8,
+  },
+  Object {
+    "id": "a1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "October",
+    "recipes": Array [],
+    "seasonIndex": 9,
+  },
+  Object {
+    "id": "b1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "November",
+    "recipes": Array [],
+    "seasonIndex": 10,
+  },
+  Object {
+    "id": "c1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "December",
+    "recipes": Array [],
+    "seasonIndex": 11,
+  },
+]
+`;
+
+exports[`Get all seasons with recipes when an isVegetarian filter is applied Retrieves the expected data 1`] = `
+Array [
+  Object {
+    "id": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+    "name": "January",
+    "recipes": Array [
+      Object {
+        "id": "fefc209f-ddaf-465d-941f-fe3fefa6b931",
+        "imageUrlSmall": "https://apple-and-cheese.com/image",
+        "isVegan": false,
+        "isVegetarian": true,
+        "linkUrl": "https://apple-and-cheese.com",
+        "name": "Apple, Cheese & Onion",
+      },
+      Object {
+        "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "isVegan": true,
+        "isVegetarian": false,
+        "linkUrl": "https://pickled-beetroot.com",
+        "name": "Pasta with a Beetroot sauce",
+      },
+    ],
+    "seasonIndex": 0,
+  },
+  Object {
+    "id": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+    "name": "February",
+    "recipes": Array [
+      Object {
+        "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "isVegan": true,
+        "isVegetarian": false,
+        "linkUrl": "https://pickled-beetroot.com",
+        "name": "Pasta with a Beetroot sauce",
+      },
+    ],
+    "seasonIndex": 1,
+  },
+  Object {
+    "id": "f4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "March",
+    "recipes": Array [],
+    "seasonIndex": 2,
+  },
+  Object {
+    "id": "a4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "April",
+    "recipes": Array [],
+    "seasonIndex": 3,
+  },
+  Object {
+    "id": "b4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "May",
+    "recipes": Array [],
+    "seasonIndex": 4,
+  },
+  Object {
+    "id": "c4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "June",
+    "recipes": Array [],
+    "seasonIndex": 5,
+  },
+  Object {
+    "id": "d4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "July",
+    "recipes": Array [],
+    "seasonIndex": 6,
+  },
+  Object {
+    "id": "e4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "August",
+    "recipes": Array [],
+    "seasonIndex": 7,
+  },
+  Object {
+    "id": "f5812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "September",
+    "recipes": Array [],
+    "seasonIndex": 8,
+  },
+  Object {
+    "id": "a1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "October",
+    "recipes": Array [],
+    "seasonIndex": 9,
+  },
+  Object {
+    "id": "b1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "November",
+    "recipes": Array [],
+    "seasonIndex": 10,
+  },
+  Object {
+    "id": "c1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "December",
+    "recipes": Array [],
+    "seasonIndex": 11,
+  },
+]
+`;
+
+exports[`Get all seasons with recipes when both isVegan and isVegetarian filter is applied Retrieves the expected data 1`] = `
+Array [
+  Object {
+    "id": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+    "name": "January",
+    "recipes": Array [
+      Object {
+        "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "isVegan": true,
+        "isVegetarian": false,
+        "linkUrl": "https://pickled-beetroot.com",
+        "name": "Pasta with a Beetroot sauce",
+      },
+    ],
+    "seasonIndex": 0,
+  },
+  Object {
+    "id": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+    "name": "February",
+    "recipes": Array [
+      Object {
+        "id": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "isVegan": true,
+        "isVegetarian": false,
+        "linkUrl": "https://pickled-beetroot.com",
+        "name": "Pasta with a Beetroot sauce",
+      },
+    ],
+    "seasonIndex": 1,
+  },
+  Object {
+    "id": "f4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "March",
+    "recipes": Array [],
+    "seasonIndex": 2,
+  },
+  Object {
+    "id": "a4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "April",
+    "recipes": Array [],
+    "seasonIndex": 3,
+  },
+  Object {
+    "id": "b4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "May",
+    "recipes": Array [],
+    "seasonIndex": 4,
+  },
+  Object {
+    "id": "c4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "June",
+    "recipes": Array [],
+    "seasonIndex": 5,
+  },
+  Object {
+    "id": "d4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "July",
+    "recipes": Array [],
+    "seasonIndex": 6,
+  },
+  Object {
+    "id": "e4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "August",
+    "recipes": Array [],
+    "seasonIndex": 7,
+  },
+  Object {
+    "id": "f5812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "September",
+    "recipes": Array [],
+    "seasonIndex": 8,
+  },
+  Object {
+    "id": "a1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "October",
+    "recipes": Array [],
+    "seasonIndex": 9,
+  },
+  Object {
+    "id": "b1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "November",
+    "recipes": Array [],
+    "seasonIndex": 10,
+  },
+  Object {
+    "id": "c1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "December",
+    "recipes": Array [],
+    "seasonIndex": 11,
+  },
+]
+`;
+
+exports[`Get all seasons with recipes when no filters are applied Returns a full list of season data 1`] = `
 Array [
   Object {
     "id": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
