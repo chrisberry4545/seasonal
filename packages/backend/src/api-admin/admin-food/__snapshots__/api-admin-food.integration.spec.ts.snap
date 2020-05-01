@@ -38,7 +38,9 @@ Array [
     "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
     "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
     "name": "Apple",
-    "substituteFoodIds": Array [],
+    "substituteFoodIds": Array [
+      "afc1368e-6ed1-4a50-bb7d-6163c15df1d3",
+    ],
   },
   Object {
     "badgeIds": Array [],
@@ -58,6 +60,14 @@ Array [
     "name": "Onion",
     "substituteFoodIds": Array [],
   },
+  Object {
+    "badgeIds": Array [],
+    "description": "substitute food for an apple",
+    "id": "afc1368e-6ed1-4a50-bb7d-6163c15df1d3",
+    "imageUrlSmall": "https://sub-apple.com",
+    "name": "Substitute Apple",
+    "substituteFoodIds": Array [],
+  },
 ]
 `;
 
@@ -68,6 +78,8 @@ Object {
   "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
   "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
   "name": "Apple",
-  "substituteFoodIds": Array [],
+  "substituteFoodIds": Array [
+    "afc1368e-6ed1-4a50-bb7d-6163c15df1d3",
+  ],
 }
 `;

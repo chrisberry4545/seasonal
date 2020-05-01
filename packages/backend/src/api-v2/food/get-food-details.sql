@@ -23,6 +23,12 @@ WITH
     FROM country_to_recipe_name_map
     WHERE
       country_to_recipe_name_map.country_id = ANY(SELECT country_id FROM current_country)
+  ),
+  parent_foods AS (
+    SELECT food.id
+    FROM food
+	  WHERE
+		  $2 = ANY(food.substitute_food_ids)
   )
 
 SELECT
@@ -53,6 +59,8 @@ SELECT
     FROM recipes
     WHERE
       food.id = ANY(recipes.primary_food_in_recipe_ids)
+    OR
+      (SELECT id FROM parent_foods) = ANY(recipes.primary_food_in_recipe_ids)
   ),
   (
     SELECT COALESCE(
@@ -78,6 +86,8 @@ SELECT
     FROM recipes
     WHERE
       food.id = ANY(recipes.secondary_food_in_recipe_ids)
+    OR
+      (SELECT id FROM parent_foods) = ANY(recipes.secondary_food_in_recipe_ids)
   ),
   (
     SELECT COALESCE(
