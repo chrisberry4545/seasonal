@@ -10,6 +10,7 @@ import { HeaderConnecter } from '../Header/Header.connector';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { LoadingSpinner } from '../../components-elements';
 import { ViewStyle } from 'react-native';
+import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
 
 const styleAllSeasonsWrapperLoadingSpinner: ViewStyle = {
   paddingTop: 30
@@ -37,21 +38,22 @@ export const AllSeasonsWrapper: FC<{
     {
       isLoading || !seasons
         ? <LoadingSpinner style={styleAllSeasonsWrapperLoadingSpinner} />
-        :  <FlatList
-            data={seasons}
-            renderItem={({ item }) => (
-              <Fragment>
-                <SeasonNameView name={item.name} />
-                <SwitchableGridOrList data={ item[propName] }
-                  onClick={ onItemClick }
-                  isListViewShown={isListViewShown}
-                  onToggleListView={onToggleListView}
-                  />
-              </Fragment>
-            )}
-            keyExtractor={(item) => item.name}
-            onEndReached={increaseNumberOfAllSeasonsInView}
-            onEndReachedThreshold={2} />
+        : <FlatList
+          data={seasons}
+          renderItem={({ item }) => (
+            <Fragment>
+              <SeasonNameView name={item.name} />
+              { propName === 'recipes' && <DietaryFiltersConnector /> }
+              <SwitchableGridOrList data={ item[propName] }
+                onClick={ onItemClick }
+                isListViewShown={isListViewShown}
+                onToggleListView={onToggleListView}
+                />
+            </Fragment>
+          )}
+          keyExtractor={(item) => item.name}
+          onEndReached={increaseNumberOfAllSeasonsInView}
+          onEndReachedThreshold={2} />
     }
   </MainContainer>
 );

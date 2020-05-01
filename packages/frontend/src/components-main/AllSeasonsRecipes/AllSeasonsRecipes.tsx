@@ -7,6 +7,7 @@ import { SeasonNameView, ImageGrid } from '../../components-layout';
 import { LoadingSpinner } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 import InfiniteScroll from 'react-infinite-scroller';
+import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
 
 export const AllSeasonsRecipes: FC<IAllSeasonsRecipesProps> = ({
   isCurrentTabRecipes,
@@ -32,6 +33,7 @@ export const AllSeasonsRecipes: FC<IAllSeasonsRecipesProps> = ({
             seasons && seasons.map(({ name, recipes }) => (
               <div className='c-all-seasons-recipes__season' key={name}>
                 <SeasonNameView name={name}></SeasonNameView>
+                <DietaryFiltersConnector />
                 <ImageGrid data={recipes}
                   onClick={onRecipeClick} skipAnimation={true} />
               </div>

@@ -25,6 +25,7 @@ exports[`<AllSeasonsRecipes /> when the seasons are loaded renders correctly 1`]
       <SeasonNameView
         name="January"
       />
+      <DietaryFiltersConnector />
       <ImageGrid
         onClick={[MockFunction]}
         skipAnimation={true}
@@ -37,6 +38,7 @@ exports[`<AllSeasonsRecipes /> when the seasons are loaded renders correctly 1`]
       <SeasonNameView
         name="February"
       />
+      <DietaryFiltersConnector />
       <ImageGrid
         onClick={[MockFunction]}
         skipAnimation={true}

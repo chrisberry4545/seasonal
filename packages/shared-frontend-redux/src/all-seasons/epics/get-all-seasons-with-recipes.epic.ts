@@ -19,9 +19,9 @@ import {
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from '../../seasonal-epic.type';
-import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
+import { IBackendError, DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../../state.interface';
-import { selectSettingsRegionId } from '../../settings';
+import { selectSettingsRegionId, selectSettingsDietType } from '../../settings';
 
 export const getAllSeasonsWithRecipes$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
@@ -30,9 +30,16 @@ export const getAllSeasonsWithRecipes$: SharedSeasonalEpic = (
   actions$.pipe(
     ofType(SET_ALL_SEASONS_WITH_RECIPES_START),
     withLatestFrom(state$),
-    map(([, state]) => selectSettingsRegionId(state)),
-    switchMap((regionId) =>
-      getAllSeasonsWithRecipes(regionId)
+    map(([, state]) => ({
+      dietType: selectSettingsDietType(state),
+      regionId: selectSettingsRegionId(state)
+    })),
+    switchMap(({ dietType, regionId }) =>
+      getAllSeasonsWithRecipes(
+        dietType === DIET_TYPE.VEGETARIAN,
+        dietType === DIET_TYPE.VEGAN,
+        regionId
+      )
         .then((seasonData) => setAllSeasonsWithRecipesSuccess(seasonData))
         .catch((error: IBackendError) => setError(error))
     )

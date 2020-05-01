@@ -6,36 +6,48 @@ import {
   setAllSeasonsWithRecipesSuccess
 } from '../all-seasons.actions';
 import { of } from 'rxjs';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { setError } from '../../error';
 import * as settings from '../../settings';
+import { Action } from 'redux';
 
 describe('getAllSeasonsWithRecipes$', () => {
 
-  beforeEach(() =>
+  beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
-      .mockReturnValue('regionId')
-  );
+      .mockReturnValue('regionId');
+    jest.spyOn(settings, 'selectSettingsDietType')
+      .mockReturnValue(DIET_TYPE.VEGAN);
+  });
 
   describe('when getAllSeasonsWithRecipes is successful', () => {
     const seasonsWithRecipes = [{}] as IHydratedSeason[];
+    let mockGetAllSeasonsWithRecipes: jest.SpyInstance;
+    let result: Action;
 
-    beforeEach(() =>
-      jest.spyOn(sharedFrontendUtilities, 'getAllSeasonsWithRecipes')
-        .mockResolvedValue(seasonsWithRecipes)
-    );
-
-    test('returns getAllSeasonsWithRecipes with the data', async () => {
-      const result = await getAllSeasonsWithRecipes$(
+    beforeEach(async () => {
+      mockGetAllSeasonsWithRecipes =
+        jest.spyOn(sharedFrontendUtilities, 'getAllSeasonsWithRecipes')
+          .mockResolvedValue(seasonsWithRecipes);
+      mockGetAllSeasonsWithRecipes.mockClear();
+      result = await getAllSeasonsWithRecipes$(
         of(setAllSeasonsWithRecipesStart()) as any,
         of(null) as any,
         {}
       ).toPromise();
+    });
+
+    test('calls getAllSeasonsWithRecipes with the expected values', () =>
+      expect(mockGetAllSeasonsWithRecipes).toHaveBeenCalledWith(
+        false, true, 'regionId'
+      ));
+
+    test('returns getAllSeasonsWithRecipes with the data', () =>
       expect(result).toEqual(setAllSeasonsWithRecipesSuccess(
         seasonsWithRecipes
-      ));
-    });
+      )));
+
   });
 
   describe('when getAllSeasonsWithRecipes errors', () => {

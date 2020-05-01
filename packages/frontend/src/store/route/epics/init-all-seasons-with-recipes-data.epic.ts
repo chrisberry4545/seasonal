@@ -1,4 +1,4 @@
-import { GO_TO_ALL_SEASONS_VIEW, INIT_APP, setAllSeasonsWithRecipesStart } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import { GO_TO_ALL_SEASONS_VIEW, INIT_APP, setAllSeasonsWithRecipesStart, SET_DIET_TYPE } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { Action } from 'redux';
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 import { Observable } from 'rxjs';
@@ -18,7 +18,8 @@ export const initAllSeasonsWithRecipesData$: WebSeasonalEpic = (
       GO_TO_ALL_SEASONS_VIEW,
       INIT_APP,
       GO_BACK_FROM_FOOD_DETAILS,
-      GO_TO_RECIPES_TABS
+      GO_TO_RECIPES_TABS,
+      SET_DIET_TYPE
     ),
     debounceTime(50),
     withLatestFrom(state$),

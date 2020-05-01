@@ -5,6 +5,7 @@ import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { FlatList } from 'react-native-gesture-handler';
 import { SwitchableGridOrList } from '../../components-layout';
 import { LoadingSpinner } from '../../components-elements';
+import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
 
 jest.mock('react-native-gesture-handler', () => ({
   FlatList: () => 'FlatList'
@@ -20,6 +21,9 @@ jest.mock('../../components-elements', () => ({
 }));
 jest.mock('../Header/Header.connector', () => ({
   HeaderConnecter: () => 'HeaderConnecter'
+}));
+jest.mock('../DietaryFilters/DietaryFilters.connector', () => ({
+  DietaryFiltersConnector: () => 'DietaryFiltersConnector'
 }));
 
 describe('<AllSeasonsWrapper />', () => {
@@ -65,6 +69,9 @@ describe('<AllSeasonsWrapper />', () => {
     expect(mockIncreaseNumberOfAllSeasonsInView)
       .toHaveBeenCalled();
   });
+
+  test('does not show dietary filters when food is shown', () =>
+    expect(wrapper.find(DietaryFiltersConnector).exists()).toBe(false));
 
   describe('when isLoading is true', () => {
     beforeEach(() =>
@@ -137,4 +144,27 @@ describe('<AllSeasonsWrapper />', () => {
       expect(mockOnToggleListView).toHaveBeenCalled();
     });
   });
+
+  describe('when the recipes are shown', () => {
+    beforeEach(() =>
+      wrapper = shallow(
+        <AllSeasonsWrapper
+          propName='recipes'
+          isLoading={true}
+          increaseNumberOfAllSeasonsInView={
+            mockIncreaseNumberOfAllSeasonsInView
+          }
+          onItemClick={mockOnItemClick}
+          seasons={seasons}
+          isListViewShown={true}
+          onToggleListView={mockOnToggleListView}
+          />
+      )
+    );
+
+    test('shows dietary filters', () =>
+      expect(wrapper.find(DietaryFiltersConnector).exists()).toBe(true));
+
+  });
+
 });
