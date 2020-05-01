@@ -15,11 +15,11 @@ describe('getAllSeasonsWithRecipes', () => {
     mockGetQueryString = jest.spyOn(getQueryString, 'getQueryString')
       .mockReturnValue(queryString);
     mockHandleErrors = jest.spyOn(handleErrors, 'handleErrors');
-    result = await getAllSeasonsWithRecipes('regionId');
+    result = await getAllSeasonsWithRecipes(true, false, 'regionId');
   });
 
   test('calls getQueryString', () => expect(mockGetQueryString)
-    .toHaveBeenCalledWith(undefined, undefined, 'regionId')
+    .toHaveBeenCalledWith(true, false, 'regionId')
   );
 
   test('calls fetch with the expected values', () =>

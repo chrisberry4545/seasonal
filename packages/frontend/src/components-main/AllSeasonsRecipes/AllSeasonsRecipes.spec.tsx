@@ -15,6 +15,9 @@ jest.mock('../../components-layout', () => ({
 jest.mock('@chrisb-dev/seasonal-shared-frontend-components', () => ({
   LoadingSpinner: () => 'LoadingSpinner'
 }));
+jest.mock('../DietaryFilters/DietaryFilters.connector', () => ({
+  DietaryFiltersConnector: () => 'DietaryFiltersConnector'
+}));
 
 describe('<AllSeasonsRecipes />', () => {
   let wrapper: ShallowWrapper;
