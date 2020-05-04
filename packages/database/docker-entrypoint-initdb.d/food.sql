@@ -30,7 +30,7 @@ VALUES
   (
     'dd9ba012-8f8e-48af-9775-0139374dd94c',
     'Apple',
-    ARRAY[]::uuid[],
+    ARRAY['afc1368e-6ed1-4a50-bb7d-6163c15df1d3']::uuid[],
     'https://eat-seasonal.co.uk/images/food/broccoli.jpg',
     'apple description',
     ARRAY[]::uuid[]
@@ -42,4 +42,12 @@ VALUES
     'https://onion.com',
     'onion description',
     ARRAY['5de57673-eee8-444a-b7be-d9ab553052cf']::uuid[]
+  ),
+  (
+    'afc1368e-6ed1-4a50-bb7d-6163c15df1d3',
+    'Substitute Apple',
+    ARRAY[]::uuid[],
+    'https://sub-apple.com',
+    'substitute food for an apple',
+    ARRAY[]::uuid[]
   );

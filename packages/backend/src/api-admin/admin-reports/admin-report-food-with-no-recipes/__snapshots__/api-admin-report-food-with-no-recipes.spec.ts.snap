@@ -12,5 +12,13 @@ Array [
     "name": "Onion",
     "substituteFoodIds": Array [],
   },
+  Object {
+    "badgeIds": Array [],
+    "description": "substitute food for an apple",
+    "id": "afc1368e-6ed1-4a50-bb7d-6163c15df1d3",
+    "imageUrlSmall": "https://sub-apple.com",
+    "name": "Substitute Apple",
+    "substituteFoodIds": Array [],
+  },
 ]
 `;

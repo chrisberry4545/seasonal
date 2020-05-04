@@ -9,7 +9,8 @@ import {
   SEASON_ID_FEBRUARY,
   FOOD_ID_BEETROOT,
   FOOD_ID_ONION,
-  RECIPES_ID_APPLE_CHEESE_AND_ONION
+  RECIPES_ID_APPLE_CHEESE_AND_ONION,
+  FOOD_ID_APPLE_SUBSTITUTE
 } from '../../api-utils/test-utils/shared-test-ids';
 import { ENDPOINT_V2_FOOD } from '../../config';
 
@@ -158,4 +159,24 @@ describe('Get single food item', () => {
       });
     });
   });
+
+  describe('when the food is a substitute food of another food', () => {
+    beforeAll(async () => {
+      response = await makeSingleFoodRequest(
+        FOOD_ID_APPLE_SUBSTITUTE
+      );
+    });
+
+    test('returns the expected result', () => expect(response.body).toMatchSnapshot());
+
+    test('returns the recipes of the parent food', () => {
+      expect(response.body.primaryFoodInRecipe.length).toBeGreaterThan(0);
+    });
+
+    test('returns the recipes of the parent food', () => {
+      expect(response.body.primaryFoodInRecipe[0].id)
+        .toBe(RECIPES_ID_APPLE_CHEESE_AND_ONION);
+    });
+  });
+
 });

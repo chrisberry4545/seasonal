@@ -108,3 +108,32 @@ Object {
   ],
 }
 `;
+
+exports[`Get single food item when the food is a substitute food of another food returns the expected result 1`] = `
+Object {
+  "badges": Array [],
+  "id": "afc1368e-6ed1-4a50-bb7d-6163c15df1d3",
+  "imageUrlSmall": "https://sub-apple.com",
+  "name": "Substitute Apple",
+  "primaryFoodInRecipe": Array [
+    Object {
+      "id": "fefc209f-ddaf-465d-941f-fe3fefa6b931",
+      "imageUrlSmall": "https://apple-and-cheese.com/image",
+      "isVegan": false,
+      "isVegetarian": true,
+      "linkUrl": "https://apple-and-cheese.com",
+      "name": "Apple, Cheese & Onion",
+    },
+    Object {
+      "id": "053c46cd-584e-46c5-a70d-b79b9ded3cca",
+      "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+      "isVegan": false,
+      "isVegetarian": false,
+      "linkUrl": "https://apple-beetroot-and-cheese.com",
+      "name": "Apple, Beetroot & Meat",
+    },
+  ],
+  "seasons": Array [],
+  "secondaryFoodInRecipe": Array [],
+}
+`;
