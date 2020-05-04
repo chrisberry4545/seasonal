@@ -25,18 +25,19 @@ export const SearchableMultiselect: FC<{
     event
   ) => {
     if (event.keyCode === 13) {
+      const inputValue = inputs.value || [];
       const visibleOptions = filteredOptions.map((option) => option.value);
       const areAllOptionsSelected = visibleOptions
-        .every((option) => inputs.value.includes(option));
+        .every((option) => inputValue.includes(option));
       if (areAllOptionsSelected) {
-        const withOptionsRemoved = inputs.value
+        const withOptionsRemoved = inputValue
           .filter((value) => !visibleOptions.includes(value));
         inputs.onChange(withOptionsRemoved);
       } else {
         const optionsToAdd = visibleOptions
-          .filter((value) => !inputs.value.includes(value));
+          .filter((value) => !inputValue.includes(value));
         inputs.onChange([
-          ...inputs.value,
+          ...inputValue,
           ...optionsToAdd
         ]);
       }
