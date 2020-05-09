@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get single badge item Retrieves a single badge item 1`] = `
+Object {
+  "food": Array [],
+  "name": "High in Vitamin C",
+}
+`;

@@ -66,6 +66,13 @@ functions:
           path: ${file(./src/config/serverless-urls.js):serverlessUrls.v2Country}
           method: get
           cors: true
+  v2Badge:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.v2Badge}
+          method: get
+          cors: true
   adminLogin:
     handler: index-serverless.handler
     events:

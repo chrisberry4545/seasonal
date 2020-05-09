@@ -3,11 +3,11 @@ import {
 } from '../../app';
 import supertest, { Response } from 'supertest';
 import { BADGE_ID_VITAMIN_C } from '../../api-utils/test-utils/shared-test-ids';
-import { ENDPOINT_V2_FOOD } from '../../config';
+import { ENDPOINT_V2_BADGE } from '../../config';
 
 const makeSingleBadgeRequest = async (
   id: string = BADGE_ID_VITAMIN_C
-) => supertest(app).get(`/${ENDPOINT_V2_FOOD}/${id}`);
+) => supertest(app).get(`/${ENDPOINT_V2_BADGE}/${id}`);
 
 describe('Get single badge item', () => {
   let response: Response;
