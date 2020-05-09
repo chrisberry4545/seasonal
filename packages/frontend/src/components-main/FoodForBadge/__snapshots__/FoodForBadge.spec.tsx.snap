@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodForBadge /> when the recipes are loading renders correctly 1`] = `
+<div
+  className="c-food-for-badge"
+>
+  <TextHeadingSmall
+    className="c-food-for-badge__heading"
+  >
+    Found in
+  </TextHeadingSmall>
+  <ImageGrid
+    data={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    data-e2e="food-for-badge-grid"
+    onClick={[MockFunction]}
+  />
+</div>
+`;

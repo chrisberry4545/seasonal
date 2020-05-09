@@ -1,14 +1,18 @@
 import {
   foodItemClicked,
+  badgeDetailsSelectFood,
   ISetCurrentFoodDetailsStart,
   setCurrentFoodDetailsStart
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { of } from 'rxjs';
 import { goToFoodDetails$ } from './go-to-food-details.epic';
 
-describe('goToFoodDetails$', () => {
+const foodId = 'foodId';
+describe.each([
+  foodItemClicked(foodId),
+  badgeDetailsSelectFood(foodId)
+])('goToFoodDetails$', () => {
   let result: ISetCurrentFoodDetailsStart;
-  const foodId = 'foodId';
 
   beforeEach(async () => {
     result = await goToFoodDetails$(

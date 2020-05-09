@@ -1,5 +1,9 @@
 export * from './go-to-all-seasons-view.epic';
 
+export * from './go-to-badge-details.epic';
+
+export * from './go-to-badge-link.epic';
+
 export * from './go-to-food-details.epic';
 
 export * from './go-to-food-link.epic';

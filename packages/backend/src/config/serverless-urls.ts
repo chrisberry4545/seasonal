@@ -1,4 +1,5 @@
 import {
+  ENDPOINT_V2_BADGE,
   ENDPOINT_V2_SEASON,
   ENDPOINT_V2_FOOD,
   ENDPOINT_V2_SEASON_WITH_FOOD,
@@ -31,6 +32,7 @@ export const serverlessUrls = () => ({
 
   adminReportFoodWithNoRecipes: ENDPOINT_ADMIN_REPORT_FOOD_WITH_NO_RECIPES,
 
+  v2Badge: ENDPOINT_V2_BADGE,
   v2Country: ENDPOINT_V2_COUNTRY,
   v2Food: ENDPOINT_V2_FOOD,
   v2Season: ENDPOINT_V2_SEASON,

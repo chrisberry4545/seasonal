@@ -1,2 +1,2 @@
 export const clickGoBackButton = () =>
-  cy.get('[data-e2e="food-details-go-back"]').click();
+  cy.get('[data-e2e="header-go-back-button"]').click();

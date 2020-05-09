@@ -9,7 +9,7 @@ import { getAllCachedSeasons } from './get-all-cached-seasons';
 import { getRegionIdFromQueryParams } from '../../api-utils/get-query-params';
 import { get500Error } from '../../api-utils';
 
-export const apiSeason = (router = Router()) => {
+export const apiSeasonV2 = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     const regionId = getRegionIdFromQueryParams(req);
     try {

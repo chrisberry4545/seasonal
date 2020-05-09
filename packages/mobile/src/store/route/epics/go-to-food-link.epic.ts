@@ -1,5 +1,6 @@
 import {
   FOOD_ITEM_CLICKED,
+  BADGE_DETAILS_SELECT_FOOD,
   IFoodItemClicked,
   setCurrentFoodDetailsStart
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
@@ -15,7 +16,10 @@ export const goToFoodLink$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(
-    ofType(FOOD_ITEM_CLICKED),
+    ofType(
+      FOOD_ITEM_CLICKED,
+      BADGE_DETAILS_SELECT_FOOD
+    ),
     map((action) => (action as IFoodItemClicked).foodItemId),
     tap((foodItemId) => navigate(ROUTES.FOOD_DETAILS, {
       id: foodItemId

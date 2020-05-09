@@ -1,0 +1,17 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-food-for-badge {
+  margin-top: 1.5rem;
+  border-bottom: 1px solid $grey-med;
+  padding-bottom: 1rem;
+  @include mq($from: tablet) {
+    padding-bottom: 2rem;
+  }
+}
+
+  .c-food-for-badge__heading {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }

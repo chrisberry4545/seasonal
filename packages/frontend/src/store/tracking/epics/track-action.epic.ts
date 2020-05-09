@@ -16,6 +16,7 @@ import {
   CLOSE_MENU,
   RECIPE_ITEM_CLICKED,
   FOOD_ITEM_CLICKED,
+  BADGE_DETAILS_SELECT_FOOD,
   SET_ERROR
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
@@ -39,6 +40,7 @@ const ACTIONS_TO_TRACK = [
   GO_TO_WEB_VERSION,
   RECIPE_ITEM_CLICKED,
   FOOD_ITEM_CLICKED,
+  BADGE_DETAILS_SELECT_FOOD,
   SET_ERROR
 ];
 

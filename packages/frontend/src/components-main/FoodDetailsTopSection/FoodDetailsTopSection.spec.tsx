@@ -2,12 +2,10 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { FoodDetailsTopSection } from './FoodDetailsTopSection';
-import { BareButton } from '@chrisb-dev/seasonal-shared-frontend-components';
+import { HeaderAndBackButton } from '../../components-layout';
 
-jest.mock('@chrisb-dev/seasonal-shared-frontend-components', () => ({
-  ArrowIcon: () => 'ArrowIcon',
-  BareButton: () => 'BareButton',
-  TextHeadingMedium: () => 'TextHeadingMedium'
+jest.mock('../../components-layout', () => ({
+  HeaderAndBackButton: () => 'HeaderAndBackButton'
 }));
 
 describe('<FoodDetailsTopSection />', () => {
@@ -34,9 +32,9 @@ describe('<FoodDetailsTopSection />', () => {
     test('renders correctly', () => expect(wrapper).toMatchSnapshot());
 
     test('can go back from food details', () => {
-      const onClick = wrapper.find(BareButton).props().onClick;
-      if (onClick) {
-        onClick();
+      const onGoBack = wrapper.find(HeaderAndBackButton).props().onGoBack;
+      if (onGoBack) {
+        onGoBack();
       }
       expect(mockOnGoBack).toHaveBeenCalled();
     });

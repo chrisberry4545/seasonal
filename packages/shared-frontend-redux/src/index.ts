@@ -4,6 +4,8 @@ export * from './all-seasons';
 
 export * from './country';
 
+export * from './current-badge-details';
+
 export * from './current-food-details';
 
 export * from './current-season';

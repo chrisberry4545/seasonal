@@ -2,14 +2,12 @@
 
 exports[`<FoodDetailsPage /> renders correctly 1`] = `
 <PageWithMenu>
-  <div
-    className="c-food-details-page__main"
-  >
+  <DetailsPageLayout>
     <FoodDetailsTopSectionConnecter />
     <FoodBadgesConnecter />
     <FoodDetailsLoaderConnecter />
     <RecipesForFoodConnecter />
     <SeasonsForFoodConnecter />
-  </div>
+  </DetailsPageLayout>
 </PageWithMenu>
 `;

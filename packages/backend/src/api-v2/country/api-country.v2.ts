@@ -7,7 +7,7 @@ import {
 import { getAllCachedCountries } from './get-all-cached-countries';
 import { get500Error } from '../../api-utils';
 
-export const apiCountry = (router = Router()) => {
+export const apiCountryV2 = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     try {
       const result = await getAllCachedCountries();

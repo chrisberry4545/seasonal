@@ -5,17 +5,17 @@ import {
   getCurrentSeasonWithRecipes$,
   setSeasonSelectedSeasonName$
 } from './current-season/epics';
-
 import {
   getAllBasicSeasonsStart$,
   getAllBasicSeasons$
 } from './all-basic-seasons/epics';
-
 import {
   getAllSeasonsWithFood$,
   getAllSeasonsWithRecipes$
 } from './all-seasons/epics';
-
+import {
+  getCurrentBadgeDetails$
+} from './current-badge-details/epics';
 import {
   getCurrentFoodDetails$,
   updateFoodDetailsOnDietTypeChange$
@@ -36,6 +36,7 @@ export const rootEpics = [
   getAllBasicSeasons$,
   getAllSeasonsWithFood$,
   getAllSeasonsWithRecipes$,
+  getCurrentBadgeDetails$,
   getCurrentFoodDetails$,
   updateFoodDetailsOnDietTypeChange$,
   setSeasonSelectedSeasonName$,

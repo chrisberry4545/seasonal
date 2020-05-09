@@ -8,6 +8,7 @@ import {
   openMenu,
   recipeItemClicked,
   foodItemClicked,
+  badgeDetailsSelectFood,
   setError,
   closeMenu
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
@@ -26,6 +27,7 @@ describe.each([
   goToWebVersion(),
   recipeItemClicked('recipeId'),
   foodItemClicked('foodId'),
+  badgeDetailsSelectFood('foodId'),
   setError({} as IBackendError)
 ])('trackAction$', (action) => {
   let mockTrackEvent: jest.Mock;

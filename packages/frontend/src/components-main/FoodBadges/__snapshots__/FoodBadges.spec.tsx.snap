@@ -12,18 +12,20 @@ exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
   <div
     className="c-food-badges__list"
   >
-    <div
+    <BareButton
       className="c-food-badges__badge"
       key="1"
+      onClick={[Function]}
     >
       Iron
-    </div>
-    <div
+    </BareButton>
+    <BareButton
       className="c-food-badges__badge"
       key="2"
+      onClick={[Function]}
     >
       Vitamin A
-    </div>
+    </BareButton>
   </div>
 </div>
 `;

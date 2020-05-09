@@ -18,6 +18,8 @@ export * from './recipe.interface';
 
 export * from './region.interface';
 
+export * from './hydrated-badge.interface';
+
 export * from './hydrated-food.interface';
 
 export * from './hydrated-season.interface';

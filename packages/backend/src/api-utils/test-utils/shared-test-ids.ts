@@ -13,3 +13,5 @@ export const RECIPES_ID_APPLE_CHEESE_AND_ONION = 'fefc209f-ddaf-465d-941f-fe3fef
 export const FOOD_ID_BEETROOT = 'f6a680ee-6d6e-4c42-a99d-15e575c32c20';
 export const FOOD_ID_ONION = 'd1df368e-6ed1-4a50-bb7d-6163c15df1d3';
 export const FOOD_ID_APPLE_SUBSTITUTE = 'afc1368e-6ed1-4a50-bb7d-6163c15df1d3';
+
+export const BADGE_ID_VITAMIN_C = 'a2c52423-eb83-4cd9-9fdd-b6f9cb323c37';

@@ -13,7 +13,9 @@ import {
   initAllSeasonsWithFoodData$,
   goToAllSeasonsView$,
   goToSettingsPage$,
-  initAllSeasonsWithRecipesData$
+  initAllSeasonsWithRecipesData$,
+  goToBadgeLink$,
+  goToBadgeDetails$
 } from './route/epics';
 
 import {
@@ -39,5 +41,7 @@ export const rootEpic = combineEpics(
   getStoredSettings$,
   storeSettings$,
   goToSettingsPage$,
-  detectCountry$
+  detectCountry$,
+  goToBadgeLink$,
+  goToBadgeDetails$
 );

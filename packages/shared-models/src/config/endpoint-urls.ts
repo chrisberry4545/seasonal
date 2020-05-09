@@ -2,6 +2,7 @@ export const ENDPOINT_V2 = 'v2';
 export const ENDPOINT_ADMIN = 'admin';
 export const ENDPOINT_REPORTS = 'reports';
 export const ENDPOINT_SEASON = 'season';
+export const ENDPOINT_BADGE_DETAILS = 'badge';
 export const ENDPOINT_FOOD_DETAILS = 'food';
 export const ENDPOINT_SEASON_WITH_FOOD = 'season-with-food';
 export const ENDPOINT_SEASON_WITH_RECIPES = 'season-with-recipes';

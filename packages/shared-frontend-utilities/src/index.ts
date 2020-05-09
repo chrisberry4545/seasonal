@@ -4,6 +4,8 @@ export * from './get-all-seasons-with-recipes';
 
 export * from './get-all-seasons';
 
+export * from './get-badge-details-data';
+
 export * from './get-countries';
 
 export * from './get-current-season-index';

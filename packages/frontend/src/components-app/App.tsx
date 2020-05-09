@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import {
+  BadgePage,
   IntroPage,
   FoodTablePage,
   FoodDetailsPage,
@@ -15,6 +16,7 @@ import { store, storeHistory } from '../store/reducers';
 import { Route, Switch } from 'react-router';
 
 import {
+  BADGE_DETAILS_URL,
   FOOD_TABLE_URL,
   LANDING_URL,
   FOOD_DETAILS_URL,
@@ -33,6 +35,7 @@ export const App: FC<{}> = () => (
           <Route path={LANDING_URL} component={IntroPage} exact />
           <Route path={FOOD_TABLE_URL} component={FoodTablePage} />
           <Route path={`${FOOD_DETAILS_URL}/:id`} component={FoodDetailsPage} />
+          <Route path={`${BADGE_DETAILS_URL}/:id`} component={BadgePage} />
           <Route path={ALL_SEASONS_URL} component={AllSeasonsPage} />
           <Route path={SETTINGS_URL} component={SettingsPage} />
         </Switch>

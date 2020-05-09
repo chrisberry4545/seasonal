@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 
-import './FoodDetailsPage.scss';
-
 import {
   FoodDetailsLoaderConnecter,
   FoodDetailsTopSectionConnecter,
@@ -10,15 +8,18 @@ import {
   RecipesForFoodConnecter,
   FoodBadgesConnecter
 } from '../../components-main';
+import {
+  DetailsPageLayout
+} from '../../components-layout';
 
 export const FoodDetailsPage: FC<{}> = () => (
   <PageWithMenu>
-    <div className='c-food-details-page__main'>
+    <DetailsPageLayout>
       <FoodDetailsTopSectionConnecter />
       <FoodBadgesConnecter />
       <FoodDetailsLoaderConnecter />
       <RecipesForFoodConnecter />
       <SeasonsForFoodConnecter />
-    </div>
+    </DetailsPageLayout>
   </PageWithMenu>
 );

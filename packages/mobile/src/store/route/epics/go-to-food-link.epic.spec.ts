@@ -1,5 +1,6 @@
 import {
   foodItemClicked,
+  badgeDetailsSelectFood,
   ISetCurrentFoodDetailsStart,
   setCurrentFoodDetailsStart
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
@@ -8,16 +9,20 @@ import { ROUTES } from '../../../const';
 import * as helpers from '../../../helpers';
 import { goToFoodLink$ } from './go-to-food-link.epic';
 
-describe('goToFoodLink$', () => {
+const foodId = 'foodId';
+
+describe.each([
+  foodItemClicked(foodId),
+  badgeDetailsSelectFood(foodId)
+])('goToFoodLink$', (action) => {
   let mockNavigate: jest.SpyInstance;
   let result: ISetCurrentFoodDetailsStart;
-  const foodId = 'foodId';
 
   beforeEach(async () => {
     mockNavigate = jest.spyOn(helpers, 'navigate');
     mockNavigate.mockClear();
     result = await goToFoodLink$(
-      of(foodItemClicked(foodId)) as any,
+      of(action) as any,
       of(null) as any,
       {}
     ).toPromise();

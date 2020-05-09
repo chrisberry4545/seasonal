@@ -13,7 +13,7 @@ import {
 import { get500Error, get404Error } from '../../api-utils';
 import { uuidParamValidation } from '../../middleware/uuid-param-validation';
 
-export const apiFood = (router = Router()) => {
+export const apiFoodV2 = (router = Router()) => {
   router.get(
     '/:id',
     uuidParamValidation(),

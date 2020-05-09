@@ -13,3 +13,10 @@ export function goBackFromFoodDetails(): Action {
     type: GO_BACK_FROM_FOOD_DETAILS
   };
 }
+
+export const GO_BACK_FROM_BADGE_DETAILS = 'GO_BACK_FROM_BADGE_DETAILS';
+export function goBackFromBadgeDetails(): Action {
+  return {
+    type: GO_BACK_FROM_BADGE_DETAILS
+  };
+}

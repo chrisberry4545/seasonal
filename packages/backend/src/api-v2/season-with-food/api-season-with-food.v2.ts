@@ -9,7 +9,7 @@ import { get500Error, get404Error } from '../../api-utils';
 import { getAllCachedSeasonsWithFood } from './get-all-cached-seasons-with-food';
 import { getOneCachedSeasonWithFood } from './get-one-cached-season-with-food';
 
-export const apiSeasonWithFood = (router = Router()) => {
+export const apiSeasonWithFoodV2 = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     const regionId = getRegionIdFromQueryParams(req);
     try {
