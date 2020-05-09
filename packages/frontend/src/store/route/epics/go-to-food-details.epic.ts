@@ -1,25 +1,28 @@
 import {
-  FOOD_ITEM_CLICKED,
-  BADGE_DETAILS_SELECT_FOOD,
-  IFoodItemClicked,
-  setCurrentFoodDetailsStart
+  setCurrentFoodDetailsStart,
+  INIT_APP
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { Action } from 'redux';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
+import { IState } from '../../state.interface';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, withLatestFrom, filter } from 'rxjs/operators';
 import { WebSeasonalEpic } from '../../seasonal-epic.type';
+import { LOCATION_CHANGE } from 'connected-react-router';
+import { selectCurrentFoodDetailsId } from '../route.selectors';
 
 export const goToFoodDetails$: WebSeasonalEpic = (
-  actions$: ActionsObservable<Action>
+  actions$: ActionsObservable<Action>,
+  state$: StateObservable<IState>
 ): Observable<Action> => (
   actions$.pipe(
     ofType(
-      FOOD_ITEM_CLICKED,
-      BADGE_DETAILS_SELECT_FOOD
+      INIT_APP,
+      LOCATION_CHANGE
     ),
-    map((action) => (
-      setCurrentFoodDetailsStart((action as IFoodItemClicked).foodItemId)
-    ))
+    withLatestFrom(state$),
+    map(([, state]) => selectCurrentFoodDetailsId(state)),
+    filter((foodDetailsId) => Boolean(foodDetailsId)),
+    map((foodDetailsId) => setCurrentFoodDetailsStart(foodDetailsId!))
   )
 );

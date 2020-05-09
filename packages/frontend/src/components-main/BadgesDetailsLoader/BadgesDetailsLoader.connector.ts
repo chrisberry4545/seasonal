@@ -3,7 +3,7 @@ import {
   BadgesDetailsLoader
 } from './BadgesDetailsLoader';
 import {
-  selectIsFoodDataOrBasicSeasonsLoading
+  selectIsCurrentBadgeDetailsLoading
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
 import { IState } from '../../store';
@@ -14,7 +14,7 @@ import {
 const mapStateToProps = (
   state: IState
 ): IBadgesDetailsLoaderInputProps => ({
-  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state)
+  isLoading: selectIsCurrentBadgeDetailsLoading(state)
 });
 
 export const BadgesDetailsLoaderConnecter = connect(

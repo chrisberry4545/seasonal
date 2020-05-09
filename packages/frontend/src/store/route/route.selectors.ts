@@ -1,5 +1,10 @@
 import { createMatchSelector, RouterRootState, getLocation } from 'connected-react-router';
-import { FOOD_DETAILS_URL, ALL_SEASONS_URL, SETTINGS_URL } from '../../const';
+import {
+  BADGE_DETAILS_URL,
+  FOOD_DETAILS_URL,
+  ALL_SEASONS_URL,
+  SETTINGS_URL
+} from '../../const';
 import { createSelector } from 'reselect';
 import { IState } from '../../store';
 
@@ -32,4 +37,18 @@ export const selectIsCurrentRouteAllSeasons = createSelector(
 export const selectIsCurrentRouteSettings = createSelector(
   selectCurrentPath,
   (path) => path === SETTINGS_URL
+);
+
+export const selectCurrentBadgeDetailsParams = createMatchSelector<
+  RouterRootState,
+  {
+    id: string
+  }
+>(
+  `${BADGE_DETAILS_URL}/:id`
+);
+
+export const selectCurrentBadgeDetailsId = createSelector(
+  selectCurrentBadgeDetailsParams,
+  (routeParams) => routeParams && routeParams.params.id
 );
