@@ -3,7 +3,7 @@ import {
   FoodForBadge
 } from './FoodForBadge';
 import {
-  selectIsFoodDataOrBasicSeasonsLoading,
+  selectIsCurrentBadgeDetailsLoading,
   selectVisibleFoodForBadgeDetailsData,
   badgeDetailsSelectFood
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
@@ -19,7 +19,7 @@ const mapStateToProps = (
   state: IState
 ): IFoodForBadgeInputProps => ({
   currentBadgeFood: selectVisibleFoodForBadgeDetailsData(state),
-  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state)
+  isLoading: selectIsCurrentBadgeDetailsLoading(state)
 });
 
 const mapDispatchToProps = (

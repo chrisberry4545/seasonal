@@ -3,6 +3,7 @@
 exports[`<BadgePage /> renders correctly 1`] = `
 <PageWithMenu>
   <DetailsPageLayout>
+    <BadgesDetailsLoaderConnecter />
     <BadgesTopSectionConnecter />
     <FoodForBadgeConnecter />
   </DetailsPageLayout>

@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
-
-import {
-  PageWithMenu
-} from '../../components-main';
 import {
   DetailsPageLayout
 } from '../../components-layout';
 import {
+  PageWithMenu,
+  BadgesDetailsLoaderConnecter,
   BadgesTopSectionConnecter,
   FoodForBadgeConnecter
 } from '../../components-main';
@@ -14,6 +12,7 @@ import {
 export const BadgePage: FC<{}> = () => (
   <PageWithMenu>
     <DetailsPageLayout>
+      <BadgesDetailsLoaderConnecter />
       <BadgesTopSectionConnecter />
       <FoodForBadgeConnecter />
     </DetailsPageLayout>

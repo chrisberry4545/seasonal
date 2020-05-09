@@ -1,18 +1,18 @@
 
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { FoodDetailsLoader } from './FoodDetailsLoader';
+import { BadgesDetailsLoader } from './BadgesDetailsLoader';
 
 jest.mock('../../components-layout', () => ({
   CentralLoadingSpinner: () => 'CentralLoadingSpinner'
 }));
 
-describe('<FoodDetailsLoader />', () => {
+describe('<BadgesDetailsLoader />', () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() =>
     wrapper = shallow(
-      <FoodDetailsLoader
+      <BadgesDetailsLoader
         isLoading={true} />
     )
   );

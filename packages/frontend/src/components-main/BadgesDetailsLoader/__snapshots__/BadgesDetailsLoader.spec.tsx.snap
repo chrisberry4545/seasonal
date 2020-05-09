@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FoodDetailsLoader /> renders correctly 1`] = `
+exports[`<BadgesDetailsLoader /> renders correctly 1`] = `
 <CentralLoadingSpinner
   isLoading={true}
 />

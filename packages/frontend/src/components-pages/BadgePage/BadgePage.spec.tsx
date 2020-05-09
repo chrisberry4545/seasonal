@@ -3,6 +3,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { BadgePage } from './BadgePage';
 
 jest.mock('../../components-main', () => ({
+  BadgesDetailsLoaderConnecter: () => 'BadgesDetailsLoaderConnecter',
   BadgesTopSectionConnecter: () => 'BadgesTopSectionConnecter',
   FoodForBadgeConnecter: () => 'FoodForBadgeConnecter',
   PageWithMenu: () => 'PageWithMenu'

@@ -2,6 +2,8 @@ export * from './AboutEatSeasonal/AboutEatSeasonal';
 
 export * from './AndroidAppDownload/AndroidAppDownload';
 
+export * from './BadgesDetailsLoader/BadgesDetailsLoader.connector';
+
 export * from './BadgesTopSection/BadgesTopSection.connector';
 
 export * from './BottomTabs/BottomTabs.connector';
