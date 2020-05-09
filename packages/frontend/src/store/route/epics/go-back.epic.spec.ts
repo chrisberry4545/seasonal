@@ -1,15 +1,21 @@
-import { goBackFromBadgeDetails } from '../route.actions';
+import { goBackFromBadgeDetails, goBackFromFoodDetails } from '../route.actions';
 import { Action } from 'redux';
 import { of } from 'rxjs';
 import { goBack$ } from './go-back.epic';
 import { goBack } from 'connected-react-router';
+import { setRegion, goBackFromSettingsPage } from '@chrisb-dev/seasonal-shared-frontend-redux';
 
-describe('goBack$', () => {
+describe.each([
+  goBackFromBadgeDetails(),
+  setRegion('regionId'),
+  goBackFromSettingsPage(),
+  goBackFromFoodDetails()
+])('goBack$', (action) => {
   let result: Action;
 
   beforeEach(async () => {
     result = await goBack$(
-      of(goBackFromBadgeDetails()) as any,
+      of(action) as any,
       of(null) as any,
       {}
     ).toPromise();
