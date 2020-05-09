@@ -1,11 +1,10 @@
 import React from 'react';
 import { FoodDetailsTopSection } from './FoodDetailsTopSection';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { BackArrowIconButton } from '../../components-elements';
+import { HeaderAndBackButton } from '../../components-layout';
 
-jest.mock('../../components-elements', () => ({
-  BackArrowIconButton: () => 'BackArrowIconButton',
-  TextHeadingMedium: () => 'TextHeadingMedium'
+jest.mock('../../components-layout', () => ({
+  HeaderAndBackButton: () => 'BackArrowIconButton'
 }));
 
 describe('<FoodDetailsTopSection />', () => {
@@ -26,7 +25,7 @@ describe('<FoodDetailsTopSection />', () => {
   test('renders correctly', () => expect(wrapper).toMatchSnapshot());
 
   test('can use arrow to go back', () => {
-    const onClick = wrapper.find(BackArrowIconButton).first().props().onClick;
+    const onClick = wrapper.find(HeaderAndBackButton).first().props().onGoBack;
     if (onClick) {
       onClick();
     }

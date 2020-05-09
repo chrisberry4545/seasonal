@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-
 import {
   FoodDetailsLoaderConnecter,
   FoodDetailsTopSectionConnecter,
@@ -8,32 +7,17 @@ import {
   RecipesForFoodConnecter,
   FoodBadgesConnecter
 } from '../../components-main';
-
-import { MainContainer, DefaultPaddingContainer } from '../../components-layout';
-import { ScrollView } from 'react-native-gesture-handler';
-import { View, ViewStyle } from 'react-native';
-
-const styleFoodDetailsPageView: ViewStyle = {
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  maxWidth: 500
-};
+import { MainContainer, DetailsPageLayout } from '../../components-layout';
 
 export const FoodDetailsPage: FC<{}> = () => (
   <MainContainer>
     <HeaderConnecter />
-    <DefaultPaddingContainer>
-      <ScrollView>
-        <View style={styleFoodDetailsPageView}>
-          <View>
-            <FoodDetailsLoaderConnecter />
-            <FoodDetailsTopSectionConnecter />
-            <FoodBadgesConnecter />
-            <RecipesForFoodConnecter />
-            <SeasonsForFoodConnecter />
-          </View>
-        </View>
-      </ScrollView>
-    </DefaultPaddingContainer>
+    <DetailsPageLayout>
+      <FoodDetailsLoaderConnecter />
+      <FoodDetailsTopSectionConnecter />
+      <FoodBadgesConnecter />
+      <RecipesForFoodConnecter />
+      <SeasonsForFoodConnecter />
+    </DetailsPageLayout>
   </MainContainer>
 );

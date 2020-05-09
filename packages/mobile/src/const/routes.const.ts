@@ -2,6 +2,7 @@ export enum ROUTES {
   ALL_SEASONS = 'all-seasons',
   SEASON_DETAILS = 'season-details',
   ABOUT_US =  'more-info',
+  BADGE_DETAILS = 'badge-details',
   FOOD_TAB = 'food-tab',
   RECIPES_TAB = 'recipes-tab',
   FOOD_DETAILS = 'food-details',

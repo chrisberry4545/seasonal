@@ -1,5 +1,5 @@
 import React from 'react';
-import { FoodDetailsPage } from './FoodDetailsPage';
+import { BadgePage } from './BadgePage';
 import { shallow, ShallowWrapper } from 'enzyme';
 
 jest.mock('react-native-gesture-handler', () => ({
@@ -7,12 +7,10 @@ jest.mock('react-native-gesture-handler', () => ({
 }));
 
 jest.mock('../../components-main', () => ({
-  FoodBadgesConnecter: () => 'FoodBadgesConnecter',
-  FoodDetailsLoaderConnecter: () => 'FoodDetailsLoaderConnecter',
-  FoodDetailsTopSectionConnecter: () => 'FoodDetailsTopSectionConnecter',
-  HeaderConnecter: () => 'HeaderConnecter',
-  RecipesForFoodConnecter: () => 'RecipesForFoodConnecter',
-  SeasonsForFoodConnecter: () => 'SeasonsForFoodConnecter'
+  BadgesDetailsLoaderConnecter: () => 'BadgesDetailsLoaderConnecter',
+  BadgesTopSectionConnecter: () => 'BadgesTopSectionConnecter',
+  FoodForBadgeConnecter: () => 'FoodForBadgeConnecter',
+  HeaderConnecter: () => 'HeaderConnecter'
 }));
 
 jest.mock('../../components-layout', () => ({
@@ -20,12 +18,12 @@ jest.mock('../../components-layout', () => ({
   MainContainer: () => 'MainContainer'
 }));
 
-describe('<FoodDetailsPage />', () => {
+describe('<BadgePage />', () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() =>
     wrapper = shallow(
-      <FoodDetailsPage />
+      <BadgePage />
     )
   );
 

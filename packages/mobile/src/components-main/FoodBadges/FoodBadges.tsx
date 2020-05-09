@@ -1,8 +1,12 @@
 import React, { FC } from 'react';
 import {
-  IFoodBadgesInputProps
+  IFoodBadgesProps
 } from './FoodBadges.interface';
-import { TextHeadingSmall, TextMedium } from '../../components-elements';
+import {
+  BareButton,
+  TextHeadingSmall,
+  TextMedium
+} from '../../components-elements';
 import { ViewStyle, View, TextStyle, StyleSheet } from 'react-native';
 import { colors } from '../../styles/colors';
 import { styles } from '../../styles';
@@ -37,8 +41,9 @@ const styleBadgesBadgeItem: TextStyle = {
   padding: 10
 };
 
-export const FoodBadges: FC<IFoodBadgesInputProps> = ({
-  badges
+export const FoodBadges: FC<IFoodBadgesProps> = ({
+  badges,
+  onBadgeClicked
 }) => (
   (badges && badges.length > 0)
     ? (
@@ -49,13 +54,14 @@ export const FoodBadges: FC<IFoodBadgesInputProps> = ({
         <View style={styleBadgesList}>
           {
             badges.map((badge) =>
-              <View
+              <BareButton
+                onClick={() => onBadgeClicked(badge.id)}
                 style={styleBadgesBadgeItem}
                 key={badge.id}>
                   <TextMedium>
                     {badge.name}
                   </TextMedium>
-              </View>
+              </BareButton>
             )
           }
         </View>

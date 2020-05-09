@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderAndBackButton /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flex": 0,
+      "flexDirection": "row",
+      "height": 50,
+      "marginBottom": 6,
+      "marginTop": 4,
+    }
+  }
+>
+  <BackArrowIconButton
+    onClick={[MockFunction]}
+  />
+  <TextHeadingMedium
+    style={
+      Object {
+        "flex": 1,
+        "marginRight": 12,
+        "textAlign": "center",
+      }
+    }
+  >
+    Title
+  </TextHeadingMedium>
+</View>
+`;

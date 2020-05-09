@@ -4,8 +4,8 @@ import { FoodForBadge } from './FoodForBadge';
 import { IFood } from '@chrisb-dev/seasonal-shared-models';
 import { ImageGrid } from '../../components-layout';
 
-jest.mock('@chrisb-dev/seasonal-shared-frontend-components', () => ({
-  TextHeadingSmall: () => 'TextHeadingSmall'
+jest.mock('../../components-elements', () => ({
+  TextMedium: () => 'TextMedium'
 }));
 jest.mock('../../components-layout', () => ({
   ImageGrid: () => 'ImageGrid'
@@ -34,7 +34,7 @@ describe('<FoodForBadge />', () => {
 
     test('renders correctly', () => expect(wrapper).toMatchSnapshot());
 
-    test('can click badges', () => {
+    test('can click badge', () => {
       const onClick = wrapper.find(ImageGrid).first().props().onClick;
       if (onClick) {
         onClick('badgeId');

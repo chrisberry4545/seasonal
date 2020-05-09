@@ -7,6 +7,7 @@ import {
 import {
   AboutUsPage,
   AllSeasonsPage,
+  BadgePage,
   FoodDetailsPage,
   SeasonDetailsPage,
   SettingsPage
@@ -22,6 +23,7 @@ export const AppContainer: FC<{}> = () => {
     [ROUTES.SEASON_DETAILS]: SeasonDetailsPage,
     [ROUTES.ABOUT_US]: AboutUsPage,
     [ROUTES.ALL_SEASONS]: AllSeasonsPage,
+    [ROUTES.BADGE_DETAILS]: BadgePage,
     [ROUTES.FOOD_DETAILS]: FoodDetailsPage,
     [ROUTES.SETTINGS]: SettingsPage
   };

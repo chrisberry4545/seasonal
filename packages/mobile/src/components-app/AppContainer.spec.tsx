@@ -5,6 +5,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 jest.mock('../components-pages', () => ({
   AboutUsPage: () => 'AboutUsPage',
   AllSeasonsPage: () => 'AllSeasonsPage',
+  BadgePage: () => 'BadgePage',
   FoodDetailsPage: () => 'FoodDetailsPage',
   SeasonDetailsPage: () => 'SeasonDetailsPage',
   SettingsPage: () => 'SettingsPage'

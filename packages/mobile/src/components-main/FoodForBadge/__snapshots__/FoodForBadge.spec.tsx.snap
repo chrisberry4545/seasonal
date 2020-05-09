@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodForBadge /> when the recipes are loading renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginBottom": 100,
+    }
+  }
+>
+  <TextMedium
+    style={
+      Object {
+        "marginBottom": 12,
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    Found in
+  </TextMedium>
+  <ImageGrid
+    data={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    data-e2e="food-for-badge-grid"
+    onClick={[MockFunction]}
+  />
+</View>
+`;
