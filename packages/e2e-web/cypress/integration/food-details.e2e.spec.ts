@@ -18,6 +18,7 @@ import {
   expectAllLoadingToBeComplete,
   reset
 } from '../support/general';
+import { clickMenuSeasonJan } from '../support/menu';
 
 describe('Food details', () => {
   beforeEach(() => {
@@ -29,10 +30,8 @@ describe('Food details', () => {
   it('can go to food details page', () => expectToBeOnFoodDetailsPage());
 
   it('the back button works', () => {
-    goToFoodListPage();
-    expectAllLoadingToBeComplete();
+    clickMenuSeasonJan();
     clickFoodItem();
-    expectAllLoadingToBeComplete();
     clickGoBackButton();
     expectToBeOnFoodListPage();
   });
