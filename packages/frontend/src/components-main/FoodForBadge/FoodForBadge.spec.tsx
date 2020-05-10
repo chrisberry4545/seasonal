@@ -5,7 +5,7 @@ import { IFood } from '@chrisb-dev/seasonal-shared-models';
 import { ImageGrid } from '../../components-layout';
 
 jest.mock('@chrisb-dev/seasonal-shared-frontend-components', () => ({
-  TextHeadingSmall: () => 'TextHeadingSmall'
+  TextMedium: () => 'TextMedium'
 }));
 jest.mock('../../components-layout', () => ({
   ImageGrid: () => 'ImageGrid'

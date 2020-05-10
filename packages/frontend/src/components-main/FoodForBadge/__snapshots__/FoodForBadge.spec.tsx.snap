@@ -4,11 +4,11 @@ exports[`<FoodForBadge /> when the recipes are loading renders correctly 1`] = `
 <div
   className="c-food-for-badge"
 >
-  <TextHeadingSmall
+  <TextMedium
     className="c-food-for-badge__heading"
   >
     Found in
-  </TextHeadingSmall>
+  </TextMedium>
   <ImageGrid
     data={
       Array [

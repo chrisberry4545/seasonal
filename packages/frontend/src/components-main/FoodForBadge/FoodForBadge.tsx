@@ -5,7 +5,7 @@ import './FoodForBadge.scss';
 import { IFoodForBadgeProps } from './FoodForBadge.interface';
 import { ImageGrid } from '../../components-layout';
 import {
-  TextHeadingSmall
+  TextMedium
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 
 export const FoodForBadge: FC<IFoodForBadgeProps> = ({
@@ -15,9 +15,9 @@ export const FoodForBadge: FC<IFoodForBadgeProps> = ({
 }) => (
   !isLoading
     ? <div className='c-food-for-badge'>
-      <TextHeadingSmall className='c-food-for-badge__heading'>
+      <TextMedium className='c-food-for-badge__heading'>
         Found in
-      </TextHeadingSmall>
+      </TextMedium>
       <ImageGrid data-e2e='food-for-badge-grid'
         data={currentBadgeFood} onClick={onFoodSelected} />
     </div>
