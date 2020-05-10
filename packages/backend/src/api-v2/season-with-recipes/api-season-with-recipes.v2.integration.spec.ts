@@ -6,7 +6,6 @@ import supertest, { Response } from 'supertest';
 import { ENDPOINT_V2_SEASON_WITH_RECIPES } from '../../config';
 import {
   SEASON_ID_JANUARY,
-  SEASON_ID_FEBRUARY,
   SEASON_INDEX_JANUARY,
   SEASON_INDEX_FEBRUARY,
   SEASON_INDEX_MARCH
@@ -27,7 +26,6 @@ const getQueryString = (
 describe('Get all seasons with recipes', () => {
   let response: Response;
   let seasonJanuary: IHydratedSeason | undefined;
-  let seasonFebruary: IHydratedSeason | undefined;
 
   const makeAllSeasonsWithRecipesRequest = (
     isVegetarian?: boolean,
@@ -41,33 +39,13 @@ describe('Get all seasons with recipes', () => {
 
     beforeEach(async () => {
       response = await makeAllSeasonsWithRecipesRequest();
-      const seasonData: IHydratedSeason[] = response.body;
-      seasonJanuary = seasonData.find((season) => season.id === SEASON_ID_JANUARY);
-      seasonFebruary = seasonData.find((season) => season.id === SEASON_ID_FEBRUARY);
     });
 
-    test('Returns a status of 200', () => {
-      expect(response.status).toBe(200);
-    });
-    test('Returns a full list of season data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Returns the name of the first season', () => {
-      expect(seasonJanuary && seasonJanuary.name).toBe('January');
-    });
-    test('Returns the name of the second season', () => {
-      expect(seasonFebruary && seasonFebruary.name).toBe('February');
-    });
-    test('Populates the recipes in the seasons', () => {
-      expect(seasonJanuary && seasonJanuary.recipes).toHaveLength(3);
-    });
-    test('Sets the recipes in the seasons name', () => {
-      expect(
-        seasonJanuary
-        && seasonJanuary.recipes
-        && seasonJanuary.recipes[0].name
-      ).toBe('Apple, Beetroot & Meat');
-    });
+    test('Returns a status of 200', () =>
+      expect(response.status).toBe(200));
+
+    test('Returns a full list of season data', () =>
+      expect(response.body).toMatchSnapshot());
 
   });
 
@@ -78,12 +56,12 @@ describe('Get all seasons with recipes', () => {
       );
       const seasonData: IHydratedSeason[] = response.body;
       seasonJanuary = seasonData.find((season) => season.id === SEASON_ID_JANUARY);
-      seasonFebruary = seasonData.find((season) => season.id === SEASON_ID_FEBRUARY);
     });
-    test('Retrieves the expected data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Returns vegan or vegetarian recipes', () => {
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
+
+    test('Returns vegan or vegetarian recipes', () =>
       expect(
         seasonJanuary
         && seasonJanuary.recipes
@@ -91,8 +69,8 @@ describe('Get all seasons with recipes', () => {
           recipe.isVegetarian === true
           || recipe.isVegan === true
         )
-      ).toBe(true);
-    });
+      ).toBe(true));
+
   });
 
   describe('when an isVegan filter is applied', () => {
@@ -102,18 +80,18 @@ describe('Get all seasons with recipes', () => {
       );
       const seasonData: IHydratedSeason[] = response.body;
       seasonJanuary = seasonData.find((season) => season.id === SEASON_ID_JANUARY);
-      seasonFebruary = seasonData.find((season) => season.id === SEASON_ID_FEBRUARY);
     });
-    test('Retrieves the expected data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Returns only vegan recipes', () => {
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
+
+    test('Returns only vegan recipes', () =>
       expect(
         seasonJanuary
         && seasonJanuary.recipes
         && seasonJanuary.recipes.every((recipe) => recipe.isVegan === true)
-      ).toBe(true);
-    });
+      ).toBe(true));
+
   });
 
   describe('when both isVegan and isVegetarian filter is applied', () => {
@@ -123,12 +101,12 @@ describe('Get all seasons with recipes', () => {
       );
       const seasonData: IHydratedSeason[] = response.body;
       seasonJanuary = seasonData.find((season) => season.id === SEASON_ID_JANUARY);
-      seasonFebruary = seasonData.find((season) => season.id === SEASON_ID_FEBRUARY);
     });
-    test('Retrieves the expected data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Returns only vegan or vegetarian recipes', () => {
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
+
+    test('Returns only vegan or vegetarian recipes', () =>
       expect(
         seasonJanuary
         && seasonJanuary.recipes
@@ -136,8 +114,8 @@ describe('Get all seasons with recipes', () => {
           recipe.isVegan === true
           || recipe.isVegetarian
         )
-      ).toBe(true);
-    });
+      ).toBe(true));
+
   });
 
 });
@@ -161,15 +139,15 @@ describe('Get single season with recipes', () => {
       response = await makeSingleSeasonWithRecipesRequest(SEASON_INDEX_MARCH);
     });
 
-    test('Returns a status of 200', () => {
-      expect(response.status).toBe(200);
-    });
-    test('Retrieves a single season', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Does not populate a seasons recipes if they do not exist', () => {
-      expect(response.body.recipes).toHaveLength(0);
-    });
+    test('Returns a status of 200', () =>
+      expect(response.status).toBe(200));
+
+    test('Retrieves a single season', () =>
+      expect(response.body).toMatchSnapshot());
+
+    test('Does not populate a seasons recipes if they do not exist', () =>
+      expect(response.body.recipes).toHaveLength(0));
+
   });
 
   describe('when the season has recipes', () => {
@@ -177,27 +155,12 @@ describe('Get single season with recipes', () => {
       response = await makeSingleSeasonWithRecipesRequest(SEASON_INDEX_JANUARY);
     });
 
-    test('Retrieves a single season with food and recipe data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Populates a seasons recipes if they exist', () => {
-      expect(response.body.recipes.length > 0).toBe(true);
-    });
-    test('Returns a seasons recipes isVegetarian if true', () => {
-      expect(response.body.recipes[1].isVegetarian).toBe(true);
-    });
-    test('Returns a seasons recipes isVegan if true', () => {
-      expect(response.body.recipes[2].isVegan).toBe(true);
-    });
-    test('Does not return any primaryFood on a recipe', () => {
-      expect(response.body.recipes[0].primaryFood).toBeUndefined();
-    });
-    test('Does not return any secondaryFood on a recipe', () => {
-      expect(response.body.recipes[0].secondaryFood).toBeUndefined();
-    });
-    test('Does not return any food', () => {
-      expect(response.body.food).toBeUndefined();
-    });
+    test('Retrieves a single season with food and recipe data', () =>
+      expect(response.body).toMatchSnapshot());
+
+    test('Does not return any food', () =>
+      expect(response.body.food).toBeUndefined());
+
   });
 
   describe('when an isVegetarian filter is applied', () => {
@@ -206,18 +169,10 @@ describe('Get single season with recipes', () => {
         SEASON_INDEX_JANUARY, true
       );
     });
-    test('Retrieves the expected data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Filters out non vegetarian recipes', () => {
-      expect(response.body.recipes).toHaveLength(2);
-    });
-    test('Returns vegetarian recipes', () => {
-      expect(response.body.recipes[0].isVegetarian).toBe(true);
-    });
-    test('Returns vegan recipes', () => {
-      expect(response.body.recipes[1].isVegan).toBe(true);
-    });
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
+
   });
 
   describe('when an isVegan filter is applied', () => {
@@ -226,15 +181,10 @@ describe('Get single season with recipes', () => {
         SEASON_INDEX_FEBRUARY, false, true
       );
     });
-    test('Retrieves the expected data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Filters out non vegan recipes', () => {
-      expect(response.body.recipes).toHaveLength(1);
-    });
-    test('Returns only the vegan recipes', () => {
-      expect(response.body.recipes[0].isVegan).toBe(true);
-    });
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
+
   });
 
   describe('when both isVegan and isVegetarian filter is applied', () => {
@@ -243,14 +193,10 @@ describe('Get single season with recipes', () => {
         SEASON_INDEX_FEBRUARY, true, true
       );
     });
-    test('Retrieves the expected data', () => {
-      expect(response.body).toMatchSnapshot();
-    });
-    test('Filters out non vegan recipes', () => {
-      expect(response.body.recipes).toHaveLength(1);
-    });
-    test('Returns only the vegan recipes', () => {
-      expect(response.body.recipes[0].isVegan).toBe(true);
-    });
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
+
   });
+
 });
