@@ -1,7 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AppContainer /> renders correctly 1`] = `
-<NavigationContainer
-  theme="light"
-/>
+<ForwardRef(NavigationContainer)>
+  <DrawerNavigator
+    drawerContent={[Function]}
+    initialRouteName="season-details"
+  >
+    <Screen
+      component={[Function]}
+      name="season-details"
+    />
+    <Screen
+      component={[Function]}
+      name="more-info"
+    />
+    <Screen
+      component={[Function]}
+      name="all-seasons"
+    />
+    <Screen
+      component={[Function]}
+      name="badge-details"
+    />
+    <Screen
+      component={[Function]}
+      name="food-details"
+    />
+    <Screen
+      component={[Function]}
+      name="settings"
+    />
+  </DrawerNavigator>
+</ForwardRef(NavigationContainer)>
 `;

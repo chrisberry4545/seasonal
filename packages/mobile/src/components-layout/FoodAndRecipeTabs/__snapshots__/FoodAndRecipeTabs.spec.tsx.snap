@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FoodAndRecipeTabs /> renders correctly 1`] = `
+<BottomTabNavigator
+  tabBarOptions={
+    Object {
+      "activeBackgroundColor": "#F7F7F7",
+      "labelStyle": Array [
+        Object {
+          "color": "#20303C",
+          "fontFamily": "Roboto",
+          "fontSize": 16,
+          "lineHeight": 20,
+        },
+        Object {
+          "marginBottom": 16,
+          "marginTop": 10,
+        },
+      ],
+      "style": Object {
+        "marginTop": -20,
+      },
+    }
+  }
+>
+  <Screen
+    component={[Function]}
+    name="food-tab"
+    options={
+      Object {
+        "tabBarLabel": "Food",
+      }
+    }
+  />
+  <Screen
+    component={[Function]}
+    name="recipes-tab"
+    options={
+      Object {
+        "tabBarLabel": "Recipes",
+      }
+    }
+  />
+</BottomTabNavigator>
+`;

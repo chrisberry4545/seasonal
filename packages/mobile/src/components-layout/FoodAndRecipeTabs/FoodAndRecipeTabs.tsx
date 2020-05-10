@@ -1,18 +1,15 @@
+import React, { FC, ComponentType } from 'react';
 import {
   createBottomTabNavigator
-} from 'react-navigation';
-
+} from '@react-navigation/bottom-tabs';
 import {
   styles
 } from '../../styles';
-
 import {
   styleTextLarge
 } from '../../components-elements/Text';
 import { ViewStyle } from 'react-native';
-
 import { ROUTES } from '../../const';
-import { ConnectedComponent } from 'react-redux';
 
 const styleSeasonalDetailsTabWrapper: ViewStyle = {
   marginTop: -20
@@ -23,29 +20,24 @@ const styleSeasonalDetailsTabLabel: ViewStyle = {
   marginTop: 10
 };
 
-export const CreateFoodAndRecipeTabs = ({
+export const FoodAndRecipeTabs: FC<{
+  foodScreen: ComponentType,
+  recipeScreen: ComponentType
+}> = ({
   foodScreen,
   recipeScreen
-}: {
-  foodScreen: ConnectedComponent<any, any>,
-  recipeScreen: ConnectedComponent<any, any>
-}) => createBottomTabNavigator({
-    [ROUTES.FOOD_TAB]: {
-      navigationOptions: {
-        tabBarLabel: 'Food'
-      },
-      screen: foodScreen
-    },
-    [ROUTES.RECIPES_TAB]: {
-      navigationOptions: {
-        tabBarLabel: 'Recipes'
-      },
-      screen: recipeScreen
-    }
-}, {
-  tabBarOptions: {
+}) => {
+  const Tab = createBottomTabNavigator();
+  return <Tab.Navigator tabBarOptions={{
     activeBackgroundColor: styles.colors.selectionColor,
     labelStyle: [styleTextLarge, styleSeasonalDetailsTabLabel],
     style: styleSeasonalDetailsTabWrapper
-  }
-});
+  }}>
+    <Tab.Screen
+      options={{ tabBarLabel: 'Food' }}
+      name={ROUTES.FOOD_TAB} component={foodScreen} />
+    <Tab.Screen
+      options={{ tabBarLabel: 'Recipes' }}
+      name={ROUTES.RECIPES_TAB} component={recipeScreen} />
+  </Tab.Navigator>;
+};

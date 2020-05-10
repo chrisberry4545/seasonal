@@ -6,12 +6,14 @@ import { ignoreElements, tap } from 'rxjs/operators';
 import { GO_BACK_FROM_FOOD_DETAILS } from '..';
 import { navigateBackOne } from '../../../helpers';
 import { AppSeasonalEpic } from '../../seasonal-epic.type';
+import { GO_BACK_FROM_BADGE_DETAILS } from '../route.actions';
 
 export const goBack$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(
     ofType(
+      GO_BACK_FROM_BADGE_DETAILS,
       SET_REGION,
       GO_BACK_FROM_FOOD_DETAILS,
       GO_BACK_FROM_SETTINGS_PAGE

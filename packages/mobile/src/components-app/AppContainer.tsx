@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
-import {
-  createAppContainer,
-  createDrawerNavigator,
-  NavigationScreenRouteConfig
-} from 'react-navigation';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+
 import {
   AboutUsPage,
   AllSeasonsPage,
@@ -12,27 +10,20 @@ import {
   SeasonDetailsPage,
   SettingsPage
 } from '../components-pages';
-import {
-  setTopLevelNavigator
-} from '../helpers';
 import { ROUTES } from '../const';
+import { navigationRef } from '../helpers';
 import { SideMenuConnecter } from '../components-main';
 
 export const AppContainer: FC<{}> = () => {
-  const navigation: { [key: string]: NavigationScreenRouteConfig} = {
-    [ROUTES.SEASON_DETAILS]: SeasonDetailsPage,
-    [ROUTES.ABOUT_US]: AboutUsPage,
-    [ROUTES.ALL_SEASONS]: AllSeasonsPage,
-    [ROUTES.BADGE_DETAILS]: BadgePage,
-    [ROUTES.FOOD_DETAILS]: FoodDetailsPage,
-    [ROUTES.SETTINGS]: SettingsPage
-  };
-  const DrawerNavigator = createDrawerNavigator(navigation, {
-    contentComponent: () => <SideMenuConnecter />,
-    initialRouteName: ROUTES.SEASON_DETAILS
-  });
-  const CreatedAppContainer = createAppContainer(DrawerNavigator);
-  return <CreatedAppContainer ref={
-    (navigatorRef) => setTopLevelNavigator(navigatorRef)
-  }/>;
+  const Drawer = createDrawerNavigator();
+  return <NavigationContainer ref={navigationRef}>
+    <Drawer.Navigator initialRouteName={ROUTES.SEASON_DETAILS} drawerContent={() => <SideMenuConnecter />} >
+      <Drawer.Screen name={ROUTES.SEASON_DETAILS} component={SeasonDetailsPage} />
+      <Drawer.Screen name={ROUTES.ABOUT_US} component={AboutUsPage} />
+      <Drawer.Screen name={ROUTES.ALL_SEASONS} component={AllSeasonsPage} />
+      <Drawer.Screen name={ROUTES.BADGE_DETAILS} component={BadgePage} />
+      <Drawer.Screen name={ROUTES.FOOD_DETAILS} component={FoodDetailsPage} />
+      <Drawer.Screen name={ROUTES.SETTINGS} component={SettingsPage} />
+    </Drawer.Navigator>
+  </NavigationContainer>;
 };

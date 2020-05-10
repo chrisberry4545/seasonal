@@ -3,7 +3,6 @@ import { View, ViewStyle, TextStyle, StyleSheet } from 'react-native';
 import {
   styles
 } from '../../styles';
-import { NavigationEvents } from 'react-navigation';
 import {
   BareButton,
   TextHeadingLarge,
@@ -36,13 +35,10 @@ const styleHeaderHeading: TextStyle = {
 };
 
 export const Header: FC<IHeaderDispatchProps> = ({
-  onMenuOpen,
-  onMenuClose
+  onMenuOpen
 }) => {
   return (
     <View style={ styleHeader }>
-      <NavigationEvents
-        onDidFocus={onMenuClose} />
       <BareButton
         style={ styleHeaderMenuButton }
         onClick={onMenuOpen}>
