@@ -7,17 +7,19 @@ import {
   RecipesForFoodConnecter,
   FoodBadgesConnecter
 } from '../../components-main';
-import { MainContainer, DetailsPageLayout } from '../../components-layout';
+import { MainContainer, DetailsPageLayout, DefaultPaddingContainer } from '../../components-layout';
 
 export const FoodDetailsPage: FC<{}> = () => (
   <MainContainer>
     <HeaderConnecter />
     <DetailsPageLayout>
-      <FoodDetailsLoaderConnecter />
       <FoodDetailsTopSectionConnecter />
-      <FoodBadgesConnecter />
-      <RecipesForFoodConnecter />
-      <SeasonsForFoodConnecter />
+      <FoodDetailsLoaderConnecter />
+      <DefaultPaddingContainer>
+        <FoodBadgesConnecter />
+        <RecipesForFoodConnecter />
+        <SeasonsForFoodConnecter />
+      </DefaultPaddingContainer>
     </DetailsPageLayout>
   </MainContainer>
 );

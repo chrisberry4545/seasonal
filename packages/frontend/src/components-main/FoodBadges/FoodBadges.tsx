@@ -9,9 +9,10 @@ import { TextHeadingSmall, BareButton } from '@chrisb-dev/seasonal-shared-fronte
 
 export const FoodBadges: FC<IFoodBadgesProps> = ({
   badges,
-  onBadgeClicked
+  onBadgeClicked,
+  isLoading
 }) => (
-  (badges && badges.length > 0)
+  (!isLoading && badges && badges.length > 0)
     ? (
       <div className='c-food-badges'>
         <TextHeadingSmall className='c-food-badges__heading'>

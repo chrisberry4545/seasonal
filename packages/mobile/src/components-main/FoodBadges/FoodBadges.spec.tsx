@@ -28,6 +28,7 @@ describe('<FoodBadges />', () => {
     beforeEach(() =>
       wrapper = shallow(
         <FoodBadges
+          isLoading={false}
           badges={badges}
           onBadgeClicked={mockOnClick} />
       )
@@ -49,6 +50,7 @@ describe('<FoodBadges />', () => {
     beforeEach(() =>
       wrapper = shallow(
         <FoodBadges
+          isLoading={false}
           badges={undefined}
           onBadgeClicked={mockOnClick} />
       )
@@ -62,7 +64,22 @@ describe('<FoodBadges />', () => {
     beforeEach(() =>
       wrapper = shallow(
         <FoodBadges
+          isLoading={false}
           badges={[]}
+          onBadgeClicked={mockOnClick} />
+      )
+    );
+
+    test('does not render anything', () =>
+      expect(wrapper.children().exists()).toBe(false));
+  });
+
+  describe('when the food data is loading', () => {
+    beforeEach(() =>
+      wrapper = shallow(
+        <FoodBadges
+          isLoading={true}
+          badges={badges}
           onBadgeClicked={mockOnClick} />
       )
     );

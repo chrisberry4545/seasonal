@@ -4,11 +4,13 @@ exports[`<FoodDetailsPage /> renders correctly 1`] = `
 <MainContainer>
   <HeaderConnecter />
   <DetailsPageLayout>
-    <FoodDetailsLoaderConnecter />
     <FoodDetailsTopSectionConnecter />
-    <FoodBadgesConnecter />
-    <RecipesForFoodConnecter />
-    <SeasonsForFoodConnecter />
+    <FoodDetailsLoaderConnecter />
+    <DefaultPaddingContainer>
+      <FoodBadgesConnecter />
+      <RecipesForFoodConnecter />
+      <SeasonsForFoodConnecter />
+    </DefaultPaddingContainer>
   </DetailsPageLayout>
 </MainContainer>
 `;

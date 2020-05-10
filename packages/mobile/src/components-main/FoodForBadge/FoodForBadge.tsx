@@ -4,11 +4,7 @@ import { ImageGrid } from '../../components-layout';
 import {
   TextMedium
 } from '../../components-elements';
-import { View, TextStyle, ViewStyle } from 'react-native';
-
-const styleFoodForBadge: ViewStyle = {
-  marginBottom: 100
-};
+import { View, TextStyle } from 'react-native';
 
 const styleFoodForBadgeFoundIn: TextStyle = {
   marginBottom: 12,
@@ -22,7 +18,7 @@ export const FoodForBadge: FC<IFoodForBadgeProps> = ({
   onFoodSelected
 }) => (
   !isLoading
-    ? <View style={styleFoodForBadge}>
+    ? <View>
       <TextMedium style={styleFoodForBadgeFoundIn}>
         Found in
       </TextMedium>

@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FoodForBadge /> when the recipes are loading renders correctly 1`] = `
-<View
-  style={
-    Object {
-      "marginBottom": 100,
-    }
-  }
->
+<View>
   <TextMedium
     style={
       Object {

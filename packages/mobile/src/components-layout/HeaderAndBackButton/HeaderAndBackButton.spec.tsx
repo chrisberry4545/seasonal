@@ -4,6 +4,9 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { HeaderAndBackButton } from './HeaderAndBackButton';
 import { BackArrowIconButton } from '../../components-elements';
 
+jest.mock('../DefaultPaddingContainer/DefaultPaddingContainer', () => ({
+  DefaultPaddingContainer: () => 'DefaultPaddingContainer'
+}));
 jest.mock('../../components-elements', () => ({
   BackArrowIconButton: () => 'BackArrowIconButton',
   TextHeadingMedium: () => 'TextHeadingMedium'

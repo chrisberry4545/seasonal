@@ -16,6 +16,7 @@ jest.mock('../../components-main', () => ({
 }));
 
 jest.mock('../../components-layout', () => ({
+  DefaultPaddingContainer: () => 'DefaultPaddingContainer',
   DetailsPageLayout: () => 'DetailsPageLayout',
   MainContainer: () => 'MainContainer'
 }));

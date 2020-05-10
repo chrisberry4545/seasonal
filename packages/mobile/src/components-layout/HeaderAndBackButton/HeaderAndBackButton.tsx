@@ -8,6 +8,7 @@ import {
 } from '../../components-elements';
 import { View, ViewStyle, TextStyle } from 'react-native';
 import { sizes } from '../../styles/sizes';
+import { DefaultPaddingContainer } from '../DefaultPaddingContainer/DefaultPaddingContainer';
 
 const styleHeaderAndBackButton: ViewStyle = {
   alignItems: 'center',
@@ -29,10 +30,12 @@ export const HeaderAndBackButton: FC<IHeaderAndBackButtonProps> = ({
   title,
   onGoBack
 }) => (
-  <View style={styleHeaderAndBackButton}>
-    <BackArrowIconButton onClick={onGoBack} />
-    <TextHeadingMedium style={styleHeaderAndBackButtonTitle}>
-      {title}
-    </TextHeadingMedium>
-  </View>
+  <DefaultPaddingContainer>
+    <View style={styleHeaderAndBackButton}>
+      <BackArrowIconButton onClick={onGoBack} />
+      <TextHeadingMedium style={styleHeaderAndBackButtonTitle}>
+        {title}
+      </TextHeadingMedium>
+    </View>
+  </DefaultPaddingContainer>
 );

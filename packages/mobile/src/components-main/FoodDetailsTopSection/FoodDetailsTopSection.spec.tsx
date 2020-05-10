@@ -4,7 +4,8 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { HeaderAndBackButton } from '../../components-layout';
 
 jest.mock('../../components-layout', () => ({
-  HeaderAndBackButton: () => 'BackArrowIconButton'
+  DefaultPaddingContainer: () => 'DefaultPaddingContainer',
+  HeaderAndBackButton: () => 'HeaderAndBackButton'
 }));
 
 describe('<FoodDetailsTopSection />', () => {

@@ -15,18 +15,26 @@ exports[`<FoodDetailsTopSection /> renders correctly 1`] = `
     onGoBack={[MockFunction]}
     title="Food name"
   />
-  <Image
-    source={
-      Object {
-        "uri": "https://image.com",
-      }
-    }
+  <DefaultPaddingContainer
     style={
       Object {
-        "borderRadius": 15,
         "flex": 1,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://image.com",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 15,
+          "flex": 1,
+        }
+      }
+    />
+  </DefaultPaddingContainer>
 </View>
 `;

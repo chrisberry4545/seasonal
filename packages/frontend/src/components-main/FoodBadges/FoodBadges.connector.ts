@@ -4,7 +4,8 @@ import {
 } from './FoodBadges';
 import {
   badgeItemClicked,
-  selectCurrentFoodDetailsBadges
+  selectCurrentFoodDetailsBadges,
+  selectIsFoodDataOrBasicSeasonsLoading
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { IState } from '../../store';
 import {
@@ -16,7 +17,8 @@ import { Dispatch } from 'redux';
 const mapStateToProps = (
   state: IState
 ): IFoodBadgesInputProps => ({
-  badges: selectCurrentFoodDetailsBadges(state)
+  badges: selectCurrentFoodDetailsBadges(state),
+  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state)
 });
 
 const mapDispatchToProps = (

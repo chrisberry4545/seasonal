@@ -43,9 +43,10 @@ const styleBadgesBadgeItem: TextStyle = {
 
 export const FoodBadges: FC<IFoodBadgesProps> = ({
   badges,
-  onBadgeClicked
+  onBadgeClicked,
+  isLoading
 }) => (
-  (badges && badges.length > 0)
+  (!isLoading && badges && badges.length > 0)
     ? (
       <View style={styleBadges}>
         <TextHeadingSmall style={styleBadgesHeading}>

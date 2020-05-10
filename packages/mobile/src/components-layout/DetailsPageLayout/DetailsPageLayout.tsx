@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { DefaultPaddingContainer } from '../DefaultPaddingContainer/DefaultPaddingContainer';
 import { ScrollView } from 'react-native-gesture-handler';
 import { View, ViewStyle } from 'react-native';
 
 const styleDetailsPageLayout: ViewStyle = {
+  marginBottom: 50,
   marginLeft: 'auto',
   marginRight: 'auto',
   maxWidth: 500
@@ -12,13 +12,11 @@ const styleDetailsPageLayout: ViewStyle = {
 export const DetailsPageLayout: FC<{}> = ({
   children
 }) => (
-  <DefaultPaddingContainer>
-    <ScrollView>
-      <View style={styleDetailsPageLayout}>
-        <View>
-          { children }
-        </View>
+  <ScrollView>
+    <View style={styleDetailsPageLayout}>
+      <View>
+        { children }
       </View>
-    </ScrollView>
-  </DefaultPaddingContainer>
+    </View>
+  </ScrollView>
 );
