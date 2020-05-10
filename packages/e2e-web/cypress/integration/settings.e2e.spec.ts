@@ -1,6 +1,7 @@
 import { goToSettingsPage, clickRegion } from '../support/settings-page';
-import { expectToBeOnFoodListPage } from '../support/food-list-page';
+import { expectToBeOnFoodListPage, goToFoodListPage } from '../support/food-list-page';
 import { expectAllLoadingToBeComplete, reset } from '../support/general';
+import { clickMenuSettings } from '../support/menu';
 
 describe('Settings page', () => {
   beforeEach(() => {
@@ -10,6 +11,8 @@ describe('Settings page', () => {
   });
 
   it('can change the users region', () => {
+    goToFoodListPage();
+    clickMenuSettings();
     clickRegion();
     expectToBeOnFoodListPage();
   });
