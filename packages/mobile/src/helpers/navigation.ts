@@ -1,52 +1,51 @@
-import { NavigationActions, NavigationParams } from 'react-navigation';
-import { NavigationContainerComponent } from 'react-navigation';
-import { DrawerActions } from 'react-navigation';
 import { ROUTES } from '../const';
+import {
+  NavigationContainerRef, CommonActions, DrawerActions
+} from '@react-navigation/native';
 
-let navigator: NavigationContainerComponent | null;
+import * as React from 'react';
 
-export const setTopLevelNavigator = (
-  navigatorRef: NavigationContainerComponent | null
-) => {
-  navigator = navigatorRef;
-};
+export const navigationRef: React.RefObject<NavigationContainerRef> = React.createRef();
 
 export const navigate = (
-  routeName: string,
-  params?: NavigationParams
+  name: string,
+  params?: object
 ) => {
-  if (navigator) {
-    navigator.dispatch(
-      NavigationActions.navigate({
-        params,
-        routeName
+  if (navigationRef && navigationRef.current) {
+    navigationRef.current.dispatch(
+      CommonActions.navigate({
+        name,
+        params
       })
     );
   }
 };
 
 export const navigateBackOne = () => {
-  if (navigator) {
-    navigator.dispatch(NavigationActions.back());
+  if (navigationRef && navigationRef.current) {
+    navigationRef.current.dispatch(
+      CommonActions.goBack()
+    );
   }
 };
 
 export const openDrawer = () => {
-  if (navigator) {
-    navigator.dispatch(DrawerActions.openDrawer());
+  if (navigationRef && navigationRef.current) {
+    navigationRef.current.dispatch(DrawerActions.openDrawer());
   }
 };
 
 export const closeDrawer = () => {
-  if (navigator) {
-    navigator.dispatch(DrawerActions.closeDrawer());
+  if (navigationRef && navigationRef.current) {
+    navigationRef.current.dispatch(DrawerActions.closeDrawer());
   }
 };
 
 export const getCurrentNavigatorRoute = () => {
-  if (navigator) {
-    const routeIndex = (navigator.state as any).nav.index;
-    return (navigator.state as any).nav.routes[routeIndex];
+  if (navigationRef && navigationRef.current) {
+    const rootState = navigationRef.current.getRootState();
+    const routeIndex = rootState.index;
+    return rootState.routes[routeIndex];
   }
   return null;
 };
@@ -54,7 +53,7 @@ export const getCurrentNavigatorRoute = () => {
 const isCurrentRoute = (route: ROUTES) => {
   const currentRoute = getCurrentNavigatorRoute();
   if (currentRoute) {
-    return currentRoute.routeName === route;
+    return currentRoute.name === route;
   }
   return false;
 };

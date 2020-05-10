@@ -31,8 +31,9 @@ exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
       }
     }
   >
-    <View
+    <BareButton
       key="1"
+      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#BAF9FE",
@@ -55,9 +56,10 @@ exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
       <TextMedium>
         Iron
       </TextMedium>
-    </View>
-    <View
+    </BareButton>
+    <BareButton
       key="2"
+      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#BAF9FE",
@@ -80,7 +82,7 @@ exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
       <TextMedium>
         Vitamin A
       </TextMedium>
-    </View>
+    </BareButton>
   </View>
 </View>
 `;

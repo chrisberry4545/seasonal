@@ -13,7 +13,7 @@ import { get500Error, get404Error } from '../../api-utils';
 import { getOneCachedSeasonsWithFilteredRecipes } from './get-cached-season-with-filtered-recipes';
 import { getAllCachedSeasonsWithFilteredRecipes } from './get-all-cached-seasons-with-filtered-recipes';
 
-export const apiSeasonWithRecipes = (router = Router()) => {
+export const apiSeasonWithRecipesV2 = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     const isVegetarian = getIsVegetarianFromQueryParams(req);
     const isVegan = getIsVeganFromQueryParams(req);

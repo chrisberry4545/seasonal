@@ -1,11 +1,9 @@
 import React, { Fragment, FC } from 'react';
-
 import {
   BareButton,
   TextMedium,
   LoadingSpinner
 } from '../../components-elements';
-
 import { ISideMenuProps } from './SideMenu.interface';
 import { ViewStyle, TextStyle, View } from 'react-native';
 import { styles } from '../../styles';
@@ -50,7 +48,7 @@ const renderSideMenuButton = ({
       ...styleSideMenuButton,
       ...(
         isSelected
-          ? [styleSideMenuButtonSelected]
+          ? styleSideMenuButtonSelected
           : {}
       )
     }}

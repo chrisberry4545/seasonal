@@ -10,6 +10,8 @@ export * from './go-to-about-us-page.epic';
 
 export * from './go-to-all-seasons-view.epic';
 
+export * from './go-to-badge-link.epic';
+
 export * from './go-to-food-link.epic';
 
 export * from './go-to-food-table.epic';

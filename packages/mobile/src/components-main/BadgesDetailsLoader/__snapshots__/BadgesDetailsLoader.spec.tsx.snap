@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BadgesDetailsLoader /> when isLoading is false renders correctly 1`] = `<TopLoadingSpinner />`;

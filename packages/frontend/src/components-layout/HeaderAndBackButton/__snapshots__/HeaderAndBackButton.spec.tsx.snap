@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderAndBackButton /> renders correctly 1`] = `
+<div
+  className="c-header-and-back-button"
+>
+  <BareButton
+    className="c-header-and-back-button__back-button"
+    data-e2e="header-go-back-button"
+    onClick={[MockFunction]}
+  >
+    <ArrowIcon />
+  </BareButton>
+  <TextHeadingMedium
+    className="c-header-and-back-button__title"
+  >
+    Title
+  </TextHeadingMedium>
+</div>
+`;

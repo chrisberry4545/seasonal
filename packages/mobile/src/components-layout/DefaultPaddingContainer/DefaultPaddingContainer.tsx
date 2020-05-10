@@ -8,10 +8,13 @@ const styleDefaultPaddingContainer: ViewStyle = {
   paddingRight: 24
 };
 
-export const DefaultPaddingContainer: FC<{}> = ({
-  children
+export const DefaultPaddingContainer: FC<{
+  style?: ViewStyle
+}> = ({
+  children,
+  style
 }) => (
-  <View style={ styleDefaultPaddingContainer }>
+  <View style={ [styleDefaultPaddingContainer, ...(style ? [style] : [])] }>
     { children }
   </View>
 );

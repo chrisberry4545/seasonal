@@ -15,9 +15,6 @@ exports[`<Header /> renders correctly 1`] = `
     }
   }
 >
-  <withNavigation(NavigationEvents)
-    onDidFocus={[MockFunction]}
-  />
   <BareButton
     onClick={[MockFunction]}
     style={

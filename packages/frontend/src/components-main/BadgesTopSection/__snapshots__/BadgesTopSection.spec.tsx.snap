@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BadgesTopSection /> when the badge has finished loading renders correctly 1`] = `
+<div
+  className="c-badges-top-section"
+>
+  <HeaderAndBackButton
+    onGoBack={[MockFunction]}
+    title="Badge"
+  />
+</div>
+`;

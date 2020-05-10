@@ -3,26 +3,14 @@
 exports[`<FoodDetailsPage /> renders correctly 1`] = `
 <MainContainer>
   <HeaderConnecter />
-  <DefaultPaddingContainer>
-    <ScrollView>
-      <View
-        style={
-          Object {
-            "marginLeft": "auto",
-            "marginRight": "auto",
-            "maxWidth": 500,
-          }
-        }
-      >
-        <View>
-          <FoodDetailsLoaderConnecter />
-          <FoodDetailsTopSectionConnecter />
-          <FoodBadgesConnecter />
-          <RecipesForFoodConnecter />
-          <SeasonsForFoodConnecter />
-        </View>
-      </View>
-    </ScrollView>
-  </DefaultPaddingContainer>
+  <DetailsPageLayout>
+    <FoodDetailsTopSectionConnecter />
+    <FoodDetailsLoaderConnecter />
+    <DefaultPaddingContainer>
+      <FoodBadgesConnecter />
+      <RecipesForFoodConnecter />
+      <SeasonsForFoodConnecter />
+    </DefaultPaddingContainer>
+  </DetailsPageLayout>
 </MainContainer>
 `;

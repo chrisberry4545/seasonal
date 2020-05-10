@@ -1,41 +1,94 @@
-import { setAllSeasonsWithFoodStart } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import {
+  initApp,
+  setAllSeasonsWithFoodStart
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { of } from 'rxjs';
-import { TestScheduler } from 'rxjs/testing';
 import { goToFoodTab } from '../../web-ui';
 import * as webUiSelectors from '../../web-ui/web-ui.selectors';
 import * as selectors from '../route.selectors';
 import { initAllSeasonsWithFoodData$ } from './init-all-seasons-with-food-data.epic';
+import { Action } from 'redux';
 
-const testScheduler = new TestScheduler((actual, expected) => {
-  expect(actual).toEqual(expected);
-});
+describe.each([
+  initApp(),
+  goToFoodTab()
+])('initAllSeasonsWithFoodData$', (action) => {
+  let result: Action | undefined;
 
-describe('initAllSeasonsWithFoodData$', () => {
+  beforeEach(() => result = undefined);
 
-  beforeEach(() => {
-    jest.spyOn(selectors, 'selectIsCurrentRouteAllSeasons')
-      .mockReturnValue(true);
-    jest.spyOn(webUiSelectors, 'selectIsCurrentTabFood')
-      .mockReturnValue(true);
-  });
+  describe('when the current route is all seasons', () => {
+    beforeEach(() =>
+      jest.spyOn(selectors, 'selectIsCurrentRouteAllSeasons')
+      .mockReturnValue(true)
+    );
 
-  test('returns setAllSeasonsWithFoodStart', () => {
-    testScheduler.run(({ cold, expectObservable }) => {
-      const input = cold('a', {
-        a: goToFoodTab()
-      });
-      const expected = '50ms r';
-
-      expectObservable(
-        initAllSeasonsWithFoodData$(
-          input as any,
+    describe('and the tab is food', () => {
+      beforeEach(async () => {
+        jest.spyOn(webUiSelectors, 'selectIsCurrentTabFood')
+          .mockReturnValue(true);
+        result = await initAllSeasonsWithFoodData$(
+          of(action) as any,
           of(null) as any,
           {}
-        )
-      ).toBe(expected, {
-        r: setAllSeasonsWithFoodStart()
+        ).toPromise();
       });
+
+      test('returns setAllSeasonsWithFoodStart', () =>
+        expect(result).toEqual(setAllSeasonsWithFoodStart()));
     });
+
+    describe('and the tab is not food', () => {
+      beforeEach(async () => {
+        jest.spyOn(webUiSelectors, 'selectIsCurrentTabFood')
+          .mockReturnValue(false);
+        result = await initAllSeasonsWithFoodData$(
+          of(action) as any,
+          of(null) as any,
+          {}
+        ).toPromise();
+      });
+
+      test('returns nothing', () => expect(result).toBeUndefined());
+    });
+
+  });
+
+  describe('when the current route is not all seasons', () => {
+    beforeEach(() =>
+      jest.spyOn(selectors, 'selectIsCurrentRouteAllSeasons')
+      .mockReturnValue(false)
+    );
+
+    describe('and the tab is food', () => {
+      beforeEach(async () => {
+        jest.spyOn(webUiSelectors, 'selectIsCurrentTabFood')
+          .mockReturnValue(true);
+        result = await initAllSeasonsWithFoodData$(
+          of(action) as any,
+          of(null) as any,
+          {}
+        ).toPromise();
+      });
+
+      test('returns nothing', () => expect(result).toBeUndefined());
+
+    });
+
+    describe('and the tab is not food', () => {
+      beforeEach(async () => {
+        jest.spyOn(webUiSelectors, 'selectIsCurrentTabFood')
+          .mockReturnValue(false);
+        result = await initAllSeasonsWithFoodData$(
+          of(action) as any,
+          of(null) as any,
+          {}
+        ).toPromise();
+      });
+
+      test('returns nothing', () => expect(result).toBeUndefined());
+    });
+
   });
 
 });

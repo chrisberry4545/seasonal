@@ -32,6 +32,10 @@ exports[`<App /> renders correctly 1`] = `
         />
         <Route
           component={[Function]}
+          path="/badge/:id"
+        />
+        <Route
+          component={[Function]}
           path="/all-seasons"
         />
         <Route

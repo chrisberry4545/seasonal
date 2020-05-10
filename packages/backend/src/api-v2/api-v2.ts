@@ -3,24 +3,29 @@ import {
 } from 'express';
 
 import {
-  apiFood
+  apiBadgeV2
+} from './badge/api-badge.v2';
+
+import {
+  apiFoodV2
 } from './food/api-food.v2';
 
 import {
-  apiSeason
+  apiSeasonV2
 } from './season/api-season.v2';
 
 import {
-  apiSeasonWithFood
+  apiSeasonWithFoodV2
 } from './season-with-food/api-season-with-food.v2';
 
 import {
-  apiSeasonWithRecipes
+  apiSeasonWithRecipesV2
 } from './season-with-recipes/api-season-with-recipes.v2';
 
-import { apiCountry } from './country/api-country.v2';
+import { apiCountryV2 } from './country/api-country.v2';
 
 import {
+  ENDPOINT_BADGE_DETAILS,
   ENDPOINT_COUNTRY,
   ENDPOINT_FOOD_DETAILS,
   ENDPOINT_SEASON,
@@ -30,24 +35,28 @@ import {
 
 export const apiV2 = (router = Router()) => {
   router.use(
+    `/${ENDPOINT_BADGE_DETAILS}`,
+    apiBadgeV2()
+  );
+  router.use(
     `/${ENDPOINT_COUNTRY}`,
-    apiCountry()
+    apiCountryV2()
   );
   router.use(
     `/${ENDPOINT_FOOD_DETAILS}`,
-    apiFood()
+    apiFoodV2()
   );
   router.use(
     `/${ENDPOINT_SEASON}`,
-    apiSeason()
+    apiSeasonV2()
   );
   router.use(
     `/${ENDPOINT_SEASON_WITH_FOOD}`,
-    apiSeasonWithFood()
+    apiSeasonWithFoodV2()
   );
   router.use(
     `/${ENDPOINT_SEASON_WITH_RECIPES}`,
-    apiSeasonWithRecipes()
+    apiSeasonWithRecipesV2()
   );
   return router;
 };

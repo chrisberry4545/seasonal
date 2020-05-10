@@ -105,6 +105,16 @@ export function foodItemClicked(
   };
 }
 
+export const BADGE_DETAILS_SELECT_FOOD = 'BADGE_DETAILS_SELECT_FOOD';
+export function badgeDetailsSelectFood(
+  foodItemId: string
+): IFoodItemClicked {
+  return {
+    foodItemId,
+    type: BADGE_DETAILS_SELECT_FOOD
+  };
+}
+
 export interface IRecipeItemClicked extends Action {
   recipeItemId: string;
 }
@@ -115,6 +125,19 @@ export function recipeItemClicked(
   return {
     recipeItemId,
     type: RECIPE_ITEM_CLICKED
+  };
+}
+
+export interface IBadgeItemClicked extends Action {
+  badgeItemId: string;
+}
+export const BADGE_ITEM_CLICKED = 'BADGE_ITEM_CLICKED';
+export function badgeItemClicked(
+  badgeItemId: string
+): IBadgeItemClicked {
+  return {
+    badgeItemId,
+    type: BADGE_ITEM_CLICKED
   };
 }
 

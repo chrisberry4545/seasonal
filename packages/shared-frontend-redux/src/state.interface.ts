@@ -7,7 +7,7 @@ import {
 import {
   ICurrentSeasonState
 } from './current-season';
-
+import { ICurrentBadgeDetailsState } from './current-badge-details';
 import {
   ICurrentFoodDetailsState
 } from './current-food-details';
@@ -28,6 +28,7 @@ export interface IState {
   allBasicSeasonData: IAllBasicSeasonsState;
   allSeasons: IAllSeasonState;
   countryData: ICountryState;
+  currentBadgeDetailsData: ICurrentBadgeDetailsState;
   currentFoodDetailsData: ICurrentFoodDetailsState;
   currentSeasonData: ICurrentSeasonState;
   error: IErrorState;

@@ -10,6 +10,7 @@ jest.mock('../components-main', () => ({
 }));
 jest.mock('../components-pages', () => ({
   AllSeasonsPage: () => 'AllSeasonsPage',
+  BadgePage: () => 'BadgePage',
   FoodDetailsPage: () => 'FoodDetailsPage',
   FoodTablePage: () => 'FoodTablePage',
   IntroPage: () => 'IntroPage',

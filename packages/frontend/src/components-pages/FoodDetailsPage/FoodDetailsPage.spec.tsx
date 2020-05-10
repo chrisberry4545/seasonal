@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { FoodDetailsPage } from '../FoodDetailsPage/FoodDetailsPage';
+import { FoodDetailsPage } from './FoodDetailsPage';
 
 jest.mock('../../components-main', () => ({
   FoodBadgesConnecter: () => 'FoodBadgesConnecter',
@@ -9,6 +9,9 @@ jest.mock('../../components-main', () => ({
   PageWithMenu: () => 'PageWithMenu',
   RecipesForFoodConnecter: () => 'RecipesForFoodConnecter',
   SeasonsForFoodConnecter: () => 'SeasonsForFoodConnecter'
+}));
+jest.mock('../../components-layout', () => ({
+  DetailsPageLayout: () => 'DetailsPageLayout'
 }));
 
 describe('<FoodDetailsPage />', () => {

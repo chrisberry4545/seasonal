@@ -4,22 +4,10 @@ exports[`<FoodDetailsTopSection /> when the food has finished loading renders co
 <div
   className="c-food-details-top-section"
 >
-  <div
-    className="c-food-details-top-section__top-bar"
-  >
-    <BareButton
-      className="c-food-details-top-section__back-button"
-      data-e2e="food-details-go-back"
-      onClick={[MockFunction]}
-    >
-      <ArrowIcon />
-    </BareButton>
-    <TextHeadingMedium
-      className="c-food-details-top-section__food-name"
-    >
-      Food
-    </TextHeadingMedium>
-  </div>
+  <HeaderAndBackButton
+    onGoBack={[MockFunction]}
+    title="Food"
+  />
   <img
     alt="Food"
     className="c-food-details-top-section__food-image"

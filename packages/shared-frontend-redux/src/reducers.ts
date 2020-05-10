@@ -10,11 +10,13 @@ import { settingsReducer } from './settings';
 import { uiReducer } from './ui';
 import { countryReducer } from './country';
 import { errorReducer } from './error';
+import { currentBadgeDetailsReducer } from './current-badge-details';
 
 export const allReducers = {
   allBasicSeasonData: allBasicSeasonsReducer,
   allSeasons: allSeasonsReducer,
   countryData: countryReducer,
+  currentBadgeDetailsData: currentBadgeDetailsReducer,
   currentFoodDetailsData: currentFoodDetailsReducer,
   currentSeasonData: currentSeasonWithFoodReducer,
   error: errorReducer,

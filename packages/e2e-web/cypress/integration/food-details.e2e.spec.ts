@@ -9,7 +9,7 @@ import {
   getFoodDetailsRecipeGridItems
 } from '../support/food-details-page';
 import {
-  expectToBeOnFoodListPage, enterSearchValue
+  expectToBeOnFoodListPage, enterSearchValue, goToFoodListPage, clickFoodItem
 } from '../support/food-list-page';
 import {
   clickDietFiltersAll,
@@ -18,6 +18,7 @@ import {
   expectAllLoadingToBeComplete,
   reset
 } from '../support/general';
+import { clickMenuSeasonJan } from '../support/menu';
 
 describe('Food details', () => {
   beforeEach(() => {
@@ -29,6 +30,8 @@ describe('Food details', () => {
   it('can go to food details page', () => expectToBeOnFoodDetailsPage());
 
   it('the back button works', () => {
+    clickMenuSeasonJan();
+    clickFoodItem();
     clickGoBackButton();
     expectToBeOnFoodListPage();
   });
@@ -68,4 +71,5 @@ describe('Food details', () => {
     clickFoodDetailsSeason();
     expectToBeOnFoodListPage();
   });
+
 });

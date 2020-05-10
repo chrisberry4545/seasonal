@@ -3,10 +3,12 @@
 exports[`<DefaultPaddingContainer /> renders correctly 1`] = `
 <View
   style={
-    Object {
-      "paddingLeft": 24,
-      "paddingRight": 24,
-    }
+    Array [
+      Object {
+        "paddingLeft": 24,
+        "paddingRight": 24,
+      },
+    ]
   }
 >
   Child

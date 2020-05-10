@@ -1,10 +1,11 @@
+import React, { FC } from 'react';
 import {
   AllSeasonsFoodConnector,
   AllSeasonsRecipesConnector
 } from '../../components-main';
-import { CreateFoodAndRecipeTabs } from '../../components-layout';
+import { FoodAndRecipeTabs } from '../../components-layout';
 
-export const AllSeasonsPage = CreateFoodAndRecipeTabs({
-  foodScreen: AllSeasonsFoodConnector,
-  recipeScreen: AllSeasonsRecipesConnector
-});
+export const AllSeasonsPage: FC<{}> = () =>
+  <FoodAndRecipeTabs
+    foodScreen={AllSeasonsFoodConnector}
+    recipeScreen={AllSeasonsRecipesConnector} />;

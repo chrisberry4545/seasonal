@@ -11,46 +11,30 @@ exports[`<FoodDetailsTopSection /> renders correctly 1`] = `
     }
   }
 >
-  <View
+  <HeaderAndBackButton
+    onGoBack={[MockFunction]}
+    title="Food name"
+  />
+  <DefaultPaddingContainer
     style={
       Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flex": 0,
-        "flexDirection": "row",
-        "height": 50,
-        "marginBottom": 6,
-        "marginTop": 4,
-      }
-    }
-  >
-    <BackArrowIconButton
-      onClick={[MockFunction]}
-    />
-    <TextHeadingMedium
-      style={
-        Object {
-          "flex": 1,
-          "marginRight": 24,
-          "textAlign": "center",
-        }
-      }
-    >
-      Food name
-    </TextHeadingMedium>
-  </View>
-  <Image
-    source={
-      Object {
-        "uri": "https://image.com",
-      }
-    }
-    style={
-      Object {
-        "borderRadius": 15,
         "flex": 1,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://image.com",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 15,
+          "flex": 1,
+        }
+      }
+    />
+  </DefaultPaddingContainer>
 </View>
 `;

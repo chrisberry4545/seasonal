@@ -143,27 +143,32 @@ describe('<AllSeasonsWrapper />', () => {
       }
       expect(mockOnToggleListView).toHaveBeenCalled();
     });
-  });
 
-  describe('when the recipes are shown', () => {
-    beforeEach(() =>
-      wrapper = shallow(
-        <AllSeasonsWrapper
-          propName='recipes'
-          isLoading={true}
-          increaseNumberOfAllSeasonsInView={
-            mockIncreaseNumberOfAllSeasonsInView
-          }
-          onItemClick={mockOnItemClick}
-          seasons={seasons}
-          isListViewShown={true}
-          onToggleListView={mockOnToggleListView}
-          />
-      )
-    );
+    describe('when the recipes are shown', () => {
+      beforeEach(() => {
+        wrapper = shallow(
+          <AllSeasonsWrapper
+            propName='recipes'
+            isLoading={false}
+            increaseNumberOfAllSeasonsInView={
+              mockIncreaseNumberOfAllSeasonsInView
+            }
+            onItemClick={mockOnItemClick}
+            seasons={seasons}
+            isListViewShown={true}
+            onToggleListView={mockOnToggleListView}
+            />
+        );
+        const RenderItem = wrapper.find(FlatList).first().props().renderItem;
+        innerListWrapper = shallow(<RenderItem {...({
+          item: seasons
+        } as any)} />);
+      });
 
-    test('shows dietary filters', () =>
-      expect(wrapper.find(DietaryFiltersConnector).exists()).toBe(true));
+      test('shows dietary filters', () =>
+        expect(innerListWrapper.find(DietaryFiltersConnector).exists()).toBe(true));
+
+    });
 
   });
 

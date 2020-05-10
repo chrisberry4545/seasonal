@@ -1,0 +1,10 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+.c-central-loading-spinner {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - #{$default-top-margin});
+}

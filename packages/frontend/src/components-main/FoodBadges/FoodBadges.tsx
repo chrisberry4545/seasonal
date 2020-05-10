@@ -3,14 +3,16 @@ import React, { FC } from 'react';
 import './FoodBadges.scss';
 
 import {
-  IFoodBadgesInputProps
+  IFoodBadgesProps
 } from './FoodBadges.interface';
-import { TextHeadingSmall } from '@chrisb-dev/seasonal-shared-frontend-components';
+import { TextHeadingSmall, BareButton } from '@chrisb-dev/seasonal-shared-frontend-components';
 
-export const FoodBadges: FC<IFoodBadgesInputProps> = ({
-  badges
+export const FoodBadges: FC<IFoodBadgesProps> = ({
+  badges,
+  onBadgeClicked,
+  isLoading
 }) => (
-  (badges && badges.length > 0)
+  (!isLoading && badges && badges.length > 0)
     ? (
       <div className='c-food-badges'>
         <TextHeadingSmall className='c-food-badges__heading'>
@@ -19,11 +21,12 @@ export const FoodBadges: FC<IFoodBadgesInputProps> = ({
         <div className='c-food-badges__list'>
           {
             badges.map((badge) =>
-              <div
+              <BareButton
+                onClick={() => onBadgeClicked(badge.id)}
                 className='c-food-badges__badge'
                 key={badge.id}>
                 {badge.name}
-              </div>
+              </BareButton>
             )
           }
         </div>

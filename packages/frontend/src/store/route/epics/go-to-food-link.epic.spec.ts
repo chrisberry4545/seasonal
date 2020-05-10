@@ -1,16 +1,24 @@
-import { foodItemClicked, ISetCurrentFoodDetailsStart } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import {
+  foodItemClicked,
+  badgeDetailsSelectFood
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { push } from 'connected-react-router';
 import { of } from 'rxjs';
 import { FOOD_DETAILS_URL } from '../../../const';
 import { goToFoodLink$ } from './go-to-food-link.epic';
+import { Action } from 'redux';
 
-describe('goToFoodLink$', () => {
-  let result: ISetCurrentFoodDetailsStart;
-  const foodId = 'foodId';
+const foodId = 'foodId';
+
+describe.each([
+  foodItemClicked(foodId),
+  badgeDetailsSelectFood(foodId)
+])('goToFoodLink$', (action) => {
+  let result: Action;
 
   beforeEach(async () => {
     result = await goToFoodLink$(
-      of(foodItemClicked(foodId)) as any,
+      of(action) as any,
       of(null) as any,
       {}
     ).toPromise();

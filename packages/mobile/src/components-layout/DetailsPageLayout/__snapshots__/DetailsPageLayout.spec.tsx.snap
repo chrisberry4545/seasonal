@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DetailsPageLayout /> renders correctly 1`] = `
+<ScrollView>
+  <View
+    style={
+      Object {
+        "marginBottom": 50,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "maxWidth": 500,
+      }
+    }
+  >
+    <View />
+  </View>
+</ScrollView>
+`;

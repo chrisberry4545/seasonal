@@ -1,0 +1,25 @@
+@import '../../styles/settings';
+@import '../../styles/tools';
+
+$header-and-back-button-back-button-width: 40px !default;
+
+.c-header-and-back-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+  .c-header-and-back-button__back-button {
+    width: $header-and-back-button-back-button-width;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    opacity: 0.7;
+  }
+
+  .c-header-and-back-button__title {
+    width: 100%;
+    flex: 1;
+    text-align: center;
+    margin-right: $header-and-back-button-back-button-width;
+  }

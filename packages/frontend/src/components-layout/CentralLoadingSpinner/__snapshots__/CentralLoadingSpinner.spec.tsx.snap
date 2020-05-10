@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CentralLoadingSpinner /> when is loading renders correctly 1`] = `
+<div
+  className="c-central-loading-spinner"
+>
+  <LoadingSpinner />
+</div>
+`;

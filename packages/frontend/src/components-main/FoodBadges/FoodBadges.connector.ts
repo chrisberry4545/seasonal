@@ -3,20 +3,33 @@ import {
   FoodBadges
 } from './FoodBadges';
 import {
-  selectCurrentFoodDetailsBadges
+  badgeItemClicked,
+  selectCurrentFoodDetailsBadges,
+  selectIsFoodDataOrBasicSeasonsLoading
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-
 import { IState } from '../../store';
 import {
-  IFoodBadgesInputProps
+  IFoodBadgesInputProps,
+  IFoodBadgesDispatchProps
 } from './FoodBadges.interface';
+import { Dispatch } from 'redux';
 
 const mapStateToProps = (
   state: IState
 ): IFoodBadgesInputProps => ({
-  badges: selectCurrentFoodDetailsBadges(state)
+  badges: selectCurrentFoodDetailsBadges(state),
+  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state)
+});
+
+const mapDispatchToProps = (
+  dispatch: Dispatch
+): IFoodBadgesDispatchProps => ({
+  onBadgeClicked: (recipeId: string) => (
+    dispatch(badgeItemClicked(recipeId))
+  )
 });
 
 export const FoodBadgesConnecter = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(FoodBadges);

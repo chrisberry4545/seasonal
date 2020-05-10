@@ -1,5 +1,5 @@
 import {
-  setTopLevelNavigator,
+  navigationRef,
   navigate,
   navigateBackOne,
   openDrawer,
@@ -10,28 +10,30 @@ import {
   getIsCurrentRouteAboutUs,
   getIsCurrentRouteSettings
 } from './navigation';
-import {
-  NavigationParams,
-  NavigationActions,
-  NavigationNavigateAction,
-  NavigationContainerComponent,
-  DrawerActions
-} from 'react-navigation';
 import { ROUTES } from '../const';
+import {
+  NavigationContainerRef,
+  CommonActions,
+  DrawerActions
+} from '@react-navigation/native';
+
+const setTopLevelNavigator = (
+  navigator: NavigationContainerRef | null
+) => {
+  (navigationRef.current as any) = navigator;
+};
 
 const initNavigator = (
   route: ROUTES
 ) => {
   const navigator = {
-    state: {
-      nav: {
-        index: 0,
-        routes: [{
-          routeName: route
-        }]
-      }
-    } as any
-  } as NavigationContainerComponent;
+    getRootState: () => ({
+      index: 0,
+      routes: [{
+        name: route
+      }]
+    } as any)
+  } as NavigationContainerRef;
   setTopLevelNavigator(navigator);
 };
 
@@ -39,7 +41,7 @@ describe('navigate', () => {
   const route = 'route';
   const params = {
     a: 'a'
-  } as NavigationParams;
+  };
 
   test('does not error if there is no navigator', () => {
     let error: Error;
@@ -53,14 +55,14 @@ describe('navigate', () => {
   });
 
   describe('when the navigator is set', () => {
-    const navigationNavigateAction = {} as NavigationNavigateAction;
-    const navigator = {} as NavigationContainerComponent;
+    const navigationNavigateAction = {} as CommonActions.Action;
+    const navigator = {} as NavigationContainerRef;
     navigator.dispatch = jest.fn();
     let navigationActionsNavigate: jest.SpyInstance;
 
     beforeEach(() => {
       setTopLevelNavigator(navigator);
-      navigationActionsNavigate = jest.spyOn(NavigationActions, 'navigate')
+      navigationActionsNavigate = jest.spyOn(CommonActions, 'navigate')
         .mockReturnValue(navigationNavigateAction);
       navigationActionsNavigate.mockClear();
       navigate(route, params);
@@ -68,8 +70,8 @@ describe('navigate', () => {
 
     test('creates a navigation action', () =>
       expect(navigationActionsNavigate).toHaveBeenCalledWith({
-        params,
-        routeName: route
+        name: route,
+        params
       }));
 
     test('dispatches a navigator event', () =>
@@ -81,10 +83,10 @@ describe('navigate', () => {
 });
 
 describe('navigateBackOne', () => {
-  let navigator: NavigationContainerComponent;
+  let navigator: NavigationContainerRef;
 
   beforeEach(() => {
-    navigator = {} as NavigationContainerComponent;
+    navigator = {} as NavigationContainerRef;
     navigator.dispatch = jest.fn();
   });
 
@@ -98,16 +100,16 @@ describe('navigateBackOne', () => {
     setTopLevelNavigator(navigator);
     navigateBackOne();
     expect(navigator.dispatch)
-      .toHaveBeenCalledWith(NavigationActions.back());
+      .toHaveBeenCalledWith(CommonActions.goBack());
   });
 
 });
 
 describe('openDrawer', () => {
-  let navigator: NavigationContainerComponent;
+  let navigator: NavigationContainerRef;
 
   beforeEach(() => {
-    navigator = {} as NavigationContainerComponent;
+    navigator = {} as NavigationContainerRef;
     navigator.dispatch = jest.fn();
   });
 
@@ -127,10 +129,10 @@ describe('openDrawer', () => {
 });
 
 describe('closeDrawer', () => {
-  let navigator: NavigationContainerComponent;
+  let navigator: NavigationContainerRef;
 
   beforeEach(() => {
-    navigator = {} as NavigationContainerComponent;
+    navigator = {} as NavigationContainerRef;
     navigator.dispatch = jest.fn();
   });
 
@@ -150,19 +152,17 @@ describe('closeDrawer', () => {
 });
 
 describe('getCurrentNavigatorRoute', () => {
-  const state = {
-    nav: {
-      index: 1,
-      routes: [{
-        routeName: 'r0'
-      }, {
-        routeName: 'r1'
-      }]
-    }
+  const state: any = {
+    index: 1,
+    routes: [{
+      name: 'r0'
+    }, {
+      name: 'r1'
+    }]
   };
   const navigator = {
-    state: state as any
-  } as NavigationContainerComponent;
+    getRootState: () => state
+  } as NavigationContainerRef;
 
   test('returns null if there is no navigator', () => {
     setTopLevelNavigator(null);
@@ -171,7 +171,7 @@ describe('getCurrentNavigatorRoute', () => {
 
   test('returns the matching route', () => {
     setTopLevelNavigator(navigator);
-    expect(getCurrentNavigatorRoute()).toBe(state.nav.routes[1]);
+    expect(getCurrentNavigatorRoute()).toBe(state.routes[1]);
   });
 
 });
