@@ -30,6 +30,7 @@ describe('Food details', () => {
 
   it('the back button works', () => {
     goToFoodListPage();
+    expectAllLoadingToBeComplete();
     clickFoodItem();
     expectAllLoadingToBeComplete();
     clickGoBackButton();
