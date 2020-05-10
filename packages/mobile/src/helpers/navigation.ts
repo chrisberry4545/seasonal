@@ -1,5 +1,8 @@
-import { NavigationActions, NavigationParams } from 'react-navigation';
-import { NavigationContainerComponent } from 'react-navigation';
+import {
+  NavigationContainerComponent,
+  NavigationActions,
+  NavigationParams
+} from 'react-navigation';
 import { DrawerActions } from 'react-navigation';
 import { ROUTES } from '../const';
 

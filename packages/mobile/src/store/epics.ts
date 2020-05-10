@@ -24,7 +24,8 @@ import {
   goToSettingsPage$,
   getAllSeasonsWithFoodStart$,
   getAllSeasonsWithRecipesStart$,
-  goToBadgeLink$
+  goToBadgeLink$,
+  goBackToFoodDetails$
 } from './route/epics';
 import { initTrackingUser$, trackAction$ } from './tracking/epics';
 import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings/epics';
@@ -54,5 +55,6 @@ export const rootEpic = combineEpics(
   showFeedbackForm$,
   sendFeedbackImprovements$,
   showStoreListing$,
-  goToBadgeLink$
+  goToBadgeLink$,
+  goBackToFoodDetails$
 );
