@@ -14,6 +14,7 @@ exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
   >
     <BareButton
       className="c-food-badges__badge"
+      data-e2e="food-badge"
       key="1"
       onClick={[Function]}
     >
@@ -21,6 +22,7 @@ exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
     </BareButton>
     <BareButton
       className="c-food-badges__badge"
+      data-e2e="food-badge"
       key="2"
       onClick={[Function]}
     >
