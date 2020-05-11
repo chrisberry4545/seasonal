@@ -54,7 +54,7 @@
     "promise-fs": "^2.1.1",
     "serverless": "^1.66.0",
     "serverless-http": "^2.0.2",
-    "typescript": "^3.7.2",
+    "typescript": "^3.8.3",
     "winston": "^3.2.1"
   },
   "devDependencies": {

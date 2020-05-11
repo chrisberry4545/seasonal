@@ -40,7 +40,7 @@
     "@chrisb-dev/seasonal-shared-models": "1.0.0",
     "@types/node": "^11.11.3",
     "@types/uuid": "^3.4.6",
-    "typescript": "^3.7.2",
+    "typescript": "^3.8.3",
     "uuid": "^3.4.0"
   },
   "devDependencies": {

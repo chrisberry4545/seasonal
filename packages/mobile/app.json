@@ -4,7 +4,6 @@
     "description": "Displays the current in seasons fruit and vegetables.",
     "slug": "seasonal-app",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android"
