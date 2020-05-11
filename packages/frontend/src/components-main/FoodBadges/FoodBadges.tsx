@@ -22,6 +22,7 @@ export const FoodBadges: FC<IFoodBadgesProps> = ({
           {
             badges.map((badge) =>
               <BareButton
+                data-e2e='food-badge'
                 onClick={() => onBadgeClicked(badge.id)}
                 className='c-food-badges__badge'
                 key={badge.id}>

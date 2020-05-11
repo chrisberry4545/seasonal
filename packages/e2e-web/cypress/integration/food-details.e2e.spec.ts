@@ -1,17 +1,18 @@
 import {
   clickFoodDetailsSeason,
-  clickGoBackButton,
   expectFoodDetailsImgToExist,
   expectToBeOnFoodDetailsPage,
   clickFoodDetailsRecipe,
   goToFoodDetailsPage,
   expectFoodDetailsOnlyBeetrootRecipeToBeShown,
-  getFoodDetailsRecipeGridItems
+  getFoodDetailsRecipeGridItems,
+  clickFoodBadge
 } from '../support/food-details-page';
 import {
   expectToBeOnFoodListPage, enterSearchValue, goToFoodListPage, clickFoodItem
 } from '../support/food-list-page';
 import {
+  clickGoBackButton,
   clickDietFiltersAll,
   clickDietFiltersVegan,
   clickDietFiltersVegetarian,
@@ -19,6 +20,7 @@ import {
   reset
 } from '../support/general';
 import { clickMenuSeasonJan } from '../support/menu';
+import { expectToBeOnBadgePage } from '../support/badge-page';
 
 describe('Food details', () => {
   beforeEach(() => {
@@ -70,6 +72,11 @@ describe('Food details', () => {
   it('seasons in the season table can be clicked', () => {
     clickFoodDetailsSeason();
     expectToBeOnFoodListPage();
+  });
+
+  it('can click on badges', () => {
+    clickFoodBadge();
+    expectToBeOnBadgePage();
   });
 
 });

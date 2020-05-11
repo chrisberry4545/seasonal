@@ -25,7 +25,7 @@ VALUES
     ARRAY[]::uuid[],
     'https://eat-seasonal.co.uk/images/food/broccoli.jpg',
     'beetroot description',
-    ARRAY[]::uuid[]
+    ARRAY['5de57673-eee8-444a-b7be-d9ab553052cf']::uuid[]
   ),
   (
     'dd9ba012-8f8e-48af-9775-0139374dd94c',
