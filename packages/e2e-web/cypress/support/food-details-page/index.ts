@@ -1,8 +1,8 @@
+export * from './click-food-badge';
+
 export * from './click-food-details-recipe';
 
 export * from './click-food-details-season';
-
-export * from './click-go-back-button';
 
 export * from './expect-food-details-img-to-exist';
 

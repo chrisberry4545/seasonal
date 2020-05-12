@@ -44,7 +44,7 @@
     "frontend-admin:deploy": "yarn workspace @chrisb-dev/seasonal-frontend-admin deploy",
     "mobile:dev": "concurrently \"REACT_APP_BACKEND_URL=http://localhost:5200/v2 yarn workspace @chrisb-dev/seasonal-mobile start\" \"yarn backend:dev\" \"yarn shared-models:dev\" \"yarn shared-frontend-utilities:dev\" \"yarn shared-frontend-redux:dev\" --kill-others",
     "mobile:prod": "yarn workspace @chrisb-dev/seasonal-mobile start",
-    "e2e:web": "yarn workspace @chrisb-dev/seasonal-e2e-web start",
+    "e2e:web": "concurrently \"yarn frontend:dev\" \"yarn workspace @chrisb-dev/seasonal-e2e-web start\"",
     "docker:database:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-database",
     "docker:backend:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-backend",
     "docker:frontend:dev": "docker-compose -f ./docker-compose.yml -f ./docker-compose.dev.yml run --service-ports --rm seasonal-frontend",

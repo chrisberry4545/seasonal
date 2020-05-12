@@ -1,3 +1,4 @@
+import './badge-page';
 import './food-details-page';
 import './food-list-page';
 import './home-page';
