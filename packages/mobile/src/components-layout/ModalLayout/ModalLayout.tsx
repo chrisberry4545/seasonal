@@ -3,10 +3,11 @@ import { IModalLayout } from './ModalLayout.interface';
 import { View, Modal, ViewStyle } from 'react-native';
 import { BareButton, CrossIcon } from '../../components-elements';
 import { colors } from '../../styles/colors';
+import { shadows } from '../../styles/shadows';
 
 const styleModalWrapper: ViewStyle = {
   alignItems: 'center',
-  backgroundColor: 'rgba(0,0,0,0.5)',
+  backgroundColor: 'rgba(0,0,0,0.2)',
   height: '100%',
   justifyContent: 'center',
   left: 0,
@@ -16,18 +17,19 @@ const styleModalWrapper: ViewStyle = {
 };
 
 const styleModalView: ViewStyle = {
+  ...shadows.level1,
   backgroundColor: colors.backgroundColor,
   margin: 10,
   maxWidth: 350,
-  paddingBottom: 20,
-  paddingHorizontal: 40,
-  paddingTop: 50
+  paddingBottom: 30,
+  paddingHorizontal: 50,
+  paddingTop: 60
 };
 
 const styleModalLayoutCloseButton: ViewStyle = {
   position: 'absolute',
-  right: 12,
-  top: 4
+  right: 24,
+  top: 12
 };
 
 export const ModalLayout: FC<IModalLayout> = ({
