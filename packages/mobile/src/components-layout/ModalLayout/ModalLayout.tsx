@@ -27,8 +27,9 @@ const styleModalView: ViewStyle = {
 };
 
 const styleModalLayoutCloseButton: ViewStyle = {
+  paddingHorizontal: 12,
   position: 'absolute',
-  right: 24,
+  right: 18,
   top: 12
 };
 
