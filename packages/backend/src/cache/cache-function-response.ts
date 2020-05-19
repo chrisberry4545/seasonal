@@ -7,7 +7,7 @@ export const cacheFunctionResponse = <T>(
 ) => {
   return async (...args: any[]): Promise<T> => {
     const constructedKey =
-      cacheKey + args.filter(Boolean).map((arg) => arg.toString()).join(':');
+      `${cacheKey}:${args.filter(Boolean).map((arg) => arg.toString()).join(':')}`;
     const cachedData = cache.get(constructedKey);
     if (cachedData) {
       return Promise.resolve(cachedData);

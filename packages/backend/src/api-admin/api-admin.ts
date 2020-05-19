@@ -40,52 +40,52 @@ export const apiAdmin = (router = Router()) => {
   );
   router.use(
     `/${ENDPOINT_BADGE}`,
-    editorAuth,
+    editorAuth(),
     apiAdminBadge()
   ),
   router.use(
     `/${ENDPOINT_COUNTRY}`,
-    editorAuth,
+    editorAuth(),
     apiAdminCountry()
   );
   router.use(
     `/${ENDPOINT_COUNTRY_FOOD_NAME_MAP}`,
-    editorAuth,
+    editorAuth(),
     apiAdminCountryFoodNameMap()
   );
   router.use(
     `/${ENDPOINT_COUNTRY_RECIPE_NAME_MAP}`,
-    editorAuth,
+    editorAuth(),
     apiAdminCountryRecipeNameMap()
   );
   router.use(
     `/${ENDPOINT_FOOD_DETAILS}`,
-    editorAuth,
+    editorAuth(),
     apiAdminFood()
   );
   router.use(
     `/${ENDPOINT_RECIPE}`,
-    editorAuth,
+    editorAuth(),
     apiAdminRecipe()
   );
   router.use(
     `/${ENDPOINT_REGION}`,
-    editorAuth,
+    editorAuth(),
     apiAdminRegion()
   );
   router.use(
     `/${ENDPOINT_REGION_FOOD_SEASON_MAP}`,
-    editorAuth,
+    editorAuth(),
     apiAdminRegionFoodSeasonMap()
   );
   router.use(
     `/${ENDPOINT_USER}`,
-    adminAuth,
+    adminAuth(),
     apiAdminUser()
   );
   router.use(
     `/${ENDPOINT_REPORTS}`,
-    editorAuth,
+    editorAuth(),
     apiAdminReports()
   );
   router.use(errorMiddleware());

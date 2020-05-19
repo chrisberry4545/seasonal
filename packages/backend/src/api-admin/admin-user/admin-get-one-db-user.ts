@@ -3,7 +3,7 @@ import { getDbUsers } from './admin-get-db-users';
 
 export const adminGetOneDbUser = async (
   id: string
-): Promise<IUser> => {
+): Promise<IUser | null> => {
   const result = await getDbUsers(id);
   return result && result[0];
 };

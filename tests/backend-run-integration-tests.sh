@@ -10,7 +10,7 @@ fi
 eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
 echo "Starting tests..."
 
-eval "docker-compose ${DOCKER_COMPOSE_FILES} run --rm seasonal-backend yarn backend:test ${UPDATE_SNAPSHOT}"
+eval "docker-compose ${DOCKER_COMPOSE_FILES} run --rm seasonal-backend yarn backend:test:integration ${UPDATE_SNAPSHOT}"
 status=$?
 
 eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
