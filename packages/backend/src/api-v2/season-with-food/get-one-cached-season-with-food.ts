@@ -14,7 +14,7 @@ export const getOneCachedSeasonWithFood = cacheFunctionResponse(
   oneSeasonWithFoodCacheKey,
   async (
     seasonIndex: number, regionId: string = DEFAULT_REGION_ID
-  ): Promise<IHydratedSeason> => getOneSeasonsWithFood(
+  ): Promise<IHydratedSeason | undefined> => getOneSeasonsWithFood(
     seasonIndex,
     regionId
   )

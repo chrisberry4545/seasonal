@@ -14,7 +14,7 @@ export const getOneCachedSeasonWithRecipes = cacheFunctionResponse(
   singleSeasonWithRecipeCacheKey,
   async (
     seasonIndex: number, regionId: string = DEFAULT_REGION_ID
-  ): Promise<IHydratedSeason> => getOneSeasonsWithRecipes(
+  ): Promise<IHydratedSeason | undefined> => getOneSeasonsWithRecipes(
     seasonIndex,
     regionId
   )

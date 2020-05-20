@@ -2,7 +2,7 @@ import { queryPostgres, getSqlQuery } from '../../postgres';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 
 export const getSeasonsWithRecipes = async (
-  seasonIndex: number | null,
+  seasonIndex: number | undefined,
   regionId: string
 ): Promise<IHydratedSeason[]> => {
   const result = await queryPostgres<IHydratedSeason>(

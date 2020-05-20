@@ -4,10 +4,8 @@ import {
   Response,
   NextFunction
 } from 'express';
-
 import { getAllCachedSeasons } from './get-all-cached-seasons';
-import { getRegionIdFromQueryParams } from '../../api-utils/get-query-params';
-import { get500Error } from '../../api-utils';
+import { get500Error, getRegionIdFromQueryParams } from '../../api-utils';
 
 export const apiSeasonV2 = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {

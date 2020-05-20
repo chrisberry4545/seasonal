@@ -14,7 +14,7 @@ export const getCachedBadgeDetails = cacheFunctionResponse(
   (
     badgeId: string,
     regionId: string = DEFAULT_REGION_ID
-  ): Promise<IHydratedBadge> => getDbBadgeDetails(
+  ): Promise<IHydratedBadge | undefined> => getDbBadgeDetails(
     badgeId, regionId
   )
 );

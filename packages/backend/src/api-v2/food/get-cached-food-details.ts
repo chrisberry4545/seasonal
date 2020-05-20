@@ -14,7 +14,7 @@ export const getCachedFoodDetails = cacheFunctionResponse(
   (
     foodId: string,
     regionId: string = DEFAULT_REGION_ID
-  ): Promise<IHydratedFood> => getDbFoodDetails(
+  ): Promise<IHydratedFood | undefined> => getDbFoodDetails(
     foodId, regionId
   )
 );
