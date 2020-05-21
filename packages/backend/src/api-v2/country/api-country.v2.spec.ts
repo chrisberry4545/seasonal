@@ -37,7 +37,7 @@ describe('apiCountryV2', () => {
     const error = new Error('cannot find badge');
     beforeEach(async () => {
       jest.spyOn(getAllCachedCountries, 'getAllCachedCountries')
-        .mockRejectedValue(error);
+        .mockReturnValue(() => Promise.reject(error));
       await mockGet.mock.calls[0][1](request, mockResponse, mockNext);
     });
 
@@ -50,7 +50,7 @@ describe('apiCountryV2', () => {
     const cachedCountries = [{}] as ICountry[];
     beforeEach(async () => {
       jest.spyOn(getAllCachedCountries, 'getAllCachedCountries')
-        .mockResolvedValue(cachedCountries);
+        .mockReturnValue(() => Promise.resolve(cachedCountries));
       await mockGet.mock.calls[0][1](request, mockResponse, mockNext);
     });
 

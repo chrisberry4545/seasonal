@@ -8,7 +8,7 @@ import { getDbFoodDetails } from './get-db-food-details';
 const singleFoodCache = new Cache<IHydratedFood>();
 const singleFoodCacheKey = 'single-food';
 
-export const getCachedFoodDetails = cacheFunctionResponse(
+export const getCachedFoodDetails = () => cacheFunctionResponse(
   singleFoodCache,
   singleFoodCacheKey,
   (

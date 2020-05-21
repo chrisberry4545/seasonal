@@ -4,7 +4,7 @@ import {
 import * as getQueryParams from '../../api-utils/get-query-params';
 import { apiFoodV2 } from './api-food.v2';
 import * as uuidParamValidation from '../../middleware/uuid-param-validation';
-import * as getFoodDetailsWithFilteredRecipes from './get-food-details-with-filtered-recipes';
+import * as getCachedFoodDetailsWithFilteredRecipes from './get-cached-food-details-with-filtered-recipes';
 import * as apiUtils from '../../api-utils';
 import { ISeasonalBackendError } from '../../interfaces';
 import { IHydratedFood } from '@chrisb-dev/seasonal-shared-models';
@@ -52,10 +52,10 @@ describe('apiFoodV2', () => {
   test('adds uuid validation', () =>
     expect(mockGet.mock.calls[0][1]).toBe(mockUuidParamValidationResult));
 
-  describe('when getFoodDetailsWithFilteredRecipes errors', () => {
+  describe('when getCachedFoodDetailsWithFilteredRecipes errors', () => {
     const error = new Error('cannot find badge');
     beforeEach(async () => {
-      jest.spyOn(getFoodDetailsWithFilteredRecipes, 'getFoodDetailsWithFilteredRecipes')
+      jest.spyOn(getCachedFoodDetailsWithFilteredRecipes, 'getCachedFoodDetailsWithFilteredRecipes')
         .mockRejectedValue(error);
       await mockGet.mock.calls[0][2](request, mockResponse, mockNext);
     });
@@ -65,9 +65,9 @@ describe('apiFoodV2', () => {
 
   });
 
-  describe('when no result is returned from getFoodDetailsWithFilteredRecipes', () => {
+  describe('when no result is returned from getCachedFoodDetailsWithFilteredRecipes', () => {
     beforeEach(async () => {
-      jest.spyOn(getFoodDetailsWithFilteredRecipes, 'getFoodDetailsWithFilteredRecipes')
+      jest.spyOn(getCachedFoodDetailsWithFilteredRecipes, 'getCachedFoodDetailsWithFilteredRecipes')
         .mockResolvedValue(undefined);
       await mockGet.mock.calls[0][2](request, mockResponse, mockNext);
     });
@@ -77,10 +77,10 @@ describe('apiFoodV2', () => {
 
   });
 
-  describe('when getFoodDetailsWithFilteredRecipes is successful', () => {
+  describe('when getCachedFoodDetailsWithFilteredRecipes is successful', () => {
     const cachedFoodDetails = {} as IHydratedFood;
     beforeEach(async () => {
-      jest.spyOn(getFoodDetailsWithFilteredRecipes, 'getFoodDetailsWithFilteredRecipes')
+      jest.spyOn(getCachedFoodDetailsWithFilteredRecipes, 'getCachedFoodDetailsWithFilteredRecipes')
         .mockResolvedValue(cachedFoodDetails);
       await mockGet.mock.calls[0][2](request, mockResponse, mockNext);
     });

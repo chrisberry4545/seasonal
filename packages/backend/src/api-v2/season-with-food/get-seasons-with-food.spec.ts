@@ -6,7 +6,7 @@ import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
 describe('getSeasonsWithFood', () => {
-  let result: IHydratedSeason[];
+  let result: IHydratedSeason[] | null;
   const queryResult = {
     rows: [{}]
   } as QueryResult<IHydratedSeason[]>;

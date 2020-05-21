@@ -10,7 +10,7 @@ import {
   getIsVeganFromQueryParams
 } from '../../api-utils/get-query-params';
 import { get500Error, get404Error } from '../../api-utils';
-import { getOneCachedSeasonsWithFilteredRecipes } from './get-cached-season-with-filtered-recipes';
+import { getOneCachedSeasonsWithFilteredRecipes } from './get-one-cached-season-with-filtered-recipes';
 import { getAllCachedSeasonsWithFilteredRecipes } from './get-all-cached-seasons-with-filtered-recipes';
 
 export const apiSeasonWithRecipesV2 = (router = Router()) => {

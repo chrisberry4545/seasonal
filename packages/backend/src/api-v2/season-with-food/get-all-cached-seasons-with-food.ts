@@ -7,9 +7,9 @@ import { DEFAULT_REGION_ID } from '../../config';
 import { getAllSeasonsWithFood } from './get-all-seasons-with-food';
 
 const allSeasonsWithFoodCache = new Cache<IHydratedSeason[]>();
-const allSeasonsWithFoodCacheKey = 'season-with-food';
+const allSeasonsWithFoodCacheKey = 'all-seasons-with-food';
 
-export const getAllCachedSeasonsWithFood = cacheFunctionResponse(
+export const getAllCachedSeasonsWithFood = () => cacheFunctionResponse(
   allSeasonsWithFoodCache,
   allSeasonsWithFoodCacheKey,
   async (

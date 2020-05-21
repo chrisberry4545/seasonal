@@ -50,7 +50,7 @@ describe('apiSeasonWithFoodV2', () => {
       const error = new Error('cannot find badge');
       beforeEach(async () => {
         jest.spyOn(getAllCachedSeasonsWithFood, 'getAllCachedSeasonsWithFood')
-          .mockRejectedValue(error);
+          .mockReturnValue(() => Promise.reject(error));
         await mockGet.mock.calls[0][1](request, mockResponse, mockNext);
       });
 
@@ -65,7 +65,7 @@ describe('apiSeasonWithFoodV2', () => {
         jest.spyOn(
           getAllCachedSeasonsWithFood,
           'getAllCachedSeasonsWithFood'
-        ).mockResolvedValue(cachedSeasonDetails);
+        ).mockReturnValue(() => Promise.resolve(cachedSeasonDetails));
         await mockGet.mock.calls[0][1](request, mockResponse, mockNext);
       });
 
@@ -84,7 +84,7 @@ describe('apiSeasonWithFoodV2', () => {
       const error = new Error('cannot find badge');
       beforeEach(async () => {
         jest.spyOn(getOneCachedSeasonWithFood, 'getOneCachedSeasonWithFood')
-          .mockRejectedValue(error);
+          .mockReturnValue(() => Promise.reject(error));
         await mockGet.mock.calls[1][1](request, mockResponse, mockNext);
       });
 
@@ -98,7 +98,7 @@ describe('apiSeasonWithFoodV2', () => {
         jest.spyOn(
           getOneCachedSeasonWithFood,
           'getOneCachedSeasonWithFood'
-        ).mockResolvedValue(undefined);
+        ).mockReturnValue(() => Promise.resolve(undefined));
         await mockGet.mock.calls[1][1](request, mockResponse, mockNext);
       });
 
@@ -113,7 +113,7 @@ describe('apiSeasonWithFoodV2', () => {
         jest.spyOn(
           getOneCachedSeasonWithFood,
           'getOneCachedSeasonWithFood'
-        ).mockResolvedValue(cachedSeasonDetails);
+        ).mockReturnValue(() => Promise.resolve(cachedSeasonDetails));
         await mockGet.mock.calls[1][1](request, mockResponse, mockNext);
       });
 

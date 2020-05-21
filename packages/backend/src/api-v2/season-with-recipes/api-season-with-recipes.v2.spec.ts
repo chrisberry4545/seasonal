@@ -3,7 +3,7 @@ import {
 } from 'express';
 import * as getQueryParams from '../../api-utils/get-query-params';
 import { apiSeasonWithRecipesV2 } from './api-season-with-recipes.v2';
-import * as getOneCachedSeasonsWithFilteredRecipes from './get-cached-season-with-filtered-recipes';
+import * as getOneCachedSeasonsWithFilteredRecipes from './get-one-cached-season-with-filtered-recipes';
 import * as getAllCachedSeasonsWithFilteredRecipes from './get-all-cached-seasons-with-filtered-recipes';
 import * as apiUtils from '../../api-utils';
 import { ISeasonalBackendError } from '../../interfaces';

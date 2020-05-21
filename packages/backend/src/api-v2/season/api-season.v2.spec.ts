@@ -39,7 +39,7 @@ describe('apiSeasonV2', () => {
     const error = new Error('cannot find badge');
     beforeEach(async () => {
       jest.spyOn(getAllCachedSeasons, 'getAllCachedSeasons')
-        .mockRejectedValue(error);
+        .mockReturnValue(() => Promise.reject(error));
       await mockGet.mock.calls[0][1](request, mockResponse, mockNext);
     });
 
@@ -52,7 +52,7 @@ describe('apiSeasonV2', () => {
     const cachedSeasons = [{}] as IBaseSeason[];
     beforeEach(async () => {
       jest.spyOn(getAllCachedSeasons, 'getAllCachedSeasons')
-        .mockResolvedValue(cachedSeasons);
+        .mockReturnValue(() => Promise.resolve(cachedSeasons));
       await mockGet.mock.calls[0][1](request, mockResponse, mockNext);
     });
 

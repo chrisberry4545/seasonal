@@ -56,7 +56,7 @@ describe('apiBadgeV2', () => {
     const error = new Error('cannot find badge');
     beforeEach(async () => {
       jest.spyOn(getCachedBadgeDetails, 'getCachedBadgeDetails')
-        .mockRejectedValue(error);
+        .mockReturnValue(() => Promise.reject(error));
       await mockGet.mock.calls[0][2](request, mockResponse, mockNext);
     });
 
@@ -68,7 +68,7 @@ describe('apiBadgeV2', () => {
   describe('when no result is returned from getCachedBadgeDetails', () => {
     beforeEach(async () => {
       jest.spyOn(getCachedBadgeDetails, 'getCachedBadgeDetails')
-        .mockResolvedValue(null);
+        .mockReturnValue(() => Promise.resolve(undefined));
       await mockGet.mock.calls[0][2](request, mockResponse, mockNext);
     });
 
@@ -81,7 +81,7 @@ describe('apiBadgeV2', () => {
     const cachedBadgeDetails = {} as IHydratedBadge;
     beforeEach(async () => {
       jest.spyOn(getCachedBadgeDetails, 'getCachedBadgeDetails')
-        .mockResolvedValue(cachedBadgeDetails);
+        .mockReturnValue(() => Promise.resolve(cachedBadgeDetails));
       await mockGet.mock.calls[0][2](request, mockResponse, mockNext);
     });
 

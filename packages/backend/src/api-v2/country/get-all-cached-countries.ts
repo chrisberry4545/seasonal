@@ -6,9 +6,9 @@ import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { getAllDbCountries } from './get-all-db-countries';
 
 const allCountryDataCache = new Cache<ICountry[]>();
-const allCountryDataCacheKey = 'single-country';
+const allCountryDataCacheKey = 'all-countries';
 
-export const getAllCachedCountries = cacheFunctionResponse(
+export const getAllCachedCountries = () => cacheFunctionResponse(
   allCountryDataCache,
   allCountryDataCacheKey,
   (): Promise<ICountry[]> => getAllDbCountries()
