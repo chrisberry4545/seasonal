@@ -1,12 +1,12 @@
 import {
-  getSeasonsWithFood
-} from './get-seasons-with-food';
+  getDbSeasonsWithRecipes
+} from './get-db-seasons-with-recipes';
 import * as postgres from '../../postgres';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
-describe('getSeasonsWithFood', () => {
-  let result: IHydratedSeason[] | null;
+describe('getSeasonsWithRecipes', () => {
+  let result: IHydratedSeason[];
   const queryResult = {
     rows: [{}]
   } as QueryResult<IHydratedSeason[]>;
@@ -22,11 +22,11 @@ describe('getSeasonsWithFood', () => {
       .mockResolvedValue(queryResult);
     mockGetSqlQuery = jest.spyOn(postgres, 'getSqlQuery')
       .mockResolvedValue(sqlQueryResult);
-    result = await getSeasonsWithFood(seasonIndex, regionId);
+    result = await getDbSeasonsWithRecipes(seasonIndex, regionId);
   });
 
   test('calls getSqlQuery with the correct', () =>
-    expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-seasons-with-food.sql`)));
+    expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-db-seasons-with-recipes.sql`)));
 
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(

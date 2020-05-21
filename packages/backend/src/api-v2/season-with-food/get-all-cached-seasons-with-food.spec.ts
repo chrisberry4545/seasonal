@@ -2,14 +2,14 @@ import * as cache from '../../cache';
 import { Cache } from '../../cache';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedSeasonsWithFood } from './get-all-cached-seasons-with-food';
-import * as getAllSeasonsWithFood from './get-all-seasons-with-food';
+import * as getAllDbSeasonsWithFood from './get-all-db-seasons-with-food';
 import { DEFAULT_REGION_ID } from '../../config';
 
 describe('getAllCachedSeasonsWithFood', () => {
   const regionId = 'regionId';
   let dataCache: Cache<unknown>;
   let cacheKey: string;
-  let mockGetAllSeasonsWithFood: jest.SpyInstance;
+  let mockGetAllDbSeasonsWithFood: jest.SpyInstance;
   const allSeasonsWithFood = [{}] as IHydratedSeason[];
   let result: IHydratedSeason[];
   let innerFunction: (...args: any[]) => Promise<unknown>;
@@ -27,10 +27,10 @@ describe('getAllCachedSeasonsWithFood', () => {
     dataCache = usedCache;
     cacheKey = usedCacheKey;
     result = await cachedFunction(regionId);
-    mockGetAllSeasonsWithFood = jest.spyOn(
-      getAllSeasonsWithFood, 'getAllSeasonsWithFood'
+    mockGetAllDbSeasonsWithFood = jest.spyOn(
+      getAllDbSeasonsWithFood, 'getAllDbSeasonsWithFood'
     ).mockResolvedValue(allSeasonsWithFood);
-    mockGetAllSeasonsWithFood.mockClear();
+    mockGetAllDbSeasonsWithFood.mockClear();
     innerFunction = usedInnerFunction;
   });
 
@@ -43,8 +43,8 @@ describe('getAllCachedSeasonsWithFood', () => {
   describe('when the inner function is called', () => {
     beforeEach(() => innerFunction(regionId));
 
-    test('calls getAllSeasonsWithFood with the correct arguments', () =>
-      expect(mockGetAllSeasonsWithFood).toHaveBeenCalledWith(regionId));
+    test('calls getAllDbSeasonsWithFood with the correct arguments', () =>
+      expect(mockGetAllDbSeasonsWithFood).toHaveBeenCalledWith(regionId));
 
   });
 
@@ -52,7 +52,7 @@ describe('getAllCachedSeasonsWithFood', () => {
     beforeEach(() => innerFunction());
 
     test('defaults the regionId', () =>
-      expect(mockGetAllSeasonsWithFood).toHaveBeenCalledWith(
+      expect(mockGetAllDbSeasonsWithFood).toHaveBeenCalledWith(
         DEFAULT_REGION_ID
       ));
 

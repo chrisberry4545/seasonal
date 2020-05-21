@@ -2,12 +2,12 @@ import * as cache from '../../cache';
 import { Cache } from '../../cache';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedSeasons } from './get-all-cached-seasons';
-import * as getAllSeasons from './get-all-seasons';
+import * as getAllDbSeasons from './get-all-db-seasons';
 
 describe('getAllCachedSeasons', () => {
   let dataCache: Cache<unknown>;
   let cacheKey: string;
-  let mockGetAllSeasons: jest.SpyInstance;
+  let mockGetDbAllSeasons: jest.SpyInstance;
   const allSeasons = [{}] as IHydratedSeason[];
   let result: IHydratedSeason[];
   let innerFunction: (...args: any[]) => Promise<unknown>;
@@ -25,10 +25,10 @@ describe('getAllCachedSeasons', () => {
     dataCache = usedCache;
     cacheKey = usedCacheKey;
     result = await cachedFunction();
-    mockGetAllSeasons = jest.spyOn(
-      getAllSeasons, 'getAllSeasons'
+    mockGetDbAllSeasons = jest.spyOn(
+      getAllDbSeasons, 'getAllDbSeasons'
     ).mockResolvedValue(allSeasons);
-    mockGetAllSeasons.mockClear();
+    mockGetDbAllSeasons.mockClear();
     innerFunction = usedInnerFunction;
   });
 
@@ -42,7 +42,7 @@ describe('getAllCachedSeasons', () => {
     beforeEach(() => innerFunction());
 
     test('calls getAllSeasons with the correct arguments', () =>
-      expect(mockGetAllSeasons).toHaveBeenCalled());
+      expect(mockGetDbAllSeasons).toHaveBeenCalled());
 
   });
 

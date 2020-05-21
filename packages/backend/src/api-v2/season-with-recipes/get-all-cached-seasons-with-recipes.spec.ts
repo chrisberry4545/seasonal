@@ -2,14 +2,14 @@ import * as cache from '../../cache';
 import { Cache } from '../../cache';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedSeasonsWithRecipes } from './get-all-cached-seasons-with-recipes';
-import * as getAllSeasonsWithRecipes from './get-all-seasons-with-recipes';
+import * as getAllDbSeasonsWithRecipes from './get-all-db-seasons-with-recipes';
 import { DEFAULT_REGION_ID } from '../../config';
 
 describe('getAllCachedSeasonsWithRecipes', () => {
   const regionId = 'regionId';
   let dataCache: Cache<unknown>;
   let cacheKey: string;
-  let mockGetAllSeasonsWithRecipes: jest.SpyInstance;
+  let mockGetAllDbSeasonsWithRecipes: jest.SpyInstance;
   const allSeasonsWithRecipes = [{}] as IHydratedSeason[];
   let result: IHydratedSeason[];
   let innerFunction: (...args: any[]) => Promise<unknown>;
@@ -27,10 +27,10 @@ describe('getAllCachedSeasonsWithRecipes', () => {
     dataCache = usedCache;
     cacheKey = usedCacheKey;
     result = await cachedFunction(regionId);
-    mockGetAllSeasonsWithRecipes = jest.spyOn(
-      getAllSeasonsWithRecipes, 'getAllSeasonsWithRecipes'
+    mockGetAllDbSeasonsWithRecipes = jest.spyOn(
+      getAllDbSeasonsWithRecipes, 'getAllDbSeasonsWithRecipes'
     ).mockResolvedValue(allSeasonsWithRecipes);
-    mockGetAllSeasonsWithRecipes.mockClear();
+    mockGetAllDbSeasonsWithRecipes.mockClear();
     innerFunction = usedInnerFunction;
   });
 
@@ -43,8 +43,8 @@ describe('getAllCachedSeasonsWithRecipes', () => {
   describe('when the inner function is called', () => {
     beforeEach(() => innerFunction(regionId));
 
-    test('calls getAllSeasonsWithRecipes with the correct arguments', () =>
-      expect(mockGetAllSeasonsWithRecipes).toHaveBeenCalledWith(regionId));
+    test('calls getAllDbSeasonsWithRecipes with the correct arguments', () =>
+      expect(mockGetAllDbSeasonsWithRecipes).toHaveBeenCalledWith(regionId));
 
   });
 
@@ -52,7 +52,7 @@ describe('getAllCachedSeasonsWithRecipes', () => {
     beforeEach(() => innerFunction());
 
     test('defaults the regionId', () =>
-      expect(mockGetAllSeasonsWithRecipes).toHaveBeenCalledWith(
+      expect(mockGetAllDbSeasonsWithRecipes).toHaveBeenCalledWith(
         DEFAULT_REGION_ID
       ));
 

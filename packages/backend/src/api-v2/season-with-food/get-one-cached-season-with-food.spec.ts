@@ -2,7 +2,7 @@ import * as cache from '../../cache';
 import { Cache } from '../../cache';
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { getOneCachedSeasonWithFood } from './get-one-cached-season-with-food';
-import * as getOneSeasonWithFood from './get-one-season-with-food';
+import * as getOneDbSeasonWithFood from './get-one-db-season-with-food';
 import { DEFAULT_REGION_ID } from '../../config';
 
 describe('getOneCachedSeasonWithFood', () => {
@@ -10,7 +10,7 @@ describe('getOneCachedSeasonWithFood', () => {
   const regionId = 'regionId';
   let dataCache: Cache<unknown>;
   let cacheKey: string;
-  let mockGetOneSeasonWithFood: jest.SpyInstance;
+  let mockGetOneDbSeasonWithFood: jest.SpyInstance;
   const seasonWithFood = {} as IHydratedSeason;
   let result: IHydratedSeason | undefined;
   let innerFunction: (...args: any[]) => Promise<unknown>;
@@ -28,10 +28,10 @@ describe('getOneCachedSeasonWithFood', () => {
     dataCache = usedCache;
     cacheKey = usedCacheKey;
     result = await cachedFunction(seasonIndex, regionId);
-    mockGetOneSeasonWithFood = jest.spyOn(
-      getOneSeasonWithFood, 'getOneSeasonWithFood'
+    mockGetOneDbSeasonWithFood = jest.spyOn(
+      getOneDbSeasonWithFood, 'getOneDbSeasonWithFood'
     ).mockResolvedValue(seasonWithFood);
-    mockGetOneSeasonWithFood.mockClear();
+    mockGetOneDbSeasonWithFood.mockClear();
     innerFunction = usedInnerFunction;
   });
 
@@ -44,8 +44,8 @@ describe('getOneCachedSeasonWithFood', () => {
   describe('when the inner function is called', () => {
     beforeEach(() => innerFunction(seasonIndex, regionId));
 
-    test('calls getOneSeasonWithFood with the correct arguments', () =>
-      expect(mockGetOneSeasonWithFood).toHaveBeenCalledWith(seasonIndex, regionId));
+    test('calls getOneDbSeasonWithFood with the correct arguments', () =>
+      expect(mockGetOneDbSeasonWithFood).toHaveBeenCalledWith(seasonIndex, regionId));
 
   });
 
@@ -53,7 +53,7 @@ describe('getOneCachedSeasonWithFood', () => {
     beforeEach(() => innerFunction(seasonIndex));
 
     test('defaults the regionId', () =>
-      expect(mockGetOneSeasonWithFood).toHaveBeenCalledWith(
+      expect(mockGetOneDbSeasonWithFood).toHaveBeenCalledWith(
         seasonIndex, DEFAULT_REGION_ID
       ));
 

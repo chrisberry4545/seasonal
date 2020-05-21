@@ -1,15 +1,17 @@
 import {
-  getAllSeasons
-} from './get-all-seasons';
+  getDbSeasonsWithFood
+} from './get-db-seasons-with-food';
 import * as postgres from '../../postgres';
-import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
-describe('getAllSeasons', () => {
-  let result: IBaseSeason[];
+describe('getSeasonsWithFood', () => {
+  let result: IHydratedSeason[] | null;
   const queryResult = {
     rows: [{}]
-  } as QueryResult<IBaseSeason[]>;
+  } as QueryResult<IHydratedSeason[]>;
+  const seasonIndex = 1;
+  const regionId = 'regionId';
 
   let mockQueryPostgres: jest.SpyInstance;
   let mockGetSqlQuery: jest.SpyInstance;
@@ -20,15 +22,16 @@ describe('getAllSeasons', () => {
       .mockResolvedValue(queryResult);
     mockGetSqlQuery = jest.spyOn(postgres, 'getSqlQuery')
       .mockResolvedValue(sqlQueryResult);
-    result = await getAllSeasons();
+    result = await getDbSeasonsWithFood(seasonIndex, regionId);
   });
 
   test('calls getSqlQuery with the correct', () =>
-    expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-all-seasons.sql`)));
+    expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-db-seasons-with-food.sql`)));
 
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(
-      sqlQueryResult
+      sqlQueryResult,
+      [regionId, seasonIndex]
     ));
 
   test('returns the expected result', () => expect(result).toBe(queryResult.rows));

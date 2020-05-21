@@ -24,7 +24,7 @@ describe('getAllDbCountries', () => {
   });
 
   test('calls getSqlQuery with the correct', () =>
-    expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-countries.sql`)));
+    expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-all-db-countries.sql`)));
 
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(

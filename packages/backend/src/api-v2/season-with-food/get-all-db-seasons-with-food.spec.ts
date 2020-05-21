@@ -1,14 +1,14 @@
 import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
-import * as getSeasonsWithFood from './get-seasons-with-food';
-import { getAllSeasonsWithFood } from './get-all-seasons-with-food';
+import * as getDbSeasonsWithFood from './get-db-seasons-with-food';
+import { getAllDbSeasonsWithFood } from './get-all-db-seasons-with-food';
 
 describe('getAllSeasonsWithFood', () => {
   let result: IHydratedSeason[];
   const seasons = [{}] as IHydratedSeason[];
   beforeEach(async () => {
-    jest.spyOn(getSeasonsWithFood, 'getSeasonsWithFood')
+    jest.spyOn(getDbSeasonsWithFood, 'getDbSeasonsWithFood')
       .mockResolvedValue(seasons);
-    result = await getAllSeasonsWithFood('regionId');
+    result = await getAllDbSeasonsWithFood('regionId');
   });
 
   test('returns the seasons', () => expect(result).toBe(seasons));

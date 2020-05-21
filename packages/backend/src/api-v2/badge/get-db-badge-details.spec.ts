@@ -31,7 +31,7 @@ describe('getDbBadgeDetails', () => {
     });
 
     test('calls getSqlQuery with the correct', () =>
-      expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-badge-details.sql`)));
+      expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-db-badge-details.sql`)));
 
     test('calls queryPostgres with the correct values', () =>
       expect(mockQueryPostgres).toHaveBeenCalledWith(

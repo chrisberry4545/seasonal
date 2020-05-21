@@ -31,7 +31,7 @@ describe('getDbFoodDetails', () => {
     });
 
     test('calls getSqlQuery with the correct', () =>
-      expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-food-details.sql`)));
+      expect(mockGetSqlQuery).toHaveBeenCalledWith((`${__dirname}/get-db-food-details.sql`)));
 
     test('calls queryPostgres with the correct values', () =>
       expect(mockQueryPostgres).toHaveBeenCalledWith(
