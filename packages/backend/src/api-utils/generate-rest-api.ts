@@ -4,7 +4,8 @@ import {
   Response,
   NextFunction
 } from 'express';
-import { get404Error, get500Error } from '.';
+import { get404Error } from './get-404-error';
+import { get500Error } from './get-500-error';
 import { getError } from './get-error';
 import { uuidParamValidation } from '../middleware/uuid-param-validation';
 
@@ -84,6 +85,9 @@ export const generateRestApi = <T> (
       '/',
       async (req: Request, res: Response, next: NextFunction) => {
         const objectToEdit = req.body;
+        if (!objectToEdit) {
+          return next(getError('Please provide an item to edit', 400));
+        }
         try {
           const editedObject = await edit(objectToEdit);
           if (!editedObject) {
