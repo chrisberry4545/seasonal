@@ -5,5 +5,5 @@ export const adminGetOneDbBadge = async (
   id: string
 ): Promise<IBadge> => {
   const results = await adminGetDbBadges(id);
-  return results && results[0];
+  return results[0];
 };
