@@ -6,7 +6,7 @@ describe('adminGetOneDbBadge', () => {
   let mockAdminGetDbBadges: jest.SpyInstance;
   const mockBadges = [{}] as IBadge[];
   const badgeId = 'badgeId';
-  let result: IBadge;
+  let result: IBadge | undefined;
 
   beforeEach(async () => {
     mockAdminGetDbBadges = jest.spyOn(adminGetDbBadges, 'adminGetDbBadges')

@@ -6,7 +6,7 @@ describe('adminGetOneDbFood', () => {
   let mockAdminGetDbFood: jest.SpyInstance;
   const mockFood = [{}] as IFood[];
   const foodId = 'foodId';
-  let result: IFood;
+  let result: IFood | undefined;
 
   beforeEach(async () => {
     mockAdminGetDbFood = jest.spyOn(adminGetDbFood, 'adminGetDbFood')

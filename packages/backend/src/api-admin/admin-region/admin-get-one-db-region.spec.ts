@@ -6,7 +6,7 @@ describe('adminGetOneDbRegion', () => {
   let mockAdminGetDbRegions: jest.SpyInstance;
   const mockRegions = [{}] as IDbRegion[];
   const id = 'id';
-  let result: IDbRegion;
+  let result: IDbRegion | undefined;
 
   beforeEach(async () => {
     mockAdminGetDbRegions = jest.spyOn(adminGetDbRegions, 'adminGetDbRegions')

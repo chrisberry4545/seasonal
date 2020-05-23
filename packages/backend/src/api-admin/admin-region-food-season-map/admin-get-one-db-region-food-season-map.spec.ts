@@ -6,7 +6,7 @@ describe('adminGetDbRegionFoodSeasonMaps', () => {
   let mockAdminGetDbRegionFoodSeasonMap: jest.SpyInstance;
   const mockRegionFoodSeasonMaps = [{}] as IRegionFoodSeasonMap[];
   const id = 'id';
-  let result: IRegionFoodSeasonMap;
+  let result: IRegionFoodSeasonMap | undefined;
 
   beforeEach(async () => {
     mockAdminGetDbRegionFoodSeasonMap = jest.spyOn(
