@@ -1,5 +1,5 @@
 import { LOGIN_URL } from '../config';
-import { setAccessToken } from './access-token';
+import { setAccessToken } from './set-access-token';
 
 export const loginRequest = async (
   username: string, password: string

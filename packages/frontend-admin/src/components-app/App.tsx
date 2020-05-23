@@ -25,12 +25,21 @@ export const App: FC<{}> = () => (
             ...group.pages
           ], [] as IMainLinkPages[]).map((link) =>
             <Fragment key={link.viewUrl}>
-              <Route exact path={`/${link.viewUrl}`}
-                component={link.viewPageComponent} />
-              <Route exact path={`/${link.editLinkUrl}`}
-                component={link.editPageComponent} />
-              <Route exact path={`/${link.createLinkUrl}`}
+              {
+                link.viewPageComponent
+                  && <Route exact path={`/${link.viewUrl}`}
+                  component={link.viewPageComponent} />
+              }
+              {
+                link.editPageComponent
+                  && <Route exact path={`/${link.editLinkUrl}`}
+                  component={link.editPageComponent} />
+              }
+              {
+                link.createPageComponent
+                && <Route exact path={`/${link.createLinkUrl}`}
                 component={link.createPageComponent} />
+              }
             </Fragment>
           )
         }

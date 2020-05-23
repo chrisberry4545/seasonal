@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateCountryForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Create Country"
+>
+  <BaseFormCountry
+    buttonText="create"
+    items={
+      Object {
+        "name": "",
+      }
+    }
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;

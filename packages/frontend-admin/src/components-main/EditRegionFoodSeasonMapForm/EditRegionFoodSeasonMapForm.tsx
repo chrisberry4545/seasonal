@@ -2,9 +2,9 @@ import React, { FC, useState } from 'react';
 import { BaseFormRegionFoodSeasonMap } from '../BaseFormRegionFoodSeasonMap/BaseFormRegionFoodSeasonMap';
 import { BaseFormRegionSeasonFoodMap } from '../BaseFormRegionSeasonFoodMap/BaseFormRegionSeasonFoodMap';
 import { BareButton } from '@chrisb-dev/seasonal-shared-frontend-components';
-import './EditRegionFoodSeasonMap.scss';
+import './EditRegionFoodSeasonMapForm.scss';
 
-export const EditRegionFoodSeasonMap: FC = () => {
+export const EditRegionFoodSeasonMapForm: FC = () => {
   const [isInFoodFirstMode, setIsInFoodFirstMode] = useState(true);
 
   const flipForm = () => setIsInFoodFirstMode(!isInFoodFirstMode);

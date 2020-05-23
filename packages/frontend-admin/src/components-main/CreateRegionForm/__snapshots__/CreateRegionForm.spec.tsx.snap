@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateRegionForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Create Region"
+>
+  <BaseFormRegion
+    additionalConfig={
+      Object {
+        "code": Object {
+          "type": "text",
+          "validation": Array [
+            [Function],
+          ],
+        },
+        "id": Object {
+          "type": "text",
+          "validation": Array [
+            [Function],
+          ],
+        },
+      }
+    }
+    buttonText="create"
+    items={
+      Object {
+        "countryId": undefined,
+        "id": "",
+        "isDisabled": false,
+        "lat": 0,
+        "lng": 0,
+        "name": "",
+      }
+    }
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;

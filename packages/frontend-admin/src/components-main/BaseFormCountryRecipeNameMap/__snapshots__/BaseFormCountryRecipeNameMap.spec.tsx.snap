@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormCountryRecipeNameMap /> renders correctly 1`] = `
+<DataForm
+  buttonText="Edit"
+  formConfig={
+    Object {
+      "countryId": Object {
+        "options": Array [
+          Object {
+            "label": "country1",
+            "value": "c1",
+          },
+        ],
+        "type": "select",
+      },
+      "name": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "recipeId": Object {
+        "options": Array [
+          Object {
+            "label": "recipe1",
+            "value": "r1",
+          },
+        ],
+        "type": "select",
+      },
+    }
+  }
+  item={Object {}}
+  sendData={[MockFunction]}
+/>
+`;

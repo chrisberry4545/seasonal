@@ -1,4 +1,4 @@
-export * from './access-token';
+export * from './set-access-token';
 
 export * from './create-badge';
 

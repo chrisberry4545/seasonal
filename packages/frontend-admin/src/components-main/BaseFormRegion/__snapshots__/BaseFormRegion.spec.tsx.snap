@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormRegion /> renders correctly 1`] = `
+<DataForm
+  buttonText="Edit"
+  formConfig={
+    Object {
+      "countryId": Object {
+        "options": Array [
+          Object {
+            "label": "country1",
+            "value": "c1",
+          },
+        ],
+        "type": "select",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "isDisabled": Object {
+        "type": "checkbox",
+      },
+      "lat": Object {
+        "type": "number",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "lng": Object {
+        "type": "number",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "name": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+    }
+  }
+  item={Object {}}
+  sendData={[MockFunction]}
+/>
+`;

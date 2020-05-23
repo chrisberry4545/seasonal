@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LayoutWithTitle /> when there is a title set renders correctly 1`] = `
+<div
+  className="c-layout-with-title"
+>
+  <TextHeadingMedium
+    className="c-layout-with-title__title"
+  >
+    Title
+  </TextHeadingMedium>
+  Children
+</div>
+`;

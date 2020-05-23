@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ViewRegionsPage /> renders correctly 1`] = `<FullListRegions />`;
