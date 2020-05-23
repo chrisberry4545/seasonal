@@ -44,7 +44,7 @@ describe('roleValidation', () => {
   describe('when the user does not exist', () => {
     beforeEach(() => {
       jest.spyOn(adminGetOneDbUser, 'adminGetOneDbUser')
-        .mockResolvedValue(null);
+        .mockResolvedValue(undefined);
       roleValidation(jwtPayload, callback, USER_ROLES.EDITOR);
     });
 

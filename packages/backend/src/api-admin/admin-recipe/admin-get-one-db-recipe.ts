@@ -3,7 +3,7 @@ import { adminGetDbRecipes } from './admin-get-db-recipes';
 
 export const adminGetOneDbRecipe = async (
   id: string
-): Promise<IRecipe> => {
+): Promise<IRecipe | undefined> => {
   const result = await adminGetDbRecipes(id);
   return result && result[0];
 };

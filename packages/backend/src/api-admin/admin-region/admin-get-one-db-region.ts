@@ -3,7 +3,7 @@ import { adminGetDbRegions } from './admin-get-db-regions';
 
 export const adminGetOneDbRegion = async (
   id: string
-): Promise<IDbRegion> => {
+): Promise<IDbRegion | undefined> => {
   const result = await adminGetDbRegions(id);
   return result && result[0];
 };

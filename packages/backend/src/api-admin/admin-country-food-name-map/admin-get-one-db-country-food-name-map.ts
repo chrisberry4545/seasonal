@@ -3,7 +3,7 @@ import { adminGetDbCountryFoodNameMaps } from './admin-get-db-country-food-name-
 
 export const adminGetOneDbCountryFoodNameMap = async (
   id: string
-): Promise<ICountryFoodNameMap> => {
+): Promise<ICountryFoodNameMap | undefined> => {
   const results = await adminGetDbCountryFoodNameMaps(id);
   return results && results[0];
 };

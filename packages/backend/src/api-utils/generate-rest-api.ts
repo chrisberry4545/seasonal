@@ -11,7 +11,7 @@ import { uuidParamValidation } from '../middleware/uuid-param-validation';
 
 interface IAutoGenOptions<T> {
   getAll?: () => Promise<T[]>;
-  getOne?: (id: string) => Promise<T | null>;
+  getOne?: (id: string) => Promise<T | undefined>;
   create?: (object: T) => Promise<T>;
   edit?: (object: T) => Promise<T>;
   deleteOne?: (id: string) => Promise<T>;

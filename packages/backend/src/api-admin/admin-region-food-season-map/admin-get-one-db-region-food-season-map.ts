@@ -3,7 +3,7 @@ import { adminGetDbRegionFoodSeasonMaps } from './admin-get-db-region-food-seaso
 
 export const adminGetOneDbRegionFoodSeasonMap = async (
   id: string
-): Promise<IRegionFoodSeasonMap> => {
+): Promise<IRegionFoodSeasonMap | undefined> => {
   const result = await adminGetDbRegionFoodSeasonMaps(id);
   return result[0];
 };
