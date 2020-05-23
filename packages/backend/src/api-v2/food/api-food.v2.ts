@@ -4,7 +4,7 @@ import {
   Response,
   NextFunction
 } from 'express';
-import { getFoodDetailsWithFilteredRecipes } from './get-food-details-with-filtered-recipes';
+import { getCachedFoodDetailsWithFilteredRecipes } from './get-cached-food-details-with-filtered-recipes';
 import {
   getIsVegetarianFromQueryParams,
   getIsVeganFromQueryParams,
@@ -25,7 +25,7 @@ export const apiFoodV2 = (router = Router()) => {
       const isVegan = getIsVeganFromQueryParams(req);
       const regionId = getRegionIdFromQueryParams(req);
       try {
-        const result = await getFoodDetailsWithFilteredRecipes(
+        const result = await getCachedFoodDetailsWithFilteredRecipes(
           id, isVegetarian, isVegan, regionId
         );
         if (!result) {

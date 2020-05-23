@@ -20,7 +20,8 @@
     "copy-env": "node ./copy-env.js",
     "watch-sql": "onchange 'src/**/*.sql' -- yarn copy-sql",
     "copy-sql": "mkdir -p dist/src && node ./copy-sql.js",
-    "test": "jest",
+    "test": "jest --testPathIgnorePatterns='.*integration.spec.ts$'",
+    "test:integration": "jest --testPathPattern='.*\\.integration.spec.ts$'",
     "test:watch": "jest --watchAll",
     "deploy": "serverless deploy --stage prod"
   },

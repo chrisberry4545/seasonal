@@ -38,7 +38,7 @@ jobs:
           command: |
             yarn workspace @chrisb-dev/seasonal-backend deploy
 
-  shared_frontend_unit_tests:
+  unit_tests:
     docker:
       - image: circleci/node:12.14
     steps:
@@ -56,6 +56,9 @@ jobs:
       - run:
           name: Run frontend unit tests
           command: yarn workspace @chrisb-dev/seasonal-frontend test --runInBand
+      - run:
+          name: Run backend unit tests
+          command: yarn workspace @chrisb-dev/seasonal-backend test --runInBand
 
   web_e2e_tests:
     docker:
@@ -102,21 +105,22 @@ workflows:
   version: 2
   seasonal:
     jobs:
+      - unit_tests
       - backend_approval:
           type: approval
       - backend_integration_tests:
           requires:
-           - backend_approval
+            - backend_approval
+            - unit_tests
       - backend_deploy:
           requires:
             - backend_integration_tests
-      - shared_frontend_unit_tests
       - frontend_approval:
           type: approval
       - web_e2e_tests:
           requires:
             - frontend_approval
-            - shared_frontend_unit_tests
+            - unit_tests
       - frontend_deploy:
           requires:
             - web_e2e_tests
@@ -125,4 +129,4 @@ workflows:
       - frontend_admin_deploy:
           requires:
             - frontend_admin_approval
-            - shared_frontend_unit_tests
+            - unit_tests

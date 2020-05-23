@@ -13,7 +13,7 @@ export const apiSeasonWithFoodV2 = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await getAllCachedSeasonsWithFood(regionId);
+      const result = await getAllCachedSeasonsWithFood()(regionId);
       return res.json(result);
     } catch (err) {
       return next(get500Error(err.message));
@@ -23,7 +23,7 @@ export const apiSeasonWithFoodV2 = (router = Router()) => {
     const { seasonIndex } = req.params;
     const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await getOneCachedSeasonWithFood(parseInt(seasonIndex, 10), regionId);
+      const result = await getOneCachedSeasonWithFood()(parseInt(seasonIndex, 10), regionId);
       if (!result) {
         return next(get404Error());
       }

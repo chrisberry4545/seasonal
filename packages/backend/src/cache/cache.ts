@@ -1,6 +1,7 @@
 import {
   SKIP_CACHE
 } from '../config';
+import { now } from '../utils/now';
 
 const DEFAULT_TTL = 1000 * 60 * 30; // 30 min in ms
 export class Cache<T> {
@@ -16,11 +17,12 @@ export class Cache<T> {
 
   public set(key: string, value: T, { ttl = this.ttl } = {}) {
     this.map.set(key, value);
-    this.expiries.set(key, Date.now() + ttl);
+    this.expiries.set(key, now() + ttl);
   }
+
   public get(key: string): T | undefined {
     const cacheValue = this.expiries.get(key);
-    if (!SKIP_CACHE && cacheValue && cacheValue > Date.now()) {
+    if (!SKIP_CACHE && cacheValue && cacheValue > now()) {
       return this.map.get(key);
     }
     return undefined;

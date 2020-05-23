@@ -9,5 +9,5 @@ export const adminDeleteDbBadge = async (
     query,
     [id]
   );
-  return result.rows && result.rows[0];
+  return result.rows[0];
 };

@@ -3,7 +3,7 @@ import { adminGetDbCountryRecipeNameMaps } from './admin-get-db-country-recipe-n
 
 export const adminGetOneDbCountryRecipeNameMap = async (
   id: string
-): Promise<ICountryRecipeNameMap> => {
+): Promise<ICountryRecipeNameMap | undefined> => {
   const results = await adminGetDbCountryRecipeNameMaps(id);
   return results && results[0];
 };

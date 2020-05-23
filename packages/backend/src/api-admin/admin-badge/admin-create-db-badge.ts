@@ -11,5 +11,5 @@ export const adminCreateDbBadge = async (
       item.name
     ]
   );
-  return result.rows && result.rows[0];
+  return result.rows[0];
 };

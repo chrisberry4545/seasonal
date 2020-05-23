@@ -8,13 +8,13 @@ import { getDbBadgeDetails } from './get-db-badge-details';
 const singleBadgeCache = new Cache<IHydratedBadge>();
 const singleBadgeCacheKey = 'single-badge';
 
-export const getCachedBadgeDetails = cacheFunctionResponse(
+export const getCachedBadgeDetails = () => cacheFunctionResponse(
   singleBadgeCache,
   singleBadgeCacheKey,
   (
     badgeId: string,
     regionId: string = DEFAULT_REGION_ID
-  ): Promise<IHydratedBadge> => getDbBadgeDetails(
+  ): Promise<IHydratedBadge | undefined> => getDbBadgeDetails(
     badgeId, regionId
   )
 );

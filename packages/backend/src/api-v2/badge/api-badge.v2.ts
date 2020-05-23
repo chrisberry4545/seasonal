@@ -27,7 +27,7 @@ export const apiBadgeV2 = (router = Router()) => {
       const isVegan = getIsVeganFromQueryParams(req);
       const regionId = getRegionIdFromQueryParams(req);
       try {
-        const result = await getCachedBadgeDetails(
+        const result = await getCachedBadgeDetails()(
           id, regionId, isVegetarian, isVegan
         );
         if (!result) {

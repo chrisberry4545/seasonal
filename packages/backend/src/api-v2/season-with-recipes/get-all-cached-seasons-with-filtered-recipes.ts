@@ -7,7 +7,7 @@ export const getAllCachedSeasonsWithFilteredRecipes = async (
   isVegan: boolean,
   regionId?: string
 ): Promise<IHydratedSeason[]> => {
-  const result = await getAllCachedSeasonsWithRecipes(regionId);
+  const result = await getAllCachedSeasonsWithRecipes()(regionId);
   return result.map((season) => ({
     ...season,
     recipes: filterRecipesByDiet(season.recipes, isVegetarian, isVegan)
