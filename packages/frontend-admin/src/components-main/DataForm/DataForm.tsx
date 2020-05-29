@@ -157,7 +157,10 @@ export function DataForm<T>({
                           type: inputs.type as 'text' | 'number' }
                         } />;
                       case 'checkbox':
-                        return <Checkbox {...inputs} />;
+                        return <Checkbox {...{
+                          ...inputs,
+                          className: `${inputs.className} c-data-form__input--checkbox`
+                        }} />;
                       case 'multiselect':
                         return <Multiselect {...{
                           ...inputs,
