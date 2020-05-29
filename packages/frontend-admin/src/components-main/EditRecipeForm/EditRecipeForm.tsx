@@ -3,23 +3,19 @@ import { getSingleRecipe, updateRecipe } from '../../services';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
 import { BaseFormRecipe } from '../BaseFormRecipe/BaseFormRecipe';
 import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditRecipeForm: FC<{}> = () => {
   const { id } = useParams();
-  const CreatedComponent = GetAuthorizedBackendData<IRecipe>(
-    BaseFormRecipe,
-    () => {
-      return getSingleRecipe(id as string);
-    },
-    updateRecipe
-  );
   return (
     <LayoutWithTitle title='Edit Recipe'>
-      <CreatedComponent />
+      <GetAuthorizedBackendData
+        InnerComponent={BaseFormRecipe}
+        requestDataMethod={() => getSingleRecipe(id as string)}
+        updateMethod={updateRecipe}
+        />
     </LayoutWithTitle>
   );
 };

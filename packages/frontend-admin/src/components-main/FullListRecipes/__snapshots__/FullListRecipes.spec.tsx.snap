@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FullListRecipes renders correctly 1`] = `
+<GetAuthorizedBackendData
+  InnerComponent={[Function]}
+  requestDataMethod={[MockFunction]}
+/>
+`;
+
+exports[`FullListRecipes the inner component renders correctly 1`] = `
+<FullList
+  deleteItemFunc={[Function]}
+  getItemEditUrl={[Function]}
+  getItemId={[Function]}
+  getItemName={[Function]}
+  items={
+    Array [
+      Object {
+        "id": "id",
+        "name": "name",
+      },
+    ]
+  }
+  title="Recipes"
+/>
+`;

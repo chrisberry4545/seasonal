@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditRegionFoodSeasonMapForm /> renders correctly 1`] = `
+<div>
+  <BareButton
+    className="c-edit-region-food-season-map__flip-btn"
+    onClick={[Function]}
+  >
+    Select by season
+  </BareButton>
+  <BaseFormRegionFoodSeasonMap />
+</div>
+`;

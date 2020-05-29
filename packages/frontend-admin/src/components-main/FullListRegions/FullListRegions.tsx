@@ -8,7 +8,7 @@ import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 import { ROUTES } from '../../config';
 import { FullList } from '../FullList/FullList';
 
-interface IRegionViewItem extends IDbRegion {
+export interface IRegionViewItem extends IDbRegion {
   countryName: string | undefined;
 }
 
@@ -30,23 +30,25 @@ const FullListRegionsInner: FC<IGetAuthorizedBackendDataProps<IRegionViewItem[]>
     })}
   />
 );
-export const FullListRegions = GetAuthorizedBackendData<IRegionViewItem[]>(
-  FullListRegionsInner,
-  async () => {
-    const [regions, countries] = await Promise.all([
-      getAllRegions(), getAllCountries()
-    ]);
-    return regions.map((region) => {
-      const country =
-        countries.find((countryItem) => countryItem.id === region.countryId);
-      return {
-        ...region,
-        countryName: country && country.name
-      };
-    }).sort((a, b) =>
-      (a.countryName || '') < (b.countryName || '')
-        ? -1
-        : a.name < b.name ? -1 : 1
-      );
-  }
-);
+
+export const FullListRegions: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={FullListRegionsInner}
+    requestDataMethod={async () => {
+      const [regions, countries] = await Promise.all([
+        getAllRegions(), getAllCountries()
+      ]);
+      return regions.map((region) => {
+        const country =
+          countries.find((countryItem) => countryItem.id === region.countryId);
+        return {
+          ...region,
+          countryName: country && country.name
+        };
+      }).sort((a, b) =>
+        (a.countryName || '') < (b.countryName || '')
+          ? -1
+          : a.name < b.name ? -1 : 1
+        );
+    }}
+    />;

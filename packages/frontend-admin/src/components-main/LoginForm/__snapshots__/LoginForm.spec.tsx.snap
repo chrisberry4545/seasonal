@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm /> on login redirects the user to the home page 1`] = `
+<Redirect
+  push={true}
+  to="/home"
+/>
+`;
+
+exports[`<LoginForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Login"
+>
+  <DataForm
+    buttonText="Login"
+    formConfig={
+      Object {
+        "password": Object {
+          "type": "password",
+          "validation": Array [
+            [Function],
+          ],
+        },
+        "username": Object {
+          "type": "text",
+          "validation": Array [
+            [Function],
+          ],
+        },
+      }
+    }
+    item={
+      Object {
+        "password": "",
+        "username": "",
+      }
+    }
+    sendData={[Function]}
+  />
+</LayoutWithTitle>
+`;

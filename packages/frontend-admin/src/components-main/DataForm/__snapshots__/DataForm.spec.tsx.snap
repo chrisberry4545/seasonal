@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DataForm /> renders correctly 1`] = `
+<div
+  className="c-data-form"
+>
+  <div>
+    <label
+      className="c-data-form__field"
+      key="testText"
+    >
+      <TextMedium
+        className="c-data-form__label"
+      >
+        Test Text
+      </TextMedium>
+      <Input
+        className="c-data-form__input"
+        onChange={[Function]}
+        placeholder="Test Text"
+        type="text"
+      />
+      <div />
+    </label>
+    <label
+      className="c-data-form__field"
+      key="testNumber"
+    >
+      <TextMedium
+        className="c-data-form__label"
+      >
+        Test Number
+      </TextMedium>
+      <Input
+        className="c-data-form__input"
+        onChange={[Function]}
+        placeholder="Test Number"
+        type="number"
+      />
+      <div />
+    </label>
+    <label
+      className="c-data-form__field"
+      key="testPassword"
+    >
+      <TextMedium
+        className="c-data-form__label"
+      >
+        Test Password
+      </TextMedium>
+      <Input
+        className="c-data-form__input"
+        onChange={[Function]}
+        placeholder="Test Password"
+        type="password"
+      />
+      <div />
+    </label>
+    <label
+      className="c-data-form__field"
+      key="testCheckbox"
+    >
+      <TextMedium
+        className="c-data-form__label"
+      >
+        Test Checkbox
+      </TextMedium>
+      <Checkbox
+        className="c-data-form__input"
+        onChange={[Function]}
+        placeholder="Test Checkbox"
+        type="checkbox"
+      />
+      <div />
+    </label>
+    <label
+      className="c-data-form__field"
+      key="testSelect"
+    >
+      <TextMedium
+        className="c-data-form__label"
+      >
+        Test Select
+      </TextMedium>
+      <Select
+        className="c-data-form__input"
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "label": "1",
+              "value": "1",
+            },
+            Object {
+              "label": "2",
+              "value": "2",
+            },
+          ]
+        }
+        placeholder="Test Select"
+        type="select"
+      />
+      <div />
+    </label>
+    <label
+      className="c-data-form__field"
+      key="testMultiselect"
+    >
+      <TextMedium
+        className="c-data-form__label"
+      >
+        Test Multiselect
+      </TextMedium>
+      <Multiselect
+        className="c-data-form__input"
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "label": "1",
+              "value": "1",
+            },
+            Object {
+              "label": "2",
+              "value": "2",
+            },
+          ]
+        }
+        placeholder="Test Multiselect"
+        type="multiselect"
+      />
+      <div />
+    </label>
+    <label
+      className="c-data-form__field"
+      key="testSearchableMultiSelect"
+    >
+      <TextMedium
+        className="c-data-form__label"
+      >
+        Test Searchable Multi Select
+      </TextMedium>
+      <SearchableMultiselect
+        className="c-data-form__input"
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "label": "1",
+              "value": "1",
+            },
+            Object {
+              "label": "2",
+              "value": "2",
+            },
+          ]
+        }
+        placeholder="Test Searchable Multi Select"
+        type="searchable-multiselect"
+      />
+      <div />
+    </label>
+  </div>
+  <PrimaryButton
+    className="c-data-form__submit-btn"
+    onClick={[Function]}
+  >
+    buttonText
+  </PrimaryButton>
+</div>
+`;

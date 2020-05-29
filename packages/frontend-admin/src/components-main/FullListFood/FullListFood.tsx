@@ -26,7 +26,8 @@ const FullListFoodInner: FC<IGetAuthorizedBackendDataProps<IFood[]>> = ({
     })}
   />
 );
-export const FullListFood = GetAuthorizedBackendData<IFood[]>(
-  FullListFoodInner,
-  getAllFood
-);
+export const FullListFood: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={FullListFoodInner}
+    requestDataMethod={getAllFood}
+    />;

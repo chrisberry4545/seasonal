@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FullList /> renders correctly 1`] = `
+<div
+  className="c-full-list"
+>
+  <LayoutWithTitle
+    title="Title"
+  >
+    <div
+      className="c-full-list__item"
+      key="id"
+    >
+      <TextMedium
+        className="c-full-list__item-name"
+      >
+        name
+      </TextMedium>
+      <div
+        className="c-full-list-item__options"
+      >
+        <BareButton
+          className="c-full-list-item__edit"
+          onClick={[Function]}
+        >
+          <TextSmall>
+            Edit
+          </TextSmall>
+        </BareButton>
+        <BareButton
+          onClick={[Function]}
+        >
+          <TextSmall>
+            Delete
+          </TextSmall>
+        </BareButton>
+      </div>
+    </div>
+    <div
+      className="c-full-list__item"
+      key="id"
+    >
+      <TextMedium
+        className="c-full-list__item-name"
+      >
+        name
+      </TextMedium>
+      <div
+        className="c-full-list-item__options"
+      >
+        <BareButton
+          className="c-full-list-item__edit"
+          onClick={[Function]}
+        >
+          <TextSmall>
+            Edit
+          </TextSmall>
+        </BareButton>
+        <BareButton
+          onClick={[Function]}
+        >
+          <TextSmall>
+            Delete
+          </TextSmall>
+        </BareButton>
+      </div>
+    </div>
+  </LayoutWithTitle>
+</div>
+`;
+
+exports[`<FullList /> when editing an item redirects to the edit url 1`] = `
+<Redirect
+  push={true}
+  to="edit-url"
+/>
+`;

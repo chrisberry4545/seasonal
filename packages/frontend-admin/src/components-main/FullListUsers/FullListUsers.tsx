@@ -29,7 +29,8 @@ const FullListUsersInner: FC<IGetAuthorizedBackendDataProps<IUser[]>> = ({
   />
 );
 
-export const FullListUsers = GetAuthorizedBackendData<IUser[]>(
-  FullListUsersInner,
-  getAllUsers
-);
+export const FullListUsers: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={FullListUsersInner}
+    requestDataMethod={getAllUsers}
+    />;

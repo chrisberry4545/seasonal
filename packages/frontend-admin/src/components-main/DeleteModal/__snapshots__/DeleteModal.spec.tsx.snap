@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DeleteModal /> renders correctly 1`] = `
+<ModalLayout>
+  <div
+    className="c-delete-modal"
+  >
+    <TextMedium>
+      Are you sure you want to delete this item?
+    </TextMedium>
+    <div
+      className="c-delete-modal__btns"
+    >
+      <BareButton
+        onClick={[MockFunction]}
+      >
+        <TextSmall>
+          Cancel
+        </TextSmall>
+      </BareButton>
+      <BareButton
+        onClick={[Function]}
+      >
+        <TextSmall>
+          Delete
+        </TextSmall>
+      </BareButton>
+    </div>
+  </div>
+</ModalLayout>
+`;

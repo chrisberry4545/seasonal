@@ -20,10 +20,10 @@ export const MainLinks: FC<{}> = () => (
   <Fragment>
     {
       mainLinks.map((group) =>
-        <LayoutWithTitle title={group.title}>
+        <LayoutWithTitle key={group.title} title={group.title}>
           {
             group.pages.map((link) =>
-              <div key={link.viewUrl} className='c-main-links__section'>
+              <div key={link.sectionName} className='c-main-links__section'>
                 <TextHeadingSmall className='c-main-links__section-heading'>{ link.sectionName }</TextHeadingSmall>
                 <div className='c-main-links__options'>
                   {

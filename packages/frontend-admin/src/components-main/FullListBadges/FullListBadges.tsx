@@ -27,7 +27,8 @@ const FullListBadgesInner: FC<IGetAuthorizedBackendDataProps<IBadge[]>> = ({
   />
 );
 
-export const FullListBadges = GetAuthorizedBackendData<IBadge[]>(
-  FullListBadgesInner,
-  getAllBadges
-);
+export const FullListBadges: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={FullListBadgesInner}
+    requestDataMethod={getAllBadges}
+  />;

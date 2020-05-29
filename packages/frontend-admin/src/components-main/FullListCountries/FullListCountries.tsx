@@ -27,7 +27,8 @@ const FullListCountriesInner: FC<IGetAuthorizedBackendDataProps<ICountry[]>> = (
   />
 );
 
-export const FullListCountries = GetAuthorizedBackendData<ICountry[]>(
-  FullListCountriesInner,
-  getAllCountries
-);
+export const FullListCountries: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={FullListCountriesInner}
+    requestDataMethod={getAllCountries}
+    />;
