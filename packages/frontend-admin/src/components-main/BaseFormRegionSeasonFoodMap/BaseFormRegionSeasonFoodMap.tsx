@@ -37,7 +37,7 @@ export const BaseFormRegionSeasonFoodMap: FC<{}> = () => {
           && item.seasonId === form.seasonId
         ).map((item) => item.id);
     const generateItems = (foodIds: string[]): IRegionFoodSeasonMap[] =>
-    foodIds.map((foodId) => ({
+      foodIds.map((foodId) => ({
         foodId,
         regionId: form.regionId,
         seasonId: form.seasonId

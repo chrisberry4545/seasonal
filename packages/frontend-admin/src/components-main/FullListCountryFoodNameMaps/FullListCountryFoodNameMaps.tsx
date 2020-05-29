@@ -8,7 +8,7 @@ import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared-models';
 import { ROUTES } from '../../config';
 import { FullList } from '../FullList/FullList';
 
-interface ICountryFoodNameMapViewItem extends ICountryFoodNameMap {
+export interface ICountryFoodNameMapViewItem extends ICountryFoodNameMap {
   countryName: string | undefined;
   foodName: string | undefined;
 }
@@ -32,34 +32,35 @@ const FullListCountryFoodNameMapInner: FC<IGetAuthorizedBackendDataProps<ICountr
   />
 );
 
-export const FullListCountryFoodNameMaps = GetAuthorizedBackendData<ICountryFoodNameMapViewItem[]>(
-  FullListCountryFoodNameMapInner,
-  async () => {
-    const [
-      foodNameMaps,
-      food,
-      countries
-    ] = await Promise.all([
-      getAllCountryFoodNameMap(),
-      getAllFood(),
-      getAllCountries()
-    ]);
-    return foodNameMaps.map((foodNameMap) => {
-      const matchingFood =
-        food.find((foodItem) => foodNameMap.foodId === foodItem.id);
-      const matchingCountry =
-        countries.find((country) => foodNameMap.countryId === country.id);
-      return {
-        ...foodNameMap,
-        countryName: matchingCountry && matchingCountry.name,
-        foodName: matchingFood && matchingFood.name
-      };
-    }).sort((a, b) => (
-      (a && a.countryName ? a.countryName : '') < (b && b.countryName ? b.countryName : '')
-        ? -1 : (
-          a.foodName && a.foodName ? a.foodName : ''
-        ) < (b && b.foodName ? b.foodName : '')
-          ? -1 : 1
-    ));
-  }
-);
+export const FullListCountryFoodNameMaps: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={FullListCountryFoodNameMapInner}
+    requestDataMethod={async () => {
+      const [
+        foodNameMaps,
+        food,
+        countries
+      ] = await Promise.all([
+        getAllCountryFoodNameMap(),
+        getAllFood(),
+        getAllCountries()
+      ]);
+      return foodNameMaps.map((foodNameMap) => {
+        const matchingFood =
+          food.find((foodItem) => foodNameMap.foodId === foodItem.id);
+        const matchingCountry =
+          countries.find((country) => foodNameMap.countryId === country.id);
+        return {
+          ...foodNameMap,
+          countryName: matchingCountry && matchingCountry.name,
+          foodName: matchingFood && matchingFood.name
+        };
+      }).sort((a, b) => (
+        (a && a.countryName ? a.countryName : '') < (b && b.countryName ? b.countryName : '')
+          ? -1 : (
+            a.foodName && a.foodName ? a.foodName : ''
+          ) < (b && b.foodName ? b.foodName : '')
+            ? -1 : 1
+      ));
+    }}
+    />;

@@ -27,7 +27,7 @@ const ReportFoodWithNoRecipesInner: FC<IGetAuthorizedBackendDataProps<IFood[]>> 
     })}
   />
 );
-export const ReportFoodWithNoRecipes = GetAuthorizedBackendData<IFood[]>(
-  ReportFoodWithNoRecipesInner,
-  getReportFoodWithNoRecipes
-);
+export const ReportFoodWithNoRecipes: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={ReportFoodWithNoRecipesInner}
+    requestDataMethod={getReportFoodWithNoRecipes} />;

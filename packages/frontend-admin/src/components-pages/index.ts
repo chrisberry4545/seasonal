@@ -36,7 +36,7 @@ export * from './HomePage/HomePage';
 
 export * from './LoginPage/LoginPage';
 
-export * from './ReportFoodWithNoRecipes/ReportFoodWithNoRecipes';
+export * from './ReportFoodWithNoRecipesPage/ReportFoodWithNoRecipesPage';
 
 export * from './ViewBadgesPage/ViewBadgesPage';
 

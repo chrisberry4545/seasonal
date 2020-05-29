@@ -1,4 +1,4 @@
-import { getAccessTokenHeaders } from './access-token';
+import { getAccessTokenHeaders } from './get-access-token-headers';
 
 export const makeAuthorizedRequest = async <T>(
   url: string,

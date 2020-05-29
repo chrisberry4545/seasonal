@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateUserForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Create User"
+>
+  <BaseFormUser
+    buttonText="create"
+    items={
+      Object {
+        "password": "",
+        "roles": Array [],
+        "username": "",
+      }
+    }
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;

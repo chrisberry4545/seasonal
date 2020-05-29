@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GetAuthorizedBackendData after the data has been retrieved renders correctly 1`] = `
+<div>
+  <div>
+    <mockConstructor
+      additionalConfig={Object {}}
+      items={
+        Array [
+          Object {},
+          Object {},
+        ]
+      }
+      reload={[Function]}
+      updateMethod={[MockFunction]}
+    />
+  </div>
+</div>
+`;
+
+exports[`GetAuthorizedBackendData if retrieving the data fails renders an error 1`] = `
+<div>
+  <div>
+    <div>
+      error
+    </div>
+  </div>
+</div>
+`;

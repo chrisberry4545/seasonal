@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FullListCountryRecipeNameMaps renders correctly 1`] = `
+<GetAuthorizedBackendData
+  InnerComponent={[Function]}
+  requestDataMethod={[Function]}
+/>
+`;
+
+exports[`FullListCountryRecipeNameMaps the inner component renders correctly 1`] = `
+<FullList
+  deleteItemFunc={[Function]}
+  getItemEditUrl={[Function]}
+  getItemId={[Function]}
+  getItemName={[Function]}
+  items={
+    Array [
+      Object {
+        "countryId": "c1",
+        "countryName": "country1",
+        "id": "id",
+        "name": "name",
+        "recipeId": "r1",
+        "recipeName": "recipe1",
+      },
+    ]
+  }
+  title="Country Recipe Name Map"
+/>
+`;

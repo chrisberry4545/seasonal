@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditRegionForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Edit Region"
+>
+  <GetAuthorizedBackendData
+    InnerComponent={[Function]}
+    requestDataMethod={[Function]}
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;

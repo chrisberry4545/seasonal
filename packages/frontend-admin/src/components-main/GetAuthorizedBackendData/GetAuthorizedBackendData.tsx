@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { IDataFormConfigProps } from '../DataForm/DataForm';
 import { LoadingSpinner } from '@chrisb-dev/seasonal-shared-frontend-components';
-import './GetAuthorizedBackendData.css';
+import './GetAuthorizedBackendData.scss';
 
 export interface IGetAuthorizedBackendDataProps<T> {
   items: T;
@@ -17,7 +17,7 @@ interface IGetAuthorizedBackendDataState<T> {
   error: string | null;
 }
 
-function InnerAuthorizedComponent<T>({
+export function GetAuthorizedBackendData<T>({
   InnerComponent,
   requestDataMethod,
   updateMethod,
@@ -30,6 +30,7 @@ function InnerAuthorizedComponent<T>({
   buttonText?: string,
   additionalConfig?: IDataFormConfigProps<T>
 }) {
+
   const [state, setState] = useState<IGetAuthorizedBackendDataState<T>>({
     error: null,
     isLoading: true,
@@ -74,20 +75,4 @@ function InnerAuthorizedComponent<T>({
       }
     </div>
   );
-}
-
-export function GetAuthorizedBackendData<T>(
-  InnerComponent: FC<IGetAuthorizedBackendDataProps<T>>,
-  requestDataMethod: () => Promise<T>,
-  updateMethod?: (item: T) => Promise<T>,
-  buttonText?: string,
-  additionalConfig?: IDataFormConfigProps<T>
-) {
-  return () =>
-    <InnerAuthorizedComponent
-      InnerComponent={InnerComponent}
-      requestDataMethod={requestDataMethod}
-      updateMethod={updateMethod}
-      buttonText={buttonText}
-      additionalConfig={additionalConfig} />;
 }

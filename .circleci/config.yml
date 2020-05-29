@@ -57,6 +57,9 @@ jobs:
           name: Run frontend unit tests
           command: yarn workspace @chrisb-dev/seasonal-frontend test --runInBand
       - run:
+          name: Run frontend admin unit tests
+          command: yarn workspace @chrisb-dev/seasonal-frontend-admin test --runInBand
+      - run:
           name: Run backend unit tests
           command: yarn workspace @chrisb-dev/seasonal-backend test --runInBand
 

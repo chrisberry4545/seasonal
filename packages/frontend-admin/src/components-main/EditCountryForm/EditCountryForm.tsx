@@ -2,24 +2,20 @@ import React, { FC } from 'react';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { useParams } from 'react-router-dom';
-import { getSingleCountry, updateCountry } from '../../services';
+import { getOneCountry, updateCountry } from '../../services';
 import { BaseFormCountry } from '../BaseFormCountry/BaseFormCountry';
 import { LayoutWithTitle } from '../../components-layouts';
 
 export const EditCountryForm: FC<{}> = () => {
   const { id } = useParams();
-  const CreatedComponent = GetAuthorizedBackendData<ICountry>(
-    BaseFormCountry,
-    () => {
-      return getSingleCountry(id as string);
-    },
-    updateCountry
-  );
   return (
     <LayoutWithTitle title='Edit Country'>
-      <CreatedComponent />
+      <GetAuthorizedBackendData
+        InnerComponent={BaseFormCountry}
+        requestDataMethod={() => getOneCountry(id as string)}
+        updateMethod={updateCountry}
+        />
     </LayoutWithTitle>
   );
 };

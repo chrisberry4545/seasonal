@@ -1,4 +1,4 @@
-export * from './access-token';
+export * from './set-access-token';
 
 export * from './create-badge';
 
@@ -54,23 +54,23 @@ export * from './get-all-regions';
 
 export * from './get-all-users';
 
-export * from './get-single-badge';
+export * from './get-one-badge';
 
-export * from './get-single-country';
+export * from './get-one-country';
 
-export * from './get-single-country-food-name-map';
+export * from './get-one-country-food-name-map';
 
-export * from './get-single-region-food-season-map';
+export * from './get-one-region-food-season-map';
 
-export * from './get-single-country-recipe-name-map';
+export * from './get-one-country-recipe-name-map';
 
-export * from './get-single-food';
+export * from './get-one-food';
 
-export * from './get-single-recipe';
+export * from './get-one-recipe';
 
-export * from './get-single-region';
+export * from './get-one-region';
 
-export * from './get-single-user';
+export * from './get-one-user';
 
 export * from './login-request';
 

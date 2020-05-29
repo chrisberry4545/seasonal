@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormRecipe /> renders correctly 1`] = `
+<DataForm
+  buttonText="Edit"
+  formConfig={
+    Object {
+      "imageUrlSmall": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "isVegan": Object {
+        "type": "checkbox",
+      },
+      "isVegetarian": Object {
+        "type": "checkbox",
+      },
+      "linkUrl": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "name": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "primaryFoodInRecipeIds": Object {
+        "options": Array [
+          Object {
+            "label": "food1",
+            "value": "f1",
+          },
+        ],
+        "type": "searchable-multiselect",
+      },
+      "secondaryFoodInRecipeIds": Object {
+        "options": Array [
+          Object {
+            "label": "food1",
+            "value": "f1",
+          },
+        ],
+        "type": "searchable-multiselect",
+      },
+    }
+  }
+  item={Object {}}
+  sendData={[MockFunction]}
+/>
+`;

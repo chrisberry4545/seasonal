@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormUser /> renders correctly 1`] = `
+<DataForm
+  buttonText="Edit"
+  formConfig={
+    Object {
+      "password": Object {
+        "type": "password",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "roles": Object {
+        "options": Array [
+          Object {
+            "label": "admin",
+            "value": "admin",
+          },
+          Object {
+            "label": "standard",
+            "value": "standard",
+          },
+        ],
+        "type": "multiselect",
+      },
+      "username": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+    }
+  }
+  item={Object {}}
+  sendData={[MockFunction]}
+/>
+`;

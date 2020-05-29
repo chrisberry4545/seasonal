@@ -26,7 +26,8 @@ const FullListRecipesInner: FC<IGetAuthorizedBackendDataProps<IRecipe[]>> = ({
     })}
   />
 );
-export const FullListRecipes = GetAuthorizedBackendData<IRecipe[]>(
-  FullListRecipesInner,
-  getAllRecipes
-);
+export const FullListRecipes: FC<{}> = () =>
+  <GetAuthorizedBackendData
+    InnerComponent={FullListRecipesInner}
+    requestDataMethod={getAllRecipes}
+    />;

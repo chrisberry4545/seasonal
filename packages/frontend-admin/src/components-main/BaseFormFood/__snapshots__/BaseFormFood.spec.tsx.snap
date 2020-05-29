@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormFood /> renders correctly 1`] = `
+<DataForm
+  buttonText="Edit"
+  formConfig={
+    Object {
+      "badgeIds": Object {
+        "options": Array [
+          Object {
+            "label": "badge1",
+            "value": "b1",
+          },
+        ],
+        "type": "searchable-multiselect",
+      },
+      "description": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "imageUrlSmall": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "name": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "substituteFoodIds": Object {
+        "options": Array [
+          Object {
+            "label": "food1",
+            "value": "f1",
+          },
+        ],
+        "type": "searchable-multiselect",
+      },
+    }
+  }
+  item={Object {}}
+  sendData={[MockFunction]}
+/>
+`;

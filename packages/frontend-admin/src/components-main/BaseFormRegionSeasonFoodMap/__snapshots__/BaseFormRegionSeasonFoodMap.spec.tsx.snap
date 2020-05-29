@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormRegionSeasonFoodMap /> renders correctly 1`] = `
+<DataForm
+  buttonText="Create"
+  formConfig={
+    Object {
+      "foodIds": Object {
+        "options": Array [
+          Object {
+            "label": "food1",
+            "value": "f1",
+          },
+        ],
+        "type": "searchable-multiselect",
+      },
+      "regionId": Object {
+        "options": Array [
+          Object {
+            "label": "region1",
+            "value": "r1",
+          },
+        ],
+        "type": "select",
+      },
+      "seasonId": Object {
+        "options": Array [
+          Object {
+            "label": "season1",
+            "value": "s1",
+          },
+        ],
+        "type": "select",
+      },
+    }
+  }
+  goBackOnUpdate={false}
+  item={
+    Object {
+      "foodIds": Array [
+        "f1",
+      ],
+      "regionId": "r1",
+      "seasonId": "s1",
+    }
+  }
+  processItem={[Function]}
+  sendData={[Function]}
+/>
+`;

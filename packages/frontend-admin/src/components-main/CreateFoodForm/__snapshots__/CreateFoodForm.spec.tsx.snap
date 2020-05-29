@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateFoodForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Create Food"
+>
+  <BaseFormFood
+    buttonText="create"
+    items={
+      Object {
+        "description": "",
+        "imageUrlSmall": "",
+        "name": "",
+        "substituteFoodIds": Array [],
+      }
+    }
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;

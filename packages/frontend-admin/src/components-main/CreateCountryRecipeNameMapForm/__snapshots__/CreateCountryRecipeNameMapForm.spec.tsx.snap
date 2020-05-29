@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateCountryRecipeNameMapForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Create Country Recipe Name Map"
+>
+  <BaseFormCountryRecipeNameMap
+    buttonText="create"
+    items={
+      Object {
+        "countryId": "",
+        "name": "",
+        "recipeId": "",
+      }
+    }
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;

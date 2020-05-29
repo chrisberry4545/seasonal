@@ -44,7 +44,7 @@ export * from './EditFoodForm/EditFoodForm';
 
 export * from './EditRecipeForm/EditRecipeForm';
 
-export * from './EditRegionFoodSeasonMap/EditRegionFoodSeasonMap';
+export * from './EditRegionFoodSeasonMapForm/EditRegionFoodSeasonMapForm';
 
 export * from './EditRegionForm/EditRegionForm';
 

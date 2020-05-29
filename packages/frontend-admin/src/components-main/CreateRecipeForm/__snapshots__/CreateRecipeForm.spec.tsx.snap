@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateRecipeForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Create Recipe"
+>
+  <BaseFormRecipe
+    buttonText="create"
+    items={
+      Object {
+        "imageUrlSmall": "",
+        "isVegan": false,
+        "isVegetarian": false,
+        "linkUrl": "",
+        "name": "",
+        "primaryFoodInRecipeIds": Array [],
+        "secondaryFoodInRecipeIds": Array [],
+      }
+    }
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;
