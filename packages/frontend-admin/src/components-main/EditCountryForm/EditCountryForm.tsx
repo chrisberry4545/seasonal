@@ -3,7 +3,7 @@ import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { useParams } from 'react-router-dom';
-import { getSingleCountry, updateCountry } from '../../services';
+import { getOneCountry, updateCountry } from '../../services';
 import { BaseFormCountry } from '../BaseFormCountry/BaseFormCountry';
 import { LayoutWithTitle } from '../../components-layouts';
 
@@ -13,7 +13,7 @@ export const EditCountryForm: FC<{}> = () => {
     <LayoutWithTitle title='Edit Country'>
       <GetAuthorizedBackendData
         InnerComponent={BaseFormCountry}
-        requestDataMethod={() => getSingleCountry(id as string)}
+        requestDataMethod={() => getOneCountry(id as string)}
         updateMethod={updateCountry}
         />
     </LayoutWithTitle>

@@ -1,23 +1,23 @@
-import { getSingleCountry } from './get-single-country';
+import { getOneBadge } from './get-one-badge';
 import * as makeAuthorizedRequest from './make-authorized-request';
-import { COUNTRY_URL } from '../config';
-import { ICountry } from '@chrisb-dev/seasonal-shared-models';
+import { BADGE_URL } from '../config';
+import { IBadge } from '@chrisb-dev/seasonal-shared-models';
 
-describe('getSingleCountry', () => {
-  const response = {} as ICountry;
+describe('getOneBadge', () => {
+  const response = {} as IBadge;
   const id = 'id';
   let mockMakeAuthorizedRequest: jest.SpyInstance;
-  let result: ICountry;
+  let result: IBadge;
   beforeEach(async () => {
     mockMakeAuthorizedRequest =
       jest.spyOn(makeAuthorizedRequest, 'makeAuthorizedRequest')
       .mockResolvedValue(response);
-    result = await getSingleCountry(id);
+    result = await getOneBadge(id);
   });
 
   test('calls makeAuthorizedRequest', async () =>
     expect(mockMakeAuthorizedRequest).toHaveBeenCalledWith(
-      `${COUNTRY_URL}/${id}`
+      `${BADGE_URL}/${id}`
     ));
 
   test('returns the response of the call', () => expect(result).toBe(response));

@@ -1,23 +1,23 @@
-import { getSingleUser } from './get-single-user';
+import { getOneRegionFoodSeasonMap } from './get-one-region-food-season-map';
 import * as makeAuthorizedRequest from './make-authorized-request';
-import { USER_URL } from '../config';
-import { IUser } from '@chrisb-dev/seasonal-shared-models';
+import { REGION_FOOD_SEASON_MAP_URL } from '../config';
+import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
 
-describe('getSingleUser', () => {
-  const response = {} as IUser;
+describe('getOneRegionFoodSeasonMap', () => {
+  const response = {} as IRegionFoodSeasonMap;
   const id = 'id';
   let mockMakeAuthorizedRequest: jest.SpyInstance;
-  let result: IUser;
+  let result: IRegionFoodSeasonMap;
   beforeEach(async () => {
     mockMakeAuthorizedRequest =
       jest.spyOn(makeAuthorizedRequest, 'makeAuthorizedRequest')
       .mockResolvedValue(response);
-    result = await getSingleUser(id);
+    result = await getOneRegionFoodSeasonMap(id);
   });
 
   test('calls makeAuthorizedRequest', async () =>
     expect(mockMakeAuthorizedRequest).toHaveBeenCalledWith(
-      `${USER_URL}/${id}`
+      `${REGION_FOOD_SEASON_MAP_URL}/${id}`
     ));
 
   test('returns the response of the call', () => expect(result).toBe(response));

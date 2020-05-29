@@ -1,23 +1,23 @@
-import { getSingleRecipe } from './get-single-recipe';
+import { getOneRegion } from './get-one-region';
 import * as makeAuthorizedRequest from './make-authorized-request';
-import { RECIPE_URL } from '../config';
-import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
+import { REGION_URL } from '../config';
+import { IDbRegion } from '@chrisb-dev/seasonal-shared-models';
 
-describe('getSingleRecipe', () => {
-  const response = {} as IRecipe;
+describe('getOneRegion', () => {
+  const response = {} as IDbRegion;
   const id = 'id';
   let mockMakeAuthorizedRequest: jest.SpyInstance;
-  let result: IRecipe;
+  let result: IDbRegion;
   beforeEach(async () => {
     mockMakeAuthorizedRequest =
       jest.spyOn(makeAuthorizedRequest, 'makeAuthorizedRequest')
       .mockResolvedValue(response);
-    result = await getSingleRecipe(id);
+    result = await getOneRegion(id);
   });
 
   test('calls makeAuthorizedRequest', async () =>
     expect(mockMakeAuthorizedRequest).toHaveBeenCalledWith(
-      `${RECIPE_URL}/${id}`
+      `${REGION_URL}/${id}`
     ));
 
   test('returns the response of the call', () => expect(result).toBe(response));

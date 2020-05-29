@@ -3,7 +3,7 @@ import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { useParams } from 'react-router-dom';
-import { getSingleFood, updateFood } from '../../services';
+import { getOneFood, updateFood } from '../../services';
 import { BaseFormFood } from '../BaseFormFood/BaseFormFood';
 import { LayoutWithTitle } from '../../components-layouts';
 
@@ -13,7 +13,7 @@ export const EditFoodForm: FC<{}> = () => {
     <LayoutWithTitle title='Edit Food'>
       <GetAuthorizedBackendData
         InnerComponent={BaseFormFood}
-        requestDataMethod={() => getSingleFood(id as string)}
+        requestDataMethod={() => getOneFood(id as string)}
         updateMethod={updateFood}
         />
     </LayoutWithTitle>

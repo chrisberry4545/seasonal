@@ -7,7 +7,7 @@ import * as services from '../../services';
 import { GetAuthorizedBackendData } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 
 jest.mock('../../services', () => ({
-  getSingleUser: jest.fn(),
+  getOneUser: jest.fn(),
   updateUser: jest.fn()
 }));
 jest.mock('../../components-layouts', () => ({
@@ -32,7 +32,7 @@ describe('<EditUserForm />', () => {
   } as IUser;
 
   beforeEach(() => {
-    mockGetOne = jest.spyOn(services, 'getSingleUser')
+    mockGetOne = jest.spyOn(services, 'getOneUser')
       .mockResolvedValue(item);
     mockUpdate = jest.spyOn(services, 'updateUser')
       .mockResolvedValue({} as IUser);

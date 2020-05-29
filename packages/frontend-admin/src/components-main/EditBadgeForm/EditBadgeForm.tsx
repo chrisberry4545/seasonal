@@ -3,7 +3,7 @@ import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { useParams } from 'react-router-dom';
-import { getSingleBadge, updateBadge } from '../../services';
+import { getOneBadge, updateBadge } from '../../services';
 import { BaseFormBadge } from '../BaseFormBadge/BaseFormBadge';
 import { LayoutWithTitle } from '../../components-layouts';
 
@@ -13,7 +13,7 @@ export const EditBadgeForm: FC<{}> = () => {
     <LayoutWithTitle title='Edit Badge'>
       <GetAuthorizedBackendData
         InnerComponent={BaseFormBadge}
-        requestDataMethod={() => getSingleBadge(id as string)}
+        requestDataMethod={() => getOneBadge(id as string)}
         updateMethod={updateBadge}
         />
     </LayoutWithTitle>

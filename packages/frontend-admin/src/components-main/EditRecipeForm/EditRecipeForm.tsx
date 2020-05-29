@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getSingleRecipe, updateRecipe } from '../../services';
+import { getOneRecipe, updateRecipe } from '../../services';
 import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
@@ -13,7 +13,7 @@ export const EditRecipeForm: FC<{}> = () => {
     <LayoutWithTitle title='Edit Recipe'>
       <GetAuthorizedBackendData
         InnerComponent={BaseFormRecipe}
-        requestDataMethod={() => getSingleRecipe(id as string)}
+        requestDataMethod={() => getOneRecipe(id as string)}
         updateMethod={updateRecipe}
         />
     </LayoutWithTitle>

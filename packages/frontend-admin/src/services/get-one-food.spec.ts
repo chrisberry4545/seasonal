@@ -1,23 +1,23 @@
-import { getSingleCountryRecipeNameMap } from './get-single-country-recipe-name-map';
+import { getOneFood } from './get-one-food';
 import * as makeAuthorizedRequest from './make-authorized-request';
-import { COUNTRY_RECIPE_NAME_MAP_URL } from '../config';
-import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
+import { FOOD_URL } from '../config';
+import { IFood } from '@chrisb-dev/seasonal-shared-models';
 
-describe('getSingleCountryRecipeNameMap', () => {
-  const response = {} as ICountryRecipeNameMap;
+describe('getOneFood', () => {
+  const response = {} as IFood;
   const id = 'id';
   let mockMakeAuthorizedRequest: jest.SpyInstance;
-  let result: ICountryRecipeNameMap;
+  let result: IFood;
   beforeEach(async () => {
     mockMakeAuthorizedRequest =
       jest.spyOn(makeAuthorizedRequest, 'makeAuthorizedRequest')
       .mockResolvedValue(response);
-    result = await getSingleCountryRecipeNameMap(id);
+    result = await getOneFood(id);
   });
 
   test('calls makeAuthorizedRequest', async () =>
     expect(mockMakeAuthorizedRequest).toHaveBeenCalledWith(
-      `${COUNTRY_RECIPE_NAME_MAP_URL}/${id}`
+      `${FOOD_URL}/${id}`
     ));
 
   test('returns the response of the call', () => expect(result).toBe(response));

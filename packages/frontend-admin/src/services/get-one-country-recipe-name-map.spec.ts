@@ -1,23 +1,23 @@
-import { getSingleRegionFoodSeasonMap } from './get-single-region-food-season-map';
+import { getOneCountryRecipeNameMap } from './get-one-country-recipe-name-map';
 import * as makeAuthorizedRequest from './make-authorized-request';
-import { REGION_FOOD_SEASON_MAP_URL } from '../config';
-import { IRegionFoodSeasonMap } from '@chrisb-dev/seasonal-shared-models';
+import { COUNTRY_RECIPE_NAME_MAP_URL } from '../config';
+import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
 
-describe('getSingleRegionFoodSeasonMap', () => {
-  const response = {} as IRegionFoodSeasonMap;
+describe('getOneCountryRecipeNameMap', () => {
+  const response = {} as ICountryRecipeNameMap;
   const id = 'id';
   let mockMakeAuthorizedRequest: jest.SpyInstance;
-  let result: IRegionFoodSeasonMap;
+  let result: ICountryRecipeNameMap;
   beforeEach(async () => {
     mockMakeAuthorizedRequest =
       jest.spyOn(makeAuthorizedRequest, 'makeAuthorizedRequest')
       .mockResolvedValue(response);
-    result = await getSingleRegionFoodSeasonMap(id);
+    result = await getOneCountryRecipeNameMap(id);
   });
 
   test('calls makeAuthorizedRequest', async () =>
     expect(mockMakeAuthorizedRequest).toHaveBeenCalledWith(
-      `${REGION_FOOD_SEASON_MAP_URL}/${id}`
+      `${COUNTRY_RECIPE_NAME_MAP_URL}/${id}`
     ));
 
   test('returns the response of the call', () => expect(result).toBe(response));

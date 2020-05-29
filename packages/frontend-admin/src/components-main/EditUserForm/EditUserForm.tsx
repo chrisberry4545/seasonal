@@ -3,7 +3,7 @@ import {
   GetAuthorizedBackendData
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 import { useParams } from 'react-router-dom';
-import { getSingleUser, updateUser } from '../../services';
+import { getOneUser, updateUser } from '../../services';
 import { BaseFormUser } from '../BaseFormUser/BaseFormUser';
 import { LayoutWithTitle } from '../../components-layouts';
 
@@ -14,7 +14,7 @@ export const EditUserForm: FC<{}> = () => {
       <GetAuthorizedBackendData
         InnerComponent={BaseFormUser}
         requestDataMethod={async () => {
-          const user = await getSingleUser(id as string);
+          const user = await getOneUser(id as string);
           return {
             ...user,
             password: ''

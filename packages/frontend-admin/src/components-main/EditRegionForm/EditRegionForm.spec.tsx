@@ -7,7 +7,7 @@ import * as services from '../../services';
 import { GetAuthorizedBackendData } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 
 jest.mock('../../services', () => ({
-  getSingleRegion: jest.fn(),
+  getOneRegion: jest.fn(),
   updateRegion: jest.fn()
 }));
 jest.mock('../../components-layouts', () => ({
@@ -32,7 +32,7 @@ describe('<EditRegionForm />', () => {
   } as IDbRegion;
 
   beforeEach(() => {
-    mockGetOne = jest.spyOn(services, 'getSingleRegion')
+    mockGetOne = jest.spyOn(services, 'getOneRegion')
       .mockResolvedValue(item);
     mockUpdate = jest.spyOn(services, 'updateRegion')
       .mockResolvedValue({} as IDbRegion);

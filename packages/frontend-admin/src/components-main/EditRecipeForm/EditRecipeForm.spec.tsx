@@ -7,7 +7,7 @@ import * as services from '../../services';
 import { GetAuthorizedBackendData } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 
 jest.mock('../../services', () => ({
-  getSingleRecipe: jest.fn(),
+  getOneRecipe: jest.fn(),
   updateRecipe: jest.fn()
 }));
 jest.mock('../../components-layouts', () => ({
@@ -32,7 +32,7 @@ describe('<EditRecipeForm />', () => {
   } as IRecipe;
 
   beforeEach(() => {
-    mockGetOne = jest.spyOn(services, 'getSingleRecipe')
+    mockGetOne = jest.spyOn(services, 'getOneRecipe')
       .mockResolvedValue(item);
     mockUpdate = jest.spyOn(services, 'updateRecipe')
       .mockResolvedValue({} as IRecipe);

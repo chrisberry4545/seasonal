@@ -7,7 +7,7 @@ import * as services from '../../services';
 import { GetAuthorizedBackendData } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 
 jest.mock('../../services', () => ({
-  getSingleCountryRecipeNameMap: jest.fn(),
+  getOneCountryRecipeNameMap: jest.fn(),
   updateCountryRecipeNameMap: jest.fn()
 }));
 jest.mock('../../components-layouts', () => ({
@@ -32,7 +32,7 @@ describe('<EditCountryRecipeNameMapForm />', () => {
   } as ICountryRecipeNameMap;
 
   beforeEach(() => {
-    mockGetOne = jest.spyOn(services, 'getSingleCountryRecipeNameMap')
+    mockGetOne = jest.spyOn(services, 'getOneCountryRecipeNameMap')
       .mockResolvedValue(item);
     mockUpdate = jest.spyOn(services, 'updateCountryRecipeNameMap')
       .mockResolvedValue({} as ICountryRecipeNameMap);

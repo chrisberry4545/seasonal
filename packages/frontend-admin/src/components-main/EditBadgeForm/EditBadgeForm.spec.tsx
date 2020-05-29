@@ -7,7 +7,7 @@ import * as services from '../../services';
 import { GetAuthorizedBackendData } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
 
 jest.mock('../../services', () => ({
-  getSingleBadge: jest.fn(),
+  getOneBadge: jest.fn(),
   updateBadge: jest.fn()
 }));
 jest.mock('../../components-layouts', () => ({
@@ -32,7 +32,7 @@ describe('<EditBadgeForm />', () => {
   } as IBadge;
 
   beforeEach(() => {
-    mockGetOne = jest.spyOn(services, 'getSingleBadge')
+    mockGetOne = jest.spyOn(services, 'getOneBadge')
       .mockResolvedValue(item);
     mockUpdate = jest.spyOn(services, 'updateBadge')
       .mockResolvedValue({} as IBadge);
