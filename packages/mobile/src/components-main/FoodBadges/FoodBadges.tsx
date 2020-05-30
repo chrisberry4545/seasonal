@@ -50,7 +50,7 @@ export const FoodBadges: FC<IFoodBadgesProps> = ({
     ? (
       <View style={styleBadges}>
         <TextHeadingSmall style={styleBadgesHeading}>
-          Nutrition
+          Nutrients
         </TextHeadingSmall>
         <View style={styleBadgesList}>
           {

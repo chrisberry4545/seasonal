@@ -16,7 +16,7 @@ export const FoodBadges: FC<IFoodBadgesProps> = ({
     ? (
       <div className='c-food-badges'>
         <TextHeadingSmall className='c-food-badges__heading'>
-          Nutrition
+          Nutrients
         </TextHeadingSmall>
         <div className='c-food-badges__list'>
           {
