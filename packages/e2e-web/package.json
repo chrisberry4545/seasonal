@@ -14,7 +14,7 @@
   "scripts": {
     "start": "CYPRESS_BASE_URL=http://localhost:5201 yarn healthcheck && CYPRESS_BASE_URL=http://localhost:5201 cypress open",
     "test": "yarn healthcheck && cypress run --headless --browser chrome",
-    "healthcheck": "healthcheck $CYPRESS_BASE_URL"
+    "healthcheck": "healthcheck $CYPRESS_BASE_URL 20 2000"
   },
   "browserslist": [
     ">0.2%",
