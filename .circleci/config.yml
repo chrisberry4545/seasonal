@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.5
 
 commands:
   install-dependencies:
@@ -62,9 +64,8 @@ jobs:
       - run:
           name: Run backend unit tests
           command: yarn workspace @chrisb-dev/seasonal-backend test --runInBand --coverage
-      - run:
-          name: Upload coverage
-          command: bash <(curl -s https://codecov.io/bash)
+      - codecov/upload:
+          file: ~/mobile/coverage/lcov.info
 
   web_e2e_tests:
     docker:
