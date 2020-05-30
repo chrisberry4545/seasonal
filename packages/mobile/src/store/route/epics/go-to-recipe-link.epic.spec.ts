@@ -22,7 +22,7 @@ describe.each([
     const linkUrl = 'http://link.com';
 
     beforeEach(async () => {
-      jest.spyOn(sharedFrontendRedux, 'selectCurrentSeasonRecipesById')
+      jest.spyOn(sharedFrontendRedux, 'selectRecipeById')
         .mockReturnValue((() => ({
           linkUrl
         } as IRecipe)) as any);
@@ -39,7 +39,7 @@ describe.each([
 
   describe('when a recipe does not exist', () => {
     beforeEach(async () => {
-      jest.spyOn(sharedFrontendRedux, 'selectCurrentSeasonRecipesById')
+      jest.spyOn(sharedFrontendRedux, 'selectRecipeById')
         .mockReturnValue((() => undefined) as any);
       await goToRecipeLink$(
         of(action) as any,

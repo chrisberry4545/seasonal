@@ -1,3 +1,5 @@
+export * from './all-recipes.selectors';
+
 export * from './all-seasons-with-food-and-search.selectors';
 
 export * from './all-seasons-with-recipes-and-search.selectors';
