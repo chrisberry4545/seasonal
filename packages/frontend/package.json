@@ -44,7 +44,7 @@
     "run-react-snap": "node ./run-react-snap.js",
     "deploy": "yarn build && yarn gh-pages",
     "schematics": "schematics @chrisb-dev/react-schematics:react-components",
-    "healthcheck": "healthcheck $REACT_APP_BACKEND_URL",
+    "healthcheck": "healthcheck $REACT_APP_BACKEND_URL 20 2000",
     "http-server": "yarn healthcheck && http-server ./build"
   },
   "browserslist": [
