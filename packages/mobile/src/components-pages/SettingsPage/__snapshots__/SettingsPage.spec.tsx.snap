@@ -3,18 +3,21 @@
 exports[`<SettingsPage /> renders correctly 1`] = `
 <MainContainer>
   <HeaderConnecter />
-  <DefaultPaddingContainer>
-    <View
-      style={
-        Object {
-          "marginTop": 16,
+  <ScrollView>
+    <DefaultPaddingContainer>
+      <View
+        style={
+          Object {
+            "marginBottom": 48,
+            "marginTop": 16,
+          }
         }
-      }
-    >
-      <SelectLocationConnecter>
-        <SettingsBackButtonConnecter />
-      </SelectLocationConnecter>
-    </View>
-  </DefaultPaddingContainer>
+      >
+        <SelectLocationConnecter>
+          <SettingsBackButtonConnecter />
+        </SelectLocationConnecter>
+      </View>
+    </DefaultPaddingContainer>
+  </ScrollView>
 </MainContainer>
 `;
