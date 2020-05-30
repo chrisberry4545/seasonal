@@ -1,0 +1,27 @@
+coverage:
+  status:
+    project:
+      default:
+        target: auto
+      mobile:
+        target: auto
+        flags:
+          - mobile
+      frontend:
+        target: auto
+        flags:
+          - frontend
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default
+  require_changes: false
+  require_base: yes
+  require_head: yes
+  branches: null
+flags:
+  mobile:
+    paths:
+      - src/mobile/code.py
+  frontend:
+    paths:
+      - src/frontend/code2.py

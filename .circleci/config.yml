@@ -46,22 +46,25 @@ jobs:
       - install-dependencies
       - run:
           name: Run shared frontend components tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test --runInBand
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test --runInBand --coverage
       - run:
           name: Run shared frontend redux tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test --runInBand
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test --runInBand --coverage
       - run:
           name: Run shared frontend utilities tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test --runInBand
+          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test --runInBand --coverage
       - run:
           name: Run frontend unit tests
-          command: yarn workspace @chrisb-dev/seasonal-frontend test --runInBand
+          command: yarn workspace @chrisb-dev/seasonal-frontend test --runInBand --coverage
       - run:
           name: Run frontend admin unit tests
-          command: yarn workspace @chrisb-dev/seasonal-frontend-admin test --runInBand
+          command: yarn workspace @chrisb-dev/seasonal-frontend-admin test --runInBand --coverage
       - run:
           name: Run backend unit tests
-          command: yarn workspace @chrisb-dev/seasonal-backend test --runInBand
+          command: yarn workspace @chrisb-dev/seasonal-backend test --runInBand --coverage
+      - run:
+          name: Upload coverage
+          command: bash <(curl -s https://codecov.io/bash)
 
   web_e2e_tests:
     docker:
