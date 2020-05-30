@@ -11,6 +11,9 @@ echo "Starting tests..."
 eval "docker-compose ${DOCKER_COMPOSE_FILES} run --service-ports --rm seasonal-e2e-web"
 status=$?
 
+mkdir -p logs
+eval "docker-compose ${DOCKER_COMPOSE_FILES} logs --no-color > ./logs/compose.log"
+
 eval "docker-compose ${DOCKER_COMPOSE_FILES} down"
 
 if [ "$status" = "0" ]; then
