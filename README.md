@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/chrisberry4545/seasonal.svg?style=shield)](https://circleci.com/gh/chrisberry4545/workflows/seasonal/tree/master)
+
+
 # Eat Seasonal
 
 Monorepo for the Eat Seasonal Mobile App, Website and Backend.
