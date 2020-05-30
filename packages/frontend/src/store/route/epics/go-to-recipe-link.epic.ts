@@ -1,4 +1,9 @@
-import { FOOD_DETAILS_SELECT_RECIPE, IRecipeItemClicked, RECIPE_ITEM_CLICKED, selectCurrentSeasonRecipesById } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import {
+  FOOD_DETAILS_SELECT_RECIPE,
+  IRecipeItemClicked,
+  RECIPE_ITEM_CLICKED,
+  selectRecipeById
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { Action } from 'redux';
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 import { Observable } from 'rxjs';
@@ -19,7 +24,7 @@ export const goToRecipeLink$: WebSeasonalEpic = (
     map(([
       action,
       state
-    ]) => selectCurrentSeasonRecipesById(
+    ]) => selectRecipeById(
         (action as IRecipeItemClicked).recipeItemId
       )(state)
     ),
