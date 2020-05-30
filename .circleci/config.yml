@@ -62,10 +62,13 @@ jobs:
           name: Run frontend admin unit tests
           command: yarn workspace @chrisb-dev/seasonal-frontend-admin test --runInBand --coverage
       - run:
+          name: Run mobile unit tests
+          command: yarn workspace @chrisb-dev/seasonal-mobile test --runInBand --coverage
+      - run:
           name: Run backend unit tests
           command: yarn workspace @chrisb-dev/seasonal-backend test --runInBand --coverage
       - codecov/upload:
-          file: ~/mobile/coverage/lcov.info
+          file: ~/project/packages/backend/coverage/lcov.info
 
   web_e2e_tests:
     docker:
