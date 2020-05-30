@@ -20,7 +20,7 @@ exports[`<FoodBadges /> when there are food badges renders correctly 1`] = `
       }
     }
   >
-    Nutrition
+    Nutrients
   </TextHeadingSmall>
   <View
     style={
