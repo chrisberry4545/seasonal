@@ -69,7 +69,7 @@ jobs:
           name: Upload Coverage Results
           command: |
             curl -s https://codecov.io/bash | bash -s -- \
-              -f "~/project/packages/backend/coverage/lcov.info" \
+              -f "/home/circleci/project/packages/backend/coverage/lcov.info" \
               -t $CODECOV_TOKEN \
               -Z || echo 'Codecov upload failed'
 
