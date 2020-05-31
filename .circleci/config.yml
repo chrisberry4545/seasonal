@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  codecov: codecov/codecov@1.0.5
 
 commands:
   install-dependencies:
@@ -46,29 +44,34 @@ jobs:
     steps:
       - checkout
       - install-dependencies
-      - run:
-          name: Run shared frontend components tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test --runInBand --coverage
-      - run:
-          name: Run shared frontend redux tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test --runInBand --coverage
-      - run:
-          name: Run shared frontend utilities tests
-          command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test --runInBand --coverage
-      - run:
-          name: Run frontend unit tests
-          command: yarn workspace @chrisb-dev/seasonal-frontend test --runInBand --coverage
-      - run:
-          name: Run frontend admin unit tests
-          command: yarn workspace @chrisb-dev/seasonal-frontend-admin test --runInBand --coverage
-      - run:
-          name: Run mobile unit tests
-          command: yarn workspace @chrisb-dev/seasonal-mobile test --runInBand --coverage
+      # - run:
+      #     name: Run shared frontend components tests
+      #     command: yarn workspace @chrisb-dev/seasonal-shared-frontend-components test --runInBand --coverage
+      # - run:
+      #     name: Run shared frontend redux tests
+      #     command: yarn workspace @chrisb-dev/seasonal-shared-frontend-redux test --runInBand --coverage
+      # - run:
+      #     name: Run shared frontend utilities tests
+      #     command: yarn workspace @chrisb-dev/seasonal-shared-frontend-utilities test --runInBand --coverage
+      # - run:
+      #     name: Run frontend unit tests
+      #     command: yarn workspace @chrisb-dev/seasonal-frontend test --runInBand --coverage
+      # - run:
+      #     name: Run frontend admin unit tests
+      #     command: yarn workspace @chrisb-dev/seasonal-frontend-admin test --runInBand --coverage
+      # - run:
+      #     name: Run mobile unit tests
+      #     command: yarn workspace @chrisb-dev/seasonal-mobile test --runInBand --coverage
       - run:
           name: Run backend unit tests
           command: yarn workspace @chrisb-dev/seasonal-backend test --runInBand --coverage
-      - codecov/upload:
-          file: ~/project/packages/backend/coverage/lcov.info
+      - run:
+          name: Upload Coverage Results
+          command: |
+            curl -s https://codecov.io/bash | bash -s -- \
+              -f "~/project/packages/backend/coverage/lcov.info" \
+              -t $CODECOV_TOKEN \
+              -Z || echo 'Codecov upload failed'
 
   web_e2e_tests:
     docker:
