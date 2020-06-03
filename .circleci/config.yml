@@ -70,7 +70,6 @@ jobs:
           command: |
             curl -s https://codecov.io/bash | bash -s -- \
               -f "/home/circleci/project/packages/backend/coverage/lcov.info" \
-              -t $CODECOV_TOKEN \
               -Z || echo 'Codecov upload failed'
 
   web_e2e_tests:
