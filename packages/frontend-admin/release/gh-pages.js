@@ -6,4 +6,5 @@ ghPages.publish('build', (err) => {
     console.log(err);
     process.exit(1);
   }
+  console.log('Successfully deployed to gh pages');
 });
