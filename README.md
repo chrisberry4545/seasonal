@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/chrisberry4545/seasonal.svg?style=shield)](https://circleci.com/gh/chrisberry4545/workflows/seasonal/tree/master)
+[![codecov](https://codecov.io/gh/chrisberry4545/seasonal/branch/master/graph/badge.svg)](https://codecov.io/gh/chrisberry4545/seasonal)
 
 
 # Eat Seasonal
