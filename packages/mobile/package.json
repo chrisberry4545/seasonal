@@ -79,6 +79,13 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.connector.ts",
+      "!src/**/*.spec.tsx.snap",
+      "!src/**/index.ts",
+      "!**/node_modules/**"
     ]
   }
 }
