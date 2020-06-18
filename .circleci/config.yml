@@ -133,6 +133,16 @@ jobs:
           name: Deploy frontend admin
           command: yarn frontend-admin:deploy
 
+  external_site_monitor:
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - checkout
+      - install-dependencies
+      - run:
+          name: Run external site monitor
+          command: yarn external-site-monitor
+
 workflows:
   version: 2
   seasonal:
@@ -162,3 +172,14 @@ workflows:
           requires:
             - frontend_admin_approval
             - unit_tests
+
+  external_site_monitor:
+    triggers:
+      - schedule:
+          cron: "43 * * * *"
+          filters:
+            branches:
+              only:
+                - site-monitor
+    jobs:
+      - external_site_monitor
