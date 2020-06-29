@@ -14,7 +14,7 @@
     "test": "jest",
     "update-recipes-list": "ts-node ./src/recipe-list/update-recipes.ts"
   },
-  "author": "Chris Berry <chrisberry4545@googlemail.com> (http://chrisbdev.com)",
+  "author": "Chris Berry <chrisberry4545@googlemail.com> (https://chrisberry4545.github.io/)",
   "license": "ISC",
   "dependencies": {
     "@types/cheerio": "^0.22.18",

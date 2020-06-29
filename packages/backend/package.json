@@ -25,7 +25,7 @@
     "test:watch": "jest --watchAll",
     "deploy": "serverless deploy --stage prod"
   },
-  "author": "Chris Berry <chrisberry4545@googlemail.com> (http://chrisbdev.com)",
+  "author": "Chris Berry <chrisberry4545@googlemail.com> (https://chrisberry4545.github.io/)",
   "license": "ISC",
   "dependencies": {
     "@chrisb-dev/seasonal-shared-models": "1.0.0",
