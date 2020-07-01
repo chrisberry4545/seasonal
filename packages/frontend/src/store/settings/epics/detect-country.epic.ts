@@ -2,9 +2,10 @@ import {
   GET_COUNTRIES_SUCCESS,
   selectAllRegions,
   selectSettingsRegionId,
-  userRegionDetected
+  userRegionDetected,
+  selectCountries
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { getNearestRegionFromLatLng } from '@chrisb-dev/seasonal-shared-frontend-utilities';
+import { getNearestRegionFromLatLng, getCountryThatCoordsExistWithin } from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { Action } from 'redux';
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 import { Observable, of } from 'rxjs';
@@ -22,16 +23,18 @@ export const detectCountry$: WebSeasonalEpic = (
     withLatestFrom(state$),
     map(([, state]) => ({
       allRegions: selectAllRegions(state),
+      countries: selectCountries(state),
       regionId: selectSettingsRegionId(state)
     })),
     filter(({ allRegions, regionId }) =>
       Boolean(!regionId && allRegions)
     ),
     debounceTime(100),
-    switchMap(({ allRegions }) => (
+    switchMap(({ allRegions, countries }) => (
       getCurrentDeviceLocation$().pipe(
         map((location) => ({
           allRegions,
+          countries,
           error: null,
           location: {
             lat: location.coords.latitude,
@@ -42,6 +45,7 @@ export const detectCountry$: WebSeasonalEpic = (
           const firstRegion = allRegions![0];
           return of({
             allRegions,
+            countries,
             error,
             location: {
               lat: firstRegion.latLng.lat,
@@ -51,9 +55,20 @@ export const detectCountry$: WebSeasonalEpic = (
         })
       )
     )),
-    map(({ allRegions, error, location }) => ({
+    map(({ allRegions, countries, error, location }) => {
+      const userCountry = countries && getCountryThatCoordsExistWithin(countries, location);
+      const regionsInCountry = userCountry
+        ? userCountry.regions
+        : allRegions;
+      return {
+        error,
+        location,
+        regionsInCountry
+      };
+    }),
+    map(({ error, regionsInCountry, location }) => ({
       error,
-      nearestRegion: getNearestRegionFromLatLng(allRegions, location)
+      nearestRegion: getNearestRegionFromLatLng(regionsInCountry, location)
     })),
     map(({ nearestRegion, error }) => userRegionDetected(
       nearestRegion!.id, error

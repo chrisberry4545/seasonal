@@ -3,6 +3,7 @@ FROM (
     SELECT
     countries.id,
     countries.name,
+    countries.bounds,
     (
         SELECT COALESCE(
           json_agg(

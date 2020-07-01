@@ -1,7 +1,7 @@
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { getCountriesSuccess, userRegionDetected } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import * as sharedFrontentUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { IRegion } from '@chrisb-dev/seasonal-shared-models';
+import { IRegion, ICountry } from '@chrisb-dev/seasonal-shared-models';
 import { LocationData } from 'expo-location';
 import { Action } from 'redux';
 import { of, throwError } from 'rxjs';
@@ -26,15 +26,30 @@ describe('detectCountry$', () => {
     id: 'r2',
     latLng: {}
   }] as IRegion[];
+  const allCountries = [{
+    regions: [allRegions[0]]
+  }] as ICountry[];
+  let mockGetNearestRegionFromLatLng: jest.SpyInstance;
+  let mockGetCountryThatCoordsExistWithin: jest.SpyInstance;
 
   beforeEach(() => {
     result = undefined;
     jest.spyOn(sharedFrontendRedux, 'selectAllRegions')
       .mockReturnValue(allRegions);
+    jest.spyOn(sharedFrontendRedux, 'selectCountries')
+      .mockReturnValue(allCountries);
     jest.spyOn(sharedFrontendRedux, 'selectSettingsRegionId')
       .mockReturnValue(undefined);
     jest.spyOn(sharedFrontentUtilities, 'getNearestRegionFromLatLng')
       .mockReturnValue(nearestRegionFromLatLng);
+    mockGetNearestRegionFromLatLng =
+      jest.spyOn(sharedFrontentUtilities, 'getNearestRegionFromLatLng')
+      .mockReturnValue(nearestRegionFromLatLng);
+    mockGetNearestRegionFromLatLng.mockClear();
+    mockGetCountryThatCoordsExistWithin =
+      jest.spyOn(sharedFrontentUtilities, 'getCountryThatCoordsExistWithin')
+      .mockReturnValue(allCountries[0]);
+    mockGetCountryThatCoordsExistWithin.mockClear();
   });
 
   describe('when the user already has a region Id', () => {
@@ -116,6 +131,16 @@ describe('detectCountry$', () => {
         {}
       ).toPromise();
     });
+
+    test('calls getCountryThatCoordsExistWithin', () =>
+      expect(mockGetCountryThatCoordsExistWithin).toHaveBeenCalledWith(
+        allCountries, { lat: undefined, lng: undefined }
+      ));
+
+    test('calls getNearestRegionFromLatLng with the regions for the country', () =>
+      expect(mockGetNearestRegionFromLatLng).toHaveBeenCalledWith(
+        allCountries[0].regions, { lat: undefined, lng: undefined }
+      ));
 
     test('returns the closest region', () => {
 
