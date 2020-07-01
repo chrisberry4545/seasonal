@@ -2,18 +2,21 @@
 
 exports[`REST endpoint testing for /admin/country create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
 Object {
+  "bounds": null,
   "name": "test-1",
 }
 `;
 
 exports[`REST endpoint testing for /admin/country delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
+  "bounds": null,
   "name": "test-1",
 }
 `;
 
 exports[`REST endpoint testing for /admin/country edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
+  "bounds": null,
   "name": "test-2",
 }
 `;
@@ -21,14 +24,68 @@ Object {
 exports[`REST endpoint testing for /admin/country get all when logged in as an admin Returns the expected result 1`] = `
 Array [
   Object {
+    "bounds": Array [
+      Array [
+        -100,
+        -100,
+      ],
+      Array [
+        0,
+        -100,
+      ],
+      Array [
+        0,
+        0,
+      ],
+      Array [
+        -100,
+        0,
+      ],
+    ],
     "id": "2168cb5e-a2e9-4bf6-b50d-95ad6a79227c",
     "name": "Country has no enabled regions",
   },
   Object {
+    "bounds": Array [
+      Array [
+        -100,
+        -100,
+      ],
+      Array [
+        0,
+        -100,
+      ],
+      Array [
+        0,
+        0,
+      ],
+      Array [
+        -100,
+        0,
+      ],
+    ],
     "id": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
     "name": "UK",
   },
   Object {
+    "bounds": Array [
+      Array [
+        -100,
+        -100,
+      ],
+      Array [
+        0,
+        -100,
+      ],
+      Array [
+        0,
+        0,
+      ],
+      Array [
+        -100,
+        0,
+      ],
+    ],
     "id": "d6e57673-eee8-444a-b7be-d9ab553052cf",
     "name": "USA",
   },
@@ -37,6 +94,24 @@ Array [
 
 exports[`REST endpoint testing for /admin/country get single item when logged in as an admin Returns the expected result 1`] = `
 Object {
+  "bounds": Array [
+    Array [
+      -100,
+      -100,
+    ],
+    Array [
+      0,
+      -100,
+    ],
+    Array [
+      0,
+      0,
+    ],
+    Array [
+      -100,
+      0,
+    ],
+  ],
   "id": "d6e57673-eee8-444a-b7be-d9ab553052cf",
   "name": "USA",
 }

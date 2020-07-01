@@ -3,6 +3,24 @@
 exports[`Get countries Retrieves a list of countries 1`] = `
 Array [
   Object {
+    "bounds": Array [
+      Array [
+        -100,
+        -100,
+      ],
+      Array [
+        0,
+        -100,
+      ],
+      Array [
+        0,
+        0,
+      ],
+      Array [
+        -100,
+        0,
+      ],
+    ],
     "id": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
     "name": "UK",
     "regions": Array [
@@ -18,6 +36,24 @@ Array [
     ],
   },
   Object {
+    "bounds": Array [
+      Array [
+        -100,
+        -100,
+      ],
+      Array [
+        0,
+        -100,
+      ],
+      Array [
+        0,
+        0,
+      ],
+      Array [
+        -100,
+        0,
+      ],
+    ],
     "id": "d6e57673-eee8-444a-b7be-d9ab553052cf",
     "name": "USA",
     "regions": Array [

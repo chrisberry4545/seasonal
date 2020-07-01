@@ -14,6 +14,10 @@ const countryFormConfig: ICountryFormConfigProps = {
   name: {
     type: 'text',
     validation: [requiredValidation]
+  },
+
+  bounds: {
+    type: 'coordinate-array'
   }
 };
 

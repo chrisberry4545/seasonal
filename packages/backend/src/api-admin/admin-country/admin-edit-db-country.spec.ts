@@ -7,6 +7,10 @@ describe('adminEditDbCountry', () => {
   let mockGetSqlQuery: jest.SpyInstance;
   let mockQueryPostgres: jest.SpyInstance;
   const country = {
+    bounds: [
+      [0, 0],
+      [50, 50]
+    ],
     id: 'id',
     name: 'test'
   } as ICountry;
@@ -32,7 +36,7 @@ describe('adminEditDbCountry', () => {
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(
       sqlQuery,
-      [country.id, country.name]
+      [country.id, country.name, country.bounds]
     ));
 
   test('returns the expected result', () => expect(result).toBe(queryResult.rows[0]));

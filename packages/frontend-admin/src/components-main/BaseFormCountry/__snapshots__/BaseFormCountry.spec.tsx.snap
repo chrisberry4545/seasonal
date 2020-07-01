@@ -5,6 +5,9 @@ exports[`<BaseFormCountry /> renders correctly 1`] = `
   buttonText="Edit"
   formConfig={
     Object {
+      "bounds": Object {
+        "type": "coordinate-array",
+      },
       "name": Object {
         "type": "text",
         "validation": Array [

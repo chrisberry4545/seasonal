@@ -14,12 +14,15 @@ import {
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import './DataForm.scss';
 import { FORM_BUTTON_TEXT } from '../../consts';
+import { CoordinateArrayInput } from '../CoordinateArrayInput/CoordinateArrayInput';
 
 export interface IFormField {
   name?: string;
   options?: ISelectOption[];
   type: 'text' | 'number' | 'password' | 'checkbox' | 'select'
-    | 'multiselect'| 'searchable-multiselect';
+    | 'multiselect'
+    | 'searchable-multiselect'
+    | 'coordinate-array';
   validation?: IValidation[];
 }
 export type IDataFormConfigProps<T> = { [key in keyof T & string]?: IFormField };
@@ -102,7 +105,7 @@ export function DataForm<T>({
 
   const updateField = (
     name: keyof T,
-    value: string | string[] | number | boolean,
+    value: string | string[] | number | boolean | Array<[number, number]>,
     validation: IValidation[] | undefined
   ) => {
     if (validation) {
@@ -134,7 +137,7 @@ export function DataForm<T>({
             const inputs = {
               className: 'c-data-form__input',
               onChange: (
-                changedValue: number | string | string[] | boolean
+                changedValue: number | string | string[] | boolean | Array<[number, number]>
               ) => updateField(prop, changedValue, validation),
               options,
               placeholder,
@@ -175,6 +178,10 @@ export function DataForm<T>({
                         return <Select {...{
                           ...inputs,
                           options: inputs.options!
+                        }} />;
+                      case 'coordinate-array':
+                        return <CoordinateArrayInput {...{
+                          ...inputs
                         }} />;
                     }
                   })()

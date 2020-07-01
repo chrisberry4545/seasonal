@@ -9,6 +9,7 @@ generateRestEndpointTests<ICountry>({
     name: 'test-1'
   } as ICountry,
   validItemForEdit: {
+    bounds: null,
     name: 'test-2'
   } as ICountry
 });

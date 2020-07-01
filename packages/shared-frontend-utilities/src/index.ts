@@ -8,6 +8,8 @@ export * from './get-badge-details-data';
 
 export * from './get-countries';
 
+export * from './get-country-that-coords-exist-within';
+
 export * from './get-current-season-index';
 
 export * from './get-data-that-contains-search-term';

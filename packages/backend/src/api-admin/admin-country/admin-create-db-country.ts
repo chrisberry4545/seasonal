@@ -7,7 +7,10 @@ export const adminCreateDbCountry = async (
   const query = await getSqlQuery(`${__dirname}/admin-create-country.sql`);
   const result = await queryPostgres<ICountry>(
     query,
-    [item.name]
+    [
+      item.name,
+      item.bounds
+    ]
   );
   return result.rows && result.rows[0];
 };

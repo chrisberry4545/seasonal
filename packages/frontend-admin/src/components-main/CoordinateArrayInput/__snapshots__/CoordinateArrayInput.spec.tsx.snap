@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CoordinateArrayInput /> renders correctly 1`] = `
+<div>
+  <div
+    className="c-coordinate-array-input__row"
+    key="0"
+  >
+    <Input
+      onChange={[Function]}
+      placeholder="latitude"
+      type="number"
+      value={1}
+    />
+    <Input
+      onChange={[Function]}
+      placeholder="longitude"
+      type="number"
+      value={1}
+    />
+    <BareButton
+      className="c-coordinate-array-input__delete-btn"
+      onClick={[Function]}
+    >
+      <CrossIcon />
+    </BareButton>
+  </div>
+  <div
+    className="c-coordinate-array-input__row"
+    key="1"
+  >
+    <Input
+      onChange={[Function]}
+      placeholder="latitude"
+      type="number"
+      value={2}
+    />
+    <Input
+      onChange={[Function]}
+      placeholder="longitude"
+      type="number"
+      value={2}
+    />
+    <BareButton
+      className="c-coordinate-array-input__delete-btn"
+      onClick={[Function]}
+    >
+      <CrossIcon />
+    </BareButton>
+  </div>
+  <BareButton
+    className="c-coordinate-array-input__add-btn"
+    onClick={[Function]}
+  >
+    <TextMedium>
+      Add row
+    </TextMedium>
+  </BareButton>
+</div>
+`;
