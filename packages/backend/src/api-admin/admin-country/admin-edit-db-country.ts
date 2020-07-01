@@ -9,7 +9,8 @@ export const adminEditDbCountry = async (
     query,
     [
       item.id,
-      item.name
+      item.name,
+      item.bounds
     ]
   );
   return result.rows && result.rows[0];

@@ -1,7 +1,7 @@
 import { IValidation } from './validation.interface';
 
 export const requiredValidation: IValidation = (
-  value: string | string[] | number | boolean | null | undefined
+  value: string | string[] | number | boolean | Array<[number, number]> | null | undefined
 ): string | null => (
   value === null
   || value === undefined

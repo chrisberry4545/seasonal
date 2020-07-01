@@ -6,7 +6,13 @@ import { adminCreateDbCountry } from './admin-create-db-country';
 describe('adminCreateDbCountry', () => {
   let mockGetSqlQuery: jest.SpyInstance;
   let mockQueryPostgres: jest.SpyInstance;
-  const badge = { name: 'test' } as ICountry;
+  const badge = {
+    bounds: [
+      [0, 0],
+      [50, 50]
+    ],
+    name: 'test'
+  } as ICountry;
   const sqlQuery = 'sql-query';
   const queryResult = {
     rows: [{}]
@@ -29,7 +35,7 @@ describe('adminCreateDbCountry', () => {
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(
       sqlQuery,
-      [badge.name]
+      [badge.name, badge.bounds]
     ));
 
   test('returns the expected result', () => expect(result).toBe(queryResult.rows[0]));
