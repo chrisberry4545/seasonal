@@ -1518,10 +1518,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chrisb-dev/external-site-monitor@workspace:packages/external-site-monitor"
   dependencies:
-    "@types/cheerio": ^0.22.18
     "@types/node-fetch": ^2.5.7
     "@types/winston": ^2.4.4
-    cheerio: ^1.0.0-rc.3
     env-yaml: ^0.1.2
     jest: 24.9.0
     node-fetch: ^2.6.0
@@ -3059,7 +3057,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cheerio@npm:*, @types/cheerio@npm:^0.22.18":
+"@types/cheerio@npm:*":
   version: 0.22.18
   resolution: "@types/cheerio@npm:0.22.18"
   dependencies:
