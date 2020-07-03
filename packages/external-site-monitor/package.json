@@ -10,9 +10,9 @@
   },
   "scripts": {
     "start": "yarn test",
-    "update": "yarn update-recipes-list && yarn test --updateSnapshot",
+    "update": "yarn update-data && yarn test --updateSnapshot",
     "test": "jest",
-    "update-recipes-list": "ts-node ./src/recipe-list/update-recipes.ts"
+    "update-data": "ts-node ./src/update-data.ts"
   },
   "author": "Chris Berry <chrisberry4545@googlemail.com> (https://chrisberry4545.github.io/)",
   "license": "ISC",
