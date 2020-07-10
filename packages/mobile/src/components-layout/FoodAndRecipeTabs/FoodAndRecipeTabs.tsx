@@ -10,6 +10,7 @@ import {
 } from '../../components-elements/Text';
 import { ViewStyle } from 'react-native';
 import { ROUTES } from '../../const';
+import i18n from 'i18n-js';
 
 const styleSeasonalDetailsTabWrapper: ViewStyle = {
   marginTop: -20
@@ -34,10 +35,10 @@ export const FoodAndRecipeTabs: FC<{
     style: styleSeasonalDetailsTabWrapper
   }}>
     <Tab.Screen
-      options={{ tabBarLabel: 'Food' }}
+      options={{ tabBarLabel: i18n.t('foodTab') }}
       name={ROUTES.FOOD_TAB} component={foodScreen} />
     <Tab.Screen
-      options={{ tabBarLabel: 'Recipes' }}
+      options={{ tabBarLabel: i18n.t('recipesTab') }}
       name={ROUTES.RECIPES_TAB} component={recipeScreen} />
   </Tab.Navigator>;
 };

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { IFeedbackImprovementsQuestionDispatchProps } from './FeedbackImprovementsQuestion.interface';
 import { MultilineInput } from '../../components-elements';
 import { FeedbackQuestionsLayout } from '../../components-layout';
+import i18n from 'i18n-js';
 
 export const FeedbackImprovementsQuestion: FC<
   IFeedbackImprovementsQuestionDispatchProps
@@ -11,13 +12,13 @@ export const FeedbackImprovementsQuestion: FC<
   sendFeedbackImprovementsStart
 }) => (
   <FeedbackQuestionsLayout
-    questionTitle={'We\'d love to hear feedback on how we could improve'}
-    rejectButtonText='Not now'
+    questionTitle={i18n.t('feedbackImprovementQuestion')}
+    rejectButtonText={i18n.t('notNow')}
     onRejectButtonClicked={closeFeedbackModal}
-    confirmButtonText='Send feedback'
+    confirmButtonText={i18n.t('feedbackSend')}
     onConfirmButtonClicked={() => sendFeedbackImprovementsStart()}>
     <MultilineInput
       onChangeText={(improvements) => feedbackImprovementsChanged(improvements) }
-      placeholder='Your feedback'></MultilineInput>
+      placeholder={i18n.t('feedbackImprovementsPlaceholder')}></MultilineInput>
   </FeedbackQuestionsLayout>
 );

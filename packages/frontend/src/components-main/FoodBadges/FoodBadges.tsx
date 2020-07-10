@@ -6,6 +6,7 @@ import {
   IFoodBadgesProps
 } from './FoodBadges.interface';
 import { TextHeadingSmall, BareButton } from '@chrisb-dev/seasonal-shared-frontend-components';
+import i18n from 'i18n-js';
 
 export const FoodBadges: FC<IFoodBadgesProps> = ({
   badges,
@@ -16,7 +17,7 @@ export const FoodBadges: FC<IFoodBadgesProps> = ({
     ? (
       <div className='c-food-badges'>
         <TextHeadingSmall className='c-food-badges__heading'>
-          Nutrients
+          {i18n.t('foodBadgesTitle')}
         </TextHeadingSmall>
         <div className='c-food-badges__list'>
           {

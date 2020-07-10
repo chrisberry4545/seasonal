@@ -9,6 +9,7 @@ import { ISeasonForFoodProps } from './SeasonsForFood.interface';
 import { View, ViewStyle, TextStyle } from 'react-native';
 import { styles } from '../../styles';
 import { shadows } from '../../styles/shadows';
+import i18n from 'i18n-js';
 
 const styleSeasonsForFoodTitle: TextStyle = {
   marginBottom: 15,
@@ -80,7 +81,7 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
   !isLoading
     ? <View>
     <TextHeadingSmall style={styleSeasonsForFoodTitle}>
-      When are they in season?
+      {i18n.t('seasonsForFoodTitle')}
     </TextHeadingSmall>
     <View style={styleSeasonsForFoodSeasonWrapper}>
       {
@@ -111,7 +112,7 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
     </View>
     <View style={styleSeasonsForFoodSeasonKey}>
       <TextSmall style={styleSeasonsForFoodSeasonKeyText}>
-        In season
+        {i18n.t('seasonsForFoodKeyInSeason')}
       </TextSmall>
       <View style={ [
         styleSeasonsForFoodSeasonKeyMarker,
@@ -120,7 +121,7 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
     </View>
     <View style={styleSeasonsForFoodSeasonKey}>
       <TextSmall style={styleSeasonsForFoodSeasonKeyText}>
-        Not in season
+      {i18n.t('seasonsForFoodKeyNotInSeason')}
       </TextSmall>
       <View style={ styleSeasonsForFoodSeasonKeyMarker } />
     </View>

@@ -3,6 +3,7 @@ import { IFeedbackRateOnStoreQuestionDispatchProps } from './FeedbackRateOnStore
 import { TextMedium } from '../../components-elements';
 import { FeedbackQuestionsLayout } from '../../components-layout';
 import { TextStyle } from 'react-native';
+import i18n from 'i18n-js';
 
 const styleFeedbackRateOnStoreQuestionText: TextStyle = {
   textAlign: 'center'
@@ -15,14 +16,13 @@ export const FeedbackRateOnStoreQuestion: FC<
   sendFeedbackWantToRate
 }) => (
   <FeedbackQuestionsLayout
-    questionTitle='Help others Eat Seasonal'
-    rejectButtonText='Not now'
+    questionTitle={i18n.t('feedbackRateOnStoreQuestionTitle')}
+    rejectButtonText={i18n.t('notNow')}
     onRejectButtonClicked={sendFeedbackDoNotWantToRate}
-    confirmButtonText='Rate the app'
+    confirmButtonText={i18n.t('feedbackRateTheApp')}
     onConfirmButtonClicked={sendFeedbackWantToRate}>
     <TextMedium style={styleFeedbackRateOnStoreQuestionText}>
-      Rating the app will help other people find the app and
-      start eating seasonally
+      {i18n.t('feedbackRateOnStoreQuestion')}
     </TextMedium>
   </FeedbackQuestionsLayout>
 );

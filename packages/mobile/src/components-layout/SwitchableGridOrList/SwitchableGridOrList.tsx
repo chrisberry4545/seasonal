@@ -4,6 +4,7 @@ import { ImageGrid } from '../ImageGrid/ImageGrid';
 import { ImageList } from '../ImageList/ImageList';
 import { BareButton, GridIcon, ListIcon, TextSmall } from '../../components-elements';
 import { ISwitchableGridOrListInterface } from './SwitchableGridOrList.interface';
+import i18n from 'i18n-js';
 
 const switchableGridOrListButton: ViewStyle = {
   alignItems: 'center',
@@ -31,7 +32,7 @@ export const SwitchableGridOrList: FC<
       onClick={onToggleListView}>
       { isListViewShown ? <GridIcon /> : <ListIcon /> }
       <TextSmall style={switchableGridOrListButtonText}>
-        { isListViewShown ? 'Grid view' : 'List view' }
+        { isListViewShown ? i18n.t('gridView') : i18n.t('listView') }
       </TextSmall>
     </BareButton>
     {

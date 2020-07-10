@@ -9,6 +9,9 @@ import { Provider } from 'react-redux';
 import { store } from './src/store';
 import { AppContainer } from './src/components-app';
 import { GlobalModals } from './src/components-main/GlobalModals/GlobalModals';
+import { initLocalization } from './src/helpers/init-localization';
+
+initLocalization();
 
 const App: FC = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);

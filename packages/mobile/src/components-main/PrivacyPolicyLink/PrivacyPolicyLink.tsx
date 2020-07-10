@@ -1,11 +1,10 @@
 import React, { FC } from 'react';
-
 import { Linking, TextStyle } from 'react-native';
-
 import {
   PRIVACY_POLICY_URL
 } from '../../config';
 import { TextHeadingMedium, BareButton } from '../../components-elements';
+import i18n from 'i18n-js';
 
 const stylePrivacyPolicyLink: TextStyle = {
   height: 40,
@@ -30,7 +29,7 @@ export const PrivacyPolicyLink: FC<{}> = () => (
     style={ stylePrivacyPolicyLink }
     onClick={linkToPrivacyPolicy}>
     <TextHeadingMedium style={ stylePrivacyPolicyLinkText }>
-      Privacy Policy
+      {i18n.t('privacyPolicyTitle')}
     </TextHeadingMedium>
   </BareButton>
 );

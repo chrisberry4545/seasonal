@@ -6,6 +6,7 @@ import { SwitchableGridOrList } from '../../components-layout';
 import { TextHeadingSmall } from '../../components-elements';
 import { styles } from '../../styles';
 import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
+import i18n from 'i18n-js';
 
 const styleRecipesForFood: ViewStyle = {
   borderBottomWidth: StyleSheet.hairlineWidth,
@@ -29,7 +30,7 @@ export const RecipesForFood: FC<IRecipeForFoodProps> = ({
   !isLoading && currentFoodDetailsRecipes
     ? <View style={styleRecipesForFood}>
       <TextHeadingSmall style={styleRecipesForFoodTitle}>
-        Recipes
+        {i18n.t('recipesForFoodTitle')}
       </TextHeadingSmall>
       <DietaryFiltersConnector />
       <SwitchableGridOrList
