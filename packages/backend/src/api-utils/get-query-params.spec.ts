@@ -1,8 +1,11 @@
 import {
   getRegionIdFromQueryParams,
   getIsVeganFromQueryParams,
-  getIsVegetarianFromQueryParams
+  getIsVegetarianFromQueryParams,
+  getLanguageFromQueryParams
 } from './get-query-params';
+import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
+import { errorLogger } from '../logger/logger';
 
 describe('getRegionIdFromQueryParams', () => {
   const request = {
@@ -77,4 +80,63 @@ describe('getIsVegetarianFromQueryParams', () => {
       ...request,
       query: {}
     })).toBe(false));
+});
+
+describe('getLanguageFromQueryParams', () => {
+  const request = {
+    query: {
+      language: LANGUAGES.EN_GB
+    }
+  } as any;
+  let mockErrorLogger: jest.SpyInstance;
+  let result: LANGUAGES | null;
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockErrorLogger =
+      jest.spyOn(errorLogger, 'log').mockReturnValue(null as any);
+  });
+
+  describe('when a valid language is set in the request', () => {
+    beforeEach(() =>
+      result = getLanguageFromQueryParams(request));
+
+    test('does not log any errors', () =>
+      expect(mockErrorLogger).not.toHaveBeenCalled());
+
+    test('returns the language in the request', () =>
+      expect(result).toBe(request.query.language));
+
+  });
+
+  describe('when an invalid language is set in the request', () => {
+    beforeEach(() =>
+      result = getLanguageFromQueryParams({
+        ...request,
+        query: {
+          ...request.query,
+          language: 'invalid'
+        }
+      }));
+
+    test('logs an error', () =>
+      expect(mockErrorLogger).toHaveBeenCalled());
+
+    test('returns null', () => expect(result).toBeNull());
+
+  });
+
+  describe('when no language is set', () => {
+    beforeEach(() =>
+      result = getLanguageFromQueryParams({
+        ...request,
+        query: {}
+      }));
+
+    test('does not log an error', () =>
+      expect(mockErrorLogger).not.toHaveBeenCalled());
+
+    test('returns null', () => expect(result).toBeNull());
+
+  });
 });

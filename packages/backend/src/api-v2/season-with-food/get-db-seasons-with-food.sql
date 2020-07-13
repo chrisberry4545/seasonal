@@ -4,7 +4,8 @@ WITH
       country_to_food_name_map.food_id,
       country_to_food_name_map.name
 		FROM country_to_food_name_map
-		WHERE country_to_food_name_map.country_id = ANY(
+		WHERE $3 = ANY(country_to_food_name_map.languages)
+    OR country_to_food_name_map.country_id = ANY(
       SELECT
         regions.country_id
       FROM

@@ -4,7 +4,7 @@ import {
   Response,
   NextFunction
 } from 'express';
-import { getRegionIdFromQueryParams } from '../../api-utils/get-query-params';
+import { getRegionIdFromQueryParams, getLanguageFromQueryParams } from '../../api-utils/get-query-params';
 import { get500Error, get404Error } from '../../api-utils';
 import { getAllCachedSeasonsWithFood } from './get-all-cached-seasons-with-food';
 import { getOneCachedSeasonWithFood } from './get-one-cached-season-with-food';
@@ -21,9 +21,12 @@ export const apiSeasonWithFoodV2 = (router = Router()) => {
   });
   router.get('/:seasonIndex', async (req: Request, res: Response, next: NextFunction) => {
     const { seasonIndex } = req.params;
-    const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await getOneCachedSeasonWithFood()(parseInt(seasonIndex, 10), regionId);
+      const regionId = getRegionIdFromQueryParams(req);
+      const language = getLanguageFromQueryParams(req);
+      const result = await getOneCachedSeasonWithFood()(
+        parseInt(seasonIndex, 10), regionId, language
+      );
       if (!result) {
         return next(get404Error());
       }

@@ -7,7 +7,6 @@ import {
   TextHeadingSmall
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
-import i18n from 'i18n-js';
 
 export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
   isLoading,
@@ -18,7 +17,7 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
     ? <Fragment>
     <TextHeadingSmall
       className='c-season-for-food__list-heading'>
-        {i18n.t('seasonsForFoodTitle')}
+        When are they in season?
     </TextHeadingSmall>
     <div className='c-season-for-food__list'>
       {
@@ -53,13 +52,13 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
         `c-season-food__in-season-key--in-season`
       }>
       <TextSmall className='c-season-food__in-season-key__text'>
-        {i18n.t('seasonsForFoodKeyInSeason')}
+        In season
       </TextSmall>
     </div>
     <div
       className='c-season-food__in-season-key'>
       <TextSmall className='c-season-food__in-season-key__text'>
-        {i18n.t('seasonsForFoodKeyNotInSeason')}
+        Not in season
       </TextSmall>
     </div>
   </Fragment>

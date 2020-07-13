@@ -1,4 +1,4 @@
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import * as getDbSeasonsWithFood from './get-db-seasons-with-food';
 import { getOneDbSeasonWithFood } from './get-one-db-season-with-food';
 
@@ -8,7 +8,7 @@ describe('getOneSeasonWithFood', () => {
   beforeEach(async () => {
     jest.spyOn(getDbSeasonsWithFood, 'getDbSeasonsWithFood')
       .mockResolvedValue(seasons);
-    result = await getOneDbSeasonWithFood(1, 'regionId');
+    result = await getOneDbSeasonWithFood(1, 'regionId', LANGUAGES.EN);
   });
 
   test('returns the season', () => expect(result).toBe(seasons[0]));

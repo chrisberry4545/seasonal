@@ -8,7 +8,6 @@ import {
   TextHeadingSmall
 } from '@chrisb-dev/seasonal-shared-frontend-components';
 import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
-import i18n from 'i18n-js';
 
 export const RecipesForFood: FC<IRecipesForFoodProps> = ({
   isLoading,
@@ -18,7 +17,7 @@ export const RecipesForFood: FC<IRecipesForFoodProps> = ({
   !isLoading
     ? <div className='c-recipes-for-food'>
       <TextHeadingSmall className='c-recipes-for-food__heading'>
-        {i18n.t('recipesForFoodTitle')}
+        Recipes
       </TextHeadingSmall>
       <DietaryFiltersConnector />
       <ImageGrid data-e2e='recipes-for-food-grid'

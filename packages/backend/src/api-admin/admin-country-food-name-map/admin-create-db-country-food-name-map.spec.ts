@@ -1,5 +1,5 @@
 import * as postgres from '../../postgres';
-import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared-models';
+import { ICountryFoodNameMap, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 import { adminCreateDbCountryFoodNameMap } from './admin-create-db-country-food-name-map';
 
@@ -9,6 +9,7 @@ describe('adminCreateDbCountryFoodNameMap', () => {
   const countryFoodNameMap = {
     countryId: 'countryId',
     foodId: 'foodId',
+    languages: [LANGUAGES.EN_GB],
     name: 'test'
   } as ICountryFoodNameMap;
   const sqlQuery = 'sql-query';
@@ -36,7 +37,8 @@ describe('adminCreateDbCountryFoodNameMap', () => {
       [
         countryFoodNameMap.name,
         countryFoodNameMap.countryId,
-        countryFoodNameMap.foodId
+        countryFoodNameMap.foodId,
+        countryFoodNameMap.languages
       ]
     ));
 

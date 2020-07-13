@@ -4,6 +4,7 @@ exports[`REST endpoint testing for /admin/country-food-name-map create item when
 Object {
   "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
   "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+  "languages": null,
   "name": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
 }
 `;
@@ -12,6 +13,7 @@ exports[`REST endpoint testing for /admin/country-food-name-map delete item when
 Object {
   "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
   "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+  "languages": null,
   "name": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
 }
 `;
@@ -20,6 +22,9 @@ exports[`REST endpoint testing for /admin/country-food-name-map edit item when l
 Object {
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
   "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+  "languages": Array [
+    "en-GB",
+  ],
   "name": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
 }
 `;
@@ -30,6 +35,9 @@ Array [
     "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
     "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
     "id": "dcec5b2c-403b-43ae-8745-ef368987552c",
+    "languages": Array [
+      "en_US",
+    ],
     "name": "USA Beetroot",
   },
 ]
@@ -40,6 +48,9 @@ Object {
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
   "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
   "id": "dcec5b2c-403b-43ae-8745-ef368987552c",
+  "languages": Array [
+    "en_US",
+  ],
   "name": "USA Beetroot",
 }
 `;

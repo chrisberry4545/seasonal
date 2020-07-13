@@ -10,7 +10,8 @@ export const adminCreateDbCountryFoodNameMap = async (
     [
       item.name,
       item.countryId,
-      item.foodId
+      item.foodId,
+      item.languages
     ]
   );
   return result.rows && result.rows[0];

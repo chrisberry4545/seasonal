@@ -13,6 +13,7 @@ generateRestEndpointTests<ICountryFoodNameMap>({
   validItemForEdit: {
     countryId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
     foodId: 'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
+    languages: ['en-GB'],
     name: 'f6a680ee-6d6e-4c42-a99d-15e575c32c20'
   } as ICountryFoodNameMap
 });
