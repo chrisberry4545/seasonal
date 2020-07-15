@@ -129,6 +129,21 @@ exports[`<App /> renders correctly 1`] = `
       <Route
         component={[Function]}
         exact={true}
+        path="/translations-country-name"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/translations-country-name/edit/:id"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/translations-country-name/create"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
         path="/user"
       />
       <Route

@@ -216,6 +216,114 @@ exports[`MainLinks renders correctly 1`] = `
     </div>
     <div
       className="c-main-links__section"
+      key="Translations Badge Name"
+    >
+      <TextHeadingSmall
+        className="c-main-links__section-heading"
+      >
+        Translations Badge Name
+      </TextHeadingSmall>
+      <div
+        className="c-main-links__options"
+      >
+        <SingleLink
+          url="translations-badge-name/create"
+        >
+          Create
+        </SingleLink>
+        <TextMedium>
+          -
+        </TextMedium>
+        <SingleLink
+          url="translations-badge-name"
+        >
+          View
+        </SingleLink>
+      </div>
+    </div>
+    <div
+      className="c-main-links__section"
+      key="Translations Country Name"
+    >
+      <TextHeadingSmall
+        className="c-main-links__section-heading"
+      >
+        Translations Country Name
+      </TextHeadingSmall>
+      <div
+        className="c-main-links__options"
+      >
+        <SingleLink
+          url="translations-country-name/create"
+        >
+          Create
+        </SingleLink>
+        <TextMedium>
+          -
+        </TextMedium>
+        <SingleLink
+          url="translations-country-name"
+        >
+          View
+        </SingleLink>
+      </div>
+    </div>
+    <div
+      className="c-main-links__section"
+      key="Translations Region Name"
+    >
+      <TextHeadingSmall
+        className="c-main-links__section-heading"
+      >
+        Translations Region Name
+      </TextHeadingSmall>
+      <div
+        className="c-main-links__options"
+      >
+        <SingleLink
+          url="translations-region-name/create"
+        >
+          Create
+        </SingleLink>
+        <TextMedium>
+          -
+        </TextMedium>
+        <SingleLink
+          url="translations-region-name"
+        >
+          View
+        </SingleLink>
+      </div>
+    </div>
+    <div
+      className="c-main-links__section"
+      key="Translations Season Name"
+    >
+      <TextHeadingSmall
+        className="c-main-links__section-heading"
+      >
+        Translations Season Name
+      </TextHeadingSmall>
+      <div
+        className="c-main-links__options"
+      >
+        <SingleLink
+          url="translations-season-name/create"
+        >
+          Create
+        </SingleLink>
+        <TextMedium>
+          -
+        </TextMedium>
+        <SingleLink
+          url="translations-season-name"
+        >
+          View
+        </SingleLink>
+      </div>
+    </div>
+    <div
+      className="c-main-links__section"
       key="Users"
     >
       <TextHeadingSmall

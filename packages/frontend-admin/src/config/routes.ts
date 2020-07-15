@@ -12,5 +12,9 @@ export enum ROUTES {
   REGION = 'region',
   REGION_FOOD_SEASON_MAP = 'region-food-season-map',
   REPORTS_FOOD_MISSING_RECIPES = 'report-food-missing-recipes',
+  TRANSLATIONS_BADGE_NAME = 'translations-badge-name',
+  TRANSLATIONS_COUNTRY_NAME = 'translations-country-name',
+  TRANSLATIONS_REGION_NAME = 'translations-region-name',
+  TRANSLATIONS_SEASON_NAME = 'translations-season-name',
   USER = 'user'
 }

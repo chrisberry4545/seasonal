@@ -25,7 +25,19 @@ import {
   EditCountryFoodNameMapPage,
   EditCountryRecipeNameMapPage,
   EditRegionFoodSeasonMapPage,
-  ReportFoodWithNoRecipesPage
+  ReportFoodWithNoRecipesPage,
+  CreateTranslationsCountryNamePage,
+  EditTranslationsCountryNamePage,
+  ViewTranslationsCountryNamesPage,
+  CreateTranslationsBadgeNamePage,
+  EditTranslationsBadgeNamePage,
+  ViewTranslationsBadgeNamesPage,
+  CreateTranslationsRegionNamePage,
+  EditTranslationsRegionNamePage,
+  ViewTranslationsRegionNamesPage,
+  CreateTranslationsSeasonNamePage,
+  EditTranslationsSeasonNamePage,
+  ViewTranslationsSeasonNamesPage
 } from '../components-pages';
 import { FunctionComponent } from 'react';
 
@@ -100,6 +112,34 @@ export const mainLinks: IMainLinkGroup[] = [
         sectionName: 'Region Food Season Maps',
         viewPageComponent: EditRegionFoodSeasonMapPage,
         viewUrl: ROUTES.REGION_FOOD_SEASON_MAP
+      },
+      {
+        createPageComponent: CreateTranslationsBadgeNamePage,
+        editPageComponent: EditTranslationsBadgeNamePage,
+        sectionName: 'Translations Badge Name',
+        viewPageComponent: ViewTranslationsBadgeNamesPage,
+        viewUrl: ROUTES.TRANSLATIONS_BADGE_NAME
+      },
+      {
+        createPageComponent: CreateTranslationsCountryNamePage,
+        editPageComponent: EditTranslationsCountryNamePage,
+        sectionName: 'Translations Country Name',
+        viewPageComponent: ViewTranslationsCountryNamesPage,
+        viewUrl: ROUTES.TRANSLATIONS_COUNTRY_NAME
+      },
+      {
+        createPageComponent: CreateTranslationsRegionNamePage,
+        editPageComponent: EditTranslationsRegionNamePage,
+        sectionName: 'Translations Region Name',
+        viewPageComponent: ViewTranslationsRegionNamesPage,
+        viewUrl: ROUTES.TRANSLATIONS_REGION_NAME
+      },
+      {
+        createPageComponent: CreateTranslationsSeasonNamePage,
+        editPageComponent: EditTranslationsSeasonNamePage,
+        sectionName: 'Translations Season Name',
+        viewPageComponent: ViewTranslationsSeasonNamesPage,
+        viewUrl: ROUTES.TRANSLATIONS_SEASON_NAME
       },
       {
         createPageComponent: CreateUserPage,
