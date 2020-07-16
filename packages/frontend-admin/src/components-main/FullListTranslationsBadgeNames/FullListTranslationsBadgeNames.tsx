@@ -52,7 +52,9 @@ export const FullListTranslationsBadgeNames: FC<{}> = () =>
       ]);
       return translations.map((translation) => {
         const matchingBadge =
-          badges.find((badge) => translation.badgeId === badge.id);
+          badges.find((badge) => (
+            translation as ITranslationsBadgeName
+          ).badgeId === badge.id);
         return {
           ...translation,
           badgeName: matchingBadge && matchingBadge.name
@@ -60,6 +62,6 @@ export const FullListTranslationsBadgeNames: FC<{}> = () =>
       }).sort((a, b) => (
         (a && a.badgeName ? a.badgeName : '') < (b && b.badgeName ? b.badgeName : '')
           ? -1 : 1
-      ));
+      )) as ITranslationsBadgeNameViewItem[];
     }}
     />;

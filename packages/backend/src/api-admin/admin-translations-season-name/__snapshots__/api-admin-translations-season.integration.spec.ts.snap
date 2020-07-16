@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REST endpoint testing for /admin/translations-season-name create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
+Object {
+  "languages": Array [
+    "en-US",
+  ],
+  "name": "US Season Translation",
+  "seasonId": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-season-name delete item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "languages": Array [
+    "en-US",
+  ],
+  "name": "US Season Translation",
+  "seasonId": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-season-name edit item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "languages": Array [
+    "en-GB",
+  ],
+  "name": "GB Season Translation",
+  "seasonId": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-season-name get all when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "id": "620e73ae-da4c-4caa-a726-2e021adbb235",
+    "languages": Array [
+      "en_US",
+    ],
+    "name": "USA February",
+    "seasonId": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+  },
+]
+`;
+
+exports[`REST endpoint testing for /admin/translations-season-name get single item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "id": "620e73ae-da4c-4caa-a726-2e021adbb235",
+  "languages": Array [
+    "en_US",
+  ],
+  "name": "USA February",
+  "seasonId": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+}
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REST endpoint testing for /admin/translations-badge-name create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
+Object {
+  "badgeId": "a2c52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "languages": Array [
+    "en-US",
+  ],
+  "name": "US Badge Translation",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-badge-name delete item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "badgeId": "a2c52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "languages": Array [
+    "en-US",
+  ],
+  "name": "US Badge Translation",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-badge-name edit item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "badgeId": "a2c52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "languages": Array [
+    "en-GB",
+  ],
+  "name": "GB Badge Translation",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-badge-name get all when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "badgeId": "5de57673-eee8-444a-b7be-d9ab553052cf",
+    "id": "cdfc3518-27d1-44bc-bbab-7b95b039e333",
+    "languages": Array [
+      "en_US",
+    ],
+    "name": "USA high in vitamin D",
+  },
+]
+`;
+
+exports[`REST endpoint testing for /admin/translations-badge-name get single item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "badgeId": "5de57673-eee8-444a-b7be-d9ab553052cf",
+  "id": "cdfc3518-27d1-44bc-bbab-7b95b039e333",
+  "languages": Array [
+    "en_US",
+  ],
+  "name": "USA high in vitamin D",
+}
+`;

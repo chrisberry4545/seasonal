@@ -11,7 +11,7 @@ const createEmptyTranslationsSeasonName = (): ITranslationsSeasonName => ({
   id: '',
   languages: [],
   name: '',
-  regionId: ''
+  seasonId: ''
 } as ITranslationsSeasonName);
 
 export const CreateTranslationsSeasonNameForm: FC<{}> = () =>

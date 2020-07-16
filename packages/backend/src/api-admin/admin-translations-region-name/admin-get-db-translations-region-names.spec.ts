@@ -1,17 +1,17 @@
 import * as postgres from '../../postgres';
-import { ITranslationsCountryName } from '@chrisb-dev/seasonal-shared-models';
+import { ITranslationsRegionName } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
-import { adminGetDbTranslationsCountryNames } from './admin-get-db-translations-country-names';
+import { adminGetDbTranslationsRegionNames } from './admin-get-db-translations-region-names';
 
-describe('adminGetDbTranslationsCountryNames', () => {
+describe('adminGetDbTranslationsRegionNames', () => {
   let mockGetSqlQuery: jest.SpyInstance;
   let mockQueryPostgres: jest.SpyInstance;
   const id = 'id';
   const sqlQuery = 'sql-query';
   const queryResult = {
     rows: [{}]
-  } as QueryResult<ITranslationsCountryName>;
-  let result: ITranslationsCountryName[];
+  } as QueryResult<ITranslationsRegionName>;
+  let result: ITranslationsRegionName[];
 
   beforeEach(async () => {
     mockGetSqlQuery = jest.spyOn(postgres, 'getSqlQuery')
@@ -20,11 +20,11 @@ describe('adminGetDbTranslationsCountryNames', () => {
     mockQueryPostgres = jest.spyOn(postgres, 'queryPostgres')
       .mockResolvedValue(queryResult);
     mockQueryPostgres.mockClear();
-    result = await adminGetDbTranslationsCountryNames(id);
+    result = await adminGetDbTranslationsRegionNames(id);
   });
 
   test('calls getSqlQuery with the correct value', () =>
-    expect(mockGetSqlQuery).toHaveBeenCalledWith(`${__dirname}/admin-get-db-translations-country-names.sql`));
+    expect(mockGetSqlQuery).toHaveBeenCalledWith(`${__dirname}/admin-get-db-translations-region-names.sql`));
 
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(
