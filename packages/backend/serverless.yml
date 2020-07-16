@@ -268,6 +268,98 @@ functions:
           path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminRegionFoodSeasonMap}/{id}
           method: delete
           cors: true
+  adminTranslationBadgeName:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationBadgeName}
+          method: post
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationBadgeName}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationBadgeName}/{id}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationBadgeName}
+          method: patch
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationBadgeName}/{id}
+          method: delete
+          cors: true
+  adminTranslationCountryName:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationCountryName}
+          method: post
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationCountryName}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationCountryName}/{id}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationCountryName}
+          method: patch
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationCountryName}/{id}
+          method: delete
+          cors: true
+  adminTranslationRegionName:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationRegionName}
+          method: post
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationRegionName}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationRegionName}/{id}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationRegionName}
+          method: patch
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationRegionName}/{id}
+          method: delete
+          cors: true
+  adminTranslationSeasonName:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationSeasonName}
+          method: post
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationSeasonName}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationSeasonName}/{id}
+          method: get
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationSeasonName}
+          method: patch
+          cors: true
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.adminTranslationSeasonName}/{id}
+          method: delete
+          cors: true
   adminUser:
     handler: index-serverless.handler
     events:
