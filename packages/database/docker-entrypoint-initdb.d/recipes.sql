@@ -21,7 +21,8 @@ INSERT INTO public.recipes (
   is_vegan,
   name,
   primary_food_in_recipe_ids,
-  secondary_food_in_recipe_ids
+  secondary_food_in_recipe_ids,
+  languages
 )
 VALUES
   (

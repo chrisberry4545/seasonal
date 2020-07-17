@@ -5,6 +5,9 @@ Object {
   "imageUrlSmall": "http://image.com",
   "isVegan": true,
   "isVegetarian": false,
+  "languages": Array [
+    "en-US",
+  ],
   "linkUrl": "http://new.com",
   "name": "new-recipe",
   "primaryFoodInRecipeIds": Array [
@@ -21,6 +24,9 @@ Object {
   "imageUrlSmall": "http://image.com",
   "isVegan": true,
   "isVegetarian": false,
+  "languages": Array [
+    "en-US",
+  ],
   "linkUrl": "http://new.com",
   "name": "new-recipe",
   "primaryFoodInRecipeIds": Array [
@@ -37,6 +43,9 @@ Object {
   "imageUrlSmall": "http://image-edited.com",
   "isVegan": false,
   "isVegetarian": true,
+  "languages": Array [
+    "en-GB",
+  ],
   "linkUrl": "http://new-thing.com",
   "name": "new-recipe-edited",
   "primaryFoodInRecipeIds": Array [
@@ -57,6 +66,10 @@ Array [
     "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
     "isVegan": false,
     "isVegetarian": false,
+    "languages": Array [
+      "en_US",
+      "en_GB",
+    ],
     "linkUrl": "https://apple-beetroot-and-cheese.com",
     "name": "Apple, Beetroot & Meat",
     "primaryFoodInRecipeIds": Array [
@@ -70,6 +83,10 @@ Array [
     "imageUrlSmall": "https://apple-and-cheese.com/image",
     "isVegan": false,
     "isVegetarian": true,
+    "languages": Array [
+      "en_US",
+      "en_GB",
+    ],
     "linkUrl": "https://apple-and-cheese.com",
     "name": "Apple, Cheese & Onion",
     "primaryFoodInRecipeIds": Array [
@@ -84,6 +101,10 @@ Array [
     "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
     "isVegan": true,
     "isVegetarian": false,
+    "languages": Array [
+      "en_US",
+      "en_GB",
+    ],
     "linkUrl": "https://pickled-beetroot.com",
     "name": "Pasta with a Beetroot sauce",
     "primaryFoodInRecipeIds": Array [
@@ -100,6 +121,10 @@ Object {
   "imageUrlSmall": "https://apple-and-cheese.com/image",
   "isVegan": false,
   "isVegetarian": true,
+  "languages": Array [
+    "en_US",
+    "en_GB",
+  ],
   "linkUrl": "https://apple-and-cheese.com",
   "name": "Apple, Cheese & Onion",
   "primaryFoodInRecipeIds": Array [
