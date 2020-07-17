@@ -44,7 +44,10 @@ const enTranslations = {
   feedbackRateTheApp: 'Rate the app',
   feedbackSend: 'Send feedback',
 
-  selectYourRegion: 'Select your region'
+  selectYourRegion: 'Select your region',
+
+  regionChangedDetectedYourClosestRegionAs: `We've detected your closest region as:`,
+  regionChangedIfThisIsWrongClickHere: 'If this is wrong, click here.'
 
 };
 
