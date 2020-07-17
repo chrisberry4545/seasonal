@@ -11,7 +11,7 @@ exports[`<CreateTranslationsSeasonNameForm /> renders correctly 1`] = `
         "id": "",
         "languages": Array [],
         "name": "",
-        "regionId": "",
+        "seasonId": "",
       }
     }
     updateMethod={[MockFunction]}
