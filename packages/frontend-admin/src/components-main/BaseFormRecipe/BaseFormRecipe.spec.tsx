@@ -12,6 +12,12 @@ jest.mock('../../services', () => ({
 jest.mock('../DataForm/DataForm', () => ({
   DataForm: () => 'DataForm'
 }));
+jest.mock('@chrisb-dev/seasonal-shared-models', () => ({
+  LANGUAGES: {
+    EN_GB: 'en_GB',
+    EN_US: 'en-US'
+  }
+}));
 
 describe('<BaseFormRecipe />', () => {
   let wrapper: ShallowWrapper;

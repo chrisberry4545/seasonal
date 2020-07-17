@@ -8,8 +8,9 @@ CREATE TABLE public.recipes
   is_vegetarian boolean,
   is_vegan boolean,
   name text,
-  primary_food_in_recipe_ids uuid[][],
-  secondary_food_in_recipe_ids uuid[][]
+  primary_food_in_recipe_ids uuid[],
+  secondary_food_in_recipe_ids uuid[],
+  languages text[]
 );
 
 INSERT INTO public.recipes (
@@ -31,7 +32,8 @@ VALUES
     true,
     'Pasta with a Beetroot sauce',
     ARRAY['f6a680ee-6d6e-4c42-a99d-15e575c32c20']::uuid[],
-    ARRAY[]::uuid[]
+    ARRAY[]::uuid[],
+    '{"en_US", "en_GB"}'
   ),
   (
     'fefc209f-ddaf-465d-941f-fe3fefa6b931',
@@ -41,7 +43,8 @@ VALUES
     false,
     'Apple, Cheese & Onion',
     ARRAY['dd9ba012-8f8e-48af-9775-0139374dd94c']::uuid[],
-    ARRAY['d1df368e-6ed1-4a50-bb7d-6163c15df1d3']::uuid[]
+    ARRAY['d1df368e-6ed1-4a50-bb7d-6163c15df1d3']::uuid[],
+    '{"en_US", "en_GB"}'
   ),
   (
     '053c46cd-584e-46c5-a70d-b79b9ded3cca',
@@ -51,5 +54,6 @@ VALUES
     false,
     'Apple, Beetroot & Meat',
     ARRAY['dd9ba012-8f8e-48af-9775-0139374dd94c', 'f6a680ee-6d6e-4c42-a99d-15e575c32c20']::uuid[],
-    ARRAY[]::uuid[]
+    ARRAY[]::uuid[],
+    '{"en_US", "en_GB"}'
   );

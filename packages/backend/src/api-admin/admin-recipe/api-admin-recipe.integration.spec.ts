@@ -1,4 +1,4 @@
-import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
+import { IRecipe, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from '../../api-utils/test-utils/generate-rest-endpoint-tests';
 import { ENDPOINT_ADMIN_RECIPE } from '../../config';
 
@@ -9,6 +9,7 @@ generateRestEndpointTests<IRecipe>({
     imageUrlSmall: 'http://image.com',
     isVegan: true,
     isVegetarian: false,
+    languages: [LANGUAGES.EN_US],
     linkUrl: 'http://new.com',
     name: 'new-recipe',
     primaryFoodInRecipeIds: ['f6a680ee-6d6e-4c42-a99d-15e575c32c20'],
@@ -18,6 +19,7 @@ generateRestEndpointTests<IRecipe>({
     imageUrlSmall: 'http://image-edited.com',
     isVegan: false,
     isVegetarian: true,
+    languages: [LANGUAGES.EN_GB],
     linkUrl: 'http://new-thing.com',
     name: 'new-recipe-edited',
     primaryFoodInRecipeIds: [

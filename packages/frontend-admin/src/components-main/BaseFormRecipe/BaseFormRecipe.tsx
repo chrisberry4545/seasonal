@@ -3,7 +3,7 @@ import { getAllFood } from '../../services';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { IRecipe, IFood } from '@chrisb-dev/seasonal-shared-models';
+import { IRecipe, IFood, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { DataForm, IDataFormConfigProps } from '../DataForm/DataForm';
 import { requiredValidation } from '@chrisb-dev/seasonal-shared-frontend-components';
 
@@ -31,6 +31,13 @@ const initialRecipeFormConfig: IRecipeFormConfigProps = {
 
   isVegetarian: {
     type: 'checkbox'
+  },
+
+  languages: {
+    options: Object.values(LANGUAGES)
+      .map((value) => ({ label: value, value })),
+    type: 'multiselect',
+    validation: [requiredValidation]
   }
 };
 
