@@ -7,7 +7,7 @@ import * as uuidParamValidation from '../../middleware/uuid-param-validation';
 import * as getCachedBadgeDetails from './get-cached-badge-details';
 import * as apiUtils from '../../api-utils';
 import { ISeasonalBackendError } from '../../interfaces';
-import { IHydratedBadge } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedBadge, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('apiBadgeV2', () => {
   let mockRouter: Router;
@@ -40,6 +40,8 @@ describe('apiBadgeV2', () => {
       .mockReturnValue(false);
     jest.spyOn(getQueryParams, 'getRegionIdFromQueryParams')
       .mockReturnValue('regionId');
+    jest.spyOn(getQueryParams, 'getLanguageFromQueryParams')
+      .mockReturnValue(LANGUAGES.EN_GB);
     jest.spyOn(apiUtils, 'get404Error')
       .mockReturnValue(mock404Error);
     jest.spyOn(apiUtils, 'get500Error')

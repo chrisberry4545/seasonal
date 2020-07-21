@@ -19,5 +19,5 @@ VALUES
     '620e73ae-da4c-4caa-a726-2e021adbb235',
     'eec0b2bb-4fbd-46df-b905-8d2ee2fb991a',
     'USA February',
-    '{"en_US"}'
+    '{"en-US"}'
   );

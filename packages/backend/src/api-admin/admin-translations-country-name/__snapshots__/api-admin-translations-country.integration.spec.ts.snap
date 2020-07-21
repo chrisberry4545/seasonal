@@ -36,7 +36,7 @@ Array [
     "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
     "id": "6f4182a8-5bd8-45d8-bb7c-076719d209fc",
     "languages": Array [
-      "en_US",
+      "en-US",
     ],
     "name": "USA - UK",
   },
@@ -48,7 +48,7 @@ Object {
   "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
   "id": "6f4182a8-5bd8-45d8-bb7c-076719d209fc",
   "languages": Array [
-    "en_US",
+    "en-US",
   ],
   "name": "USA - UK",
 }

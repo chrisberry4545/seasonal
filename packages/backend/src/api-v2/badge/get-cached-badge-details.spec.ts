@@ -3,7 +3,7 @@ import { Cache } from '../../cache';
 import { IHydratedBadge } from '@chrisb-dev/seasonal-shared-models';
 import { getCachedBadgeDetails } from './get-cached-badge-details';
 import * as getDbBadgeDetails from './get-db-badge-details';
-import { DEFAULT_REGION_ID } from '../../config';
+import { DEFAULT_REGION_ID, DEFAULT_LANGUAGE_ID } from '../../config';
 
 describe('getCachedBadgeDetails', () => {
   let dataCache: Cache<unknown>;
@@ -52,9 +52,9 @@ describe('getCachedBadgeDetails', () => {
   describe('when the inner function is called with no regionId', () => {
     beforeEach(() => innerFunction(badgeId));
 
-    test('defaults the regionId', () =>
+    test('defaults the regionId and language', () =>
       expect(mockGetDbBadgeDetails).toHaveBeenCalledWith(
-        badgeId, DEFAULT_REGION_ID
+        badgeId, DEFAULT_REGION_ID, DEFAULT_LANGUAGE_ID
       ));
 
   });

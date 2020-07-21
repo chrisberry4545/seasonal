@@ -15,3 +15,4 @@ export const FOOD_ID_ONION = 'd1df368e-6ed1-4a50-bb7d-6163c15df1d3';
 export const FOOD_ID_APPLE_SUBSTITUTE = 'afc1368e-6ed1-4a50-bb7d-6163c15df1d3';
 
 export const BADGE_ID_VITAMIN_C = 'a2c52423-eb83-4cd9-9fdd-b6f9cb323c37';
+export const BADGE_ID_VITAMIN_D = '5de57673-eee8-444a-b7be-d9ab553052cf';

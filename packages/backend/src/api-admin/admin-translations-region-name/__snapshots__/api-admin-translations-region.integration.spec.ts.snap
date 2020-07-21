@@ -35,7 +35,7 @@ Array [
   Object {
     "id": "d15f8cd3-302b-4c95-8b32-757ebf412463",
     "languages": Array [
-      "en_US",
+      "en-US",
     ],
     "name": "USA - UK",
     "regionId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
@@ -47,7 +47,7 @@ exports[`REST endpoint testing for /admin/translations-region-name get single it
 Object {
   "id": "d15f8cd3-302b-4c95-8b32-757ebf412463",
   "languages": Array [
-    "en_US",
+    "en-US",
   ],
   "name": "USA - UK",
   "regionId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",

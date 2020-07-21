@@ -35,7 +35,7 @@ Array [
   Object {
     "id": "620e73ae-da4c-4caa-a726-2e021adbb235",
     "languages": Array [
-      "en_US",
+      "en-US",
     ],
     "name": "USA February",
     "seasonId": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
@@ -47,7 +47,7 @@ exports[`REST endpoint testing for /admin/translations-season-name get single it
 Object {
   "id": "620e73ae-da4c-4caa-a726-2e021adbb235",
   "languages": Array [
-    "en_US",
+    "en-US",
   ],
   "name": "USA February",
   "seasonId": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",

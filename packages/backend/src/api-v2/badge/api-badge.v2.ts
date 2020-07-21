@@ -8,9 +8,8 @@ import {
   getCachedBadgeDetails
 } from './get-cached-badge-details';
 import {
-  getIsVegetarianFromQueryParams,
-  getIsVeganFromQueryParams,
-  getRegionIdFromQueryParams
+  getRegionIdFromQueryParams,
+  getLanguageFromQueryParams
 } from '../../api-utils/get-query-params';
 import { get500Error, get404Error } from '../../api-utils';
 import { uuidParamValidation } from '../../middleware/uuid-param-validation';
@@ -23,12 +22,11 @@ export const apiBadgeV2 = (router = Router()) => {
       req: Request, res: Response, next: NextFunction
     ) => {
       const { id } = req.params;
-      const isVegetarian = getIsVegetarianFromQueryParams(req);
-      const isVegan = getIsVeganFromQueryParams(req);
       const regionId = getRegionIdFromQueryParams(req);
+      const language = getLanguageFromQueryParams(req);
       try {
         const result = await getCachedBadgeDetails()(
-          id, regionId, isVegetarian, isVegan
+          id, regionId, language
         );
         if (!result) {
           return next(get404Error());

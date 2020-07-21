@@ -2,7 +2,7 @@ import {
   getDbBadgeDetails
 } from './get-db-badge-details';
 import * as postgres from '../../postgres';
-import { IHydratedBadge } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedBadge, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
 describe('getDbBadgeDetails', () => {
@@ -27,7 +27,7 @@ describe('getDbBadgeDetails', () => {
     beforeEach(async () => {
       mockQueryPostgres = jest.spyOn(postgres, 'queryPostgres')
         .mockResolvedValue(queryResult);
-      result = await getDbBadgeDetails(badgeId, regionId);
+      result = await getDbBadgeDetails(badgeId, regionId, LANGUAGES.EN_GB);
     });
 
     test('calls getSqlQuery with the correct', () =>
@@ -36,7 +36,7 @@ describe('getDbBadgeDetails', () => {
     test('calls queryPostgres with the correct values', () =>
       expect(mockQueryPostgres).toHaveBeenCalledWith(
         sqlQueryResult,
-        [regionId, badgeId]
+        [regionId, badgeId, LANGUAGES.EN_GB]
       ));
 
     test('returns the expected result', () => expect(result).toBe(queryResult.rows[0]));
@@ -51,7 +51,7 @@ describe('getDbBadgeDetails', () => {
     beforeEach(async () => {
       mockQueryPostgres = jest.spyOn(postgres, 'queryPostgres')
         .mockResolvedValue(queryResult);
-      result = await getDbBadgeDetails(badgeId, regionId);
+      result = await getDbBadgeDetails(badgeId, regionId, LANGUAGES.EN_GB);
     });
 
     test('returns undefined', () => expect(result).toBeUndefined());
