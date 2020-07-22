@@ -11,14 +11,14 @@ exports[`Get single badge item when a language is specified Retrieves the expect
 Object {
   "food": Array [
     Object {
-      "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
-      "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
-      "name": "Beetroot",
-    },
-    Object {
       "id": "d1df368e-6ed1-4a50-bb7d-6163c15df1d3",
       "imageUrlSmall": "https://onion.com",
       "name": "Onion",
+    },
+    Object {
+      "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+      "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+      "name": "USA Beetroot",
     },
   ],
   "name": "USA high in vitamin D",

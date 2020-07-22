@@ -36,7 +36,7 @@ Array [
     "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
     "id": "dcec5b2c-403b-43ae-8745-ef368987552c",
     "languages": Array [
-      "en_US",
+      "en-US",
     ],
     "name": "USA Beetroot",
   },
@@ -49,7 +49,7 @@ Object {
   "foodId": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
   "id": "dcec5b2c-403b-43ae-8745-ef368987552c",
   "languages": Array [
-    "en_US",
+    "en-US",
   ],
   "name": "USA Beetroot",
 }

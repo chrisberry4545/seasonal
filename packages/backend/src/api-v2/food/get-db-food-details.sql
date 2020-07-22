@@ -11,10 +11,12 @@ WITH
 		SELECT
       country_to_food_name_map.name
 		FROM country_to_food_name_map
-		WHERE
-		  country_to_food_name_map.country_id = ANY(SELECT country_id FROM current_country)
-		AND
-		  country_to_food_name_map.food_id = $2
+		WHERE $3 = ANY(country_to_food_name_map.languages)
+    OR (
+      country_to_food_name_map.country_id = ANY(SELECT country_id FROM current_country)
+      AND
+      country_to_food_name_map.food_id = $2
+    )
 	),
   recipe_name_mapping AS (
     SELECT
@@ -22,7 +24,10 @@ WITH
       country_to_recipe_name_map.recipe_id
     FROM country_to_recipe_name_map
     WHERE
+      $3 = ANY(country_to_recipe_name_map.languages)
+    OR
       country_to_recipe_name_map.country_id = ANY(SELECT country_id FROM current_country)
+
   ),
   parent_foods AS (
     SELECT food.id

@@ -9,15 +9,18 @@ import {
   FOOD_ID_APPLE_SUBSTITUTE
 } from '../../api-utils/test-utils/shared-test-ids';
 import { ENDPOINT_V2_FOOD } from '../../config';
+import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 const makeSingleFoodRequest = async (
   id: string = FOOD_ID_BEETROOT,
   isVegetarian?: boolean,
-  isVegan?: boolean
+  isVegan?: boolean,
+  language?: LANGUAGES
 ) => {
   const query = [
     isVegetarian && 'is-vegetarian=true',
-    isVegan && 'is-vegan=true'
+    isVegan && 'is-vegan=true',
+    language && `language=${language}`
   ].filter(Boolean).join('&');
   const queryString = query ? `?${query}` : '';
   return supertest(app).get(`/${ENDPOINT_V2_FOOD}/${id}${queryString}`);
@@ -108,6 +111,20 @@ describe('Get single food item', () => {
       expect(response.body.primaryFoodInRecipe[0].id)
         .toBe(RECIPES_ID_APPLE_CHEESE_AND_ONION));
 
+  });
+
+  describe('when a language is supplied', () => {
+    beforeEach(async () => {
+      response = await makeSingleFoodRequest(
+        FOOD_ID_BEETROOT, false, false, LANGUAGES.EN_US
+      );
+    });
+
+    test('Returns a status of 200', () =>
+      expect(response.status).toBe(200));
+
+    test('Returns the expected result', () =>
+      expect(response.body).toMatchSnapshot());
   });
 
 });

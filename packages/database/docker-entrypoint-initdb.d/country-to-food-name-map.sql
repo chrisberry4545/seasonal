@@ -22,5 +22,5 @@ VALUES
     'd6e57673-eee8-444a-b7be-d9ab553052cf',
     'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
     'USA Beetroot',
-    '{"en_US"}'
+    '{"en-US"}'
   );
