@@ -2,7 +2,7 @@ import {
   getAllDbSeasons
 } from './get-all-db-seasons';
 import * as postgres from '../../postgres';
-import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IBaseSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
 describe('getAllSeasons', () => {
@@ -10,6 +10,7 @@ describe('getAllSeasons', () => {
   const queryResult = {
     rows: [{}]
   } as QueryResult<IBaseSeason[]>;
+  const language = LANGUAGES.EN_US;
 
   let mockQueryPostgres: jest.SpyInstance;
   let mockGetSqlQuery: jest.SpyInstance;
@@ -20,7 +21,7 @@ describe('getAllSeasons', () => {
       .mockResolvedValue(queryResult);
     mockGetSqlQuery = jest.spyOn(postgres, 'getSqlQuery')
       .mockResolvedValue(sqlQueryResult);
-    result = await getAllDbSeasons();
+    result = await getAllDbSeasons(language);
   });
 
   test('calls getSqlQuery with the correct', () =>
@@ -28,7 +29,7 @@ describe('getAllSeasons', () => {
 
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(
-      sqlQueryResult
+      sqlQueryResult, [language]
     ));
 
   test('returns the expected result', () => expect(result).toBe(queryResult.rows));

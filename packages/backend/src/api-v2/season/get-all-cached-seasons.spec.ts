@@ -1,8 +1,9 @@
 import * as cache from '../../cache';
 import { Cache } from '../../cache';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedSeasons } from './get-all-cached-seasons';
 import * as getAllDbSeasons from './get-all-db-seasons';
+import { DEFAULT_LANGUAGE_ID } from '../../config';
 
 describe('getAllCachedSeasons', () => {
   let dataCache: Cache<unknown>;
@@ -41,9 +42,16 @@ describe('getAllCachedSeasons', () => {
   describe('when the inner function is called', () => {
     beforeEach(() => innerFunction());
 
-    test('calls getAllSeasons with the correct arguments', () =>
-      expect(mockGetDbAllSeasons).toHaveBeenCalled());
+    test('calls getAllSeasons with the default language', () =>
+      expect(mockGetDbAllSeasons).toHaveBeenCalledWith(DEFAULT_LANGUAGE_ID));
 
+  });
+
+  describe('when the inner function is called with a language', () => {
+    beforeEach(() => innerFunction(LANGUAGES.EN_US));
+
+    test('calls getAllSeasons with that language', () =>
+      expect(mockGetDbAllSeasons).toHaveBeenCalledWith(LANGUAGES.EN_US));
   });
 
 });
