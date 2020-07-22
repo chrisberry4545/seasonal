@@ -2,7 +2,16 @@ SELECT *
 FROM (
     SELECT
     countries.id,
-    countries.name,
+    COALESCE(
+      (
+        SELECT translations_country_name.name
+        FROM translations_country_name
+        WHERE translations_country_name.country_id = countries.id
+        AND $1 = ANY(translations_country_name.languages)
+        LIMIT 1
+      ),
+      countries.name
+    ) AS name,
     countries.bounds,
     (
         SELECT COALESCE(

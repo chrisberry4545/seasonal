@@ -5,7 +5,7 @@ import { apiCountryV2 } from './api-country.v2';
 import * as getAllCachedCountries from './get-all-cached-countries';
 import * as apiUtils from '../../api-utils';
 import { ISeasonalBackendError } from '../../interfaces';
-import { ICountry } from '@chrisb-dev/seasonal-shared-models';
+import { ICountry, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('apiCountryV2', () => {
   let mockRouter: Router;
@@ -26,6 +26,8 @@ describe('apiCountryV2', () => {
     mockResponse = {
       json: jest.fn() as any
     } as Response;
+    jest.spyOn(apiUtils, 'getLanguageFromQueryParams')
+      .mockReturnValue(LANGUAGES.EN_GB);
     jest.spyOn(apiUtils, 'get500Error')
       .mockReturnValue(mock500Error);
     apiCountryV2(mockRouter);
