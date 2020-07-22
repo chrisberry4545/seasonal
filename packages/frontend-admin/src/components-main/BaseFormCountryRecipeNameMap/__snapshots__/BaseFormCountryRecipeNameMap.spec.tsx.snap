@@ -14,6 +14,22 @@ exports[`<BaseFormCountryRecipeNameMap /> renders correctly 1`] = `
         ],
         "type": "select",
       },
+      "languages": Object {
+        "options": Array [
+          Object {
+            "label": "en_GB",
+            "value": "en_GB",
+          },
+          Object {
+            "label": "en-US",
+            "value": "en-US",
+          },
+        ],
+        "type": "multiselect",
+        "validation": Array [
+          [Function],
+        ],
+      },
       "name": Object {
         "type": "text",
         "validation": Array [
