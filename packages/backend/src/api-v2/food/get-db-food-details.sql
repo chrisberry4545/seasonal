@@ -62,10 +62,12 @@ SELECT
       '[]'::json
     ) AS primary_food_in_recipe
     FROM recipes
-    WHERE
+    WHERE $3 = ANY(recipes.languages)
+    AND (
       food.id = ANY(recipes.primary_food_in_recipe_ids)
-    OR
+      OR
       (SELECT id FROM parent_foods) = ANY(recipes.primary_food_in_recipe_ids)
+    )
   ),
   (
     SELECT COALESCE(
@@ -89,10 +91,12 @@ SELECT
       '[]'::json
     ) AS secondary_food_in_recipe
     FROM recipes
-    WHERE
+    WHERE $3 = ANY(recipes.languages)
+    AND (
       food.id = ANY(recipes.secondary_food_in_recipe_ids)
-    OR
+      OR
       (SELECT id FROM parent_foods) = ANY(recipes.secondary_food_in_recipe_ids)
+    )
   ),
   (
     SELECT COALESCE(

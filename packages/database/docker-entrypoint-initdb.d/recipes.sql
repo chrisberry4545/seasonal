@@ -34,7 +34,7 @@ VALUES
     'Pasta with a Beetroot sauce',
     ARRAY['f6a680ee-6d6e-4c42-a99d-15e575c32c20']::uuid[],
     ARRAY[]::uuid[],
-    '{"en_US", "en_GB"}'
+    '{"en-US", "en-GB"}'
   ),
   (
     'fefc209f-ddaf-465d-941f-fe3fefa6b931',
@@ -45,7 +45,7 @@ VALUES
     'Apple, Cheese & Onion',
     ARRAY['dd9ba012-8f8e-48af-9775-0139374dd94c']::uuid[],
     ARRAY['d1df368e-6ed1-4a50-bb7d-6163c15df1d3']::uuid[],
-    '{"en_US", "en_GB"}'
+    '{"en-US", "en-GB"}'
   ),
   (
     '053c46cd-584e-46c5-a70d-b79b9ded3cca',
@@ -56,5 +56,5 @@ VALUES
     'Apple, Beetroot & Meat',
     ARRAY['dd9ba012-8f8e-48af-9775-0139374dd94c', 'f6a680ee-6d6e-4c42-a99d-15e575c32c20']::uuid[],
     ARRAY[]::uuid[],
-    '{"en_US", "en_GB"}'
+    '{"en-US", "en-GB"}'
   );

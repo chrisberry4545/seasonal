@@ -15,11 +15,11 @@ export const getIsVegetarianFromQueryParams =
   (req: Request): boolean => req.query['is-vegetarian'] === 'true';
 
 export const getLanguageFromQueryParams =
-  (req: Request): LANGUAGES | null => {
+  (req: Request): LANGUAGES | undefined => {
     const language = req.query.language as LANGUAGES;
     if (language && !Object.values(LANGUAGES).includes(language)) {
       errorLogger.log('error', `Language is not supported: ${language}`);
-      return null;
+      return undefined;
     }
-    return language || null;
+    return language || undefined;
   };

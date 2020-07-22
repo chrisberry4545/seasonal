@@ -67,8 +67,8 @@ Array [
     "isVegan": false,
     "isVegetarian": false,
     "languages": Array [
-      "en_US",
-      "en_GB",
+      "en-US",
+      "en-GB",
     ],
     "linkUrl": "https://apple-beetroot-and-cheese.com",
     "name": "Apple, Beetroot & Meat",
@@ -84,8 +84,8 @@ Array [
     "isVegan": false,
     "isVegetarian": true,
     "languages": Array [
-      "en_US",
-      "en_GB",
+      "en-US",
+      "en-GB",
     ],
     "linkUrl": "https://apple-and-cheese.com",
     "name": "Apple, Cheese & Onion",
@@ -102,8 +102,8 @@ Array [
     "isVegan": true,
     "isVegetarian": false,
     "languages": Array [
-      "en_US",
-      "en_GB",
+      "en-US",
+      "en-GB",
     ],
     "linkUrl": "https://pickled-beetroot.com",
     "name": "Pasta with a Beetroot sauce",
@@ -122,8 +122,8 @@ Object {
   "isVegan": false,
   "isVegetarian": true,
   "languages": Array [
-    "en_US",
-    "en_GB",
+    "en-US",
+    "en-GB",
   ],
   "linkUrl": "https://apple-and-cheese.com",
   "name": "Apple, Cheese & Onion",

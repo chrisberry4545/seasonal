@@ -89,7 +89,7 @@ describe('getLanguageFromQueryParams', () => {
     }
   } as any;
   let mockErrorLogger: jest.SpyInstance;
-  let result: LANGUAGES | null;
+  let result: LANGUAGES | undefined;
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -122,7 +122,7 @@ describe('getLanguageFromQueryParams', () => {
     test('logs an error', () =>
       expect(mockErrorLogger).toHaveBeenCalled());
 
-    test('returns null', () => expect(result).toBeNull());
+    test('returns undefined', () => expect(result).toBeUndefined());
 
   });
 
@@ -136,7 +136,7 @@ describe('getLanguageFromQueryParams', () => {
     test('does not log an error', () =>
       expect(mockErrorLogger).not.toHaveBeenCalled());
 
-    test('returns null', () => expect(result).toBeNull());
+    test('returns undefined', () => expect(result).toBeUndefined());
 
   });
 });
