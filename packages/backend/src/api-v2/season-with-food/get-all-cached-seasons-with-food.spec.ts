@@ -3,7 +3,7 @@ import { Cache } from '../../cache';
 import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedSeasonsWithFood } from './get-all-cached-seasons-with-food';
 import * as getAllDbSeasonsWithFood from './get-all-db-seasons-with-food';
-import { DEFAULT_REGION_ID, DEFAULT_LANGUAGE_ID } from '../../config';
+import { DEFAULT_REGION_ID } from '../../config';
 
 describe('getAllCachedSeasonsWithFood', () => {
   const regionId = 'regionId';
@@ -55,10 +55,10 @@ describe('getAllCachedSeasonsWithFood', () => {
   describe('when the inner function is called with no regionId or language', () => {
     beforeEach(() => innerFunction());
 
-    test('defaults the regionId and language', () =>
+    test('defaults the regionId', () =>
       expect(mockGetAllDbSeasonsWithFood).toHaveBeenCalledWith(
         DEFAULT_REGION_ID,
-        DEFAULT_LANGUAGE_ID
+        undefined
       ));
 
   });

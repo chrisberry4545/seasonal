@@ -7,7 +7,7 @@ export const getCachedFoodDetailsWithFilteredRecipes = async (
   isVegetarian: boolean,
   isVegan: boolean,
   regionId?: string,
-  language?: LANGUAGES | undefined
+  language?: LANGUAGES
 ): Promise<IHydratedFood | undefined> => {
   const result = await getCachedFoodDetails()(foodId, regionId, language);
   return result && {

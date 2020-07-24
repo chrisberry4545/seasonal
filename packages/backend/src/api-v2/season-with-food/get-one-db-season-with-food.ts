@@ -4,7 +4,7 @@ import { getDbSeasonsWithFood } from './get-db-seasons-with-food';
 export const getOneDbSeasonWithFood = async (
   seasonIndex: number,
   regionId: string,
-  language: LANGUAGES
+  language?: LANGUAGES
 ): Promise<IHydratedSeason | undefined> => {
   const result = await getDbSeasonsWithFood(
     seasonIndex,

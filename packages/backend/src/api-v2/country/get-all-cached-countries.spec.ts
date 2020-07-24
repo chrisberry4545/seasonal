@@ -3,7 +3,6 @@ import { Cache } from '../../cache';
 import { ICountry, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedCountries } from './get-all-cached-countries';
 import * as getAllDbCountries from './get-all-db-countries';
-import { DEFAULT_LANGUAGE_ID } from '../../config';
 
 describe('getAllCachedCountries', () => {
   let dataCache: Cache<unknown>;
@@ -42,8 +41,8 @@ describe('getAllCachedCountries', () => {
   describe('when the inner function is called', () => {
     beforeEach(() => innerFunction());
 
-    test('calls getAllDbCountries with the default language', () =>
-      expect(mockGetAllDbCountries).toHaveBeenCalledWith(DEFAULT_LANGUAGE_ID));
+    test('calls getAllDbCountries', () =>
+      expect(mockGetAllDbCountries).toHaveBeenCalledWith(undefined));
 
   });
 

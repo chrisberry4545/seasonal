@@ -14,7 +14,7 @@ export const getCachedFoodDetails = () => cacheFunctionResponse(
   (
     foodId: string,
     regionId: string = DEFAULT_REGION_ID,
-    language: LANGUAGES = LANGUAGES.EN_GB
+    language?: LANGUAGES
   ): Promise<IHydratedFood | undefined> => getDbFoodDetails(
     foodId, regionId, language
   )

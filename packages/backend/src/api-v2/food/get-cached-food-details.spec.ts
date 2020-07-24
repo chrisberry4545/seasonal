@@ -3,7 +3,7 @@ import { Cache } from '../../cache';
 import { IHydratedFood, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getCachedFoodDetails } from './get-cached-food-details';
 import * as getDbFoodDetails from './get-db-food-details';
-import { DEFAULT_REGION_ID, DEFAULT_LANGUAGE_ID } from '../../config';
+import { DEFAULT_REGION_ID } from '../../config';
 
 describe('getCachedFoodDetails', () => {
   let dataCache: Cache<unknown>;
@@ -50,12 +50,12 @@ describe('getCachedFoodDetails', () => {
 
   });
 
-  describe('when the inner function is called with no regionId or language', () => {
+  describe('when the inner function is called with no regionId', () => {
     beforeEach(() => innerFunction(foodId));
 
-    test('defaults the regionId and language', () =>
+    test('defaults the regionId', () =>
       expect(mockGetDbFoodDetails).toHaveBeenCalledWith(
-        foodId, DEFAULT_REGION_ID, DEFAULT_LANGUAGE_ID
+        foodId, DEFAULT_REGION_ID, undefined
       ));
 
   });

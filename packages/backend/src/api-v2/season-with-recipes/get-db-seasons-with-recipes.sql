@@ -28,8 +28,12 @@ WITH
       country_to_recipe_name_map.recipe_id
     FROM country_to_recipe_name_map
 		WHERE $3 = ANY(country_to_recipe_name_map.languages)
-    OR
+    OR (
+      $3::text is NULL
+      AND
       country_to_recipe_name_map.country_id = ANY(SELECT country_id FROM current_country)
+    )
+
   )
 
 SELECT
@@ -86,7 +90,12 @@ FROM (
 		  	SELECT array_agg(food_in_season.food_id)
 			  FROM food_in_season
 			  WHERE food_in_season.season_id = selected_season.id
-	  )
+	    )
+      AND (
+        $3::text is NULL
+        OR
+        $3 = ANY(recipes.languages)
+      )
   )
   FROM selected_season
 ) seasons;

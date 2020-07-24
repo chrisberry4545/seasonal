@@ -5,14 +5,18 @@ WITH
       country_to_food_name_map.name
 		FROM country_to_food_name_map
 		WHERE $3 = ANY(country_to_food_name_map.languages)
-    OR country_to_food_name_map.country_id = ANY(
-      SELECT
-        regions.country_id
-      FROM
-        regions
-      WHERE
-        regions.code = $1
-		)
+    OR (
+      $3::text is NULL
+      AND
+      country_to_food_name_map.country_id = ANY(
+        SELECT
+          regions.country_id
+        FROM
+          regions
+        WHERE
+          regions.code = $1
+      )
+    )
 	)
 
 SELECT
