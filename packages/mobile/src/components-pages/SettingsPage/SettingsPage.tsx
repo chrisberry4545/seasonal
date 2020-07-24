@@ -3,7 +3,8 @@ import React, { FC } from 'react';
 import {
   HeaderConnecter,
   SelectLocationConnecter,
-  SettingsBackButtonConnecter
+  SettingsBackButtonConnecter,
+  SelectLanguageConnecter
 } from '../../components-main';
 
 import { MainContainer, DefaultPaddingContainer } from '../../components-layout';
@@ -24,6 +25,7 @@ export const SettingsPage: FC<{}> = () => (
           <SelectLocationConnecter>
             <SettingsBackButtonConnecter />
           </SelectLocationConnecter>
+          <SelectLanguageConnecter />
         </View>
       </DefaultPaddingContainer>
     </ScrollView>

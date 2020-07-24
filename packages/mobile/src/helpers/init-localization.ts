@@ -1,5 +1,6 @@
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 const enTranslations = {
   no: 'No',
@@ -28,7 +29,7 @@ const enTranslations = {
 
   menuAboutUs: 'About us',
   menuAllSeasons: 'All seasons',
-  menuChangeRegion: 'Change region',
+  menuChangeRegion: 'Change region or language',
   menuGiveFeedback: 'Give feedback',
 
   searchBarPlaceholder: 'Search',
@@ -44,10 +45,18 @@ const enTranslations = {
   feedbackRateTheApp: 'Rate the app',
   feedbackSend: 'Send feedback',
 
+  regionChangedDetectedYourClosestRegionAs: `We've detected your closest region as:`,
+  regionChangedIfThisIsWrongClickHere: 'If this is wrong, click here.',
+
+  selectYourLanguage: 'Select your language',
   selectYourRegion: 'Select your region',
 
-  regionChangedDetectedYourClosestRegionAs: `We've detected your closest region as:`,
-  regionChangedIfThisIsWrongClickHere: 'If this is wrong, click here.'
+  [LANGUAGES.EN_AU]: 'English (Australian)',
+  [LANGUAGES.EN_CA]: 'English (Canadian)',
+  [LANGUAGES.EN_GB]: 'English (British)',
+  [LANGUAGES.EN_NZ]: 'English (New Zealand)',
+  [LANGUAGES.EN_US]: 'English (USA)',
+  [LANGUAGES.FR_FR]: 'French'
 
 };
 

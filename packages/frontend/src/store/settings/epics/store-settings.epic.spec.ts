@@ -1,6 +1,12 @@
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { ISettingsState, setDietType, setRegion, setUserRegionDetected } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import {
+  ISettingsState,
+  setDietType,
+  setRegion,
+  setUserRegionDetected,
+  setLanguage
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
+import { DIET_TYPE, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
 import * as storedData from '../../../helpers/functions/stored-data';
 import { storeSettings$ } from './store-settings.epic';
@@ -8,7 +14,8 @@ import { storeSettings$ } from './store-settings.epic';
 describe.each([
   setDietType(DIET_TYPE.VEGETARIAN),
   setRegion('regionId'),
-  setUserRegionDetected('regionId')
+  setUserRegionDetected('regionId'),
+  setLanguage(LANGUAGES.EN_GB)
 ])('storeSettings$', (action) => {
   let mockSetStoredData: jest.SpyInstance;
   const settings = {} as ISettingsState;

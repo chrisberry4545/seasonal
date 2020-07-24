@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectLanguage /> renders correctly 1`] = `
+<Fragment>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 8,
+      }
+    }
+  >
+    Children
+    <TextHeadingMedium>
+      Select your language
+    </TextHeadingMedium>
+  </View>
+  <SelectBox
+    onSelected={[Function]}
+    options={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+  />
+</Fragment>
+`;

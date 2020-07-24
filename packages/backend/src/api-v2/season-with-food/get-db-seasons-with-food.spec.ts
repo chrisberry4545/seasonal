@@ -12,7 +12,7 @@ describe('getSeasonsWithFood', () => {
   } as QueryResult<IHydratedSeason[]>;
   const seasonIndex = 1;
   const regionId = 'regionId';
-  const language = LANGUAGES.EN;
+  const language = LANGUAGES.EN_US;
 
   let mockQueryPostgres: jest.SpyInstance;
   let mockGetSqlQuery: jest.SpyInstance;

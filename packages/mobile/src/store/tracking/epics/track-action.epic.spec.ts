@@ -11,6 +11,7 @@ import {
   foodItemClicked,
   badgeDetailsSelectFood,
   setRegion,
+  setLanguage,
   setCurrentFoodDetailsOnDietChange,
   setCurrentFoodDetailsSuccess,
   setDietType,
@@ -21,7 +22,7 @@ import {
   toggleListView
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { goBackFromFoodDetails, goToAboutUsPage } from '../../route';
-import { IHydratedFood, DIET_TYPE, IBackendError } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedFood, DIET_TYPE, IBackendError, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import {
   sendFeedbackDoNotLikeApp,
   sendFeedbackLikeApp,
@@ -43,6 +44,7 @@ describe.each([
   foodItemClicked('1'),
   badgeDetailsSelectFood('1'),
   setRegion('region'),
+  setLanguage(LANGUAGES.EN_US),
   setCurrentFoodDetailsOnDietChange(),
   setCurrentFoodDetailsSuccess({} as IHydratedFood),
   setDietType(DIET_TYPE.VEGAN),

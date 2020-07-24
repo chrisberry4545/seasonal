@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { DIET_TYPE, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { ISettingsState } from './settings-state.interface';
 
 export interface IInitSettings extends Action {
@@ -32,5 +32,18 @@ export const TOGGLE_LIST_VIEW = 'TOGGLE_LIST_VIEW';
 export function toggleListView(): Action {
   return {
     type: TOGGLE_LIST_VIEW
+  };
+}
+
+export interface ISetLanguage extends Action {
+  language: LANGUAGES;
+}
+export const SET_LANGUAGE = 'SET_LANGUAGE';
+export function setLanguage(
+  language: LANGUAGES
+): ISetLanguage {
+  return {
+    language,
+    type: SET_LANGUAGE
   };
 }

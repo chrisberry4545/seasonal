@@ -3,6 +3,7 @@ import {
   selectSettingsState,
   SET_DIET_TYPE,
   SET_REGION,
+  SET_LANGUAGE,
   SET_USER_REGION_DETECTED
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { Action } from 'redux';
@@ -22,6 +23,7 @@ export const storeSettings$: AppSeasonalEpic = (
     ofType(
       SET_DIET_TYPE,
       SET_REGION,
+      SET_LANGUAGE,
       SET_USER_REGION_DETECTED,
       INIT_SETTINGS
     ),

@@ -8,6 +8,7 @@ jest.mock('react-native-gesture-handler', () => ({
 
 jest.mock('../../components-main', () => ({
   HeaderConnecter: () => 'HeaderConnecter',
+  SelectLanguageConnecter: () => 'SelectLanguageConnecter',
   SelectLocationConnecter: () => 'SelectLocationConnecter',
   SettingsBackButtonConnecter: () => 'SettingsBackButtonConnecter'
 }));

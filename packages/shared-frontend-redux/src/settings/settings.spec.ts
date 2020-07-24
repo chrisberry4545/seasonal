@@ -10,7 +10,7 @@ import {
   settingsReducer
 } from './settings.reducer';
 import {
-  initSettings
+  initSettings, setLanguage
 } from './settings.actions';
 import { IState } from '../state.interface';
 import { Action } from 'redux';
@@ -174,4 +174,15 @@ describe('toggle list view', () => {
     test('sets is list view shown to true', () =>
       expect(selectIsListViewShown(newAppState)).toBe(true));
   });
+});
+
+describe('set language', () => {
+  let newAppState: IState;
+  beforeEach(() => newAppState = updateState(
+    setLanguage(LANGUAGES.EN_NZ)
+  ));
+
+  test('updates the language', () =>
+    expect(selectSettingsLanguage(newAppState)).toBe(LANGUAGES.EN_NZ));
+
 });

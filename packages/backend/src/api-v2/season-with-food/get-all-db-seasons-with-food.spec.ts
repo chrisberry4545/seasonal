@@ -8,7 +8,7 @@ describe('getAllSeasonsWithFood', () => {
   beforeEach(async () => {
     jest.spyOn(getDbSeasonsWithFood, 'getDbSeasonsWithFood')
       .mockResolvedValue(seasons);
-    result = await getAllDbSeasonsWithFood('regionId', LANGUAGES.EN);
+    result = await getAllDbSeasonsWithFood('regionId', LANGUAGES.EN_US);
   });
 
   test('returns the seasons', () => expect(result).toBe(seasons));

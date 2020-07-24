@@ -13,7 +13,7 @@ import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from '../../seasonal-epic.type';
 import {
-  INIT_SETTINGS
+  INIT_SETTINGS, SET_LANGUAGE
 } from '../../settings';
 
 export const getAllBasicSeasonsStart$: SharedSeasonalEpic = (
@@ -23,6 +23,7 @@ export const getAllBasicSeasonsStart$: SharedSeasonalEpic = (
     ofType(
       INIT_SETTINGS,
       SET_REGION,
+      SET_LANGUAGE,
       SET_USER_REGION_DETECTED
     ),
     mapTo(setAllSeasonsStart())
