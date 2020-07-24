@@ -18,6 +18,12 @@ export const getLanguageFromQueryParams =
   (req: Request): LANGUAGES | undefined => {
     const language = req.query.language as LANGUAGES;
     if (language && !Object.values(LANGUAGES).includes(language)) {
+      if (language.includes('fr-')) {
+        return LANGUAGES.FR_FR;
+      }
+      if (language.includes('en-')) {
+        return LANGUAGES.EN_US;
+      }
       errorLogger.log('error', `Language is not supported: ${language}`);
       return undefined;
     }

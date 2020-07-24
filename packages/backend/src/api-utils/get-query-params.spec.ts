@@ -126,6 +126,40 @@ describe('getLanguageFromQueryParams', () => {
 
   });
 
+  describe('when a french language that is not supported is set in the request', () => {
+    beforeEach(() =>
+      result = getLanguageFromQueryParams({
+        ...request,
+        query: {
+          ...request.query,
+          language: 'fr-US'
+        }
+      }));
+
+    test('does not log an error', () =>
+      expect(mockErrorLogger).not.toHaveBeenCalled());
+
+    test('returns the base french language', () => expect(result).toBe(LANGUAGES.FR_FR));
+
+  });
+
+  describe('when an english language that is not supported is set in the request', () => {
+    beforeEach(() =>
+      result = getLanguageFromQueryParams({
+        ...request,
+        query: {
+          ...request.query,
+          language: 'en-FR'
+        }
+      }));
+
+    test('does not log an error', () =>
+      expect(mockErrorLogger).not.toHaveBeenCalled());
+
+    test('returns the US english language', () => expect(result).toBe(LANGUAGES.EN_US));
+
+  });
+
   describe('when no language is set', () => {
     beforeEach(() =>
       result = getLanguageFromQueryParams({
