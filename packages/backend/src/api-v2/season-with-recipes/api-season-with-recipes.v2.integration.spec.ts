@@ -10,15 +10,17 @@ import {
   SEASON_INDEX_FEBRUARY,
   SEASON_INDEX_MARCH
 } from '../../api-utils/test-utils/shared-test-ids';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 const getQueryString = (
   isVegetarian?: boolean,
-  isVegan?: boolean
+  isVegan?: boolean,
+  language?: LANGUAGES
 ) => {
   const query = [
     isVegetarian && 'is-vegetarian=true',
-    isVegan && 'is-vegan=true'
+    isVegan && 'is-vegan=true',
+    language && `language=${language}`
   ].filter(Boolean).join('&');
   return query ? `?${query}` : '';
 };
@@ -29,9 +31,10 @@ describe('Get all seasons with recipes', () => {
 
   const makeAllSeasonsWithRecipesRequest = (
     isVegetarian?: boolean,
-    isVegan?: boolean
+    isVegan?: boolean,
+    language?: LANGUAGES
   ) => {
-    const queryString = getQueryString(isVegetarian, isVegan);
+    const queryString = getQueryString(isVegetarian, isVegan, language);
     return supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_RECIPES}${queryString}`);
   };
 
@@ -118,6 +121,17 @@ describe('Get all seasons with recipes', () => {
 
   });
 
+  describe('when a language is set', () => {
+    beforeAll(async () =>
+      response = await makeAllSeasonsWithRecipesRequest(
+        false, false, LANGUAGES.EN_US
+      ));
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
+
+  });
+
 });
 
 describe('Get single season with recipes', () => {
@@ -126,9 +140,10 @@ describe('Get single season with recipes', () => {
   const makeSingleSeasonWithRecipesRequest = (
     seasonIndex: string = SEASON_INDEX_JANUARY,
     isVegetarian?: boolean,
-    isVegan?: boolean
+    isVegan?: boolean,
+    language?: LANGUAGES
   ) => {
-    const queryString = getQueryString(isVegetarian, isVegan);
+    const queryString = getQueryString(isVegetarian, isVegan, language);
     return supertest(app).get(
       `/${ENDPOINT_V2_SEASON_WITH_RECIPES}/${seasonIndex}${queryString}`
     );
@@ -197,6 +212,17 @@ describe('Get single season with recipes', () => {
     test('Retrieves the expected data', () =>
       expect(response.body).toMatchSnapshot());
 
+  });
+
+  describe('when a language is included', () => {
+    beforeAll(async () => {
+      response = await makeSingleSeasonWithRecipesRequest(
+        SEASON_INDEX_FEBRUARY, false, false, LANGUAGES.EN_US
+      );
+    });
+
+    test('Retrieves the expected data', () =>
+      expect(response.body).toMatchSnapshot());
   });
 
 });

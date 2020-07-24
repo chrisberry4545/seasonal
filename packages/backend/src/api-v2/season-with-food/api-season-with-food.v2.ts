@@ -13,7 +13,8 @@ export const apiSeasonWithFoodV2 = (router = Router()) => {
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     const regionId = getRegionIdFromQueryParams(req);
     try {
-      const result = await getAllCachedSeasonsWithFood()(regionId);
+      const language = getLanguageFromQueryParams(req);
+      const result = await getAllCachedSeasonsWithFood()(regionId, language);
       return res.json(result);
     } catch (err) {
       return next(get500Error(err.message));

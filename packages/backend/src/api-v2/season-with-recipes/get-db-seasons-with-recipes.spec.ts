@@ -2,7 +2,7 @@ import {
   getDbSeasonsWithRecipes
 } from './get-db-seasons-with-recipes';
 import * as postgres from '../../postgres';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
 describe('getSeasonsWithRecipes', () => {
@@ -12,6 +12,7 @@ describe('getSeasonsWithRecipes', () => {
   } as QueryResult<IHydratedSeason[]>;
   const seasonIndex = 1;
   const regionId = 'regionId';
+  const language = LANGUAGES.EN_US;
 
   let mockQueryPostgres: jest.SpyInstance;
   let mockGetSqlQuery: jest.SpyInstance;
@@ -22,7 +23,7 @@ describe('getSeasonsWithRecipes', () => {
       .mockResolvedValue(queryResult);
     mockGetSqlQuery = jest.spyOn(postgres, 'getSqlQuery')
       .mockResolvedValue(sqlQueryResult);
-    result = await getDbSeasonsWithRecipes(seasonIndex, regionId);
+    result = await getDbSeasonsWithRecipes(seasonIndex, regionId, language);
   });
 
   test('calls getSqlQuery with the correct', () =>
@@ -31,7 +32,7 @@ describe('getSeasonsWithRecipes', () => {
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(
       sqlQueryResult,
-      [regionId, seasonIndex]
+      [regionId, seasonIndex, language]
     ));
 
   test('returns the expected result', () => expect(result).toBe(queryResult.rows));

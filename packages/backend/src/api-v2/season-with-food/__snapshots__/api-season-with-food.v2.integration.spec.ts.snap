@@ -1,6 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Get all seasons with food Returns a full list of season data 1`] = `
+exports[`Get all seasons with food when a language is set Returns a full list of season data 1`] = `
+Array [
+  Object {
+    "food": Array [
+      Object {
+        "id": "dd9ba012-8f8e-48af-9775-0139374dd94c",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "name": "Apple",
+      },
+      Object {
+        "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "name": "USA Beetroot",
+      },
+    ],
+    "id": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+    "name": "January",
+    "seasonIndex": 0,
+  },
+  Object {
+    "food": Array [
+      Object {
+        "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+        "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+        "name": "USA Beetroot",
+      },
+    ],
+    "id": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+    "name": "USA February",
+    "seasonIndex": 1,
+  },
+  Object {
+    "food": Array [],
+    "id": "f4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "March",
+    "seasonIndex": 2,
+  },
+  Object {
+    "food": Array [],
+    "id": "a4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "April",
+    "seasonIndex": 3,
+  },
+  Object {
+    "food": Array [],
+    "id": "b4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "May",
+    "seasonIndex": 4,
+  },
+  Object {
+    "food": Array [],
+    "id": "c4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "June",
+    "seasonIndex": 5,
+  },
+  Object {
+    "food": Array [],
+    "id": "d4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "July",
+    "seasonIndex": 6,
+  },
+  Object {
+    "food": Array [],
+    "id": "e4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "August",
+    "seasonIndex": 7,
+  },
+  Object {
+    "food": Array [],
+    "id": "f5812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "September",
+    "seasonIndex": 8,
+  },
+  Object {
+    "food": Array [],
+    "id": "a1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "October",
+    "seasonIndex": 9,
+  },
+  Object {
+    "food": Array [],
+    "id": "b1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "November",
+    "seasonIndex": 10,
+  },
+  Object {
+    "food": Array [],
+    "id": "c1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "December",
+    "seasonIndex": 11,
+  },
+]
+`;
+
+exports[`Get all seasons with food when no language is included Returns a full list of season data 1`] = `
 Array [
   Object {
     "food": Array [
@@ -92,6 +186,21 @@ Array [
     "seasonIndex": 11,
   },
 ]
+`;
+
+exports[`Get single season with food when a language is set Retrieves a single season 1`] = `
+Object {
+  "food": Array [
+    Object {
+      "id": "f6a680ee-6d6e-4c42-a99d-15e575c32c20",
+      "imageUrlSmall": "https://eat-seasonal.co.uk/images/food/broccoli.jpg",
+      "name": "USA Beetroot",
+    },
+  ],
+  "id": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+  "name": "USA February",
+  "seasonIndex": 1,
+}
 `;
 
 exports[`Get single season with food when the requested season has food data Retrieves a single season with food data 1`] = `

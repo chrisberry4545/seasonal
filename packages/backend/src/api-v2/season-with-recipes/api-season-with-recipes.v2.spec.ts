@@ -7,7 +7,7 @@ import * as getOneCachedSeasonsWithFilteredRecipes from './get-one-cached-season
 import * as getAllCachedSeasonsWithFilteredRecipes from './get-all-cached-seasons-with-filtered-recipes';
 import * as apiUtils from '../../api-utils';
 import { ISeasonalBackendError } from '../../interfaces';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('apiSeasonWithRecipesV2', () => {
   let mockRouter: Router;
@@ -37,6 +37,8 @@ describe('apiSeasonWithRecipesV2', () => {
       .mockReturnValue(false);
     jest.spyOn(getQueryParams, 'getRegionIdFromQueryParams')
       .mockReturnValue('regionId');
+    jest.spyOn(getQueryParams, 'getLanguageFromQueryParams')
+      .mockReturnValue(LANGUAGES.EN_GB);
     jest.spyOn(apiUtils, 'get404Error')
       .mockReturnValue(mock404Error);
     jest.spyOn(apiUtils, 'get500Error')

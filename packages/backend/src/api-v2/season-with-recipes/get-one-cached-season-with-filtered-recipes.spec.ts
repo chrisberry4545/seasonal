@@ -1,4 +1,4 @@
-import { IHydratedSeason, IRecipe } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, IRecipe, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import * as filterRecipesByDiet from '../food/filter-recipes-by-diet';
 import * as getOneCachedSeasonWithRecipes from './get-one-cached-season-with-recipes';
 import { getOneCachedSeasonsWithFilteredRecipes } from './get-one-cached-season-with-filtered-recipes';
@@ -21,7 +21,7 @@ describe('getOneCachedSeasonsWithFilteredRecipes', () => {
       .mockReturnValue(filteredRecipes);
     mockFilterRecipesByDiet.mockClear();
     result = await getOneCachedSeasonsWithFilteredRecipes(
-      seasonIndex, isVegetarian, isVegan, 'regionId'
+      seasonIndex, isVegetarian, isVegan, 'regionId', LANGUAGES.EN_US
     );
   });
 

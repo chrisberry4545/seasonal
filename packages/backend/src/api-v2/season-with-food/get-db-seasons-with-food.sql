@@ -24,7 +24,16 @@ SELECT
     SELECT
       seasons.id,
       seasons.season_index,
-      seasons.name,
+      COALESCE(
+        (
+          SELECT translations_season_name.name
+          FROM translations_season_name
+          WHERE translations_season_name.season_id = seasons.id
+          AND $3 = ANY(translations_season_name.languages)
+          LIMIT 1
+        ),
+        seasons.name
+      ) AS name,
       (
         SELECT COALESCE(
           json_agg(

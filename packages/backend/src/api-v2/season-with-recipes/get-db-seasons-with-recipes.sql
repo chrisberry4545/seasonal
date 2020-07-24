@@ -27,7 +27,8 @@ WITH
       country_to_recipe_name_map.name,
       country_to_recipe_name_map.recipe_id
     FROM country_to_recipe_name_map
-    WHERE
+		WHERE $3 = ANY(country_to_recipe_name_map.languages)
+    OR
       country_to_recipe_name_map.country_id = ANY(SELECT country_id FROM current_country)
   )
 
@@ -40,7 +41,16 @@ FROM (
 	SELECT
     selected_season.id,
     selected_season.season_index,
-    selected_season.name,
+    COALESCE(
+      (
+        SELECT translations_season_name.name
+        FROM translations_season_name
+        WHERE translations_season_name.season_id = selected_season.id
+        AND $3 = ANY(translations_season_name.languages)
+        LIMIT 1
+      ),
+      selected_season.name
+    ) AS name,
   (
     SELECT COALESCE(
       json_agg(
