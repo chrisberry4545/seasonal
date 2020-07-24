@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { setError } from '../../error';
 import { SharedSeasonalEpic } from '../../seasonal-epic.type';
-import { selectSettingsDietType, selectSettingsRegionId } from '../../settings';
+import { selectSettingsDietType, selectSettingsRegionId, selectSettingsLanguage } from '../../settings';
 import { IState } from '../../state.interface';
 import { IFoodItemClicked } from '../../ui';
 import {
@@ -28,14 +28,16 @@ export const getCurrentFoodDetails$: SharedSeasonalEpic = (
     map(([action, state]: [Action, IState]) => ({
       dietType: selectSettingsDietType(state),
       foodItemId: (action as IFoodItemClicked).foodItemId,
+      language: selectSettingsLanguage(state),
       regionId: selectSettingsRegionId(state)
     })),
-    switchMap(({ dietType, foodItemId, regionId }) => (
+    switchMap(({ dietType, foodItemId, language, regionId }) => (
       getFoodDetailsData(
         foodItemId,
         dietType === DIET_TYPE.VEGETARIAN,
         dietType === DIET_TYPE.VEGAN,
-        regionId
+        regionId,
+        language
       )
       .then((currentFoodData) => setCurrentFoodDetailsSuccess(currentFoodData))
       .catch((error: IBackendError) => setError(error))

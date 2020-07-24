@@ -1,7 +1,7 @@
 import { getAllSeasons } from './get-all-seasons';
 import * as getQueryString from './get-query-string';
 import * as handleErrors from './handle-errors';
-import { IBaseSeason, SEASON_URL } from '@chrisb-dev/seasonal-shared-models';
+import { IBaseSeason, SEASON_URL, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('getAllSeasons', () => {
   let mockGetQueryString: jest.SpyInstance;
@@ -15,11 +15,11 @@ describe('getAllSeasons', () => {
     mockGetQueryString = jest.spyOn(getQueryString, 'getQueryString')
       .mockReturnValue(queryString);
     mockHandleErrors = jest.spyOn(handleErrors, 'handleErrors');
-    result = await getAllSeasons('regionId');
+    result = await getAllSeasons('regionId', LANGUAGES.EN_US);
   });
 
   test('calls getQueryString', () => expect(mockGetQueryString)
-    .toHaveBeenCalledWith(undefined, undefined, 'regionId')
+    .toHaveBeenCalledWith(undefined, undefined, 'regionId', LANGUAGES.EN_US)
   );
 
   test('calls fetch with the expected values', () =>

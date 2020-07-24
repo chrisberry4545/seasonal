@@ -3,7 +3,8 @@ import {
   selectIsListViewShown,
   selectSettingsRegionId,
   selectSettingsTimesAppStarted,
-  selectSettingsUserId
+  selectSettingsUserId,
+  selectSettingsLanguage
 } from './settings.selectors';
 import {
   settingsReducer
@@ -14,7 +15,7 @@ import {
 import { IState } from '../state.interface';
 import { Action } from 'redux';
 import { ISettingsState } from './settings-state.interface';
-import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { DIET_TYPE, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import {
   selectSettingsState
 } from './settings.selectors';
@@ -69,6 +70,7 @@ describe('default state', () => {
 describe('init settings', () => {
   let newAppState: IState;
   const newSettings = {
+    language: LANGUAGES.EN_US,
     timesAppStarted: 5
   } as ISettingsState;
   const initalSettings = {
@@ -96,6 +98,9 @@ describe('init settings', () => {
         ...initalSettings,
         ...settingsWithUserId
       }));
+
+    test('sets the language', () =>
+      expect(selectSettingsLanguage(newAppState)).toBe(LANGUAGES.EN_US));
   });
 
   describe('when the existing settings do not include a userId', () => {

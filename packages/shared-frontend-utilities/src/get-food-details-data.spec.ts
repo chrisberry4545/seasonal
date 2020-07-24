@@ -1,7 +1,7 @@
 import { getFoodDetailsData } from './get-food-details-data';
 import * as getQueryString from './get-query-string';
 import * as handleErrors from './handle-errors';
-import { IHydratedFood, FOOD_DETAILS_URL } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedFood, FOOD_DETAILS_URL, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('getFoodDetailsData', () => {
   let mockGetQueryString: jest.SpyInstance;
@@ -15,11 +15,11 @@ describe('getFoodDetailsData', () => {
     mockGetQueryString = jest.spyOn(getQueryString, 'getQueryString')
       .mockReturnValue(queryString);
     mockHandleErrors = jest.spyOn(handleErrors, 'handleErrors');
-    result = await getFoodDetailsData('foodId', true, false, 'regionId');
+    result = await getFoodDetailsData('foodId', true, false, 'regionId', LANGUAGES.EN_US);
   });
 
   test('calls getQueryString', () => expect(mockGetQueryString)
-    .toHaveBeenCalledWith(true, false, 'regionId')
+    .toHaveBeenCalledWith(true, false, 'regionId', LANGUAGES.EN_US)
   );
 
   test('calls fetch with the expected values', () =>

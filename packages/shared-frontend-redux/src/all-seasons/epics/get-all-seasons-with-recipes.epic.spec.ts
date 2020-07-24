@@ -6,7 +6,7 @@ import {
   setAllSeasonsWithRecipesSuccess
 } from '../all-seasons.actions';
 import { of } from 'rxjs';
-import { IHydratedSeason, DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, DIET_TYPE, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { setError } from '../../error';
 import * as settings from '../../settings';
@@ -19,6 +19,8 @@ describe('getAllSeasonsWithRecipes$', () => {
       .mockReturnValue('regionId');
     jest.spyOn(settings, 'selectSettingsDietType')
       .mockReturnValue(DIET_TYPE.VEGAN);
+    jest.spyOn(settings, 'selectSettingsLanguage')
+      .mockReturnValue(LANGUAGES.EN_US);
   });
 
   describe('when getAllSeasonsWithRecipes is successful', () => {
@@ -40,7 +42,7 @@ describe('getAllSeasonsWithRecipes$', () => {
 
     test('calls getAllSeasonsWithRecipes with the expected values', () =>
       expect(mockGetAllSeasonsWithRecipes).toHaveBeenCalledWith(
-        false, true, 'regionId'
+        false, true, 'regionId', LANGUAGES.EN_US
       ));
 
     test('returns getAllSeasonsWithRecipes with the data', () =>
