@@ -27,7 +27,7 @@ import {
   goToBadgeLink$
 } from './route/epics';
 import { initTrackingUser$, trackAction$ } from './tracking/epics';
-import { storeSettings$, getStoredSettings$, detectCountry$ } from './settings/epics';
+import { storeSettings$, getStoredSettings$, detectCountry$, setLanguage$ } from './settings/epics';
 import { initApp$ } from './init/epics/init-app.epic';
 
 export const rootEpic = combineEpics(
@@ -47,6 +47,7 @@ export const rootEpic = combineEpics(
   initTrackingUser$,
   trackAction$,
   getStoredSettings$,
+  setLanguage$,
   storeSettings$,
   detectCountry$,
   storeFeedbackSettings$,
