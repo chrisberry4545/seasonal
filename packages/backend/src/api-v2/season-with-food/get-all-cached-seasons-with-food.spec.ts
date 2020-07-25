@@ -1,12 +1,13 @@
 import * as cache from '../../cache';
 import { Cache } from '../../cache';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedSeasonsWithFood } from './get-all-cached-seasons-with-food';
 import * as getAllDbSeasonsWithFood from './get-all-db-seasons-with-food';
 import { DEFAULT_REGION_ID } from '../../config';
 
 describe('getAllCachedSeasonsWithFood', () => {
   const regionId = 'regionId';
+  const language = LANGUAGES.EN_US;
   let dataCache: Cache<unknown>;
   let cacheKey: string;
   let mockGetAllDbSeasonsWithFood: jest.SpyInstance;
@@ -26,7 +27,7 @@ describe('getAllCachedSeasonsWithFood', () => {
     ] = mockCacheFunctionResponse.mock.calls[0];
     dataCache = usedCache;
     cacheKey = usedCacheKey;
-    result = await cachedFunction(regionId);
+    result = await cachedFunction(regionId, language);
     mockGetAllDbSeasonsWithFood = jest.spyOn(
       getAllDbSeasonsWithFood, 'getAllDbSeasonsWithFood'
     ).mockResolvedValue(allSeasonsWithFood);
@@ -41,19 +42,23 @@ describe('getAllCachedSeasonsWithFood', () => {
   test('returns the expected result', () => expect(result).toBe(allSeasonsWithFood));
 
   describe('when the inner function is called', () => {
-    beforeEach(() => innerFunction(regionId));
+    beforeEach(() => innerFunction(regionId, language));
 
     test('calls getAllDbSeasonsWithFood with the correct arguments', () =>
-      expect(mockGetAllDbSeasonsWithFood).toHaveBeenCalledWith(regionId));
+      expect(mockGetAllDbSeasonsWithFood).toHaveBeenCalledWith(
+        regionId,
+        language
+      ));
 
   });
 
-  describe('when the inner function is called with no regionId', () => {
+  describe('when the inner function is called with no regionId or language', () => {
     beforeEach(() => innerFunction());
 
     test('defaults the regionId', () =>
       expect(mockGetAllDbSeasonsWithFood).toHaveBeenCalledWith(
-        DEFAULT_REGION_ID
+        DEFAULT_REGION_ID,
+        undefined
       ));
 
   });

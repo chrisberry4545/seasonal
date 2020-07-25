@@ -2,7 +2,7 @@ import {
   Cache,
   cacheFunctionResponse
 } from '../../cache';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { DEFAULT_REGION_ID } from '../../config';
 import { getAllDbSeasonsWithRecipes } from './get-all-db-seasons-with-recipes';
 
@@ -13,6 +13,7 @@ export const getAllCachedSeasonsWithRecipes = () => cacheFunctionResponse(
   allSeasonsWithRecipesCache,
   allSeasonsWithRecipesCacheKey,
   async (
-    regionId: string = DEFAULT_REGION_ID
-  ): Promise<IHydratedSeason[]> => getAllDbSeasonsWithRecipes(regionId)
+    regionId: string = DEFAULT_REGION_ID,
+    language?: LANGUAGES
+  ): Promise<IHydratedSeason[]> => getAllDbSeasonsWithRecipes(regionId, language)
 );

@@ -18,6 +18,16 @@ export * from './recipe.interface';
 
 export * from './region.interface';
 
+export * from './translations-badge-name.interface';
+
+export * from './translations-base.interface';
+
+export * from './translations-country-name.interface';
+
+export * from './translations-region-name.interface';
+
+export * from './translations-season-name.interface';
+
 export * from './hydrated-badge.interface';
 
 export * from './hydrated-food.interface';

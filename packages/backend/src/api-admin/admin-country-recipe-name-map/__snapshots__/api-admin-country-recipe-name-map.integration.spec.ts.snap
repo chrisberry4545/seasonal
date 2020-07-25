@@ -3,6 +3,7 @@
 exports[`REST endpoint testing for /admin/country-recipe-name-map create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
 Object {
   "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "languages": null,
   "name": "test-1",
   "recipeId": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
 }
@@ -11,6 +12,7 @@ Object {
 exports[`REST endpoint testing for /admin/country-recipe-name-map delete item when logged in as an admin Returns the expected result 1`] = `
 Object {
   "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "languages": null,
   "name": "test-1",
   "recipeId": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
 }
@@ -19,6 +21,9 @@ Object {
 exports[`REST endpoint testing for /admin/country-recipe-name-map edit item when logged in as an admin Returns the expected result 1`] = `
 Object {
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+  "languages": Array [
+    "en-GB",
+  ],
   "name": "test-2",
   "recipeId": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
 }
@@ -29,6 +34,9 @@ Array [
   Object {
     "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
     "id": "8651458c-3827-4172-b668-b43657f23f73",
+    "languages": Array [
+      "en-US",
+    ],
     "name": "Pickled USA Beetroot",
     "recipeId": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
   },
@@ -39,6 +47,9 @@ exports[`REST endpoint testing for /admin/country-recipe-name-map get single ite
 Object {
   "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
   "id": "8651458c-3827-4172-b668-b43657f23f73",
+  "languages": Array [
+    "en-US",
+  ],
   "name": "Pickled USA Beetroot",
   "recipeId": "0f7fb18e-ac1d-4023-b315-91ca7e29ce4a",
 }

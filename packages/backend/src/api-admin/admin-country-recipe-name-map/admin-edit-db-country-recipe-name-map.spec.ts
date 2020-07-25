@@ -1,6 +1,6 @@
 
 import * as postgres from '../../postgres';
-import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
+import { ICountryRecipeNameMap, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 import { adminEditDbCountryRecipeNameMap } from './admin-edit-db-country-recipe-name-map';
 
@@ -10,6 +10,7 @@ describe('adminEditDbCountryRecipeNameMap', () => {
   const countryRecipeNameMap = {
     countryId: 'countryId',
     id: 'id',
+    languages: [LANGUAGES.EN_GB],
     name: 'test',
     recipeId: 'foodId'
   } as ICountryRecipeNameMap;
@@ -39,7 +40,8 @@ describe('adminEditDbCountryRecipeNameMap', () => {
         countryRecipeNameMap.id,
         countryRecipeNameMap.name,
         countryRecipeNameMap.countryId,
-        countryRecipeNameMap.recipeId
+        countryRecipeNameMap.recipeId,
+        countryRecipeNameMap.languages
       ]
     ));
 

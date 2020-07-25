@@ -4,14 +4,19 @@ WITH
       country_to_food_name_map.food_id,
       country_to_food_name_map.name
 		FROM country_to_food_name_map
-		WHERE country_to_food_name_map.country_id = ANY(
-      SELECT
-        regions.country_id
-      FROM
-        regions
-      WHERE
-        regions.code = $1
-		)
+		WHERE $3 = ANY(country_to_food_name_map.languages)
+    OR (
+      $3::text is NULL
+      AND
+      country_to_food_name_map.country_id = ANY(
+        SELECT
+          regions.country_id
+        FROM
+          regions
+        WHERE
+          regions.code = $1
+      )
+    )
 	)
 
 SELECT
@@ -23,7 +28,16 @@ SELECT
     SELECT
       seasons.id,
       seasons.season_index,
-      seasons.name,
+      COALESCE(
+        (
+          SELECT translations_season_name.name
+          FROM translations_season_name
+          WHERE translations_season_name.season_id = seasons.id
+          AND $3 = ANY(translations_season_name.languages)
+          LIMIT 1
+        ),
+        seasons.name
+      ) AS name,
       (
         SELECT COALESCE(
           json_agg(

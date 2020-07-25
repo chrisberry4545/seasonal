@@ -1,6 +1,6 @@
 import * as cache from '../../cache';
 import { Cache } from '../../cache';
-import { IHydratedBadge } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedBadge, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getCachedBadgeDetails } from './get-cached-badge-details';
 import * as getDbBadgeDetails from './get-db-badge-details';
 import { DEFAULT_REGION_ID } from '../../config';
@@ -14,6 +14,7 @@ describe('getCachedBadgeDetails', () => {
   let innerFunction: (...args: any[]) => Promise<unknown>;
   const badgeId = 'badgeId';
   const regionId = 'regionId';
+  const language = LANGUAGES.EN_US;
 
   beforeEach(async () => {
     const mockCacheFunctionResponse = jest.spyOn(cache, 'cacheFunctionResponse')
@@ -27,7 +28,7 @@ describe('getCachedBadgeDetails', () => {
     ] = mockCacheFunctionResponse.mock.calls[0];
     dataCache = usedCache;
     cacheKey = usedCacheKey;
-    result = await cachedFunction(badgeId, regionId);
+    result = await cachedFunction(badgeId, regionId, language);
     mockGetDbBadgeDetails = jest.spyOn(
       getDbBadgeDetails, 'getDbBadgeDetails'
     ).mockResolvedValue(badgeDetails);
@@ -42,10 +43,12 @@ describe('getCachedBadgeDetails', () => {
   test('returns the expected result', () => expect(result).toBe(badgeDetails));
 
   describe('when the inner function is called', () => {
-    beforeEach(() => innerFunction());
+    beforeEach(() => innerFunction(badgeId, regionId, language));
 
     test('calls getDbBadgeDetails with the correct arguments', () =>
-      expect(mockGetDbBadgeDetails).toHaveBeenCalled());
+      expect(mockGetDbBadgeDetails).toHaveBeenCalledWith(
+        badgeId, regionId, language
+      ));
 
   });
 
@@ -54,7 +57,7 @@ describe('getCachedBadgeDetails', () => {
 
     test('defaults the regionId', () =>
       expect(mockGetDbBadgeDetails).toHaveBeenCalledWith(
-        badgeId, DEFAULT_REGION_ID
+        badgeId, DEFAULT_REGION_ID, undefined
       ));
 
   });

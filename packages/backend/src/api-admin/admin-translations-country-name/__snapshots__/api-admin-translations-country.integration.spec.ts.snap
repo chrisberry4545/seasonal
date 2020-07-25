@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REST endpoint testing for /admin/translations-country-name create item when logged in as an admin and the item is valid Returns the expected result 1`] = `
+Object {
+  "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "languages": Array [
+    "en-US",
+  ],
+  "name": "US Country Translation",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-country-name delete item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "languages": Array [
+    "en-US",
+  ],
+  "name": "US Country Translation",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-country-name edit item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "countryId": "d6e57673-eee8-444a-b7be-d9ab553052cf",
+  "languages": Array [
+    "en-GB",
+  ],
+  "name": "GB Country Translation",
+}
+`;
+
+exports[`REST endpoint testing for /admin/translations-country-name get all when logged in as an admin Returns the expected result 1`] = `
+Array [
+  Object {
+    "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
+    "id": "6f4182a8-5bd8-45d8-bb7c-076719d209fc",
+    "languages": Array [
+      "en-US",
+    ],
+    "name": "USA - UK",
+  },
+]
+`;
+
+exports[`REST endpoint testing for /admin/translations-country-name get single item when logged in as an admin Returns the expected result 1`] = `
+Object {
+  "countryId": "1fc52423-eb83-4cd9-9fdd-b6f9cb323c37",
+  "id": "6f4182a8-5bd8-45d8-bb7c-076719d209fc",
+  "languages": Array [
+    "en-US",
+  ],
+  "name": "USA - UK",
+}
+`;

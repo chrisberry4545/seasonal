@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormTranslationsSeasonName /> renders correctly 1`] = `
+<DataForm
+  buttonText="Edit"
+  formConfig={
+    Object {
+      "languages": Object {
+        "options": Array [
+          Object {
+            "label": "en_GB",
+            "value": "en_GB",
+          },
+          Object {
+            "label": "en-US",
+            "value": "en-US",
+          },
+        ],
+        "type": "multiselect",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "name": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "seasonId": Object {
+        "options": Array [
+          Object {
+            "label": "name",
+            "value": "c1",
+          },
+        ],
+        "type": "select",
+      },
+    }
+  }
+  item={Object {}}
+  sendData={[MockFunction]}
+/>
+`;

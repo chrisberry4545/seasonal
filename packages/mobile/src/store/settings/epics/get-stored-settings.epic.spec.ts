@@ -1,5 +1,5 @@
 import { IInitSettings, initApp, initSettings, ISettingsState } from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
+import { DIET_TYPE, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
 import * as helpers from '../../../helpers';
 import { getStoredSettings$ } from './get-stored-settings.epic';
@@ -23,6 +23,7 @@ describe('getStoredSettings$', () => {
       expect(result).toEqual(initSettings({
         dietType: DIET_TYPE.ALL,
         isListViewShown: false,
+        language: 'mock' as LANGUAGES,
         selectedRegionId: undefined,
         timesAppStarted: 1
       })));
@@ -31,6 +32,7 @@ describe('getStoredSettings$', () => {
   describe('when the stored settings have a value and a timesAppStarted', () => {
     const settings = {
       dietType: DIET_TYPE.VEGETARIAN,
+      language: LANGUAGES.EN_US,
       timesAppStarted: 1
     } as ISettingsState;
 
@@ -53,7 +55,8 @@ describe('getStoredSettings$', () => {
 
   describe('when the stored settings have a value but no timesAppStarted value', () => {
     const settings = {
-      dietType: DIET_TYPE.VEGETARIAN
+      dietType: DIET_TYPE.VEGETARIAN,
+      language: LANGUAGES.EN_US
     } as ISettingsState;
 
     beforeEach(async () => {

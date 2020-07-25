@@ -6,16 +6,18 @@ import {
   setAllSeasonsWithFoodSuccess
 } from '../all-seasons.actions';
 import { of } from 'rxjs';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { setError } from '../../error';
 import * as settings from '../../settings';
 
 describe('getAllSeasonsWithFood$', () => {
-  beforeEach(() =>
+  beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
-      .mockReturnValue('regionId')
-  );
+      .mockReturnValue('regionId');
+    jest.spyOn(settings, 'selectSettingsLanguage')
+      .mockReturnValue(LANGUAGES.EN_US);
+  });
 
   describe('when setAllSeasonsWithFoodSuccess is successful', () => {
     const seasonsWithFood = [{}, {}] as IHydratedSeason[];

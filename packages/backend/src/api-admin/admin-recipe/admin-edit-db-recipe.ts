@@ -15,7 +15,8 @@ export const adminEditDbRecipe = async (
       item.isVegan,
       item.name,
       item.primaryFoodInRecipeIds,
-      item.secondaryFoodInRecipeIds
+      item.secondaryFoodInRecipeIds,
+      item.languages
     ]
   );
   return result.rows && result.rows[0];

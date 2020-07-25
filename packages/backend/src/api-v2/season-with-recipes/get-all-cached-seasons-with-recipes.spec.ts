@@ -1,12 +1,13 @@
 import * as cache from '../../cache';
 import { Cache } from '../../cache';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getAllCachedSeasonsWithRecipes } from './get-all-cached-seasons-with-recipes';
 import * as getAllDbSeasonsWithRecipes from './get-all-db-seasons-with-recipes';
 import { DEFAULT_REGION_ID } from '../../config';
 
 describe('getAllCachedSeasonsWithRecipes', () => {
   const regionId = 'regionId';
+  const language = LANGUAGES.EN_US;
   let dataCache: Cache<unknown>;
   let cacheKey: string;
   let mockGetAllDbSeasonsWithRecipes: jest.SpyInstance;
@@ -26,7 +27,7 @@ describe('getAllCachedSeasonsWithRecipes', () => {
     ] = mockCacheFunctionResponse.mock.calls[0];
     dataCache = usedCache;
     cacheKey = usedCacheKey;
-    result = await cachedFunction(regionId);
+    result = await cachedFunction(regionId, language);
     mockGetAllDbSeasonsWithRecipes = jest.spyOn(
       getAllDbSeasonsWithRecipes, 'getAllDbSeasonsWithRecipes'
     ).mockResolvedValue(allSeasonsWithRecipes);
@@ -41,10 +42,10 @@ describe('getAllCachedSeasonsWithRecipes', () => {
   test('returns the expected result', () => expect(result).toBe(allSeasonsWithRecipes));
 
   describe('when the inner function is called', () => {
-    beforeEach(() => innerFunction(regionId));
+    beforeEach(() => innerFunction(regionId, language));
 
     test('calls getAllDbSeasonsWithRecipes with the correct arguments', () =>
-      expect(mockGetAllDbSeasonsWithRecipes).toHaveBeenCalledWith(regionId));
+      expect(mockGetAllDbSeasonsWithRecipes).toHaveBeenCalledWith(regionId, language));
 
   });
 
@@ -53,7 +54,8 @@ describe('getAllCachedSeasonsWithRecipes', () => {
 
     test('defaults the regionId', () =>
       expect(mockGetAllDbSeasonsWithRecipes).toHaveBeenCalledWith(
-        DEFAULT_REGION_ID
+        DEFAULT_REGION_ID,
+        undefined
       ));
 
   });

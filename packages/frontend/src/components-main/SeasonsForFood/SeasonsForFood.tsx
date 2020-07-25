@@ -1,14 +1,11 @@
 import React, { Fragment, FC } from 'react';
-
 import './SeasonsForFood.scss';
-
 import {
   TextMedium,
   TextSmall,
   BareButton,
   TextHeadingSmall
 } from '@chrisb-dev/seasonal-shared-frontend-components';
-
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
 
 export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
@@ -20,7 +17,7 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
     ? <Fragment>
     <TextHeadingSmall
       className='c-season-for-food__list-heading'>
-      When are they in season?
+        When are they in season?
     </TextHeadingSmall>
     <div className='c-season-for-food__list'>
       {

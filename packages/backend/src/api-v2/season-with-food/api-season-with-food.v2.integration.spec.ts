@@ -10,18 +10,35 @@ import {
   SEASON_INDEX_FEBRUARY,
   SEASON_INDEX_MARCH
 } from '../../api-utils/test-utils/shared-test-ids';
+import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('Get all seasons with food', () => {
   let response: Response;
-  beforeAll(async () => {
-    response = await supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_FOOD}`);
+
+  describe('when no language is included', () => {
+    beforeAll(async () => {
+      response = await supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_FOOD}`);
+    });
+
+    test('Returns a status of 200', () =>
+      expect(response.status).toBe(200));
+
+    test('Returns a full list of season data', () =>
+      expect(response.body).toMatchSnapshot());
   });
 
-  test('Returns a status of 200', () =>
-    expect(response.status).toBe(200));
+  describe('when a language is set', () => {
+    beforeAll(async () => {
+      response = await supertest(app)
+        .get(`/${ENDPOINT_V2_SEASON_WITH_FOOD}?language=${LANGUAGES.EN_US}`);
+    });
 
-  test('Returns a full list of season data', () =>
-    expect(response.body).toMatchSnapshot());
+    test('Returns a status of 200', () =>
+      expect(response.status).toBe(200));
+
+    test('Returns a full list of season data', () =>
+      expect(response.body).toMatchSnapshot());
+  });
 
 });
 
@@ -29,11 +46,16 @@ describe('Get single season with food', () => {
   let response: Response;
   const makeSingleSeasonWithFoodRequest = (
     seasonIndex: string = SEASON_INDEX_JANUARY,
-    regionId?: string
+    regionId?: string,
+    language?: LANGUAGES
   ) => {
+    const queryString = [
+      regionId && `region-id=${regionId}`,
+      language && `language=${language}`
+    ].filter(Boolean).join('&');
     return supertest(app).get(`/${ENDPOINT_V2_SEASON_WITH_FOOD}/${seasonIndex}${
-      regionId
-        ? `?region-id=${regionId}`
+      queryString
+        ? `?${queryString}`
         : ''
     }`);
   };
@@ -70,4 +92,22 @@ describe('Get single season with food', () => {
       expect(response.body.recipes).toBeUndefined());
 
   });
+
+  describe('when a language is set', () => {
+    beforeAll(async () => {
+      response = await makeSingleSeasonWithFoodRequest(
+        SEASON_INDEX_FEBRUARY,
+        undefined,
+        LANGUAGES.EN_US
+      );
+    });
+
+    test('Returns a status of 200', () =>
+      expect(response.status).toBe(200));
+
+    test('Retrieves a single season', () =>
+      expect(response.body).toMatchSnapshot());
+
+  });
+
 });

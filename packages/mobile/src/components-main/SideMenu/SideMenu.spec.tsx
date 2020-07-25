@@ -75,7 +75,7 @@ describe('<SideMenu />', () => {
     test('renders correctly', () => expect(wrapper).toMatchSnapshot());
 
     test('can open the change settings page', () => {
-      clickButtonWithText('Change region');
+      clickButtonWithText('Change region or language');
       expect(mockGoToSettingsPage).toHaveBeenCalled();
     });
 

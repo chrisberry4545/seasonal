@@ -10,15 +10,17 @@ import {
 } from '../all-basic-seasons.actions';
 import { of } from 'rxjs';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IBaseSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import * as settings from '../../settings';
 
 describe('getAllBasicSeasons$', () => {
 
-  beforeEach(() =>
+  beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
-      .mockReturnValue('regionId')
-  );
+      .mockReturnValue('regionId');
+    jest.spyOn(settings, 'selectSettingsLanguage')
+      .mockReturnValue(LANGUAGES.EN_US);
+  });
 
   describe('when getAllSeasons succeeds', () => {
     const seasons = [{}] as IBaseSeason[];

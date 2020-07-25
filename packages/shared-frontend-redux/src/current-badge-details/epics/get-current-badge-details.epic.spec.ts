@@ -1,5 +1,5 @@
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { IHydratedBadge } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedBadge, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
 import { setError } from '../../error';
 import * as settings from '../../settings';
@@ -14,6 +14,8 @@ describe('getCurrentBadgeDetails$', () => {
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
       .mockReturnValue('regionId');
+    jest.spyOn(settings, 'selectSettingsLanguage')
+      .mockReturnValue(LANGUAGES.EN_US);
   });
 
   describe('when getBadgeDetailsData is successful', () => {

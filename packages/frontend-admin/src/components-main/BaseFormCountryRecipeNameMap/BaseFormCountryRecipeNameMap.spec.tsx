@@ -11,6 +11,13 @@ jest.mock('../../services', () => ({
   getAllRecipes: jest.fn()
 }));
 
+jest.mock('@chrisb-dev/seasonal-shared-models', () => ({
+  LANGUAGES: {
+    EN_GB: 'en_GB',
+    EN_US: 'en-US'
+  }
+}));
+
 jest.mock('../DataForm/DataForm', () => ({
   DataForm: () => 'DataForm'
 }));

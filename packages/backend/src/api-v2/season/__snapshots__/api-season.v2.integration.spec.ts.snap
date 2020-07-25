@@ -1,6 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Get all seasons Returns a full list of season data 1`] = `
+exports[`Get all seasons when a language is set Returns a full list of season data 1`] = `
+Array [
+  Object {
+    "id": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",
+    "name": "January",
+    "seasonIndex": 0,
+  },
+  Object {
+    "id": "eec0b2bb-4fbd-46df-b905-8d2ee2fb991a",
+    "name": "USA February",
+    "seasonIndex": 1,
+  },
+  Object {
+    "id": "f4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "March",
+    "seasonIndex": 2,
+  },
+  Object {
+    "id": "a4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "April",
+    "seasonIndex": 3,
+  },
+  Object {
+    "id": "b4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "May",
+    "seasonIndex": 4,
+  },
+  Object {
+    "id": "c4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "June",
+    "seasonIndex": 5,
+  },
+  Object {
+    "id": "d4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "July",
+    "seasonIndex": 6,
+  },
+  Object {
+    "id": "e4812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "August",
+    "seasonIndex": 7,
+  },
+  Object {
+    "id": "f5812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "September",
+    "seasonIndex": 8,
+  },
+  Object {
+    "id": "a1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "October",
+    "seasonIndex": 9,
+  },
+  Object {
+    "id": "b1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "November",
+    "seasonIndex": 10,
+  },
+  Object {
+    "id": "c1812071-b0e2-4255-8ccf-e38768ad0c3c",
+    "name": "December",
+    "seasonIndex": 11,
+  },
+]
+`;
+
+exports[`Get all seasons with no query params Returns a full list of season data 1`] = `
 Array [
   Object {
     "id": "41bcbb3a-5599-4f0c-8da9-3144cc5be6de",

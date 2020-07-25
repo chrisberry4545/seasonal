@@ -1,7 +1,7 @@
 import {
   Cache, cacheFunctionResponse
 } from '../../cache';
-import { IHydratedBadge } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedBadge, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { DEFAULT_REGION_ID } from '../../config';
 import { getDbBadgeDetails } from './get-db-badge-details';
 
@@ -13,8 +13,9 @@ export const getCachedBadgeDetails = () => cacheFunctionResponse(
   singleBadgeCacheKey,
   (
     badgeId: string,
-    regionId: string = DEFAULT_REGION_ID
+    regionId: string = DEFAULT_REGION_ID,
+    language?: LANGUAGES
   ): Promise<IHydratedBadge | undefined> => getDbBadgeDetails(
-    badgeId, regionId
+    badgeId, regionId, language
   )
 );

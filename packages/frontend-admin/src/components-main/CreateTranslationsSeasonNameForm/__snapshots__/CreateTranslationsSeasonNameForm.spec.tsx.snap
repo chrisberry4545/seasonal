@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateTranslationsSeasonNameForm /> renders correctly 1`] = `
+<LayoutWithTitle
+  title="Create Translations Season Name"
+>
+  <BaseFormTranslationsSeasonName
+    buttonText="create"
+    items={
+      Object {
+        "id": "",
+        "languages": Array [],
+        "name": "",
+        "seasonId": "",
+      }
+    }
+    updateMethod={[MockFunction]}
+  />
+</LayoutWithTitle>
+`;

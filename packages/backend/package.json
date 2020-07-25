@@ -23,7 +23,9 @@
     "test": "jest --testPathIgnorePatterns='.*integration.spec.ts$'",
     "test:integration": "jest --testPathPattern='.*\\.integration.spec.ts$'",
     "test:watch": "jest --watchAll",
-    "deploy": "serverless deploy --stage prod"
+    "deploy": "yarn deploy:backend-admin && yarn deploy:backend",
+    "deploy:backend": "serverless deploy --stage prod",
+    "deploy:backend-admin": "serverless deploy --stage prod --config ./serverless.admin.yml"
   },
   "author": "Chris Berry <chrisberry4545@googlemail.com> (https://chrisberry4545.github.io/)",
   "license": "ISC",

@@ -1,5 +1,5 @@
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { DIET_TYPE, IHydratedFood } from '@chrisb-dev/seasonal-shared-models';
+import { DIET_TYPE, IHydratedFood, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
 import { setError } from '../../error';
 import * as settings from '../../settings';
@@ -17,6 +17,8 @@ describe('getCurrentFoodDetails$', () => {
       .mockReturnValue(DIET_TYPE.ALL);
     jest.spyOn(settings, 'selectSettingsRegionId')
       .mockReturnValue('regionId');
+    jest.spyOn(settings, 'selectSettingsLanguage')
+      .mockReturnValue(LANGUAGES.EN_US);
   });
 
   describe('when getFoodDetailsData is successful', () => {

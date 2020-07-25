@@ -2,13 +2,14 @@ import {
   getDbFoodDetails
 } from './get-db-food-details';
 import * as postgres from '../../postgres';
-import { IHydratedFood } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedFood, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
 describe('getDbFoodDetails', () => {
   let result: IHydratedFood | undefined;
   const foodId = 'id';
   const regionId = 'regionId';
+  const language = LANGUAGES.EN_GB;
 
   let mockQueryPostgres: jest.SpyInstance;
   let mockGetSqlQuery: jest.SpyInstance;
@@ -27,7 +28,7 @@ describe('getDbFoodDetails', () => {
     beforeEach(async () => {
       mockQueryPostgres = jest.spyOn(postgres, 'queryPostgres')
         .mockResolvedValue(queryResult);
-      result = await getDbFoodDetails(foodId, regionId);
+      result = await getDbFoodDetails(foodId, regionId, language);
     });
 
     test('calls getSqlQuery with the correct', () =>
@@ -36,7 +37,7 @@ describe('getDbFoodDetails', () => {
     test('calls queryPostgres with the correct values', () =>
       expect(mockQueryPostgres).toHaveBeenCalledWith(
         sqlQueryResult,
-        [regionId, foodId]
+        [regionId, foodId, language]
       ));
 
     test('returns the expected result', () => expect(result).toBe(queryResult.rows[0]));
@@ -51,7 +52,7 @@ describe('getDbFoodDetails', () => {
     beforeEach(async () => {
       mockQueryPostgres = jest.spyOn(postgres, 'queryPostgres')
         .mockResolvedValue(queryResult);
-      result = await getDbFoodDetails(foodId, regionId);
+      result = await getDbFoodDetails(foodId, regionId, LANGUAGES.EN_GB);
     });
 
     test('returns undefined', () => expect(result).toBeUndefined());

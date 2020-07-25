@@ -1,4 +1,4 @@
-import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
+import { ICountryRecipeNameMap, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from '../../api-utils/test-utils/generate-rest-endpoint-tests';
 import { ENDPOINT_ADMIN_COUNTRY_RECIPE_NAME_MAP } from '../../config';
 
@@ -12,6 +12,7 @@ generateRestEndpointTests<ICountryRecipeNameMap>({
   } as ICountryRecipeNameMap,
   validItemForEdit: {
     countryId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
+    languages: [LANGUAGES.EN_GB],
     name: 'test-2',
     recipeId: '0f7fb18e-ac1d-4023-b315-91ca7e29ce4a'
   } as ICountryRecipeNameMap

@@ -1,13 +1,14 @@
 import * as postgres from '../../postgres';
-import { ICountryRecipeNameMap } from '@chrisb-dev/seasonal-shared-models';
+import { ICountryRecipeNameMap, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 import { adminCreateDbCountryRecipeNameMap } from './admin-create-db-country-recipe-name-map';
 
 describe('adminCreateDbCountryRecipeNameMap', () => {
   let mockGetSqlQuery: jest.SpyInstance;
   let mockQueryPostgres: jest.SpyInstance;
-  const countryFoodNameMap = {
+  const countryRecipeNameMap = {
     countryId: 'countryId',
+    languages: [LANGUAGES.EN_GB],
     name: 'test',
     recipeId: 'foodId'
   } as ICountryRecipeNameMap;
@@ -24,7 +25,7 @@ describe('adminCreateDbCountryRecipeNameMap', () => {
     mockQueryPostgres = jest.spyOn(postgres, 'queryPostgres')
       .mockResolvedValue(queryResult);
     mockQueryPostgres.mockClear();
-    result = await adminCreateDbCountryRecipeNameMap(countryFoodNameMap);
+    result = await adminCreateDbCountryRecipeNameMap(countryRecipeNameMap);
   });
 
   test('calls getSqlQuery with the correct value', () =>
@@ -34,9 +35,10 @@ describe('adminCreateDbCountryRecipeNameMap', () => {
     expect(mockQueryPostgres).toHaveBeenCalledWith(
       sqlQuery,
       [
-        countryFoodNameMap.name,
-        countryFoodNameMap.countryId,
-        countryFoodNameMap.recipeId
+        countryRecipeNameMap.name,
+        countryRecipeNameMap.countryId,
+        countryRecipeNameMap.recipeId,
+        countryRecipeNameMap.languages
       ]
     ));
 

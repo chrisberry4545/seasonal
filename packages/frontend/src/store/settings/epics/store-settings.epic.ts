@@ -1,4 +1,9 @@
-import { selectSettingsState, SET_DIET_TYPE, SET_REGION, SET_USER_REGION_DETECTED } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import {
+  selectSettingsState,
+  SET_DIET_TYPE,
+  SET_REGION,
+  SET_USER_REGION_DETECTED
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { Action } from 'redux';
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 import { Observable } from 'rxjs';

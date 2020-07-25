@@ -14,6 +14,10 @@ import { apiAdminFood } from './admin-food/api-admin-food';
 import { apiAdminRecipe } from './admin-recipe/api-admin-recipe';
 import { apiAdminRegion } from './admin-region/api-admin-region';
 import { apiAdminRegionFoodSeasonMap } from './admin-region-food-season-map/api-admin-region-food-season-map';
+import { apiAdminTranslationsBadgeName } from './admin-translations-badge-name/api-admin-translations-badge-name';
+import { apiAdminTranslationsCountryName } from './admin-translations-country-name/api-admin-translations-country-name';
+import { apiAdminTranslationsRegionName } from './admin-translations-region-name/api-admin-translations-region-name';
+import { apiAdminTranslationsSeasonName } from './admin-translations-season-name/api-admin-translations-season-name';
 import { apiAdminUser } from './admin-user/api-admin-user';
 import { apiAdminReports } from './admin-reports/api-admin-reports';
 import { errorMiddleware } from '../middleware/error-middleware';
@@ -27,6 +31,10 @@ import {
   ENDPOINT_RECIPE,
   ENDPOINT_REGION,
   ENDPOINT_REGION_FOOD_SEASON_MAP,
+  ENDPOINT_TRANSLATIONS_BADGE_NAME,
+  ENDPOINT_TRANSLATIONS_COUNTRY_NAME,
+  ENDPOINT_TRANSLATIONS_REGION_NAME,
+  ENDPOINT_TRANSLATIONS_SEASON_NAME,
   ENDPOINT_USER,
   ENDPOINT_REPORTS
 } from '@chrisb-dev/seasonal-shared-models';
@@ -77,6 +85,26 @@ export const apiAdmin = (router = Router()) => {
     `/${ENDPOINT_REGION_FOOD_SEASON_MAP}`,
     editorAuth(),
     apiAdminRegionFoodSeasonMap()
+  );
+  router.use(
+    `/${ENDPOINT_TRANSLATIONS_BADGE_NAME}`,
+    editorAuth(),
+    apiAdminTranslationsBadgeName()
+  );
+  router.use(
+    `/${ENDPOINT_TRANSLATIONS_COUNTRY_NAME}`,
+    editorAuth(),
+    apiAdminTranslationsCountryName()
+  );
+  router.use(
+    `/${ENDPOINT_TRANSLATIONS_REGION_NAME}`,
+    editorAuth(),
+    apiAdminTranslationsRegionName()
+  );
+  router.use(
+    `/${ENDPOINT_TRANSLATIONS_SEASON_NAME}`,
+    editorAuth(),
+    apiAdminTranslationsSeasonName()
   );
   router.use(
     `/${ENDPOINT_USER}`,

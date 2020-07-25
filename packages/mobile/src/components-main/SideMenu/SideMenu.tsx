@@ -8,6 +8,7 @@ import { ISideMenuProps } from './SideMenu.interface';
 import { ViewStyle, TextStyle, View } from 'react-native';
 import { styles } from '../../styles';
 import { ScrollView } from 'react-native-gesture-handler';
+import i18n from 'i18n-js';
 
 const styleSideMenu: ViewStyle = {
   flex: 1,
@@ -79,14 +80,14 @@ export const SideMenu: FC<ISideMenuProps> = ({
             {
               renderSideMenuButton({
                 isSelected: isCurrentRouteSettings,
-                name: 'Change region',
+                name: i18n.t('menuChangeRegion'),
                 onClick: onGoToSettingsPage
               })
             }
             {
               renderSideMenuButton({
                 isSelected: isCurrentRouteAllSeasons,
-                name: 'All seasons',
+                name: i18n.t('menuAllSeasons'),
                 onClick: onAllSeasonsSelected
               })
             }
@@ -105,14 +106,14 @@ export const SideMenu: FC<ISideMenuProps> = ({
             {
               renderSideMenuButton({
                 isSelected: isCurrentRouteAboutUs,
-                name: 'About us',
+                name: i18n.t('menuAboutUs'),
                 onClick: onGoToAboutUsPage
               })
             }
             {
               renderSideMenuButton({
                 isSelected: false,
-                name: 'Give feedback',
+                name: i18n.t('menuGiveFeedback'),
                 onClick: onMenuFeedbackSelected
               })
             }

@@ -1,4 +1,4 @@
-import { ICountryFoodNameMap } from '@chrisb-dev/seasonal-shared-models';
+import { ICountryFoodNameMap, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { generateRestEndpointTests } from '../../api-utils/test-utils/generate-rest-endpoint-tests';
 import { ENDPOINT_ADMIN_COUNTRY_FOOD_NAME_MAP } from '../../config';
 
@@ -13,6 +13,7 @@ generateRestEndpointTests<ICountryFoodNameMap>({
   validItemForEdit: {
     countryId: 'd6e57673-eee8-444a-b7be-d9ab553052cf',
     foodId: 'f6a680ee-6d6e-4c42-a99d-15e575c32c20',
+    languages: [LANGUAGES.EN_GB],
     name: 'f6a680ee-6d6e-4c42-a99d-15e575c32c20'
   } as ICountryFoodNameMap
 });

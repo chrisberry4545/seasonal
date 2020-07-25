@@ -1,7 +1,7 @@
 import {
   Cache, cacheFunctionResponse
 } from '../../cache';
-import { IHydratedFood } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedFood, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { DEFAULT_REGION_ID } from '../../config';
 import { getDbFoodDetails } from './get-db-food-details';
 
@@ -13,8 +13,9 @@ export const getCachedFoodDetails = () => cacheFunctionResponse(
   singleFoodCacheKey,
   (
     foodId: string,
-    regionId: string = DEFAULT_REGION_ID
+    regionId: string = DEFAULT_REGION_ID,
+    language?: LANGUAGES
   ): Promise<IHydratedFood | undefined> => getDbFoodDetails(
-    foodId, regionId
+    foodId, regionId, language
   )
 );

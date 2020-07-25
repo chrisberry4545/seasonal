@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseFormTranslationsCountryName /> renders correctly 1`] = `
+<DataForm
+  buttonText="Edit"
+  formConfig={
+    Object {
+      "countryId": Object {
+        "options": Array [
+          Object {
+            "label": "country1",
+            "value": "c1",
+          },
+        ],
+        "type": "select",
+      },
+      "languages": Object {
+        "options": Array [
+          Object {
+            "label": "en_GB",
+            "value": "en_GB",
+          },
+          Object {
+            "label": "en-US",
+            "value": "en-US",
+          },
+        ],
+        "type": "multiselect",
+        "validation": Array [
+          [Function],
+        ],
+      },
+      "name": Object {
+        "type": "text",
+        "validation": Array [
+          [Function],
+        ],
+      },
+    }
+  }
+  item={Object {}}
+  sendData={[MockFunction]}
+/>
+`;

@@ -11,6 +11,7 @@ import { ViewStyle, View, TextStyle, StyleSheet } from 'react-native';
 import { colors } from '../../styles/colors';
 import { styles } from '../../styles';
 import { shadows } from '../../styles/shadows';
+import i18n from 'i18n-js';
 
 const styleBadges: ViewStyle = {
   borderBottomWidth: StyleSheet.hairlineWidth,
@@ -50,7 +51,7 @@ export const FoodBadges: FC<IFoodBadgesProps> = ({
     ? (
       <View style={styleBadges}>
         <TextHeadingSmall style={styleBadgesHeading}>
-          Nutrients
+          {i18n.t('foodBadgesTitle')}
         </TextHeadingSmall>
         <View style={styleBadgesList}>
           {

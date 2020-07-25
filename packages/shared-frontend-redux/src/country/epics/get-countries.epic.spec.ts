@@ -1,11 +1,17 @@
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
-import { ICountry } from '@chrisb-dev/seasonal-shared-models';
+import { ICountry, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
 import { setError } from '../../error';
 import { getCountriesStart, getCountriesSuccess } from '../country.actions';
 import { getCountries$ } from './get-countries.epic';
+import * as settings from '../../settings';
 
 describe('getCountries$', () => {
+  beforeEach(() => {
+    jest.spyOn(settings, 'selectSettingsLanguage')
+      .mockReturnValue(LANGUAGES.EN_US);
+  });
+
   describe('when the countries are successfully retrieved', () => {
     const countries = [{}] as ICountry[];
     beforeEach(() => {

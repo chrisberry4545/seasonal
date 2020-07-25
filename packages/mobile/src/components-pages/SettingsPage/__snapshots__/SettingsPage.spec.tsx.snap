@@ -16,6 +16,7 @@ exports[`<SettingsPage /> renders correctly 1`] = `
         <SelectLocationConnecter>
           <SettingsBackButtonConnecter />
         </SelectLocationConnecter>
+        <SelectLanguageConnecter />
       </View>
     </DefaultPaddingContainer>
   </ScrollView>

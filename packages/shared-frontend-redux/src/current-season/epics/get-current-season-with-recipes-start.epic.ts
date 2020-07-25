@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 import { SET_REGION, SET_USER_REGION_DETECTED } from '../../country';
 import { SharedSeasonalEpic } from '../../seasonal-epic.type';
-import { INIT_SETTINGS, SET_DIET_TYPE } from '../../settings';
+import { INIT_SETTINGS, SET_DIET_TYPE, SET_LANGUAGE } from '../../settings';
 import { FOOD_DETAILS_SELECT_SEASON, SELECT_SEASON } from '../../ui';
 import { setCurrentSeasonWithRecipesStart } from '../current-season.actions';
 
@@ -18,7 +18,8 @@ export const getCurrentSeasonWithRecipesStart$: SharedSeasonalEpic = (
       FOOD_DETAILS_SELECT_SEASON,
       SET_DIET_TYPE,
       SET_USER_REGION_DETECTED,
-      SET_REGION
+      SET_REGION,
+      SET_LANGUAGE
     ),
     mapTo(setCurrentSeasonWithRecipesStart())
   )

@@ -4,6 +4,7 @@ import { ISelectRegionProps } from './SelectRegion.interface';
 import { TextHeadingMedium, GroupedSelectBox } from '../../components-elements';
 import { ViewStyle, View } from 'react-native';
 import { sizes } from '../../styles/sizes';
+import i18n from 'i18n-js';
 
 const styleSelectRegionHeader: ViewStyle = {
   alignItems: 'center',
@@ -20,7 +21,7 @@ export const SelectRegion: FC<ISelectRegionProps> = ({
     <View style={styleSelectRegionHeader}>
       {children}
       <TextHeadingMedium>
-        Select your region
+        {i18n.t('selectYourRegion')}
       </TextHeadingMedium>
     </View>
     <GroupedSelectBox groups={countrySelectGroups} onSelected={onRegionSelected} />

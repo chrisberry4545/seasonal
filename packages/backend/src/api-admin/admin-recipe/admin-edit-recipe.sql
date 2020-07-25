@@ -6,6 +6,7 @@ SET
   is_vegan = $5,
   name = $6,
   primary_food_in_recipe_ids = $7,
-  secondary_food_in_recipe_ids = $8
+  secondary_food_in_recipe_ids = $8,
+  languages = $9
 WHERE id = $1
 RETURNING *;

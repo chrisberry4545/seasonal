@@ -5,6 +5,7 @@ import { TextLarge, BareButton } from '../../components-elements';
 import { ViewStyle, TextStyle } from 'react-native';
 import { colors } from '../../styles/colors';
 import { Toast } from '../../components-layout';
+import i18n from 'i18n-js';
 
 const styleRegionChangedPromptButton: ViewStyle = {
   marginTop: 4
@@ -22,14 +23,14 @@ export const RegionChangedPrompt: FC<IRegionChangedPromptProps> = ({
 }) => (
   <Toast onClose={hideRegionChangedPrompt} isVisible={Boolean(currentRegion && isVisible)}>
     <TextLarge style={styleRegionChangedPromptText}>
-      We've detected your closest region as:
+      {i18n.t('regionChangedDetectedYourClosestRegionAs')}
     </TextLarge>
     <TextLarge style={styleRegionChangedPromptText}>
       { currentRegion && currentRegion.name }.
     </TextLarge>
     <BareButton onClick={showRegionSelector} style={styleRegionChangedPromptButton}>
       <TextLarge style={styleRegionChangedPromptText}>
-        If this is wrong, click here.
+        {i18n.t('regionChangedIfThisIsWrongClickHere')}
       </TextLarge>
     </BareButton>
   </Toast>

@@ -10,4 +10,5 @@ export interface IRecipe extends IDbBaseRecord {
   isVegetarian?: boolean;
   primaryFoodInRecipeIds?: string[];
   secondaryFoodInRecipeIds?: string[];
+  languages?: string[];
 }

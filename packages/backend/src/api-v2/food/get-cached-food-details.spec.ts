@@ -1,6 +1,6 @@
 import * as cache from '../../cache';
 import { Cache } from '../../cache';
-import { IHydratedFood } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedFood, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { getCachedFoodDetails } from './get-cached-food-details';
 import * as getDbFoodDetails from './get-db-food-details';
 import { DEFAULT_REGION_ID } from '../../config';
@@ -14,6 +14,7 @@ describe('getCachedFoodDetails', () => {
   let innerFunction: (...args: any[]) => Promise<unknown>;
   const foodId = 'foodId';
   const regionId = 'regionId';
+  const language = LANGUAGES.EN_US;
 
   beforeEach(async () => {
     const mockCacheFunctionResponse = jest.spyOn(cache, 'cacheFunctionResponse')
@@ -27,7 +28,7 @@ describe('getCachedFoodDetails', () => {
     ] = mockCacheFunctionResponse.mock.calls[0];
     dataCache = usedCache;
     cacheKey = usedCacheKey;
-    result = await cachedFunction(foodId, regionId);
+    result = await cachedFunction(foodId, regionId, language);
     mockGetDbFoodDetails = jest.spyOn(
       getDbFoodDetails, 'getDbFoodDetails'
     ).mockResolvedValue(foodDetails);
@@ -54,7 +55,7 @@ describe('getCachedFoodDetails', () => {
 
     test('defaults the regionId', () =>
       expect(mockGetDbFoodDetails).toHaveBeenCalledWith(
-        foodId, DEFAULT_REGION_ID
+        foodId, DEFAULT_REGION_ID, undefined
       ));
 
   });

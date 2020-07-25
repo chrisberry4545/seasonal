@@ -2,7 +2,7 @@ import {
   getAllDbCountries
 } from './get-all-db-countries';
 import * as postgres from '../../postgres';
-import { ICountry } from '@chrisb-dev/seasonal-shared-models';
+import { ICountry, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 
 describe('getAllDbCountries', () => {
@@ -20,7 +20,7 @@ describe('getAllDbCountries', () => {
       .mockResolvedValue(sqlQueryResult);
     mockQueryPostgres = jest.spyOn(postgres, 'queryPostgres')
       .mockResolvedValue(queryResult);
-    result = await getAllDbCountries();
+    result = await getAllDbCountries(LANGUAGES.EN_US);
   });
 
   test('calls getSqlQuery with the correct', () =>
@@ -28,7 +28,8 @@ describe('getAllDbCountries', () => {
 
   test('calls queryPostgres with the correct values', () =>
     expect(mockQueryPostgres).toHaveBeenCalledWith(
-      sqlQueryResult
+      sqlQueryResult,
+      [LANGUAGES.EN_US]
     ));
 
   test('returns the expected result', () => expect(result).toBe(queryResult.rows));

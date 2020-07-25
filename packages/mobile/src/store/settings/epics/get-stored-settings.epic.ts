@@ -7,6 +7,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { getStoredData } from '../../../helpers';
 import { AppSeasonalEpic } from '../../seasonal-epic.type';
 import { settingsStorageKey } from './settings-storage-key';
+import { getLocale } from '../../../helpers/get-locale';
 
 export const getStoredSettings$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>
@@ -18,12 +19,14 @@ export const getStoredSettings$: AppSeasonalEpic = (
       settings
       ? {
         ...settings,
+        language: settings.language || getLocale(),
         timesAppStarted: (settings.timesAppStarted || 0) + 1
       }
       :
       {
         dietType: DIET_TYPE.ALL,
         isListViewShown: false,
+        language: getLocale(),
         selectedRegionId: undefined,
         timesAppStarted: 1
       })

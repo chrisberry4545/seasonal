@@ -9,6 +9,7 @@ import {
 } from '../../components-elements';
 import { View, ViewStyle } from 'react-native';
 import { colors } from '../../styles/colors';
+import i18n from 'i18n-js';
 
 const styleSearchBar: ViewStyle = {
   alignItems: 'center',
@@ -58,7 +59,7 @@ export const SearchBar: FC<ISearchBarProps> = ({
           <Input
             autoFocus
             onChangeText={(newSearchTerm) => onSearchChanged(newSearchTerm)}
-            placeholder='Search'/>
+            placeholder={i18n.t('searchBarPlaceholder')}/>
           <BareButton
             style={ {...styleSearchBarButton, ...styleSearchBarCloseButton} }
             onClick={onHideSearchBar}>

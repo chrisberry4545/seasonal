@@ -11,7 +11,8 @@ export const adminEditDbCountryRecipeNameMap = async (
       item.id,
       item.name,
       item.countryId,
-      item.recipeId
+      item.recipeId,
+      item.languages
     ]
   );
   return result.rows && result.rows[0];

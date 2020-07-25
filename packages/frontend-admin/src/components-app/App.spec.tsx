@@ -13,6 +13,7 @@ jest.mock('../components-pages', () => ({
   CreateFoodPage: () => 'CreateFoodPage',
   CreateRecipePage: () => 'CreateRecipePage',
   CreateRegionPage: () => 'CreateRegionPage',
+  CreateTranslationsCountryNamePage: () => 'CreateTranslationsCountryNamePage',
   CreateUserPage: () => 'CreateUserPage',
   EditBadgePage: () => 'EditBadgePage',
   EditCountryFoodNameMapPage: () => 'EditCountryFoodNameMapPage',
@@ -22,6 +23,7 @@ jest.mock('../components-pages', () => ({
   EditRecipePage: () => 'EditRecipePage',
   EditRegionFoodSeasonMapPage: () => 'EditRegionFoodSeasonMapPage',
   EditRegionPage: () => 'EditRegionPage',
+  EditTranslationsCountryNamePage: () => 'EditTranslationsCountryNamePage',
   EditUserPage: () => 'EditUserPage',
   HomePage: () => 'HomePage',
   LoginPage: () => 'LoginPage',
@@ -33,6 +35,7 @@ jest.mock('../components-pages', () => ({
   ViewFoodPage: () => 'ViewFoodPage',
   ViewRecipesPage: () => 'ViewRecipesPage',
   ViewRegionsPage: () => 'ViewRegionsPage',
+  ViewTranslationsCountryNamesPage: () => 'ViewTranslationsCountryNamesPage',
   ViewUsersPage: () => 'ViewUsersPage'
 }));
 

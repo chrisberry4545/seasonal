@@ -21,7 +21,7 @@ import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { SharedSeasonalEpic } from '../../seasonal-epic.type';
 import { IState } from '../../state.interface';
 import {
-  selectSettingsRegionId
+  selectSettingsRegionId, selectSettingsLanguage
 } from '../../settings';
 
 export const getAllBasicSeasons$: SharedSeasonalEpic = (
@@ -31,9 +31,12 @@ export const getAllBasicSeasons$: SharedSeasonalEpic = (
   actions$.pipe(
     ofType(SET_ALL_BASIC_SEASONS_START),
     withLatestFrom(state$),
-    map(([, state]) => selectSettingsRegionId(state)),
-    switchMap((regionId) =>
-      getAllSeasons(regionId)
+    map(([, state]) => ({
+      language: selectSettingsLanguage(state),
+      regionId: selectSettingsRegionId(state)
+    })),
+    switchMap(({ language, regionId }) =>
+      getAllSeasons(regionId, language)
         .then((seasonData) => setAllBasicSeasonsSuccess(seasonData))
         .catch((error: IBackendError) => setError(error))
     )

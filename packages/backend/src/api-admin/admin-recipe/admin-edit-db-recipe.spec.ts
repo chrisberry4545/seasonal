@@ -1,5 +1,5 @@
 import * as postgres from '../../postgres';
-import { IRecipe } from '@chrisb-dev/seasonal-shared-models';
+import { IRecipe, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { QueryResult } from 'pg';
 import { adminEditDbRecipe } from './admin-edit-db-recipe';
 
@@ -11,6 +11,7 @@ describe('adminEditDbRecipe', () => {
     imageUrlSmall: 'img',
     isVegan: false,
     isVegetarian: true,
+    languages: [LANGUAGES.EN_GB],
     linkUrl: 'link',
     name: 'name',
     primaryFoodInRecipeIds: ['primary'],
@@ -46,7 +47,8 @@ describe('adminEditDbRecipe', () => {
         recipe.isVegan,
         recipe.name,
         recipe.primaryFoodInRecipeIds,
-        recipe.secondaryFoodInRecipeIds
+        recipe.secondaryFoodInRecipeIds,
+        recipe.languages
       ]
     ));
 

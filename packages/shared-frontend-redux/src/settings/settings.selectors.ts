@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import {
-  DIET_TYPE
+  DIET_TYPE, LANGUAGES
 } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../state.interface';
 
@@ -29,4 +29,9 @@ export const selectSettingsTimesAppStarted = createSelector(
 export const selectIsListViewShown = createSelector(
   selectSettingsState,
   (settings): boolean => settings.isListViewShown
+);
+
+export const selectSettingsLanguage = createSelector(
+  selectSettingsState,
+  (settings): LANGUAGES | undefined => settings.language
 );

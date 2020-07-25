@@ -5,7 +5,7 @@ import { apiSeasonV2 } from './api-season.v2';
 import * as getAllCachedSeasons from './get-all-cached-seasons';
 import * as apiUtils from '../../api-utils';
 import { ISeasonalBackendError } from '../../interfaces';
-import { IBaseSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IBaseSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('apiSeasonV2', () => {
   let mockRouter: Router;
@@ -16,6 +16,7 @@ describe('apiSeasonV2', () => {
   const mock500Error = {
     status: 500
   } as ISeasonalBackendError;
+  const language = LANGUAGES.EN_US;
 
   beforeEach(() => {
     mockGet = jest.fn();
@@ -28,8 +29,8 @@ describe('apiSeasonV2', () => {
     } as Response;
     jest.spyOn(apiUtils, 'get500Error')
       .mockReturnValue(mock500Error);
-    jest.spyOn(apiUtils, 'getRegionIdFromQueryParams')
-      .mockReturnValue('regionId');
+    jest.spyOn(apiUtils, 'getLanguageFromQueryParams')
+      .mockReturnValue(language);
     apiSeasonV2(mockRouter);
   });
 

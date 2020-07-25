@@ -6,7 +6,9 @@ import {
   ISetDietType,
   INIT_SETTINGS,
   IInitSettings,
-  TOGGLE_LIST_VIEW
+  TOGGLE_LIST_VIEW,
+  SET_LANGUAGE,
+  ISetLanguage
 } from './settings.actions';
 import {
   SET_REGION,
@@ -50,6 +52,11 @@ export function settingsReducer(
       return {
         ...state,
         isListViewShown: !state.isListViewShown
+      };
+    case SET_LANGUAGE:
+      return {
+        ...state,
+        language: (action as ISetLanguage).language
       };
     default:
       return state;

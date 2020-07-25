@@ -1,4 +1,4 @@
-import { IHydratedSeason, IRecipe } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, IRecipe, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import * as filterRecipesByDiet from '../food/filter-recipes-by-diet';
 import * as getAllCachedSeasonsWithRecipes from './get-all-cached-seasons-with-recipes';
 import { getAllCachedSeasonsWithFilteredRecipes } from './get-all-cached-seasons-with-filtered-recipes';
@@ -19,7 +19,9 @@ describe('getAllCachedSeasonsWithFilteredRecipes', () => {
     mockFilterRecipesByDiet = jest.spyOn(filterRecipesByDiet, 'filterRecipesByDiet')
       .mockReturnValue(filteredRecipes);
     mockFilterRecipesByDiet.mockClear();
-    result = await getAllCachedSeasonsWithFilteredRecipes(isVegetarian, isVegan, 'regionId');
+    result = await getAllCachedSeasonsWithFilteredRecipes(
+      isVegetarian, isVegan, 'regionId', LANGUAGES.EN_US
+    );
   });
 
   test('filters the recipes of the results', () =>

@@ -7,7 +7,7 @@ import * as getOneCachedSeasonWithFood from './get-one-cached-season-with-food';
 import * as getAllCachedSeasonsWithFood from './get-all-cached-seasons-with-food';
 import * as apiUtils from '../../api-utils';
 import { ISeasonalBackendError } from '../../interfaces';
-import { IHydratedSeason } from '@chrisb-dev/seasonal-shared-models';
+import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('apiSeasonWithFoodV2', () => {
   let mockRouter: Router;
@@ -33,6 +33,8 @@ describe('apiSeasonWithFoodV2', () => {
     } as Response;
     jest.spyOn(getQueryParams, 'getRegionIdFromQueryParams')
       .mockReturnValue('regionId');
+    jest.spyOn(getQueryParams, 'getLanguageFromQueryParams')
+      .mockReturnValue(LANGUAGES.EN_GB);
     jest.spyOn(apiUtils, 'get404Error')
       .mockReturnValue(mock404Error);
     jest.spyOn(apiUtils, 'get500Error')

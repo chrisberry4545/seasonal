@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import {
   IGetAuthorizedBackendDataProps
 } from '../GetAuthorizedBackendData/GetAuthorizedBackendData';
-import { ICountryFoodNameMap, ICountry, IFood } from '@chrisb-dev/seasonal-shared-models';
+import { ICountryFoodNameMap, ICountry, IFood, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { IDataFormConfigProps, DataForm } from '../DataForm/DataForm';
 import {
   requiredValidation
@@ -15,6 +15,13 @@ type ICountryFoodNameMapFormConfigProps =
 const initialCountryFoodNameMapFormConfig: ICountryFoodNameMapFormConfigProps = {
   name: {
     type: 'text',
+    validation: [requiredValidation]
+  },
+
+  languages: {
+    options: Object.values(LANGUAGES)
+      .map((value) => ({ label: value, value })),
+    type: 'multiselect',
     validation: [requiredValidation]
   }
 };

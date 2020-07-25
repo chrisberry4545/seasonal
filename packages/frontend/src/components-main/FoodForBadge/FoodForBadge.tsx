@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
-
 import './FoodForBadge.scss';
-
 import { IFoodForBadgeProps } from './FoodForBadge.interface';
 import { ImageGrid } from '../../components-layout';
 import {

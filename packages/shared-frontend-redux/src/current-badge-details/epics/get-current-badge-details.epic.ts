@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { setError } from '../../error';
 import { SharedSeasonalEpic } from '../../seasonal-epic.type';
-import { selectSettingsRegionId } from '../../settings';
+import { selectSettingsRegionId, selectSettingsLanguage } from '../../settings';
 import { IState } from '../../state.interface';
 import { IBadgeItemClicked } from '../../ui';
 import {
@@ -23,12 +23,14 @@ export const getCurrentBadgeDetails$: SharedSeasonalEpic = (
     withLatestFrom(state$),
     map(([action, state]: [Action, IState]) => ({
       badgeItemId: (action as IBadgeItemClicked).badgeItemId,
+      language: selectSettingsLanguage(state),
       regionId: selectSettingsRegionId(state)
     })),
-    switchMap(({ badgeItemId, regionId }) => (
+    switchMap(({ badgeItemId, language, regionId }) => (
       getBadgeDetailsData(
         badgeItemId,
-        regionId
+        regionId,
+        language
       )
       .then((currentBadgeData) => setCurrentBadgeDetailsSuccess(currentBadgeData))
       .catch((error: IBackendError) => setError(error))

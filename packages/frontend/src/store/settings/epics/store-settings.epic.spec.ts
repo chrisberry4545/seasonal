@@ -1,5 +1,10 @@
 import * as sharedFrontendRedux from '@chrisb-dev/seasonal-shared-frontend-redux';
-import { ISettingsState, setDietType, setRegion, setUserRegionDetected } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import {
+  ISettingsState,
+  setDietType,
+  setRegion,
+  setUserRegionDetected
+} from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
 import * as storedData from '../../../helpers/functions/stored-data';
