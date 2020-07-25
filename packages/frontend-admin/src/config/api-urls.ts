@@ -18,7 +18,7 @@ import {
 } from '@chrisb-dev/seasonal-shared-models';
 
 const ADMIN_BACKEND_URL = process.env.REACT_APP_ADMIN_BACKEND_URL
-  || 'https://6usraevcmc.execute-api.eu-west-2.amazonaws.com/prod/admin';
+  || 'https://0xmy9wjvqd.execute-api.eu-west-2.amazonaws.com/prod/admin';
 
 export const LOGIN_URL = `${ADMIN_BACKEND_URL}/${ENDPOINT_LOGIN}`;
 
