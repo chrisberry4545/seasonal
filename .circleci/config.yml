@@ -154,7 +154,9 @@ workflows:
           requires:
             - backend_approval
             - unit_tests
-      - backend_deploy
+      - backend_deploy:
+          requires:
+            - backend_integration_tests
       - frontend_approval:
           type: approval
       - web_e2e_tests:

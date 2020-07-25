@@ -1,7 +1,7 @@
-import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import { setLocalization } from './set-localization';
+import { getLocale } from './get-locale';
 
 const enTranslations = {
   no: 'No',
@@ -65,6 +65,13 @@ export const initLocalization = () => {
   i18n.translations = {
     en: enTranslations
   };
-  setLocalization(Localization.locale as LANGUAGES);
+  const locale = getLocale();
+  const supportedLanguages = Object.keys(i18n.translations);
+  const firstPartOfLocale = locale && locale.split('-')[0] as LANGUAGES;
+  const localeToUse = !supportedLanguages.includes(locale)
+    && supportedLanguages.includes(firstPartOfLocale)
+      ? firstPartOfLocale
+      : locale;
+  setLocalization(localeToUse);
   i18n.fallbacks = true;
 };
