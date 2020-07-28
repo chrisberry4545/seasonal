@@ -24,13 +24,19 @@ import {
 
 import { apiCountryV2 } from './country/api-country.v2';
 
+import { apiLanguageV2 } from './language/api-language.v2';
+
+import { apiTranslationV2 } from './translation/api-translation.v2';
+
 import {
   ENDPOINT_BADGE_DETAILS,
   ENDPOINT_COUNTRY,
   ENDPOINT_FOOD_DETAILS,
   ENDPOINT_SEASON,
   ENDPOINT_SEASON_WITH_FOOD,
-  ENDPOINT_SEASON_WITH_RECIPES
+  ENDPOINT_SEASON_WITH_RECIPES,
+  ENDPOINT_LANGUAGE,
+  ENDPOINT_TRANSLATION
 } from '@chrisb-dev/seasonal-shared-models';
 
 export const apiV2 = (router = Router()) => {
@@ -47,6 +53,10 @@ export const apiV2 = (router = Router()) => {
     apiFoodV2()
   );
   router.use(
+    `/${ENDPOINT_LANGUAGE}`,
+    apiLanguageV2()
+  );
+  router.use(
     `/${ENDPOINT_SEASON}`,
     apiSeasonV2()
   );
@@ -57,6 +67,10 @@ export const apiV2 = (router = Router()) => {
   router.use(
     `/${ENDPOINT_SEASON_WITH_RECIPES}`,
     apiSeasonWithRecipesV2()
+  );
+  router.use(
+    `/${ENDPOINT_TRANSLATION}`,
+    apiTranslationV2()
   );
   return router;
 };

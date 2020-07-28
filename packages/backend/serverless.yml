@@ -77,3 +77,21 @@ functions:
             parameters:
               paths:
                 id: true
+  v2Language:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.v2Language}
+          method: get
+          cors: true
+  v2Translation:
+    handler: index-serverless.handler
+    events:
+      - http:
+          path: ${file(./src/config/serverless-urls.js):serverlessUrls.v2Translation}/{language}
+          method: get
+          cors: true
+          request:
+            parameters:
+              paths:
+                language: true
