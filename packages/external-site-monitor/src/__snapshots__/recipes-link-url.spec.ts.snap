@@ -114,8 +114,6 @@ exports[`check recipes sites have not changed {"imageUrlSmall": "https://media.r
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://msmarket.coop/wp-content/uploads/spinach-kale-soup-e1526992725328-850x477.jpeg", "linkUrl": "https://msmarket.coop/recipe/spinach-kale-soup/", "name": "Spinach & Kale Soup"} recipe appears to still exist 1`] = `200`;
 
-exports[`check recipes sites have not changed {"imageUrlSmall": "https://myzone-bmpvrtq.netdna-ssl.com/wp-content/uploads/2013/07/Freshly-baked-red-currant-muffins-275x275.jpg", "linkUrl": "https://www.kitchenhealssoul.com/red-currant-muffins/", "name": "Red Currant Muffins"} recipe appears to still exist 1`] = `200`;
-
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://nadialim.com/wp-content/uploads/2017/09/WholeRoastedButtercupSquash-555x463.jpg", "linkUrl": "https://nadialim.com/recipe/whole-roasted-buttercup-squash/", "name": "Whole Roasted Buttercup Squash"} recipe appears to still exist 1`] = `200`;
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://natashaskitchen.com/wp-content/uploads/2019/02/Horseradish-Sauce-4.jpg", "linkUrl": "https://natashaskitchen.com/horseradish-sauce-recipe/", "name": "Horseradish Sauce"} recipe appears to still exist 1`] = `200`;
@@ -205,6 +203,8 @@ exports[`check recipes sites have not changed {"imageUrlSmall": "https://www.din
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://www.healthyseasonalrecipes.com/wp-content/uploads/2017/11/simple-kohlrabi-with-pistachios-and-sage-020.jpg", "linkUrl": "https://www.healthyseasonalrecipes.com/simple-kohlrabi-with-pistachios-and-sage/", "name": "Kohlrabi & Pistachios"} recipe appears to still exist 1`] = `200`;
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://www.healthyseasonalrecipes.com/wp-content/uploads/2018/11/simple-sauteed-swiss-chard-with-onions-020.jpg", "linkUrl": "https://www.healthyseasonalrecipes.com/simple-sauteed-swiss-chard/", "name": "Sautéed Swiss Chard"} recipe appears to still exist 1`] = `200`;
+
+exports[`check recipes sites have not changed {"imageUrlSmall": "https://www.kitchenhealssoul.com/wp-content/uploads/2013/07/Freshly-baked-red-currant-muffins-with-sliced-almonds-and-a-sugary-topping-in-a-vintage-muffin-tin.jpg", "linkUrl": "https://www.kitchenhealssoul.com/red-currant-muffins/", "name": "Red Currant Muffins"} recipe appears to still exist 1`] = `200`;
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://www.mommypotamus.com/wp-content/uploads/2017/09/elderberry-jam-recipe.jpg", "linkUrl": "https://www.mommypotamus.com/elderberry-jam-recipe/", "name": "Elderberry & Strawberry Jam"} recipe appears to still exist 1`] = `200`;
 
