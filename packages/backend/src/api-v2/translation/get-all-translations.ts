@@ -1,5 +1,7 @@
 import { translationsEn } from './translations-en';
+import { translationsFr } from './translations-fr';
 
 export const getAllTranslations = (): any => ({
-  en: translationsEn
+  en: translationsEn,
+  fr: translationsFr
 });
