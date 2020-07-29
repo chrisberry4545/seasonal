@@ -11,17 +11,17 @@ import { AppContainer } from './src/components-app';
 import { GlobalModals } from './src/components-main/GlobalModals/GlobalModals';
 import { initLocalization } from './src/helpers/init-localization';
 
-initLocalization();
-
 const App: FC = () => {
-  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     initAnalytics();
-    loadFonts().then(() => setFontsLoaded(true));
+    Promise.all([
+      initLocalization(), loadFonts()
+    ]).then(() => setIsLoading(false));
   }, []);
 
-  if (!fontsLoaded) {
+  if (isLoading) {
     return <AppLoading />;
   }
   return (

@@ -1,3 +1,5 @@
+export * from './get-all-languages';
+
 export * from './get-all-seasons-with-food';
 
 export * from './get-all-seasons-with-recipes';
@@ -23,6 +25,8 @@ export * from './get-query-string';
 export * from './get-season-with-food';
 
 export * from './get-season-with-recipes';
+
+export * from './get-translation';
 
 export * from './handle-errors';
 

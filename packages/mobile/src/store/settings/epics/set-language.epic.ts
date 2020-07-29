@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 import { tap, withLatestFrom, map, ignoreElements } from 'rxjs/operators';
 import { AppSeasonalEpic } from '../../seasonal-epic.type';
 import { IState } from '../../state.interface';
-import { setLocalization } from '../../../helpers/set-localization';
+import { initLocalization } from '../../../helpers/init-localization';
 
 export const setLanguage$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>,
@@ -24,7 +24,7 @@ export const setLanguage$: AppSeasonalEpic = (
     ),
     tap((language) => {
       if (language) {
-        setLocalization(language);
+        initLocalization(language);
       }
     }),
     ignoreElements()
