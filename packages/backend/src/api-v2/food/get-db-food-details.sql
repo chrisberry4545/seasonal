@@ -19,6 +19,7 @@ WITH
       AND
       country_to_food_name_map.food_id = $2
     )
+    LIMIT 1
 	),
   recipe_name_mapping AS (
     SELECT

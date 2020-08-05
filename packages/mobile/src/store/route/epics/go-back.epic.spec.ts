@@ -1,4 +1,4 @@
-import { goBackFromSettingsPage, setRegion } from '@chrisb-dev/seasonal-shared-frontend-redux';
+import { goBackFromSettingsPage, setRegion, setLanguageSuccess } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { of } from 'rxjs';
 import * as helpers from '../../../helpers';
 import { goBackFromFoodDetails, goBackFromBadgeDetails } from '../route.actions';
@@ -7,6 +7,7 @@ import { goBack$ } from './go-back.epic';
 describe.each([
   setRegion('regionId'),
   goBackFromFoodDetails(),
+  setLanguageSuccess(),
   goBackFromSettingsPage(),
   goBackFromBadgeDetails()
 ])('goBack$', (action) => {

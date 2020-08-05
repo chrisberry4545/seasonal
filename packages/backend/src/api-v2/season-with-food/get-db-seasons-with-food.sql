@@ -47,6 +47,7 @@ SELECT
                 (
                   SELECT food_name_mappings.name FROM food_name_mappings
                   WHERE food_name_mappings.food_id = food.id
+                  LIMIT 1
                 ),
                 food.name
               ),
@@ -56,6 +57,7 @@ SELECT
               (
                 SELECT food_name_mappings.name FROM food_name_mappings
                 WHERE food_name_mappings.food_id = food.id
+                LIMIT 1
               ),
               food.name
             )

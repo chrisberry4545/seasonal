@@ -9,7 +9,6 @@ import { Provider } from 'react-redux';
 import { store } from './src/store';
 import { AppContainer } from './src/components-app';
 import { GlobalModals } from './src/components-main/GlobalModals/GlobalModals';
-import { initLocalization } from './src/helpers/init-localization';
 
 const App: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +16,7 @@ const App: FC = () => {
   useEffect(() => {
     initAnalytics();
     Promise.all([
-      initLocalization(), loadFonts()
+      loadFonts()
     ]).then(() => setIsLoading(false));
   }, []);
 
