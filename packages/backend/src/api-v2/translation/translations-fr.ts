@@ -42,8 +42,8 @@ export const translationsFr = {
   feedbackRateOnStoreQuestion: `L'évaluation de l'application aidera d'autres personnes à`
     + ` trouver l'application et à commencer à manger de façon saisonnière`,
   feedbackRateOnStoreQuestionTitle: 'Aidez les autres à manger saisonnier',
-  feedbackRateTheApp: 'Rate the app',
-  feedbackSend: `Évaluer l'application`,
+  feedbackRateTheApp: `Évaluer l'application`,
+  feedbackSend: 'Envoyez des commentaires',
 
   regionChangedDetectedYourClosestRegionAs: `Nous avons détecté votre région la plus proche comme:`,
   regionChangedIfThisIsWrongClickHere: `Si ce n'est pas le cas, cliquez ici.`,

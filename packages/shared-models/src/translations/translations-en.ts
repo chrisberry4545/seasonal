@@ -54,5 +54,5 @@ export const translationsEn = {
   [LANGUAGES.EN_GB]: 'English (British)',
   [LANGUAGES.EN_NZ]: 'English (New Zealand)',
   [LANGUAGES.EN_US]: 'English (USA)',
-  [LANGUAGES.FR_FR]: 'French'
+  [LANGUAGES.FR_FR]: 'Française'
 };
