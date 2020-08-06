@@ -34,6 +34,11 @@ export const selectCurrentSeasonRecipes = createSelector(
     currentSeason.recipes
 );
 
+export const selectDoesCurrentSeasonHaveRecipes = createSelector(
+  selectCurrentSeasonRecipes,
+  (recipes): boolean => Boolean(recipes && recipes.length > 0)
+);
+
 export const selectCurrentSeasonRecipesById = (recipeId: string) => (
   createSelector(
     selectCurrentSeasonRecipes,

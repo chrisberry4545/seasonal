@@ -4,8 +4,6 @@ export * from './DefaultPaddingContainer/DefaultPaddingContainer';
 
 export * from './DetailsPageLayout/DetailsPageLayout';
 
-export * from './FoodAndRecipeTabs/FoodAndRecipeTabs';
-
 export * from './FeedbackQuestionsLayout/FeedbackQuestionsLayout';
 
 export * from './HeaderAndBackButton/HeaderAndBackButton';

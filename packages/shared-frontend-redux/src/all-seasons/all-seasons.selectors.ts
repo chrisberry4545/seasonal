@@ -40,3 +40,11 @@ export const selectHasMoreSeasonsInAllSeasonsView = createSelector(
       : false
   )
 );
+
+export const selectDoesAllSeasonsHaveRecipes = createSelector(
+  selectAllSeasons,
+  (allSeasons): boolean => Boolean(
+    allSeasons &&
+    allSeasons.some((season) => season.recipes && season.recipes.length > 0)
+  )
+);

@@ -1,8 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SeasonDetailsPage /> renders correctly 1`] = `
-<FoodAndRecipeTabs
-  foodScreen={[Function]}
-  recipeScreen={[Function]}
-/>
-`;
+exports[`<SeasonDetailsPage /> renders correctly 1`] = `<FoodAndRecipeTabsCurrentSeasonConnector />`;
