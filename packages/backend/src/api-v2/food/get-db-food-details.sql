@@ -138,7 +138,16 @@ SELECT
       json_agg(
         json_build_object(
           'id', badges.id,
-          'name', badges.name
+          'name', COALESCE(
+            (
+              SELECT translations_badge_name.name
+              FROM translations_badge_name
+              WHERE translations_badge_name.badge_id = badges.id
+              AND $3 = ANY(translations_badge_name.languages)
+              LIMIT 1
+            ),
+            badges.name
+          )
         )
         ORDER BY(badges.name)
       ),
