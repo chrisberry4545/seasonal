@@ -19,7 +19,8 @@ import {
   showSearchBar,
   userRegionDetected,
   setError,
-  toggleListView
+  toggleListView,
+  setLanguageSuccess
 } from '@chrisb-dev/seasonal-shared-frontend-redux';
 import { goBackFromFoodDetails, goToAboutUsPage } from '../../route';
 import { IHydratedFood, DIET_TYPE, IBackendError, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
@@ -45,6 +46,7 @@ describe.each([
   badgeDetailsSelectFood('1'),
   setRegion('region'),
   setLanguage(LANGUAGES.EN_US),
+  setLanguageSuccess(),
   setCurrentFoodDetailsOnDietChange(),
   setCurrentFoodDetailsSuccess({} as IHydratedFood),
   setDietType(DIET_TYPE.VEGAN),

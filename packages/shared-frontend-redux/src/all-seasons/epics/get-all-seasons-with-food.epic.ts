@@ -19,14 +19,17 @@ import { Observable } from 'rxjs';
 import { SharedSeasonalEpic } from '../../seasonal-epic.type';
 import { IBackendError } from '@chrisb-dev/seasonal-shared-models';
 import { IState } from '../../state.interface';
-import { selectSettingsRegionId, selectSettingsLanguage } from '../../settings';
+import { selectSettingsRegionId, selectSettingsLanguage, SET_LANGUAGE_SUCCESS } from '../../settings';
 
 export const getAllSeasonsWithFood$: SharedSeasonalEpic = (
   actions$: ActionsObservable<Action>,
   state$: StateObservable<IState>
 ): Observable<Action> =>
   actions$.pipe(
-    ofType(SET_ALL_SEASONS_WITH_FOOD_START),
+    ofType(
+      SET_ALL_SEASONS_WITH_FOOD_START,
+      SET_LANGUAGE_SUCCESS
+    ),
     withLatestFrom(state$),
     map(([, state]) => ({
       language: selectSettingsLanguage(state),
