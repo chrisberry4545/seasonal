@@ -24,6 +24,7 @@ FROM (
                   SELECT translations_region_name.name
                   FROM translations_region_name
                   WHERE translations_region_name.region_id = regions.id
+                  AND $1 = ANY(translations_region_name.languages)
                   LIMIT 1
                 ),
                 regions.name
@@ -38,6 +39,7 @@ FROM (
                 SELECT translations_region_name.name
                 FROM translations_region_name
                 WHERE translations_region_name.region_id = regions.id
+                AND $1 = ANY(translations_region_name.languages)
                 LIMIT 1
               ),
               regions.name
