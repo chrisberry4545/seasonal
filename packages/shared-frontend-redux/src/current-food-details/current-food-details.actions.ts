@@ -14,14 +14,14 @@ export function setCurrentFoodDetailsStart(
     type: SET_CURRENT_FOOD_DETAILS_START
   };
 }
-export const SET_CURRENT_FOOD_DETAILS_ON_DIET_CHANGE =
-  'SET_CURRENT_FOOD_DETAILS_ON_DIET_CHANGE';
-export function setCurrentFoodDetailsOnDietChange(
+export const SET_CURRENT_FOOD_DETAILS_ON_CHANGE =
+  'SET_CURRENT_FOOD_DETAILS_ON_CHANGE';
+export function setCurrentFoodDetailsOnChange(
   foodItemId?: string
 ): ISetCurrentFoodDetailsStart {
   return {
     foodItemId,
-    type: SET_CURRENT_FOOD_DETAILS_ON_DIET_CHANGE
+    type: SET_CURRENT_FOOD_DETAILS_ON_CHANGE
   };
 }
 

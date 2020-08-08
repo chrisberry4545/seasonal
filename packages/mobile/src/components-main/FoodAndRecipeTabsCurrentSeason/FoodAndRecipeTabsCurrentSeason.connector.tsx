@@ -5,13 +5,15 @@ import { FoodAndRecipeTabs } from '../FoodAndRecipeTabs/FoodAndRecipeTabs';
 import { IFoodAndRecipeTabsInputProps } from '../FoodAndRecipeTabs/FoodAndRecipeTabs.interface';
 import { SeasonFoodConnector } from '../SeasonFood/SeasonFood.connector';
 import { SeasonRecipesConnector } from '../SeasonRecipes/SeasonRecipes.connector';
+import { getFoodAndRecipeTabTranslations } from '../FoodAndRecipeTabs/get-food-and-recipe-tab-translations';
 
 const mapStateToProps = (
   state: IState
 ): IFoodAndRecipeTabsInputProps => ({
   foodScreen: SeasonFoodConnector,
   hasRecipes: selectDoesCurrentSeasonHaveRecipes(state),
-  recipeScreen: SeasonRecipesConnector
+  recipeScreen: SeasonRecipesConnector,
+  ...getFoodAndRecipeTabTranslations()
 });
 
 export const FoodAndRecipeTabsCurrentSeasonConnector = connect(

@@ -3,6 +3,7 @@
 exports[`Get single badge item when a language is not specified Retrieves a single badge item 1`] = `
 Object {
   "food": Array [],
+  "id": "a2c52423-eb83-4cd9-9fdd-b6f9cb323c37",
   "name": "High in Vitamin C",
 }
 `;
@@ -21,6 +22,7 @@ Object {
       "name": "USA Beetroot",
     },
   ],
+  "id": "5de57673-eee8-444a-b7be-d9ab553052cf",
   "name": "USA high in vitamin D",
 }
 `;

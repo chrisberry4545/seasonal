@@ -20,6 +20,7 @@ WITH
   )
 
 SELECT
+  badges.id,
   COALESCE(
 		(
 		  SELECT translations_badge_name.name

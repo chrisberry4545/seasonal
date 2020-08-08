@@ -10,7 +10,6 @@ import {
 } from '../../components-elements/Text';
 import { ViewStyle } from 'react-native';
 import { ROUTES } from '../../const';
-import i18n from 'i18n-js';
 import { IFoodAndRecipeTabsInputProps } from './FoodAndRecipeTabs.interface';
 
 const styleSeasonalDetailsTabWrapper: ViewStyle = {
@@ -29,7 +28,9 @@ const styleSeasonalDetailsTabLabel: ViewStyle = {
 export const FoodAndRecipeTabs: FC<IFoodAndRecipeTabsInputProps> = ({
   foodScreen,
   recipeScreen,
-  hasRecipes
+  hasRecipes,
+  foodTabLabel,
+  recipeTabLabel
 }) => {
   const Tab = createBottomTabNavigator();
   return <Tab.Navigator tabBarOptions={{
@@ -44,13 +45,13 @@ export const FoodAndRecipeTabs: FC<IFoodAndRecipeTabsInputProps> = ({
     ]
   }}>
     <Tab.Screen
-      options={{ tabBarLabel: i18n.t('foodTab') }}
+      options={{ tabBarLabel: foodTabLabel }}
       name={ROUTES.FOOD_TAB} component={foodScreen} />
       {
         hasRecipes
           ?
             <Tab.Screen
-              options={{ tabBarLabel: i18n.t('recipesTab') }}
+              options={{ tabBarLabel: recipeTabLabel }}
               name={ROUTES.RECIPES_TAB} component={recipeScreen} />
           : null
       }

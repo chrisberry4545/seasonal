@@ -5,11 +5,15 @@ import { setError } from '../../error';
 import * as settings from '../../settings';
 import {
   setCurrentBadgeDetailsStart,
-  setCurrentBadgeDetailsSuccess
+  setCurrentBadgeDetailsSuccess,
+  setCurrentBadgeDetailsOnChange
 } from '../current-badge-details.actions';
 import { getCurrentBadgeDetails$ } from './get-current-badge-details.epic';
 
-describe('getCurrentBadgeDetails$', () => {
+describe.each([
+  setCurrentBadgeDetailsStart('badgeId'),
+  setCurrentBadgeDetailsOnChange('badgeId')
+])('getCurrentBadgeDetails$', (action) => {
 
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
@@ -27,7 +31,7 @@ describe('getCurrentBadgeDetails$', () => {
 
     test('returns setCurrentBadgeDetailsSuccess', async () => {
       const result = await getCurrentBadgeDetails$(
-        of(setCurrentBadgeDetailsStart('badgeId')) as any,
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();
@@ -44,7 +48,7 @@ describe('getCurrentBadgeDetails$', () => {
 
     test('returns setCurrentBadgeDetailsSuccess', async () => {
       const result = await getCurrentBadgeDetails$(
-        of(setCurrentBadgeDetailsStart('badgeId')) as any,
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();

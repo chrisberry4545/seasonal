@@ -19,6 +19,10 @@ const switchableGridOrListButtonText: TextStyle = {
   paddingLeft: 4
 };
 
+const getText = (isListViewShown: boolean) =>
+  isListViewShown
+    ? i18n.t('gridView') : i18n.t('listView');
+
 export const SwitchableGridOrList: FC<
   ISwitchableGridOrListInterface
 > = ({
@@ -32,7 +36,7 @@ export const SwitchableGridOrList: FC<
       onClick={onToggleListView}>
       { isListViewShown ? <GridIcon /> : <ListIcon /> }
       <TextSmall style={switchableGridOrListButtonText}>
-        { isListViewShown ? i18n.t('gridView') : i18n.t('listView') }
+        { getText(isListViewShown) }
       </TextSmall>
     </BareButton>
     {

@@ -1,11 +1,14 @@
 import { DIET_TYPE } from '@chrisb-dev/seasonal-shared-models';
 import { of } from 'rxjs';
-import { setDietType } from '../../settings';
-import { setCurrentFoodDetailsOnDietChange } from '../current-food-details.actions';
+import { setDietType, setLanguageSuccess } from '../../settings';
+import { setCurrentFoodDetailsOnChange } from '../current-food-details.actions';
 import * as selectors from '../current-food-details.selectors';
-import { updateFoodDetailsOnDietTypeChange$ } from './update-food-details-on-diet-type-change.epic';
+import { updateFoodDetailsOnChange$ } from './update-food-details-on-change.epic';
 
-describe('updateFoodDetailsOnDietTypeChange$', () => {
+describe.each([
+  setDietType(DIET_TYPE.VEGAN),
+  setLanguageSuccess()
+])('updateFoodDetailsOnChange$', (action) => {
 
   describe('when the current foodId is not defined', () => {
     beforeEach(() =>
@@ -14,8 +17,8 @@ describe('updateFoodDetailsOnDietTypeChange$', () => {
     );
 
     test('does not return anything', async () => {
-      const result = await updateFoodDetailsOnDietTypeChange$(
-        of(setDietType(DIET_TYPE.VEGAN)) as any,
+      const result = await updateFoodDetailsOnChange$(
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();
@@ -29,14 +32,14 @@ describe('updateFoodDetailsOnDietTypeChange$', () => {
         .mockReturnValue(foodId)
     );
 
-    test('returns setCurrentFoodDetailsOnDietChange', async () => {
-      const result = await updateFoodDetailsOnDietTypeChange$(
-        of(setDietType(DIET_TYPE.VEGAN)) as any,
+    test('returns setCurrentFoodDetailsOnChange', async () => {
+      const result = await updateFoodDetailsOnChange$(
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();
       expect(result).toEqual(
-        setCurrentFoodDetailsOnDietChange(foodId)
+        setCurrentFoodDetailsOnChange(foodId)
       );
     });
   });

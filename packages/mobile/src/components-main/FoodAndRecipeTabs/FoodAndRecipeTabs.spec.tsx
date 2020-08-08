@@ -2,18 +2,24 @@ import React from 'react';
 import { FoodAndRecipeTabs } from './FoodAndRecipeTabs';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { View } from 'react-native';
+import { IFoodAndRecipeTabsInputProps } from './FoodAndRecipeTabs.interface';
 
 describe('<FoodAndRecipeTabs />', () => {
   let wrapper: ShallowWrapper;
   const generateComponent = () => <View></View>;
+  const properties = {
+    foodScreen: generateComponent,
+    foodTabLabel: 'Food',
+    hasRecipes: true,
+    recipeScreen: generateComponent,
+    recipeTabLabel: 'Recipes'
+  } as IFoodAndRecipeTabsInputProps;
 
   describe('when there are recipes', () => {
     beforeEach(() =>
       wrapper = shallow(
         <FoodAndRecipeTabs
-          foodScreen={generateComponent}
-          recipeScreen={generateComponent}
-          hasRecipes={true}
+          {...properties}
         />
       )
     );
@@ -25,9 +31,10 @@ describe('<FoodAndRecipeTabs />', () => {
     beforeEach(() =>
       wrapper = shallow(
         <FoodAndRecipeTabs
-          foodScreen={generateComponent}
-          recipeScreen={generateComponent}
-          hasRecipes={false}
+          {...{
+            ...properties,
+            hasRecipes: false
+          }}
         />
       )
     );
