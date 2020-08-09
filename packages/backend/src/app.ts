@@ -8,7 +8,6 @@ import bodyParser from 'body-parser';
 import { apiAdmin } from './api-admin/api-admin';
 import cors from 'cors';
 import {
-  error404Middleware,
   errorMiddleware
 } from './middleware/error-middleware';
 import { ENDPOINT_ADMIN, ENDPOINT_V2 } from '@chrisb-dev/seasonal-shared-models';
@@ -22,7 +21,6 @@ app.use(bodyParser.json());
 app.use(`/${ENDPOINT_V2}`, apiV2());
 app.use(`/${ENDPOINT_ADMIN}`, apiAdmin());
 app.use(errorMiddleware());
-app.use(error404Middleware());
 
 export {
   app

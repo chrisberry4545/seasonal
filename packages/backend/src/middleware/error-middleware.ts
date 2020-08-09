@@ -1,5 +1,6 @@
-import { ErrorRequestHandler, RequestHandler, Response } from 'express';
+import { ErrorRequestHandler, Response } from 'express';
 import { ISeasonalBackendError } from '../interfaces/backend-error.interface';
+import { logger } from '../logger/logger';
 
 const sendResponse = (
   res: Response,
@@ -17,11 +18,8 @@ export const errorMiddleware = (): ErrorRequestHandler => (
     const {
       status, message
     } = err as ISeasonalBackendError;
+    logger.log('error', message, status);
     return sendResponse(res, status, message);
   }
   return next();
 };
-
-export const error404Middleware = (): RequestHandler => (
-  req, res
-) => sendResponse(res, 404, 'Not found');

@@ -6,6 +6,7 @@ import {
 } from 'express';
 import { get500Error, get404Error } from '../../api-utils';
 import { getAllLanguages } from './get-all-languages';
+import { logger } from '../../logger/logger';
 
 export const apiLanguageV2 = (router = Router()) => {
   router.get('/', async (
@@ -13,6 +14,9 @@ export const apiLanguageV2 = (router = Router()) => {
   ) => {
       try {
         const result = await getAllLanguages();
+        logger.log('info', 'all languages', {
+          result
+        });
         if (!result) {
           return next(get404Error());
         }

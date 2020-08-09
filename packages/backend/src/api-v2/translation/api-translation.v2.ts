@@ -9,6 +9,7 @@ import {
 } from './get-translation';
 import { get500Error, get404Error } from '../../api-utils';
 import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
+import { logger } from '../../logger/logger';
 
 export const apiTranslationV2 = (router = Router()) => {
   router.get(
@@ -22,6 +23,10 @@ export const apiTranslationV2 = (router = Router()) => {
         if (!result) {
           return next(get404Error());
         }
+        logger.log('info', 'get translations', {
+          language,
+          result
+        });
         return res.json(result);
       } catch (err) {
         return next(get500Error(err.message));

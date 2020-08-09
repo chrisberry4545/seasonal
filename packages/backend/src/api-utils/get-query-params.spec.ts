@@ -5,7 +5,7 @@ import {
   getLanguageFromQueryParams
 } from './get-query-params';
 import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
-import { errorLogger } from '../logger/logger';
+import { logger } from '../logger/logger';
 
 describe('getRegionIdFromQueryParams', () => {
   const request = {
@@ -88,13 +88,13 @@ describe('getLanguageFromQueryParams', () => {
       language: LANGUAGES.EN_GB
     }
   } as any;
-  let mockErrorLogger: jest.SpyInstance;
+  let mockLogger: jest.SpyInstance;
   let result: LANGUAGES | undefined;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockErrorLogger =
-      jest.spyOn(errorLogger, 'log').mockReturnValue(null as any);
+    mockLogger =
+      jest.spyOn(logger, 'log').mockReturnValue(null as any);
   });
 
   describe('when a valid language is set in the request', () => {
@@ -102,7 +102,7 @@ describe('getLanguageFromQueryParams', () => {
       result = getLanguageFromQueryParams(request));
 
     test('does not log any errors', () =>
-      expect(mockErrorLogger).not.toHaveBeenCalled());
+      expect(mockLogger).not.toHaveBeenCalled());
 
     test('returns the language in the request', () =>
       expect(result).toBe(request.query.language));
@@ -120,7 +120,7 @@ describe('getLanguageFromQueryParams', () => {
       }));
 
     test('logs an error', () =>
-      expect(mockErrorLogger).toHaveBeenCalled());
+      expect(mockLogger).toHaveBeenCalled());
 
     test('returns undefined', () => expect(result).toBeUndefined());
 
@@ -137,7 +137,7 @@ describe('getLanguageFromQueryParams', () => {
       }));
 
     test('does not log an error', () =>
-      expect(mockErrorLogger).not.toHaveBeenCalled());
+      expect(mockLogger).not.toHaveBeenCalled());
 
     test('returns the base french language', () => expect(result).toBe(LANGUAGES.FR_FR));
 
@@ -154,7 +154,7 @@ describe('getLanguageFromQueryParams', () => {
       }));
 
     test('does not log an error', () =>
-      expect(mockErrorLogger).not.toHaveBeenCalled());
+      expect(mockLogger).not.toHaveBeenCalled());
 
     test('returns the US english language', () => expect(result).toBe(LANGUAGES.EN_US));
 
@@ -168,7 +168,7 @@ describe('getLanguageFromQueryParams', () => {
       }));
 
     test('does not log an error', () =>
-      expect(mockErrorLogger).not.toHaveBeenCalled());
+      expect(mockLogger).not.toHaveBeenCalled());
 
     test('returns undefined', () => expect(result).toBeUndefined());
 
