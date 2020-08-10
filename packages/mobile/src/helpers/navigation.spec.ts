@@ -27,6 +27,7 @@ const initNavigator = (
   route: ROUTES
 ) => {
   const navigator = {
+    canGoBack: () => true,
     getRootState: () => ({
       index: 0,
       routes: [{
@@ -88,10 +89,18 @@ describe('navigateBackOne', () => {
   beforeEach(() => {
     navigator = {} as NavigationContainerRef;
     navigator.dispatch = jest.fn();
+    navigator.canGoBack = jest.fn().mockReturnValue(true);
   });
 
   test('does nothing if there is no navigator', () => {
     setTopLevelNavigator(null);
+    navigateBackOne();
+    expect(navigator.dispatch).not.toHaveBeenCalled();
+  });
+
+  test('does nothing if the navigator cannot go back', () => {
+    navigator.canGoBack = jest.fn().mockReturnValue(false);
+    setTopLevelNavigator(navigator);
     navigateBackOne();
     expect(navigator.dispatch).not.toHaveBeenCalled();
   });

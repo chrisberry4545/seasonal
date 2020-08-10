@@ -22,7 +22,11 @@ export const navigate = (
 };
 
 export const navigateBackOne = () => {
-  if (navigationRef && navigationRef.current) {
+  if (
+    navigationRef
+    && navigationRef.current
+    && navigationRef.current.canGoBack()
+  ) {
     navigationRef.current.dispatch(
       CommonActions.goBack()
     );
