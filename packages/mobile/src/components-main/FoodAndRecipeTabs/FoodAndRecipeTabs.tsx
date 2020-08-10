@@ -17,7 +17,8 @@ const styleSeasonalDetailsTabWrapper: ViewStyle = {
 };
 
 const styleSeasonalDetailsTabWrapperNoRecipes: ViewStyle = {
-  height: 0
+  height: 0,
+  opacity: 0
 };
 
 const styleSeasonalDetailsTabLabel: ViewStyle = {
