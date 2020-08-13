@@ -23,6 +23,7 @@ exports[`<FoodAndRecipeTabs /> when there are no recipes renders correctly 1`] =
         },
         Object {
           "height": 0,
+          "opacity": 0,
         },
       ],
     }
