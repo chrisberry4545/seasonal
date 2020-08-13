@@ -88,6 +88,14 @@
     "name": "Pluot"
   },
   {
+    "imageUrlSmall": "https://cdn.pixabay.com/photo/2014/02/12/18/11/salad-264826_640.jpg",
+    "name": "Lamb's Lettuce"
+  },
+  {
+    "imageUrlSmall": "https://cdn.pixabay.com/photo/2017/03/24/09/44/goji-2170629_640.jpg",
+    "name": "Goji Berry"
+  },
+  {
     "imageUrlSmall": "https://images.freeimages.com/images/small-previews/523/elderberry-delight-1326492.jpg",
     "name": "Elderberries"
   },
@@ -540,6 +548,10 @@
     "name": "Melons"
   },
   {
+    "imageUrlSmall": "https://cdn.pixabay.com/photo/2018/10/16/18/32/hazelnuts-3752184_640.jpg",
+    "name": "Hazelnut"
+  },
+  {
     "imageUrlSmall": "https://images.freeimages.com/images/small-previews/724/loquat-1326932.jpg",
     "name": "Loquats"
   },
@@ -682,5 +694,13 @@
   {
     "imageUrlSmall": "https://images.unsplash.com/photo-1549223672-c262a3763aab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
     "name": "Summer Squash"
+  },
+  {
+    "imageUrlSmall": "https://cdn.pixabay.com/photo/2018/03/25/10/34/beans-3259013_640.jpg",
+    "name": "Cannellini Beans"
+  },
+  {
+    "imageUrlSmall": "https://images.freeimages.com/images/small-previews/523/pitted-prunes-1325198.jpg",
+    "name": "Prune"
   }
 ]

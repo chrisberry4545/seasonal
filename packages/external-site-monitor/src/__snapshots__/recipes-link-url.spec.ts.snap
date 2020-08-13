@@ -120,7 +120,7 @@ exports[`check recipes sites have not changed {"imageUrlSmall": "https://natasha
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://neighborfoodblog.com/wp-content/uploads/2014/07/spicy-zucchini-side-dish.jpg", "linkUrl": "https://neighborfoodblog.com/2014/07/spicy-asian-zucchini-side-dish.html", "name": "Spicy Courgette"} recipe appears to still exist 1`] = `200`;
 
-exports[`check recipes sites have not changed {"imageUrlSmall": "https://ottolenghi.co.uk/media/contentmanager/content/cache/646x458//French-beans-with-shiitake-mushrooms-&-nutmeg.jpg", "linkUrl": "https://ottolenghi.co.uk/french-beans-with-shiitake-mushrooms-nutmeg-shop", "name": "French Beans with Shiitake Mushrooms"} recipe appears to still exist 1`] = `200`;
+exports[`check recipes sites have not changed {"imageUrlSmall": "https://ottolenghi.co.uk/media/contentmanager/content/cache/646x458//French-beans-with-shiitake-mushrooms-&-nutmeg.jpg", "linkUrl": "https://ottolenghi.co.uk/recipes/french-beans-with-shiitake-mushrooms-nutmeg", "name": "French Beans with Shiitake Mushrooms"} recipe appears to still exist 1`] = `200`;
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://pickledplum.com/wp-content/uploads/2017/11/smacked-cucumber-5.jpg", "linkUrl": "https://pickledplum.com/smacked-cucumber-chili-oil/", "name": "Smacked Cucumber"} recipe appears to still exist 1`] = `200`;
 
