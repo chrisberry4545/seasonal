@@ -33,7 +33,6 @@ WITH
       AND
       country_to_recipe_name_map.country_id = ANY(SELECT country_id FROM current_country)
     )
-
   )
 
 SELECT
@@ -65,6 +64,7 @@ FROM (
                 SELECT name
                 FROM recipe_name_mapping
                 WHERE recipe_name_mapping.recipe_id = recipes.id
+                LIMIT 1
               ),
               recipes.name
           ),
@@ -78,6 +78,7 @@ FROM (
             SELECT name
             FROM recipe_name_mapping
             WHERE recipe_name_mapping.recipe_id = recipes.id
+            LIMIT 1
           ),
           recipes.name
         )

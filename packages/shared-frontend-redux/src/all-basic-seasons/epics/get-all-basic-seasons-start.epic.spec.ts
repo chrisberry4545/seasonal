@@ -4,7 +4,8 @@ import {
 import { setAllSeasonsStart } from '../all-basic-seasons.actions';
 import {
   initSettings,
-  ISettingsState
+  ISettingsState,
+  setLanguageSuccess
 } from '../../settings';
 import {
   setRegion,
@@ -16,7 +17,8 @@ describe('getAllBasicSeasonsStart$', () => {
   test.each([
     initSettings({} as ISettingsState),
     setRegion('regionId'),
-    setUserRegionDetected('regionId')
+    setUserRegionDetected('regionId'),
+    setLanguageSuccess()
   ])('returns setAllSeasonsStart', async (action) => {
     const result = await getAllBasicSeasonsStart$(
       of(action) as any,

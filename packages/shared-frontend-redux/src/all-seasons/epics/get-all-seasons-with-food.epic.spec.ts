@@ -10,8 +10,12 @@ import { IHydratedSeason, LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-utilities';
 import { setError } from '../../error';
 import * as settings from '../../settings';
+import { setLanguageSuccess } from '../../settings';
 
-describe('getAllSeasonsWithFood$', () => {
+describe.each([
+  setAllSeasonsWithFoodStart(),
+  setLanguageSuccess()
+])('getAllSeasonsWithFood$', (action) => {
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
       .mockReturnValue('regionId');
@@ -29,7 +33,7 @@ describe('getAllSeasonsWithFood$', () => {
 
     test('returns setAllSeasonsWithFoodSuccess with the data', async () => {
       const result = await getAllSeasonsWithFood$(
-        of(setAllSeasonsWithFoodStart()) as any,
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();
@@ -49,7 +53,7 @@ describe('getAllSeasonsWithFood$', () => {
 
     test('returns setError', async () => {
       const result = await getAllSeasonsWithFood$(
-        of(setAllSeasonsWithFoodStart()) as any,
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();

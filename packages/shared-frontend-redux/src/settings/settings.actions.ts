@@ -47,3 +47,10 @@ export function setLanguage(
     type: SET_LANGUAGE
   };
 }
+
+export const SET_LANGUAGE_SUCCESS = 'SET_LANGUAGE_SUCCESS';
+export function setLanguageSuccess(): Action {
+  return {
+    type: SET_LANGUAGE_SUCCESS
+  };
+}

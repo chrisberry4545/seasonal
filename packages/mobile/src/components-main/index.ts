@@ -10,6 +10,10 @@ export * from './DietaryFilters/DietaryFilters.connector';
 
 export * from './ErrorDisplay/ErrorDisplay.connector';
 
+export * from './FoodAndRecipeTabsAllSeasons/FoodAndRecipeTabsAllSeasons.connector';
+
+export * from './FoodAndRecipeTabsCurrentSeason/FoodAndRecipeTabsCurrentSeason.connector';
+
 export * from './FoodBadges/FoodBadges.connector';
 
 export * from './FoodDetailsLoader/FoodDetailsLoader.connector';

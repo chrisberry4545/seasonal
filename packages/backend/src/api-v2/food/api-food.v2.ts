@@ -13,6 +13,7 @@ import {
 } from '../../api-utils/get-query-params';
 import { get500Error, get404Error } from '../../api-utils';
 import { uuidParamValidation } from '../../middleware/uuid-param-validation';
+import { logger } from '../../logger/logger';
 
 export const apiFoodV2 = (router = Router()) => {
   router.get(
@@ -30,6 +31,14 @@ export const apiFoodV2 = (router = Router()) => {
         const result = await getCachedFoodDetailsWithFilteredRecipes(
           id, isVegetarian, isVegan, regionId, language
         );
+        logger.log('info', 'single food details', {
+          id,
+          isVegan,
+          isVegetarian,
+          language,
+          regionId,
+          result
+        });
         if (!result) {
           return next(get404Error());
         }

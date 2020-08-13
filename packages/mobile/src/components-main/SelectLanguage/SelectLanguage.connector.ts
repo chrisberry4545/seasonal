@@ -13,9 +13,10 @@ import { Dispatch } from 'redux';
 import { IState } from '../../store';
 import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 import i18n from 'i18n-js';
+import { selectLanguages } from '../../store/language/language.selectors';
 
 const mapStateToProps = (state: IState): ISelectLanguageInputProps => ({
-  languages: Object.values(LANGUAGES).map((language) => ({
+  languages: selectLanguages(state).map((language) => ({
     isSelected: selectSettingsLanguage(state) === language,
     name: i18n.t(language),
     value: language

@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
-import { errorLogger } from '../logger/logger';
+import { logger } from '../logger/logger';
 
 export const getRegionIdFromQueryParams =
   (req: Request): string => (
@@ -24,7 +24,7 @@ export const getLanguageFromQueryParams =
       if (language.includes('en-')) {
         return LANGUAGES.EN_US;
       }
-      errorLogger.log('error', `Language is not supported: ${language}`);
+      logger.log('error', `Language is not supported: ${language}`);
       return undefined;
     }
     return language || undefined;

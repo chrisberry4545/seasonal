@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get all languages Retrieves the expected items 1`] = `
+Object {
+  "languages": Array [
+    "en-AU",
+    "en-CA",
+    "en-GB",
+    "en-NZ",
+    "en-US",
+    "fr-FR",
+  ],
+}
+`;

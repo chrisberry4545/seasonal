@@ -32,7 +32,9 @@ describe('getStoredSettings$', () => {
   describe('when the stored settings have a value and a timesAppStarted', () => {
     const settings = {
       dietType: DIET_TYPE.VEGETARIAN,
+      isListViewShown: false,
       language: LANGUAGES.EN_US,
+      selectedRegionId: undefined,
       timesAppStarted: 1
     } as ISettingsState;
 
@@ -56,7 +58,9 @@ describe('getStoredSettings$', () => {
   describe('when the stored settings have a value but no timesAppStarted value', () => {
     const settings = {
       dietType: DIET_TYPE.VEGETARIAN,
-      language: LANGUAGES.EN_US
+      isListViewShown: false,
+      language: LANGUAGES.EN_US,
+      selectedRegionId: undefined
     } as ISettingsState;
 
     beforeEach(async () => {

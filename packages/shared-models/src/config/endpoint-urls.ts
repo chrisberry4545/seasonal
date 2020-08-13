@@ -7,6 +7,8 @@ export const ENDPOINT_FOOD_DETAILS = 'food';
 export const ENDPOINT_SEASON_WITH_FOOD = 'season-with-food';
 export const ENDPOINT_SEASON_WITH_RECIPES = 'season-with-recipes';
 export const ENDPOINT_COUNTRY = 'country';
+export const ENDPOINT_LANGUAGE = 'language';
+export const ENDPOINT_TRANSLATION = 'translation';
 
 export const ENDPOINT_BADGE = 'badge';
 export const ENDPOINT_COUNTRY_FOOD_NAME_MAP = 'country-food-name-map';

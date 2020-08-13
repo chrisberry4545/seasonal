@@ -19,13 +19,31 @@ FROM (
             json_build_object(
               'id', regions.id,
               'code' , regions.code,
-              'name', regions.name,
+              'name', COALESCE(
+                (
+                  SELECT translations_region_name.name
+                  FROM translations_region_name
+                  WHERE translations_region_name.region_id = regions.id
+                  AND $1 = ANY(translations_region_name.languages)
+                  LIMIT 1
+                ),
+                regions.name
+              ),
               'latLng', json_build_object(
                   'lat', regions.lat,
                   'lng', regions.lng
               )
             )
-            ORDER BY regions.name
+            ORDER BY COALESCE(
+              (
+                SELECT translations_region_name.name
+                FROM translations_region_name
+                WHERE translations_region_name.region_id = regions.id
+                AND $1 = ANY(translations_region_name.languages)
+                LIMIT 1
+              ),
+              regions.name
+            )
           ),
           '[]'::json
         ) AS regions

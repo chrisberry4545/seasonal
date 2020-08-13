@@ -27,7 +27,7 @@ export const RecipesForFood: FC<IRecipeForFoodProps> = ({
   isListViewShown,
   onToggleListView
 }) => (
-  !isLoading && currentFoodDetailsRecipes
+  !isLoading && currentFoodDetailsRecipes && currentFoodDetailsRecipes.length > 0
     ? <View style={styleRecipesForFood}>
       <TextHeadingSmall style={styleRecipesForFoodTitle}>
         {i18n.t('recipesForFoodTitle')}

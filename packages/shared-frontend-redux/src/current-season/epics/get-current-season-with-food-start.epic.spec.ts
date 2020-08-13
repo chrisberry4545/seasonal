@@ -1,10 +1,9 @@
 import { of } from 'rxjs';
 import { setRegion, setUserRegionDetected } from '../../country';
-import { initSettings, ISettingsState, setLanguage } from '../../settings';
+import { initSettings, ISettingsState, setLanguageSuccess } from '../../settings';
 import { foodDetailsSelectSeason, selectSeason } from '../../ui';
 import { setCurrentSeasonWithFoodStart } from '../current-season.actions';
 import { getCurrentSeasonWithFoodStart$ } from './get-current-season-with-food-start.epic';
-import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
 
 describe('getCurrentSeasonWithFoodStart$', () => {
   test.each([
@@ -13,7 +12,7 @@ describe('getCurrentSeasonWithFoodStart$', () => {
     foodDetailsSelectSeason(1),
     setUserRegionDetected('regionId'),
     setRegion('regionId'),
-    setLanguage(LANGUAGES.EN_NZ)
+    setLanguageSuccess()
   ])('returns setCurrentSeasonWithFoodStart', async (action) => {
     const result = await getCurrentSeasonWithFoodStart$(
       of(action) as any,

@@ -14,11 +14,12 @@ import {
   getAllSeasonsWithRecipes$
 } from './all-seasons/epics';
 import {
-  getCurrentBadgeDetails$
+  getCurrentBadgeDetails$,
+  updateBadgeDetailsOnChange$
 } from './current-badge-details/epics';
 import {
   getCurrentFoodDetails$,
-  updateFoodDetailsOnDietTypeChange$
+  updateFoodDetailsOnChange$
 } from './current-food-details/epics';
 import {
   getCountriesStart$,
@@ -37,8 +38,9 @@ export const rootEpics = [
   getAllSeasonsWithFood$,
   getAllSeasonsWithRecipes$,
   getCurrentBadgeDetails$,
+  updateBadgeDetailsOnChange$,
   getCurrentFoodDetails$,
-  updateFoodDetailsOnDietTypeChange$,
+  updateFoodDetailsOnChange$,
   setSeasonSelectedSeasonName$,
   getCountriesStart$,
   getCountries$,

@@ -13,6 +13,7 @@ import {
 } from '../../api-utils/get-query-params';
 import { get500Error, get404Error } from '../../api-utils';
 import { uuidParamValidation } from '../../middleware/uuid-param-validation';
+import { logger } from '../../logger/logger';
 
 export const apiBadgeV2 = (router = Router()) => {
   router.get(
@@ -28,6 +29,12 @@ export const apiBadgeV2 = (router = Router()) => {
         const result = await getCachedBadgeDetails()(
           id, regionId, language
         );
+        logger.log('info', 'get single badge', {
+          id,
+          language,
+          regionId,
+          result
+        });
         if (!result) {
           return next(get404Error());
         }

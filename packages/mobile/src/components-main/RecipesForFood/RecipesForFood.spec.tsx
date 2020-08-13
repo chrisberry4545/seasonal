@@ -76,4 +76,17 @@ describe('<RecipesForFood />', () => {
     );
     expect(wrapper.children().exists()).toBe(false);
   });
+
+  test('does not render anything when the recipes have length 0', () => {
+    wrapper = shallow(
+      <RecipesForFood
+        isLoading={false}
+        currentFoodDetailsRecipes={[]}
+        onRecipeSelected={mockOnRecipeSelected}
+        isListViewShown={true}
+        onToggleListView={mockOnToggleListView} />
+    );
+    expect(wrapper.children().exists()).toBe(false);
+  });
+
 });

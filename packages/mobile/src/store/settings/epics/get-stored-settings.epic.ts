@@ -9,6 +9,14 @@ import { AppSeasonalEpic } from '../../seasonal-epic.type';
 import { settingsStorageKey } from './settings-storage-key';
 import { getLocale } from '../../../helpers/get-locale';
 
+const getDefaultSettings = (): ISettingsState => ({
+  dietType: DIET_TYPE.ALL,
+  isListViewShown: false,
+  language: getLocale(),
+  selectedRegionId: undefined,
+  timesAppStarted: 1
+});
+
 export const getStoredSettings$: AppSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
@@ -18,18 +26,11 @@ export const getStoredSettings$: AppSeasonalEpic = (
     map((settings) => initSettings(
       settings
       ? {
+        ...getDefaultSettings(),
         ...settings,
-        language: settings.language || getLocale(),
         timesAppStarted: (settings.timesAppStarted || 0) + 1
       }
-      :
-      {
-        dietType: DIET_TYPE.ALL,
-        isListViewShown: false,
-        language: getLocale(),
-        selectedRegionId: undefined,
-        timesAppStarted: 1
-      })
-    )
+      : getDefaultSettings()
+    ))
   )
 );

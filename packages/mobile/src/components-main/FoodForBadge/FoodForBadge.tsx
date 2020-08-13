@@ -5,6 +5,7 @@ import {
   TextMedium
 } from '../../components-elements';
 import { View, TextStyle } from 'react-native';
+import i18n from 'i18n-js';
 
 const styleFoodForBadgeFoundIn: TextStyle = {
   marginBottom: 12,
@@ -20,7 +21,7 @@ export const FoodForBadge: FC<IFoodForBadgeProps> = ({
   !isLoading
     ? <View>
       <TextMedium style={styleFoodForBadgeFoundIn}>
-        Found in
+        {i18n.t('foodForBadgeFoundIn')}
       </TextMedium>
       <ImageGrid data-e2e='food-for-badge-grid'
         data={currentBadgeFood} onClick={onFoodSelected} />

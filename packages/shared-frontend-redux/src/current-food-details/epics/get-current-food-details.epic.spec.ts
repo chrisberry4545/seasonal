@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import { setError } from '../../error';
 import * as settings from '../../settings';
 import {
-  setCurrentFoodDetailsOnDietChange,
+  setCurrentFoodDetailsOnChange,
   setCurrentFoodDetailsStart,
   setCurrentFoodDetailsSuccess
 } from '../current-food-details.actions';
@@ -30,7 +30,7 @@ describe('getCurrentFoodDetails$', () => {
 
     test.each([
       setCurrentFoodDetailsStart('foodId'),
-      setCurrentFoodDetailsOnDietChange()
+      setCurrentFoodDetailsOnChange()
     ])('returns setCurrentFoodDetailsSuccess', async (action) => {
       const result = await getCurrentFoodDetails$(
         of(action) as any,
@@ -50,7 +50,7 @@ describe('getCurrentFoodDetails$', () => {
 
     test.each([
       setCurrentFoodDetailsStart('foodId'),
-      setCurrentFoodDetailsOnDietChange()
+      setCurrentFoodDetailsOnChange()
     ])('returns setCurrentFoodDetailsSuccess', async (action) => {
       const result = await getCurrentFoodDetails$(
         of(action) as any,

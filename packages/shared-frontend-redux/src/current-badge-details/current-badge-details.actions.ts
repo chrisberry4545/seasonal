@@ -14,14 +14,14 @@ export function setCurrentBadgeDetailsStart(
     type: SET_CURRENT_BADGE_DETAILS_START
   };
 }
-export const SET_CURRENT_BADGE_DETAILS_ON_DIET_CHANGE =
-  'SET_CURRENT_BADGE_DETAILS_ON_DIET_CHANGE';
-export function setCurrentBadgeDetailsOnDietChange(
+export const SET_CURRENT_BADGE_DETAILS_ON_CHANGE =
+  'SET_CURRENT_BADGE_DETAILS_ON_CHANGE';
+export function setCurrentBadgeDetailsOnChange(
   badgeItemId?: string
 ): ISetCurrentBadgeDetailsStart {
   return {
     badgeItemId,
-    type: SET_CURRENT_BADGE_DETAILS_ON_DIET_CHANGE
+    type: SET_CURRENT_BADGE_DETAILS_ON_CHANGE
   };
 }
 

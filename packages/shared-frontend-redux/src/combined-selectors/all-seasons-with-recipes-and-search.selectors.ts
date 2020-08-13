@@ -26,12 +26,13 @@ export const selectAllSeasonsVisibleRecipesData = createSelector(
     seasonsWithSearchApplied,
     searchTerm,
     numberOfSeasonsInView
-  ): IHydratedSeason[] | undefined => (
-    seasonsWithSearchApplied &&
-      (
-        searchTerm
-          ? seasonsWithSearchApplied
-          : seasonsWithSearchApplied.slice(0, numberOfSeasonsInView)
-      ).filter(({ recipes }) => recipes && recipes.length > 0)
-    )
+  ): IHydratedSeason[] | undefined => {
+    const filtered = seasonsWithSearchApplied &&
+      seasonsWithSearchApplied.filter(({ recipes }) => recipes && recipes.length > 0);
+    return filtered && (
+      searchTerm
+        ? filtered
+        : filtered.slice(0, numberOfSeasonsInView)
+    );
+  }
 );

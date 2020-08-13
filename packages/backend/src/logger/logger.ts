@@ -1,7 +1,7 @@
 import { createLogger, transports } from 'winston';
 
-export const errorLogger = createLogger({
-  level: 'error',
+export const logger = createLogger({
+  level: 'info',
   transports: [
     new transports.Console()
   ]

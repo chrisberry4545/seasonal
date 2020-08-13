@@ -1,15 +1,18 @@
 import { Response, Request } from 'express';
 import { ISeasonalBackendError } from '../interfaces/backend-error.interface';
-import { errorMiddleware, error404Middleware } from './error-middleware';
+import { errorMiddleware } from './error-middleware';
+import { logger } from '../logger/logger';
 
 describe('errorMiddleware', () => {
   let next: jest.Mock;
   let response: Response;
   const request = {} as Request;
   let responseStatusResult: Response;
+  let mockLogger: jest.SpyInstance;
 
   beforeEach(() => {
     next = jest.fn();
+    mockLogger = jest.spyOn(logger, 'log').mockImplementation(() => logger);
     responseStatusResult = {
       json: jest.fn() as any
     } as Response;
@@ -32,6 +35,8 @@ describe('errorMiddleware', () => {
       errorMiddleware()(error, request, response, next);
     });
 
+    test('logs the error', () => expect(mockLogger).toHaveBeenCalled());
+
     test('sends an error status', () =>
       expect(response.status).toHaveBeenCalledWith(error.status));
 
@@ -39,28 +44,5 @@ describe('errorMiddleware', () => {
       expect(responseStatusResult.json).toHaveBeenCalledWith({ message: error.message }));
 
   });
-
-});
-
-describe('error404Middleware', () => {
-  let response: Response;
-  const request = {} as Request;
-  let responseStatusResult: Response;
-
-  beforeEach(() => {
-    responseStatusResult = {
-      json: jest.fn() as any
-    } as Response;
-    response = {
-      status: jest.fn().mockReturnValue(responseStatusResult) as any
-    } as Response;
-    error404Middleware()(request, response, jest.fn());
-  });
-
-  test('sends a 404 status', () =>
-    expect(response.status).toHaveBeenCalledWith(404));
-
-  test('sends the message as json', () =>
-    expect(responseStatusResult.json).toHaveBeenCalledWith({ message: 'Not found' }));
 
 });

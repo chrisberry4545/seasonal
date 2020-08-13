@@ -16,7 +16,8 @@ import {
   selectAllSeasons,
   selectIsAllSeasonsRecipesLoading,
   selectNumberOfAllSeasonsInView,
-  selectHasMoreSeasonsInAllSeasonsView
+  selectHasMoreSeasonsInAllSeasonsView,
+  selectDoesAllSeasonsHaveRecipes
 } from './all-seasons.selectors';
 import { IState } from '../state.interface';
 import { Action } from 'redux';
@@ -87,7 +88,9 @@ describe('setAllSeasonsWithRecipesStart', () => {
 
 describe('setAllSeasonsWithRecipesSuccess', () => {
   let newAppState: IState;
-  const seasonWithRecipes = [{}] as IHydratedSeason[];
+  const seasonWithRecipes = [{
+    recipes: [{}]
+  }] as IHydratedSeason[];
   beforeEach(() =>
     newAppState = updateState(setAllSeasonsWithRecipesSuccess(seasonWithRecipes))
   );
@@ -97,6 +100,23 @@ describe('setAllSeasonsWithRecipesSuccess', () => {
 
   test('sets season data to data in action', () =>
     expect(selectAllSeasons(newAppState)).toBe(seasonWithRecipes));
+
+  test('sets has recipes', () =>
+    expect(selectDoesAllSeasonsHaveRecipes(newAppState)).toBe(true));
+
+  describe('when there are no recipes', () => {
+    beforeEach(() => {
+      newAppState = updateState(setAllSeasonsWithRecipesSuccess([{
+        ...seasonWithRecipes[0],
+        recipes: []
+      }]));
+    });
+
+    test('sets has recipes to false', () =>
+      expect(selectDoesAllSeasonsHaveRecipes(newAppState)).toBe(false));
+
+  });
+
 });
 
 describe('setAllSeasonsWithRecipesSuccess', () => {

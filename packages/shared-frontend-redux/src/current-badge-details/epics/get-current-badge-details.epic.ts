@@ -11,7 +11,8 @@ import { IState } from '../../state.interface';
 import { IBadgeItemClicked } from '../../ui';
 import {
   setCurrentBadgeDetailsSuccess,
-  SET_CURRENT_BADGE_DETAILS_START
+  SET_CURRENT_BADGE_DETAILS_START,
+  SET_CURRENT_BADGE_DETAILS_ON_CHANGE
 } from '../current-badge-details.actions';
 
 export const getCurrentBadgeDetails$: SharedSeasonalEpic = (
@@ -19,7 +20,10 @@ export const getCurrentBadgeDetails$: SharedSeasonalEpic = (
   state$: StateObservable<IState>
 ): Observable<Action> => (
   actions$.pipe(
-    ofType(SET_CURRENT_BADGE_DETAILS_START),
+    ofType(
+      SET_CURRENT_BADGE_DETAILS_START,
+      SET_CURRENT_BADGE_DETAILS_ON_CHANGE
+    ),
     withLatestFrom(state$),
     map(([action, state]: [Action, IState]) => ({
       badgeItemId: (action as IBadgeItemClicked).badgeItemId,

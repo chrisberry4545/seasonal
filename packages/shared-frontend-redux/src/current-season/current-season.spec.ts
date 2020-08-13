@@ -5,7 +5,8 @@ import {
   selectIsCurrentSeasonFoodLoading,
   selectIsCurrentSeasonRecipesLoading,
   selectCurrentSeasonIndex,
-  selectCurrentSeasonName
+  selectCurrentSeasonName,
+  selectDoesCurrentSeasonHaveRecipes
 } from './current-season.selectors';
 import {
   currentSeasonWithFoodReducer
@@ -146,6 +147,9 @@ describe('set current season with recipes success', () => {
   test('sets the current season', () =>
     expect(selectCurrentSeason(newAppState)).toEqual(season));
 
+  test('returns has recipes', () =>
+    expect(selectDoesCurrentSeasonHaveRecipes(newAppState)).toBe(true));
+
   describe('when a current season already exists', () => {
     const currentState = {
       data: {
@@ -164,6 +168,20 @@ describe('set current season with recipes success', () => {
       expect(selectCurrentSeasonFood(newAppState))
         .toBe(currentState.data?.food));
   });
+
+  describe('when the current season has no recipes', () => {
+    beforeEach(() =>
+      newAppState = updateState(setCurrentSeasonWithRecipesSuccess({
+        ...season,
+        recipes: []
+      }))
+    );
+
+    test('returns has no recipes', () =>
+      expect(selectDoesCurrentSeasonHaveRecipes(newAppState)).toBe(false));
+
+  });
+
 });
 
 describe('on season selected', () => {

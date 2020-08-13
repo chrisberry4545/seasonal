@@ -34,6 +34,8 @@ export * from './hydrated-food.interface';
 
 export * from './hydrated-season.interface';
 
+export * from './languages-response.interface';
+
 export * from './lat-lng.interface';
 
 export * from './region-food-season-map.interface';

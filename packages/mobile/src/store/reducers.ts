@@ -17,13 +17,15 @@ import {
 } from './epics';
 
 import { feedbackReducer } from './feedback/feedback.reducer';
+import { languageReducer } from './language/language.reducer';
 
 const epicMiddleware = createEpicMiddleware<Action, Action, IState, {}>();
 
 export const store = createStore(
   combineReducers<IState>({
     ...allReducers,
-    feedback: feedbackReducer
+    feedback: feedbackReducer,
+    language: languageReducer
   }),
   undefined,
   applyMiddleware(

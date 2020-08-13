@@ -11,7 +11,7 @@ import { IState } from '../../state.interface';
 import { IFoodItemClicked } from '../../ui';
 import {
   setCurrentFoodDetailsSuccess,
-  SET_CURRENT_FOOD_DETAILS_ON_DIET_CHANGE,
+  SET_CURRENT_FOOD_DETAILS_ON_CHANGE,
   SET_CURRENT_FOOD_DETAILS_START
 } from '../current-food-details.actions';
 
@@ -22,7 +22,7 @@ export const getCurrentFoodDetails$: SharedSeasonalEpic = (
   actions$.pipe(
     ofType(
       SET_CURRENT_FOOD_DETAILS_START,
-      SET_CURRENT_FOOD_DETAILS_ON_DIET_CHANGE
+      SET_CURRENT_FOOD_DETAILS_ON_CHANGE
     ),
     withLatestFrom(state$),
     map(([action, state]: [Action, IState]) => ({

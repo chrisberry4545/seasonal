@@ -11,14 +11,18 @@ WITH
 		SELECT
       country_to_food_name_map.name
 		FROM country_to_food_name_map
-		WHERE $3 = ANY(country_to_food_name_map.languages)
-    OR (
-      $3::text is NULL
-      AND
-      country_to_food_name_map.country_id = ANY(SELECT country_id FROM current_country)
-      AND
+		WHERE
       country_to_food_name_map.food_id = $2
-    )
+    AND
+      (
+        $3 = ANY(country_to_food_name_map.languages)
+        OR (
+          $3::text is NULL
+          AND
+          country_to_food_name_map.country_id = ANY(SELECT country_id FROM current_country)
+        )
+      )
+    LIMIT 1
 	),
   recipe_name_mapping AS (
     SELECT
@@ -134,7 +138,16 @@ SELECT
       json_agg(
         json_build_object(
           'id', badges.id,
-          'name', badges.name
+          'name', COALESCE(
+            (
+              SELECT translations_badge_name.name
+              FROM translations_badge_name
+              WHERE translations_badge_name.badge_id = badges.id
+              AND $3 = ANY(translations_badge_name.languages)
+              LIMIT 1
+            ),
+            badges.name
+          )
         )
         ORDER BY(badges.name)
       ),

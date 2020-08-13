@@ -29,6 +29,8 @@ import {
 import { initTrackingUser$, trackAction$ } from './tracking/epics';
 import { storeSettings$, getStoredSettings$, detectCountry$, setLanguage$ } from './settings/epics';
 import { initApp$ } from './init/epics/init-app.epic';
+import { getLanguages$ } from './language/epics/get-languages.epic';
+import { getLanguagesStart$ } from './language/epics/get-languages-start.epic';
 
 export const rootEpic = combineEpics(
   ...rootEpics,
@@ -52,6 +54,8 @@ export const rootEpic = combineEpics(
   detectCountry$,
   storeFeedbackSettings$,
   getStoredFeedbackSettings$,
+  getLanguagesStart$,
+  getLanguages$,
   showFeedbackForm$,
   sendFeedbackImprovements$,
   showStoreListing$,

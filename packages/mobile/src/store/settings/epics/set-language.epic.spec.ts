@@ -5,17 +5,17 @@ import {
 import { of } from 'rxjs';
 import { setLanguage$ } from './set-language.epic';
 import { LANGUAGES } from '@chrisb-dev/seasonal-shared-models';
-import * as setLocalization from '../../../helpers/set-localization';
+import * as initLocalization from '../../../helpers/init-localization';
 
 describe.each([
   initSettings({} as ISettingsState),
   setLanguage(LANGUAGES.FR_FR)
 ])('setLanguage$', (action) => {
-  let mockSetLocalization: jest.SpyInstance;
+  let mockInitLocalization: jest.SpyInstance;
 
   beforeEach(async () => {
     jest.clearAllMocks();
-    mockSetLocalization = jest.spyOn(setLocalization, 'setLocalization');
+    mockInitLocalization = jest.spyOn(initLocalization, 'initLocalization');
     jest.spyOn(sharedFrontendRedux, 'selectSettingsLanguage')
       .mockReturnValue(LANGUAGES.FR_FR);
     await setLanguage$(
@@ -26,6 +26,6 @@ describe.each([
   });
 
   test('sets the language', () =>
-    expect(mockSetLocalization).toHaveBeenCalledWith(LANGUAGES.FR_FR));
+    expect(mockInitLocalization).toHaveBeenCalledWith(LANGUAGES.FR_FR));
 
 });

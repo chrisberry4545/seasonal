@@ -11,8 +11,12 @@ import * as sharedFrontendUtilities from '@chrisb-dev/seasonal-shared-frontend-u
 import { setError } from '../../error';
 import * as settings from '../../settings';
 import { Action } from 'redux';
+import { setLanguageSuccess } from '../../settings';
 
-describe('getAllSeasonsWithRecipes$', () => {
+describe.each([
+  setAllSeasonsWithRecipesStart(),
+  setLanguageSuccess()
+])('getAllSeasonsWithRecipes$', (action) => {
 
   beforeEach(() => {
     jest.spyOn(settings, 'selectSettingsRegionId')
@@ -34,7 +38,7 @@ describe('getAllSeasonsWithRecipes$', () => {
           .mockResolvedValue(seasonsWithRecipes);
       mockGetAllSeasonsWithRecipes.mockClear();
       result = await getAllSeasonsWithRecipes$(
-        of(setAllSeasonsWithRecipesStart()) as any,
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();
@@ -62,7 +66,7 @@ describe('getAllSeasonsWithRecipes$', () => {
 
     test('returns setError', async () => {
       const result = await getAllSeasonsWithRecipes$(
-        of(setAllSeasonsWithRecipesStart()) as any,
+        of(action) as any,
         of(null) as any,
         {}
       ).toPromise();
