@@ -8,7 +8,7 @@ exports[`check recipes sites have not changed {"imageUrlSmall": "http://ukcdn.ar
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "http://ukcdn.ar-cdn.com/recipes/port500/8d19a300-f0f4-4889-b9b2-f34ab47e54c2.jpg", "linkUrl": "http://allrecipes.co.uk/recipe/24491/carrot-and-parsnip-soup.aspx", "name": "Carrot & Parsnip Soup"} recipe appears to still exist 1`] = `200`;
 
-exports[`check recipes sites have not changed {"imageUrlSmall": "http://www.fnstatic.co.uk/images/content/recipe/honey-glazed-carrots.jpg", "linkUrl": "http://www.foodnetwork.co.uk/recipes/honey-glazed-carrots.html?utm_source=foodnetwork.com&utm_medium=domestic", "name": "Honey Glazed Carrots"} recipe appears to still exist 1`] = `200`;
+exports[`check recipes sites have not changed {"imageUrlSmall": "http://www.fnstatic.co.uk/images/content/recipe/honey-glazed-carrots.jpg", "linkUrl": "https://www.foodnetwork.com/recipes/sunny-anderson/honey-glazed-carrots-recipe-1938783", "name": "Honey Glazed Carrots"} recipe appears to still exist 1`] = `200`;
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "http://www.forkknifeswoon.com/wp-content/uploads/2014/01/20140121-KaleGoatCheesePasta-TextWEB-01.jpg", "linkUrl": "http://www.forkknifeswoon.com/weeknight-kale-spinach-goat-cheese-pasta/", "name": "Kale, Spinach & Goat Cheese Pasta"} recipe appears to still exist 1`] = `200`;
 
@@ -46,7 +46,7 @@ exports[`check recipes sites have not changed {"imageUrlSmall": "https://cookiea
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://d1v30bmd12dhid.cloudfront.net/static/version2/content/dam/waitrose/recipes/images/s/Scorched-leeks-with-caper-dressing.jpg/_jcr_content/renditions/cq5dam.thumbnail.200.200.png", "linkUrl": "https://www.waitrose.com/home/recipes/recipe_directory/s/scorched-leeks-withtomatoandcaperdressing.html", "name": "Scorched Leeks with Tomato & Caper Dressing"} recipe appears to still exist 1`] = `200`;
 
-exports[`check recipes sites have not changed {"imageUrlSmall": "https://deliciouslyella.com/wp-content/uploads/2019/07/creamy-garlic-thyme-mushrooms-recipe-2-440x440.jpg", "linkUrl": "https://deliciouslyella.com/2017/08/11/creamy-garlic-thyme-mushrooms/", "name": "Creamy Garlic and Thyme Mushrooms"} recipe appears to still exist 1`] = `200`;
+exports[`check recipes sites have not changed {"imageUrlSmall": "https://deliciouslyella.com/wp-content/uploads/2019/07/creamy-garlic-thyme-mushrooms-recipe-2-440x440.jpg", "linkUrl": "https://rhitrition.com/our-recipe/creamy-mushrooms-on-toast/", "name": "Creamy Garlic and Thyme Mushrooms"} recipe appears to still exist 1`] = `200`;
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://eatfresh.org/sites/default/files/styles/645x417large/public/recipe/media/TurnipPancakes_00.jpg?itok=L5anr8Ro", "linkUrl": "https://eatfresh.org/recipe/side-dish-snacks-breakfast/turnip-pancakes-latkes#.XSC6vNP0nBI", "name": "Turnip Pancakes"} recipe appears to still exist 1`] = `200`;
 
