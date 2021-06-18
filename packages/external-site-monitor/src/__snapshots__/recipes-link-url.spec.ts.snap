@@ -48,7 +48,7 @@ exports[`check recipes sites have not changed {"imageUrlSmall": "https://d1v30bm
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://deliciouslyella.com/wp-content/uploads/2019/07/creamy-garlic-thyme-mushrooms-recipe-2-440x440.jpg", "linkUrl": "https://rhitrition.com/our-recipe/creamy-mushrooms-on-toast/", "name": "Creamy Garlic and Thyme Mushrooms"} recipe appears to still exist 1`] = `200`;
 
-exports[`check recipes sites have not changed {"imageUrlSmall": "https://eatfresh.org/sites/default/files/styles/645x417large/public/recipe/media/TurnipPancakes_00.jpg?itok=L5anr8Ro", "linkUrl": "https://eatfresh.org/recipe/side-dish-snacks-breakfast/turnip-pancakes-latkes#.XSC6vNP0nBI", "name": "Turnip Pancakes"} recipe appears to still exist 1`] = `200`;
+exports[`check recipes sites have not changed {"imageUrlSmall": "https://eatfresh.org/static/a483fc9520a080976799504468dec477/114e6/TurnipPancakes_00.jpg", "linkUrl": "https://eatfresh.org/recipe/side-dish-snacks-breakfast/turnip-pancakes-latkes#.XSC6vNP0nBI", "name": "Turnip Pancakes"} recipe appears to still exist 1`] = `200`;
 
 exports[`check recipes sites have not changed {"imageUrlSmall": "https://flockler.com/thumbs/sites/192/curry_s600x600_c692x404_l0x177.jpg", "linkUrl": "https://thehappyfoodie.co.uk/recipes/courgette-and-aubergine-curry", "name": "Courgette & Aubergine Curry"} recipe appears to still exist 1`] = `200`;
 
