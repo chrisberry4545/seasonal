@@ -3,7 +3,10 @@ import { Pool } from 'pg';
 import { logger } from '../logger/logger';
 
 export const pool = new Pool({
-  connectionString: DB_CONNECTION_STRING
+  connectionString: DB_CONNECTION_STRING,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 pool.on('error', (err) => {
